@@ -1,32 +1,64 @@
-[gd_scene load_steps=5 format=3 uid="uid://du47rpfdshvi4"]
+[gd_scene load_steps=8 format=3 uid="uid://du47rpfdshvi4"]
 
 [ext_resource type="PackedScene" uid="uid://d0yx0ftl2lhff" path="res://Player.tscn" id="1_a88ce"]
+[ext_resource type="Texture2D" uid="uid://xp2gt0h7ism3" path="res://asset/New Piskel-1.png.png" id="2_reiom"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eefau"]
-size = Vector2(1144, 74.5)
+size = Vector2(1330, 74.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7n651"]
-size = Vector2(88, 586.25)
+size = Vector2(88, 689)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kv5kx"]
-size = Vector2(88, 586.25)
+size = Vector2(88, 686.125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xsu3"]
+size = Vector2(150, 150)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0u42"]
+size = Vector2(150, 150)
 
 [node name="Node2D" type="Node2D"]
 
+[node name="BG" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="BG"]
+
 [node name="player" parent="." instance=ExtResource("1_a88ce")]
-position = Vector2(504, 473)
+position = Vector2(531, 569)
 scale = Vector2(0.213187, 0.220962)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(578, 610.25)
+position = Vector2(551, 692)
 shape = SubResource("RectangleShape2D_eefau")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(42, 302)
+position = Vector2(-45, 312.5)
 shape = SubResource("RectangleShape2D_7n651")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1108, 316)
+position = Vector2(1195, 321)
 shape = SubResource("RectangleShape2D_kv5kx")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_top = 570.0
+offset_right = 85.0
+offset_bottom = 647.0
+scale = Vector2(0.927536, 1.00943)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Control"]
+position = Vector2(112.125, -24.7665)
+scale = Vector2(0.632964, 0.632964)
+texture_normal = ExtResource("2_reiom")
+shape = SubResource("RectangleShape2D_2xsu3")
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Control"]
+position = Vector2(102.422, 73.3085)
+scale = Vector2(-0.634877, -0.634877)
+texture_normal = ExtResource("2_reiom")
+shape = SubResource("RectangleShape2D_b0u42")
