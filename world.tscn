@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://du47rpfdshvi4"]
+[gd_scene load_steps=10 format=3 uid="uid://du47rpfdshvi4"]
 
 [ext_resource type="PackedScene" uid="uid://d0yx0ftl2lhff" path="res://Player.tscn" id="1_a88ce"]
-[ext_resource type="Texture2D" uid="uid://xp2gt0h7ism3" path="res://asset/New Piskel-1.png.png" id="2_reiom"]
+[ext_resource type="Texture2D" path="res://asset/New Piskel-1.png.png" id="2_reiom"]
 [ext_resource type="Texture2D" uid="uid://6y1tbilmkdeq" path="res://asset/erupt mountain.png" id="3_lc3hi"]
+[ext_resource type="Texture2D" path="res://asset/useable.png" id="4_gy4o8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eefau"]
-size = Vector2(1330, 74.5)
+size = Vector2(1569, 74.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7n651"]
 size = Vector2(88, 689)
@@ -30,6 +31,11 @@ motion_scale = Vector2(0.25, 0.25)
 position = Vector2(795, 465)
 texture = ExtResource("3_lc3hi")
 
+[node name="Useable" type="Sprite2D" parent="BG/ParallaxLayer"]
+position = Vector2(784, 436)
+scale = Vector2(2.99826, 2.99826)
+texture = ExtResource("4_gy4o8")
+
 [node name="player" parent="." instance=ExtResource("1_a88ce")]
 position = Vector2(460, 551)
 scale = Vector2(0.213187, 0.220962)
@@ -37,7 +43,7 @@ scale = Vector2(0.213187, 0.220962)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(551, 692)
+position = Vector2(670.5, 692)
 shape = SubResource("RectangleShape2D_eefau")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
@@ -45,7 +51,7 @@ position = Vector2(-45, 312.5)
 shape = SubResource("RectangleShape2D_7n651")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1195, 321)
+position = Vector2(1388, 321)
 shape = SubResource("RectangleShape2D_kv5kx")
 
 [node name="Control" type="Control" parent="."]
