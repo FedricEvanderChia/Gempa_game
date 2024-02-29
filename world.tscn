@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://du47rpfdshvi4"]
+[gd_scene load_steps=11 format=3 uid="uid://du47rpfdshvi4"]
 
 [ext_resource type="PackedScene" uid="uid://d0yx0ftl2lhff" path="res://Player.tscn" id="1_a88ce"]
-[ext_resource type="Texture2D" path="res://asset/PrxBG-ly1.png" id="2_6kybl"]
-[ext_resource type="Texture2D" path="res://asset/New Piskel-1.png.png" id="2_reiom"]
-[ext_resource type="Texture2D" uid="uid://6y1tbilmkdeq" path="res://asset/erupt mountain.png" id="3_lc3hi"]
+[ext_resource type="Texture2D" uid="uid://xp2gt0h7ism3" path="res://asset/New Piskel-1.png.png" id="2_reiom"]
+[ext_resource type="Texture2D" uid="uid://cxj3qf7thkbck" path="res://asset/pixil-frame-0.png" id="2_w20qp"]
+[ext_resource type="PackedScene" uid="uid://c3veaw3iicq5n" path="res://Toko.tscn" id="3_rwtwv"]
+[ext_resource type="Texture2D" uid="uid://ccvmjavne58xc" path="res://asset/useable.png" id="3_wp8gq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eefau"]
 size = Vector2(1569, 74.5)
@@ -27,16 +28,25 @@ size = Vector2(150, 150)
 [node name="ParallaxLayer" type="ParallaxLayer" parent="BG"]
 motion_scale = Vector2(0.1, 0.1)
 
-[node name="EruptMountain" type="Sprite2D" parent="BG/ParallaxLayer"]
-position = Vector2(795, 465)
-texture = ExtResource("3_lc3hi")
+[node name="Useable" type="Sprite2D" parent="BG/ParallaxLayer"]
+position = Vector2(714.856, 398)
+scale = Vector2(2.79241, 2.75261)
+texture = ExtResource("3_wp8gq")
+
+[node name="Useable2" type="Sprite2D" parent="BG/ParallaxLayer"]
+position = Vector2(2144, 398)
+scale = Vector2(2.79241, 2.75261)
+texture = ExtResource("3_wp8gq")
+flip_h = true
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="BG"]
 
-[node name="PrxBg-ly1" type="Sprite2D" parent="BG/ParallaxLayer2"]
-position = Vector2(1071, 480)
-scale = Vector2(2.87888, 2.87888)
-texture = ExtResource("2_6kybl")
+[node name="Pixil-frame-0" type="Sprite2D" parent="BG/ParallaxLayer2"]
+position = Vector2(2018, 393)
+texture = ExtResource("2_w20qp")
+
+[node name="shop" parent="." instance=ExtResource("3_rwtwv")]
+position = Vector2(718, 388)
 
 [node name="player" parent="." instance=ExtResource("1_a88ce")]
 position = Vector2(349, 558)
@@ -57,6 +67,7 @@ position = Vector2(1388, 321)
 shape = SubResource("RectangleShape2D_kv5kx")
 
 [node name="Control" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 1.0

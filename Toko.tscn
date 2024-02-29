@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://c3veaw3iicq5n"]
+
+[ext_resource type="Script" path="res://Toko.gd" id="1_a5mc2"]
+[ext_resource type="Texture2D" uid="uid://b2y37ywlie8p0" path="res://asset/shop-sprite.png" id="1_sr0em"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pmbb"]
+atlas = ExtResource("1_sr0em")
+region = Rect2(0, 0, 1024, 576)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uptl6"]
+atlas = ExtResource("1_sr0em")
+region = Rect2(1024, 0, 1024, 576)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63l51"]
+atlas = ExtResource("1_sr0em")
+region = Rect2(2048, 0, 1024, 576)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtjkp"]
+atlas = ExtResource("1_sr0em")
+region = Rect2(3072, 0, 1024, 576)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m4vqd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pmbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uptl6")
+}],
+"loop": true,
+"name": &"left",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63l51")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtjkp")
+}],
+"loop": true,
+"name": &"right",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_thkq0"]
+size = Vector2(392, 413)
+
+[node name="shop" type="Area2D"]
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_a5mc2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_m4vqd")
+animation = &"right"
+autoplay = "left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 120.5)
+shape = SubResource("RectangleShape2D_thkq0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
