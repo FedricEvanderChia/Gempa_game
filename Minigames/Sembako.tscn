@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://bww43ye6rowdu"]
+
+[ext_resource type="Texture2D" uid="uid://dhxixs8fflkj7" path="res://asset/BgMejaSembako.png" id="1_0ddqx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ag3l"]
+atlas = ExtResource("1_0ddqx")
+region = Rect2(0, 0, 1024, 576)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36nt0"]
+atlas = ExtResource("1_0ddqx")
+region = Rect2(1024, 0, 1024, 576)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jygku"]
+atlas = ExtResource("1_0ddqx")
+region = Rect2(2048, 0, 1024, 576)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cq0dy"]
+atlas = ExtResource("1_0ddqx")
+region = Rect2(3072, 0, 1024, 576)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2l4os"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ag3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36nt0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jygku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cq0dy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.5
+}]
+
+[node name="Sembako" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParallaxBackground"]
+position = Vector2(576.889, 324.5)
+scale = Vector2(1.12674, 1.12674)
+sprite_frames = SubResource("SpriteFrames_2l4os")
+autoplay = "default"
+frame_progress = 0.552263
