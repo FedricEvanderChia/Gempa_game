@@ -3,6 +3,9 @@
 [ext_resource type="Script" path="res://Toko.gd" id="1_a5mc2"]
 [ext_resource type="Texture2D" uid="uid://b2y37ywlie8p0" path="res://asset/shop-sprite.png" id="1_sr0em"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_thkq0"]
+size = Vector2(392, 413)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_0pmbb"]
 atlas = ExtResource("1_sr0em")
 region = Rect2(0, 0, 1024, 576)
@@ -44,21 +47,19 @@ animations = [{
 "speed": 1.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_thkq0"]
-size = Vector2(392, 413)
-
 [node name="shop" type="Area2D"]
 scale = Vector2(0.7, 0.7)
 script = ExtResource("1_a5mc2")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_m4vqd")
-animation = &"right"
-autoplay = "left"
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 120.5)
 shape = SubResource("RectangleShape2D_thkq0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_m4vqd")
+animation = &"right"
+autoplay = "left"
 
 [node name="Button" type="Button" parent="."]
 offset_left = -57.1429
@@ -68,4 +69,5 @@ offset_bottom = 21.1429
 text = "Sembako"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

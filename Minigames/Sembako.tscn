@@ -1,6 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bww43ye6rowdu"]
+[gd_scene load_steps=11 format=3 uid="uid://bww43ye6rowdu"]
 
 [ext_resource type="Texture2D" uid="uid://dhxixs8fflkj7" path="res://asset/BgMejaSembako.png" id="1_0ddqx"]
+[ext_resource type="Script" path="res://Minigames/Sembako.gd" id="1_b8rlw"]
+[ext_resource type="Script" path="res://Minigames/Button.gd" id="2_l8xce"]
+[ext_resource type="Texture2D" uid="uid://ed3817p3ijrt" path="res://asset/Tenda-teduh.png" id="4_q0yea"]
+[ext_resource type="Texture2D" uid="uid://ct1ni7aqjltoa" path="res://asset/Beras-duo.png" id="5_13b2c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ag3l"]
 atlas = ExtResource("1_0ddqx")
@@ -39,6 +43,7 @@ animations = [{
 }]
 
 [node name="Sembako" type="Node2D"]
+script = ExtResource("1_b8rlw")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -48,3 +53,23 @@ scale = Vector2(1.12674, 1.12674)
 sprite_frames = SubResource("SpriteFrames_2l4os")
 autoplay = "default"
 frame_progress = 0.552263
+
+[node name="Button" type="Button" parent="."]
+offset_left = 946.0
+offset_top = 17.0
+offset_right = 1137.0
+offset_bottom = 84.0
+text = "Back"
+script = ExtResource("2_l8xce")
+
+[node name="Tenda-teduh" type="Sprite2D" parent="."]
+position = Vector2(1030, 556)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_q0yea")
+
+[node name="Beras-duo" type="Sprite2D" parent="."]
+position = Vector2(124, 426)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("5_13b2c")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
