@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2y37ywlie8p0"
-path="res://.godot/imported/shop-sprite.png-e908497d5ef6f4d9a5504750a5c3d962.ctex"
+uid="uid://bimwqwdopcug5"
+path="res://.godot/imported/H5O.png-818d5ab79839ab399f10bf99b3097f80.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/shop-sprite.png"
-dest_files=["res://.godot/imported/shop-sprite.png-e908497d5ef6f4d9a5504750a5c3d962.ctex"]
+source_file="res://asset/H5O.png"
+dest_files=["res://.godot/imported/H5O.png-818d5ab79839ab399f10bf99b3097f80.ctex"]
 
 [params]
 

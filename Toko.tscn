@@ -1,25 +1,25 @@
 [gd_scene load_steps=9 format=3 uid="uid://c3veaw3iicq5n"]
 
 [ext_resource type="Script" path="res://Toko.gd" id="1_a5mc2"]
-[ext_resource type="Texture2D" uid="uid://b2y37ywlie8p0" path="res://asset/shop-sprite.png" id="1_sr0em"]
+[ext_resource type="Texture2D" uid="uid://b2y37ywlie8p0" path="res://asset/bansos-sprite.png" id="2_dnll3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thkq0"]
 size = Vector2(392, 413)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0pmbb"]
-atlas = ExtResource("1_sr0em")
+atlas = ExtResource("2_dnll3")
 region = Rect2(0, 0, 1024, 576)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uptl6"]
-atlas = ExtResource("1_sr0em")
+atlas = ExtResource("2_dnll3")
 region = Rect2(1024, 0, 1024, 576)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_63l51"]
-atlas = ExtResource("1_sr0em")
+atlas = ExtResource("2_dnll3")
 region = Rect2(2048, 0, 1024, 576)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qtjkp"]
-atlas = ExtResource("1_sr0em")
+atlas = ExtResource("2_dnll3")
 region = Rect2(3072, 0, 1024, 576)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m4vqd"]
@@ -58,7 +58,7 @@ shape = SubResource("RectangleShape2D_thkq0")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_m4vqd")
-animation = &"right"
+animation = &"left"
 autoplay = "left"
 
 [node name="Button" type="Button" parent="."]
