@@ -22,7 +22,7 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction * SPEED
 		anim.play("Walk")
-		print("Walk")
+		#print("Walk")
 		#if velocity.y == 0:
 			#anim.play("Run")
 			#print("Run")
@@ -30,7 +30,7 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		if velocity.x == 0:
 			anim.play("Idle")
-			print("Idle")
+			#print("Idle")
 	#if velocity.y > 0:
 		#anim.play("Fall")
 		#print("Fall")
