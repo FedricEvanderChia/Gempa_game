@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://drnqyiwnpts7k"]
+[gd_scene load_steps=2 format=3 uid="uid://drnqyiwnpts7k"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_08rkx"]
-[ext_resource type="Texture2D" path="res://asset/Game Title.png" id="2_wbypc"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -46,7 +45,6 @@ text = "Quit"
 
 [node name="GameTitle" type="Sprite2D" parent="."]
 position = Vector2(577, 224)
-texture = ExtResource("2_wbypc")
 
 [connection signal="pressed" from="VBoxContainer/StartB" to="." method="_on_start_b_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionB" to="." method="_on_option_b_pressed"]

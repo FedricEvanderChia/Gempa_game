@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://du47rpfdshvi4"]
 
 [ext_resource type="PackedScene" uid="uid://d0yx0ftl2lhff" path="res://Player.tscn" id="1_a88ce"]
-[ext_resource type="Texture2D" path="res://asset/PrxBG-ly1.png" id="2_6kybl"]
-[ext_resource type="Texture2D" path="res://asset/New Piskel-1.png.png" id="2_reiom"]
+[ext_resource type="Texture2D" uid="uid://bde0sn8d4840g" path="res://asset/PrxBG-ly1.png" id="2_6kybl"]
+[ext_resource type="Texture2D" uid="uid://xp2gt0h7ism3" path="res://asset/New Piskel-1.png.png" id="2_reiom"]
 [ext_resource type="Texture2D" uid="uid://6y1tbilmkdeq" path="res://asset/erupt mountain.png" id="3_lc3hi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eefau"]
