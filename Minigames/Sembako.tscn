@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bww43ye6rowdu"]
+[gd_scene load_steps=14 format=3 uid="uid://bww43ye6rowdu"]
 
 [ext_resource type="Texture2D" uid="uid://dhxixs8fflkj7" path="res://asset/BgMejaSembako.png" id="1_0ddqx"]
 [ext_resource type="Script" path="res://Minigames/Sembako.gd" id="1_b8rlw"]
 [ext_resource type="Script" path="res://Minigames/Button.gd" id="2_l8xce"]
 [ext_resource type="PackedScene" uid="uid://612ag1ooeqvq" path="res://Object/air.tscn" id="4_fbxqs"]
+[ext_resource type="PackedScene" uid="uid://ccsi6ol343a4o" path="res://Object/drop_area.tscn" id="4_mx7y4"]
 [ext_resource type="PackedScene" uid="uid://c3cyb7ty5a1q4" path="res://Object/beras.tscn" id="5_8uu74"]
 [ext_resource type="PackedScene" uid="uid://bsvaddg2smlxc" path="res://Object/tenda.tscn" id="5_41m3d"]
 
@@ -65,6 +66,9 @@ offset_right = 1137.0
 offset_bottom = 84.0
 text = "Back"
 script = ExtResource("2_l8xce")
+
+[node name="Drop Area2" parent="." instance=ExtResource("4_mx7y4")]
+position = Vector2(195, 170)
 
 [node name="Drop Area" type="StaticBody2D" parent="." groups=["dropable"]]
 
