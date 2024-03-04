@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bww43ye6rowdu"]
+[gd_scene load_steps=13 format=3 uid="uid://bww43ye6rowdu"]
 
 [ext_resource type="Texture2D" uid="uid://dhxixs8fflkj7" path="res://asset/BgMejaSembako.png" id="1_0ddqx"]
 [ext_resource type="Script" path="res://Minigames/Sembako.gd" id="1_b8rlw"]
@@ -44,9 +44,6 @@ animations = [{
 "speed": 3.5
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1hset"]
-size = Vector2(270.5, 222.5)
-
 [node name="Sembako" type="Node2D"]
 script = ExtResource("1_b8rlw")
 
@@ -67,21 +64,8 @@ offset_bottom = 84.0
 text = "Back"
 script = ExtResource("2_l8xce")
 
-[node name="Drop Area2" parent="." instance=ExtResource("4_mx7y4")]
-position = Vector2(195, 170)
-
-[node name="Drop Area" type="StaticBody2D" parent="." groups=["dropable"]]
-
-[node name="ColorRect" type="ColorRect" parent="Drop Area"]
-offset_left = 432.0
-offset_top = 93.0
-offset_right = 702.0
-offset_bottom = 315.0
-color = Color(0.709804, 0.458824, 0.956863, 0.588235)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Area"]
-position = Vector2(567, 204)
-shape = SubResource("RectangleShape2D_1hset")
+[node name="DropArea" parent="." instance=ExtResource("4_mx7y4")]
+position = Vector2(579, 204)
 
 [node name="Air" parent="." instance=ExtResource("4_fbxqs")]
 position = Vector2(285, 436)
