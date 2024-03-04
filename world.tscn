@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://brmclis07bvsb"]
 
-[ext_resource type="PackedScene" uid="uid://c71to8edu42an" path="res://Player.tscn" id="1_a88ce"]
+[ext_resource type="PackedScene" uid="uid://c71to8edu42an" path="res://player/Player.tscn" id="1_a88ce"]
 [ext_resource type="Script" path="res://world.gd" id="1_rnkil"]
 [ext_resource type="Texture2D" uid="uid://cxj3qf7thkbck" path="res://asset/pixil-frame-0.png" id="2_w20qp"]
 [ext_resource type="PackedScene" uid="uid://c3veaw3iicq5n" path="res://Toko.tscn" id="3_rwtwv"]
