@@ -1,23 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://du47rpfdshvi4"]
+[gd_scene load_steps=9 format=3 uid="uid://brmclis07bvsb"]
 
-[ext_resource type="PackedScene" uid="uid://d0yx0ftl2lhff" path="res://Player.tscn" id="1_a88ce"]
+[ext_resource type="PackedScene" uid="uid://c71to8edu42an" path="res://Player.tscn" id="1_a88ce"]
 [ext_resource type="Script" path="res://world.gd" id="1_rnkil"]
-[ext_resource type="Texture2D" uid="uid://xp2gt0h7ism3" path="res://asset/New Piskel-1.png.png" id="2_reiom"]
 [ext_resource type="Texture2D" uid="uid://cxj3qf7thkbck" path="res://asset/pixil-frame-0.png" id="2_w20qp"]
 [ext_resource type="PackedScene" uid="uid://c3veaw3iicq5n" path="res://Toko.tscn" id="3_rwtwv"]
 [ext_resource type="Texture2D" uid="uid://ccvmjavne58xc" path="res://asset/useable.png" id="3_wp8gq"]
+[ext_resource type="PackedScene" uid="uid://dtsrtigd5cgnv" path="res://uigempa.tscn" id="6_7koq2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eefau"]
 size = Vector2(4125, 74.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7n651"]
 size = Vector2(88, 689)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xsu3"]
-size = Vector2(150, 150)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0u42"]
-size = Vector2(150, 150)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_rnkil")
@@ -61,23 +55,4 @@ shape = SubResource("RectangleShape2D_eefau")
 position = Vector2(-45, 312.5)
 shape = SubResource("RectangleShape2D_7n651")
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 1.0
-offset_top = 570.0
-offset_right = 85.0
-offset_bottom = 647.0
-scale = Vector2(0.927536, 1.00943)
-
-[node name="TouchScreenButton" type="TouchScreenButton" parent="Control"]
-position = Vector2(112.125, -24.7665)
-scale = Vector2(0.632964, 0.632964)
-texture_normal = ExtResource("2_reiom")
-shape = SubResource("RectangleShape2D_2xsu3")
-
-[node name="TouchScreenButton2" type="TouchScreenButton" parent="Control"]
-position = Vector2(102.422, 73.3085)
-scale = Vector2(-0.634877, -0.634877)
-texture_normal = ExtResource("2_reiom")
-shape = SubResource("RectangleShape2D_b0u42")
+[node name="GUI" parent="." instance=ExtResource("6_7koq2")]

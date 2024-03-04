@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtsrtigd5cgnv"]
+
+[ext_resource type="Script" path="res://UIGempa.gd" id="1_ngrhg"]
+[ext_resource type="Texture2D" uid="uid://xp2gt0h7ism3" path="res://asset/New Piskel-1.png.png" id="2_bp1ya"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yypih"]
+size = Vector2(150, 150)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_piwp7"]
+size = Vector2(150, 150)
+
+[node name="GUI" type="CanvasLayer"]
+script = ExtResource("1_ngrhg")
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+scale = Vector2(0.927536, 1.00943)
+
+[node name="tc_button_right" type="TouchScreenButton" parent="Control2"]
+position = Vector2(199.453, -184.262)
+scale = Vector2(0.632964, 0.632964)
+texture_normal = ExtResource("2_bp1ya")
+shape = SubResource("RectangleShape2D_yypih")
+action = "ui_right"
+
+[node name="tc_button_left" type="TouchScreenButton" parent="Control2"]
+position = Vector2(155.25, -86.1872)
+scale = Vector2(-0.634877, -0.634877)
+texture_normal = ExtResource("2_bp1ya")
+shape = SubResource("RectangleShape2D_piwp7")
+action = "ui_left"
