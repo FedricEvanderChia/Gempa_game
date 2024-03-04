@@ -1,17 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://du47rpfdshvi4"]
 
-[ext_resource type="PackedScene" uid="uid://d0yx0ftl2lhff" path="res://Player.tscn" id="1_a88ce"]
-<<<<<<< HEAD
-[ext_resource type="Texture2D" uid="uid://bde0sn8d4840g" path="res://asset/PrxBG-ly1.png" id="2_6kybl"]
-[ext_resource type="Texture2D" uid="uid://xp2gt0h7ism3" path="res://asset/New Piskel-1.png.png" id="2_reiom"]
-[ext_resource type="Texture2D" uid="uid://6y1tbilmkdeq" path="res://asset/erupt mountain.png" id="3_lc3hi"]
-=======
+[ext_resource type="PackedScene" uid="uid://d0yx0ftl2lhff" path="res://player/Player.tscn" id="1_a88ce"]
 [ext_resource type="Script" path="res://world.gd" id="1_rnkil"]
 [ext_resource type="Texture2D" uid="uid://xp2gt0h7ism3" path="res://asset/New Piskel-1.png.png" id="2_reiom"]
 [ext_resource type="Texture2D" uid="uid://cxj3qf7thkbck" path="res://asset/pixil-frame-0.png" id="2_w20qp"]
 [ext_resource type="PackedScene" uid="uid://c3veaw3iicq5n" path="res://Toko.tscn" id="3_rwtwv"]
 [ext_resource type="Texture2D" uid="uid://ccvmjavne58xc" path="res://asset/useable.png" id="3_wp8gq"]
->>>>>>> caedc1f07b988323abbc20550e68ab1792f35035
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eefau"]
 size = Vector2(4125, 74.5)
