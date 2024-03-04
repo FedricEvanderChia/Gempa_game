@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3cyb7ty5a1q4"]
+
+[ext_resource type="Script" path="res://Object/beras.gd" id="1_ha4ob"]
+[ext_resource type="Texture2D" uid="uid://ct1ni7aqjltoa" path="res://asset/Beras-duo.png" id="1_jawaq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3moyn"]
+size = Vector2(175.833, 186.667)
+
+[node name="Beras" type="Node2D"]
+script = ExtResource("1_ha4ob")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(1.2, 1.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_3moyn")
+
+[node name="Beras-duo" type="Sprite2D" parent="."]
+position = Vector2(-3, 3)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("1_jawaq")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

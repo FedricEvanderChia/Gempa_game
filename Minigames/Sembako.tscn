@@ -1,12 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://bww43ye6rowdu"]
+[gd_scene load_steps=13 format=3 uid="uid://bww43ye6rowdu"]
 
 [ext_resource type="Texture2D" uid="uid://dhxixs8fflkj7" path="res://asset/BgMejaSembako.png" id="1_0ddqx"]
 [ext_resource type="Script" path="res://Minigames/Sembako.gd" id="1_b8rlw"]
 [ext_resource type="Script" path="res://Minigames/Button.gd" id="2_l8xce"]
-[ext_resource type="Script" path="res://Object/Tenda.gd" id="4_ce3ih"]
-[ext_resource type="Texture2D" uid="uid://ed3817p3ijrt" path="res://asset/Tenda-teduh.png" id="4_q0yea"]
-[ext_resource type="Texture2D" uid="uid://ct1ni7aqjltoa" path="res://asset/Beras-duo.png" id="5_13b2c"]
-[ext_resource type="Texture2D" uid="uid://bimwqwdopcug5" path="res://asset/H5O.png" id="6_g1i0d"]
+[ext_resource type="PackedScene" uid="uid://612ag1ooeqvq" path="res://Object/air.tscn" id="4_fbxqs"]
+[ext_resource type="PackedScene" uid="uid://c3cyb7ty5a1q4" path="res://Object/beras.tscn" id="5_8uu74"]
+[ext_resource type="PackedScene" uid="uid://bsvaddg2smlxc" path="res://Object/tenda.tscn" id="5_41m3d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ag3l"]
 atlas = ExtResource("1_0ddqx")
@@ -44,15 +43,6 @@ animations = [{
 "speed": 3.5
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u50u2"]
-size = Vector2(300, 216.25)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_72rvo"]
-size = Vector2(175.833, 186.667)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqsgy"]
-size = Vector2(106.667, 297.333)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1hset"]
 size = Vector2(270.5, 222.5)
 
@@ -76,54 +66,6 @@ offset_bottom = 84.0
 text = "Back"
 script = ExtResource("2_l8xce")
 
-[node name="Tenda" type="Node2D" parent="."]
-script = ExtResource("4_ce3ih")
-
-[node name="Tenda-teduh" type="Sprite2D" parent="Tenda"]
-position = Vector2(1027, 548)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("4_q0yea")
-
-[node name="Area2D" type="Area2D" parent="Tenda"]
-position = Vector2(1027, 548)
-scale = Vector2(0.8, 0.8)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tenda/Area2D"]
-position = Vector2(-1.25, 3.125)
-shape = SubResource("RectangleShape2D_u50u2")
-
-[node name="Beras" type="Node2D" parent="."]
-
-[node name="Beras-duo" type="Sprite2D" parent="Beras"]
-position = Vector2(155, 461)
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("5_13b2c")
-
-[node name="Area2D2" type="Area2D" parent="Beras"]
-position = Vector2(155, 461)
-scale = Vector2(1.2, 1.2)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Beras/Area2D2"]
-position = Vector2(2.08332, -1.66672)
-scale = Vector2(0.999999, 0.999999)
-shape = SubResource("RectangleShape2D_72rvo")
-
-[node name="Air" type="Node2D" parent="."]
-
-[node name="H5o" type="Sprite2D" parent="Air"]
-position = Vector2(372, 452)
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("6_g1i0d")
-
-[node name="Area2D3" type="Area2D" parent="Air"]
-position = Vector2(372, 452)
-scale = Vector2(0.75, 0.75)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Air/Area2D3"]
-position = Vector2(-17.3333, 7.33325)
-scale = Vector2(0.999999, 0.999999)
-shape = SubResource("RectangleShape2D_oqsgy")
-
 [node name="Drop Area" type="StaticBody2D" parent="." groups=["dropable"]]
 
 [node name="ColorRect" type="ColorRect" parent="Drop Area"]
@@ -134,13 +76,16 @@ offset_bottom = 315.0
 color = Color(0.709804, 0.458824, 0.956863, 0.588235)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Area"]
-visible = false
 position = Vector2(567, 204)
 shape = SubResource("RectangleShape2D_1hset")
 
+[node name="Air" parent="." instance=ExtResource("4_fbxqs")]
+position = Vector2(285, 436)
+
+[node name="Beras" parent="." instance=ExtResource("5_8uu74")]
+position = Vector2(114, 438)
+
+[node name="Tenda" parent="." instance=ExtResource("5_41m3d")]
+position = Vector2(1021, 543)
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="body_entered" from="Tenda/Area2D" to="Tenda" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Tenda/Area2D" to="Tenda" method="_on_area_2d_body_exited"]
-[connection signal="mouse_entered" from="Tenda/Area2D" to="Tenda" method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Tenda/Area2D" to="Tenda" method="_on_area_2d_mouse_exited"]
-[connection signal="input_event" from="Air/Area2D3" to="." method="_on_area_2d_input_event"]

@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsvaddg2smlxc"]
+
+[ext_resource type="Script" path="res://Object/Tenda.gd" id="1_0215g"]
+[ext_resource type="Texture2D" uid="uid://ed3817p3ijrt" path="res://asset/Tenda-teduh.png" id="2_g4iqo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqgue"]
+size = Vector2(300, 216.25)
+
+[node name="Tenda" type="Node2D"]
+script = ExtResource("1_0215g")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-7.10543e-15, 0)
+scale = Vector2(0.8, 0.8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-4.76837e-07, 0)
+shape = SubResource("RectangleShape2D_sqgue")
+
+[node name="Tenda-teduh" type="Sprite2D" parent="."]
+position = Vector2(1.1921e-07, -7.10542e-15)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_g4iqo")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
