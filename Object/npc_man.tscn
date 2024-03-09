@@ -6,10 +6,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2noy"]
 size = Vector2(270.25, 274)
 
-[node name="NPC_man" type="StaticBody2D"]
+[node name="NPC_man" type="CharacterBody2D" groups=["dropable"]]
 script = ExtResource("1_qe4p0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Droppable"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["dropable"]]
 position = Vector2(-0.125, 26)
 shape = SubResource("RectangleShape2D_s2noy")
 

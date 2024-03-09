@@ -5,6 +5,7 @@ var women_tscn= preload("res://Object/NPC_women.tscn")
 var man_tscn= preload("res://Object/npc_man.tscn")
 var customer = null
 var rng = RandomNumberGenerator.new()
+var goal = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -24,6 +25,7 @@ func _process(delta):
 			new_cust.position = get_global_position()
 			self.add_child(new_cust)
 			customer = new_cust
-func _benar():
-	self.queue_free()
+
+func benar():
+	goal = true
 

@@ -1,3 +1,5 @@
 extends Node2D
 
-var is_dragging = false
+var goal = false
+var minigame_score = 0
+

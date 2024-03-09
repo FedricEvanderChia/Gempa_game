@@ -1,11 +1,10 @@
 extends Node2D
 class_name object 
-
 var selected = false
 var initialPos: Vector2 
 var in_drop_box = false
 var customer
-var gen
+signal valdi(value)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	initialPos = global_position
@@ -29,11 +28,12 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 				print("tambah 1 ",name, position)
 				customer = NPC.new()
 				if customer.needs == name:
-					customer._benar()
+					global.goal = true
 					print("Benar")
+					global.minigame_score += 1 
 				else:
 					print("Salah")
-					customer._salah()
+					customer.salah()
 				
 			else:
 				print(name,"-nya ga masuk bego")
