@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ba5exs6k8x3vf"]
+
+[ext_resource type="Texture2D" uid="uid://x8fq7bam18uf" path="res://asset/NPC_woman.png" id="1_4mm7i"]
+[ext_resource type="Script" path="res://Object/npc_man.gd" id="1_qe4p0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2noy"]
+size = Vector2(270.25, 274)
+
+[node name="NPC_man" type="StaticBody2D"]
+script = ExtResource("1_qe4p0")
+
+[node name="NpcWoman" type="Sprite2D" parent="."]
+position = Vector2(15, 204)
+texture = ExtResource("1_4mm7i")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Droppable"]]
+position = Vector2(-0.125, 26)
+shape = SubResource("RectangleShape2D_s2noy")

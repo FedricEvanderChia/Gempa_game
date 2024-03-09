@@ -50,7 +50,7 @@ script = ExtResource("1_b8rlw")
 
 [node name="Customer_generator" parent="." instance=ExtResource("2_2fgjb")]
 visibility_layer = 3
-position = Vector2(-49, 67)
+position = Vector2(-135, 157)
 
 [node name="Table" type="Sprite2D" parent="."]
 position = Vector2(577.278, 325)
@@ -61,7 +61,7 @@ texture = ExtResource("3_p8kfq")
 layer = -1
 
 [node name="Roofing ketiup angin" type="AnimatedSprite2D" parent="ParallaxBackground"]
-position = Vector2(576, 324)
+position = Vector2(576, 325)
 scale = Vector2(1.12674, 1.12674)
 sprite_frames = SubResource("SpriteFrames_2l4os")
 autoplay = "default"

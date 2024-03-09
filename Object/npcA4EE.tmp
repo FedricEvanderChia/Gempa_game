@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://ba5exs6k8x3vf"]
+
+[ext_resource type="Script" path="res://Object/NPC_women.gd" id="1_sejts"]
+[ext_resource type="Texture2D" uid="uid://cosfjgbhy75wm" path="res://asset/NPC_Man.png" id="2_gjr65"]
+[ext_resource type="Script" path="res://Object/NpcMan.gd" id="3_c2w3g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xivr2"]
+size = Vector2(270.25, 274)
+
+[node name="NPC_man" type="StaticBody2D" groups=["dropable"]]
+script = ExtResource("1_sejts")
+
+[node name="NpcMan" type="Sprite2D" parent="."]
+position = Vector2(0, 204)
+texture = ExtResource("2_gjr65")
+flip_h = true
+script = ExtResource("3_c2w3g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Droppable"]]
+position = Vector2(-0.125, 26)
+shape = SubResource("RectangleShape2D_xivr2")
+
+[connection signal="tree_entered" from="CollisionShape2D" to="." method="_on_collision_shape_2d_tree_entered"]

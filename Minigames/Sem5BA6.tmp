@@ -50,7 +50,7 @@ script = ExtResource("1_b8rlw")
 
 [node name="Customer_generator" parent="." instance=ExtResource("2_2fgjb")]
 visibility_layer = 3
-position = Vector2(-49, 67)
+position = Vector2(-9, 67)
 
 [node name="Table" type="Sprite2D" parent="."]
 position = Vector2(577.278, 325)
