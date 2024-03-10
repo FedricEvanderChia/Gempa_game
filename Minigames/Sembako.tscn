@@ -81,6 +81,7 @@ position = Vector2(109, 530)
 position = Vector2(1032, 559)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 5
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -97,6 +98,7 @@ offset_right = 803.0
 offset_bottom = 100.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Score: 00"
 

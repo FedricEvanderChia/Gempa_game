@@ -4,7 +4,7 @@ var selected = false
 var initialPos: Vector2 
 var in_drop_box = false
 var customer
-signal valdi(value)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	initialPos = global_position
@@ -27,14 +27,18 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 			if in_drop_box:
 				print("tambah 1 ",name, position)
 				customer = NPC.new()
-				if customer.needs == name:
+				print(customer.needs.size())
+				var keeper = false
+				for number in range(0,customer.needs.size()):
+					if customer.needs[number] == name:
+						keeper = true
+						print("Benar")
+						global.minigame_score += 1
+					elif customer.needs[number] != name:
+						keeper = false
+						global.minigame_score -= 1
+				if keeper:
 					global.goal = true
-					print("Benar")
-					global.minigame_score += 1 
-				else:
-					print("Salah")
-					customer.salah()
-				
 			else:
 				print(name,"-nya ga masuk bego")
 func _on_area_2d_mouse_entered():
