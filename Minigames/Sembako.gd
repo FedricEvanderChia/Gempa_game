@@ -51,13 +51,10 @@ func generateOrder():
 		var obj = rng.randi_range(0, 2)
 		if obj == 0:
 			needs.insert (number,"Beras")
-			customer.get_node("OrderBeras").show()
 		elif obj == 1:
 			needs.insert (number,"Air")
-			customer.get_node("OrderAir").show()
 		elif obj == 2:
 			needs.insert (number,"Tenda")
-			customer.get_node("OrderTenda").show()
 	for number in range(0,needs.size()):
 		print(needs[number])
 	#emit_signal("need",needs)
@@ -69,25 +66,3 @@ func followMouse():
 func _on_button_pressed():
 	get_tree().change_scene_to_file("res://world.tscn")
 
-
-func _on_object_validate(value):
-	print(value)
-	var order = null
-	var valid = 0
-	for number in range(needs.size()):
-		if needs[number] == value:
-			valid += 1
-			print("Benar")
-			global.minigame_score += 1
-			order = "Order"+value
-			customer.get_node(order).hide()
-			needs.erase(value)
-			
-		elif needs[number] != value:
-			valid -= 1
-			
-	if valid == -3:
-		global.minigame_score -= 1
-		print("valid: ",valid)
-	if needs.is_empty():
-		global.goal = true

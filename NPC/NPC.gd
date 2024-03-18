@@ -19,9 +19,18 @@ func _ready():
 	#pass
 
 func _process(delta):
-	if !global.needs.has("Beras"):
-		get_node("OrderBeras").hide()
-	if !global.needs.has("Air"):
-		get_node("OrderAir").hide()
-	if !global.needs.has("Tenda"):
-		get_node("OrderTenda").hide()
+	if !global.needs.is_empty():
+		var order = "Order"+global.needs[0]
+		get_node(order).show()
+		if  global.needs[0] == "Air":
+			get_node("OrderBeras").hide()
+			get_node("OrderTenda").hide()
+			
+		elif global.needs[0] == "Beras":
+			get_node("OrderAir").hide()
+			get_node("OrderTenda").hide()
+		
+		elif global.needs[0] == "Tenda":
+			get_node("OrderAir").hide()
+			get_node("OrderBeras").hide()
+			

@@ -47,19 +47,11 @@ func _on_area_2d_body_exited(body):
 
 func validate():
 	print("validate "+name)
-	var valid = 0
-	for number in range(global.needs.size()):
-		if global.needs[number] == name:
-			valid += 1
-			print("Benar")
-			global.minigame_score += 1
-			global.needs.remove_at(number)
-			break
-		elif global.needs[number] != name:
-			valid -= 1
-			
-	if valid == -3:
+	if global.needs[0] == name :
+		print("Benar")
+		global.minigame_score += 1
+		global.needs.remove_at(global.needs.find(name))
+	else:
 		global.minigame_score -= 1
-		print("valid: ",valid)
 	if global.needs.is_empty():
 		global.goal = true
