@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://bww43ye6rowdu"]
+[gd_scene load_steps=16 format=3 uid="uid://bww43ye6rowdu"]
 
 [ext_resource type="Texture2D" uid="uid://dhxixs8fflkj7" path="res://asset/BgMejaSembako.png" id="1_0ddqx"]
 [ext_resource type="Script" path="res://Minigames/Sembako.gd" id="1_b8rlw"]
+[ext_resource type="PackedScene" uid="uid://cpiopxaqgghyq" path="res://NPC/NPC.tscn" id="2_4dorc"]
 [ext_resource type="Script" path="res://Minigames/Button.gd" id="2_l8xce"]
 [ext_resource type="Texture2D" uid="uid://dgkw4xgdmnbxl" path="res://asset/Table.png" id="3_p8kfq"]
 [ext_resource type="PackedScene" uid="uid://612ag1ooeqvq" path="res://Object/air.tscn" id="4_fbxqs"]
@@ -49,8 +50,8 @@ animations = [{
 [node name="Sembako" type="Node2D"]
 script = ExtResource("1_b8rlw")
 
-[node name="NPC_Layer" type="Node2D" parent="."]
-position = Vector2(-119, 133)
+[node name="NPC" parent="." instance=ExtResource("2_4dorc")]
+position = Vector2(-94, 67)
 
 [node name="Table" type="Sprite2D" parent="."]
 position = Vector2(577.278, 325)

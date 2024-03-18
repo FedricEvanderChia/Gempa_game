@@ -1,13 +1,67 @@
 extends Node2D
+class_name Sembako
+#signal need(value)
 
+var women_tscn= preload("res://NPC/NPC_women.tscn")
+var man_tscn= preload("res://NPC/npc_man.tscn")
+var girl_tscn= preload("res://NPC/npc_girl.tscn")
+var boy_tscn= preload("res://NPC/npc_boy.tscn")
+var rng = RandomNumberGenerator.new()
+var customer = null
 var selected = false
+var needs = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
-
 func _process(delta):
+	if customer == null:
+		generateNPC()
+		await generateNPC()
+		generateOrder()
 	if selected:
 		followMouse()
+
+func generateNPC():
+	if customer == null:
+		var num = rng.randi_range(0, 3)
+		if num == 0: 
+			var new_cust = women_tscn.instantiate()
+			new_cust.position = get_global_position()
+			get_node("NPC_Layer").add_child(new_cust)
+			customer = new_cust
+		elif num == 1: 
+			var new_cust = man_tscn.instantiate()
+			new_cust.position = get_global_position()
+			get_node("NPC_Layer").add_child(new_cust)
+			customer = new_cust
+		elif num == 2: 
+			var new_cust = girl_tscn.instantiate()
+			new_cust.position = get_global_position()
+			get_node("NPC_Layer").add_child(new_cust)
+			customer = new_cust
+		elif num == 3: 
+			var new_cust = boy_tscn.instantiate()
+			new_cust.position = get_global_position()
+			get_node("NPC_Layer").add_child(new_cust)
+			customer = new_cust
+			
+func generateOrder():
+	var num = rng.randi_range(1, 3)
+	for number in range(num):
+		var obj = rng.randi_range(0, 2)
+		if obj == 0:
+			needs.insert (number,"Beras")
+			customer.get_node("OrderBeras").show()
+		elif obj == 1:
+			needs.insert (number,"Air")
+			customer.get_node("OrderAir").show()
+		elif obj == 2:
+			needs.insert (number,"Tenda")
+			customer.get_node("OrderTenda").show()
+	for number in range(0,needs.size()):
+		print(needs[number])
+	#emit_signal("need",needs)
+	global.needs = needs
 
 func followMouse():
 	position = get_local_mouse_position()
@@ -15,5 +69,25 @@ func followMouse():
 func _on_button_pressed():
 	get_tree().change_scene_to_file("res://world.tscn")
 
-	
-	
+
+func _on_object_validate(value):
+	print(value)
+	var order = null
+	var valid = 0
+	for number in range(needs.size()):
+		if needs[number] == value:
+			valid += 1
+			print("Benar")
+			global.minigame_score += 1
+			order = "Order"+value
+			customer.get_node(order).hide()
+			needs.erase(value)
+			
+		elif needs[number] != value:
+			valid -= 1
+			
+	if valid == -3:
+		global.minigame_score -= 1
+		print("valid: ",valid)
+	if needs.is_empty():
+		global.goal = true

@@ -27,18 +27,10 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 			if in_drop_box:
 				print("tambah 1 ",name, position)
 				customer = NPC.new()
+				validate()
+				var order = "Order"+name
+				
 				print(customer.needs.size())
-				var keeper = false
-				for number in range(0,customer.needs.size()):
-					if customer.needs[number] == name:
-						keeper = true
-						print("Benar")
-						global.minigame_score += 1
-					elif customer.needs[number] != name:
-						keeper = false
-						global.minigame_score -= 1
-				if keeper:
-					global.goal = true
 			else:
 				print(name,"-nya ga masuk bego")
 func _on_area_2d_mouse_entered():
@@ -52,3 +44,22 @@ func _on_area_2d_body_entered(body):
 	
 func _on_area_2d_body_exited(body):
 	in_drop_box = false
+
+func validate():
+	print("validate "+name)
+	var valid = 0
+	for number in range(global.needs.size()):
+		if global.needs[number] == name:
+			valid += 1
+			print("Benar")
+			global.minigame_score += 1
+			global.needs.remove_at(number)
+			break
+		elif global.needs[number] != name:
+			valid -= 1
+			
+	if valid == -3:
+		global.minigame_score -= 1
+		print("valid: ",valid)
+	if global.needs.is_empty():
+		global.goal = true

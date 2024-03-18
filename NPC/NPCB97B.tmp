@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpiopxaqgghyq"]
+
+[ext_resource type="Script" path="res://NPC/NPC.gd" id="1_csuv5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l6cii"]
+size = Vector2(270.25, 274)
+
+[node name="NPC" type="CharacterBody2D"]
+script = ExtResource("1_csuv5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["dropable"]]
+position = Vector2(-0.125, 26)
+shape = SubResource("RectangleShape2D_l6cii")

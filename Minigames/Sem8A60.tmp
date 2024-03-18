@@ -108,4 +108,5 @@ offset_bottom = 84.0
 text = "Back"
 script = ExtResource("2_l8xce")
 
+[connection signal="order" from="Object" to="." method="_on_object_order"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
