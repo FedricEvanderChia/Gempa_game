@@ -49,9 +49,10 @@ func validate():
 	print("validate "+name)
 	if global.needs[0] == name :
 		print("Benar")
-		global.minigame_score += 1
+		global.minigame_score += 100
 		global.needs.remove_at(global.needs.find(name))
 	else:
-		global.minigame_score -= 1
+		global.minigame_score -= 50 
+		global.life -= 1
 	if global.needs.is_empty():
 		global.goal = true

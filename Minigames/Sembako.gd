@@ -12,8 +12,12 @@ var selected = false
 var needs = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if global.life<=0:
+		global.life = 3
 	pass
 func _process(delta):
+	if global.life == 0:
+		await get_node("CanvasLayer/Control/lifes/life1/AnimationPlayer").animation_finished
 	if customer == null:
 		generateNPC()
 		await generateNPC()

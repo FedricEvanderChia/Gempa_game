@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bww43ye6rowdu"]
+[gd_scene load_steps=17 format=3 uid="uid://bww43ye6rowdu"]
 
 [ext_resource type="Texture2D" uid="uid://dhxixs8fflkj7" path="res://asset/BgMejaSembako.png" id="1_0ddqx"]
 [ext_resource type="Script" path="res://Minigames/Sembako.gd" id="1_b8rlw"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://c3cyb7ty5a1q4" path="res://Object/beras.tscn" id="5_8uu74"]
 [ext_resource type="PackedScene" uid="uid://bsvaddg2smlxc" path="res://Object/tenda.tscn" id="5_41m3d"]
 [ext_resource type="Script" path="res://Minigames/Control.gd" id="8_7gbdg"]
+[ext_resource type="PackedScene" uid="uid://d2te5qwpgjmua" path="res://player/life.tscn" id="9_ks6qj"]
+[ext_resource type="Script" path="res://Minigames/lifes.gd" id="9_m0t61"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ag3l"]
 atlas = ExtResource("1_0ddqx")
@@ -84,21 +86,66 @@ layer = 5
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1155.0
+offset_bottom = 96.0
 script = ExtResource("8_7gbdg")
 
+[node name="times" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = -27.5
+offset_right = 61.0
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "0:30"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="scoretext" type="Label" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_left = 485.0
-offset_top = 30.0
-offset_right = 803.0
-offset_bottom = 100.0
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = -24.0
+offset_right = 233.0
+offset_bottom = 21.0
+grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 0, 1)
-theme_override_font_sizes/font_size = 32
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
 text = "Score: 00"
+
+[node name="Timer" type="Timer" parent="CanvasLayer/Control"]
+autostart = true
+
+[node name="lifes" type="Node" parent="CanvasLayer/Control"]
+script = ExtResource("9_m0t61")
+
+[node name="life1" parent="CanvasLayer/Control/lifes" instance=ExtResource("9_ks6qj")]
+visible = false
+position = Vector2(39, 114)
+
+[node name="life2" parent="CanvasLayer/Control/lifes" instance=ExtResource("9_ks6qj")]
+visible = false
+position = Vector2(108, 114)
+
+[node name="life3" parent="CanvasLayer/Control/lifes" instance=ExtResource("9_ks6qj")]
+visible = false
+position = Vector2(177, 114)
 
 [node name="Button" type="Button" parent="CanvasLayer"]
 offset_left = 946.0
@@ -108,4 +155,5 @@ offset_bottom = 84.0
 text = "Back"
 script = ExtResource("2_l8xce")
 
+[connection signal="timeout" from="CanvasLayer/Control/Timer" to="CanvasLayer/Control" method="_on_timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
