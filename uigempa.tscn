@@ -1,15 +1,87 @@
-[gd_scene load_steps=7 format=3 uid="uid://dtsrtigd5cgnv"]
+[gd_scene load_steps=17 format=3 uid="uid://dtsrtigd5cgnv"]
 
 [ext_resource type="Script" path="res://UIGempa.gd" id="1_ngrhg"]
 [ext_resource type="Texture2D" uid="uid://xp2gt0h7ism3" path="res://asset/New Piskel-1.png.png" id="2_bp1ya"]
 [ext_resource type="PackedScene" uid="uid://cvbweyjmj4s5a" path="res://Inventory/inventory_ui.tscn" id="3_lx3uu"]
-[ext_resource type="Texture2D" uid="uid://bh6xwfs200e14" path="res://asset/bag.png" id="4_asbmv"]
+[ext_resource type="Texture2D" uid="uid://db80lf0ng5euy" path="res://asset/Bag_Sheet.png" id="4_mm5uw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yypih"]
 size = Vector2(150, 150)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_piwp7"]
 size = Vector2(150, 150)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7wcg0"]
+size = Vector2(120, 136)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_587v0"]
+atlas = ExtResource("4_mm5uw")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8opt2"]
+atlas = ExtResource("4_mm5uw")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtj71"]
+atlas = ExtResource("4_mm5uw")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4333"]
+atlas = ExtResource("4_mm5uw")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8r1oq"]
+atlas = ExtResource("4_mm5uw")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_270h2"]
+atlas = ExtResource("4_mm5uw")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vls2c"]
+atlas = ExtResource("4_mm5uw")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_japrh"]
+atlas = ExtResource("4_mm5uw")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v2pkr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_587v0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8opt2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtj71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4333")
+}],
+"loop": false,
+"name": &"Close",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r1oq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_270h2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vls2c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_japrh")
+}],
+"loop": false,
+"name": &"Open",
+"speed": 10.0
+}]
 
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource("1_ngrhg")
@@ -23,14 +95,14 @@ grow_vertical = 0
 scale = Vector2(0.927536, 1.00943)
 
 [node name="tc_button_right" type="TouchScreenButton" parent="Control2"]
-position = Vector2(199.453, -184.262)
+position = Vector2(178.187, -123.501)
 scale = Vector2(0.632964, 0.632964)
 texture_normal = ExtResource("2_bp1ya")
 shape = SubResource("RectangleShape2D_yypih")
 action = "ui_right"
 
 [node name="tc_button_left" type="TouchScreenButton" parent="Control2"]
-position = Vector2(155.25, -86.1872)
+position = Vector2(133.984, -25.4263)
 scale = Vector2(-0.634877, -0.634877)
 texture_normal = ExtResource("2_bp1ya")
 shape = SubResource("RectangleShape2D_piwp7")
@@ -49,7 +121,29 @@ offset_bottom = 171.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1076, 75.5)
-scale = Vector2(1.6875, 1.76563)
-texture = ExtResource("4_asbmv")
+[node name="Label" type="Label" parent="inventory_ui"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -135.0
+offset_top = -11.5
+offset_right = 181.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "Tips: tap the bag again to close inventory"
+
+[node name="Bag" type="Area2D" parent="."]
+position = Vector2(1082, 76)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bag"]
+shape = SubResource("RectangleShape2D_7wcg0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bag"]
+sprite_frames = SubResource("SpriteFrames_v2pkr")
+animation = &"Open"
+
+[connection signal="input_event" from="Bag" to="." method="_on_bag_input_event"]
