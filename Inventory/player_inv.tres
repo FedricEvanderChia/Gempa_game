@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="inventory_game" load_steps=3 format=3 uid="uid://bt0v2qu3il8h5"]
+
+[ext_resource type="Resource" uid="uid://b76wgsx5h55uo" path="res://Inventory/items/bottle.tres" id="1_rkj6s"]
+[ext_resource type="Script" path="res://Inventory/inventory_game.gd" id="2_tta0a"]
+
+[resource]
+script = ExtResource("2_tta0a")
+items = Array[Resource("res://Inventory/inventory_item.gd")]([ExtResource("1_rkj6s"), ExtResource("1_rkj6s"), ExtResource("1_rkj6s"), null, null, null, ExtResource("1_rkj6s"), null, null, null, null, null])

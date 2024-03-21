@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtsrtigd5cgnv"]
+[gd_scene load_steps=7 format=3 uid="uid://dtsrtigd5cgnv"]
 
 [ext_resource type="Script" path="res://UIGempa.gd" id="1_ngrhg"]
 [ext_resource type="Texture2D" uid="uid://xp2gt0h7ism3" path="res://asset/New Piskel-1.png.png" id="2_bp1ya"]
+[ext_resource type="PackedScene" uid="uid://cvbweyjmj4s5a" path="res://Inventory/inventory_ui.tscn" id="3_lx3uu"]
+[ext_resource type="Texture2D" uid="uid://bh6xwfs200e14" path="res://asset/bag.png" id="4_asbmv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yypih"]
 size = Vector2(150, 150)
@@ -33,3 +35,21 @@ scale = Vector2(-0.634877, -0.634877)
 texture_normal = ExtResource("2_bp1ya")
 shape = SubResource("RectangleShape2D_piwp7")
 action = "ui_left"
+
+[node name="inventory_ui" parent="." instance=ExtResource("3_lx3uu")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -243.5
+offset_top = -171.5
+offset_right = 243.5
+offset_bottom = 171.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1076, 75.5)
+scale = Vector2(1.6875, 1.76563)
+texture = ExtResource("4_asbmv")
