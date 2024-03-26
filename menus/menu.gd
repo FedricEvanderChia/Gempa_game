@@ -12,7 +12,7 @@ func _process(delta):
 
 
 func _on_start_b_pressed():
-	get_tree().change_scene_to_file("res://world.tscn")
+	get_tree().change_scene_to_file("res://Intro/Intro1.tscn")
 
 
 func _on_option_b_pressed():
