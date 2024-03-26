@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbijsx5qxkv7f"]
+
+[ext_resource type="Script" path="res://Intro/Intro3.gd" id="1_l2rdb"]
+[ext_resource type="Texture2D" uid="uid://dieuw3exq0u0" path="res://asset/Intro Cutscene/Intro3.png" id="2_pbf4t"]
+
+[node name="Intro3" type="Node2D"]
+script = ExtResource("1_l2rdb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(577.75, 326.25)
+scale = Vector2(1.33084, 1.20425)
+texture = ExtResource("2_pbf4t")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 983.0
+offset_top = 609.0
+offset_right = 1096.0
+offset_bottom = 640.0
+text = "Lanjut(Space)"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

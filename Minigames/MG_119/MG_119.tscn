@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ctl8y1aikvb86"]
 
-[ext_resource type="PackedScene" uid="uid://dvdnljfvv8wk" path="res://Object/phone.tscn" id="1_kxars"]
+[ext_resource type="PackedScene" path="res://Object/phone.tscn" id="1_kxars"]
 
 [node name="MG_119" type="Node2D"]
 
