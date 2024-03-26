@@ -45,6 +45,7 @@ texture_normal = ExtResource("2_7o0ef")
 texture_pressed = ExtResource("3_4ufvf")
 
 [node name="Button2" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = -28.0
 offset_top = -122.0
 offset_right = 27.0
@@ -53,6 +54,7 @@ texture_normal = ExtResource("4_uogfq")
 texture_pressed = ExtResource("5_rxfst")
 
 [node name="Button3" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 37.0
 offset_top = -122.0
 offset_right = 92.0
@@ -61,6 +63,7 @@ texture_normal = ExtResource("6_4nx8n")
 texture_pressed = ExtResource("7_yexj7")
 
 [node name="Button4" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = -93.0
 offset_top = -62.0
 offset_right = -38.0
@@ -69,6 +72,7 @@ texture_normal = ExtResource("8_1mkux")
 texture_pressed = ExtResource("9_ep0ys")
 
 [node name="Button5" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = -28.0
 offset_top = -62.0
 offset_right = 27.0
@@ -77,6 +81,7 @@ texture_normal = ExtResource("10_ncm5b")
 texture_pressed = ExtResource("11_4hsdt")
 
 [node name="Button6" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 37.0
 offset_top = -62.0
 offset_right = 92.0
@@ -85,6 +90,7 @@ texture_normal = ExtResource("12_8i5gv")
 texture_pressed = ExtResource("13_v2eqj")
 
 [node name="Button7" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = -93.0
 offset_top = -2.0
 offset_right = -38.0
@@ -93,6 +99,7 @@ texture_normal = ExtResource("14_yflhc")
 texture_pressed = ExtResource("15_fboh6")
 
 [node name="Button8" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = -28.0
 offset_top = -2.0
 offset_right = 27.0
@@ -101,6 +108,7 @@ texture_normal = ExtResource("16_x50tk")
 texture_pressed = ExtResource("17_ix03x")
 
 [node name="Button9" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 37.0
 offset_top = -2.0
 offset_right = 92.0
@@ -109,6 +117,7 @@ texture_normal = ExtResource("18_vuwk5")
 texture_pressed = ExtResource("19_e56b8")
 
 [node name="Button0" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = -28.0
 offset_top = 58.0
 offset_right = 27.0
@@ -117,6 +126,7 @@ texture_normal = ExtResource("20_iw62j")
 texture_pressed = ExtResource("21_djhyo")
 
 [node name="Button*" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = -93.0
 offset_top = 58.0
 offset_right = -38.0
@@ -125,6 +135,7 @@ texture_normal = ExtResource("22_3oehs")
 texture_pressed = ExtResource("23_hvq0n")
 
 [node name="Button#" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 42.0
 offset_top = 58.0
 offset_right = 97.0
@@ -133,6 +144,7 @@ texture_normal = ExtResource("24_3v7oj")
 texture_pressed = ExtResource("25_a0ifl")
 
 [node name="Call" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = -28.0
 offset_top = 128.0
 offset_right = 27.0

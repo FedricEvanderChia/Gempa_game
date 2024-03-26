@@ -12,13 +12,13 @@ func _process(delta):
 
 
 func _on_graphics_b_pressed():
-	get_tree().change_scene_to_file("res://graphics.tscn")
+	get_tree().change_scene_to_file("res://menus/graphics.tscn")
 
 
 func _on_sound_b_pressed():
-	get_tree().change_scene_to_file("res://sounds.tscn")
+	get_tree().change_scene_to_file("res://menus/sounds.tscn")
 
 
 func _on_backtomenu_pressed():
 
-	get_tree().change_scene_to_file("res://menu.tscn")
+	get_tree().change_scene_to_file("res://menus/menu.tscn")

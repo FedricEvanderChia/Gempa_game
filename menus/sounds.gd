@@ -16,4 +16,4 @@ func _on_volume_pressed():
 
 
 func _on_backto_opts_pressed():
-	get_tree().change_scene_to_file("res://options.tscn")
+	get_tree().change_scene_to_file("res://menus/options.tscn")

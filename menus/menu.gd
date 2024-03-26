@@ -12,12 +12,11 @@ func _process(delta):
 
 
 func _on_start_b_pressed():
-	get_tree().change_scene_to_file("res://Intro/Intro1.tscn")
+	get_tree().change_scene_to_file("res://world.tscn")
 
 
 func _on_option_b_pressed():
 	get_tree().change_scene_to_file("res://menus/options.tscn")
-
 
 func _on_quit_b_pressed():
 	get_tree().quit()
