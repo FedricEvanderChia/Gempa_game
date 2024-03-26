@@ -56,7 +56,6 @@ position = Vector2(-45, 312.5)
 shape = SubResource("RectangleShape2D_7n651")
 
 [node name="GUI" parent="." instance=ExtResource("6_7koq2")]
-visible = false
 
 [node name="Phone" type="Button" parent="."]
 offset_left = 896.0

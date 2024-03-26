@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://drk0r6cibt3wj"]
 
-[ext_resource type="Texture2D" path="res://asset/Game Title.png" id="1_4wrgn"]
-[ext_resource type="Texture2D" path="res://asset/Options.png" id="2_31vb0"]
-[ext_resource type="Texture2D" path="res://asset/Quit.png" id="3_dbwj6"]
-[ext_resource type="Texture2D" path="res://asset/Start.png" id="4_a5tpk"]
+[ext_resource type="Texture2D" uid="uid://cbxdfu4pfjx44" path="res://asset/Game Title.png" id="1_4wrgn"]
+[ext_resource type="Texture2D" uid="uid://dr3383xu6tayf" path="res://asset/Options.png" id="2_31vb0"]
+[ext_resource type="Texture2D" uid="uid://ecdihqihvcxo" path="res://asset/Quit.png" id="3_dbwj6"]
+[ext_resource type="Texture2D" uid="uid://cu0p8xqjry5jg" path="res://asset/Start.png" id="4_a5tpk"]
 
 [node name="Main Menu" type="Node2D"]
 position = Vector2(0, -1)
