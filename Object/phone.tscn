@@ -1,0 +1,141 @@
+[gd_scene load_steps=28 format=3 uid="uid://dvdnljfvv8wk"]
+
+[ext_resource type="Texture2D" uid="uid://6tdlf6r5i6e5" path="res://asset/Phone.png" id="1_fy2bi"]
+[ext_resource type="Texture2D" uid="uid://bnd35rhbgflfl" path="res://asset/dial_button/tile000.png" id="2_7o0ef"]
+[ext_resource type="Texture2D" uid="uid://bdvxsceipb2xy" path="res://asset/dial_button/tile003.png" id="3_4ufvf"]
+[ext_resource type="Texture2D" uid="uid://bhhfbcguive25" path="res://asset/dial_button/tile001.png" id="4_uogfq"]
+[ext_resource type="Texture2D" uid="uid://721ytgw7utsy" path="res://asset/dial_button/tile004.png" id="5_rxfst"]
+[ext_resource type="Texture2D" uid="uid://32cvlqd318qr" path="res://asset/dial_button/tile002.png" id="6_4nx8n"]
+[ext_resource type="Texture2D" uid="uid://bj53k0hr2f680" path="res://asset/dial_button/tile005.png" id="7_yexj7"]
+[ext_resource type="Texture2D" uid="uid://dgogsbkqi1b4h" path="res://asset/dial_button/tile006.png" id="8_1mkux"]
+[ext_resource type="Texture2D" uid="uid://cjhpr2qm8ir2v" path="res://asset/dial_button/tile009.png" id="9_ep0ys"]
+[ext_resource type="Texture2D" uid="uid://cmmybl1j7x7h7" path="res://asset/dial_button/tile007.png" id="10_ncm5b"]
+[ext_resource type="Texture2D" uid="uid://6kgdofqcxpag" path="res://asset/dial_button/tile010.png" id="11_4hsdt"]
+[ext_resource type="Texture2D" uid="uid://gbdhfiurhy08" path="res://asset/dial_button/tile008.png" id="12_8i5gv"]
+[ext_resource type="Texture2D" uid="uid://dwnj0ror3k8lg" path="res://asset/dial_button/tile011.png" id="13_v2eqj"]
+[ext_resource type="Texture2D" uid="uid://qfxg2f7m8nni" path="res://asset/dial_button/tile012.png" id="14_yflhc"]
+[ext_resource type="Texture2D" uid="uid://byf24msiyrmhl" path="res://asset/dial_button/tile015.png" id="15_fboh6"]
+[ext_resource type="Texture2D" uid="uid://bf3s736n0g5y2" path="res://asset/dial_button/tile013.png" id="16_x50tk"]
+[ext_resource type="Texture2D" uid="uid://ckykxguvw24bx" path="res://asset/dial_button/tile016.png" id="17_ix03x"]
+[ext_resource type="Texture2D" uid="uid://befdv1eubhn3v" path="res://asset/dial_button/tile014.png" id="18_vuwk5"]
+[ext_resource type="Texture2D" uid="uid://jgvc48ck2ysm" path="res://asset/dial_button/tile017.png" id="19_e56b8"]
+[ext_resource type="Texture2D" uid="uid://b7mvpa4uoduxd" path="res://asset/dial_button/tile019.png" id="20_iw62j"]
+[ext_resource type="Texture2D" uid="uid://dyflj7f6cb7p5" path="res://asset/dial_button/tile022.png" id="21_djhyo"]
+[ext_resource type="Texture2D" uid="uid://cayeo1wvu4kgl" path="res://asset/dial_button/tile018.png" id="22_3oehs"]
+[ext_resource type="Texture2D" uid="uid://0yelfehqovkf" path="res://asset/dial_button/tile021.png" id="23_hvq0n"]
+[ext_resource type="Texture2D" uid="uid://dpfpic2brnvdu" path="res://asset/dial_button/tile020.png" id="24_3v7oj"]
+[ext_resource type="Texture2D" uid="uid://4b6mtrfwguqa" path="res://asset/dial_button/tile023.png" id="25_a0ifl"]
+[ext_resource type="Texture2D" uid="uid://cmxjeq82v1xm2" path="res://asset/dial_button/tile025.png" id="26_dg27g"]
+[ext_resource type="Texture2D" uid="uid://bxmen6xh0wv47" path="res://asset/dial_button/tile028.png" id="27_iuktc"]
+
+[node name="Phone" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Phone" type="Sprite2D" parent="."]
+texture = ExtResource("1_fy2bi")
+
+[node name="Button1" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = -93.0
+offset_top = -122.0
+offset_right = -38.0
+offset_bottom = -67.0
+texture_normal = ExtResource("2_7o0ef")
+texture_pressed = ExtResource("3_4ufvf")
+
+[node name="Button2" type="TextureButton" parent="."]
+offset_left = -28.0
+offset_top = -122.0
+offset_right = 27.0
+offset_bottom = -67.0
+texture_normal = ExtResource("4_uogfq")
+texture_pressed = ExtResource("5_rxfst")
+
+[node name="Button3" type="TextureButton" parent="."]
+offset_left = 37.0
+offset_top = -122.0
+offset_right = 92.0
+offset_bottom = -67.0
+texture_normal = ExtResource("6_4nx8n")
+texture_pressed = ExtResource("7_yexj7")
+
+[node name="Button4" type="TextureButton" parent="."]
+offset_left = -93.0
+offset_top = -62.0
+offset_right = -38.0
+offset_bottom = -7.0
+texture_normal = ExtResource("8_1mkux")
+texture_pressed = ExtResource("9_ep0ys")
+
+[node name="Button5" type="TextureButton" parent="."]
+offset_left = -28.0
+offset_top = -62.0
+offset_right = 27.0
+offset_bottom = -7.0
+texture_normal = ExtResource("10_ncm5b")
+texture_pressed = ExtResource("11_4hsdt")
+
+[node name="Button6" type="TextureButton" parent="."]
+offset_left = 37.0
+offset_top = -62.0
+offset_right = 92.0
+offset_bottom = -7.0
+texture_normal = ExtResource("12_8i5gv")
+texture_pressed = ExtResource("13_v2eqj")
+
+[node name="Button7" type="TextureButton" parent="."]
+offset_left = -93.0
+offset_top = -2.0
+offset_right = -38.0
+offset_bottom = 53.0
+texture_normal = ExtResource("14_yflhc")
+texture_pressed = ExtResource("15_fboh6")
+
+[node name="Button8" type="TextureButton" parent="."]
+offset_left = -28.0
+offset_top = -2.0
+offset_right = 27.0
+offset_bottom = 53.0
+texture_normal = ExtResource("16_x50tk")
+texture_pressed = ExtResource("17_ix03x")
+
+[node name="Button9" type="TextureButton" parent="."]
+offset_left = 37.0
+offset_top = -2.0
+offset_right = 92.0
+offset_bottom = 53.0
+texture_normal = ExtResource("18_vuwk5")
+texture_pressed = ExtResource("19_e56b8")
+
+[node name="Button0" type="TextureButton" parent="."]
+offset_left = -28.0
+offset_top = 58.0
+offset_right = 27.0
+offset_bottom = 113.0
+texture_normal = ExtResource("20_iw62j")
+texture_pressed = ExtResource("21_djhyo")
+
+[node name="Button*" type="TextureButton" parent="."]
+offset_left = -93.0
+offset_top = 58.0
+offset_right = -38.0
+offset_bottom = 113.0
+texture_normal = ExtResource("22_3oehs")
+texture_pressed = ExtResource("23_hvq0n")
+
+[node name="Button#" type="TextureButton" parent="."]
+offset_left = 42.0
+offset_top = 58.0
+offset_right = 97.0
+offset_bottom = 113.0
+texture_normal = ExtResource("24_3v7oj")
+texture_pressed = ExtResource("25_a0ifl")
+
+[node name="Call" type="TextureButton" parent="."]
+offset_left = -28.0
+offset_top = 128.0
+offset_right = 27.0
+offset_bottom = 183.0
+texture_normal = ExtResource("26_dg27g")
+texture_pressed = ExtResource("27_iuktc")

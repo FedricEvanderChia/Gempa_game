@@ -56,3 +56,14 @@ position = Vector2(-45, 312.5)
 shape = SubResource("RectangleShape2D_7n651")
 
 [node name="GUI" parent="." instance=ExtResource("6_7koq2")]
+visible = false
+
+[node name="Phone" type="Button" parent="."]
+offset_left = 896.0
+offset_top = 368.0
+offset_right = 1009.0
+offset_bottom = 412.0
+size_flags_horizontal = 4
+text = "Phone"
+
+[connection signal="pressed" from="Phone" to="." method="_on_phone_pressed"]

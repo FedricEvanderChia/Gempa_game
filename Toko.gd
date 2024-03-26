@@ -19,8 +19,5 @@ func _on_body_exited(body):
 	get_node("AnimatedSprite2D").play("right")
 	get_node("Button").hide()
 	
-func _on_button_pressed():
+func _on_sembako_b_pressed():
 	get_tree().change_scene_to_file("res://Minigames/Sembako.tscn")
-
-
-

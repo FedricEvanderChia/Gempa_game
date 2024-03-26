@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctl8y1aikvb86"]
+
+[ext_resource type="PackedScene" uid="uid://dvdnljfvv8wk" path="res://Object/phone.tscn" id="1_kxars"]
+
+[node name="MG_119" type="Node2D"]
+
+[node name="Phone" parent="." instance=ExtResource("1_kxars")]
+offset_left = 577.0
+offset_top = 362.0
+offset_right = 577.0
+offset_bottom = 362.0
