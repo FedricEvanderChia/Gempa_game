@@ -24,4 +24,3 @@ func _process(delta):
 		var m = "life"+str(n)
 		get_node(m).show()
 	
-		

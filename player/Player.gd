@@ -36,4 +36,6 @@ func _physics_process(delta):
 		#anim.play("Fall")
 		#print("Fall")
 	move_and_slide()
+	
+
 

@@ -8,8 +8,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
-
-
 func _on_phone_pressed():
 	get_tree().change_scene_to_file("res://Minigames/MG_119/MG_119.tscn")
+
+
+

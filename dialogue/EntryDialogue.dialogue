@@ -1,0 +1,13 @@
+~ Phone
+
+Nathan: [[Hi|Hello|Howdy]], this is your phone.
+Nathan: Call emergency.
+- 113
+	Nathan: You called a fire fighter.
+- 114
+	Nathan: You called an ambulance.
+- Start again => Phone
+- End the conversation => END
+Nathan: For more information see the online documentation.
+
+=> END

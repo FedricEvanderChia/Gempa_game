@@ -65,4 +65,5 @@ offset_bottom = 412.0
 size_flags_horizontal = 4
 text = "Phone"
 
+[connection signal="input_event" from="player" to="." method="_on_player_input_event"]
 [connection signal="pressed" from="Phone" to="." method="_on_phone_pressed"]
