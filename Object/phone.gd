@@ -10,7 +10,8 @@ func _process(delta):
 	if num != null:
 		$Number.text = num
 		get_node("Delete").show()
-
+		if num.length() == 0:
+			get_node("Delete").hide()
 func _on_call_button_down():
 	get_tree().change_scene_to_file("res://world.tscn")
 

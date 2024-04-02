@@ -23,3 +23,6 @@ func _on_bag_input_event(viewport, event, shape_idx):
 			get_node("inventory_ui").show()
 			inv = true
 		
+
+
+

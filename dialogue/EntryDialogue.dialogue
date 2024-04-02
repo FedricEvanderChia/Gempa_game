@@ -1,12 +1,32 @@
-~ Phone
+~ Entry
 
+Maria: Uuh.. badanku pegal semua, perjalanan ke desa ini buruk sekali.
+Rizki: Mau bagaimana lagi, jalan utama keluar masuk desa ini terhalang akibat kerusakan gempa, kita harus menyusuri lewat jalan kecil tadi.
+Maria: Setidaknya kita sudah sampai dan perlengkapan kita tidak ada yang rusak karena guncangan di mobil tadi.  
+Rizki: (mengamati sekeliling dengan ekspresi prihatin) 
+Rizki: Sungguh mengerikan melihat kerusakan...
+Maria: Kamu benar, ini lebih buruk dari yang aku bayangkan. 
+Maria: tapi, kita ditugaskan di desa Bumi Rahayu untuk membantu sebisa mungkin.
+Rizki: Benar, ini bukan waktunya kita beristirahat. Kita harus segera memulai operasi penyelamatan. Prioritas pertama adalah mencari korban yang terperangkap.
+
+(Seorang warga desa mendekati mereka dengan ekspresi cemas.)
+
+Warga: Tolong, tolong! Anak saya terjebak di bawah reruntuhan rumah kami!
+
+Maria: kami akan segera mencari anak bapak. Sampaikan kepada kami sebanyak mungkin informasi tentang lokasi anak Anda.
+(Maria dan Rizki bersama-sama memimpin tim penyelamat ke lokasi yang dilaporkan. Mereka mengatur strategi untuk membebaskan korban.)
+
+Maria: (mengarahkan tim) Baik, mari kita bagi tim menjadi dua kelompok. Satu kelompok mencari jalur masuk alternatif, sementara yang lainnya mempersiapkan peralatan penyelamatan.
+
+Rizki: (mengangguk setuju) Saya akan memimpin kelompok yang mencari jalur masuk alternatif. Mari kita segera bergerak.
+=> END
 Nathan: [[Hi|Hello|Howdy]], this is your phone.
 Nathan: Call emergency.
 - 113
 	Nathan: You called a fire fighter.
 - 114
 	Nathan: You called an ambulance.
-- Start again => Phone
+- Start again => Entry
 - End the conversation => END
 Nathan: For more information see the online documentation.
 
