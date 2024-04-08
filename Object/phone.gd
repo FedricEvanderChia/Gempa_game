@@ -12,8 +12,6 @@ func _process(delta):
 		get_node("Delete").show()
 		if num.length() == 0:
 			get_node("Delete").hide()
-func _on_call_button_down():
-	get_tree().change_scene_to_file("res://world.tscn")
 
 func _on__button_down(extra_arg_0: String):
 	if num == null:

@@ -43,7 +43,7 @@ pointing/android/enable_long_press_as_right_click=true
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/EntryDialogue.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/EntryDialogue.dialogue", "res://dialogue/LostFather.dialogue")
 
 [rendering]
 

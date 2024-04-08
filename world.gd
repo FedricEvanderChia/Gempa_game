@@ -5,8 +5,8 @@ extends Node2D
 func _ready():	
 	if global.EntryDialogue == false:
 		get_node("GUI").hide()
-		DialogueManager.show_dialogue_balloon(load("res://dialogue/EntryDialogue.dialogue"), "Entry")
-		get_node("GUI").show()
+		#DialogueManager.show_dialogue_balloon(load("res://dialogue/EntryDialogue.dialogue"), "Entry")
+		#get_node("GUI").show()
 		global.EntryDialogue == true
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

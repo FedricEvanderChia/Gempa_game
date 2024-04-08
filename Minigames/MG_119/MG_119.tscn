@@ -1,13 +1,120 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctl8y1aikvb86"]
+[gd_scene load_steps=8 format=3 uid="uid://ctl8y1aikvb86"]
 
 [ext_resource type="PackedScene" uid="uid://dvdnljfvv8wk" path="res://Object/phone.tscn" id="1_kxars"]
 [ext_resource type="Script" path="res://Minigames/MG_119/MG_119.gd" id="1_ybaes"]
+[ext_resource type="Texture2D" uid="uid://cmxjeq82v1xm2" path="res://asset/dial_button/tile025.png" id="3_mdh7y"]
+[ext_resource type="Texture2D" uid="uid://bxmen6xh0wv47" path="res://asset/dial_button/tile028.png" id="4_fw07w"]
+[ext_resource type="Script" path="res://Minigames/Control.gd" id="5_fjprp"]
+[ext_resource type="Script" path="res://Minigames/lifes.gd" id="6_r5l05"]
+[ext_resource type="PackedScene" uid="uid://d2te5qwpgjmua" path="res://player/life.tscn" id="7_hqlyl"]
 
 [node name="MG_119" type="Node2D"]
 script = ExtResource("1_ybaes")
 
 [node name="Phone" parent="." instance=ExtResource("1_kxars")]
 offset_left = 577.0
-offset_top = 362.0
+offset_top = 421.0
 offset_right = 577.0
-offset_bottom = 362.0
+offset_bottom = 421.0
+
+[node name="Situation" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 467.0
+offset_top = 123.0
+offset_right = 689.0
+offset_bottom = 178.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+
+[node name="Call" type="TextureButton" parent="."]
+offset_left = 549.0
+offset_top = 549.0
+offset_right = 604.0
+offset_bottom = 604.0
+texture_normal = ExtResource("3_mdh7y")
+texture_pressed = ExtResource("4_fw07w")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1155.0
+offset_bottom = 96.0
+script = ExtResource("5_fjprp")
+
+[node name="times" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = -27.5
+offset_right = 61.0
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "0:30"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="scoretext" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = -24.0
+offset_right = 233.0
+offset_bottom = 21.0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Score: 00"
+
+[node name="Timer" type="Timer" parent="CanvasLayer/Control"]
+autostart = true
+
+[node name="lifes" type="Node" parent="CanvasLayer/Control"]
+script = ExtResource("6_r5l05")
+
+[node name="life1" parent="CanvasLayer/Control/lifes" instance=ExtResource("7_hqlyl")]
+visible = false
+position = Vector2(39, 114)
+
+[node name="life2" parent="CanvasLayer/Control/lifes" instance=ExtResource("7_hqlyl")]
+visible = false
+position = Vector2(108, 114)
+
+[node name="life3" parent="CanvasLayer/Control/lifes" instance=ExtResource("7_hqlyl")]
+visible = false
+position = Vector2(177, 114)
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 946.0
+offset_top = 17.0
+offset_right = 1137.0
+offset_bottom = 84.0
+text = "Back"
+
+[connection signal="button_down" from="Call" to="." method="_on_call_button_down"]
+[connection signal="timeout" from="CanvasLayer/Control/Timer" to="CanvasLayer/Control" method="_on_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

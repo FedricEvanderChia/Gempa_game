@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://cmn17qam2dau"
+path="res://.godot/imported/LostFather.dialogue-6b4276ba24ebcf86efde9c7d29295cec.tres"
+
+[deps]
+
+source_file="res://dialogue/LostFather.dialogue"
+dest_files=["res://.godot/imported/LostFather.dialogue-6b4276ba24ebcf86efde9c7d29295cec.tres"]
+
+[params]
+
+defaults=true

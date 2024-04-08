@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctl8y1aikvb86"]
+
+[ext_resource type="PackedScene" uid="uid://dvdnljfvv8wk" path="res://Object/phone.tscn" id="1_kxars"]
+[ext_resource type="Script" path="res://Minigames/MG_119/MG_119.gd" id="1_ybaes"]
+[ext_resource type="Texture2D" uid="uid://cmxjeq82v1xm2" path="res://asset/dial_button/tile025.png" id="3_mdh7y"]
+[ext_resource type="Texture2D" uid="uid://bxmen6xh0wv47" path="res://asset/dial_button/tile028.png" id="4_fw07w"]
+
+[node name="MG_119" type="Node2D"]
+script = ExtResource("1_ybaes")
+
+[node name="Phone" parent="." instance=ExtResource("1_kxars")]
+offset_left = 577.0
+offset_top = 362.0
+offset_right = 577.0
+offset_bottom = 362.0
+
+[node name="Situation" type="Label" parent="."]
+offset_left = 556.0
+offset_top = 89.0
+offset_right = 596.0
+offset_bottom = 112.0
+size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 40
+
+[node name="Call" type="TextureButton" parent="."]
+offset_left = 549.0
+offset_top = 490.0
+offset_right = 604.0
+offset_bottom = 545.0
+texture_normal = ExtResource("3_mdh7y")
+texture_pressed = ExtResource("4_fw07w")
+
+[connection signal="button_down" from="Call" to="." method="_on_call_button_down"]
