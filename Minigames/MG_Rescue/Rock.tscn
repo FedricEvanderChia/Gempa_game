@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://br80m3so5frs2"]
+
+[ext_resource type="Script" path="res://Minigames/MG_Rescue/Rock.gd" id="1_3desy"]
+[ext_resource type="Texture2D" uid="uid://b4qeob0jnpcii" path="res://asset/Rubble_Wall.png" id="2_vq42d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3hqkm"]
+size = Vector2(55, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dslpt"]
+size = Vector2(44.5, 25)
+
+[node name="Rock" type="Node2D"]
+script = ExtResource("1_3desy")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.5, 13)
+shape = SubResource("RectangleShape2D_3hqkm")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-4.25, -10.5)
+shape = SubResource("RectangleShape2D_dslpt")
+
+[node name="RubbleWall" type="Sprite2D" parent="."]
+texture = ExtResource("2_vq42d")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

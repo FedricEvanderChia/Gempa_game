@@ -1,0 +1,120 @@
+[gd_scene load_steps=8 format=3 uid="uid://dcnaufn2rx6tp"]
+
+[ext_resource type="Script" path="res://Minigames/MG_Rescue/MG_Rescue.gd" id="1_e3udw"]
+[ext_resource type="PackedScene" uid="uid://br80m3so5frs2" path="res://Minigames/MG_Rescue/Rock.tscn" id="2_yxh4y"]
+[ext_resource type="Script" path="res://Minigames/Control.gd" id="3_nldgc"]
+[ext_resource type="Script" path="res://Minigames/lifes.gd" id="4_i7710"]
+[ext_resource type="PackedScene" uid="uid://d2te5qwpgjmua" path="res://player/life.tscn" id="5_5cquq"]
+[ext_resource type="PackedScene" uid="uid://ep0tyy1sjsvj" path="res://Minigames/MG_Rescue/wood.tscn" id="7_b7wwk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wi4s4"]
+radius = 150.0
+
+[node name="MG_Rescue" type="Node2D"]
+script = ExtResource("1_e3udw")
+
+[node name="ClearArea" type="Area2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="ClearArea"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClearArea"]
+shape = SubResource("CircleShape2D_wi4s4")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="Rock" parent="." instance=ExtResource("2_yxh4y")]
+
+[node name="Wood" parent="." instance=ExtResource("7_b7wwk")]
+position = Vector2(-114, 7)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1155.0
+offset_bottom = 96.0
+script = ExtResource("3_nldgc")
+
+[node name="times" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = -27.5
+offset_right = 61.0
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "0:30"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="scoretext" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = -24.0
+offset_right = 233.0
+offset_bottom = 21.0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Score: 00"
+
+[node name="Timer" type="Timer" parent="CanvasLayer/Control"]
+autostart = true
+
+[node name="lifes" type="Node" parent="CanvasLayer/Control"]
+script = ExtResource("4_i7710")
+
+[node name="life1" parent="CanvasLayer/Control/lifes" instance=ExtResource("5_5cquq")]
+visible = false
+position = Vector2(39, 114)
+
+[node name="life2" parent="CanvasLayer/Control/lifes" instance=ExtResource("5_5cquq")]
+visible = false
+position = Vector2(108, 114)
+
+[node name="life3" parent="CanvasLayer/Control/lifes" instance=ExtResource("5_5cquq")]
+visible = false
+position = Vector2(177, 114)
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 946.0
+offset_top = 17.0
+offset_right = 1137.0
+offset_bottom = 84.0
+text = "Back"
+
+[connection signal="body_entered" from="ClearArea" to="." method="_on_clear_area_body_entered"]
+[connection signal="timeout" from="CanvasLayer/Control/Timer" to="CanvasLayer/Control" method="_on_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

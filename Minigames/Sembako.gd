@@ -22,8 +22,7 @@ func _process(delta):
 		generateNPC()
 		await generateNPC()
 		generateOrder()
-	if selected:
-		followMouse()
+
 
 func generateNPC():
 	if customer == null:
@@ -63,9 +62,6 @@ func generateOrder():
 		print(needs[number])
 	#emit_signal("need",needs)
 	global.needs = needs
-
-func followMouse():
-	position = get_local_mouse_position()
 
 func _on_button_pressed():
 	get_tree().change_scene_to_file("res://world.tscn")
