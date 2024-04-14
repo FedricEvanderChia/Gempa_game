@@ -13,33 +13,17 @@ radius = 150.0
 [node name="MG_Rescue" type="Node2D"]
 script = ExtResource("1_e3udw")
 
-[node name="ClearArea" type="Area2D" parent="."]
+[node name="ClearArea" type="Area2D" parent="." groups=["dropable"]]
 
-[node name="ColorRect" type="ColorRect" parent="ClearArea"]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = -150.0
-offset_right = 150.0
-offset_bottom = 150.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ClearArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClearArea" groups=["dropable"]]
+position = Vector2(568, 312)
 shape = SubResource("CircleShape2D_wi4s4")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
-
 [node name="Rock" parent="." instance=ExtResource("2_yxh4y")]
+position = Vector2(263, 189)
 
 [node name="Wood" parent="." instance=ExtResource("7_b7wwk")]
-position = Vector2(-114, 7)
+position = Vector2(272, 293)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 5

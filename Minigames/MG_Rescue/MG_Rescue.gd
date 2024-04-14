@@ -16,7 +16,6 @@ func _process(delta):
 
 
 func generateRubble():
-	
 	var obj = rng.randi_range(0, 1)
 	if obj == 0:
 		var rub = rock_tscn.instantiate()

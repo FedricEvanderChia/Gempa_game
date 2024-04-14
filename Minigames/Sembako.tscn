@@ -68,16 +68,16 @@ sprite_frames = SubResource("SpriteFrames_2l4os")
 autoplay = "default"
 frame_progress = 0.552263
 
-[node name="Object" parent="." instance=ExtResource("5_3g3gy")]
-
-[node name="Air" parent="Object" instance=ExtResource("4_fbxqs")]
+[node name="Air" parent="." instance=ExtResource("4_fbxqs")]
 position = Vector2(268, 530)
 
-[node name="Beras" parent="Object" instance=ExtResource("5_8uu74")]
+[node name="Beras" parent="." instance=ExtResource("5_8uu74")]
 position = Vector2(109, 530)
 
-[node name="Tenda" parent="Object" instance=ExtResource("5_41m3d")]
+[node name="Tenda" parent="." instance=ExtResource("5_41m3d")]
 position = Vector2(1032, 559)
+
+[node name="Object" parent="." instance=ExtResource("5_3g3gy")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 5

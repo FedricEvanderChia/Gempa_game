@@ -22,3 +22,7 @@ func _on_phone_pressed():
 	get_tree().change_scene_to_file("res://Minigames/MG_119/MG_119.tscn")
 func _on_rescue_pressed():
 	get_tree().change_scene_to_file("res://Minigames/MG_Rescue/MG_Rescue.tscn")
+func _on_load_pressed():
+	util.loadGame()
+func _on_save_pressed():
+	util.saveGame()

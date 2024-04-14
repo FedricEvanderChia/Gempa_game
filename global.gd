@@ -1,6 +1,7 @@
 extends Node2D
 
-var EntryDialogue = false
+var first = true
+var EntryDialogue = true
 var goal = false
 var needs = []
 var life = 3
