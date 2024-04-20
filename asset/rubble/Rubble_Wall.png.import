@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chqyq160dt8jq"
-path="res://.godot/imported/Rubble_wood.png-faac68b930c55a56218db63b9cf7fbf7.ctex"
+uid="uid://b4qeob0jnpcii"
+path="res://.godot/imported/Rubble_Wall.png-0a6b5ccec47de4aa987a390ac1c626e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/Rubble_wood.png"
-dest_files=["res://.godot/imported/Rubble_wood.png-faac68b930c55a56218db63b9cf7fbf7.ctex"]
+source_file="res://asset/rubble/Rubble_Wall.png"
+dest_files=["res://.godot/imported/Rubble_Wall.png-0a6b5ccec47de4aa987a390ac1c626e9.ctex"]
 
 [params]
 

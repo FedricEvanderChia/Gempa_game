@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4qeob0jnpcii"
-path="res://.godot/imported/Rubble_Wall.png-d852d403aba6ad051699c287cfd4b5a1.ctex"
+uid="uid://b4ff4qomp8kn5"
+path="res://.godot/imported/Rubble_Pole.png-6749909abf89387ec41d8c39c63abcd0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/Rubble_Wall.png"
-dest_files=["res://.godot/imported/Rubble_Wall.png-d852d403aba6ad051699c287cfd4b5a1.ctex"]
+source_file="res://asset/rubble/Rubble_Pole.png"
+dest_files=["res://.godot/imported/Rubble_Pole.png-6749909abf89387ec41d8c39c63abcd0.ctex"]
 
 [params]
 
