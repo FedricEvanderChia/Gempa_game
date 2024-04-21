@@ -21,6 +21,11 @@ global="*res://global.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 util="*res://Util.gd"
 GlbRescue="*res://Minigames/MG_Rescue/GlbRescue.gd"
+GUI="*res://UIGempa.gd"
+
+[dialogue_manager]
+
+general/states=["global"]
 
 [display]
 
@@ -45,7 +50,7 @@ pointing/android/enable_long_press_as_right_click=true
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/EntryDialogue.dialogue", "res://dialogue/LostFather.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/EntryDialogue.dialogue", "res://dialogue/LostFather.dialogue", "res://dialogue/NewHope.dialogue")
 
 [rendering]
 

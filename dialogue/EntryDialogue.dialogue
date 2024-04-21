@@ -1,33 +1,67 @@
 ~ Entry
-
+do talking("Maria")
 Maria: Uuh.. badanku pegal semua, perjalanan ke desa ini buruk sekali.
+do talking("Rizki")
 Rizki: Mau bagaimana lagi, jalan utama keluar masuk desa ini terhalang akibat kerusakan gempa, kita harus menyusuri lewat jalan kecil tadi.
+do talking("Maria")
 Maria: Setidaknya kita sudah sampai dan perlengkapan kita tidak ada yang rusak karena guncangan di mobil tadi.  
-Rizki: (mengamati sekeliling dengan ekspresi prihatin) 
+do talking("Rizki")
+Rizki: (mengamati sekeliling dengan ekspresi prihatin)
 Rizki: Sungguh mengerikan melihat kerusakan...
-Maria: Kamu benar, ini lebih buruk dari yang aku bayangkan. 
+do talking("Maria")
+Maria: Kamu benar, ini lebih buruk dari yang aku bayangkan.
 Maria: tapi, kita ditugaskan di desa Bumi Rahayu untuk membantu sebisa mungkin.
+do talking("Rizki")
 Rizki: Benar, ini bukan waktunya kita beristirahat. Kita harus segera memulai operasi penyelamatan. Prioritas pertama adalah mencari korban yang terperangkap.
-
+do talking("-")
 (Seorang warga desa mendekati mereka dengan ekspresi cemas.)
-
+do talking("Mob")
 Warga: Tolong, tolong! Anak saya terjebak di bawah reruntuhan rumah kami!
-
+do talking("Maria")
 Maria: kami akan segera mencari anak bapak. Sampaikan kepada kami sebanyak mungkin informasi tentang lokasi anak Anda.
+do talking("-")
 (Maria dan Rizki bersama-sama memimpin tim penyelamat ke lokasi yang dilaporkan. Mereka mengatur strategi untuk membebaskan korban.)
-
 Maria: (mengarahkan tim) Baik, mari kita bagi tim menjadi dua kelompok. Satu kelompok mencari jalur masuk alternatif, sementara yang lainnya mempersiapkan peralatan penyelamatan.
-
+do talking("Rizki")
 Rizki: (mengangguk setuju) Saya akan memimpin kelompok yang mencari jalur masuk alternatif. Mari kita segera bergerak.
+do talking("end")
 => END
-Nathan: [[Hi|Hello|Howdy]], this is your phone.
-Nathan: Call emergency.
-- 113
-	Nathan: You called a fire fighter.
-- 114
-	Nathan: You called an ambulance.
-- Start again => Entry
-- End the conversation => END
-Nathan: For more information see the online documentation.
 
+~ LostFather
+do talking("Rizki")
+Rizki: Maria, aku jadi sangat khawatir tentang ayahku. Dia juga tinggal di desa ini, tapi aku belum mendengar kabar darinya semejak gempa terjadi.
+do talking("Maria")
+Maria: Aku mengerti, tapi kamu perlu fokus dengan apa yang ada didepanmu saat ini terlebih dahulu.
+do talking("Rizki")
+Rizki: Tapi bagaimana kalau misalnya dia terjebak dan sedang menungguku saat ini? aku harus mencarinya segera.
+do talking("Maria")
+Maria: Jangan bertindak gegabah Riz!! aku bisa membayangkan betapa sulitnya situasi ini bagimu. Tapi menggali lebih dalam saat ini hanya akan membahayakan semua orang yang berada disini. Struktur bangunan ini bisa saja runtuh kapan saja. 
+Maria: Untuk sekarang yang bisa kita lakukan adalah mengumpulkan informasi. Coba kita tanya penduduk setempat tentang keberadaan ayahmu. Mungkin ada yang tahu sesuatu.
+do talking("Rizki")
+Rizki: Maafkan aku, Maria. Kamu benar, bertindak panik hanya akan memperburuk keadaan. Sebagai tim penyelamat aku seharunya bisa berpikir lebih rasional dan menyelamatkan sebisa mungkin tanpa membahayakan diri sendiri dan orang lain.
+do talking("Maria")
+Maria: Tidak apa-apa, khawatir itu adalah hal yang wajar dalam situasi ini. Tapi jangan biarkan emosimu mengendalikan pikiranmu.
+do talking("Rizki")
+Rizki: Terima kasih sudah menenangkanku.
+do talking("Maria")
+Maria: Sama-sama 
+do talking("end")
+=> END
+
+~ FoundPhoto
+do talking("Mob")
+Warga: Terima kasih kak, kalau bukan karena kakak, saya tidak tahu apa yang akan terjadi pada keluarga saya.
+do talking("Rizki")
+Rizki: Sama-sama dek, ini memang tugas kakak sebagai anggota PMI, jadi tidak perlu berterima kasih.
+do talking("-")
+(Rizki melihat ada benda yang tidak asing diantara reruntuhan tempat ia menolong warga tadi)
+do talking("Rizki")
+Rizki: Maria, aku menemukan sesuatu!
+do talking("Maria")
+Maria: Apa yang kamu temukan, Rizki?
+do talking("Rizki")
+Rizki: Ini fotoku bersama ayah. Dia selalu membawa foto ini didalam dompetnya, mungkin saja ini petunjuk kalau ayah sempat berada disekitar sini.
+do talking("-")
+(Mereka berdua kemudian memeriksa area tersebut dengan cermat, mencari tahu apakah ada petunjuk lain tentang keberadaan ayah Rizki.)
+do talking("end")
 => END

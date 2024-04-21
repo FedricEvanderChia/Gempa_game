@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b08udris5vnr5"]
+
+[ext_resource type="Texture2D" uid="uid://3rn3icbvochh" path="res://asset/Rizki.png" id="1_q86dg"]
+[ext_resource type="Script" path="res://player/rizki.gd" id="1_ve6u6"]
+
+[node name="rizki" type="Node2D"]
+scale = Vector2(0.6, 0.6)
+script = ExtResource("1_ve6u6")
+
+[node name="Rizki" type="Sprite2D" parent="."]
+texture = ExtResource("1_q86dg")

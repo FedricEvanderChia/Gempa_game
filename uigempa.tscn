@@ -1,9 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://dtsrtigd5cgnv"]
+[gd_scene load_steps=20 format=3 uid="uid://dtsrtigd5cgnv"]
 
 [ext_resource type="Script" path="res://UIGempa.gd" id="1_ngrhg"]
-[ext_resource type="Texture2D" uid="uid://xp2gt0h7ism3" path="res://asset/New Piskel-1.png.png" id="2_bp1ya"]
+[ext_resource type="Texture2D" uid="uid://bdnaiqbd35g7h" path="res://asset/New Piskel-1.png.png" id="2_bp1ya"]
 [ext_resource type="PackedScene" uid="uid://cvbweyjmj4s5a" path="res://Inventory/inventory_ui.tscn" id="3_lx3uu"]
 [ext_resource type="Texture2D" uid="uid://db80lf0ng5euy" path="res://asset/Bag_Sheet.png" id="4_mm5uw"]
+[ext_resource type="PackedScene" uid="uid://b08udris5vnr5" path="res://player/rizki.tscn" id="5_idtk8"]
+[ext_resource type="PackedScene" uid="uid://bx5x8ucmaow03" path="res://player/maria.tscn" id="6_goltb"]
+[ext_resource type="PackedScene" uid="uid://dyod4m2tlj2vl" path="res://player/mob.tscn" id="7_24ixx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yypih"]
 size = Vector2(150, 150)
@@ -145,5 +148,17 @@ shape = SubResource("RectangleShape2D_7wcg0")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bag"]
 sprite_frames = SubResource("SpriteFrames_v2pkr")
 animation = &"Open"
+
+[node name="Mob" parent="." instance=ExtResource("7_24ixx")]
+visible = false
+position = Vector2(798, 396)
+
+[node name="rizki" parent="." instance=ExtResource("5_idtk8")]
+visible = false
+position = Vector2(200, 375)
+
+[node name="Maria" parent="." instance=ExtResource("6_goltb")]
+visible = false
+position = Vector2(975, 375)
 
 [connection signal="input_event" from="Bag" to="." method="_on_bag_input_event"]
