@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dcnaufn2rx6tp"]
+[gd_scene load_steps=7 format=3 uid="uid://dcnaufn2rx6tp"]
 
 [ext_resource type="Script" path="res://Minigames/MG_Rescue/MG_Rescue.gd" id="1_e3udw"]
+[ext_resource type="Texture2D" uid="uid://b523wsvxd0168" path="res://asset/BG_Rescue.png" id="2_3pjth"]
 [ext_resource type="Script" path="res://Minigames/Control.gd" id="3_nldgc"]
 [ext_resource type="Script" path="res://Minigames/lifes.gd" id="4_i7710"]
 [ext_resource type="PackedScene" uid="uid://d2te5qwpgjmua" path="res://player/life.tscn" id="5_5cquq"]
@@ -12,6 +13,10 @@ radius = 250.0
 script = ExtResource("1_e3udw")
 
 [node name="ClearArea" type="StaticBody2D" parent="." groups=["dropable"]]
+
+[node name="BgRescue" type="Sprite2D" parent="ClearArea"]
+position = Vector2(582, 324)
+texture = ExtResource("2_3pjth")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClearArea" groups=["dropable"]]
 position = Vector2(586, 348)
