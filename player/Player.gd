@@ -38,4 +38,5 @@ func _physics_process(delta):
 	move_and_slide()
 	
 
-
+func collectitem(item):
+	player_inv.insertitem(item)

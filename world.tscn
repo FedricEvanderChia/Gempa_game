@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://brmclis07bvsb"]
+[gd_scene load_steps=12 format=3 uid="uid://brmclis07bvsb"]
 
 [ext_resource type="PackedScene" uid="uid://c71to8edu42an" path="res://player/Player.tscn" id="1_a88ce"]
 [ext_resource type="Script" path="res://world.gd" id="1_rnkil"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://c3veaw3iicq5n" path="res://Toko.tscn" id="3_rwtwv"]
 [ext_resource type="Texture2D" uid="uid://ccvmjavne58xc" path="res://asset/useable.png" id="3_wp8gq"]
 [ext_resource type="PackedScene" uid="uid://dtsrtigd5cgnv" path="res://uigempa.tscn" id="6_7koq2"]
+[ext_resource type="Texture2D" uid="uid://c43fboe3j0ymi" path="res://asset/Pmi_car.PNG" id="7_q6b3e"]
+[ext_resource type="PackedScene" uid="uid://cr6jvj4sb3tip" path="res://Inventory/items/items_collectibles.tscn" id="8_467eh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eefau"]
 size = Vector2(4125, 74.5)
@@ -97,6 +99,22 @@ text = "Phone"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player Detection"]
 position = Vector2(175.5, 568.5)
 shape = SubResource("RectangleShape2D_aa0ay")
+
+[node name="car_world" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="car_world"]
+position = Vector2(1517, 568)
+scale = Vector2(6.32, 6.3)
+texture = ExtResource("7_q6b3e")
+
+[node name="items_collectibles3" parent="." instance=ExtResource("8_467eh")]
+position = Vector2(2129, 588)
+
+[node name="items_collectibles2" parent="." instance=ExtResource("8_467eh")]
+position = Vector2(2449, 588)
+
+[node name="items_collectibles" parent="." instance=ExtResource("8_467eh")]
+position = Vector2(1834, 590)
 
 [connection signal="input_event" from="player" to="." method="_on_player_input_event"]
 [connection signal="pressed" from="Rescue" to="." method="_on_rescue_pressed"]

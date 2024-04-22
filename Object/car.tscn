@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy2cslxu66jt8"]
+
+[ext_resource type="Script" path="res://Object/car.gd" id="1_t6rdt"]
+[ext_resource type="Texture2D" uid="uid://c43fboe3j0ymi" path="res://asset/Pmi_car.PNG" id="2_5wqy2"]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_t6rdt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-8, 1)
+texture = ExtResource("2_5wqy2")
