@@ -10,6 +10,7 @@ func _ready():
 func _process(delta):
 	pass
 
+
 func _on_bag_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if inv:
@@ -22,7 +23,4 @@ func _on_bag_input_event(viewport, event, shape_idx):
 			await get_node("Bag/AnimatedSprite2D").animation_finished
 			get_node("inventory_ui").show()
 			inv = true
-		
-
-
 

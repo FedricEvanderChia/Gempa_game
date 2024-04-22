@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chqyq160dt8jq"
-path="res://.godot/imported/Rubble_wood.png-faac68b930c55a56218db63b9cf7fbf7.ctex"
+uid="uid://b523wsvxd0168"
+path="res://.godot/imported/BG_Rescue.png-12f6c84bd7b84c59db06c1d088ca0145.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/Rubble_wood.png"
-dest_files=["res://.godot/imported/Rubble_wood.png-faac68b930c55a56218db63b9cf7fbf7.ctex"]
+source_file="res://asset/BG_Rescue.png"
+dest_files=["res://.godot/imported/BG_Rescue.png-12f6c84bd7b84c59db06c1d088ca0145.ctex"]
 
 [params]
 

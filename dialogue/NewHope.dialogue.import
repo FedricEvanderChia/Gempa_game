@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://d27vhf4gb5t6y"
+path="res://.godot/imported/NewHope.dialogue-e9389377b76440651d7580b614724e9d.tres"
+
+[deps]
+
+source_file="res://dialogue/NewHope.dialogue"
+dest_files=["res://.godot/imported/NewHope.dialogue-e9389377b76440651d7580b614724e9d.tres"]
+
+[params]
+
+defaults=true

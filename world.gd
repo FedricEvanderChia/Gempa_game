@@ -3,11 +3,15 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():	
-	if global.EntryDialogue == false:
-		get_node("GUI").hide()
-		#DialogueManager.show_dialogue_balloon(load("res://dialogue/EntryDialogue.dialogue"), "Entry")
-		#get_node("GUI").show()
-		global.EntryDialogue == true
+	if global.EntryDialogue == 0:
+		DialogueManager.show_dialogue_balloon(load("res://dialogue/EntryDialogue.dialogue"), "Entry")
+		global.EntryDialogue +=1
+	if global.minigame_score >= 500 && global.EntryDialogue == 1:
+		DialogueManager.show_dialogue_balloon(load("res://dialogue/EntryDialogue.dialogue"), "LostFather")
+		global.EntryDialogue +=1	
+	if global.minigame_score >= 3000 && global.EntryDialogue == 2:
+		DialogueManager.show_dialogue_balloon(load("res://dialogue/EntryDialogue.dialogue"), "FoundPhoto")
+		global.EntryDialogue +=1
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass

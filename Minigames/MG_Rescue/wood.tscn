@@ -1,16 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://ep0tyy1sjsvj"]
 
 [ext_resource type="Script" path="res://Minigames/MG_Rescue/wood.gd" id="1_w3rjq"]
-[ext_resource type="Texture2D" uid="uid://chqyq160dt8jq" path="res://asset/Rubble_wood.png" id="2_a5lxs"]
+[ext_resource type="Texture2D" uid="uid://chqyq160dt8jq" path="res://asset/rubble/Rubble_wood.png" id="2_glpx1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cm0j5"]
 size = Vector2(32, 127)
 
 [node name="Wood" type="Node2D"]
+scale = Vector2(2, 2)
 script = ExtResource("1_w3rjq")
 
 [node name="RubbleWood" type="Sprite2D" parent="."]
-texture = ExtResource("2_a5lxs")
+texture = ExtResource("2_glpx1")
 
 [node name="Area2D" type="Area2D" parent="."]
 

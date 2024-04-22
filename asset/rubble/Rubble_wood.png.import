@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdnaiqbd35g7h"
-path="res://.godot/imported/New Piskel-1.png.png-83a15b6f84bf4ef7de3235b112827218.ctex"
+uid="uid://chqyq160dt8jq"
+path="res://.godot/imported/Rubble_wood.png-c6e31ee4c38734b07eba74bc437898ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/New Piskel-1.png.png"
-dest_files=["res://.godot/imported/New Piskel-1.png.png-83a15b6f84bf4ef7de3235b112827218.ctex"]
+source_file="res://asset/rubble/Rubble_wood.png"
+dest_files=["res://.godot/imported/Rubble_wood.png-c6e31ee4c38734b07eba74bc437898ea.ctex"]
 
 [params]
 

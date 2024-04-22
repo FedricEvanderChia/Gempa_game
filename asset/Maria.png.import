@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdnaiqbd35g7h"
-path="res://.godot/imported/New Piskel-1.png.png-83a15b6f84bf4ef7de3235b112827218.ctex"
+uid="uid://dvt0foaia4vr"
+path="res://.godot/imported/Maria.png-cb69fc50be5444aaf2bf5e061fe92706.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/New Piskel-1.png.png"
-dest_files=["res://.godot/imported/New Piskel-1.png.png-83a15b6f84bf4ef7de3235b112827218.ctex"]
+source_file="res://asset/Maria.png"
+dest_files=["res://.godot/imported/Maria.png-cb69fc50be5444aaf2bf5e061fe92706.ctex"]
 
 [params]
 
