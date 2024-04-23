@@ -167,6 +167,7 @@ player_inv = ExtResource("2_rtto4")
 position = Vector2(3, -16)
 sprite_frames = SubResource("SpriteFrames_pep3n")
 animation = &"Walk"
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.541097, 0.851914)
