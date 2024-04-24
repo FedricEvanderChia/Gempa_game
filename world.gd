@@ -18,15 +18,19 @@ func _process(delta):
 
 	
 func _on_player_detection_body_entered(body):
-	var tween1 = get_tree().create_tween()
-	if body.name == "Player":
-		tween1.tween_property(get_node("GUI"),"modulate:a", 0.3, 0.1)
+	if body.name == "player":
+		get_node("GUI/Control2/tc_button_left").modulate = Color(1, 1, 1, 0.5)
+		get_node("GUI/Control2/tc_button_right").modulate = Color(1, 1, 1, 0.5)
+func _on_player_detection_body_exited(body):
+	if body.name == "player":
+		get_node("GUI/Control2/tc_button_left").modulate = Color(1, 1, 1, 1)
+		get_node("GUI/Control2/tc_button_right").modulate = Color(1, 1, 1, 1)
 
 func _on_phone_pressed():
 	get_tree().change_scene_to_file("res://Minigames/MG_119/MG_119.tscn")
 func _on_rescue_pressed():
 	get_tree().change_scene_to_file("res://Minigames/MG_Rescue/MG_Rescue.tscn")
-func _on_load_pressed():
-	util.loadGame()
-func _on_save_pressed():
-	util.saveGame()
+
+
+
+

@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b6o6ml4pkal8f" path="res://asset/Prlx1_Sawah.png" id="5_bdgfq"]
 [ext_resource type="PackedScene" uid="uid://dtsrtigd5cgnv" path="res://uigempa.tscn" id="6_7koq2"]
 [ext_resource type="Texture2D" uid="uid://c43fboe3j0ymi" path="res://asset/Pmi_car.PNG" id="7_q6b3e"]
-[ext_resource type="PackedScene" path="res://Inventory/items/items_collectibles.tscn" id="8_467eh"]
+[ext_resource type="PackedScene" uid="uid://1s0q53ouuvjp" path="res://Inventory/items/items_collectibles.tscn" id="8_467eh"]
 [ext_resource type="Texture2D" uid="uid://csq0py4qvfl74" path="res://asset/HomeA.png" id="11_a4qjb"]
 [ext_resource type="Texture2D" uid="uid://cld21g0jpiw4i" path="res://asset/RuinedHouse.png" id="12_s0exl"]
 
@@ -20,7 +20,7 @@ size = Vector2(4125, 74.5)
 size = Vector2(88, 689)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aa0ay"]
-size = Vector2(305, 139)
+size = Vector2(228, 106)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_rnkil")
@@ -74,7 +74,6 @@ position = Vector2(-45, 312.5)
 shape = SubResource("RectangleShape2D_7n651")
 
 [node name="GUI" parent="." instance=ExtResource("6_7koq2")]
-visible = false
 
 [node name="Rescue" type="Button" parent="."]
 offset_left = 926.0
@@ -83,22 +82,6 @@ offset_right = 1039.0
 offset_bottom = 379.0
 size_flags_horizontal = 4
 text = "MG_Rescue"
-
-[node name="Load" type="Button" parent="."]
-offset_left = 1298.0
-offset_top = 313.0
-offset_right = 1411.0
-offset_bottom = 357.0
-size_flags_horizontal = 4
-text = "Load"
-
-[node name="Save" type="Button" parent="."]
-offset_left = 1299.0
-offset_top = 367.0
-offset_right = 1412.0
-offset_bottom = 411.0
-size_flags_horizontal = 4
-text = "Save"
 
 [node name="Phone" type="Button" parent="."]
 offset_left = 926.0
@@ -111,7 +94,7 @@ text = "Phone"
 [node name="Player Detection" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player Detection"]
-position = Vector2(175.5, 568.5)
+position = Vector2(146, 573)
 shape = SubResource("RectangleShape2D_aa0ay")
 
 [node name="car_world" type="StaticBody2D" parent="."]
@@ -135,12 +118,11 @@ position = Vector2(2997, 396)
 texture = ExtResource("11_a4qjb")
 
 [node name="RuinedHouse" type="Sprite2D" parent="."]
-position = Vector2(1185, 401)
+position = Vector2(1171, 463)
 texture = ExtResource("12_s0exl")
 
 [connection signal="input_event" from="player" to="." method="_on_player_input_event"]
 [connection signal="pressed" from="Rescue" to="." method="_on_rescue_pressed"]
-[connection signal="pressed" from="Load" to="." method="_on_load_pressed"]
-[connection signal="pressed" from="Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="Phone" to="." method="_on_phone_pressed"]
 [connection signal="body_entered" from="Player Detection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="Player Detection" to="." method="_on_player_detection_body_exited"]

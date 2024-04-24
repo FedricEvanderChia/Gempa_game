@@ -1,12 +1,15 @@
-[gd_scene load_steps=20 format=3 uid="uid://dtsrtigd5cgnv"]
+[gd_scene load_steps=23 format=3 uid="uid://dtsrtigd5cgnv"]
 
 [ext_resource type="Script" path="res://UIGempa.gd" id="1_ngrhg"]
 [ext_resource type="Texture2D" uid="uid://bdnaiqbd35g7h" path="res://asset/New Piskel-1.png.png" id="2_bp1ya"]
+[ext_resource type="Texture2D" uid="uid://bgx38m1hnoq5b" path="res://asset/MenuButton/Pause.png" id="3_bdcwb"]
 [ext_resource type="PackedScene" uid="uid://cvbweyjmj4s5a" path="res://Inventory/inventory_ui.tscn" id="3_lx3uu"]
 [ext_resource type="Texture2D" uid="uid://db80lf0ng5euy" path="res://asset/Bag_Sheet.png" id="4_mm5uw"]
+[ext_resource type="Texture2D" uid="uid://boosvlaqfye44" path="res://asset/MenuButton/Pause2.png" id="4_tur6m"]
 [ext_resource type="PackedScene" uid="uid://b08udris5vnr5" path="res://player/rizki.tscn" id="5_idtk8"]
 [ext_resource type="PackedScene" uid="uid://bx5x8ucmaow03" path="res://player/maria.tscn" id="6_goltb"]
 [ext_resource type="PackedScene" uid="uid://dyod4m2tlj2vl" path="res://player/mob.tscn" id="7_24ixx"]
+[ext_resource type="PackedScene" uid="uid://bht5gdvtvpse4" path="res://menus/pause_ui.tscn" id="10_i5j0k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yypih"]
 size = Vector2(150, 150)
@@ -111,6 +114,19 @@ texture_normal = ExtResource("2_bp1ya")
 shape = SubResource("RectangleShape2D_piwp7")
 action = "ui_left"
 
+[node name="PauseBtn" type="VBoxContainer" parent="."]
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 143.0
+offset_bottom = 143.0
+scale = Vector2(0.6, 0.6)
+
+[node name="Pause" type="TextureButton" parent="PauseBtn"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture_normal = ExtResource("3_bdcwb")
+texture_pressed = ExtResource("4_tur6m")
+
 [node name="inventory_ui" parent="." instance=ExtResource("3_lx3uu")]
 anchors_preset = 8
 anchor_left = 0.5
@@ -161,4 +177,8 @@ position = Vector2(200, 375)
 visible = false
 position = Vector2(975, 375)
 
+[node name="pause_ui" parent="." instance=ExtResource("10_i5j0k")]
+visible = false
+
+[connection signal="pressed" from="PauseBtn/Pause" to="." method="_on_pause_pressed"]
 [connection signal="input_event" from="Bag" to="." method="_on_bag_input_event"]

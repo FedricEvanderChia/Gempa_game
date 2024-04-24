@@ -1,6 +1,9 @@
 extends CanvasLayer
 
 var inv = false
+var paused = false
+@onready var pausemenu = $pause_ui
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -24,3 +27,14 @@ func _on_bag_input_event(viewport, event, shape_idx):
 			get_node("inventory_ui").show()
 			inv = true
 
+func _on_pause_pressed():
+	pause()
+	
+func pause():
+	if paused:
+		pausemenu.hide()
+		Engine.time_scale = 1
+	else:
+		pausemenu.show()
+		Engine.time_scale = 0
+	paused = !paused
