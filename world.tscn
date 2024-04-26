@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://brmclis07bvsb"]
+[gd_scene load_steps=17 format=3 uid="uid://brmclis07bvsb"]
 
 [ext_resource type="PackedScene" uid="uid://c71to8edu42an" path="res://player/Player.tscn" id="1_a88ce"]
 [ext_resource type="Script" path="res://world.gd" id="1_rnkil"]
@@ -18,6 +18,9 @@ size = Vector2(4125, 74.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7n651"]
 size = Vector2(88, 689)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wel7k"]
+size = Vector2(397, 269)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aa0ay"]
 size = Vector2(228, 106)
@@ -75,11 +78,23 @@ shape = SubResource("RectangleShape2D_7n651")
 
 [node name="GUI" parent="." instance=ExtResource("6_7koq2")]
 
-[node name="Rescue" type="Button" parent="."]
-offset_left = 926.0
-offset_top = 335.0
-offset_right = 1039.0
-offset_bottom = 379.0
+[node name="Rescue" type="Area2D" parent="."]
+position = Vector2(1655, 422)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rescue"]
+position = Vector2(27.5, 3.5)
+shape = SubResource("RectangleShape2D_wel7k")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="RuinedHouse" type="Sprite2D" parent="Rescue"]
+texture = ExtResource("12_s0exl")
+
+[node name="Rescue" type="Button" parent="Rescue"]
+visible = false
+offset_left = -36.0
+offset_top = -75.0
+offset_right = 77.0
+offset_bottom = -31.0
 size_flags_horizontal = 4
 text = "MG_Rescue"
 
@@ -117,12 +132,10 @@ position = Vector2(2023, 833)
 position = Vector2(2997, 396)
 texture = ExtResource("11_a4qjb")
 
-[node name="RuinedHouse" type="Sprite2D" parent="."]
-position = Vector2(1171, 463)
-texture = ExtResource("12_s0exl")
-
 [connection signal="input_event" from="player" to="." method="_on_player_input_event"]
-[connection signal="pressed" from="Rescue" to="." method="_on_rescue_pressed"]
+[connection signal="body_entered" from="Rescue" to="." method="_on_rescue_body_entered"]
+[connection signal="body_exited" from="Rescue" to="." method="_on_rescue_body_exited"]
+[connection signal="pressed" from="Rescue/Rescue" to="." method="_on_rescue_pressed"]
 [connection signal="pressed" from="Phone" to="." method="_on_phone_pressed"]
 [connection signal="body_entered" from="Player Detection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="Player Detection" to="." method="_on_player_detection_body_exited"]

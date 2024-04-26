@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x8fq7bam18uf"
-path="res://.godot/imported/NPC_woman.png-78b9f03436ce2b5cbbfd29ff2054ea16.ctex"
+uid="uid://3rn3icbvochh"
+path="res://.godot/imported/Rizki.png-376297e8f445b9151dc7bb8f770a733f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/NPC_woman.png"
-dest_files=["res://.godot/imported/NPC_woman.png-78b9f03436ce2b5cbbfd29ff2054ea16.ctex"]
+source_file="res://asset/Character/Rizki.png"
+dest_files=["res://.godot/imported/Rizki.png-376297e8f445b9151dc7bb8f770a733f.ctex"]
 
 [params]
 

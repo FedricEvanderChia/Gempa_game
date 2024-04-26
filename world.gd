@@ -31,6 +31,8 @@ func _on_phone_pressed():
 func _on_rescue_pressed():
 	get_tree().change_scene_to_file("res://Minigames/MG_Rescue/MG_Rescue.tscn")
 
+func _on_rescue_body_entered(body):
+	get_node("Rescue/Rescue").show()
 
-
-
+func _on_rescue_body_exited(body):
+	get_node("Rescue/Rescue").hide()
