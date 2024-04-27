@@ -1,11 +1,14 @@
-[gd_scene load_steps=23 format=3 uid="uid://dtsrtigd5cgnv"]
+[gd_scene load_steps=26 format=3 uid="uid://dtsrtigd5cgnv"]
 
 [ext_resource type="Script" path="res://UIGempa.gd" id="1_ngrhg"]
-[ext_resource type="Texture2D" uid="uid://bdnaiqbd35g7h" path="res://asset/New Piskel-1.png.png" id="2_bp1ya"]
+[ext_resource type="Texture2D" uid="uid://bcnkef8p4ap3y" path="res://asset/BtnIdle.png" id="2_rerfp"]
 [ext_resource type="Texture2D" uid="uid://bgx38m1hnoq5b" path="res://asset/MenuButton/Pause.png" id="3_bdcwb"]
+[ext_resource type="Texture2D" uid="uid://b7g4q04cqaee6" path="res://asset/BtnMove.png" id="3_lr740"]
 [ext_resource type="PackedScene" uid="uid://cvbweyjmj4s5a" path="res://Inventory/inventory_ui.tscn" id="3_lx3uu"]
 [ext_resource type="Texture2D" uid="uid://db80lf0ng5euy" path="res://asset/Bag_Sheet.png" id="4_mm5uw"]
+[ext_resource type="Texture2D" uid="uid://cbwnmjxrj2nkg" path="res://asset/BtnIdleL.png" id="4_qcjv3"]
 [ext_resource type="Texture2D" uid="uid://boosvlaqfye44" path="res://asset/MenuButton/Pause2.png" id="4_tur6m"]
+[ext_resource type="Texture2D" uid="uid://lob30j6425w3" path="res://asset/BtnMoveL.png" id="5_cfhy1"]
 [ext_resource type="PackedScene" uid="uid://b08udris5vnr5" path="res://player/rizki.tscn" id="5_idtk8"]
 [ext_resource type="PackedScene" uid="uid://bx5x8ucmaow03" path="res://player/maria.tscn" id="6_goltb"]
 [ext_resource type="PackedScene" uid="uid://dyod4m2tlj2vl" path="res://player/mob.tscn" id="7_24ixx"]
@@ -98,19 +101,21 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 grow_vertical = 0
-scale = Vector2(0.927536, 1.00943)
+scale = Vector2(0.7, 0.7)
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="tc_button_right" type="TouchScreenButton" parent="Control2"]
-position = Vector2(178.187, -123.501)
-scale = Vector2(0.632964, 0.632964)
-texture_normal = ExtResource("2_bp1ya")
+position = Vector2(200, -150)
+texture_normal = ExtResource("2_rerfp")
+texture_pressed = ExtResource("3_lr740")
 shape = SubResource("RectangleShape2D_yypih")
 action = "ui_right"
 
 [node name="tc_button_left" type="TouchScreenButton" parent="Control2"]
-position = Vector2(133.984, -25.4263)
-scale = Vector2(-0.634877, -0.634877)
-texture_normal = ExtResource("2_bp1ya")
+position = Vector2(20, -150)
+texture_normal = ExtResource("4_qcjv3")
+texture_pressed = ExtResource("5_cfhy1")
 shape = SubResource("RectangleShape2D_piwp7")
 action = "ui_left"
 
@@ -180,5 +185,9 @@ position = Vector2(975, 375)
 [node name="pause_ui" parent="." instance=ExtResource("10_i5j0k")]
 visible = false
 
+[connection signal="pressed" from="Control2/tc_button_right" to="." method="_on_tc_button_right_pressed"]
+[connection signal="released" from="Control2/tc_button_right" to="." method="_on_tc_button_right_released"]
+[connection signal="pressed" from="Control2/tc_button_left" to="." method="_on_tc_button_left_pressed"]
+[connection signal="released" from="Control2/tc_button_left" to="." method="_on_tc_button_left_released"]
 [connection signal="pressed" from="PauseBtn/Pause" to="." method="_on_pause_pressed"]
 [connection signal="input_event" from="Bag" to="." method="_on_bag_input_event"]

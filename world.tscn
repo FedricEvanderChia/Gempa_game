@@ -13,14 +13,14 @@
 [ext_resource type="Texture2D" uid="uid://csq0py4qvfl74" path="res://asset/HomeA.png" id="11_a4qjb"]
 [ext_resource type="Texture2D" uid="uid://cld21g0jpiw4i" path="res://asset/RuinedHouse.png" id="12_s0exl"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wel7k"]
+size = Vector2(397, 269)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eefau"]
 size = Vector2(4125, 74.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7n651"]
 size = Vector2(88, 689)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wel7k"]
-size = Vector2(397, 269)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aa0ay"]
 size = Vector2(228, 106)
@@ -34,13 +34,13 @@ script = ExtResource("1_rnkil")
 motion_scale = Vector2(0.1, 0.1)
 
 [node name="Useable" type="Sprite2D" parent="BG/ParallaxLayer"]
-position = Vector2(714.856, 398)
-scale = Vector2(2.79241, 2.75261)
+position = Vector2(642, 300)
+scale = Vector2(2.5, 2.465)
 texture = ExtResource("3_wp8gq")
 
 [node name="Useable2" type="Sprite2D" parent="BG/ParallaxLayer"]
-position = Vector2(2144, 398)
-scale = Vector2(2.79241, 2.75261)
+position = Vector2(1922, 300)
+scale = Vector2(2.5, 2.465)
 texture = ExtResource("3_wp8gq")
 flip_h = true
 
@@ -56,27 +56,15 @@ position = Vector2(2002, 393)
 texture = ExtResource("2_w20qp")
 
 [node name="Prlx1Sawah" type="Sprite2D" parent="BG/ParallaxLayer2"]
-position = Vector2(2018, 1669)
+position = Vector2(2007, 1669)
 texture = ExtResource("5_bdgfq")
 
 [node name="shop" parent="." instance=ExtResource("3_rwtwv")]
 position = Vector2(781, 415)
 
-[node name="player" parent="." instance=ExtResource("1_a88ce")]
-position = Vector2(422, 557)
-scale = Vector2(0.213187, 0.220962)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2059, 686)
-shape = SubResource("RectangleShape2D_eefau")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-45, 312.5)
-shape = SubResource("RectangleShape2D_7n651")
-
-[node name="GUI" parent="." instance=ExtResource("6_7koq2")]
+[node name="HomeA" type="Sprite2D" parent="."]
+position = Vector2(2997, 396)
+texture = ExtResource("11_a4qjb")
 
 [node name="Rescue" type="Area2D" parent="."]
 position = Vector2(1655, 422)
@@ -97,6 +85,28 @@ offset_right = 77.0
 offset_bottom = -31.0
 size_flags_horizontal = 4
 text = "MG_Rescue"
+
+[node name="player" parent="." instance=ExtResource("1_a88ce")]
+position = Vector2(422, 557)
+scale = Vector2(0.213187, 0.220962)
+
+[node name="Camera2D2" type="Camera2D" parent="player"]
+zoom = Vector2(0.85, 0.85)
+limit_left = 0
+limit_right = 4000
+limit_bottom = 660
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2059, 686)
+shape = SubResource("RectangleShape2D_eefau")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-45, 312.5)
+shape = SubResource("RectangleShape2D_7n651")
+
+[node name="GUI" parent="." instance=ExtResource("6_7koq2")]
 
 [node name="Phone" type="Button" parent="."]
 offset_left = 926.0
@@ -120,22 +130,18 @@ scale = Vector2(6.32, 6.3)
 texture = ExtResource("7_q6b3e")
 
 [node name="items_collectibles3" parent="." instance=ExtResource("8_467eh")]
-position = Vector2(2775, 879)
+position = Vector2(2426, 463)
 
 [node name="items_collectibles2" parent="." instance=ExtResource("8_467eh")]
-position = Vector2(2395, 840)
+position = Vector2(2274, 456)
 
 [node name="items_collectibles" parent="." instance=ExtResource("8_467eh")]
-position = Vector2(2023, 833)
+position = Vector2(2150, 455)
 
-[node name="HomeA" type="Sprite2D" parent="."]
-position = Vector2(2997, 396)
-texture = ExtResource("11_a4qjb")
-
-[connection signal="input_event" from="player" to="." method="_on_player_input_event"]
 [connection signal="body_entered" from="Rescue" to="." method="_on_rescue_body_entered"]
 [connection signal="body_exited" from="Rescue" to="." method="_on_rescue_body_exited"]
 [connection signal="pressed" from="Rescue/Rescue" to="." method="_on_rescue_pressed"]
+[connection signal="input_event" from="player" to="." method="_on_player_input_event"]
 [connection signal="pressed" from="Phone" to="." method="_on_phone_pressed"]
 [connection signal="body_entered" from="Player Detection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="Player Detection" to="." method="_on_player_detection_body_exited"]
