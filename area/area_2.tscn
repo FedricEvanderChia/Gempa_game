@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://66ud6y0qjotg"]
+
+[ext_resource type="PackedScene" uid="uid://dsua2lxep63w8" path="res://area/area.tscn" id="1_yujf3"]
+[ext_resource type="Texture2D" uid="uid://c4478r3dtu6g0" path="res://asset/PrlxMix_Sawah.png" id="2_ixs4n"]
+[ext_resource type="Texture2D" uid="uid://b6o6ml4pkal8f" path="res://asset/Prlx1_Sawah.png" id="3_21ydt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3yfjv"]
+size = Vector2(4125, 74.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6u47i"]
+size = Vector2(88, 755.5)
+
+[node name="Area" instance=ExtResource("1_yujf3")]
+
+[node name="BG2" type="ParallaxBackground" parent="." index="1"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="BG2" index="0"]
+motion_scale = Vector2(0.1, 0.1)
+
+[node name="PrlxMixSawah" type="Sprite2D" parent="BG2/ParallaxLayer" index="0"]
+position = Vector2(1059.83, 265.831)
+scale = Vector2(1.28054, 1.00321)
+texture = ExtResource("2_ixs4n")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="BG2" index="1"]
+
+[node name="Prlx1Sawah" type="Sprite2D" parent="BG2/ParallaxLayer2" index="0"]
+position = Vector2(2064, 384)
+scale = Vector2(1.029, 1)
+texture = ExtResource("3_21ydt")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" index="0"]
+position = Vector2(2065, 500)
+shape = SubResource("RectangleShape2D_3yfjv")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D2" index="1"]
+position = Vector2(2141, 313)
+shape = SubResource("RectangleShape2D_6u47i")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2" index="2"]
+position = Vector2(-43, 344)
+shape = SubResource("RectangleShape2D_6u47i")

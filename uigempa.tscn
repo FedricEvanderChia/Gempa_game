@@ -1,18 +1,22 @@
-[gd_scene load_steps=20 format=3 uid="uid://dtsrtigd5cgnv"]
+[gd_scene load_steps=22 format=3 uid="uid://dtsrtigd5cgnv"]
 
 [ext_resource type="Script" path="res://UIGempa.gd" id="1_ngrhg"]
-[ext_resource type="Texture2D" uid="uid://bdnaiqbd35g7h" path="res://asset/New Piskel-1.png.png" id="2_bp1ya"]
+[ext_resource type="Script" path="res://gui_button_collision.gd" id="2_1oy5p"]
+[ext_resource type="Texture2D" uid="uid://xp2gt0h7ism3" path="res://asset/New Piskel-1.png.png" id="2_bp1ya"]
 [ext_resource type="PackedScene" uid="uid://cvbweyjmj4s5a" path="res://Inventory/inventory_ui.tscn" id="3_lx3uu"]
 [ext_resource type="Texture2D" uid="uid://db80lf0ng5euy" path="res://asset/Bag_Sheet.png" id="4_mm5uw"]
-[ext_resource type="PackedScene" uid="uid://b08udris5vnr5" path="res://player/rizki.tscn" id="5_idtk8"]
-[ext_resource type="PackedScene" uid="uid://bx5x8ucmaow03" path="res://player/maria.tscn" id="6_goltb"]
-[ext_resource type="PackedScene" uid="uid://dyod4m2tlj2vl" path="res://player/mob.tscn" id="7_24ixx"]
+[ext_resource type="PackedScene" path="res://player/rizki.tscn" id="5_idtk8"]
+[ext_resource type="PackedScene" path="res://player/maria.tscn" id="6_goltb"]
+[ext_resource type="PackedScene" path="res://player/mob.tscn" id="7_24ixx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yypih"]
 size = Vector2(150, 150)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_piwp7"]
 size = Vector2(150, 150)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2tgb"]
+size = Vector2(261.984, 99.6079)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7wcg0"]
 size = Vector2(120, 136)
@@ -97,19 +101,27 @@ anchor_bottom = 1.0
 grow_vertical = 0
 scale = Vector2(0.927536, 1.00943)
 
-[node name="tc_button_right" type="TouchScreenButton" parent="Control2"]
+[node name="Area2D" type="Area2D" parent="Control2"]
+script = ExtResource("2_1oy5p")
+
+[node name="tc_button_right" type="TouchScreenButton" parent="Control2/Area2D"]
 position = Vector2(178.187, -123.501)
 scale = Vector2(0.632964, 0.632964)
 texture_normal = ExtResource("2_bp1ya")
 shape = SubResource("RectangleShape2D_yypih")
 action = "ui_right"
 
-[node name="tc_button_left" type="TouchScreenButton" parent="Control2"]
+[node name="tc_button_left" type="TouchScreenButton" parent="Control2/Area2D"]
 position = Vector2(133.984, -25.4263)
-scale = Vector2(-0.634877, -0.634877)
+rotation = 3.14159
+scale = Vector2(0.634877, 0.634877)
 texture_normal = ExtResource("2_bp1ya")
 shape = SubResource("RectangleShape2D_piwp7")
 action = "ui_left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control2/Area2D"]
+position = Vector2(157.945, -75.561)
+shape = SubResource("RectangleShape2D_u2tgb")
 
 [node name="inventory_ui" parent="." instance=ExtResource("3_lx3uu")]
 anchors_preset = 8
@@ -161,4 +173,6 @@ position = Vector2(200, 375)
 visible = false
 position = Vector2(975, 375)
 
+[connection signal="body_entered" from="Control2/Area2D" to="Control2/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Control2/Area2D" to="Control2/Area2D" method="_on_body_exited"]
 [connection signal="input_event" from="Bag" to="." method="_on_bag_input_event"]

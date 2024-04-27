@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmxi1hv41rgup"]
+
+[ext_resource type="PackedScene" uid="uid://dsua2lxep63w8" path="res://area/area.tscn" id="1_jehu0"]
+[ext_resource type="Texture2D" uid="uid://deyqvuiiiuwr0" path="res://asset/Road_background.png" id="2_cyj3k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_umkcs"]
+size = Vector2(4125, 74.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ugvu"]
+size = Vector2(88, 755.5)
+
+[node name="Area" instance=ExtResource("1_jehu0")]
+
+[node name="player" parent="." index="0"]
+position = Vector2(120, 411)
+
+[node name="BG2" type="ParallaxBackground" parent="." index="1"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="BG2" index="0"]
+motion_scale = Vector2(0.1, 0.1)
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="BG2" index="1"]
+
+[node name="Prlx1Sawah" type="Sprite2D" parent="BG2/ParallaxLayer2" index="0"]
+position = Vector2(2069.5, 330.5)
+scale = Vector2(1.04725, 1.13715)
+texture = ExtResource("2_cyj3k")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" index="0"]
+position = Vector2(2065, 500)
+shape = SubResource("RectangleShape2D_umkcs")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D2" index="1"]
+position = Vector2(3995, 284)
+shape = SubResource("RectangleShape2D_1ugvu")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2" index="2"]
+position = Vector2(-43, 344)
+shape = SubResource("RectangleShape2D_1ugvu")
