@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://ba5exs6k8x3vf"]
+[gd_scene load_steps=8 format=3 uid="uid://ba5exs6k8x3vf"]
 
 [ext_resource type="Script" path="res://NPC/npc_man.gd" id="1_2txg3"]
 [ext_resource type="Texture2D" uid="uid://cosfjgbhy75wm" path="res://asset/NPC_Man.png" id="2_61jlc"]
 [ext_resource type="Texture2D" uid="uid://dgn32xhdau5pk" path="res://asset/Order_Air.png" id="3_pv18g"]
 [ext_resource type="Texture2D" uid="uid://ciksmdiwcbfn" path="res://asset/Order_Beras.png" id="4_w6rgc"]
 [ext_resource type="Texture2D" uid="uid://o3xph6rexsu" path="res://asset/Order_Tenda.png" id="5_27nha"]
+[ext_resource type="Texture2D" uid="uid://0pb35ag16hme" path="res://asset/Order_Bubble.png" id="6_dudeo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2noy"]
 size = Vector2(270.25, 274)
@@ -35,3 +36,8 @@ texture = ExtResource("4_w6rgc")
 visible = false
 position = Vector2(286, -32)
 texture = ExtResource("5_27nha")
+
+[node name="OrderBubble" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(286, -32)
+texture = ExtResource("6_dudeo")

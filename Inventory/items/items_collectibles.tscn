@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cr6jvj4sb3tip"]
+[gd_scene load_steps=5 format=3 uid="uid://1s0q53ouuvjp"]
 
 [ext_resource type="Script" path="res://items_collectibles.gd" id="1_b0cby"]
-[ext_resource type="Resource" uid="uid://rnocqhc5552c" path="res://Inventory/items/water.tres" id="2_qs8ep"]
+[ext_resource type="Resource" path="res://Inventory/items/water.tres" id="2_qs8ep"]
 [ext_resource type="Texture2D" uid="uid://bimwqwdopcug5" path="res://asset/H5O.png" id="2_xogp7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n2spn"]
@@ -17,6 +17,7 @@ texture = ExtResource("2_xogp7")
 offset = Vector2(15, 15)
 
 [node name="itembutton" type="Button" parent="."]
+visible = false
 offset_left = -57.0
 offset_top = -129.0
 offset_right = 56.0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btrhxxx4waxpr"
-path="res://.godot/imported/NPC_Boy2.3.png-e9ff0e672488b420c617015cff9f4d84.ctex"
+uid="uid://boosvlaqfye44"
+path="res://.godot/imported/Pause2.png-4825436a28c9ae5af008d8e5fd914a62.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/NPC_Boy2.3.png"
-dest_files=["res://.godot/imported/NPC_Boy2.3.png-e9ff0e672488b420c617015cff9f4d84.ctex"]
+source_file="res://asset/MenuButton/Pause2.png"
+dest_files=["res://.godot/imported/Pause2.png-4825436a28c9ae5af008d8e5fd914a62.ctex"]
 
 [params]
 

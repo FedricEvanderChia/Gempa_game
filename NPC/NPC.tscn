@@ -1,13 +1,100 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpiopxaqgghyq"]
+[gd_scene load_steps=14 format=3 uid="uid://cpiopxaqgghyq"]
 
 [ext_resource type="Script" path="res://NPC/NPC.gd" id="1_csuv5"]
+[ext_resource type="Texture2D" uid="uid://0pb35ag16hme" path="res://asset/Order_Bubble.png" id="2_1m18q"]
+[ext_resource type="Texture2D" uid="uid://cosfjgbhy75wm" path="res://asset/Character/NPC_Man.png" id="2_t2oqv"]
+[ext_resource type="Texture2D" uid="uid://btrhxxx4waxpr" path="res://asset/Character/NPC_Boy2.3.png" id="3_1ul0u"]
+[ext_resource type="Texture2D" uid="uid://bimwqwdopcug5" path="res://asset/H5O.png" id="3_hvb7l"]
+[ext_resource type="Texture2D" uid="uid://ct1ni7aqjltoa" path="res://asset/Beras-duo.png" id="3_ko6b5"]
+[ext_resource type="Texture2D" uid="uid://co8jflhap3xns" path="res://asset/Character/NPC_Girl1.1.png" id="4_s4cgm"]
+[ext_resource type="Texture2D" uid="uid://ed3817p3ijrt" path="res://asset/Tenda-teduh.png" id="4_ukhb0"]
+[ext_resource type="Texture2D" uid="uid://x8fq7bam18uf" path="res://asset/Character/NPC_woman.png" id="6_pb1j5"]
+[ext_resource type="Texture2D" uid="uid://bman1lcsp1bt0" path="res://asset/Blank.png" id="7_3htb6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ahyqg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1ul0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_s4cgm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_t2oqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pb1j5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l6cii"]
 size = Vector2(270.25, 274)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_7h8gj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_3htb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hvb7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ko6b5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ukhb0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="NPC" type="CharacterBody2D"]
 script = ExtResource("1_csuv5")
+
+[node name="NpcTexture" type="AnimatedSprite2D" parent="."]
+position = Vector2(-7, 208)
+sprite_frames = SubResource("SpriteFrames_ahyqg")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["dropable"]]
 position = Vector2(-0.125, 26)
 shape = SubResource("RectangleShape2D_l6cii")
+
+[node name="OrderBubble" type="Sprite2D" parent="."]
+position = Vector2(286, -32)
+texture = ExtResource("2_1m18q")
+
+[node name="Panel" type="Panel" parent="OrderBubble"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -100.0
+offset_right = -200.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="item_display1" type="AnimatedSprite2D" parent="OrderBubble/Panel"]
+position = Vector2(-90, 0)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_7h8gj")
+
+[node name="item_display2" type="AnimatedSprite2D" parent="OrderBubble/Panel"]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_7h8gj")
+
+[node name="item_display3" type="AnimatedSprite2D" parent="OrderBubble/Panel"]
+position = Vector2(90, 0)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_7h8gj")

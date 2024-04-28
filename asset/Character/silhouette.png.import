@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://fy1o6a1qn2cg"
-path="res://.godot/imported/silhouette.png-b0ff5fb2d8b34de4c46b120de2832204.ctex"
+path="res://.godot/imported/silhouette.png-18f7e55da7f6ddb1e673887fa40df379.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/silhouette.png"
-dest_files=["res://.godot/imported/silhouette.png-b0ff5fb2d8b34de4c46b120de2832204.ctex"]
+source_file="res://asset/Character/silhouette.png"
+dest_files=["res://.godot/imported/silhouette.png-18f7e55da7f6ddb1e673887fa40df379.ctex"]
 
 [params]
 
