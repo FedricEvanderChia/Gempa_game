@@ -1,9 +1,6 @@
 extends CanvasLayer
 
 var inv = false
-var paused = false
-@onready var pausemenu = $pause_ui
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -28,26 +25,5 @@ func _on_bag_input_event(viewport, event, shape_idx):
 			inv = true
 
 
-func _on_pause_pressed():
-	pause()
-	
-func pause():
-	if paused:
-		pausemenu.hide()
-		Engine.time_scale = 1
-	else:
-		pausemenu.show()
-		Engine.time_scale = 0
-	paused = !paused
-
-
-func _on_tc_button_right_pressed():
-	$Control2/tc_button_right.scale = Vector2 (0.9,0.9)
-func _on_tc_button_left_pressed():
-	$Control2/tc_button_left.scale = Vector2 (0.9,0.9)
-func _on_tc_button_right_released():
-	$Control2/tc_button_right.scale = Vector2 (1,1)
-func _on_tc_button_left_released():
-	$Control2/tc_button_left.scale = Vector2 (1,1)
 
 

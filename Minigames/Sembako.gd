@@ -2,33 +2,51 @@ extends Node2D
 class_name Sembako
 #signal need(value)
 
-var NPC_tscn= preload("res://NPC/NPC.tscn")
+var women_tscn= preload("res://NPC/NPC_women.tscn")
+var man_tscn= preload("res://NPC/npc_man.tscn")
+var girl_tscn= preload("res://NPC/npc_girl.tscn")
+var boy_tscn= preload("res://NPC/npc_boy.tscn")
 var rng = RandomNumberGenerator.new()
 var customer = null
 var selected = false
 var needs = []
-var goal = global.difficulty+3
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if global.life<=0:
 		global.life = 3
 	pass
 func _process(delta):
-	$CanvasLayer/Control/antrian.text = "Antrian\n%d" % goal
 	if global.life == 0:
 		await get_node("CanvasLayer/Control/lifes/life1/AnimationPlayer").animation_finished
 	if customer == null:
-		if goal != 0:
-			await generateOrder()
-			await generateNPC()
-		else:
-			get_tree().change_scene_to_file("res://world.tscn")
+		generateNPC()
+		await generateNPC()
+		generateOrder()
+
 
 func generateNPC():
-	var new_cust = NPC_tscn.instantiate()
-	new_cust.position = get_global_position()
-	get_node("NPC_Layer").add_child(new_cust)
-	customer = new_cust
+	if customer == null:
+		var num = rng.randi_range(0, 3)
+		if num == 0: 
+			var new_cust = women_tscn.instantiate()
+			new_cust.position = get_global_position()
+			get_node("NPC_Layer").add_child(new_cust)
+			customer = new_cust
+		elif num == 1: 
+			var new_cust = man_tscn.instantiate()
+			new_cust.position = get_global_position()
+			get_node("NPC_Layer").add_child(new_cust)
+			customer = new_cust
+		elif num == 2: 
+			var new_cust = girl_tscn.instantiate()
+			new_cust.position = get_global_position()
+			get_node("NPC_Layer").add_child(new_cust)
+			customer = new_cust
+		elif num == 3: 
+			var new_cust = boy_tscn.instantiate()
+			new_cust.position = get_global_position()
+			get_node("NPC_Layer").add_child(new_cust)
+			customer = new_cust
 			
 func generateOrder():
 	var num = rng.randi_range(1, 3)
