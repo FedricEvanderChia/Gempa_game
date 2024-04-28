@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmxi1hv41rgup"]
+[gd_scene load_steps=5 format=3 uid="uid://b2ht6lfn2tc6b"]
 
-[ext_resource type="PackedScene" uid="uid://dsua2lxep63w8" path="res://area/area.tscn" id="1_jehu0"]
-[ext_resource type="Texture2D" uid="uid://deyqvuiiiuwr0" path="res://asset/Road_background.png" id="2_cyj3k"]
+[ext_resource type="PackedScene" uid="uid://c2d55xql3iv5v" path="res://area/area.tscn" id="1_jehu0"]
+[ext_resource type="Texture2D" path="res://asset/Road_background.png" id="2_cyj3k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_umkcs"]
 size = Vector2(4125, 74.5)

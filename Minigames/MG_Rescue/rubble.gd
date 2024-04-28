@@ -3,10 +3,8 @@ class_name Rubble
 var selected = false
 var initialPos: Vector2 
 var customer
-
 func _ready():
 	initialPos = global_position
-	
 func _process(delta):
 	if selected:
 		followMouse()

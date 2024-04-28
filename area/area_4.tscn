@@ -1,5 +1,5 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmbsftjfxxkcw"]
+[gd_scene load_steps=2 format=3 uid="uid://bvlysyvgdt6g1"]
 
-[ext_resource type="PackedScene" uid="uid://dsua2lxep63w8" path="res://area/area.tscn" id="1_edurx"]
+[ext_resource type="PackedScene" uid="uid://c2d55xql3iv5v" path="res://area/area.tscn" id="1_edurx"]
 
 [node name="Area" instance=ExtResource("1_edurx")]

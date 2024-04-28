@@ -20,6 +20,8 @@ func _process(delta):
 		get_node("life1/AnimationPlayer").play("break")
 		await get_node("life1/AnimationPlayer").animation_finished
 		get_node("life1").hide()
+		global.difficulty = 1
+		global.level = 1
 	for n in range(1,global.life+1):
 		var m = "life"+str(n)
 		get_node(m).show()

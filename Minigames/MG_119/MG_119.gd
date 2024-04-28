@@ -3,16 +3,17 @@ var rng = RandomNumberGenerator.new()
 var condition = null
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Situation.modulate = Color(255,255,255)
 	if global.life<=0:
 		global.life = 3
-	pass
+	$CanvasLayer/Control/Success.hide()
+	generateOrder()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if global.life == 0:
 		await get_node("CanvasLayer/Control/lifes/life1/AnimationPlayer").animation_finished
-	if condition == null:
-		generateOrder()
+
 	
 	
 func generateOrder():
@@ -45,12 +46,9 @@ func generateOrder():
 func _on_call_button_down():
 	var num = get_node("Phone/Number")
 	if num.text == condition:
-		global.minigame_score += 100
 		$Situation.modulate = Color(0,255,0)
-		await get_tree().create_timer(0.5).timeout
-		$Situation.modulate = Color(255,255,255)
-		condition=null
 		get_node("Phone").num= ""
+		complete()
 	else:
 		get_node("Phone").num= ""
 		if !$Situation.text.contains("TRY AGAIN"):
@@ -58,9 +56,6 @@ func _on_call_button_down():
 		global.minigame_score -= 50 
 		global.life -= 1
 		wrong()
-		
-		
-		
 		
 func wrong():
 	$Situation.modulate = Color(255,0,0)
@@ -77,3 +72,9 @@ func wrong():
 	
 func _on_button_pressed():
 	get_tree().change_scene_to_file("res://world.tscn")
+
+func complete():
+	global.minigame_score+=100
+	$CanvasLayer/Control/Success.show()
+	await get_tree().create_timer(1).timeout
+	global.nextMG()

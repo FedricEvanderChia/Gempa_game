@@ -3,9 +3,10 @@ extends Control
 var min = 0
 var sec = 0
 var Dmin = 0
-var Dsec = 30
+var Dsec = 20
 
 func _ready():
+	$times.modulate = Color(255,255,255)
 	reset_timer()
 	pass
 
@@ -21,7 +22,8 @@ func _process(delta):
 func _on_timer_timeout():
 	if sec==0:
 		if min == 0:
-			get_tree().change_scene_to_file("res://world.tscn")
+			$times.modulate = Color(255,0,0)
+			global.life-=1
 		if min>0:
 			min -=1
 			sec = 60

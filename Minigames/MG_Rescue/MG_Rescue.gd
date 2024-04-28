@@ -4,10 +4,14 @@ var rock_tscn= preload("res://Minigames/MG_Rescue/Rock.tscn")
 var wood_tscn= preload("res://Minigames/MG_Rescue/wood.tscn")
 var pole_tscn= preload("res://Minigames/MG_Rescue/pole.tscn")
 var count = rng.randi_range(0, 5)
-var sinyal = false
+var newscore = global.minigame_score+100 
 # Called when the node enters the scene tree for the first time.
 
 func _ready():
+	process_mode = Node.PROCESS_MODE_PAUSABLE
+	if global.life<=0:
+		global.life = 3
+	$CanvasLayer/Control/Success.hide()
 	var num = global.difficulty+3
 	generateRubble(num)
 	
@@ -17,10 +21,11 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	await get_tree().create_timer(1.0).timeout
-	await sinyal == true
 	if GlbRescue.rubble == 0:
-		global.minigame_score+=100
-		get_tree().change_scene_to_file("res://world.tscn")
+		get_tree().paused = true
+		global.minigame_score = newscore
+		complete()
+	
 
 
 func generateRubble(num):
@@ -45,3 +50,8 @@ func generateRubble(num):
 	
 func _on_button_pressed():
 	get_tree().change_scene_to_file("res://world.tscn")
+
+func complete():
+	$CanvasLayer/Control/Success.show()
+	await get_tree().create_timer(1).timeout
+	global.nextMG()
