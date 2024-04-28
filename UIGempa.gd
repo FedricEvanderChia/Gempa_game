@@ -27,7 +27,6 @@ func _on_bag_input_event(viewport, event, shape_idx):
 			get_node("inventory_ui").show()
 			inv = true
 
-
 func _on_pause_pressed():
 	pause()
 	
@@ -49,5 +48,4 @@ func _on_tc_button_right_released():
 	$Control2/tc_button_right.scale = Vector2 (1,1)
 func _on_tc_button_left_released():
 	$Control2/tc_button_left.scale = Vector2 (1,1)
-
 

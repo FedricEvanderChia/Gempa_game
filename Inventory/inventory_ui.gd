@@ -1,5 +1,5 @@
 extends Control
-@onready var inv: inventory_game = preload("res://Inventory/player_inv.tres")
+@onready var inv: inventory_game = global.invt
 @onready var slots: Array = $NinePatchRect/GridContainer.get_children()
 var buka_inventory = false
 

@@ -26,5 +26,4 @@ func loadGame():
 				global.needs = curr_line["needs"]
 				global.life = curr_line["life"]
 				global.minigame_score = curr_line["minigame_score"]
-			 
 		

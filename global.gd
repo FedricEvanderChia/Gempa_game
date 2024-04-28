@@ -9,6 +9,7 @@ var minigame_score = 0
 var difficulty = 1
 var level = 1
 var talker = ""
+var invt = preload("res://Inventory/player_inv.tres")
 
 func talking(name):
 	talker = name
