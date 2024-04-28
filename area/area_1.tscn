@@ -1,61 +1,61 @@
-[gd_scene load_steps=9 format=3 uid="uid://dixlctjrusm2e"]
+[gd_scene load_steps=10 format=3 uid="uid://dixlctjrusm2e"]
 
 [ext_resource type="PackedScene" uid="uid://dsua2lxep63w8" path="res://area/area.tscn" id="1_07c13"]
 [ext_resource type="Texture2D" uid="uid://ccvmjavne58xc" path="res://asset/useable.png" id="2_b5814"]
 [ext_resource type="Texture2D" uid="uid://cxj3qf7thkbck" path="res://asset/pixil-frame-0.png" id="3_assqh"]
 [ext_resource type="Texture2D" uid="uid://csq0py4qvfl74" path="res://asset/HomeA.png" id="4_gslqe"]
 [ext_resource type="Texture2D" uid="uid://cld21g0jpiw4i" path="res://asset/RuinedHouse.png" id="5_3t2kx"]
+[ext_resource type="PackedScene" uid="uid://c3veaw3iicq5n" path="res://Toko.tscn" id="5_7sghl"]
 [ext_resource type="PackedScene" uid="uid://dtsrtigd5cgnv" path="res://uigempa.tscn" id="6_nah4l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_brseg"]
-size = Vector2(2170.5, 74.5)
+size = Vector2(4012.5, 74.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5osp3"]
 size = Vector2(88, 755.5)
 
 [node name="Area1" instance=ExtResource("1_07c13")]
 
-[node name="BG2" type="ParallaxBackground" parent="." index="0"]
+[node name="BG" type="ParallaxBackground" parent="." index="0"]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="BG2" index="0"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="BG" index="0"]
 motion_scale = Vector2(0.1, 0.1)
 
-[node name="PrlxMixSawah" type="Sprite2D" parent="BG2/ParallaxLayer" index="0"]
-position = Vector2(784.672, 275.875)
-scale = Vector2(3.04425, 2.84233)
+[node name="Useable" type="Sprite2D" parent="BG/ParallaxLayer" index="0"]
+position = Vector2(1993, -17)
+scale = Vector2(7.79102, 5.08275)
 texture = ExtResource("2_b5814")
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="BG2" index="1"]
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="BG" index="1"]
 
-[node name="Pixil-frame-0" type="Sprite2D" parent="." index="1"]
-position = Vector2(1007, 500)
-scale = Vector2(0.50725, 0.631944)
+[node name="Pixil-frame-0" type="Sprite2D" parent="BG/ParallaxLayer2" index="0"]
+position = Vector2(2002, 393)
 texture = ExtResource("3_assqh")
 
-[node name="HomeA" type="Sprite2D" parent="." index="2"]
-position = Vector2(1492, 528)
-scale = Vector2(0.426562, 0.45679)
+[node name="shop" parent="." index="1" instance=ExtResource("5_7sghl")]
+position = Vector2(781, 415)
+
+[node name="GUI" parent="." index="2" instance=ExtResource("6_nah4l")]
+
+[node name="HomeA" type="Sprite2D" parent="." index="3"]
+position = Vector2(2997, 396)
 texture = ExtResource("4_gslqe")
 
-[node name="RuinedHouse" type="Sprite2D" parent="." index="3"]
-position = Vector2(1142, 543)
-scale = Vector2(0.511719, 0.518657)
+[node name="RuinedHouse" type="Sprite2D" parent="." index="4"]
+position = Vector2(2373, 457)
 texture = ExtResource("5_3t2kx")
 
-[node name="GUI" parent="." index="4" instance=ExtResource("6_nah4l")]
-
 [node name="player" parent="." index="5"]
-position = Vector2(488, 607)
-scale = Vector2(0.1, 0.1)
+position = Vector2(365, 559)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." index="6"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" index="0"]
-position = Vector2(1071.75, 691)
+position = Vector2(1992.75, 691)
 shape = SubResource("RectangleShape2D_brseg")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D2" index="1"]
-position = Vector2(2076, 277)
+position = Vector2(4021, 336)
 shape = SubResource("RectangleShape2D_5osp3")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2" index="2"]
