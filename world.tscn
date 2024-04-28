@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://brmclis07bvsb"]
+[gd_scene load_steps=17 format=3 uid="uid://brmclis07bvsb"]
 
 [ext_resource type="PackedScene" uid="uid://c71to8edu42an" path="res://player/Player.tscn" id="1_a88ce"]
 [ext_resource type="Script" path="res://world.gd" id="1_rnkil"]
@@ -9,9 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://b6o6ml4pkal8f" path="res://asset/Prlx1_Sawah.png" id="5_bdgfq"]
 [ext_resource type="PackedScene" uid="uid://dtsrtigd5cgnv" path="res://uigempa.tscn" id="6_7koq2"]
 [ext_resource type="Texture2D" uid="uid://c43fboe3j0ymi" path="res://asset/Pmi_car.PNG" id="7_q6b3e"]
-[ext_resource type="PackedScene" uid="uid://cr6jvj4sb3tip" path="res://Inventory/items/items_collectibles.tscn" id="8_467eh"]
+[ext_resource type="PackedScene" uid="uid://1s0q53ouuvjp" path="res://Inventory/items/items_collectibles.tscn" id="8_467eh"]
 [ext_resource type="Texture2D" uid="uid://csq0py4qvfl74" path="res://asset/HomeA.png" id="11_a4qjb"]
 [ext_resource type="Texture2D" uid="uid://cld21g0jpiw4i" path="res://asset/RuinedHouse.png" id="12_s0exl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wel7k"]
+size = Vector2(397, 269)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eefau"]
 size = Vector2(4125, 74.5)
@@ -20,7 +23,7 @@ size = Vector2(4125, 74.5)
 size = Vector2(88, 689)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aa0ay"]
-size = Vector2(305, 139)
+size = Vector2(228, 106)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_rnkil")
@@ -31,13 +34,19 @@ script = ExtResource("1_rnkil")
 motion_scale = Vector2(0.1, 0.1)
 
 [node name="Useable" type="Sprite2D" parent="BG/ParallaxLayer"]
-position = Vector2(1207, 293)
-scale = Vector2(4.45494, 3.99129)
+position = Vector2(642, 300)
+scale = Vector2(2.5, 2.465)
 texture = ExtResource("3_wp8gq")
 
+[node name="Useable2" type="Sprite2D" parent="BG/ParallaxLayer"]
+position = Vector2(1922, 300)
+scale = Vector2(2.5, 2.465)
+texture = ExtResource("3_wp8gq")
+flip_h = true
+
 [node name="PrlxMixSawah" type="Sprite2D" parent="BG/ParallaxLayer"]
-position = Vector2(2007.47, 1250)
-scale = Vector2(2.39035, 1.7)
+position = Vector2(1430, 1250)
+scale = Vector2(1.7, 1.7)
 texture = ExtResource("3_i2vid")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="BG"]
@@ -47,20 +56,50 @@ position = Vector2(2002, 393)
 texture = ExtResource("2_w20qp")
 
 [node name="Prlx1Sawah" type="Sprite2D" parent="BG/ParallaxLayer2"]
-position = Vector2(2018, 1647)
+position = Vector2(2007, 1669)
 texture = ExtResource("5_bdgfq")
 
 [node name="shop" parent="." instance=ExtResource("3_rwtwv")]
 position = Vector2(781, 415)
 
+[node name="HomeA" type="Sprite2D" parent="."]
+position = Vector2(2997, 396)
+texture = ExtResource("11_a4qjb")
+
+[node name="Rescue" type="Area2D" parent="."]
+position = Vector2(1655, 422)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rescue"]
+position = Vector2(27.5, 3.5)
+shape = SubResource("RectangleShape2D_wel7k")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="RuinedHouse" type="Sprite2D" parent="Rescue"]
+texture = ExtResource("12_s0exl")
+
+[node name="Rescue" type="Button" parent="Rescue"]
+visible = false
+offset_left = -36.0
+offset_top = -75.0
+offset_right = 77.0
+offset_bottom = -31.0
+size_flags_horizontal = 4
+text = "MG_Rescue"
+
 [node name="player" parent="." instance=ExtResource("1_a88ce")]
-position = Vector2(396, 551)
+position = Vector2(422, 557)
 scale = Vector2(0.213187, 0.220962)
+
+[node name="Camera2D2" type="Camera2D" parent="player"]
+zoom = Vector2(0.85, 0.85)
+limit_left = 0
+limit_right = 4000
+limit_bottom = 660
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2065, 720)
+position = Vector2(2059, 686)
 shape = SubResource("RectangleShape2D_eefau")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
@@ -68,30 +107,6 @@ position = Vector2(-45, 312.5)
 shape = SubResource("RectangleShape2D_7n651")
 
 [node name="GUI" parent="." instance=ExtResource("6_7koq2")]
-
-[node name="Rescue" type="Button" parent="."]
-offset_left = 926.0
-offset_top = 335.0
-offset_right = 1039.0
-offset_bottom = 379.0
-size_flags_horizontal = 4
-text = "MG_Rescue"
-
-[node name="Load" type="Button" parent="."]
-offset_left = 1298.0
-offset_top = 313.0
-offset_right = 1411.0
-offset_bottom = 357.0
-size_flags_horizontal = 4
-text = "Load"
-
-[node name="Save" type="Button" parent="."]
-offset_left = 1299.0
-offset_top = 367.0
-offset_right = 1412.0
-offset_bottom = 411.0
-size_flags_horizontal = 4
-text = "Save"
 
 [node name="Phone" type="Button" parent="."]
 offset_left = 926.0
@@ -104,36 +119,29 @@ text = "Phone"
 [node name="Player Detection" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player Detection"]
-position = Vector2(175.5, 568.5)
+position = Vector2(146, 573)
 shape = SubResource("RectangleShape2D_aa0ay")
 
 [node name="car_world" type="StaticBody2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="car_world"]
-position = Vector2(1667, 573)
+position = Vector2(1425, 976)
 scale = Vector2(6.32, 6.3)
 texture = ExtResource("7_q6b3e")
 
 [node name="items_collectibles3" parent="." instance=ExtResource("8_467eh")]
-position = Vector2(2273, 446)
+position = Vector2(2426, 463)
 
 [node name="items_collectibles2" parent="." instance=ExtResource("8_467eh")]
-position = Vector2(1521, 171)
+position = Vector2(2274, 456)
 
 [node name="items_collectibles" parent="." instance=ExtResource("8_467eh")]
-position = Vector2(1877, 293)
+position = Vector2(2150, 455)
 
-[node name="HomeA" type="Sprite2D" parent="."]
-position = Vector2(2997, 396)
-texture = ExtResource("11_a4qjb")
-
-[node name="RuinedHouse" type="Sprite2D" parent="."]
-position = Vector2(2373, 457)
-texture = ExtResource("12_s0exl")
-
+[connection signal="body_entered" from="Rescue" to="." method="_on_rescue_body_entered"]
+[connection signal="body_exited" from="Rescue" to="." method="_on_rescue_body_exited"]
+[connection signal="pressed" from="Rescue/Rescue" to="." method="_on_rescue_pressed"]
 [connection signal="input_event" from="player" to="." method="_on_player_input_event"]
-[connection signal="pressed" from="Rescue" to="." method="_on_rescue_pressed"]
-[connection signal="pressed" from="Load" to="." method="_on_load_pressed"]
-[connection signal="pressed" from="Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="Phone" to="." method="_on_phone_pressed"]
 [connection signal="body_entered" from="Player Detection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="Player Detection" to="." method="_on_player_detection_body_exited"]

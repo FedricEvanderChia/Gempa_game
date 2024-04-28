@@ -4,7 +4,7 @@ var selected = false
 var initialPos: Vector2 
 var in_drop_box = false
 var customer
-
+@onready var sembako = $"../"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	initialPos = global_position
@@ -47,7 +47,7 @@ func _on_area_2d_body_exited(body):
 
 func validate():
 	print("validate "+name)
-	if global.needs[0] == name :
+	if global.needs.has(name) :
 		print("Benar")
 		global.minigame_score += 100
 		global.needs.remove_at(global.needs.find(name))
@@ -56,3 +56,4 @@ func validate():
 		global.life -= 1
 	if global.needs.is_empty():
 		global.goal = true
+		sembako.goal -= 1

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cosfjgbhy75wm"
-path="res://.godot/imported/NPC_Man.png-5234786b876bc4c2f5b346d0a740470e.ctex"
+uid="uid://dvt0foaia4vr"
+path="res://.godot/imported/Maria.png-17707a61e39581bfda655a5f0d5dcb9a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/NPC_Man.png"
-dest_files=["res://.godot/imported/NPC_Man.png-5234786b876bc4c2f5b346d0a740470e.ctex"]
+source_file="res://asset/Character/Maria.png"
+dest_files=["res://.godot/imported/Maria.png-17707a61e39581bfda655a5f0d5dcb9a.ctex"]
 
 [params]
 
