@@ -3,9 +3,10 @@ extends CanvasLayer
 var inv = false
 var paused = false
 @onready var pausemenu = $pause_ui
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	global.Sdialogue.connect(cinema)
+	global.Edialogue.connect(Uncinema)
 	pass # Replace with function body.
 # untuk pergerakan player, hanya tinggal memanggil action ui_left
 
@@ -49,3 +50,22 @@ func _on_tc_button_right_released():
 func _on_tc_button_left_released():
 	$Control2/tc_button_left.scale = Vector2 (1,1)
 
+func cinema():
+	print("cinema")
+	hideAll()
+	create_tween().tween_property($Cinematic,"position", Vector2(0,-80),1)
+	create_tween().tween_property($Cinematic2,"position", Vector2(0,547),1)
+func Uncinema():
+	print("Uncinema")
+	create_tween().tween_property($Cinematic2,"position", Vector2(0,647),1)
+	await create_tween().tween_property($Cinematic,"position", Vector2(0,-180),1)
+	showAll()
+
+func hideAll():
+	create_tween().tween_property($Control2,"visible",false,0)
+	create_tween().tween_property($PauseBtn,"visible",false,0)
+	create_tween().tween_property($Bag,"visible",false,0)
+func showAll():
+	create_tween().tween_property($Control2,"visible",true,0)
+	create_tween().tween_property($PauseBtn,"visible",true,0)
+	create_tween().tween_property($Bag,"visible",true,0)

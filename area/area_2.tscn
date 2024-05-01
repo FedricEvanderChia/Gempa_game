@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://3hchn5utlicl"]
 
-[ext_resource type="PackedScene" path="res://area/area.tscn" id="1_yujf3"]
+[ext_resource type="PackedScene" uid="uid://c2d55xql3iv5v" path="res://area/area.tscn" id="1_yujf3"]
 [ext_resource type="Texture2D" uid="uid://c4478r3dtu6g0" path="res://asset/PrlxMix_Sawah.png" id="2_ixs4n"]
 [ext_resource type="Texture2D" uid="uid://b6o6ml4pkal8f" path="res://asset/Prlx1_Sawah.png" id="3_21ydt"]
 

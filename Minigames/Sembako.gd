@@ -7,9 +7,12 @@ var rng = RandomNumberGenerator.new()
 var customer = null
 var selected = false
 var needs = []
-var goal = global.difficulty
+var goal = 10
+var newscore = global.minigame_score+100 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if global.workMode:
+		goal = global.difficulty
 	if global.life<=0:
 		global.life = 3
 	$CanvasLayer/Control/Success.hide()
@@ -32,7 +35,16 @@ func generateNPC():
 	customer = new_cust
 			
 func generateOrder():
-	var num = rng.randi_range(1, 3)
+	var num
+	if global.workMode:
+		if global.difficulty < 3:
+			num = 1
+		elif global.difficulty >= 3:
+			num = rng.randi_range(1, 2)
+		elif global.difficulty >= 10:
+			num = rng.randi_range(1, 3)
+	else:
+		num = rng.randi_range(1, 3)
 	for number in range(num):
 		var obj = rng.randi_range(0, 2)
 		if obj == 0:
@@ -48,8 +60,10 @@ func generateOrder():
 
 func _on_button_pressed():
 	get_tree().change_scene_to_file("res://world.tscn")
-
 func complete():
 	$CanvasLayer/Control/Success.show()
 	await get_tree().create_timer(1).timeout
-	global.nextMG()
+	if global.workMode:
+		global.nextMG()
+	else:
+		get_tree().change_scene_to_file("res://world.tscn")

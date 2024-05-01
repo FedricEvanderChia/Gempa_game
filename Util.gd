@@ -6,7 +6,7 @@ func saveGame():
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	var data: Dictionary = {
 		"first" = global.first,
-		"EntryDialogue" = global.EntryDialogue,
+		"Dialogue" = global.Dialogue,
 		"goal" = global.goal,
 		"needs" = global.needs,
 		"life" = global.life,
@@ -21,9 +21,12 @@ func loadGame():
 			var curr_line = JSON.parse_string(file.get_line())
 			if curr_line:
 				global.first = curr_line["first"]
-				global.EntryDialogue = curr_line["EntryDialogue"]
+				global.Dialogue = curr_line["Dialogue"]
 				global.goal = curr_line["goal"]
 				global.needs = curr_line["needs"]
 				global.life = curr_line["life"]
 				global.minigame_score = curr_line["minigame_score"]
 		
+
+func loading():
+	pass

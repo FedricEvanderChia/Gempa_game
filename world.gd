@@ -3,16 +3,23 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():	
-	if global.EntryDialogue == 0:
-		DialogueManager.show_dialogue_balloon(load("res://dialogue/EntryDialogue.dialogue"), "Entry")
-		global.EntryDialogue +=1
-	if global.minigame_score >= 500 && global.EntryDialogue == 1:
-		DialogueManager.show_dialogue_balloon(load("res://dialogue/EntryDialogue.dialogue"), "LostFather")
-		global.EntryDialogue +=1	
-	if global.minigame_score >= 3000 && global.EntryDialogue == 2:
-		DialogueManager.show_dialogue_balloon(load("res://dialogue/EntryDialogue.dialogue"), "FoundPhoto")
-		global.EntryDialogue +=1
+	global.Sdialogue.connect(Scam)
+	global.Edialogue.connect(Ecam)
+	if global.Dialogue == 0:
+		DialogueManager.show_dialogue_balloon(load("res://dialogue/Act1.dialogue"), "Entry")	
+		global.Dialogue +=1
+	if global.minigame_score >= 1000 && global.Dialogue == 1:
+		DialogueManager.show_dialogue_balloon(load("res://dialogue/Act1.dialogue"), "LostFather")
+		global.Dialogue +=1	
+	if global.minigame_score >= 3000 && global.Dialogue == 2:
+		DialogueManager.show_dialogue_balloon(load("res://dialogue/Act1.dialogue"), "FoundPhoto")
+		global.Dialogue +=1
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+func Scam():
+	create_tween().tween_property($player/Camera2D,"limit_bottom",760,1)
+func Ecam():
+	create_tween().tween_property($player/Camera2D,"limit_bottom",660,1)
+
 func _process(delta):
 	pass
 
@@ -30,9 +37,16 @@ func _on_phone_pressed():
 	get_tree().change_scene_to_file("res://Minigames/MG_119/MG_119.tscn")
 func _on_rescue_pressed():
 	get_tree().change_scene_to_file("res://Minigames/MG_Rescue/MG_Rescue.tscn")
-
+func _on_work_pressed():
+	global.workMode = true
+	global.nextMG()
+	
+	
 func _on_rescue_body_entered(body):
 	get_node("Rescue/Rescue").show()
-
 func _on_rescue_body_exited(body):
 	get_node("Rescue/Rescue").hide()
+func _on_work_mode_body_entered(body):
+	get_node("WorkMode/Work").show()
+func _on_work_mode_body_exited(body):
+	get_node("WorkMode/Work").hide()

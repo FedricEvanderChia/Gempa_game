@@ -185,6 +185,17 @@ position = Vector2(975, 375)
 [node name="pause_ui" parent="." instance=ExtResource("10_i5j0k")]
 visible = false
 
+[node name="Cinematic" type="ColorRect" parent="."]
+offset_top = -180.0
+offset_right = 1176.0
+color = Color(0, 0, 0, 1)
+
+[node name="Cinematic2" type="ColorRect" parent="."]
+offset_top = 647.0
+offset_right = 1170.0
+offset_bottom = 827.0
+color = Color(0, 0, 0, 1)
+
 [connection signal="pressed" from="Control2/tc_button_right" to="." method="_on_tc_button_right_pressed"]
 [connection signal="released" from="Control2/tc_button_right" to="." method="_on_tc_button_right_released"]
 [connection signal="pressed" from="Control2/tc_button_left" to="." method="_on_tc_button_left_pressed"]

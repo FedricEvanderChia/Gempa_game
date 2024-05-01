@@ -3,7 +3,7 @@ extends Control
 var min = 0
 var sec = 0
 var Dmin = 0
-var Dsec = 20
+var Dsec = 10
 
 func _ready():
 	$times.modulate = Color(255,255,255)
@@ -24,6 +24,8 @@ func _on_timer_timeout():
 		if min == 0:
 			$times.modulate = Color(255,0,0)
 			global.life-=1
+			if global.workMode:
+				global.nextMG()
 		if min>0:
 			min -=1
 			sec = 60
@@ -35,4 +37,10 @@ func _on_timer_timeout():
 
 func reset_timer():
 	min = Dmin
-	sec = Dsec
+	sec = Dsec-global.difficulty
+	if sec<=3:
+		sec=3
+	if get_node("./../..").name == "Sembako":
+		min = (5 * get_node("./../..").goal)/60
+		sec = (5 * get_node("./../..").goal)%60
+		

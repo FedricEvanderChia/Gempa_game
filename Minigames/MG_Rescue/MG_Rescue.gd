@@ -23,7 +23,6 @@ func _process(delta):
 	await get_tree().create_timer(1.0).timeout
 	if GlbRescue.rubble == 0:
 		get_tree().paused = true
-		global.minigame_score = newscore
 		complete()
 	
 
@@ -52,6 +51,11 @@ func _on_button_pressed():
 	get_tree().change_scene_to_file("res://world.tscn")
 
 func complete():
+	global.minigame_score = newscore
 	$CanvasLayer/Control/Success.show()
 	await get_tree().create_timer(1).timeout
-	global.nextMG()
+	get_tree().paused = false
+	if global.workMode:
+		global.nextMG()
+	else:
+		get_tree().change_scene_to_file("res://world.tscn")

@@ -13,11 +13,15 @@ func _ready():
 func _process(delta):
 	if global.life == 0:
 		await get_node("CanvasLayer/Control/lifes/life1/AnimationPlayer").animation_finished
-
-	
 	
 func generateOrder():
-	var obj = rng.randi_range(0, 7)
+	var obj
+	if global.difficulty >= 5:
+		obj = rng.randi_range(0, 7)
+		if obj == 7:
+			$CanvasLayer/Control.Dsec = 10
+	else:
+		obj = rng.randi_range(0, 6)
 	if obj == 0:
 		condition = "118" # Ambulans
 		$Situation.text = "Telepon Ambulans (118)"
@@ -72,9 +76,12 @@ func wrong():
 	
 func _on_button_pressed():
 	get_tree().change_scene_to_file("res://world.tscn")
-
+	global.workMode = false
 func complete():
-	global.minigame_score+=100
+	global.minigame_score += 100 
 	$CanvasLayer/Control/Success.show()
 	await get_tree().create_timer(1).timeout
-	global.nextMG()
+	if global.workMode:
+		global.nextMG()
+	else:
+		get_tree().change_scene_to_file("res://world.tscn")

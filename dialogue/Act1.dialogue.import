@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://ssgl5kly84aj"
+path="res://.godot/imported/Act1.dialogue-5c65bc984da9aac9f2006b8a32195956.tres"
+
+[deps]
+
+source_file="res://dialogue/Act1.dialogue"
+dest_files=["res://.godot/imported/Act1.dialogue-5c65bc984da9aac9f2006b8a32195956.tres"]
+
+[params]
+
+defaults=true

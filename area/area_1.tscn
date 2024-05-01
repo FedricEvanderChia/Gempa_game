@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://dixlctjrusm2e"]
+[gd_scene load_steps=10 format=3 uid="uid://bbmg6j873othy"]
 
-[ext_resource type="PackedScene" uid="uid://dsua2lxep63w8" path="res://area/area.tscn" id="1_07c13"]
+[ext_resource type="PackedScene" uid="uid://c2d55xql3iv5v" path="res://area/area.tscn" id="1_07c13"]
 [ext_resource type="Texture2D" uid="uid://ccvmjavne58xc" path="res://asset/useable.png" id="2_b5814"]
 [ext_resource type="Texture2D" uid="uid://cxj3qf7thkbck" path="res://asset/pixil-frame-0.png" id="3_assqh"]
 [ext_resource type="Texture2D" uid="uid://csq0py4qvfl74" path="res://asset/HomeA.png" id="4_gslqe"]

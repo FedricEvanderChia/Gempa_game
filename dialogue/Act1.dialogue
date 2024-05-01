@@ -1,4 +1,5 @@
 ~ Entry
+do StartDialog()
 do talking("Maria")
 Maria: Uuh.. badanku pegal semua, perjalanan ke desa ini buruk sekali.
 do talking("Rizki")
@@ -25,9 +26,11 @@ Maria: (mengarahkan tim) Baik, mari kita bagi tim menjadi dua kelompok. Satu kel
 do talking("Rizki")
 Rizki: (mengangguk setuju) Saya akan memimpin kelompok yang mencari jalur masuk alternatif. Mari kita segera bergerak.
 do talking("end")
+do EndDialog()
 => END
 
 ~ LostFather
+do StartDialog()
 do talking("Rizki")
 Rizki: Maria, aku jadi sangat khawatir tentang ayahku. Dia juga tinggal di desa ini, tapi aku belum mendengar kabar darinya semejak gempa terjadi.
 do talking("Maria")
@@ -46,9 +49,11 @@ Rizki: Terima kasih sudah menenangkanku.
 do talking("Maria")
 Maria: Sama-sama 
 do talking("end")
+do EndDialog()
 => END
 
 ~ FoundPhoto
+do StartDialog()
 do talking("Mob")
 Warga: Terima kasih kak, kalau bukan karena kakak, saya tidak tahu apa yang akan terjadi pada keluarga saya.
 do talking("Rizki")
@@ -64,4 +69,25 @@ Rizki: Ini fotoku bersama ayah. Dia selalu membawa foto ini didalam dompetnya, m
 do talking("-")
 (Mereka berdua kemudian memeriksa area tersebut dengan cermat, mencari tahu apakah ada petunjuk lain tentang keberadaan ayah Rizki.)
 do talking("end")
+do EndDialog()
+=> END
+
+~ Event
+do StartDialog()
+do talking("Mob")
+Warga: Terima kasih kak, kalau bukan karena kakak, saya tidak tahu apa yang akan terjadi pada keluarga saya.
+do talking("Rizki")
+Rizki: Sama-sama dek, ini memang tugas kakak sebagai anggota PMI, jadi tidak perlu berterima kasih.
+do talking("-")
+(Rizki melihat ada benda yang tidak asing diantara reruntuhan tempat ia menolong warga tadi)
+do talking("Rizki")
+Rizki: Maria, aku menemukan sesuatu!
+do talking("Maria")
+Maria: Apa yang kamu temukan, Rizki?
+do talking("Rizki")
+Rizki: Ini fotoku bersama ayah. Dia selalu membawa foto ini didalam dompetnya, mungkin saja ini petunjuk kalau ayah sempat berada disekitar sini.
+do talking("-")
+(Mereka berdua kemudian memeriksa area tersebut dengan cermat, mencari tahu apakah ada petunjuk lain tentang keberadaan ayah Rizki.)
+do talking("end")
+do EndDialog()
 => END

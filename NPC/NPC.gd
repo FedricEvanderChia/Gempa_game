@@ -2,10 +2,10 @@ extends CharacterBody2D
 class_name NPC
 var rng = RandomNumberGenerator.new()
 var needs = global.needs
+@export var emmiter:Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	generateTexture()
-	generateOrder()
 	var tween = create_tween()
 	tween.tween_property(self,"position", position - Vector2(-150,-25),0.2)
 	tween.tween_property(self,"position", position - Vector2(-300,0),0.2)
@@ -23,7 +23,13 @@ func _ready():
 	global.goal = false
 	needs.clear()
 	#pass
-
+func _process(delta):
+	generateOrder()
+	if needs.size()<3:
+		get_node("OrderBubble/Panel/item_display3").frame = 0
+		if needs.size()<2:
+			get_node("OrderBubble/Panel/item_display2").frame = 0
+	
 func generateOrder():	
 	for idx in range(0,needs.size()):
 		var item_display = "OrderBubble/Panel/item_display" + String.num(idx+1)
@@ -33,8 +39,7 @@ func generateOrder():
 			get_node(item_display).frame = 2
 		elif needs[idx] == "Tenda":
 			get_node(item_display).frame = 3
-		else:
-			get_node(item_display).frame = 0
+	
 func generateTexture():
 	var num = rng.randi_range(0, 3)
 	get_node("NpcTexture").frame = num
