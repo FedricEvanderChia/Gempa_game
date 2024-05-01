@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://brmclis07bvsb"]
+[gd_scene load_steps=17 format=3 uid="uid://brmclis07bvsb"]
 
 [ext_resource type="PackedScene" uid="uid://c71to8edu42an" path="res://player/Player.tscn" id="1_a88ce"]
 [ext_resource type="Script" path="res://world.gd" id="1_rnkil"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://bjjanpau63g57" path="res://asset/Prlx2World.png" id="3_tknwh"]
 [ext_resource type="Texture2D" uid="uid://ccvmjavne58xc" path="res://asset/useable.png" id="3_wp8gq"]
 [ext_resource type="PackedScene" uid="uid://dtsrtigd5cgnv" path="res://uigempa.tscn" id="6_7koq2"]
-[ext_resource type="Texture2D" uid="uid://c43fboe3j0ymi" path="res://asset/Pmi_car.PNG" id="7_q6b3e"]
 [ext_resource type="PackedScene" uid="uid://1s0q53ouuvjp" path="res://Inventory/items/items_collectibles.tscn" id="8_467eh"]
 [ext_resource type="Texture2D" uid="uid://csq0py4qvfl74" path="res://asset/HomeA.png" id="11_a4qjb"]
 [ext_resource type="Texture2D" uid="uid://cld21g0jpiw4i" path="res://asset/RuinedHouse.png" id="12_s0exl"]
@@ -144,13 +143,6 @@ text = "Phone"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player Detection"]
 position = Vector2(146, 573)
 shape = SubResource("RectangleShape2D_aa0ay")
-
-[node name="car_world" type="StaticBody2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="car_world"]
-position = Vector2(1413, 1043)
-scale = Vector2(6.32, 6.3)
-texture = ExtResource("7_q6b3e")
 
 [node name="items_collectibles3" parent="." instance=ExtResource("8_467eh")]
 position = Vector2(2426, 463)

@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2ht6lfn2tc6b"]
+[gd_scene load_steps=13 format=3 uid="uid://b2ht6lfn2tc6b"]
 
 [ext_resource type="PackedScene" uid="uid://c2d55xql3iv5v" path="res://area/area.tscn" id="1_jehu0"]
-[ext_resource type="Texture2D" uid="uid://deyqvuiiiuwr0" path="res://asset/Road_background.png" id="2_cyj3k"]
+[ext_resource type="PackedScene" uid="uid://dkwiyqdudwa3m" path="res://area/road_bg.tscn" id="2_baaop"]
+[ext_resource type="Script" path="res://area/Car.gd" id="3_80wot"]
+[ext_resource type="Texture2D" uid="uid://ffihxbren3b0" path="res://asset/PMI_Mobile.png" id="4_1yoym"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_umkcs"]
 size = Vector2(4125, 74.5)
@@ -10,29 +12,52 @@ size = Vector2(4125, 74.5)
 size = Vector2(88, 755.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iyspw"]
+size = Vector2(192, 95)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpq3h"]
+atlas = ExtResource("4_1yoym")
+region = Rect2(0, 0, 400, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbs0p"]
+atlas = ExtResource("4_1yoym")
+region = Rect2(400, 0, 400, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdp5k"]
+atlas = ExtResource("4_1yoym")
+region = Rect2(800, 0, 400, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gy7uh"]
+atlas = ExtResource("4_1yoym")
+region = Rect2(1200, 0, 400, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c130g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpq3h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbs0p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdp5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gy7uh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
 
 [node name="Area" instance=ExtResource("1_jehu0")]
 
-[node name="player" parent="." index="0"]
-visible = false
-position = Vector2(120, 411)
+[node name="RoadBG" parent="." index="0" instance=ExtResource("2_baaop")]
 
-[node name="BG2" type="ParallaxBackground" parent="." index="1"]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="BG2" index="0"]
-motion_scale = Vector2(0.1, 0.1)
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="BG2" index="1"]
-
-[node name="Prlx1Sawah" type="Sprite2D" parent="BG2/ParallaxLayer2" index="0"]
-position = Vector2(2069.5, 330.5)
-scale = Vector2(1.04725, 1.13715)
-texture = ExtResource("2_cyj3k")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="." index="2"]
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" index="0"]
-position = Vector2(2069, 640)
+position = Vector2(2069, 586)
 shape = SubResource("RectangleShape2D_umkcs")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D2" index="1"]
@@ -43,8 +68,17 @@ shape = SubResource("RectangleShape2D_1ugvu")
 position = Vector2(-43, 344)
 shape = SubResource("RectangleShape2D_1ugvu")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." index="3"]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." index="2"]
+position = Vector2(580, 436)
+scale = Vector2(2.3, 2.3)
+script = ExtResource("3_80wot")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" index="0"]
 shape = SubResource("RectangleShape2D_iyspw")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" index="1"]
+sprite_frames = SubResource("SpriteFrames_c130g")
+autoplay = "default"
+frame_progress = 0.109877
+flip_h = true

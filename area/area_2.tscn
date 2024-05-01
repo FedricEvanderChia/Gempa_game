@@ -12,7 +12,7 @@ size = Vector2(88, 755.5)
 
 [node name="Area" instance=ExtResource("1_yujf3")]
 
-[node name="BG2" type="ParallaxBackground" parent="." index="1"]
+[node name="BG2" type="ParallaxBackground" parent="." index="0"]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="BG2" index="0"]
 motion_scale = Vector2(0.1, 0.1)
@@ -29,7 +29,7 @@ position = Vector2(2064, 384)
 scale = Vector2(1.029, 1)
 texture = ExtResource("3_21ydt")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="." index="2"]
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" index="0"]
 position = Vector2(2065, 500)

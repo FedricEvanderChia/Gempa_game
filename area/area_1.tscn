@@ -45,10 +45,7 @@ texture = ExtResource("4_gslqe")
 position = Vector2(2373, 457)
 texture = ExtResource("5_3t2kx")
 
-[node name="player" parent="." index="5"]
-position = Vector2(365, 559)
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="." index="6"]
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="5"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" index="0"]
 position = Vector2(1992.75, 691)
