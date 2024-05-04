@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dtsrtigd5cgnv"]
+[gd_scene load_steps=30 format=3 uid="uid://dtsrtigd5cgnv"]
 
 [ext_resource type="Script" path="res://UIGempa.gd" id="1_ngrhg"]
 [ext_resource type="Texture2D" uid="uid://bcnkef8p4ap3y" path="res://asset/BtnIdle.png" id="2_rerfp"]
@@ -9,10 +9,14 @@
 [ext_resource type="Texture2D" uid="uid://cbwnmjxrj2nkg" path="res://asset/BtnIdleL.png" id="4_qcjv3"]
 [ext_resource type="Texture2D" uid="uid://boosvlaqfye44" path="res://asset/MenuButton/Pause2.png" id="4_tur6m"]
 [ext_resource type="Texture2D" uid="uid://lob30j6425w3" path="res://asset/BtnMoveL.png" id="5_cfhy1"]
-[ext_resource type="PackedScene" uid="uid://b08udris5vnr5" path="res://player/rizki.tscn" id="5_idtk8"]
 [ext_resource type="PackedScene" uid="uid://bx5x8ucmaow03" path="res://player/maria.tscn" id="6_goltb"]
 [ext_resource type="PackedScene" uid="uid://dyod4m2tlj2vl" path="res://player/mob.tscn" id="7_24ixx"]
 [ext_resource type="PackedScene" uid="uid://bht5gdvtvpse4" path="res://menus/pause_ui.tscn" id="10_i5j0k"]
+[ext_resource type="PackedScene" uid="uid://b08udris5vnr5" path="res://player/Rizki.tscn" id="10_jyxn3"]
+[ext_resource type="PackedScene" uid="uid://b2r5xjkr6i4lj" path="res://NPC/Wanita.tscn" id="14_j3l4h"]
+[ext_resource type="PackedScene" uid="uid://dmefmyby3odr6" path="res://NPC/Pria.tscn" id="15_mojfx"]
+[ext_resource type="PackedScene" uid="uid://wjnkust00dy6" path="res://NPC/perempuan.tscn" id="16_g5mvo"]
+[ext_resource type="PackedScene" uid="uid://dibfk3he48mbw" path="res://NPC/Laki_laki.tscn" id="17_whml6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yypih"]
 size = Vector2(150, 150)
@@ -138,10 +142,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -243.5
-offset_top = -171.5
-offset_right = 243.5
-offset_bottom = 171.5
+offset_left = -252.0
+offset_top = -185.0
+offset_right = 265.0
+offset_bottom = 186.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -170,13 +174,14 @@ shape = SubResource("RectangleShape2D_7wcg0")
 sprite_frames = SubResource("SpriteFrames_v2pkr")
 animation = &"Open"
 
+[node name="Rizki" parent="." instance=ExtResource("10_jyxn3")]
+visible = false
+position = Vector2(200, 375)
+randStr = 10.0
+
 [node name="Mob" parent="." instance=ExtResource("7_24ixx")]
 visible = false
 position = Vector2(798, 396)
-
-[node name="rizki" parent="." instance=ExtResource("5_idtk8")]
-visible = false
-position = Vector2(200, 375)
 
 [node name="Maria" parent="." instance=ExtResource("6_goltb")]
 visible = false
@@ -195,6 +200,22 @@ offset_top = 647.0
 offset_right = 1170.0
 offset_bottom = 827.0
 color = Color(0, 0, 0, 1)
+
+[node name="Wanita" parent="." instance=ExtResource("14_j3l4h")]
+visible = false
+position = Vector2(975, 475)
+
+[node name="Pria" parent="." instance=ExtResource("15_mojfx")]
+visible = false
+position = Vector2(975, 475)
+
+[node name="Perempuan" parent="." instance=ExtResource("16_g5mvo")]
+visible = false
+position = Vector2(975, 475)
+
+[node name="Laki_laki" parent="." instance=ExtResource("17_whml6")]
+visible = false
+position = Vector2(975, 475)
 
 [connection signal="pressed" from="Control2/tc_button_right" to="." method="_on_tc_button_right_pressed"]
 [connection signal="released" from="Control2/tc_button_right" to="." method="_on_tc_button_right_released"]

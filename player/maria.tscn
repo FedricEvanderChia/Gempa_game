@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://bx5x8ucmaow03"]
 
-[ext_resource type="Script" path="res://player/maria.gd" id="1_514il"]
-[ext_resource type="Texture2D" uid="uid://dvt0foaia4vr" path="res://asset/Maria.png" id="1_wrjsi"]
+[ext_resource type="Script" path="res://player/DialogSprite.gd" id="1_mqhki"]
+[ext_resource type="Texture2D" uid="uid://dvt0foaia4vr" path="res://asset/Character/Maria.png" id="1_wrjsi"]
 
 [node name="Maria" type="Node2D"]
 scale = Vector2(0.6, 0.6)
-script = ExtResource("1_514il")
+script = ExtResource("1_mqhki")
 
 [node name="Maria" type="Sprite2D" parent="."]
 texture = ExtResource("1_wrjsi")

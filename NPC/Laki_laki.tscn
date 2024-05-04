@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dibfk3he48mbw"]
+
+[ext_resource type="Script" path="res://player/DialogSprite.gd" id="1_i27hr"]
+[ext_resource type="Texture2D" uid="uid://btrhxxx4waxpr" path="res://asset/Character/NPC_Boy2.3.png" id="2_862u8"]
+
+[node name="Laki_laki" type="Node2D"]
+script = ExtResource("1_i27hr")
+
+[node name="NpcBoy2_3" type="Sprite2D" parent="."]
+texture = ExtResource("2_862u8")

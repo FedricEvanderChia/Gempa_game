@@ -1,16 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://3hchn5utlicl"]
+[gd_scene load_steps=8 format=3 uid="uid://3hchn5utlicl"]
 
 [ext_resource type="PackedScene" uid="uid://c2d55xql3iv5v" path="res://area/area.tscn" id="1_yujf3"]
 [ext_resource type="Texture2D" uid="uid://c4478r3dtu6g0" path="res://asset/PrlxMix_Sawah.png" id="2_ixs4n"]
 [ext_resource type="Texture2D" uid="uid://b6o6ml4pkal8f" path="res://asset/Prlx1_Sawah.png" id="3_21ydt"]
+[ext_resource type="PackedScene" uid="uid://c71to8edu42an" path="res://player/Player.tscn" id="4_37cct"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3yfjv"]
-size = Vector2(4125, 74.5)
+size = Vector2(9002, 74.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6u47i"]
-size = Vector2(88, 755.5)
+size = Vector2(88, 1319.38)
 
-[node name="Area" instance=ExtResource("1_yujf3")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80hof"]
+size = Vector2(135.375, 589.25)
+
+[node name="Area2" instance=ExtResource("1_yujf3")]
 
 [node name="BG2" type="ParallaxBackground" parent="." index="0"]
 
@@ -18,27 +22,47 @@ size = Vector2(88, 755.5)
 motion_scale = Vector2(0.1, 0.1)
 
 [node name="PrlxMixSawah" type="Sprite2D" parent="BG2/ParallaxLayer" index="0"]
-position = Vector2(1059.83, 265.831)
-scale = Vector2(1.28054, 1.00321)
+position = Vector2(842, 296)
 texture = ExtResource("2_ixs4n")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="BG2" index="1"]
 
 [node name="Prlx1Sawah" type="Sprite2D" parent="BG2/ParallaxLayer2" index="0"]
-position = Vector2(2064, 384)
-scale = Vector2(1.029, 1)
+position = Vector2(2002, 532)
 texture = ExtResource("3_21ydt")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" index="0"]
-position = Vector2(2065, 500)
+position = Vector2(4378, 633)
 shape = SubResource("RectangleShape2D_3yfjv")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D2" index="1"]
-position = Vector2(4147, 294)
+position = Vector2(8002, 558)
 shape = SubResource("RectangleShape2D_6u47i")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2" index="2"]
-position = Vector2(-43, 344)
-shape = SubResource("RectangleShape2D_6u47i")
+[node name="Go to World" type="Area2D" parent="." index="2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Go to World" index="0"]
+position = Vector2(-88, 281)
+shape = SubResource("RectangleShape2D_80hof")
+
+[node name="Go to World2" type="Area2D" parent="." index="3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Go to World2" index="0"]
+position = Vector2(1690, 281)
+shape = SubResource("RectangleShape2D_80hof")
+
+[node name="player" parent="." index="4" instance=ExtResource("4_37cct")]
+position = Vector2(119, 498)
+scale = Vector2(0.213, 0.213)
+
+[node name="Camera2D" type="Camera2D" parent="player" index="3"]
+position = Vector2(-37.5587, 0)
+zoom = Vector2(0.9, 0.9)
+limit_left = 0
+limit_right = 4000
+limit_bottom = 732
+
+[connection signal="body_entered" from="Go to World" to="." method="_on_go_to_world_body_entered"]
+[connection signal="body_entered" from="Go to World2" to="." method="_on_go_to_world_2_body_entered"]

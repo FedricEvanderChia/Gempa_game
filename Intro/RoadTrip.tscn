@@ -1,0 +1,103 @@
+[gd_scene load_steps=13 format=3 uid="uid://b2ht6lfn2tc6b"]
+
+[ext_resource type="PackedScene" uid="uid://c2d55xql3iv5v" path="res://area/area.tscn" id="1_ofbut"]
+[ext_resource type="Script" path="res://Intro/RoadTrip.gd" id="2_m7mbp"]
+[ext_resource type="PackedScene" uid="uid://dwbth2pcs6xm0" path="res://Intro/road_bg.tscn" id="3_eux54"]
+[ext_resource type="Texture2D" uid="uid://ffihxbren3b0" path="res://asset/PMI_Mobile.png" id="4_m5yti"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_umkcs"]
+size = Vector2(4125, 74.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ugvu"]
+size = Vector2(88, 755.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iyspw"]
+size = Vector2(192, 95)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpq3h"]
+atlas = ExtResource("4_m5yti")
+region = Rect2(0, 0, 400, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbs0p"]
+atlas = ExtResource("4_m5yti")
+region = Rect2(400, 0, 400, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdp5k"]
+atlas = ExtResource("4_m5yti")
+region = Rect2(800, 0, 400, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gy7uh"]
+atlas = ExtResource("4_m5yti")
+region = Rect2(1200, 0, 400, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c130g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpq3h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbs0p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdp5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gy7uh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="RoadTripAnimation" instance=ExtResource("1_ofbut")]
+script = ExtResource("2_m7mbp")
+
+[node name="RoadBG" parent="." index="0" instance=ExtResource("3_eux54")]
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" index="0"]
+position = Vector2(2069, 586)
+shape = SubResource("RectangleShape2D_umkcs")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D2" index="1"]
+position = Vector2(3995, 284)
+shape = SubResource("RectangleShape2D_1ugvu")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2" index="2"]
+position = Vector2(-43, 344)
+shape = SubResource("RectangleShape2D_1ugvu")
+
+[node name="Car" type="Area2D" parent="." index="2"]
+position = Vector2(576, 423)
+scale = Vector2(2.3, 2.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Car" index="0"]
+shape = SubResource("RectangleShape2D_iyspw")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Car" index="1"]
+sprite_frames = SubResource("SpriteFrames_c130g")
+autoplay = "default"
+frame_progress = 0.893688
+flip_h = true
+
+[node name="DarkScreen" type="ColorRect" parent="." index="3"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -24.0
+offset_top = -55.0
+offset_right = 1184.0
+offset_bottom = 684.0
+color = Color(0, 0, 0, 1)
+
+[node name="Cinematic" type="ColorRect" parent="." index="4"]
+offset_top = -180.0
+offset_right = 1176.0
+color = Color(0, 0, 0, 1)
+
+[node name="Cinematic2" type="ColorRect" parent="." index="5"]
+offset_top = 647.0
+offset_right = 1170.0
+offset_bottom = 827.0
+color = Color(0, 0, 0, 1)

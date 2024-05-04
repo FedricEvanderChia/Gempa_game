@@ -1,14 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkwiyqdudwa3m"]
+[gd_scene load_steps=4 format=3 uid="uid://dwbth2pcs6xm0"]
 
 [ext_resource type="Texture2D" uid="uid://c6da523ly6b7t" path="res://asset/Prlx2_Road-Jungle.png" id="1_qxhtv"]
-[ext_resource type="Script" path="res://area/RoadBG.gd" id="1_r4ohq"]
+[ext_resource type="Script" path="res://Intro/RoadBG.gd" id="1_r4ohq"]
 [ext_resource type="Texture2D" uid="uid://deyqvuiiiuwr0" path="res://asset/Road_background.png" id="2_qdrlv"]
 
 [node name="RoadBG" type="ParallaxBackground"]
 script = ExtResource("1_r4ohq")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
-motion_scale = Vector2(0.1, 0.1)
+motion_scale = Vector2(0.5, 0.5)
 motion_mirroring = Vector2(3200, 0)
 
 [node name="Prlx2Road-jungle" type="Sprite2D" parent="ParallaxLayer"]
@@ -20,6 +20,6 @@ texture = ExtResource("1_qxhtv")
 motion_mirroring = Vector2(4000, 0)
 
 [node name="Prlx1Sawah" type="Sprite2D" parent="ParallaxLayer2"]
-position = Vector2(2069.5, 330.5)
+position = Vector2(2096.5, 330.5)
 scale = Vector2(1.04725, 1.13715)
 texture = ExtResource("2_qdrlv")

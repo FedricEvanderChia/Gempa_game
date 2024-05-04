@@ -1,34 +1,14 @@
 ~ Entry
 do StartDialog()
 do talking("Maria")
- Maria: Uuh.. badanku pegal semua, perjalanan ke desa ini buruk sekali.
+Maria: Uuh.. badanku pegal semua, perjalanan ke desa ini buruk sekali.
 do talking("Rizki")
 Rizki: Mau bagaimana lagi, jalan utama keluar masuk desa ini terhalang akibat kerusakan gempa, kita harus menyusuri lewat jalan kecil tadi.
 do talking("Maria")
 Maria: Atau sebaiknya lain kali kamu yang menghindari lubang di jalan, kamu pikir lubang itu jalan datar ya? main terobos saja tanpa rem. 
-do talking("Rizki")
-Rizki: (Apa yang sebaiknya aku katakan?)
-- Kamu saja yang nyetir!
-	Rizki: Bagaimana kalau lain kali yang mulia nona Maria saja yang menyetir? Hamba yang masih pemula ini belum dapat memenuhi ekspektasi yang mulia.
-	do talking("Maria")
-	Maria: Yang benar saja? justru karena saya yang mulia makanya kamu yang harusnya jadi supir.
-	do talking("Rizki")
-	Rizki: (*Menghela nafas*) Haaaah... Benar juga ya.
-- Setidaknya lebih baik daripada kamu yang menyetir! 
-	Rizki: Kamu bicara seperti bisa mengemudi mobil saja. Terakhir kali aku ingat kamu naik sepeda saja masih pakai roda 3.
-	do talking("Maria")
-	Maria: Yah, logikanya semakin banyak roda, semakin mudah mengendarainya. 
-	do talking("Rizki")
-	Rizki: Waaaah... untuk lulus tes mengemudi itu perlu perjuangan tau.
-	do talking("Maria")
-	Maria: Bagi kamu, tentu saja. Saya sudah lulus dari 5 tahun yang lalu.
-	do talking("Rizki")
-	Rizki: Haah! lalu kenapa kamu tadi bersih keras menyuruh aku yang nyetir?!
-	do talking("Maria")
-	Maria: kamu benar-benar mau membiarkan seorang wanita untuk mengantarmu berkeliling?
-	do talking("Rizki_Shake")
-	Rizki: Urgh..!
-do talking("Maria")
+Rizki: Bagaimana kalau lain kali yang mulia nona Maria saja yang menyetir? Hamba yang masih pemula ini belum dapat memenuhi ekspektasi yang mulia.
+Maria: Yang benar saja? justru karena saya yang mulia makanya kamu yang harusnya jadi supir.
+Rizki: (*Menghela nafas*) Haaaah... (Benar juga ya, sepertinya aku salah bicara)
 Maria: Hmph...
 Maria: Yah, setidaknya kita sudah sampai dan untungnya perlengkapan kita tidak ada yang rusak karena guncangan di mobil tadi.  
 do talking("Rizki")
@@ -39,7 +19,6 @@ Maria: Kamu benar, ini lebih buruk dari yang saya bayangkan.
 Maria: tapi, kita ditugaskan di desa Bumi Rahayu untuk membantu sebisa mungkin.
 do talking("Rizki")
 Rizki: Benar, ini bukan waktunya kita bercanda. Kita harus segera memulai operasi penyelamatan. Prioritas kita sekarang adalah mencari korban yang terperangkap.
-do talking("Maria")
 Maria: Saya perlu mengatur tim  untuk mempersiapkan perlengkapan medis untuk memberikan perawatan di titik kumpul
 do talking("-")
 (Seorang warga desa mendekati mereka dengan ekspresi cemas.)
@@ -62,17 +41,13 @@ do talking("Rizki")
 Rizki: Maria, aku jadi sangat khawatir tentang ayahku. Dia juga tinggal di desa ini, tapi aku belum mendengar kabar darinya semejak gempa terjadi.
 do talking("Maria")
 Maria: Bukannya kamu asalnya dari Sumatra?
-do talking("Rizki")
 Rizki: Benar, ibu dan kakakku tinggal disana. Tapi ayahku adalah seorang seismolog yang tugaskan ke daerah sini. Dia telah melakukan penelitian selama 10 tentang aktivitas seismik di desa ini.
 do talking("Maria")
 Maria: Benarkah? Jadi, ayahmu sangat mengenal desa ini?
 do talking("Rizki")
 Rizki: Iya, dia mengenal desa ini bagaikan telapak tangannya sendiri. Dulu dia sering cerita tentang betapa pentingnya memahami gempa bumi untuk melindungi masyarakat. Dan sekarang, ketika desa ini terkena dampak gempa, aku yakin dia pasti akan berada di pusat kejadian ini.
-do talking("Maria")
 Maria: Berarti jika kita menemukan ayahmu, mungkin kita bisa mendapatkan beberapa petunjuk yang dapat membantu kita dalam penyelamatan desa ini.
-do talking("Rizki")
 Riski: itu benar tapi mengetahui seberapa nekadnya dia, aku jadi khawatir.
-do talking("Maria")
 Maria: Saya paham Riz, tapi kamu perlu fokus dengan apa yang ada didepanmu saat ini terlebih dahulu.
 do talking("Rizki")
 Rizki: Tapi bagaimana kalau misalnya dia terjebak dan sedang menungguku saat ini? aku harus mencarinya segera.
@@ -107,80 +82,60 @@ do talking("Maria")
 Maria: Apa itu?
 do talking("Rizki")
 Rizki: Ini fotoku bersama ayah. Saat aku kecil, dia selalu membawa foto ini didalam dompetnya. Mungkin saja foto ini petunjuk kalau ayahku sempat berada disekitar sini.
-do talking("Maria")
+
 Maria: Itu berita bagus, mungkin kita bisa bertanya pada orang sekitar jika mereka melihat ayahmu. 
-do talking("Rizki")
+
 Rizki: Iya, kamu benar. Kita harus tetap optimis dan terus mencari jejaknya di sini."
 do talking("-")
 do talking("end")
 do EndDialog()
 => END
 
-~ Search1
-do StartDialog()
-do talking("Rizki")
+~Search1
 Rizki: "Eh, maaf mengganggu. Apakah kamu pernah melihat pria ini sebelumnya?" (Rizki menunjukkan foto ayahnya pada pemuda itu.)
-do talking("Pria")
+
 Pemuda: (memperhatikan foto dengan serius) "Hmm, sepertinya pernah. Dia sering keluar masuk desa ini beberapa waktu lalu. Apa dia kenalanmu?"
-do talking("Rizki")
+
 Rizki: "Ya, dia ayahku. Dia adalah seorang seismolog, sering melakukan penelitian di sekitar desa ini. Tapi saya belum mendengar kabar darinya setelah gempa."
-do talking("Pria")
+
 Pemuda: (mengangguk paham) "Oh, saya mengerti. Semoga dia baik-baik saja. Saya akan memberitahu kamu jika saya melihatnya lagi."
-do talking("Rizki")
+
 Rizki: (mengucapkan terima kasih) "Terima kasih banyak. Saya sangat menghargainya. Tolong kabari saya jika kamu melihatnya."
-do talking("-")
+
 (Dengan harapan yang tumbuh, Rizki melanjutkan pencariannya, semoga bisa menemukan jejak ayahnya.)
-do talking("end")
-do EndDialog()
-=> END
+~Search2
+Rizki: "Hai, maaf mengganggu. Saya ingin bertanya, apakah kamu pernah melihat ayahku di sekitar desa ini?"
 
-~ Search2
-do StartDialog()
-do talking("Rizki")
-Rizki: Hai, maaf mengganggu. Saya ingin bertanya, apakah kamu pernah melihat ayahku di sekitar desa ini?
-do talking("Wanita")
-Gadis: Ayahmu? Maaf, saya tidak yakin. Desa ini agak besar, jadi sulit untuk mengenali semua orang di sini.
-do talking("Rizki")
-Rizki: Oh, begitu. Terima kasih, maaf telah merepotkanmu.
-do talking("Wanita")
-Gadis: Tidak apa-apa. Semoga kamu bisa menemukannya. Kalau aku melihatnya, akan kuberitahu kamu.
-do talking("Rizki")
-Rizki: Terima kasih, aku akan terus mencari.
-do talking("-")
-do talking("end")
-do EndDialog()
-=> END
+Gadis: "Ayahmu? Maaf, saya tidak yakin. Desa ini agak besar, jadi sulit untuk mengenali semua orang di sini."
 
-~ Search3
-do StartDialog()
-do talking("Rizki")
+Rizki: "Oh, begitu. Terima kasih, maaf telah merepotkanmu."
+
+Gadis: "Tidak apa-apa. Semoga kamu bisa menemukannya. Kalau aku melihatnya, akan kuberitahu kamu."
+
+Rizki: "Terima kasih, aku akan terus mencari."
+~Search3
 Rizki: Hai, maaf mengganggu Dik. Apa kamu pernah melihat pria di foto ini?
-do talking("Perempuan")
-Anak Perempuan: (menggeleng) Tidak, kak. Saya tidak kenal.
-do talking("Rizki")
-Rizki: Makasih ya dik. Kalau kamu melihatnya, tolong kasih tahu kakak ya?
-do talking("Perempuan")
-Anak Perempuan: (mengangguk) Baik, kak. Aku akan mencarinya!
-do talking("-")
-do talking("end")
-do EndDialog()
-=> END
 
-~ FoundInfo
-do StartDialog()
-do talking("Rizki")
+Anak Perempuan: (menggeleng) Tidak, kak. Saya tidak kenal.
+
+Rizki: Makasih ya dik. Kalau kamu melihatnya, tolong kasih tahu kakak ya?
+
+Anak Perempuan: (mengangguk) Baik, kak. Aku akan mencarinya!
+
+
+~FoundInfo
 Rizki: "Maaf mengganggu dek, ada yang tahu tentang keberadaan ayah saya? Dia seorang seismolog, biasa bekerja di sini."
-do talking("Maria")
+
 Maria: "Kami mencari tahu apa yang terjadi padanya setelah gempa."
-do talking("Laki_laki")
+
 Anak SD: (mengamati foto dengan seksama) "Eh, aku kenal bapak ini! Dia sering datang ke desa ini dengan peta dan peralatan aneh-aneh. Aku ingat dia sering berbicara tentang mengamati pola pergerakan tanah.
-do talking("Rizki")
+
 Rizki: (bersemangat) "Itu pasti ayahku! Di mana kamu terakhir kali melihatnya?"
-do talking("Laki_laki")
+
 Anak SD: "Dia pernah bilang kalau dia akan pergi ke gunung dibelakang sekolah untuk riset. Dia bilang ada sesuatu yang ingin dia teliti di sana."
-do talking("Maria")
+
 Maria: "Terima kasih ya, dik. Kamu sudah memberikan petunjuk yang sangat berharga."
-do talking("Rizki")
+
 Rizki: (memandang Maria dengan harapan) "Kita harus segera pergi ke gunung. Ayahku mungkin masih berada di sana!"
 
 (Mereka berdua kemudian bersiap-siap untuk perjalanan ke Gunung Merapi, penuh dengan harapan untuk menemukan ayah Rizki.)

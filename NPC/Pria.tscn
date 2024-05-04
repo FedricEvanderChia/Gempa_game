@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmefmyby3odr6"]
+
+[ext_resource type="Script" path="res://player/DialogSprite.gd" id="1_se31j"]
+[ext_resource type="Texture2D" uid="uid://cosfjgbhy75wm" path="res://asset/Character/NPC_Man.png" id="2_g4u5d"]
+
+[node name="Pria" type="Node2D"]
+script = ExtResource("1_se31j")
+
+[node name="NpcMan" type="Sprite2D" parent="."]
+texture = ExtResource("2_g4u5d")

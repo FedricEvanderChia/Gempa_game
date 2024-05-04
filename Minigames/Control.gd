@@ -8,6 +8,10 @@ var Dsec = 10
 func _ready():
 	$times.modulate = Color(255,255,255)
 	reset_timer()
+	var time = str(min)+":"+str(sec)
+	if sec < 10:
+		time = str(min)+":0"+str(sec)
+	$times.text = "%s" % time
 	pass
 
 
@@ -26,6 +30,8 @@ func _on_timer_timeout():
 			global.life-=1
 			if global.workMode:
 				global.nextMG()
+			else:
+				get_tree().change_scene_to_file("res://world.tscn")
 		if min>0:
 			min -=1
 			sec = 60

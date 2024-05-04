@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://brmclis07bvsb"]
+[gd_scene load_steps=22 format=3 uid="uid://brmclis07bvsb"]
 
 [ext_resource type="PackedScene" uid="uid://c71to8edu42an" path="res://player/Player.tscn" id="1_a88ce"]
 [ext_resource type="Script" path="res://world.gd" id="1_rnkil"]
@@ -10,7 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://dtsrtigd5cgnv" path="res://uigempa.tscn" id="6_7koq2"]
 [ext_resource type="PackedScene" uid="uid://1s0q53ouuvjp" path="res://Inventory/items/items_collectibles.tscn" id="8_467eh"]
 [ext_resource type="Texture2D" uid="uid://csq0py4qvfl74" path="res://asset/HomeA.png" id="11_a4qjb"]
+[ext_resource type="PackedScene" uid="uid://dibfk3he48mbw" path="res://NPC/Laki_laki.tscn" id="12_62fvs"]
 [ext_resource type="Texture2D" uid="uid://cld21g0jpiw4i" path="res://asset/RuinedHouse.png" id="12_s0exl"]
+[ext_resource type="PackedScene" uid="uid://wjnkust00dy6" path="res://NPC/perempuan.tscn" id="13_g4ean"]
+[ext_resource type="PackedScene" uid="uid://dmefmyby3odr6" path="res://NPC/Pria.tscn" id="14_ir5j6"]
+[ext_resource type="PackedScene" uid="uid://b2r5xjkr6i4lj" path="res://NPC/Wanita.tscn" id="15_7hyvu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3knir"]
 size = Vector2(624.5, 375.5)
@@ -27,44 +31,12 @@ size = Vector2(88, 689)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aa0ay"]
 size = Vector2(228, 106)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nbndq"]
+size = Vector2(93.5, 207)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_rnkil")
-
-[node name="BG" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="BG"]
-motion_scale = Vector2(0.1, 0.1)
-
-[node name="Useable" type="Sprite2D" parent="BG/ParallaxLayer"]
-position = Vector2(642, 300)
-scale = Vector2(2.5, 2.465)
-texture = ExtResource("3_wp8gq")
-
-[node name="Useable2" type="Sprite2D" parent="BG/ParallaxLayer"]
-position = Vector2(1922, 300)
-scale = Vector2(2.5, 2.465)
-texture = ExtResource("3_wp8gq")
-flip_h = true
-
-[node name="ParallaxLayerMid2" type="ParallaxLayer" parent="BG"]
-motion_scale = Vector2(0.2, 0.2)
-
-[node name="Prlx3World" type="Sprite2D" parent="BG/ParallaxLayerMid2"]
-position = Vector2(2000, 315)
-texture = ExtResource("3_kc0bs")
-
-[node name="ParallaxLayerMid" type="ParallaxLayer" parent="BG"]
-motion_scale = Vector2(0.5, 0.5)
-
-[node name="Prlx2World" type="Sprite2D" parent="BG/ParallaxLayerMid"]
-position = Vector2(2000, 317)
-texture = ExtResource("3_tknwh")
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="BG"]
-
-[node name="Pixil-frame-0" type="Sprite2D" parent="BG/ParallaxLayer2"]
-position = Vector2(2002, 393)
-texture = ExtResource("2_w20qp")
+Epos = Vector2(3900, 557)
 
 [node name="shop" parent="." instance=ExtResource("3_rwtwv")]
 position = Vector2(781, 415)
@@ -109,7 +81,7 @@ size_flags_horizontal = 4
 text = "MG_Rescue"
 
 [node name="player" parent="." instance=ExtResource("1_a88ce")]
-position = Vector2(422, 557)
+position = Vector2(3900, 557)
 scale = Vector2(0.213187, 0.220962)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
@@ -153,6 +125,72 @@ position = Vector2(2274, 456)
 [node name="items_collectibles" parent="." instance=ExtResource("8_467eh")]
 position = Vector2(2150, 455)
 
+[node name="NPCTalk" type="Node2D" parent="."]
+position = Vector2(3000, 588)
+scale = Vector2(0.25, 0.25)
+
+[node name="Laki_laki" parent="NPCTalk" instance=ExtResource("12_62fvs")]
+position = Vector2(180, 0)
+
+[node name="Perempuan" parent="NPCTalk" instance=ExtResource("13_g4ean")]
+position = Vector2(224, 0)
+
+[node name="Pria" parent="NPCTalk" instance=ExtResource("14_ir5j6")]
+position = Vector2(3272, 0)
+
+[node name="Wanita" parent="NPCTalk" instance=ExtResource("15_7hyvu")]
+position = Vector2(2568, 0)
+
+[node name="Go to Sawah" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Go to Sawah"]
+position = Vector2(4071, 535)
+shape = SubResource("RectangleShape2D_nbndq")
+
+[node name="BG" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="BG"]
+motion_scale = Vector2(0.1, 0.1)
+
+[node name="Useable" type="Sprite2D" parent="BG/ParallaxLayer"]
+position = Vector2(642, 300)
+scale = Vector2(2.5, 2.465)
+texture = ExtResource("3_wp8gq")
+
+[node name="Useable2" type="Sprite2D" parent="BG/ParallaxLayer"]
+position = Vector2(1922, 300)
+scale = Vector2(2.5, 2.465)
+texture = ExtResource("3_wp8gq")
+flip_h = true
+
+[node name="ParallaxLayerMid2" type="ParallaxLayer" parent="BG"]
+motion_scale = Vector2(0.2, 0.2)
+
+[node name="Prlx3World" type="Sprite2D" parent="BG/ParallaxLayerMid2"]
+position = Vector2(2000, 315)
+texture = ExtResource("3_kc0bs")
+
+[node name="ParallaxLayerMid" type="ParallaxLayer" parent="BG"]
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="Prlx2World" type="Sprite2D" parent="BG/ParallaxLayerMid"]
+position = Vector2(2000, 317)
+texture = ExtResource("3_tknwh")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="BG"]
+
+[node name="Pixil-frame-0" type="Sprite2D" parent="BG/ParallaxLayer2"]
+position = Vector2(2002, 393)
+texture = ExtResource("2_w20qp")
+
+[node name="DarkScreen" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -24.0
+offset_top = -116.0
+offset_right = 1579.0
+offset_bottom = 812.0
+color = Color(0, 0, 0, 1)
+
 [connection signal="body_entered" from="WorkMode" to="." method="_on_work_mode_body_entered"]
 [connection signal="body_exited" from="WorkMode" to="." method="_on_work_mode_body_exited"]
 [connection signal="pressed" from="WorkMode/Work" to="." method="_on_work_pressed"]
@@ -163,3 +201,4 @@ position = Vector2(2150, 455)
 [connection signal="pressed" from="Phone" to="." method="_on_phone_pressed"]
 [connection signal="body_entered" from="Player Detection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="Player Detection" to="." method="_on_player_detection_body_exited"]
+[connection signal="body_entered" from="Go to Sawah" to="." method="_on_go_to_sawah_body_entered"]

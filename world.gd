@@ -1,17 +1,27 @@
 extends Node2D
 
-
+@export var Spos = Vector2(400,557)
+@export var Epos = Vector2(4000,557)
 # Called when the node enters the scene tree for the first time.
 func _ready():	
+	if global.Dialogue != 0:
+		$DarkScreen.queue_free()
+	if global.Spos == true:
+		$player.position = Spos
+	else:
+		$player.position = Epos
 	global.Sdialogue.connect(Scam)
 	global.Edialogue.connect(Ecam)
 	if global.Dialogue == 0:
+		$DarkScreen.modulate = Color(1, 1, 1, 1)
+		await create_tween().tween_property($DarkScreen,"modulate",Color(1, 1, 1, 0),1)
+		$DarkScreen.queue_free()
 		DialogueManager.show_dialogue_balloon(load("res://dialogue/Act1.dialogue"), "Entry")	
 		global.Dialogue +=1
-	if global.minigame_score >= 1000 && global.Dialogue == 1:
+	elif global.minigame_score >= 500 && global.Dialogue == 1:
 		DialogueManager.show_dialogue_balloon(load("res://dialogue/Act1.dialogue"), "LostFather")
 		global.Dialogue +=1	
-	if global.minigame_score >= 3000 && global.Dialogue == 2:
+	elif global.minigame_score >= 1000 && global.Dialogue == 2:
 		DialogueManager.show_dialogue_balloon(load("res://dialogue/Act1.dialogue"), "FoundPhoto")
 		global.Dialogue +=1
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -50,3 +60,8 @@ func _on_work_mode_body_entered(body):
 	get_node("WorkMode/Work").show()
 func _on_work_mode_body_exited(body):
 	get_node("WorkMode/Work").hide()
+
+
+func _on_go_to_sawah_body_entered(body):
+	global.Spos = true
+	get_tree().change_scene_to_file("res://area/area_2.tscn")

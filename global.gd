@@ -12,6 +12,7 @@ var talker = ""
 var invt = preload("res://Inventory/player_inv.tres")
 var gold = 0
 var workMode = false
+var Spos = true
 
 signal Sdialogue
 signal Edialogue
