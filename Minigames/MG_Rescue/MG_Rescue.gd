@@ -46,10 +46,7 @@ func generateRubble(num):
 			rub.position = Vector2(rng.randi_range(-150,150),rng.randi_range(-150,150))+pos
 			rub.rotation = rng.randi_range(-180,180)
 			get_node("ClearArea").add_child(rub)
-	
-func _on_button_pressed():
-	get_tree().change_scene_to_file("res://world.tscn")
-
+			
 func complete():
 	global.minigame_score = newscore
 	$CanvasLayer/Control/Success.show()
@@ -59,3 +56,17 @@ func complete():
 		global.nextMG()
 	else:
 		get_tree().change_scene_to_file("res://world.tscn")
+
+func _on_back_pressed():
+	get_tree().change_scene_to_file("res://world.tscn")
+	
+func _on_help_pressed():
+	pause()
+	
+func pause():
+	var new_pause_state = not get_tree().paused
+	get_tree().paused = new_pause_state
+	$CanvasLayer/tutorial_ui.visible = new_pause_state
+
+func _on_okay_pressed():
+	pause()

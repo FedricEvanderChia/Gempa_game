@@ -4,6 +4,7 @@ var min = 0
 var sec = 0
 var Dmin = 0
 var Dsec = 10
+@onready var MG = $"../../"
 
 func _ready():
 	$times.modulate = Color(255,255,255)
@@ -28,10 +29,13 @@ func _on_timer_timeout():
 		if min == 0:
 			$times.modulate = Color(255,0,0)
 			global.life-=1
-			if global.workMode:
-				global.nextMG()
-			else:
+			if global.life==0:
 				get_tree().change_scene_to_file("res://world.tscn")
+			else:	
+				if global.workMode:
+					global.nextMG()
+				else:
+					get_tree().change_scene_to_file("res://world.tscn")
 		if min>0:
 			min -=1
 			sec = 60

@@ -15,6 +15,7 @@ size = Vector2(88, 1319.38)
 size = Vector2(135.375, 589.25)
 
 [node name="Area2" instance=ExtResource("1_yujf3")]
+Spos = Vector2(30, 494)
 
 [node name="BG2" type="ParallaxBackground" parent="." index="0"]
 
@@ -34,7 +35,7 @@ texture = ExtResource("3_21ydt")
 [node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" index="0"]
-position = Vector2(4378, 633)
+position = Vector2(4378, 622)
 shape = SubResource("RectangleShape2D_3yfjv")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D2" index="1"]
@@ -50,11 +51,11 @@ shape = SubResource("RectangleShape2D_80hof")
 [node name="Go to World2" type="Area2D" parent="." index="3"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Go to World2" index="0"]
-position = Vector2(1690, 281)
+position = Vector2(4047, 285)
 shape = SubResource("RectangleShape2D_80hof")
 
 [node name="player" parent="." index="4" instance=ExtResource("4_37cct")]
-position = Vector2(119, 498)
+position = Vector2(30, 498)
 scale = Vector2(0.213, 0.213)
 
 [node name="Camera2D" type="Camera2D" parent="player" index="3"]

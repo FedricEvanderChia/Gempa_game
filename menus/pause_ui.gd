@@ -2,6 +2,9 @@ extends Control
 
 @onready var uigempa = $"../"
 
+func _ready():
+	print(uigempa)
+	
 func _on_resume_pressed():
 	uigempa.pause()
 

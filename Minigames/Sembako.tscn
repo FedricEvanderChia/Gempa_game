@@ -1,15 +1,32 @@
-[gd_scene load_steps=16 format=3 uid="uid://bww43ye6rowdu"]
+[gd_scene load_steps=35 format=3 uid="uid://bww43ye6rowdu"]
 
 [ext_resource type="Texture2D" uid="uid://dhxixs8fflkj7" path="res://asset/BgMejaSembako.png" id="1_0ddqx"]
 [ext_resource type="Script" path="res://Minigames/Sembako.gd" id="1_b8rlw"]
 [ext_resource type="Texture2D" uid="uid://dgkw4xgdmnbxl" path="res://asset/Table.png" id="3_p8kfq"]
+[ext_resource type="Texture2D" uid="uid://ccvmjavne58xc" path="res://asset/useable.png" id="3_vbsfe"]
 [ext_resource type="PackedScene" uid="uid://612ag1ooeqvq" path="res://Object/air.tscn" id="4_fbxqs"]
+[ext_resource type="Texture2D" uid="uid://bjjanpau63g57" path="res://asset/Prlx2World.png" id="4_ty81d"]
 [ext_resource type="PackedScene" uid="uid://r8vr32om1gra" path="res://Object/object.tscn" id="5_3g3gy"]
 [ext_resource type="PackedScene" uid="uid://c3cyb7ty5a1q4" path="res://Object/beras.tscn" id="5_8uu74"]
 [ext_resource type="PackedScene" uid="uid://bsvaddg2smlxc" path="res://Object/tenda.tscn" id="5_41m3d"]
 [ext_resource type="Script" path="res://Minigames/Control.gd" id="8_7gbdg"]
 [ext_resource type="PackedScene" uid="uid://d2te5qwpgjmua" path="res://player/life.tscn" id="9_ks6qj"]
 [ext_resource type="Script" path="res://Minigames/lifes.gd" id="9_m0t61"]
+[ext_resource type="Texture2D" uid="uid://che4dbb7sv3tp" path="res://asset/MenuButton/Help_idle.png" id="11_bitky"]
+[ext_resource type="Texture2D" uid="uid://ecgamlemoxco" path="res://asset/MenuButton/Help_pressed.png" id="12_le51r"]
+[ext_resource type="Texture2D" uid="uid://elokokxim0qr" path="res://asset/MenuButton/Back B.png" id="13_1u4v8"]
+[ext_resource type="Texture2D" uid="uid://b4i1hvu1qifml" path="res://asset/MenuButton/Back A.png" id="14_ng525"]
+[ext_resource type="PackedScene" uid="uid://bni3stxrkbxc1" path="res://Minigames/tutorial_ui.tscn" id="17_vwgqf"]
+[ext_resource type="Texture2D" uid="uid://btrhxxx4waxpr" path="res://asset/Character/NPC_Boy2.3.png" id="18_gxbhd"]
+[ext_resource type="Texture2D" uid="uid://co8jflhap3xns" path="res://asset/Character/NPC_Girl1.1.png" id="19_lyagb"]
+[ext_resource type="Texture2D" uid="uid://cosfjgbhy75wm" path="res://asset/Character/NPC_Man.png" id="20_d883m"]
+[ext_resource type="Texture2D" uid="uid://x8fq7bam18uf" path="res://asset/Character/NPC_woman.png" id="21_rx1pw"]
+[ext_resource type="Texture2D" uid="uid://dgn32xhdau5pk" path="res://asset/Order_Air.png" id="22_idsop"]
+[ext_resource type="Texture2D" uid="uid://ciksmdiwcbfn" path="res://asset/Order_Beras.png" id="23_7xeu3"]
+[ext_resource type="Texture2D" uid="uid://o3xph6rexsu" path="res://asset/Order_Tenda.png" id="24_y4sm3"]
+[ext_resource type="Texture2D" uid="uid://bimwqwdopcug5" path="res://asset/H5O.png" id="25_e5cri"]
+[ext_resource type="Texture2D" uid="uid://ct1ni7aqjltoa" path="res://asset/Beras-duo.png" id="26_d7jp2"]
+[ext_resource type="Texture2D" uid="uid://ed3817p3ijrt" path="res://asset/Tenda-teduh.png" id="27_7hctx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ag3l"]
 atlas = ExtResource("1_0ddqx")
@@ -47,6 +64,43 @@ animations = [{
 "speed": 3.5
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_mxepp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_gxbhd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_lyagb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_d883m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_rx1pw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r78ge"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_idsop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_7xeu3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_y4sm3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
 [node name="Sembako" type="Node2D"]
 script = ExtResource("1_b8rlw")
 
@@ -61,8 +115,18 @@ texture = ExtResource("3_p8kfq")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 layer = -1
 
+[node name="Useable" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(579, 244)
+scale = Vector2(2.3, 2.3)
+texture = ExtResource("3_vbsfe")
+
+[node name="Prlx2World" type="Sprite2D" parent="ParallaxBackground/Useable"]
+position = Vector2(237.826, -17.8261)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_ty81d")
+
 [node name="Roofing ketiup angin" type="AnimatedSprite2D" parent="ParallaxBackground"]
-position = Vector2(576, 324)
+position = Vector2(577, 325)
 scale = Vector2(1.12674, 1.12674)
 sprite_frames = SubResource("SpriteFrames_2l4os")
 autoplay = "default"
@@ -88,6 +152,7 @@ anchors_preset = 0
 offset_right = 1155.0
 offset_bottom = 96.0
 script = ExtResource("8_7gbdg")
+metadata/_edit_use_anchors_ = true
 
 [node name="times" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 1
@@ -115,10 +180,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 15.0
-offset_top = -24.0
-offset_right = 233.0
-offset_bottom = 21.0
+offset_left = 133.0
+offset_top = -29.0
+offset_right = 351.0
+offset_bottom = 26.0
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -128,8 +193,29 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "Score: 00"
 
-[node name="antrian" type="Label" parent="CanvasLayer/Control"]
+[node name="Success" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.5
+offset_top = 248.5
+offset_right = 107.5
+offset_bottom = 303.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Success"
+horizontal_alignment = 1
+
+[node name="antrian" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
 offset_left = 952.0
 offset_top = 91.0
 offset_right = 1130.0
@@ -143,28 +229,6 @@ theme_override_font_sizes/font_size = 40
 text = "Antrian
 00"
 horizontal_alignment = 2
-
-[node name="Success" type="Label" parent="CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -109.0
-offset_top = 102.0
-offset_right = 109.0
-offset_bottom = 157.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 3
-theme_override_font_sizes/font_size = 40
-text = "Success"
-horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="CanvasLayer/Control"]
 autostart = true
@@ -184,12 +248,152 @@ position = Vector2(108, 114)
 visible = false
 position = Vector2(177, 114)
 
-[node name="Button" type="Button" parent="CanvasLayer"]
-offset_left = 946.0
-offset_top = 17.0
-offset_right = 1137.0
-offset_bottom = 84.0
-text = "Back"
+[node name="Help" type="TextureButton" parent="CanvasLayer"]
+offset_left = 1057.0
+offset_top = 15.0
+offset_right = 1377.0
+offset_bottom = 335.0
+scale = Vector2(0.25, 0.25)
+size_flags_horizontal = 0
+texture_normal = ExtResource("11_bitky")
+texture_pressed = ExtResource("12_le51r")
+
+[node name="Back" type="TextureButton" parent="CanvasLayer"]
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 335.0
+offset_bottom = 335.0
+scale = Vector2(0.25, 0.25)
+size_flags_horizontal = 0
+texture_normal = ExtResource("13_1u4v8")
+texture_pressed = ExtResource("14_ng525")
+
+[node name="tutorial_ui" parent="CanvasLayer" instance=ExtResource("17_vwgqf")]
+process_mode = 2
+visible = false
+
+[node name="okay" type="Button" parent="CanvasLayer/tutorial_ui"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.5
+offset_top = 201.5
+offset_right = 34.5
+offset_bottom = 237.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Okay !"
+
+[node name="Interactor" type="Label" parent="CanvasLayer/tutorial_ui"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.276015
+anchor_top = 1.91699
+anchor_right = 0.130235
+anchor_bottom = 2.11452
+offset_left = 602.969
+offset_top = -913.21
+offset_right = 820.969
+offset_bottom = -858.21
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Warga
+
+Warga akan datang ke posko untuk menerima bantuan sembako. 
+Mereka akan meminta barang yang mereka butuhkan. 
+Jadi pastikan kamu memberikan barang yang sesuai"
+metadata/_edit_use_anchors_ = true
+
+[node name="Interactibles" type="Label" parent="CanvasLayer/tutorial_ui"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.503472
+anchor_top = 0.166667
+anchor_right = 0.621528
+anchor_bottom = 0.316358
+offset_left = 133.0
+offset_top = -28.0
+offset_right = 351.0
+offset_bottom = 27.0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Sembako
+
+Seret dan lepaskan barang-barang ini 
+diatas warga untuk memberikan barang
+tersebut. "
+metadata/_edit_use_anchors_ = true
+
+[node name="Game Goal" type="Label" parent="CanvasLayer/tutorial_ui"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0486111
+anchor_top = 0.145062
+anchor_right = 0.0946181
+anchor_bottom = 0.294753
+offset_left = 133.0
+offset_top = -27.0
+offset_right = 351.0
+offset_bottom = 90.0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Minigame Sembako
+
+Dalam minigame ini kamu bertugas 
+sebagai panitia yang membagikan 
+bantuan sosial kepada korban gempa.
+Bagikan sembako kepada warga sesuai 
+dengan kebutuhan mereka. "
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/tutorial_ui"]
+position = Vector2(137, 402)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_mxepp")
+autoplay = "default"
+flip_h = true
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasLayer/tutorial_ui"]
+position = Vector2(226, 369)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_r78ge")
+autoplay = "default"
+
+[node name="H5o" type="Sprite2D" parent="CanvasLayer/tutorial_ui"]
+position = Vector2(571, 125)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("25_e5cri")
+
+[node name="Beras-duo" type="Sprite2D" parent="CanvasLayer/tutorial_ui"]
+position = Vector2(612, 205)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("26_d7jp2")
+
+[node name="Tenda-teduh" type="Sprite2D" parent="CanvasLayer/tutorial_ui"]
+position = Vector2(652, 131)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("27_7hctx")
 
 [connection signal="timeout" from="CanvasLayer/Control/Timer" to="CanvasLayer/Control" method="_on_timer_timeout"]
-[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Help" to="." method="_on_help_pressed"]
+[connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="CanvasLayer/tutorial_ui/okay" to="." method="_on_okay_pressed"]

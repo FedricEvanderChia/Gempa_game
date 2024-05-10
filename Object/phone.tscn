@@ -147,7 +147,7 @@ offset_bottom = 113.0
 texture_normal = ExtResource("24_3v7oj")
 texture_pressed = ExtResource("25_a0ifl")
 
-[node name="Call" type="TextureButton" parent="."]
+[node name="(Call)" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = -28.0
 offset_top = 128.0

@@ -1,21 +1,371 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctl8y1aikvb86"]
+[gd_scene load_steps=47 format=3 uid="uid://ctl8y1aikvb86"]
 
 [ext_resource type="PackedScene" uid="uid://dvdnljfvv8wk" path="res://Object/phone.tscn" id="1_kxars"]
 [ext_resource type="Script" path="res://Minigames/MG_119/MG_119.gd" id="1_ybaes"]
+[ext_resource type="Texture2D" uid="uid://7jxr8kncjp0g" path="res://asset/Phone_book.png" id="2_s2nsw"]
+[ext_resource type="FontFile" uid="uid://pdrka83wc2a3" path="res://asset/dial_button/pixelsix00.ttf" id="3_4ew8g"]
 [ext_resource type="Texture2D" uid="uid://cmxjeq82v1xm2" path="res://asset/dial_button/tile025.png" id="3_mdh7y"]
 [ext_resource type="Texture2D" uid="uid://bxmen6xh0wv47" path="res://asset/dial_button/tile028.png" id="4_fw07w"]
 [ext_resource type="Script" path="res://Minigames/Control.gd" id="5_fjprp"]
 [ext_resource type="Script" path="res://Minigames/lifes.gd" id="6_r5l05"]
 [ext_resource type="PackedScene" uid="uid://d2te5qwpgjmua" path="res://player/life.tscn" id="7_hqlyl"]
+[ext_resource type="Texture2D" uid="uid://che4dbb7sv3tp" path="res://asset/MenuButton/Help_idle.png" id="8_hwru4"]
+[ext_resource type="Texture2D" uid="uid://ecgamlemoxco" path="res://asset/MenuButton/Help_pressed.png" id="9_r3hlf"]
+[ext_resource type="Texture2D" uid="uid://elokokxim0qr" path="res://asset/MenuButton/Back B.png" id="10_dirbw"]
+[ext_resource type="Texture2D" uid="uid://b4i1hvu1qifml" path="res://asset/MenuButton/Back A.png" id="11_hi0d3"]
+[ext_resource type="PackedScene" uid="uid://bni3stxrkbxc1" path="res://Minigames/tutorial_ui.tscn" id="14_dlsf7"]
+[ext_resource type="Script" path="res://Minigames/MG_119/TutorialPhoneBook.gd" id="15_8fkh3"]
+[ext_resource type="Texture2D" uid="uid://6tdlf6r5i6e5" path="res://asset/Phone.png" id="16_yfmkj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md5tv"]
+atlas = ExtResource("2_s2nsw")
+region = Rect2(0, 0, 540, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bb0t"]
+atlas = ExtResource("2_s2nsw")
+region = Rect2(540, 0, 540, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17eu1"]
+atlas = ExtResource("2_s2nsw")
+region = Rect2(1080, 0, 540, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_clp8g"]
+atlas = ExtResource("2_s2nsw")
+region = Rect2(1620, 0, 540, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcuub"]
+atlas = ExtResource("2_s2nsw")
+region = Rect2(2160, 0, 540, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnnu5"]
+atlas = ExtResource("2_s2nsw")
+region = Rect2(2700, 0, 540, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0q23"]
+atlas = ExtResource("2_s2nsw")
+region = Rect2(3240, 0, 540, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vde6"]
+atlas = ExtResource("2_s2nsw")
+region = Rect2(3780, 0, 540, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1ach"]
+atlas = ExtResource("2_s2nsw")
+region = Rect2(4320, 0, 540, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85hoc"]
+atlas = ExtResource("2_s2nsw")
+region = Rect2(4320, 0, 540, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3c3qr"]
+atlas = ExtResource("2_s2nsw")
+region = Rect2(3780, 0, 540, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ua5rs"]
+atlas = ExtResource("2_s2nsw")
+region = Rect2(3240, 0, 540, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8lxy"]
+atlas = ExtResource("2_s2nsw")
+region = Rect2(2700, 0, 540, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ablqq"]
+atlas = ExtResource("2_s2nsw")
+region = Rect2(2160, 0, 540, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vxqj"]
+atlas = ExtResource("2_s2nsw")
+region = Rect2(1620, 0, 540, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ei4jm"]
+atlas = ExtResource("2_s2nsw")
+region = Rect2(1080, 0, 540, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hnvn"]
+atlas = ExtResource("2_s2nsw")
+region = Rect2(540, 0, 540, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_effpp"]
+atlas = ExtResource("2_s2nsw")
+region = Rect2(0, 0, 540, 540)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pnc70"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md5tv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4bb0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17eu1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_clp8g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcuub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnnu5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0q23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vde6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1ach")
+}],
+"loop": false,
+"name": &"Close",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85hoc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3c3qr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ua5rs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8lxy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ablqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4vxqj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ei4jm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hnvn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_effpp")
+}],
+"loop": false,
+"name": &"Open",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_extpm"]
+size = Vector2(288.25, 328.25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b16se"]
+atlas = ExtResource("2_s2nsw")
+region = Rect2(0, 0, 540, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmhig"]
+atlas = ExtResource("2_s2nsw")
+region = Rect2(540, 0, 540, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsjh0"]
+atlas = ExtResource("2_s2nsw")
+region = Rect2(1080, 0, 540, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sf1ow"]
+atlas = ExtResource("2_s2nsw")
+region = Rect2(1620, 0, 540, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xxv8"]
+atlas = ExtResource("2_s2nsw")
+region = Rect2(2160, 0, 540, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8y5f4"]
+atlas = ExtResource("2_s2nsw")
+region = Rect2(2700, 0, 540, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53pe8"]
+atlas = ExtResource("2_s2nsw")
+region = Rect2(3240, 0, 540, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_es34w"]
+atlas = ExtResource("2_s2nsw")
+region = Rect2(3780, 0, 540, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adpde"]
+atlas = ExtResource("2_s2nsw")
+region = Rect2(4320, 0, 540, 540)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d8tpj"]
+animations = [{
+"frames": [{
+"duration": 60.0,
+"texture": SubResource("AtlasTexture_b16se")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmhig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsjh0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sf1ow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xxv8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8y5f4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53pe8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_es34w")
+}, {
+"duration": 60.0,
+"texture": SubResource("AtlasTexture_adpde")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_es34w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53pe8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8y5f4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xxv8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sf1ow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsjh0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmhig")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
 
 [node name="MG_119" type="Node2D"]
 script = ExtResource("1_ybaes")
 
+[node name="PhoneBook" type="Area2D" parent="."]
+position = Vector2(300, 376)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PhoneBook"]
+sprite_frames = SubResource("SpriteFrames_pnc70")
+animation = &"Open"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PhoneBook"]
+position = Vector2(-4.125, 91.875)
+shape = SubResource("RectangleShape2D_extpm")
+
+[node name="list" type="MarginContainer" parent="PhoneBook"]
+visible = false
+offset_left = -213.0
+offset_top = -50.0
+offset_right = 177.0
+offset_bottom = 210.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PhoneBook/list"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Number1" type="Label" parent="PhoneBook/list/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4ew8g")
+theme_override_font_sizes/font_size = 13
+text = "Ambulans
+118"
+vertical_alignment = 1
+
+[node name="Number2" type="Label" parent="PhoneBook/list/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4ew8g")
+theme_override_font_sizes/font_size = 13
+text = "Pemadam Kebakaran
+113"
+vertical_alignment = 1
+
+[node name="Number3" type="Label" parent="PhoneBook/list/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4ew8g")
+theme_override_font_sizes/font_size = 13
+text = "Kepolisian
+110 "
+vertical_alignment = 1
+
+[node name="Number4" type="Label" parent="PhoneBook/list/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4ew8g")
+theme_override_font_sizes/font_size = 13
+text = "Basarnas
+115"
+vertical_alignment = 1
+
+[node name="Number5" type="Label" parent="PhoneBook/list/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4ew8g")
+theme_override_font_sizes/font_size = 13
+text = "Posko Bencana
+129"
+vertical_alignment = 1
+
+[node name="Number6" type="Label" parent="PhoneBook/list/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4ew8g")
+theme_override_font_sizes/font_size = 13
+text = "Posko Kewaspadaan Nasional
+122"
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PhoneBook/list"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Number1" type="Label" parent="PhoneBook/list/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4ew8g")
+theme_override_font_sizes/font_size = 13
+text = "Gangguan Kelistrikan
+123"
+vertical_alignment = 1
+
+[node name="Number2" type="Label" parent="PhoneBook/list/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4ew8g")
+theme_override_font_sizes/font_size = 13
+text = "PMI
+021-7992325"
+vertical_alignment = 1
+
 [node name="Phone" parent="." instance=ExtResource("1_kxars")]
 offset_left = 577.0
-offset_top = 421.0
+offset_top = 420.0
 offset_right = 577.0
-offset_bottom = 421.0
+offset_bottom = 420.0
+
+[node name="Call" type="TextureButton" parent="Phone"]
+layout_mode = 0
+offset_left = -28.0
+offset_top = 128.0
+offset_right = 27.0
+offset_bottom = 183.0
+texture_normal = ExtResource("3_mdh7y")
+texture_pressed = ExtResource("4_fw07w")
 
 [node name="Situation" type="Label" parent="."]
 anchors_preset = 8
@@ -33,14 +383,6 @@ size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 40
 horizontal_alignment = 1
 
-[node name="Call" type="TextureButton" parent="."]
-offset_left = 549.0
-offset_top = 549.0
-offset_right = 604.0
-offset_bottom = 604.0
-texture_normal = ExtResource("3_mdh7y")
-texture_pressed = ExtResource("4_fw07w")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 5
 
@@ -50,6 +392,7 @@ anchors_preset = 0
 offset_right = 1155.0
 offset_bottom = 96.0
 script = ExtResource("5_fjprp")
+metadata/_edit_use_anchors_ = true
 
 [node name="times" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 1
@@ -71,16 +414,17 @@ theme_override_font_sizes/font_size = 40
 text = "0:00"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="scoretext" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 15.0
-offset_top = -24.0
-offset_right = 233.0
-offset_bottom = 21.0
+offset_left = 133.0
+offset_top = -29.0
+offset_right = 351.0
+offset_bottom = 26.0
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -89,26 +433,25 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "Score: 00"
+metadata/_edit_use_anchors_ = true
 
 [node name="Success" type="Label" parent="CanvasLayer/Control"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -107.5
-offset_top = 186.0
-offset_right = 110.5
-offset_bottom = 241.0
+offset_left = -110.5
+offset_top = 187.5
+offset_right = 107.5
+offset_bottom = 242.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 3
 theme_override_font_sizes/font_size = 40
 text = "Success"
 horizontal_alignment = 1
@@ -131,13 +474,255 @@ position = Vector2(108, 114)
 visible = false
 position = Vector2(177, 114)
 
-[node name="Button" type="Button" parent="CanvasLayer"]
-offset_left = 946.0
-offset_top = 17.0
-offset_right = 1137.0
-offset_bottom = 84.0
-text = "Back"
+[node name="Tips" type="Label" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -109.5
+offset_top = 52.0
+offset_right = 108.5
+offset_bottom = 107.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Masukan "
+horizontal_alignment = 1
 
-[connection signal="button_down" from="Call" to="." method="_on_call_button_down"]
+[node name="Help" type="TextureButton" parent="CanvasLayer"]
+offset_left = 1057.0
+offset_top = 15.0
+offset_right = 1377.0
+offset_bottom = 335.0
+scale = Vector2(0.25, 0.25)
+size_flags_horizontal = 0
+texture_normal = ExtResource("8_hwru4")
+texture_pressed = ExtResource("9_r3hlf")
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="TextureButton" parent="CanvasLayer"]
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 335.0
+offset_bottom = 335.0
+scale = Vector2(0.25, 0.25)
+size_flags_horizontal = 0
+texture_normal = ExtResource("10_dirbw")
+texture_pressed = ExtResource("11_hi0d3")
+metadata/_edit_use_anchors_ = true
+
+[node name="tutorial_ui" parent="CanvasLayer" instance=ExtResource("14_dlsf7")]
+process_mode = 2
+visible = false
+
+[node name="okay" type="Button" parent="CanvasLayer/tutorial_ui"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.5
+offset_top = 201.5
+offset_right = 34.5
+offset_bottom = 237.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Okay !"
+
+[node name="image1" type="Area2D" parent="CanvasLayer/tutorial_ui"]
+position = Vector2(608, 116)
+scale = Vector2(0.3, 0.3)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/tutorial_ui/image1"]
+sprite_frames = SubResource("SpriteFrames_d8tpj")
+autoplay = "default"
+script = ExtResource("15_8fkh3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/tutorial_ui/image1"]
+position = Vector2(-4.125, 91.875)
+shape = SubResource("RectangleShape2D_extpm")
+
+[node name="list" type="MarginContainer" parent="CanvasLayer/tutorial_ui/image1"]
+visible = false
+offset_left = -213.0
+offset_top = -50.0
+offset_right = 177.0
+offset_bottom = 210.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/tutorial_ui/image1/list"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Number1" type="Label" parent="CanvasLayer/tutorial_ui/image1/list/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4ew8g")
+theme_override_font_sizes/font_size = 13
+text = "Ambulans
+118"
+vertical_alignment = 1
+
+[node name="Number2" type="Label" parent="CanvasLayer/tutorial_ui/image1/list/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4ew8g")
+theme_override_font_sizes/font_size = 13
+text = "Pemadam Kebakaran
+113"
+vertical_alignment = 1
+
+[node name="Number3" type="Label" parent="CanvasLayer/tutorial_ui/image1/list/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4ew8g")
+theme_override_font_sizes/font_size = 13
+text = "Kepolisian
+110 "
+vertical_alignment = 1
+
+[node name="Number4" type="Label" parent="CanvasLayer/tutorial_ui/image1/list/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4ew8g")
+theme_override_font_sizes/font_size = 13
+text = "Basarnas
+115"
+vertical_alignment = 1
+
+[node name="Number5" type="Label" parent="CanvasLayer/tutorial_ui/image1/list/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4ew8g")
+theme_override_font_sizes/font_size = 13
+text = "Posko Bencana
+129"
+vertical_alignment = 1
+
+[node name="Number6" type="Label" parent="CanvasLayer/tutorial_ui/image1/list/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4ew8g")
+theme_override_font_sizes/font_size = 13
+text = "Posko Kewaspadaan Nasional
+122"
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/tutorial_ui/image1/list"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Number1" type="Label" parent="CanvasLayer/tutorial_ui/image1/list/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4ew8g")
+theme_override_font_sizes/font_size = 13
+text = "Gangguan Kelistrikan
+123"
+vertical_alignment = 1
+
+[node name="Number2" type="Label" parent="CanvasLayer/tutorial_ui/image1/list/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4ew8g")
+theme_override_font_sizes/font_size = 13
+text = "PMI
+021-7992325"
+vertical_alignment = 1
+
+[node name="Phone2" type="Sprite2D" parent="CanvasLayer/tutorial_ui"]
+position = Vector2(205, 387)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_yfmkj")
+
+[node name="scoretext2" type="Label" parent="CanvasLayer/tutorial_ui"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.217855
+anchor_top = 1.88458
+anchor_right = 0.188395
+anchor_bottom = 2.03428
+offset_left = 602.969
+offset_top = -913.21
+offset_right = 820.969
+offset_bottom = -858.21
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Sumsang S69 pro
+
+Tombol angka    :  untuk memasukan nomor yang diminta.
+Tombol telepon :  tekan tombol ini jika kamu yakin dengan jawabanmu
+Tombol delete    : gunakan tombol merah ini untuk menghapus angka 
+                                 terakhir yang diisi 
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="scoretext" type="Label" parent="CanvasLayer/tutorial_ui"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.503472
+anchor_top = 0.166667
+anchor_right = 0.621528
+anchor_bottom = 0.316358
+offset_left = 133.0
+offset_top = -28.0
+offset_right = 351.0
+offset_bottom = 27.0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Daftar Nomor Darurat
+
+Kamu bisa menekan buku untuk 
+membuka/menutup daftar nomor
+darurat yang mungkin akan diminta."
+metadata/_edit_use_anchors_ = true
+
+[node name="scoretext3" type="Label" parent="CanvasLayer/tutorial_ui"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0486111
+anchor_top = 0.145062
+anchor_right = 0.0946181
+anchor_bottom = 0.294753
+offset_left = 133.0
+offset_top = -14.0
+offset_right = 351.0
+offset_bottom = 41.0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Minigame Telepon Darurat
+
+dalam game ini kamu ditugaskan untuk
+menghubungi nomor darurat sesuai 
+dengan kondisi yang diminta."
+metadata/_edit_use_anchors_ = true
+
+[connection signal="input_event" from="PhoneBook" to="." method="_on_phone_book_input_event"]
+[connection signal="button_down" from="Phone/Call" to="." method="_on_call_button_down"]
 [connection signal="timeout" from="CanvasLayer/Control/Timer" to="CanvasLayer/Control" method="_on_timer_timeout"]
-[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Help" to="." method="_on_help_pressed"]
+[connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="CanvasLayer/tutorial_ui/okay" to="." method="_on_okay_pressed"]

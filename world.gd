@@ -4,6 +4,7 @@ extends Node2D
 @export var Epos = Vector2(4000,557)
 # Called when the node enters the scene tree for the first time.
 func _ready():	
+	global.workMode = false
 	if global.Dialogue != 0:
 		$DarkScreen.queue_free()
 	if global.Spos == true:

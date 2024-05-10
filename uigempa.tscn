@@ -123,19 +123,6 @@ texture_pressed = ExtResource("5_cfhy1")
 shape = SubResource("RectangleShape2D_piwp7")
 action = "ui_left"
 
-[node name="PauseBtn" type="VBoxContainer" parent="."]
-offset_left = 15.0
-offset_top = 15.0
-offset_right = 143.0
-offset_bottom = 143.0
-scale = Vector2(0.6, 0.6)
-
-[node name="Pause" type="TextureButton" parent="PauseBtn"]
-layout_mode = 2
-size_flags_horizontal = 0
-texture_normal = ExtResource("3_bdcwb")
-texture_pressed = ExtResource("4_tur6m")
-
 [node name="inventory_ui" parent="." instance=ExtResource("3_lx3uu")]
 anchors_preset = 8
 anchor_left = 0.5
@@ -187,20 +174,6 @@ position = Vector2(798, 396)
 visible = false
 position = Vector2(975, 375)
 
-[node name="pause_ui" parent="." instance=ExtResource("10_i5j0k")]
-visible = false
-
-[node name="Cinematic" type="ColorRect" parent="."]
-offset_top = -180.0
-offset_right = 1176.0
-color = Color(0, 0, 0, 1)
-
-[node name="Cinematic2" type="ColorRect" parent="."]
-offset_top = 647.0
-offset_right = 1170.0
-offset_bottom = 827.0
-color = Color(0, 0, 0, 1)
-
 [node name="Wanita" parent="." instance=ExtResource("14_j3l4h")]
 visible = false
 position = Vector2(975, 475)
@@ -217,9 +190,36 @@ position = Vector2(975, 475)
 visible = false
 position = Vector2(975, 475)
 
+[node name="Cinematic" type="ColorRect" parent="."]
+offset_top = -180.0
+offset_right = 1176.0
+color = Color(0, 0, 0, 1)
+
+[node name="Cinematic2" type="ColorRect" parent="."]
+offset_top = 647.0
+offset_right = 1170.0
+offset_bottom = 827.0
+color = Color(0, 0, 0, 1)
+
+[node name="pause_ui" parent="." instance=ExtResource("10_i5j0k")]
+visible = false
+
+[node name="PauseBtn" type="VBoxContainer" parent="."]
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 143.0
+offset_bottom = 143.0
+scale = Vector2(0.6, 0.6)
+
+[node name="Pause" type="TextureButton" parent="PauseBtn"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture_normal = ExtResource("3_bdcwb")
+texture_pressed = ExtResource("4_tur6m")
+
 [connection signal="pressed" from="Control2/tc_button_right" to="." method="_on_tc_button_right_pressed"]
 [connection signal="released" from="Control2/tc_button_right" to="." method="_on_tc_button_right_released"]
 [connection signal="pressed" from="Control2/tc_button_left" to="." method="_on_tc_button_left_pressed"]
 [connection signal="released" from="Control2/tc_button_left" to="." method="_on_tc_button_left_released"]
-[connection signal="pressed" from="PauseBtn/Pause" to="." method="_on_pause_pressed"]
 [connection signal="input_event" from="Bag" to="." method="_on_bag_input_event"]
+[connection signal="pressed" from="PauseBtn/Pause" to="." method="_on_pause_pressed"]

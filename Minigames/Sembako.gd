@@ -58,8 +58,7 @@ func generateOrder():
 	#emit_signal("need",needs)
 	global.needs = needs
 
-func _on_button_pressed():
-	get_tree().change_scene_to_file("res://world.tscn")
+
 func complete():
 	$CanvasLayer/Control/Success.show()
 	await get_tree().create_timer(1).timeout
@@ -67,3 +66,17 @@ func complete():
 		global.nextMG()
 	else:
 		get_tree().change_scene_to_file("res://world.tscn")
+
+func _on_back_pressed():
+	get_tree().change_scene_to_file("res://world.tscn")
+	
+func _on_help_pressed():
+	pause()
+	
+func pause():
+	var new_pause_state = not get_tree().paused
+	get_tree().paused = new_pause_state
+	$CanvasLayer/tutorial_ui.visible = new_pause_state
+
+func _on_okay_pressed():
+	pause()
