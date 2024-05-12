@@ -32,13 +32,9 @@ func _on_pause_pressed():
 	pause()
 	
 func pause():
-	if paused:
-		pausemenu.hide()
-		Engine.time_scale = 1
-	else:
-		pausemenu.show()
-		Engine.time_scale = 0
-	paused = !paused
+	var new_pause_state = not get_tree().paused
+	get_tree().paused = new_pause_state
+	pausemenu.visible = new_pause_state
 
 
 func _on_tc_button_right_pressed():

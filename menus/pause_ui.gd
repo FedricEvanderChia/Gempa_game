@@ -23,7 +23,6 @@ func _on_quit_pressed():
 	uigempa.pause()
 	get_tree().quit()
 
-
 func _on_load_pressed():
 	util.loadGame()
 func _on_save_pressed():

@@ -4,6 +4,7 @@ var condition = null
 var openBook = false
 var Req
 var paused = false
+var obj
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Situation.modulate = Color(255,255,255)
@@ -18,11 +19,10 @@ func _process(delta):
 		await get_node("CanvasLayer/Control/lifes/life1/AnimationPlayer").animation_finished
 	
 func generateOrder():
-	var obj
 	if global.difficulty >= 5:
 		obj = rng.randi_range(0, 7)
 		if obj == 7:
-			$CanvasLayer/Control.Dsec = 10
+			$CanvasLayer/Control.Dsec = 25
 	else:
 		obj = rng.randi_range(0, 6)
 	if obj == 0:
@@ -84,6 +84,8 @@ func _on_button_pressed():
 	get_tree().change_scene_to_file("res://world.tscn")
 	global.workMode = false
 func complete():
+	if obj == 7:
+		global.minigame_score += 900
 	global.minigame_score += 100 
 	$CanvasLayer/Control/Success.show()
 	await get_tree().create_timer(1).timeout

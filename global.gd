@@ -27,7 +27,7 @@ func nextMG():
 	var rng = RandomNumberGenerator.new()
 	level +=1
 	print(level," ",difficulty)
-	if level%4 == 0:
+	if (level-1)%4 == 0:
 		difficulty +=1
 		get_tree().change_scene_to_file("res://Minigames/Difficulty_Increase.tscn")
 	else:

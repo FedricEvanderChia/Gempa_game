@@ -3,7 +3,7 @@ extends Control
 var min = 0
 var sec = 0
 var Dmin = 0
-var Dsec = 10
+var Dsec = 15
 @onready var MG = $"../../"
 
 func _ready():
@@ -48,9 +48,9 @@ func _on_timer_timeout():
 func reset_timer():
 	min = Dmin
 	sec = Dsec-global.difficulty
-	if sec<=3:
-		sec=3
+	if sec<=5:
+		sec=5
 	if get_node("./../..").name == "Sembako":
-		min = (5 * get_node("./../..").goal)/60
-		sec = (5 * get_node("./../..").goal)%60
+		min = (sec * get_node("./../..").goal)/60
+		sec = (sec * get_node("./../..").goal)%60
 		

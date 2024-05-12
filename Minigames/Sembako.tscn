@@ -249,21 +249,21 @@ visible = false
 position = Vector2(177, 114)
 
 [node name="Help" type="TextureButton" parent="CanvasLayer"]
-offset_left = 1057.0
-offset_top = 15.0
-offset_right = 1377.0
-offset_bottom = 335.0
-scale = Vector2(0.25, 0.25)
+offset_left = 1070.0
+offset_top = 10.0
+offset_right = 1390.0
+offset_bottom = 330.0
+scale = Vector2(0.23, 0.23)
 size_flags_horizontal = 0
 texture_normal = ExtResource("11_bitky")
 texture_pressed = ExtResource("12_le51r")
 
 [node name="Back" type="TextureButton" parent="CanvasLayer"]
-offset_left = 15.0
-offset_top = 15.0
-offset_right = 335.0
-offset_bottom = 335.0
-scale = Vector2(0.25, 0.25)
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 330.0
+offset_bottom = 330.0
+scale = Vector2(0.23, 0.23)
 size_flags_horizontal = 0
 texture_normal = ExtResource("13_1u4v8")
 texture_pressed = ExtResource("14_ng525")

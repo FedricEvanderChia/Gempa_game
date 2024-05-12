@@ -123,22 +123,22 @@ visible = false
 position = Vector2(177, 114)
 
 [node name="Help" type="TextureButton" parent="CanvasLayer"]
-offset_left = 1057.0
-offset_top = 15.0
-offset_right = 1377.0
-offset_bottom = 335.0
-scale = Vector2(0.25, 0.25)
+offset_left = 1070.0
+offset_top = 10.0
+offset_right = 1390.0
+offset_bottom = 330.0
+scale = Vector2(0.23, 0.23)
 size_flags_horizontal = 0
 texture_normal = ExtResource("6_23kdi")
 texture_pressed = ExtResource("7_datqn")
 metadata/_edit_use_anchors_ = true
 
 [node name="Back" type="TextureButton" parent="CanvasLayer"]
-offset_left = 15.0
-offset_top = 15.0
-offset_right = 335.0
-offset_bottom = 335.0
-scale = Vector2(0.25, 0.25)
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 330.0
+offset_bottom = 330.0
+scale = Vector2(0.23, 0.23)
 size_flags_horizontal = 0
 texture_normal = ExtResource("8_vb0gn")
 texture_pressed = ExtResource("9_vmt8s")

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl54w3ixo6aud"]
+
+[ext_resource type="Texture2D" uid="uid://das1q510m1arp" path="res://asset/Character/Duck.png" id="1_fmmu3"]
+[ext_resource type="Script" path="res://player/DialogSprite.gd" id="1_k3jx3"]
+
+[node name="Bebek" type="Node2D"]
+script = ExtResource("1_k3jx3")
+
+[node name="Duck" type="Sprite2D" parent="."]
+texture = ExtResource("1_fmmu3")
