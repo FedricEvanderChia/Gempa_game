@@ -48,6 +48,8 @@ func _on_phone_pressed():
 	get_tree().change_scene_to_file("res://Minigames/MG_119/MG_119.tscn")
 func _on_rescue_pressed():
 	get_tree().change_scene_to_file("res://Minigames/MG_Rescue/MG_Rescue.tscn")
+func _on_mg_exit_pressed():
+	get_tree().change_scene_to_file("res://Minigames/MG_Maze/mg_maze.tscn")
 func _on_work_pressed():
 	global.workMode = true
 	global.nextMG()

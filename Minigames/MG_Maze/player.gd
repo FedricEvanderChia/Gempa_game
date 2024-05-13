@@ -1,6 +1,6 @@
 extends Node2D
 
-var goal = 4
+var goal = 0
 @onready var tile_map = $"../TileMap"
 var is_moving = false
 
@@ -36,6 +36,7 @@ func move(direction: Vector2):
 		if "rescue" in tileName:
 			tile_map.set_cell(0,nextTile,0,Vector2i(0,0))
 			goal -=1
+			print(goal)
 		if "exit" in tileName and goal == 0:
 			get_tree().change_scene_to_file("res://world.tscn")
 	if tile_data.get_custom_data("walkable") == false:

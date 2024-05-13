@@ -191,6 +191,14 @@ offset_right = 1579.0
 offset_bottom = 812.0
 color = Color(0, 0, 0, 1)
 
+[node name="MG_Exit" type="Button" parent="."]
+offset_left = 953.0
+offset_top = 434.0
+offset_right = 1079.0
+offset_bottom = 478.0
+size_flags_horizontal = 4
+text = "Emergency Exit"
+
 [connection signal="body_entered" from="WorkMode" to="." method="_on_work_mode_body_entered"]
 [connection signal="body_exited" from="WorkMode" to="." method="_on_work_mode_body_exited"]
 [connection signal="pressed" from="WorkMode/Work" to="." method="_on_work_pressed"]
@@ -202,3 +210,4 @@ color = Color(0, 0, 0, 1)
 [connection signal="body_entered" from="Player Detection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="Player Detection" to="." method="_on_player_detection_body_exited"]
 [connection signal="body_entered" from="Go to Sawah" to="." method="_on_go_to_sawah_body_entered"]
+[connection signal="pressed" from="MG_Exit" to="." method="_on_mg_exit_pressed"]
