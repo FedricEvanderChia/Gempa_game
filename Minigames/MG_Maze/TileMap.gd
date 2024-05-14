@@ -54,7 +54,7 @@ func place_wall(pos: Vector2):
 	
 func place_rescue(pos: Vector2):
 	set_cell(main_layer, pos, SOURCE_ID, normal_rescue_atlas_coords)
-
+	$"../Player".goal +=1
 
 func will_be_converted_to_wall(spot: Vector2i):
 	return (spot.x % 2 == 1 and spot.y % 2 == 1)
@@ -92,7 +92,7 @@ func dfs(start: Vector2i):
 			continue
 			
 		set_cell(main_layer, current, SOURCE_ID, walkable_atlas_coords)
-		
+		await get_tree().create_timer(0.15).timeout
 		
 		var found_new_path = false
 		adj4.shuffle()
@@ -103,12 +103,11 @@ func dfs(start: Vector2i):
 				if will_be_converted_to_wall(new_pos) and chance_of_no_loop == 1:
 					place_wall(new_pos)
 					place_rescue(current)
-					$"../Player".goal +=1
+					
 				else:
 					found_new_path = true
 					fringe.append(new_pos)
-					
+				
 		#if we hit a dead end or are at a cross section
 		if not found_new_path:
 			place_wall(current)
-

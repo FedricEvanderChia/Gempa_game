@@ -1,10 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://bl54w3ixo6aud"]
+[gd_scene load_steps=6 format=3 uid="uid://bl54w3ixo6aud"]
 
-[ext_resource type="Texture2D" uid="uid://das1q510m1arp" path="res://asset/Character/Duck.png" id="1_fmmu3"]
 [ext_resource type="Script" path="res://player/DialogSprite.gd" id="1_k3jx3"]
+[ext_resource type="Texture2D" uid="uid://cqo453aljo01w" path="res://asset/Character/Duck_anim.png" id="2_chf1c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i62wq"]
+atlas = ExtResource("2_chf1c")
+region = Rect2(0, 0, 448, 483)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m000y"]
+atlas = ExtResource("2_chf1c")
+region = Rect2(448, 0, 448, 483)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_16qfk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i62wq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m000y")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Bebek" type="Node2D"]
 script = ExtResource("1_k3jx3")
 
-[node name="Duck" type="Sprite2D" parent="."]
-texture = ExtResource("1_fmmu3")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_16qfk")

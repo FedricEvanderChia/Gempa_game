@@ -162,11 +162,6 @@ shape = SubResource("RectangleShape2D_7wcg0")
 sprite_frames = SubResource("SpriteFrames_v2pkr")
 animation = &"Open"
 
-[node name="Rizki" parent="." instance=ExtResource("10_jyxn3")]
-visible = false
-position = Vector2(200, 375)
-randStr = 10.0
-
 [node name="Mob" parent="." instance=ExtResource("7_24ixx")]
 visible = false
 position = Vector2(798, 396)
@@ -195,6 +190,11 @@ position = Vector2(975, 475)
 visible = false
 position = Vector2(954, 353)
 scale = Vector2(0.8, 0.8)
+
+[node name="Rizki" parent="." instance=ExtResource("10_jyxn3")]
+visible = false
+position = Vector2(200, 375)
+randStr = 10.0
 
 [node name="Cinematic" type="ColorRect" parent="."]
 offset_top = -180.0

@@ -29,6 +29,7 @@ func _on_timer_timeout():
 		if min == 0:
 			$times.modulate = Color(255,0,0)
 			global.life-=1
+			await get_tree().create_timer(1).timeout
 			if global.life==0:
 				get_tree().change_scene_to_file("res://world.tscn")
 			else:	
@@ -50,7 +51,4 @@ func reset_timer():
 	sec = Dsec-global.difficulty
 	if sec<=5:
 		sec=5
-	if get_node("./../..").name == "Sembako":
-		min = (sec * get_node("./../..").goal)/60
-		sec = (sec * get_node("./../..").goal)%60
 		

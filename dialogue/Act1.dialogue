@@ -26,7 +26,7 @@ Rizki: (Apa yang sebaiknya aku katakan?)
 	Rizki: Haah! lalu kenapa kamu tadi bersih keras menyuruh aku yang nyetir?!
 	do talking("Maria")
 	Maria: kamu benar-benar mau membiarkan seorang wanita untuk mengantarmu berkeliling?
-	do talking("Rizki_Shake")
+	do talking("Rizki")
 	Rizki: Urgh..!
 do talking("Maria")
 Maria: Hmph...
@@ -170,7 +170,7 @@ do EndDialog()
 do StartDialog()
 do talking("Rizki")
 Rizki: "Maaf mengganggu dek, ada yang tahu tentang keberadaan ayah saya? Dia seorang seismolog, biasa bekerja di sini."
-do talking("Maria")
+do talking("Maria_left")
 Maria: "Kami mencari tahu apa yang terjadi padanya setelah gempa."
 do talking("Laki_laki")
 Anak SD: (mengamati foto dengan seksama) "Eh, aku kenal bapak ini! Dia sering datang ke desa ini dengan peta dan peralatan aneh-aneh. Aku ingat dia sering berbicara tentang mengamati pola pergerakan tanah.
@@ -182,13 +182,40 @@ do talking("Maria")
 Maria: "Terima kasih ya, dik. Kamu sudah memberikan petunjuk yang sangat berharga."
 do talking("Rizki")
 Rizki: (memandang Maria dengan harapan) "Kita harus segera pergi ke gunung. Ayahku mungkin masih berada di sana!"
-
+do talking("-")
 (Mereka berdua kemudian bersiap-siap untuk perjalanan ke Gunung Merapi, penuh dengan harapan untuk menemukan ayah Rizki.)
+do talking("end")
+do EndDialog()
+=> END
 
-
-~Sawah1(WorkInProgress)
-
-
+~ Sawah1
+do StartDialog()
+do talking("Rizki")
+Rizki: ...huff...huff berjalan kaki dari desa menuju gunung sangat melelahkan. Apakah kamu ada Air minum Maria?
+do talking("Maria")
+Maria: Masa begitu saja sudah capek, saya saja masih segar-segar saja kok. 
+do talking("Rizki")
+Rizki: Tolong jangan samakan stamina manusia biasa dengan makhluk sepertimu..
+do talking("Maria")
+Maria: Diam, kamu saja yang lemah kayak tauge kekurangan sinar matahari.
+do talking("Rizki")
+Rizki : Hey!! tauge itu kecil-kecil tapi bernutrisi tahu. Minta maaf kepada tauge-tauge di dunia!! Kamu saja yang maniak otot!!
+do talking("Bebek")
+do talking("Maria_hide")
+Maria: HooHooHoo... sepertinya seniormu ini kurang keras dalam melatihmu yaa!! sepulang dari sini akan saya suruh kamu lari keliling desa  10 putaran. Akan saya buat kamu babak BE...BEEEEEEK!!!
+do talking("Rizki")
+Rizki: Bebek??
+do talking("Bebek_anim")
+Bebek: Kwek!!
+do talking("Rizki")
+Maria: (sembunyi di belakang riski) JAUHKAN! JAUHKAN! JAUHKAN BEBEK ITU DARI SINI!!!!
+do talking("Rizki")
+Rizki: eeh?... eehhh?? Kamu? takut bebek?
+do talking("Maria")
+Maria: DIAM!! Kamu ga pernah kan pas SD celananya ditarik dan dipatok bebek!! Cepat SINGKIRKAN!!!
+do talking("end")
+do EndDialog()
+=> END
 
 
 ~ MariaEvent1

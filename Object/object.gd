@@ -59,3 +59,10 @@ func validate():
 		global.goal = true
 		sembako.goal -= 1
 		global.minigame_score += 100 
+		$"../CanvasLayer/Control".sec +=2
+		$"../AddTime".show()
+		$"../AddTime".position = Vector2(575,20)
+		$"../AddTime".modulate = Color(1, 1, 1, 1)
+		create_tween().tween_property($"../AddTime","position",Vector2(575,0),0.5)
+		create_tween().tween_property($"../AddTime","modulate", Color(1, 1, 1, 0), 0.5)
+		

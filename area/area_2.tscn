@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://3hchn5utlicl"]
+[gd_scene load_steps=9 format=3 uid="uid://3hchn5utlicl"]
 
 [ext_resource type="PackedScene" uid="uid://c2d55xql3iv5v" path="res://area/area.tscn" id="1_yujf3"]
 [ext_resource type="Texture2D" uid="uid://c4478r3dtu6g0" path="res://asset/PrlxMix_Sawah.png" id="2_ixs4n"]
 [ext_resource type="Texture2D" uid="uid://b6o6ml4pkal8f" path="res://asset/Prlx1_Sawah.png" id="3_21ydt"]
 [ext_resource type="PackedScene" uid="uid://c71to8edu42an" path="res://player/Player.tscn" id="4_37cct"]
+[ext_resource type="PackedScene" uid="uid://dtsrtigd5cgnv" path="res://uigempa.tscn" id="5_xaudi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3yfjv"]
 size = Vector2(9002, 74.5)
@@ -64,6 +65,8 @@ zoom = Vector2(0.9, 0.9)
 limit_left = 0
 limit_right = 4000
 limit_bottom = 732
+
+[node name="GUI" parent="." index="5" instance=ExtResource("5_xaudi")]
 
 [connection signal="body_entered" from="Go to World" to="." method="_on_go_to_world_body_entered"]
 [connection signal="body_entered" from="Go to World2" to="." method="_on_go_to_world_2_body_entered"]

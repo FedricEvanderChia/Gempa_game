@@ -6,5 +6,5 @@
 [node name="Wanita" type="Node2D"]
 script = ExtResource("1_kngfu")
 
-[node name="NpcWoman" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_7bobn")

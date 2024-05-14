@@ -8,5 +8,5 @@ top_level = true
 scale = Vector2(0.6, 0.6)
 script = ExtResource("1_xjnc0")
 
-[node name="Silhouette" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_451lv")

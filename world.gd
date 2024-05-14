@@ -13,6 +13,10 @@ func _ready():
 		$player.position = Epos
 	global.Sdialogue.connect(Scam)
 	global.Edialogue.connect(Ecam)
+	if global.Dialogue < 3:
+		$NPCTalk.hide()
+	else:
+		$NPCTalk.show()
 	if global.Dialogue == 0:
 		$DarkScreen.modulate = Color(1, 1, 1, 1)
 		await create_tween().tween_property($DarkScreen,"modulate",Color(1, 1, 1, 0),1)
@@ -25,6 +29,7 @@ func _ready():
 	elif global.minigame_score >= 1000 && global.Dialogue == 2:
 		DialogueManager.show_dialogue_balloon(load("res://dialogue/Act1.dialogue"), "FoundPhoto")
 		global.Dialogue +=1
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func Scam():
 	create_tween().tween_property($player/Camera2D,"limit_bottom",760,1)
