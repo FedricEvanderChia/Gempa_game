@@ -6,26 +6,26 @@ var pole_tscn= preload("res://Minigames/MG_Rescue/pole.tscn")
 var count = rng.randi_range(0, 5)
 var newscore = global.minigame_score+100 
 # Called when the node enters the scene tree for the first time.
-
+var num = global.difficulty+3
+var is_ready = false
 func _ready():
-	process_mode = Node.PROCESS_MODE_PAUSABLE
 	if global.life<=0:
 		global.life = 3
 	$CanvasLayer/Control/Success.hide()
-	var num = global.difficulty+3
 	generateRubble(num)
-	
+	is_ready = true
 	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	await get_tree().create_timer(1.0).timeout
-	if GlbRescue.rubble == 0:
-		get_tree().paused = true
-		complete()
-	
-
+	if is_ready:
+		if GlbRescue.rubble == 0:
+			get_tree().paused = true
+			complete()
+			return
+	else:
+		pass
 
 func generateRubble(num):
 	for number in range(num):
@@ -46,7 +46,7 @@ func generateRubble(num):
 			rub.position = Vector2(rng.randi_range(-150,150),rng.randi_range(-150,150))+pos
 			rub.rotation = rng.randi_range(-180,180)
 			get_node("ClearArea").add_child(rub)
-			
+
 func complete():
 	global.minigame_score = newscore
 	$CanvasLayer/Control/Success.show()
@@ -56,17 +56,17 @@ func complete():
 		global.nextMG()
 	else:
 		get_tree().change_scene_to_file("res://world.tscn")
-
-func _on_back_pressed():
-	get_tree().change_scene_to_file("res://world.tscn")
-	
+		
 func _on_help_pressed():
 	pause()
-	
+
 func pause():
 	var new_pause_state = not get_tree().paused
 	get_tree().paused = new_pause_state
 	$CanvasLayer/tutorial_ui.visible = new_pause_state
-
+	
 func _on_okay_pressed():
 	pause()
+
+func _on_back_pressed():
+	get_tree().change_scene_to_file("res://world.tscn")

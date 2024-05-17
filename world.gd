@@ -18,9 +18,11 @@ func _ready():
 	else:
 		$NPCTalk.show()
 	if global.Dialogue == 0:
+		$DarkScreen.show()
 		$DarkScreen.modulate = Color(1, 1, 1, 1)
-		await create_tween().tween_property($DarkScreen,"modulate",Color(1, 1, 1, 0),1)
-		$DarkScreen.queue_free()
+		var tween = create_tween()
+		tween.tween_property($DarkScreen,"modulate",Color(1, 1, 1, 0),1)
+		tween.tween_callback(queue_free)
 		DialogueManager.show_dialogue_balloon(load("res://dialogue/Act1.dialogue"), "Entry")	
 		global.Dialogue +=1
 	elif global.minigame_score >= 500 && global.Dialogue == 1:

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://brhdaf0gpq7lt"]
+
+[ext_resource type="Script" path="res://Minigames/MG_Build_EmTent/target_platform.gd" id="1_7butr"]
+[ext_resource type="Texture2D" uid="uid://bvdk2qgc6j8dt" path="res://asset/Tenda_emergency/yellow_bar.png" id="2_k3ax3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kkruu"]
+size = Vector2(101.5, 40)
+
+[node name="target_platform" type="Area2D" groups=["target_plat"]]
+position = Vector2(-1, 1)
+script = ExtResource("1_7butr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.25, -3)
+shape = SubResource("RectangleShape2D_kkruu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, 0)
+texture = ExtResource("2_k3ax3")

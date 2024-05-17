@@ -8,9 +8,9 @@ func _ready():
 		$player.position = Spos
 	else:
 		$player.position = Epos
-	if global.Dialogue == 4:
-		DialogueManager.show_dialogue_balloon(load("res://dialogue/Act1.dialogue"), "Sawah1")
-		global.Dialogue +=1
+	# if global.EntryDialogue == 0:
+	# 	DialogueManager.show_dialogue_balloon(load("res://dialogue/EntryDialogue.dialogue"), "Entry")
+	# 	global.EntryDialogue +=1
 	# if global.minigame_score >= 500 && global.EntryDialogue == 1:
 	# 	DialogueManager.show_dialogue_balloon(load("res://dialogue/EntryDialogue.dialogue"), "LostFather")
 	# 	global.EntryDialogue +=1	

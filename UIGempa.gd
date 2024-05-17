@@ -11,9 +11,6 @@ func _ready():
 # untuk pergerakan player, hanya tinggal memanggil action ui_left
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 
 func _on_bag_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -30,7 +27,7 @@ func _on_bag_input_event(viewport, event, shape_idx):
 
 func _on_pause_pressed():
 	pause()
-	
+
 func pause():
 	var new_pause_state = not get_tree().paused
 	get_tree().paused = new_pause_state

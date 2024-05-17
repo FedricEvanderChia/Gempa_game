@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dvdnljfvv8wk"]
+[gd_scene load_steps=31 format=3 uid="uid://ccwrg3j3yr2r1"]
 
 [ext_resource type="Texture2D" uid="uid://6tdlf6r5i6e5" path="res://asset/Phone.png" id="1_fy2bi"]
 [ext_resource type="Script" path="res://Object/phone.gd" id="1_mswit"]
@@ -147,7 +147,8 @@ offset_bottom = 113.0
 texture_normal = ExtResource("24_3v7oj")
 texture_pressed = ExtResource("25_a0ifl")
 
-[node name="(Call)" type="TextureButton" parent="."]
+[node name="Call_Unused" type="TextureButton" parent="."]
+visible = false
 layout_mode = 0
 offset_left = -28.0
 offset_top = 128.0

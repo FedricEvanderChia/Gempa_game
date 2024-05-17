@@ -1,39 +1,32 @@
-[gd_scene format=3 uid="uid://bni3stxrkbxc1"]
+[gd_scene format=3 uid="uid://div6tgqs38lwg"]
 
-[node name="tutorial_ui" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="tutorial_ui" type="Node2D"]
 
-[node name="ColorRect2" type="ColorRect" parent="."]
-layout_mode = 1
+[node name="White" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.666667)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -550.0
+offset_left = -525.0
 offset_top = -300.0
-offset_right = 550.0
+offset_right = 525.0
 offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 1, 1, 0.501961)
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
+[node name="Black" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.784314)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -540.0
+offset_left = -515.0
 offset_top = -290.0
-offset_right = 540.0
+offset_right = 515.0
 offset_bottom = 290.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.784314)
+color = Color(0, 0, 0, 1)

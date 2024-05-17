@@ -57,7 +57,7 @@ limit_bottom = 732
 [node name="Go to World2" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Go to World2"]
-position = Vector2(1674, 299)
+position = Vector2(4042, 283)
 shape = SubResource("RectangleShape2D_ewrrl")
 
 [connection signal="body_entered" from="Go to World" to="." method="_on_go_to_world_body_entered"]

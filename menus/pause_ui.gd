@@ -2,9 +2,6 @@ extends Control
 
 @onready var uigempa = $"../"
 
-func _ready():
-	print(uigempa)
-	
 func _on_resume_pressed():
 	uigempa.pause()
 
@@ -22,6 +19,7 @@ func _on_setting_pressed():
 func _on_quit_pressed():
 	uigempa.pause()
 	get_tree().quit()
+
 
 func _on_load_pressed():
 	util.loadGame()

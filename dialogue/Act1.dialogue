@@ -1,3 +1,4 @@
+@ -1,194 +1,221 @@
 ~ Entry
 do StartDialog()
 do talking("Maria")
@@ -54,7 +55,7 @@ do talking("Rizki")
 Rizki: (mengangguk setuju) Aku akan memimpin kelompok yang mencari jalur masuk alternatif. Mari kita segera bergerak.
 do talking("end")
 do EndDialog()
-=> END
+=> END!
 
 ~ LostFather
 do StartDialog()
@@ -90,7 +91,7 @@ do talking("Maria")
 Maria: Hehe.. Sudah menjadi tugas seniormu untuk membimbingmu disaat seperti ini
 do talking("end")
 do EndDialog()
-=> END
+=> END!
 
 ~ FoundPhoto
 do StartDialog()
@@ -114,7 +115,7 @@ Rizki: Iya, kamu benar. Kita harus tetap optimis dan terus mencari jejaknya di s
 do talking("-")
 do talking("end")
 do EndDialog()
-=> END
+=> END!
 
 ~ Search1
 do StartDialog()
@@ -132,7 +133,7 @@ do talking("-")
 (Dengan harapan yang tumbuh, Rizki melanjutkan pencariannya, semoga bisa menemukan jejak ayahnya.)
 do talking("end")
 do EndDialog()
-=> END
+=> END!
 
 ~ Search2
 do StartDialog()
@@ -149,7 +150,7 @@ Rizki: Terima kasih, aku akan terus mencari.
 do talking("-")
 do talking("end")
 do EndDialog()
-=> END
+=> END!
 
 ~ Search3
 do StartDialog()
@@ -164,7 +165,7 @@ Anak Perempuan: (mengangguk) Baik, kak. Aku akan mencarinya!
 do talking("-")
 do talking("end")
 do EndDialog()
-=> END
+=> END!
 
 ~ FoundInfo
 do StartDialog()
@@ -182,11 +183,12 @@ do talking("Maria")
 Maria: "Terima kasih ya, dik. Kamu sudah memberikan petunjuk yang sangat berharga."
 do talking("Rizki")
 Rizki: (memandang Maria dengan harapan) "Kita harus segera pergi ke gunung. Ayahku mungkin masih berada di sana!"
+
 do talking("-")
 (Mereka berdua kemudian bersiap-siap untuk perjalanan ke Gunung Merapi, penuh dengan harapan untuk menemukan ayah Rizki.)
 do talking("end")
 do EndDialog()
-=> END
+=> END!
 
 ~ Sawah1
 do StartDialog()
@@ -215,26 +217,7 @@ do talking("Maria")
 Maria: DIAM!! Kamu ga pernah kan pas SD celananya ditarik dan dipatok bebek!! Cepat SINGKIRKAN!!!
 do talking("end")
 do EndDialog()
-=> END
+=> END!
 
 
 ~ MariaEvent1
-Maria: "Waktu saya masih kecil, desa tempatku tinggal mengalami musibah tsunami. Banyak orang terluka, banyak yang kehilangan rumah dan keluarga. Bencana itulah momen yang mengubah hidupku."
-
-(Maria berjalan ke depan, tatapannya tetap teguh.)
-
-Maria: "Saat itu, saya bersumpah. Sumpah untuk belajar, untuk memperoleh keterampilan medis yang diperlukan, agar bisa berdiri di garis depan, siap membantu setiap kali bencana melanda."
-
-(Dia menggenggam tangannya dengan erat.)
-
-Maria: "Saya tidak pernah menjadi tipe gadis yang menunggu di belakang. Saya tahu apa yang saya inginkan, dan saya akan berjuang untuk itu. Bergabung dengan PMI adalah pilihan yang jelas bagi saya. Ini adalah tempat di mana saya bisa menerapkan keterampilan saya, di mana saya bisa menjalani panggilan saya untuk membantu orang lain."
-
-(Tatapannya melintas ke sekeliling ruangan, memastikan pesannya diserap dengan kuat.)
-
-Maria: "Saya tidak takut dengan tantangan. Saya siap berdiri di garis depan, siap menghadapi setiap situasi darurat dengan kepala dingin dan tindakan tegas. Ini bukan hanya tentang pekerjaan. Ini adalah tentang hidup saya, tentang panggilan saya. Dan saya tidak akan pernah mundur dari panggilan itu."
-
-
-
-
-
-

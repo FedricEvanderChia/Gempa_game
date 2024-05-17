@@ -4,10 +4,9 @@ var condition = null
 var openBook = false
 var Req
 var paused = false
-var obj
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Situation.modulate = Color(255,255,255)
+	
 	if global.life<=0:
 		global.life = 3
 	$CanvasLayer/Control/Success.hide()
@@ -19,38 +18,50 @@ func _process(delta):
 		await get_node("CanvasLayer/Control/lifes/life1/AnimationPlayer").animation_finished
 	
 func generateOrder():
+	var obj
 	if global.difficulty >= 5:
 		obj = rng.randi_range(0, 7)
 		if obj == 7:
-			$CanvasLayer/Control.Dsec = 25
+			$CanvasLayer/Control.Dsec = 10
 	else:
 		obj = rng.randi_range(0, 6)
 	if obj == 0:
 		condition = "118" # Ambulans
+		$Situation.text = "Telepon Ambulans (118)"
 		Req = "Telepon Ambulans (118)"
 	elif obj == 1:
 		condition = "113" # Kebakaran
+		$Situation.text = "Telepon Kebakaran (113)"
 		Req = "Telepon Kebakaran (113)"
 	elif obj == 2:
 		condition = "110" # Kepolisian
+		$Situation.text = "Telepon Kepolisian (110)"
 		Req = "Telepon Kepolisian (110)"
 	elif obj == 3:
 		condition = "115" # Basarnas
+		$Situation.text = "Telepon Basarnas (115)"
 		Req = "Telepon Basarnas (115)"
 	elif obj == 4:
 		condition = "129" # Posko bencana
+		$Situation.text = "Telepon Posko bencana (129)"
 		Req = "Telepon Posko bencana (129)"
 	elif obj == 5:
 		condition = "122" # Posko Kewaspadaan Nasional
+		$Situation.text = "Telepon Posko Kewaspadaan Nasional (122)"
 		Req = "Telepon Posko Kewaspadaan Nasional (122)"
 	elif obj == 6:
 		condition = "123" # Gangguan Kelistrikan
+		$Situation.text = "Telepon Gangguan Kelistrikan (123)"
 		Req = "Telepon Gangguan Kelistrikan (123)"
 	elif obj == 7:
 		condition = "0217992325" # untuk Palang Merah Indonesia (PMI)
+		$Situation.text = "Telepon Palang Merah Indonesia (021-7992325)"
+
 		Req = "Telepon Palang Merah Indonesia (021-7992325)"
 	if global.difficulty >= 5:
 		Req = Req.left(Req.find("("))
+	
+	$Situation.modulate = Color(255,255,255)
 	$Situation.text = Req
 	
 func _on_call_button_down():
@@ -84,8 +95,6 @@ func _on_button_pressed():
 	get_tree().change_scene_to_file("res://world.tscn")
 	global.workMode = false
 func complete():
-	if obj == 7:
-		global.minigame_score += 900
 	global.minigame_score += 100 
 	$CanvasLayer/Control/Success.show()
 	await get_tree().create_timer(1).timeout
@@ -124,3 +133,4 @@ func _on_okay_pressed():
 
 func _on_back_pressed():
 	get_tree().change_scene_to_file("res://world.tscn")
+

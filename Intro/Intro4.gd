@@ -14,4 +14,7 @@ func _process(delta):
 
 
 func _on_button_pressed():
-	get_tree().change_scene_to_file("res://Intro/RoadTrip.tscn")
+	if global.Dialogue == 0:
+		get_tree().change_scene_to_file("res://Intro/road_bg.tscn")
+	else:
+		get_tree().change_scene_to_file("res://world.tscn")

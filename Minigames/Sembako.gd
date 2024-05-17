@@ -58,7 +58,6 @@ func generateOrder():
 	#emit_signal("need",needs)
 	global.needs = needs
 
-
 func complete():
 	$CanvasLayer/Control/Success.show()
 	await get_tree().create_timer(1).timeout

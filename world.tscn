@@ -1,10 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://brmclis07bvsb"]
+[gd_scene load_steps=26 format=3 uid="uid://brmclis07bvsb"]
 
 [ext_resource type="PackedScene" uid="uid://c71to8edu42an" path="res://player/Player.tscn" id="1_a88ce"]
 [ext_resource type="Script" path="res://world.gd" id="1_rnkil"]
 [ext_resource type="Texture2D" uid="uid://cxj3qf7thkbck" path="res://asset/pixil-frame-0.png" id="2_w20qp"]
 [ext_resource type="Texture2D" uid="uid://dlnvpx1iw58pf" path="res://asset/Prlx3World.png" id="3_kc0bs"]
-[ext_resource type="PackedScene" uid="uid://c3veaw3iicq5n" path="res://Toko.tscn" id="3_rwtwv"]
+[ext_resource type="PackedScene" path="res://Toko.tscn" id="3_rwtwv"]
 [ext_resource type="Texture2D" uid="uid://bjjanpau63g57" path="res://asset/Prlx2World.png" id="3_tknwh"]
 [ext_resource type="Texture2D" uid="uid://ccvmjavne58xc" path="res://asset/useable.png" id="3_wp8gq"]
 [ext_resource type="PackedScene" uid="uid://dtsrtigd5cgnv" path="res://uigempa.tscn" id="6_7koq2"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://x8fq7bam18uf" path="res://asset/Character/NPC_woman.png" id="14_fcmkq"]
 [ext_resource type="Texture2D" uid="uid://co8jflhap3xns" path="res://asset/Character/NPC_Girl1.1.png" id="15_baabl"]
 [ext_resource type="Texture2D" uid="uid://btrhxxx4waxpr" path="res://asset/Character/NPC_Boy2.3.png" id="16_7x8su"]
+[ext_resource type="AudioStream" uid="uid://6vh8rugjgj07" path="res://asset/Soundtrack/Gameplay.mp3" id="17_6v1qh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3knir"]
 size = Vector2(624.5, 375.5)
@@ -165,6 +166,7 @@ position = Vector2(2002, 393)
 texture = ExtResource("2_w20qp")
 
 [node name="NPCTalk" type="Node2D" parent="."]
+visible = false
 position = Vector2(3000, 588)
 scale = Vector2(0.25, 0.25)
 
@@ -257,7 +259,6 @@ limit_right = 4000
 limit_bottom = 660
 
 [node name="DarkScreen" type="ColorRect" parent="."]
-modulate = Color(1, 1, 1, 0)
 offset_left = -24.0
 offset_top = -116.0
 offset_right = 1579.0
@@ -271,6 +272,10 @@ offset_right = 1079.0
 offset_bottom = 478.0
 size_flags_horizontal = 4
 text = "Emergency Exit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_6v1qh")
+autoplay = true
 
 [connection signal="body_entered" from="WorkMode" to="." method="_on_work_mode_body_entered"]
 [connection signal="body_exited" from="WorkMode" to="." method="_on_work_mode_body_exited"]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1g4qj3ig2hsc"]
+
+[ext_resource type="Script" path="res://Minigames/MG_Build_EmTent/Action_bar.gd" id="1_c05f0"]
+
+[node name="ActionBar" type="Node2D"]
+script = ExtResource("1_c05f0")

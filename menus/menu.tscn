@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://drnqyiwnpts7k"]
+[gd_scene load_steps=10 format=3 uid="uid://drnqyiwnpts7k"]
 
 [ext_resource type="Script" path="res://menus/menu.gd" id="1_08rkx"]
 [ext_resource type="Texture2D" uid="uid://dfq4b8kmu3pv0" path="res://asset/MenuButton/tile000.png" id="2_titvd"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dkpcy11lmk328" path="res://asset/MenuButton/tile004.png" id="6_863w1"]
 [ext_resource type="Texture2D" uid="uid://buy23701oag5t" path="res://asset/MenuButton/tile005.png" id="7_j7dsg"]
 [ext_resource type="Texture2D" uid="uid://cbxdfu4pfjx44" path="res://asset/Game Title.png" id="8_xno7n"]
+[ext_resource type="AudioStream" uid="uid://c4u46fh70x517" path="res://asset/Soundtrack/MainMenu.mp3" id="9_j7v64"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -55,6 +56,10 @@ texture_pressed = ExtResource("7_j7dsg")
 [node name="GameTitle" type="Sprite2D" parent="."]
 position = Vector2(586, 101)
 texture = ExtResource("8_xno7n")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_j7v64")
+autoplay = true
 
 [connection signal="mouse_entered" from="VBoxContainer/StartB" to="." method="_on_start_b_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/StartB" to="." method="_on_start_b_mouse_exited"]
