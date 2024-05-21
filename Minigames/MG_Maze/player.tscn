@@ -1,79 +1,57 @@
-[gd_scene load_steps=19 format=3 uid="uid://86vsnigwxqkl"]
+[gd_scene load_steps=17 format=3 uid="uid://blxwvvgrsd5pg"]
 
-[ext_resource type="Texture2D" uid="uid://8cad4ltqkcfp" path="res://asset/Simple_tile.png" id="1_04h5n"]
-[ext_resource type="Script" path="res://Minigames/MG_Maze/player.gd" id="2_hj6p6"]
-[ext_resource type="Texture2D" uid="uid://c8nv6mtnlspav" path="res://asset/Character/MiniRizki_Sheet.png" id="3_px5ue"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oam5a"]
-texture = ExtResource("1_04h5n")
-0:0/0 = 0
-0:0/0/custom_data_0 = true
-0:0/0/custom_data_1 = "path"
-1:0/0 = 0
-1:0/0/custom_data_1 = "wall"
-2:0/0 = 0
-2:0/0/custom_data_0 = true
-2:0/0/custom_data_1 = "exit"
-3:0/0 = 0
-3:0/0/custom_data_0 = true
-3:0/0/custom_data_1 = "rescue"
-
-[sub_resource type="TileSet" id="TileSet_0hx5b"]
-custom_data_layer_0/name = "walkable"
-custom_data_layer_0/type = 1
-custom_data_layer_1/name = "TileName"
-custom_data_layer_1/type = 4
-sources/0 = SubResource("TileSetAtlasSource_oam5a")
+[ext_resource type="Script" path="res://Minigames/MG_Maze/player.gd" id="1_6pn5c"]
+[ext_resource type="Texture2D" uid="uid://c8nv6mtnlspav" path="res://asset/Character/MiniRizki_Sheet.png" id="2_l82xe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_07g5d"]
-atlas = ExtResource("3_px5ue")
+atlas = ExtResource("2_l82xe")
 region = Rect2(21, 0, 21, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5numb"]
-atlas = ExtResource("3_px5ue")
+atlas = ExtResource("2_l82xe")
 region = Rect2(0, 0, 21, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vuor5"]
-atlas = ExtResource("3_px5ue")
+atlas = ExtResource("2_l82xe")
 region = Rect2(42, 0, 21, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kawvl"]
-atlas = ExtResource("3_px5ue")
+atlas = ExtResource("2_l82xe")
 region = Rect2(21, 42, 21, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jw7pc"]
-atlas = ExtResource("3_px5ue")
+atlas = ExtResource("2_l82xe")
 region = Rect2(0, 42, 21, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5sh3o"]
-atlas = ExtResource("3_px5ue")
+atlas = ExtResource("2_l82xe")
 region = Rect2(42, 42, 21, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4bu14"]
-atlas = ExtResource("3_px5ue")
+atlas = ExtResource("2_l82xe")
 region = Rect2(21, 63, 21, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3kfiq"]
-atlas = ExtResource("3_px5ue")
+atlas = ExtResource("2_l82xe")
 region = Rect2(0, 63, 21, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gvigp"]
-atlas = ExtResource("3_px5ue")
+atlas = ExtResource("2_l82xe")
 region = Rect2(42, 63, 21, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ryc8t"]
-atlas = ExtResource("3_px5ue")
+atlas = ExtResource("2_l82xe")
 region = Rect2(21, 21, 21, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p71xv"]
-atlas = ExtResource("3_px5ue")
+atlas = ExtResource("2_l82xe")
 region = Rect2(0, 21, 21, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nxxxe"]
-atlas = ExtResource("3_px5ue")
+atlas = ExtResource("2_l82xe")
 region = Rect2(42, 21, 21, 21)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ym787"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_3ktsl"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -144,24 +122,26 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="mg_maze" type="Node2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5oxxp"]
+radius = 5.0
+height = 15.0
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_0hx5b")
-rendering_quadrant_size = 32
-format = 2
-layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 65537, 0, 0, 65536, 0, 0, 65538, 0, 0, 131074, 0, 0, 131073, 0, 0, 131072, 0, 0, 131075, 0, 0, 65539, 0, 0, 3, 0, 0, 196611, 0, 0, 196610, 0, 0, 196609, 0, 0, 196608, 0, 0, -65533, 65536, 0, -65534, 65536, 0, -65535, 65536, 0, -65536, 65536, 0, -1, 65536, 0, 65535, 65536, 0, 131071, 65536, 0, 196607, 65536, 0, 262143, 65536, 0, 327679, 65536, 0, 262144, 65536, 0, 262145, 65536, 0, 262146, 65536, 0, 262147, 65536, 0, 262148, 65536, 0, 196612, 65536, 0, 131076, 65536, 0, 65540, 65536, 0, 4, 65536, 0, -65532, 65536, 0)
-
-[node name="Player" type="Node2D" parent="."]
+[node name="Player" type="Node2D"]
 scale = Vector2(0.5, 0.5)
-script = ExtResource("2_hj6p6")
+script = ExtResource("1_6pn5c")
 
-[node name="Icon" type="AnimatedSprite2D" parent="Player"]
+[node name="Icon" type="AnimatedSprite2D" parent="."]
 position = Vector2(16, 16)
 scale = Vector2(1.5, 1.5)
-sprite_frames = SubResource("SpriteFrames_ym787")
+sprite_frames = SubResource("SpriteFrames_3ktsl")
 animation = &"up"
 
-[node name="Camera2D" type="Camera2D" parent="Player/Icon"]
+[node name="Area2D" type="Area2D" parent="Icon"]
 scale = Vector2(0.666667, 0.666667)
-zoom = Vector2(5, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon/Area2D"]
+scale = Vector2(2, 2)
+shape = SubResource("CapsuleShape2D_5oxxp")
+
+[connection signal="body_entered" from="Icon/Area2D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Icon/Area2D" to="." method="_on_body_exited"]

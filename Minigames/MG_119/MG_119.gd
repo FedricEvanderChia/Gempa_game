@@ -79,6 +79,7 @@ func _on_call_button_down():
 		wrong()
 		
 func wrong():
+	shake(get_node("Phone"),"position")
 	$Situation.modulate = Color(255,0,0)
 	await get_tree().create_timer(0.15).timeout
 	$Situation.modulate = Color(255,255,255)
@@ -90,7 +91,18 @@ func wrong():
 	$Situation.modulate = Color(255,0,0)
 	await get_tree().create_timer(0.15).timeout
 	$Situation.modulate = Color(255,255,255)
-	
+
+func shake(body: Node, prop: String):
+	var tween = create_tween()
+	var currPos = body.position
+	tween.tween_property(body,prop,currPos + Vector2(rng.randi_range(-10,10),rng.randi_range(-10,10)),0.05)
+	tween.tween_property(body,prop,currPos + Vector2(rng.randi_range(-8,8),rng.randi_range(-8,8)),0.05)
+	tween.tween_property(body,prop,currPos + Vector2(rng.randi_range(-6,6),rng.randi_range(-6,6)),0.05)
+	tween.tween_property(body,prop,currPos + Vector2(rng.randi_range(-4,4),rng.randi_range(-4,4)),0.05)
+	tween.tween_property(body,prop,currPos + Vector2(rng.randi_range(-2,2),rng.randi_range(-2,2)),0.05)
+	tween.tween_property(body,prop,currPos,0.05)
+
+
 func _on_button_pressed():
 	get_tree().change_scene_to_file("res://world.tscn")
 	global.workMode = false

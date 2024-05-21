@@ -55,6 +55,7 @@ func validate():
 	else:
 		global.minigame_score -= 50 
 		global.life -= 1
+		$"../Camera2D".shake()
 	if global.needs.is_empty():
 		global.goal = true
 		sembako.goal -= 1

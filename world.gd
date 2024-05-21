@@ -20,11 +20,11 @@ func _ready():
 	if global.Dialogue == 0:
 		$DarkScreen.show()
 		$DarkScreen.modulate = Color(1, 1, 1, 1)
-		var tween = create_tween()
-		tween.tween_property($DarkScreen,"modulate",Color(1, 1, 1, 0),1)
-		tween.tween_callback(queue_free)
+		create_tween().tween_property($DarkScreen,"modulate",Color(1, 1, 1, 0),1)
 		DialogueManager.show_dialogue_balloon(load("res://dialogue/Act1.dialogue"), "Entry")	
 		global.Dialogue +=1
+		await get_tree().create_timer(1).timeout
+		$DarkScreen.queue_free()
 	elif global.minigame_score >= 500 && global.Dialogue == 1:
 		DialogueManager.show_dialogue_balloon(load("res://dialogue/Act1.dialogue"), "LostFather")
 		global.Dialogue +=1	
@@ -40,8 +40,6 @@ func Ecam():
 
 func _process(delta):
 	pass
-
-	
 func _on_player_detection_body_entered(body):
 	if body.name == "player":
 		get_node("GUI/Control2/tc_button_left").modulate = Color(1, 1, 1, 0.5)

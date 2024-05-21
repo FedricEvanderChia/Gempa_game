@@ -1,10 +1,13 @@
 extends Control
-
+var speed = 300
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	util.loadGame()
 
+# Called when the node enters the scene tree for the first time.
+func _process(delta):
+	$BG.scroll_offset.x -= speed * delta
 
 func _on_start_b_pressed():
 	if global.Dialogue == 0:

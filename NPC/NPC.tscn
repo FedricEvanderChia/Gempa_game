@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cpiopxaqgghyq"]
+[gd_scene load_steps=14 format=3 uid="uid://tci1sg5nnd4u"]
 
 [ext_resource type="Script" path="res://NPC/NPC.gd" id="1_csuv5"]
 [ext_resource type="Texture2D" uid="uid://0pb35ag16hme" path="res://asset/Order_Bubble.png" id="2_1m18q"]

@@ -21,29 +21,6 @@ func _process(delta):
 		get_tree().change_scene_to_file("res://world.tscn")
 	
 
-
-
-
-
-
-
-#func _on_timer_timeout():
-	#randomize()
-	
-	#var creat_plat = target_platpre.instantiate()
-	#creat_plat.position = Vector2(randf_range(349,771), 594 )
-	#add_child(creat_plat)
-
-
-
-	
-
-
-#func _on_press_button_pressed():
-	
-	#pass # Replace with function body.
-
-
 func _on_area_2d_area_entered(area):
 	is_collided = true
 func _on_area_2d_area_exited(area):
@@ -51,6 +28,7 @@ func _on_area_2d_area_exited(area):
 func _on_press_button_pressed():
 	if is_collided:
 		global.minigame_score += 100
+		goal -=1
 		is_pressed.emit()
 		var creat_plat = target_platpre.instantiate()
 		creat_plat.position = Vector2(randf_range(349,771), 594 )

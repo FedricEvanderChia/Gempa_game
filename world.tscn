@@ -249,7 +249,7 @@ scale = Vector2(3, 3)
 text = "talk"
 
 [node name="player" parent="." instance=ExtResource("1_a88ce")]
-position = Vector2(3900, 557)
+position = Vector2(400, 557)
 scale = Vector2(0.213187, 0.220962)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
@@ -258,7 +258,14 @@ limit_left = 0
 limit_right = 4000
 limit_bottom = 660
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="player"]
+scale = Vector2(4.69072, 4.52566)
+stream = ExtResource("17_6v1qh")
+autoplay = true
+max_distance = 3800.0
+
 [node name="DarkScreen" type="ColorRect" parent="."]
+visible = false
 offset_left = -24.0
 offset_top = -116.0
 offset_right = 1579.0
@@ -272,10 +279,6 @@ offset_right = 1079.0
 offset_bottom = 478.0
 size_flags_horizontal = 4
 text = "Emergency Exit"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("17_6v1qh")
-autoplay = true
 
 [connection signal="body_entered" from="WorkMode" to="." method="_on_work_mode_body_entered"]
 [connection signal="body_exited" from="WorkMode" to="." method="_on_work_mode_body_exited"]

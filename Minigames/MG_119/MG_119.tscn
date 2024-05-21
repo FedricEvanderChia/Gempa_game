@@ -269,8 +269,8 @@ shape = SubResource("RectangleShape2D_extpm")
 [node name="list" type="MarginContainer" parent="PhoneBook"]
 visible = false
 offset_left = -213.0
-offset_top = -50.0
-offset_right = 177.0
+offset_top = -52.0
+offset_right = 196.0
 offset_bottom = 210.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PhoneBook/list"]
@@ -281,54 +281,51 @@ size_flags_horizontal = 0
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_4ew8g")
-theme_override_font_sizes/font_size = 13
+theme_override_font_sizes/font_size = 15
 text = "Ambulans
-118"
+118
+"
 vertical_alignment = 1
 
 [node name="Number2" type="Label" parent="PhoneBook/list/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_4ew8g")
-theme_override_font_sizes/font_size = 13
-text = "Pemadam Kebakaran
-113"
+theme_override_font_sizes/font_size = 15
+text = "Kepolisian
+110 
+"
 vertical_alignment = 1
 
 [node name="Number3" type="Label" parent="PhoneBook/list/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_4ew8g")
-theme_override_font_sizes/font_size = 13
-text = "Kepolisian
-110 "
+theme_override_font_sizes/font_size = 15
+text = "Pemadam Kebakaran
+113
+"
 vertical_alignment = 1
 
 [node name="Number4" type="Label" parent="PhoneBook/list/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_4ew8g")
-theme_override_font_sizes/font_size = 13
-text = "Basarnas
-115"
+theme_override_font_sizes/font_size = 15
+text = "Gangguan Kelistrikan
+123
+"
 vertical_alignment = 1
 
 [node name="Number5" type="Label" parent="PhoneBook/list/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_4ew8g")
-theme_override_font_sizes/font_size = 13
-text = "Posko Bencana
-129"
-vertical_alignment = 1
+theme_override_font_sizes/font_size = 15
+text = "Basarnas
+115
 
-[node name="Number6" type="Label" parent="PhoneBook/list/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_4ew8g")
-theme_override_font_sizes/font_size = 13
-text = "Posko Kewaspadaan Nasional
-122"
+"
 vertical_alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="PhoneBook/list"]
@@ -339,18 +336,33 @@ size_flags_horizontal = 8
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_4ew8g")
-theme_override_font_sizes/font_size = 13
-text = "Gangguan Kelistrikan
-123"
+theme_override_font_sizes/font_size = 15
+text = "Posko Bencana
+129
+
+"
 vertical_alignment = 1
 
-[node name="Number2" type="Label" parent="PhoneBook/list/VBoxContainer2"]
+[node name="Number4" type="Label" parent="PhoneBook/list/VBoxContainer2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_4ew8g")
-theme_override_font_sizes/font_size = 13
+theme_override_font_sizes/font_size = 15
+text = "Posko Kewaspadaan 
+Nasional
+122
+
+"
+vertical_alignment = 1
+
+[node name="Number5" type="Label" parent="PhoneBook/list/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4ew8g")
+theme_override_font_sizes/font_size = 15
 text = "PMI
-021-7992325"
+021-7992325
+"
 vertical_alignment = 1
 
 [node name="Phone" parent="." instance=ExtResource("1_kxars")]
@@ -555,8 +567,8 @@ shape = SubResource("RectangleShape2D_extpm")
 [node name="list" type="MarginContainer" parent="CanvasLayer/tutorial_ui/image1"]
 visible = false
 offset_left = -213.0
-offset_top = -50.0
-offset_right = 177.0
+offset_top = -52.0
+offset_right = 196.0
 offset_bottom = 210.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/tutorial_ui/image1/list"]
@@ -567,54 +579,51 @@ size_flags_horizontal = 0
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_4ew8g")
-theme_override_font_sizes/font_size = 13
+theme_override_font_sizes/font_size = 15
 text = "Ambulans
-118"
+118
+"
 vertical_alignment = 1
 
 [node name="Number2" type="Label" parent="CanvasLayer/tutorial_ui/image1/list/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_4ew8g")
-theme_override_font_sizes/font_size = 13
-text = "Pemadam Kebakaran
-113"
+theme_override_font_sizes/font_size = 15
+text = "Kepolisian
+110 
+"
 vertical_alignment = 1
 
 [node name="Number3" type="Label" parent="CanvasLayer/tutorial_ui/image1/list/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_4ew8g")
-theme_override_font_sizes/font_size = 13
-text = "Kepolisian
-110 "
+theme_override_font_sizes/font_size = 15
+text = "Pemadam Kebakaran
+113
+"
 vertical_alignment = 1
 
 [node name="Number4" type="Label" parent="CanvasLayer/tutorial_ui/image1/list/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_4ew8g")
-theme_override_font_sizes/font_size = 13
-text = "Basarnas
-115"
+theme_override_font_sizes/font_size = 15
+text = "Gangguan Kelistrikan
+123
+"
 vertical_alignment = 1
 
 [node name="Number5" type="Label" parent="CanvasLayer/tutorial_ui/image1/list/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_4ew8g")
-theme_override_font_sizes/font_size = 13
-text = "Posko Bencana
-129"
-vertical_alignment = 1
+theme_override_font_sizes/font_size = 15
+text = "Basarnas
+115
 
-[node name="Number6" type="Label" parent="CanvasLayer/tutorial_ui/image1/list/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_4ew8g")
-theme_override_font_sizes/font_size = 13
-text = "Posko Kewaspadaan Nasional
-122"
+"
 vertical_alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/tutorial_ui/image1/list"]
@@ -625,18 +634,33 @@ size_flags_horizontal = 8
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_4ew8g")
-theme_override_font_sizes/font_size = 13
-text = "Gangguan Kelistrikan
-123"
+theme_override_font_sizes/font_size = 15
+text = "Posko Bencana
+129
+
+"
 vertical_alignment = 1
 
-[node name="Number2" type="Label" parent="CanvasLayer/tutorial_ui/image1/list/VBoxContainer2"]
+[node name="Number4" type="Label" parent="CanvasLayer/tutorial_ui/image1/list/VBoxContainer2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_4ew8g")
-theme_override_font_sizes/font_size = 13
+theme_override_font_sizes/font_size = 15
+text = "Posko Kewaspadaan 
+Nasional
+122
+
+"
+vertical_alignment = 1
+
+[node name="Number5" type="Label" parent="CanvasLayer/tutorial_ui/image1/list/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4ew8g")
+theme_override_font_sizes/font_size = 15
 text = "PMI
-021-7992325"
+021-7992325
+"
 vertical_alignment = 1
 
 [node name="Phone2" type="Sprite2D" parent="CanvasLayer/tutorial_ui"]

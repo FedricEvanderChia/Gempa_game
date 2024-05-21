@@ -20,11 +20,6 @@ var adj4 = [
 ]
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	y_dim = global.maze_size
-	x_dim = global.maze_size
-	place_border()
-	dfs(starting_coords)
 	
 
 func _input(event: InputEvent) -> void:

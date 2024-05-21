@@ -1,0 +1,179 @@
+[gd_scene load_steps=19 format=3 uid="uid://86vsnigwxqkl"]
+
+[ext_resource type="Texture2D" uid="uid://8cad4ltqkcfp" path="res://asset/Simple_tile.png" id="1_04h5n"]
+[ext_resource type="Script" path="res://Minigames/MG_Maze/player.gd" id="2_hj6p6"]
+[ext_resource type="Texture2D" uid="uid://c8nv6mtnlspav" path="res://asset/Character/MiniRizki_Sheet.png" id="3_px5ue"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oam5a"]
+texture = ExtResource("1_04h5n")
+0:0/0 = 0
+0:0/0/custom_data_0 = true
+0:0/0/custom_data_1 = "path"
+1:0/0 = 0
+1:0/0/custom_data_1 = "wall"
+2:0/0 = 0
+2:0/0/custom_data_0 = true
+2:0/0/custom_data_1 = "exit"
+3:0/0 = 0
+3:0/0/custom_data_0 = true
+3:0/0/custom_data_1 = "rescue"
+0:1/animation_speed = 6.0
+0:1/0 = 0
+0:1/0/custom_data_0 = true
+0:1/0/custom_data_1 = "break"
+1:1/animation_columns = 3
+1:1/animation_frame_0/duration = 0.2
+1:1/animation_frame_1/duration = 0.2
+1:1/animation_frame_2/duration = 60.0
+1:1/0 = 0
+1:1/0/custom_data_1 = "void"
+
+[sub_resource type="TileSet" id="TileSet_0hx5b"]
+custom_data_layer_0/name = "walkable"
+custom_data_layer_0/type = 1
+custom_data_layer_1/name = "TileName"
+custom_data_layer_1/type = 4
+sources/0 = SubResource("TileSetAtlasSource_oam5a")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07g5d"]
+atlas = ExtResource("3_px5ue")
+region = Rect2(21, 0, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5numb"]
+atlas = ExtResource("3_px5ue")
+region = Rect2(0, 0, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vuor5"]
+atlas = ExtResource("3_px5ue")
+region = Rect2(42, 0, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kawvl"]
+atlas = ExtResource("3_px5ue")
+region = Rect2(21, 42, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jw7pc"]
+atlas = ExtResource("3_px5ue")
+region = Rect2(0, 42, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5sh3o"]
+atlas = ExtResource("3_px5ue")
+region = Rect2(42, 42, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bu14"]
+atlas = ExtResource("3_px5ue")
+region = Rect2(21, 63, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kfiq"]
+atlas = ExtResource("3_px5ue")
+region = Rect2(0, 63, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvigp"]
+atlas = ExtResource("3_px5ue")
+region = Rect2(42, 63, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryc8t"]
+atlas = ExtResource("3_px5ue")
+region = Rect2(21, 21, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p71xv"]
+atlas = ExtResource("3_px5ue")
+region = Rect2(0, 21, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxxxe"]
+atlas = ExtResource("3_px5ue")
+region = Rect2(42, 21, 21, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ym787"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07g5d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5numb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vuor5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5numb")
+}],
+"loop": true,
+"name": &"down",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kawvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jw7pc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5sh3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jw7pc")
+}],
+"loop": true,
+"name": &"left",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4bu14")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3kfiq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvigp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3kfiq")
+}],
+"loop": true,
+"name": &"right",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryc8t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p71xv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxxxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p71xv")
+}],
+"loop": true,
+"name": &"up",
+"speed": 8.0
+}]
+
+[node name="mg_maze" type="Node2D"]
+
+[node name="TileMap1" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_0hx5b")
+rendering_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, -1, 65536, 0, 65535, 131072, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 4, 0, 0, 65540, 0, 0, 131076, 0, 0, 131075, 0, 0, 131074, 0, 0, 131073, 0, 0, 131072, 0, 0, 131071, 65536, 0, 196607, 65536, 0, 262143, 65536, 0, 196614, 65536, 0, 131078, 0, 1, 65542, 0, 1, 6, 0, 1, 5, 0, 0, 7, 0, 0, -65528, 65536, 0, 8, 65536, 0, 65544, 65536, 0, 131080, 65536, 0, 196616, 65536, 0, 196615, 65536, 0, 196613, 65536, 0, 196612, 65536, 0, 196611, 65536, 0, 196610, 65536, 0, 196609, 65536, 0, 196608, 65536, 0, 65541, 0, 0, 131077, 196608, 0, 131079, 196608, 0, 65543, 0, 0, 3, 0, 0, -131064, 65536, 0, -131065, 196608, 0, -131066, 0, 1, -131067, 196608, 0, -131068, 0, 0, -131069, 0, 0, -131070, 0, 0, -131071, 0, 0, -131072, 0, 0, -65537, 65536, 0, -131073, 65536, 0, -196608, 65536, 0, -196607, 65536, 0, -196606, 65536, 0, -196605, 65536, 0, -196604, 65536, 0, -196603, 65536, 0, -196602, 65536, 0, -196601, 65536, 0, -196600, 65536, 0, -65530, 0, 1, -65529, 0, 0, -65531, 0, 0, -65532, 0, 0, -65533, 0, 0, -65534, 0, 0, -65535, 0, 0, -65536, 0, 0)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(8, 8)
+scale = Vector2(0.5, 0.5)
+zoom = Vector2(5, 5)
+limit_left = -64
+
+[node name="Player" type="Node2D" parent="."]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("2_hj6p6")
+
+[node name="Icon" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(16, 16)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_ym787")
+animation = &"up"

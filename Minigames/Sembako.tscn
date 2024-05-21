@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bww43ye6rowdu"]
+[gd_scene load_steps=37 format=3 uid="uid://bww43ye6rowdu"]
 
 [ext_resource type="Texture2D" uid="uid://dhxixs8fflkj7" path="res://asset/BgMejaSembako.png" id="1_0ddqx"]
 [ext_resource type="Script" path="res://Minigames/Sembako.gd" id="1_b8rlw"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://ct1ni7aqjltoa" path="res://asset/Beras-duo.png" id="26_d7jp2"]
 [ext_resource type="Texture2D" uid="uid://ed3817p3ijrt" path="res://asset/Tenda-teduh.png" id="27_7hctx"]
 [ext_resource type="AudioStream" uid="uid://uk5y6ht22gvu" path="res://asset/Soundtrack/Minigame_1.mp3" id="28_1ytch"]
+[ext_resource type="Script" path="res://Minigames/ShakeCam.gd" id="29_wn5il"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ag3l"]
 atlas = ExtResource("1_0ddqx")
@@ -416,6 +417,11 @@ texture = ExtResource("27_7hctx")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasLayer"]
 stream = ExtResource("28_1ytch")
 autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+script = ExtResource("29_wn5il")
 
 [connection signal="timeout" from="CanvasLayer/Control/Timer" to="CanvasLayer/Control" method="_on_timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/Help" to="." method="_on_help_pressed"]
