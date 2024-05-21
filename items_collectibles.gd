@@ -5,6 +5,7 @@ var player = null
 
 func _ready():
 	get_node("itembutton").hide()
+	$Sprite2D.texture = item.texture
 
 func _on_interact_area_2d_body_entered(body):
 	if body.name == "player":

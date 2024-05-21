@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://brmclis07bvsb"]
+[gd_scene load_steps=27 format=3 uid="uid://brmclis07bvsb"]
 
 [ext_resource type="PackedScene" uid="uid://c71to8edu42an" path="res://player/Player.tscn" id="1_a88ce"]
 [ext_resource type="Script" path="res://world.gd" id="1_rnkil"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bjjanpau63g57" path="res://asset/Prlx2World.png" id="3_tknwh"]
 [ext_resource type="Texture2D" uid="uid://ccvmjavne58xc" path="res://asset/useable.png" id="3_wp8gq"]
 [ext_resource type="PackedScene" uid="uid://dtsrtigd5cgnv" path="res://uigempa.tscn" id="6_7koq2"]
+[ext_resource type="Resource" uid="uid://rnocqhc5552c" path="res://Inventory/items/water.tres" id="7_0a0qt"]
 [ext_resource type="PackedScene" uid="uid://1s0q53ouuvjp" path="res://Inventory/items/items_collectibles.tscn" id="8_467eh"]
 [ext_resource type="Texture2D" uid="uid://csq0py4qvfl74" path="res://asset/HomeA.png" id="11_a4qjb"]
 [ext_resource type="Script" path="res://NPC/TalkNpc.gd" id="12_b2gaq"]
@@ -119,9 +120,11 @@ position = Vector2(2426, 463)
 
 [node name="items_collectibles2" parent="." instance=ExtResource("8_467eh")]
 position = Vector2(2274, 456)
+item = ExtResource("7_0a0qt")
 
 [node name="items_collectibles" parent="." instance=ExtResource("8_467eh")]
 position = Vector2(2150, 455)
+item = ExtResource("7_0a0qt")
 
 [node name="Go to Sawah" type="Area2D" parent="."]
 
