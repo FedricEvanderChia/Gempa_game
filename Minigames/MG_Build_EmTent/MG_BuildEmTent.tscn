@@ -292,6 +292,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="tutorial_ui" parent="CanvasLayer" instance=ExtResource("14_iiewx")]
 process_mode = 2
+visible = false
 position = Vector2(576, 324)
 script = ExtResource("17_6ucf2")
 

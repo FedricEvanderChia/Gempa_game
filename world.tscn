@@ -99,7 +99,8 @@ shape = SubResource("RectangleShape2D_eefau")
 position = Vector2(-45, 312.5)
 shape = SubResource("RectangleShape2D_7n651")
 
-[node name="GUI" parent="." instance=ExtResource("6_7koq2")]
+[node name="GUI" parent="." node_paths=PackedStringArray("item_collect") instance=ExtResource("6_7koq2")]
+item_collect = NodePath("../collectible_Layer/items_collectibles")
 
 [node name="Phone" type="Button" parent="."]
 offset_left = 926.0
@@ -115,16 +116,14 @@ text = "Phone"
 position = Vector2(146, 573)
 shape = SubResource("RectangleShape2D_aa0ay")
 
-[node name="items_collectibles3" parent="." instance=ExtResource("8_467eh")]
-position = Vector2(2426, 463)
-
-[node name="items_collectibles2" parent="." instance=ExtResource("8_467eh")]
+[node name="collectible_Layer" type="Node2D" parent="."]
 position = Vector2(2274, 456)
+
+[node name="items_collectibles2" parent="collectible_Layer" instance=ExtResource("8_467eh")]
 item = ExtResource("7_0a0qt")
 
-[node name="items_collectibles" parent="." instance=ExtResource("8_467eh")]
-position = Vector2(2150, 455)
-item = ExtResource("7_0a0qt")
+[node name="items_collectibles" parent="collectible_Layer" instance=ExtResource("8_467eh")]
+position = Vector2(200, 0)
 
 [node name="Go to Sawah" type="Area2D" parent="."]
 
@@ -292,6 +291,8 @@ text = "Emergency Exit"
 [connection signal="pressed" from="Phone" to="." method="_on_phone_pressed"]
 [connection signal="body_entered" from="Player Detection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="Player Detection" to="." method="_on_player_detection_body_exited"]
+[connection signal="Obtain" from="collectible_Layer/items_collectibles2" to="GUI" method="_on_items_collectibles_obtain"]
+[connection signal="Obtain" from="collectible_Layer/items_collectibles" to="GUI" method="_on_items_collectibles_obtain"]
 [connection signal="body_entered" from="Go to Sawah" to="." method="_on_go_to_sawah_body_entered"]
 [connection signal="body_entered" from="NPCTalk/Man" to="NPCTalk/Man" method="_on_body_entered"]
 [connection signal="body_exited" from="NPCTalk/Man" to="NPCTalk/Man" method="_on_body_exited"]

@@ -2,7 +2,10 @@ extends Node2D
 
 @export var Spos = Vector2(400,557)
 @export var Epos = Vector2(4000,557)
+var item_tscn= preload("res://Inventory/items/items_collectibles.tscn")
 # Called when the node enters the scene tree for the first time.
+var item_col
+
 func _ready():	
 	global.workMode = false
 	if global.Dialogue != 0:
@@ -31,6 +34,7 @@ func _ready():
 	elif global.minigame_score >= 1000 && global.Dialogue == 2:
 		DialogueManager.show_dialogue_balloon(load("res://dialogue/Act1.dialogue"), "FoundPhoto")
 		global.Dialogue +=1
+		generateItem()
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func Scam():
@@ -38,8 +42,15 @@ func Scam():
 func Ecam():
 	create_tween().tween_property($player/Camera2D,"limit_bottom",660,1)
 
-func _process(delta):
-	pass
+func generateItem():
+	var new_drop = item_tscn.instantiate()
+	new_drop.Obtain.connect($GUI._on_items_collectibles_obtain)
+	get_node("collectible_Layer").add_child(new_drop)
+	item_col = new_drop
+	item_col.item = load("res://Inventory/items/photo.tres")
+	item_col.position = Vector2(-825,64)
+	item_col.scale = Vector2(0.3,0.3)
+	
 func _on_player_detection_body_entered(body):
 	if body.name == "player":
 		get_node("GUI/Control2/tc_button_left").modulate = Color(1, 1, 1, 0.5)
