@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://lii1beb2wlkt"]
+[gd_scene load_steps=29 format=3 uid="uid://lii1beb2wlkt"]
 
 [ext_resource type="Script" path="res://Minigames/MG_Build_EmTent/MG_BuildEmTent.gd" id="1_n8qo3"]
 [ext_resource type="Script" path="res://Minigames/Control.gd" id="2_rbapa"]
@@ -9,6 +9,16 @@
 [ext_resource type="Texture2D" uid="uid://d2ykcjrbd0y3u" path="res://asset/Tenda_emergency/moving_platform.png" id="7_51ftb"]
 [ext_resource type="Script" path="res://Minigames/MG_Build_EmTent/Actionable_platform.gd" id="7_smt2h"]
 [ext_resource type="AudioStream" uid="uid://uk5y6ht22gvu" path="res://asset/Soundtrack/Minigame_1.mp3" id="9_ta8pe"]
+[ext_resource type="Texture2D" uid="uid://cic1cd7yvd8ks" path="res://asset/MenuButton/Help_idle.png" id="10_rdwg1"]
+[ext_resource type="Texture2D" uid="uid://cbamxnbsoaivk" path="res://asset/MenuButton/Help_pressed.png" id="11_4oakr"]
+[ext_resource type="Texture2D" uid="uid://cwsi81nu6qhne" path="res://asset/MenuButton/Back B.png" id="12_nl56d"]
+[ext_resource type="Texture2D" uid="uid://d3j1ap1c1m6ew" path="res://asset/MenuButton/Back A.png" id="13_cl2dq"]
+[ext_resource type="PackedScene" uid="uid://div6tgqs38lwg" path="res://Minigames/tutorial_ui.tscn" id="14_iiewx"]
+[ext_resource type="Texture2D" uid="uid://0pb35ag16hme" path="res://asset/Order_Bubble.png" id="15_8w24s"]
+[ext_resource type="Texture2D" uid="uid://bvdk2qgc6j8dt" path="res://asset/Tenda_emergency/yellow_bar.png" id="16_redd4"]
+[ext_resource type="Script" path="res://Minigames/MG_Build_EmTent/tutorial_coll.gd" id="17_6ucf2"]
+[ext_resource type="Texture2D" uid="uid://diar7mfkgxceu" path="res://asset/Tenda_emergency/Tenda_state_1.png" id="18_dnm4o"]
+[ext_resource type="Texture2D" uid="uid://bh1b8hqhic7qh" path="res://asset/Tenda_emergency/Tenda_state_2.png" id="19_u7lnf"]
 
 [sub_resource type="Animation" id="Animation_cpvf8"]
 length = 0.001
@@ -65,108 +75,63 @@ func _process(delta):
 	pass
 "
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4s52"]
+size = Vector2(100, 40)
+
+[sub_resource type="Animation" id="Animation_emt1r"]
+resource_name = "positioning"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-250, -60), Vector2(250, -60), Vector2(-250, -60)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cvtdx"]
+_data = {
+"positioning": SubResource("Animation_emt1r")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_snkea"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_yxlgr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_dnm4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_dnm4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_u7lnf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_u7lnf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yxlgr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
 [node name="MgBuildEmTent" type="Node2D"]
 script = ExtResource("1_n8qo3")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_ta8pe")
 autoplay = true
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 5
-
-[node name="Control" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1155.0
-offset_bottom = 96.0
-script = ExtResource("2_rbapa")
-
-[node name="times" type="Label" parent="CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -73.5
-offset_top = -29.0
-offset_right = 48.5
-offset_bottom = 26.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "0:30"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="scoretext" type="Label" parent="CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 15.0
-offset_top = -24.0
-offset_right = 233.0
-offset_bottom = 21.0
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "Score: 00"
-
-[node name="Success" type="Label" parent="CanvasLayer/Control"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -110.5
-offset_top = 248.5
-offset_right = 107.5
-offset_bottom = 303.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(1, 1, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "Rescued"
-horizontal_alignment = 1
-
-[node name="Timer" type="Timer" parent="CanvasLayer/Control"]
-autostart = true
-
-[node name="lifes" type="Node" parent="CanvasLayer/Control"]
-script = ExtResource("3_ldmwb")
-
-[node name="life1" parent="CanvasLayer/Control/lifes" instance=ExtResource("4_kuqpq")]
-visible = false
-position = Vector2(39, 114)
-
-[node name="life2" parent="CanvasLayer/Control/lifes" instance=ExtResource("4_kuqpq")]
-visible = false
-position = Vector2(108, 114)
-
-[node name="life3" parent="CanvasLayer/Control/lifes" instance=ExtResource("4_kuqpq")]
-visible = false
-position = Vector2(177, 114)
-
-[node name="Button" type="Button" parent="CanvasLayer"]
-offset_left = 946.0
-offset_top = 17.0
-offset_right = 1137.0
-offset_bottom = 84.0
-text = "Back"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(563, 591)
@@ -211,9 +176,268 @@ shape = SubResource("RectangleShape2D_eur33")
 autostart = true
 script = SubResource("GDScript_3wx3o")
 
-[connection signal="timeout" from="CanvasLayer/Control/Timer" to="CanvasLayer/Control" method="_on_timer_timeout"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1155.0
+offset_bottom = 96.0
+script = ExtResource("2_rbapa")
+metadata/_edit_use_anchors_ = true
+
+[node name="times" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = -27.5
+offset_right = 61.0
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "0:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="scoretext" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 133.0
+offset_top = -29.0
+offset_right = 351.0
+offset_bottom = 26.0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Score: 00"
+metadata/_edit_use_anchors_ = true
+
+[node name="Success" type="Label" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.5
+offset_top = 248.5
+offset_right = 107.5
+offset_bottom = 303.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Rescued"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="CanvasLayer/Control"]
+autostart = true
+
+[node name="lifes" type="Node" parent="CanvasLayer/Control"]
+script = ExtResource("3_ldmwb")
+
+[node name="life1" parent="CanvasLayer/Control/lifes" instance=ExtResource("4_kuqpq")]
+visible = false
+position = Vector2(39, 114)
+
+[node name="life2" parent="CanvasLayer/Control/lifes" instance=ExtResource("4_kuqpq")]
+visible = false
+position = Vector2(108, 114)
+
+[node name="life3" parent="CanvasLayer/Control/lifes" instance=ExtResource("4_kuqpq")]
+visible = false
+position = Vector2(177, 114)
+
+[node name="Help" type="TextureButton" parent="CanvasLayer"]
+offset_left = 1070.0
+offset_top = 10.0
+offset_right = 1390.0
+offset_bottom = 330.0
+scale = Vector2(0.23, 0.23)
+size_flags_horizontal = 0
+texture_normal = ExtResource("10_rdwg1")
+texture_pressed = ExtResource("11_4oakr")
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="TextureButton" parent="CanvasLayer"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 330.0
+offset_bottom = 330.0
+scale = Vector2(0.23, 0.23)
+size_flags_horizontal = 0
+texture_normal = ExtResource("12_nl56d")
+texture_pressed = ExtResource("13_cl2dq")
+metadata/_edit_use_anchors_ = true
+
+[node name="tutorial_ui" parent="CanvasLayer" instance=ExtResource("14_iiewx")]
+process_mode = 2
+position = Vector2(576, 324)
+script = ExtResource("17_6ucf2")
+
+[node name="okay" type="Button" parent="CanvasLayer/tutorial_ui"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.5
+offset_top = 201.5
+offset_right = 34.5
+offset_bottom = 237.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Okay !"
+metadata/_edit_use_anchors_ = true
+
+[node name="Interactibles" type="Label" parent="CanvasLayer/tutorial_ui"]
+anchors_preset = -1
+anchor_left = 0.28125
+anchor_top = 0.549383
+anchor_right = 0.429688
+anchor_bottom = 0.699074
+offset_left = -274.0
+offset_top = 30.0
+offset_right = 115.0
+offset_bottom = 182.0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Tenda
+
+tenda akan terbangun sempurna setelah pemain berhasil 
+menekan tombol di waktu yang tepat sebanyak 4 kali"
+metadata/_edit_use_anchors_ = true
+
+[node name="Game Goal" type="Label" parent="CanvasLayer/tutorial_ui"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -338.5
+offset_top = -245.5
+offset_right = 338.5
+offset_bottom = -124.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Minigame Mendirikan Tenda
+
+Dalam game ini kamu ditugaskan untuk mendirikan tenda.
+Tekan tombol ketika garis menyentuh area hijau."
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="OrderBubble" type="Sprite2D" parent="CanvasLayer/tutorial_ui"]
+visible = false
+position = Vector2(48, -42)
+scale = Vector2(0.2725, 0.295)
+texture = ExtResource("15_8w24s")
+
+[node name="now" type="Label" parent="CanvasLayer/tutorial_ui"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -58.0
+offset_right = 70.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "tekan 
+Sekarang
+"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/tutorial_ui"]
+position = Vector2(0, -60)
+scale = Vector2(5.367, 2)
+texture = ExtResource("5_jdair")
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer/tutorial_ui"]
+position = Vector2(0, -58)
+scale = Vector2(1, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/tutorial_ui/Area2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_a4s52")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/tutorial_ui/Area2D"]
+modulate = Color(0.235294, 1, 0, 1)
+texture = ExtResource("16_redd4")
+
+[node name="Actionable_platform" type="Area2D" parent="CanvasLayer/tutorial_ui"]
+position = Vector2(231.416, -60)
+scale = Vector2(1, 0.7)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/tutorial_ui/Actionable_platform"]
+position = Vector2(-1, 0)
+scale = Vector2(0.32, 0.81)
+texture = ExtResource("7_51ftb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/tutorial_ui/Actionable_platform"]
+libraries = {
+"": SubResource("AnimationLibrary_cvtdx")
+}
+autoplay = "positioning"
+
+[node name="collision_ac_plat" type="CollisionShape2D" parent="CanvasLayer/tutorial_ui/Actionable_platform"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_eur33")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/tutorial_ui"]
+position = Vector2(-397, 114)
+scale = Vector2(2.06, 2.06)
+sprite_frames = SubResource("SpriteFrames_snkea")
+autoplay = "default"
+
 [connection signal="pressed" from="press_button" to="." method="_on_press_button_pressed"]
 [connection signal="pressed" from="press_button" to="Actionable_platform" method="_on_press_button_pressed"]
 [connection signal="area_entered" from="Actionable_platform/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Actionable_platform/Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="CanvasLayer/Control/Timer" to="CanvasLayer/Control" method="_on_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/Help" to="." method="_on_help_pressed"]
+[connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="CanvasLayer/tutorial_ui/okay" to="." method="_on_okay_pressed"]
+[connection signal="area_entered" from="CanvasLayer/tutorial_ui/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="CanvasLayer/tutorial_ui/Area2D" to="." method="_on_area_2d_area_exited"]

@@ -145,7 +145,7 @@ scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_5oxxp")
 
 [node name="Camera2D" type="Camera2D" parent="Icon"]
-zoom = Vector2(2.5, 2.5)
+zoom = Vector2(3, 3)
 script = ExtResource("3_vvjdg")
 
 [connection signal="body_entered" from="Icon/Area2D" to="." method="_on_body_entered"]

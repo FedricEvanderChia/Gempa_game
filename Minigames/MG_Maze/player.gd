@@ -1,13 +1,21 @@
 extends Node2D
 
 @export var goal: int
+@export var size: int
 @onready var tile_map = $"../TileMap1"
 var is_moving = false
 var dir = "down"
 var invincible = false
 var is_hurt = false
 var axe = 0
+var cam
 
+func _ready():
+	if $"../Camera2D" == null:
+		cam = $Icon/Camera2D
+	else:
+		$Icon/Camera2D.queue_free()
+		cam = $"../Camera2D"
 func _physics_process(delta):
 	if !is_moving:
 		$Icon.animation = dir
@@ -39,12 +47,10 @@ func _process(delta):
 	
 func move(direction: Vector2):
 	var currTile: Vector2i = tile_map.local_to_map(global_position)
-	@warning_ignore("narrowing_conversion")
 	var nextTile: Vector2i = Vector2i(
 		currTile.x + direction.x,
 		currTile.y + direction.y
 	)
-	@warning_ignore("narrowing_conversion")
 	var nextTile2: Vector2i = Vector2i(
 		nextTile.x + direction.x,
 		nextTile.y + direction.y
@@ -67,7 +73,7 @@ func move(direction: Vector2):
 			if axe >= 1:
 				tile_map.set_cell(0,nextTile,0,Vector2i(0,0))
 				axe -=1
-				$"../Camera2D".shake()
+				cam.shake()
 				return
 			else:
 				return
@@ -127,7 +133,7 @@ func hurt():
 		var tween = create_tween()
 		tween.tween_property($"..","modulate",Color.CRIMSON,0.3)
 		tween.tween_property($"..","modulate",Color(1, 1, 1),0.3)
-		$"../Camera2D".shake()
+		cam.shake()
 		invincibility()
 
 func invincibility():

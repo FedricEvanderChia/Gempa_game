@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c1ti7i086xxfr"]
+[gd_scene load_steps=18 format=3 uid="uid://c1ti7i086xxfr"]
 
 [ext_resource type="Texture2D" uid="uid://8cad4ltqkcfp" path="res://asset/Simple_tile.png" id="1_valh8"]
 [ext_resource type="PackedScene" uid="uid://blxwvvgrsd5pg" path="res://Minigames/MG_Maze/player.tscn" id="2_qvjop"]
@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://b4ff4qomp8kn5" path="res://asset/rubble/Rubble_Pole.png" id="12_dgjcq"]
 [ext_resource type="Texture2D" uid="uid://b4qeob0jnpcii" path="res://asset/rubble/Rubble_Wall.png" id="13_7ufh1"]
 [ext_resource type="Texture2D" uid="uid://chqyq160dt8jq" path="res://asset/rubble/Rubble_wood.png" id="14_7ncif"]
-[ext_resource type="PackedScene" uid="uid://bxiv3fqouop45" path="res://Minigames/MG_Maze/box.tscn" id="15_jqru0"]
 [ext_resource type="Script" path="res://Minigames/ShakeCam.gd" id="16_lcfu4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hedgq"]
@@ -305,12 +304,9 @@ texture = ExtResource("13_7ufh1")
 position = Vector2(-368, 76)
 texture = ExtResource("14_7ncif")
 
-[node name="Box" parent="." instance=ExtResource("15_jqru0")]
-visible = false
-position = Vector2(120, 8)
-
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3.5, 3.5)
+position = Vector2(-32, 16)
+zoom = Vector2(4.5, 4.5)
 script = ExtResource("16_lcfu4")
 
 [connection signal="timeout" from="CanvasLayer/Control/Timer" to="CanvasLayer/Control" method="_on_timer_timeout"]

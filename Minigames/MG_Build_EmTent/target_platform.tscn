@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bvdk2qgc6j8dt" path="res://asset/Tenda_emergency/yellow_bar.png" id="2_k3ax3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kkruu"]
-size = Vector2(101.5, 40)
+size = Vector2(120, 40)
 
 [node name="target_platform" type="Area2D" groups=["target_plat"]]
 position = Vector2(-1, 1)
@@ -15,5 +15,7 @@ position = Vector2(2.25, -3)
 shape = SubResource("RectangleShape2D_kkruu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.235294, 1, 0, 1)
 position = Vector2(2, 0)
+scale = Vector2(1.2, 1)
 texture = ExtResource("2_k3ax3")

@@ -310,7 +310,8 @@ visible = false
 position = Vector2(120, 8)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3.5, 3.5)
+position = Vector2(8, 0)
+zoom = Vector2(4.5, 4.5)
 script = ExtResource("17_8ct0d")
 
 [connection signal="timeout" from="CanvasLayer/Control/Timer" to="CanvasLayer/Control" method="_on_timer_timeout"]
