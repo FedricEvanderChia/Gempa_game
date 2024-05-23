@@ -121,9 +121,9 @@ position = Vector2(-40, 120)
 [node name="Marker2D3" type="Marker2D" parent="TileMap1/path2" groups=["path2"]]
 position = Vector2(56, 120)
 
-[node name="path3" type="Node2D" parent="TileMap1"]
+[node name="static_fire" type="Node2D" parent="TileMap1"]
 
-[node name="fire" parent="TileMap1/path3" instance=ExtResource("2_06e8i")]
+[node name="fire" parent="TileMap1/static_fire" instance=ExtResource("2_06e8i")]
 position = Vector2(72, 8)
 script = ExtResource("4_knq48")
 
