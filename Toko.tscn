@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c3veaw3iicq5n"]
+[gd_scene load_steps=9 format=3 uid="uid://cp6opajiyfdq"]
 
 [ext_resource type="Script" path="res://Toko.gd" id="1_a5mc2"]
 [ext_resource type="Texture2D" uid="uid://b2y37ywlie8p0" path="res://asset/bansos-sprite.png" id="2_dnll3"]

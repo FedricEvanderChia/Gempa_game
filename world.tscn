@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://world.gd" id="1_rnkil"]
 [ext_resource type="Texture2D" uid="uid://cxj3qf7thkbck" path="res://asset/pixil-frame-0.png" id="2_w20qp"]
 [ext_resource type="Texture2D" uid="uid://dlnvpx1iw58pf" path="res://asset/Prlx3World.png" id="3_kc0bs"]
-[ext_resource type="PackedScene" path="res://Toko.tscn" id="3_rwtwv"]
+[ext_resource type="PackedScene" uid="uid://cp6opajiyfdq" path="res://Toko.tscn" id="3_rwtwv"]
 [ext_resource type="Texture2D" uid="uid://bjjanpau63g57" path="res://asset/Prlx2World.png" id="3_tknwh"]
 [ext_resource type="Texture2D" uid="uid://ccvmjavne58xc" path="res://asset/useable.png" id="3_wp8gq"]
 [ext_resource type="PackedScene" uid="uid://dtsrtigd5cgnv" path="res://uigempa.tscn" id="6_7koq2"]

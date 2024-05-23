@@ -8,8 +8,8 @@ var dir = "down"
 var invincible = false
 var is_hurt = false
 var axe = 0
+var apar = 0
 var cam
-
 func _ready():
 	if $"../Camera2D" == null:
 		cam = $Icon/Camera2D
@@ -58,26 +58,9 @@ func move(direction: Vector2):
 	
 	var tile_data: TileData = tile_map.get_cell_tile_data(0,nextTile)
 	var curr_data: TileData = tile_map.get_cell_tile_data(0,currTile)
-	if tile_data:
-		var tileName = tile_data.get_custom_data("TileName")
-		var currName = curr_data.get_custom_data("TileName")
-		if "rescue" in tileName:
-			tile_map.set_cell(0,nextTile,0,Vector2i(0,0))
-			goal -=1
-		elif "axe" in tileName:
-			tile_map.set_cell(0,nextTile,0,Vector2i(0,0))
-			axe +=1
-		elif "exit" in tileName and goal == 0:
-			get_tree().change_scene_to_file("res://world.tscn")
-		elif "wood" in tileName:
-			if axe >= 1:
-				tile_map.set_cell(0,nextTile,0,Vector2i(0,0))
-				axe -=1
-				cam.shake()
-				return
-			else:
-				return
-		elif "box_in" in tileName:
+	var tileName = tile_data.get_custom_data("TileName")
+	if tile_data.get_custom_data("walkable") == false:
+		if "box_in" in tileName:
 			if tile_map.get_cell_tile_data(0,nextTile2).get_custom_data("TileName") != "path":
 				return
 			else:
@@ -89,12 +72,28 @@ func move(direction: Vector2):
 					pushing(nextTile,nextTile2,TileSetAtlasSource.TRANSFORM_FLIP_V + TileSetAtlasSource.TRANSFORM_TRANSPOSE)
 				elif dir == "down":
 					pushing(nextTile,nextTile2,TileSetAtlasSource.TRANSFORM_FLIP_H + TileSetAtlasSource.TRANSFORM_TRANSPOSE)
-		elif "break" in curr_data.get_custom_data("TileName"):
-			breaking(currTile)
-				
-				
-	if tile_data.get_custom_data("walkable") == false:
+		elif "wood" in tileName:
+			if axe >= 1:
+				tile_map.set_cell(0,nextTile,0,Vector2i(0,0))
+				axe -=1
+				cam.shake()
+				return
 		return
+	if tile_data:
+		if "break" in curr_data.get_custom_data("TileName"):
+			breaking(currTile)
+		if "rescue" in tileName:
+			tile_map.set_cell(0,nextTile,0,Vector2i(0,0))
+			goal -=1
+		elif "axe" in tileName:
+			tile_map.set_cell(0,nextTile,0,Vector2i(0,0))
+			axe +=1
+		elif "apar" in tileName:
+			tile_map.set_cell(0,nextTile,0,Vector2i(0,0))
+			apar +=1
+		elif "exit" in tileName and goal == 0:
+			get_tree().change_scene_to_file("res://world.tscn")
+		
 	
 	is_moving = true
 	global_position = tile_map.map_to_local(nextTile)
@@ -119,7 +118,12 @@ func pushing(nextTile: Vector2i,nextTile2: Vector2i,rotate:int):
 	
 func _on_body_entered(body):
 	if "fire" in body.name:
-		is_hurt = true
+		if apar > 0:
+			apar -=1
+			await body.put_out()
+			body.queue_free()
+		else:
+			is_hurt = true
 
 func _on_body_exited(body):
 	if "fire" in body.name:
