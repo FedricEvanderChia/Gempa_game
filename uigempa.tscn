@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dtsrtigd5cgnv"]
+[gd_scene load_steps=32 format=3 uid="uid://dtsrtigd5cgnv"]
 
 [ext_resource type="Script" path="res://UIGempa.gd" id="1_ngrhg"]
 [ext_resource type="Texture2D" uid="uid://bcnkef8p4ap3y" path="res://asset/BtnIdle.png" id="2_rerfp"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://dmefmyby3odr6" path="res://NPC/Pria.tscn" id="15_mojfx"]
 [ext_resource type="PackedScene" uid="uid://wjnkust00dy6" path="res://NPC/perempuan.tscn" id="16_g5mvo"]
 [ext_resource type="PackedScene" uid="uid://dibfk3he48mbw" path="res://NPC/Laki_laki.tscn" id="17_whml6"]
+[ext_resource type="FontFile" uid="uid://pdrka83wc2a3" path="res://asset/dial_button/pixelsix00.ttf" id="19_7kk2g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yypih"]
 size = Vector2(150, 150)
@@ -223,6 +224,33 @@ layout_mode = 2
 size_flags_horizontal = 0
 texture_normal = ExtResource("3_bdcwb")
 texture_pressed = ExtResource("4_tur6m")
+
+[node name="item" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(572.5, 156.5)
+scale = Vector2(0.7, 0.7)
+
+[node name="obtain" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -19.5
+offset_right = 115.0
+offset_bottom = 19.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0.866667, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("19_7kk2g")
+theme_override_font_sizes/font_size = 24
+text = "Kamu mendapatkan sebuah
+Item"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Control2/tc_button_right" to="." method="_on_tc_button_right_pressed"]
 [connection signal="released" from="Control2/tc_button_right" to="." method="_on_tc_button_right_released"]

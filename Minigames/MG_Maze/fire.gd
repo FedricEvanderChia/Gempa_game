@@ -5,3 +5,8 @@ extends CharacterBody2D
 func _physics_process(delta):
 	velocity = patrol_path.direction * speed
 	move_and_slide()
+
+func put_out():
+	$CollisionShape2D.queue_free()
+	$Icon.play("put_out")
+	await $Icon.animation_finished

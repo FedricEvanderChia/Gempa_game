@@ -1,7 +1,6 @@
 extends Node2D
 
 class_name actionable_plat
-var is_coli = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

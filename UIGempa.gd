@@ -3,11 +3,12 @@ extends CanvasLayer
 var inv = false
 var paused = false
 @onready var pausemenu = $pause_ui
+@export var item_collect : items_collectibles
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	global.Sdialogue.connect(cinema)
 	global.Edialogue.connect(Uncinema)
-	pass # Replace with function body.
+	
 # untuk pergerakan player, hanya tinggal memanggil action ui_left
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -62,3 +63,13 @@ func showAll():
 	create_tween().tween_property($Control2,"visible",true,0)
 	create_tween().tween_property($PauseBtn,"visible",true,0)
 	create_tween().tween_property($Bag,"visible",true,0)
+
+
+func _on_items_collectibles_obtain(item : inventory_item):
+	$obtain.text = "Kamu mendapatkan sebuah\n" + item.name 
+	$item.texture = item.texture
+	$obtain.show()
+	$item.show()
+	await get_tree().create_timer(2).timeout
+	$obtain.hide()
+	$item.hide()

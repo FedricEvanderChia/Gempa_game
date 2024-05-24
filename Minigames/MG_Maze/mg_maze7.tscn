@@ -1,12 +1,12 @@
-[gd_scene load_steps=21 format=3 uid="uid://h87qdfvcgts5"]
+[gd_scene load_steps=21 format=3 uid="uid://ts68j4go40ih"]
 
 [ext_resource type="Texture2D" uid="uid://8cad4ltqkcfp" path="res://asset/Simple_tile.png" id="1_jtqe4"]
-[ext_resource type="PackedScene" uid="uid://d0sctmq2ogo6p" path="res://Minigames/MG_Maze/player.tscn" id="2_2vvw2"]
-[ext_resource type="PackedScene" path="res://Minigames/MG_Maze/fire.tscn" id="2_e2t3y"]
+[ext_resource type="PackedScene" uid="uid://blxwvvgrsd5pg" path="res://Minigames/MG_Maze/player.tscn" id="2_2vvw2"]
+[ext_resource type="PackedScene" uid="uid://bdsv6jbwlqgvw" path="res://Minigames/MG_Maze/fire.tscn" id="2_e2t3y"]
 [ext_resource type="Script" path="res://Minigames/Control.gd" id="3_bwces"]
 [ext_resource type="Script" path="res://Minigames/MG_Maze/patrol.gd" id="3_nmy00"]
 [ext_resource type="Script" path="res://Minigames/lifes.gd" id="4_7ywo3"]
-[ext_resource type="PackedScene" uid="uid://d2te5qwpgjmua" path="res://player/life.tscn" id="5_kgf1u"]
+[ext_resource type="PackedScene" path="res://player/life.tscn" id="5_kgf1u"]
 [ext_resource type="Texture2D" uid="uid://lvxf4foerjx6" path="res://asset/Axe.png" id="6_ldvl1"]
 [ext_resource type="Texture2D" uid="uid://cic1cd7yvd8ks" path="res://asset/MenuButton/Help_idle.png" id="7_sc4lq"]
 [ext_resource type="Texture2D" uid="uid://cbamxnbsoaivk" path="res://asset/MenuButton/Help_pressed.png" id="8_8x0ib"]
@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://b4ff4qomp8kn5" path="res://asset/rubble/Rubble_Pole.png" id="12_t4al4"]
 [ext_resource type="Texture2D" uid="uid://b4qeob0jnpcii" path="res://asset/rubble/Rubble_Wall.png" id="13_y7e41"]
 [ext_resource type="Texture2D" uid="uid://chqyq160dt8jq" path="res://asset/rubble/Rubble_wood.png" id="14_hofvh"]
-[ext_resource type="PackedScene" path="res://Minigames/MG_Maze/box.tscn" id="15_cosih"]
+[ext_resource type="PackedScene" uid="uid://bxiv3fqouop45" path="res://Minigames/MG_Maze/box.tscn" id="15_cosih"]
 [ext_resource type="Script" path="res://Minigames/ShakeCam.gd" id="16_0akty"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hedgq"]
@@ -41,23 +41,31 @@ texture = ExtResource("1_jtqe4")
 0:1/0/custom_data_0 = true
 0:1/0/custom_data_1 = "break"
 1:1/0 = 0
-1:1/0/custom_data_1 = "void"
 2:1/0 = 0
-2:1/0/custom_data_1 = "void"
 3:1/0 = 0
 3:1/0/custom_data_1 = "void"
 0:2/0 = 0
-0:2/0/custom_data_0 = true
-0:2/0/custom_data_1 = "box_out"
 1:2/0 = 0
-1:2/0/custom_data_1 = "box_in"
 2:2/0 = 0
-2:2/0/custom_data_0 = true
-2:2/0/custom_data_1 = "box_out"
 3:2/0 = 0
-3:2/0/custom_data_1 = "box_in"
 4:2/0 = 0
 4:2/0/custom_data_1 = "box_in"
+4:1/0 = 0
+5:1/0 = 0
+5:1/0/custom_data_0 = true
+5:1/0/custom_data_1 = "apar"
+5:2/0 = 0
+5:2/0/custom_data_1 = "box2"
+4:3/0 = 0
+4:3/0/custom_data_0 = true
+4:3/0/custom_data_1 = "platform"
+3:3/0 = 0
+2:3/0 = 0
+1:3/0 = 0
+0:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_0hx5b"]
 custom_data_layer_0/name = "walkable"
