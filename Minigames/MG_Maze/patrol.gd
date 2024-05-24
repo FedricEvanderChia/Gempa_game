@@ -11,7 +11,7 @@ func _ready():
 	next_pos()
 
 func _physics_process(delta):
-	if global_position.distance_to(curr_pos.position) <= 0.2:
+	if global_position.distance_to(curr_pos.position) <= 1:
 		next_pos()
 		
 func get_pos():

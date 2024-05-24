@@ -5,5 +5,5 @@
 
 [resource]
 script = ExtResource("1_kj0mh")
-name = "water"
+name = "Air"
 texture = ExtResource("2_s78so")

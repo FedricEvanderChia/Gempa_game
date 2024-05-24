@@ -33,7 +33,7 @@ func nextMG():
 		difficulty +=1
 		get_tree().change_scene_to_file("res://Minigames/Difficulty_Increase.tscn")
 	else:
-		var MG = rng.randi_range(0,2)
+		var MG = rng.randi_range(0,3)
 		if MG == 0:
 			print("Sembako")
 			get_tree().change_scene_to_file("res://Minigames/Sembako.tscn")
@@ -42,4 +42,7 @@ func nextMG():
 			get_tree().change_scene_to_file("res://Minigames/MG_119/MG_119.tscn")
 		elif MG == 2:
 			print("Rescue")
-			get_tree().change_scene_to_file("res://Minigames/MG_Rescue/MG_Rescue.tscn")	
+			get_tree().change_scene_to_file("res://Minigames/MG_Rescue/MG_Rescue.tscn")
+		elif MG == 3:
+			print("Tenda")
+			get_tree().change_scene_to_file("res://Minigames/MG_Build_EmTent/MG_BuildEmTent.tscn")

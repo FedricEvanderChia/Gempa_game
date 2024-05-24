@@ -11,16 +11,12 @@ func _ready():
 	var creat_plat = target_platpre.instantiate()
 	creat_plat.position = Vector2(randf_range(349,771), 594 )
 	get_node("platform_target_container").add_child(creat_plat)
+	$Actionable_platform/AnimationPlayer.speed_scale += float(global.difficulty*0.2)
 
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if goal == 0:
 		get_tree().change_scene_to_file("res://world.tscn")
 	
-
 func _on_area_2d_area_entered(area):
 	is_collided = true
 func _on_area_2d_area_exited(area):
@@ -41,4 +37,18 @@ func _on_press_button_pressed():
 			$Sprite_tent.texture = ResourceLoader.load("res://asset/Tenda_emergency/Tenda_state_2.png")
 	else:
 		global.life -=1
-		
+
+
+func _on_help_pressed():
+	pause()
+
+func pause():
+	var new_pause_state = not get_tree().paused
+	get_tree().paused = new_pause_state
+	$CanvasLayer/tutorial_ui.visible = new_pause_state
+	
+func _on_okay_pressed():
+	pause()
+
+func _on_back_pressed():
+	get_tree().change_scene_to_file("res://world.tscn")
