@@ -92,11 +92,7 @@ custom_data_layer_2/name = "boxable"
 custom_data_layer_2/type = 1
 sources/0 = SubResource("TileSetAtlasSource_hedgq")
 
-<<<<<<< HEAD
-[node name="mg_maze10" type="Node2D"]
-=======
 [node name="mg_maze14" type="Node2D"]
->>>>>>> 59bd90e9974352db7e1298b39fcc73230df80ed7
 
 [node name="TileMap1" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_0hx5b")
