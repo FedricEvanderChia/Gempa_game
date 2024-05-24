@@ -7,5 +7,6 @@ func _physics_process(delta):
 	move_and_slide()
 
 func put_out():
+	$CollisionShape2D.queue_free()
 	$Icon.play("put_out")
 	await $Icon.animation_finished
