@@ -133,7 +133,7 @@ script = ExtResource("4_8ce0j")
 
 [node name="Player" parent="." instance=ExtResource("2_fdj3t")]
 position = Vector2(112, 0)
-goal = 9
+goal = 4
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 5
