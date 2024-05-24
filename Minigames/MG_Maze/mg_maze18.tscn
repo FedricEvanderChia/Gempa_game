@@ -1,0 +1,312 @@
+[gd_scene load_steps=18 format=3 uid="uid://n4phma8w3k6h"]
+
+[ext_resource type="Texture2D" uid="uid://8cad4ltqkcfp" path="res://asset/Simple_tile.png" id="1_75occ"]
+[ext_resource type="PackedScene" uid="uid://blxwvvgrsd5pg" path="res://Minigames/MG_Maze/player.tscn" id="2_0nxxe"]
+[ext_resource type="Script" path="res://Minigames/Control.gd" id="3_ducg6"]
+[ext_resource type="Script" path="res://Minigames/lifes.gd" id="4_dnqjw"]
+[ext_resource type="PackedScene" path="res://player/life.tscn" id="5_wftj5"]
+[ext_resource type="Texture2D" uid="uid://lvxf4foerjx6" path="res://asset/Axe.png" id="6_kjx6d"]
+[ext_resource type="Texture2D" uid="uid://cic1cd7yvd8ks" path="res://asset/MenuButton/Help_idle.png" id="7_c0d42"]
+[ext_resource type="Texture2D" uid="uid://cbamxnbsoaivk" path="res://asset/MenuButton/Help_pressed.png" id="8_dekss"]
+[ext_resource type="Texture2D" uid="uid://cwsi81nu6qhne" path="res://asset/MenuButton/Back B.png" id="9_ewwp6"]
+[ext_resource type="Texture2D" uid="uid://d3j1ap1c1m6ew" path="res://asset/MenuButton/Back A.png" id="10_hywcg"]
+[ext_resource type="PackedScene" uid="uid://div6tgqs38lwg" path="res://Minigames/tutorial_ui.tscn" id="11_tsdj8"]
+[ext_resource type="Texture2D" uid="uid://b4ff4qomp8kn5" path="res://asset/rubble/Rubble_Pole.png" id="12_n1mvi"]
+[ext_resource type="Texture2D" uid="uid://b4qeob0jnpcii" path="res://asset/rubble/Rubble_Wall.png" id="13_qytkc"]
+[ext_resource type="Texture2D" uid="uid://chqyq160dt8jq" path="res://asset/rubble/Rubble_wood.png" id="14_hi10a"]
+[ext_resource type="Script" path="res://Minigames/ShakeCam.gd" id="15_e4xmb"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hedgq"]
+texture = ExtResource("1_75occ")
+0:0/0 = 0
+0:0/0/custom_data_0 = true
+0:0/0/custom_data_1 = "path"
+1:0/0 = 0
+1:0/0/custom_data_1 = "wall"
+2:0/0 = 0
+2:0/0/custom_data_0 = true
+2:0/0/custom_data_1 = "exit"
+3:0/0 = 0
+3:0/0/custom_data_0 = true
+3:0/0/custom_data_1 = "rescue"
+4:0/0 = 0
+4:0/0/custom_data_1 = "wood"
+5:0/0 = 0
+5:0/0/custom_data_0 = true
+5:0/0/custom_data_1 = "axe"
+0:1/0 = 0
+0:1/0/custom_data_0 = true
+0:1/0/custom_data_1 = "break"
+1:1/0 = 0
+1:1/0/custom_data_1 = "void"
+2:1/0 = 0
+2:1/0/custom_data_1 = "void"
+3:1/0 = 0
+3:1/0/custom_data_1 = "void"
+0:2/0 = 0
+0:2/0/custom_data_1 = "box_out"
+1:2/0 = 0
+1:2/0/custom_data_1 = "box_in"
+2:2/0 = 0
+2:2/0/custom_data_1 = "box_out"
+3:2/0 = 0
+3:2/0/custom_data_1 = "box_in"
+4:2/0 = 0
+4:2/0/custom_data_1 = "box_in"
+4:1/0 = 0
+4:1/0/custom_data_1 = "break_wood"
+
+[sub_resource type="TileSet" id="TileSet_0hx5b"]
+custom_data_layer_0/name = "walkable"
+custom_data_layer_0/type = 1
+custom_data_layer_1/name = "TileName"
+custom_data_layer_1/type = 4
+sources/0 = SubResource("TileSetAtlasSource_hedgq")
+
+[node name="mg_maze8" type="Node2D"]
+
+[node name="TileMap1" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_0hx5b")
+rendering_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(-1, 0, 0, 65535, 65536, 0, -65536, 65536, 0, 0, 65536, 0, -65535, 0, 0, 1, 65536, 0, 131071, 0, 0, 65536, 65536, 0, 65537, 0, 0, -65534, 0, 0, 2, 0, 1, 65538, 0, 0, -65533, 0, 0, 3, 65536, 0, 65539, 0, 0, -65532, 65536, 0, 4, 65536, 0, 65540, 65536, 0, -65531, 0, 0, 5, 65536, 0, 65541, 0, 0, -65530, 0, 0, 6, 0, 1, 65542, 0, 0, -65529, 0, 0, 7, 65536, 0, 65543, 0, 0, -65528, 65536, 0, 8, 65536, 0, 65544, 65536, 0, 196607, 0, 0, 262143, 0, 0, 327679, 65536, 0, 393215, 0, 0, 458751, 0, 0, 524287, 0, 0, 589823, 65536, 0, 131072, 0, 1, 196608, 65536, 0, 262144, 65536, 0, 327680, 65536, 0, 393216, 0, 1, 458752, 65536, 0, 524288, 65536, 0, 131073, 0, 0, 196609, 0, 0, 262145, 65536, 0, 327681, 0, 0, 393217, 0, 0, 458753, 0, 0, 524289, 65536, 0, 131074, 196608, 0, 196610, 0, 0, 262146, 262144, 0, 327682, 0, 0, 393218, 196608, 0, 458754, 0, 0, 524290, 65536, 0, 131075, 0, 0, 196611, 0, 0, 262147, 65536, 0, 327683, 0, 0, 393219, 0, 0, 458755, 0, 0, 524291, 65536, 0, 131076, 262144, 0, 196612, 65536, 0, 262148, 65536, 0, 327684, 65536, 0, 393220, 262144, 0, 458756, 65536, 0, 524292, 65536, 0, 131077, 0, 0, 196613, 0, 0, 262149, 65536, 0, 327685, 0, 0, 393221, 0, 0, 458757, 0, 0, 524293, 65536, 0, 131078, 196608, 0, 196614, 0, 0, 262150, 262144, 0, 327686, 0, 0, 393222, 196608, 0, 458758, 0, 0, 524294, 65536, 0, 131079, 0, 0, 196615, 0, 0, 262151, 65536, 0, 327687, 0, 0, 393223, 0, 0, 458759, 0, 0, 524295, 65536, 0, 131080, 65536, 0, 196616, 65536, 0, 262152, 65536, 0, 327688, 65536, 0, 393224, 131072, 805306368, 458760, 65536, 0, 524296, 65536, 0, -458753, 65536, 0, -393217, 0, 0, -327681, 0, 0, -262145, 0, 0, -196609, 65536, 0, -131073, 0, 0, -65537, 0, 0, -524288, 65536, 0, -458752, 65536, 0, -393216, 0, 1, -327680, 65536, 0, -262144, 65536, 0, -196608, 65536, 0, -131072, 0, 1, -524287, 65536, 0, -458751, 0, 0, -393215, 0, 0, -327679, 0, 0, -262143, 65536, 0, -196607, 0, 0, -131071, 0, 0, -524286, 65536, 0, -458750, 0, 0, -393214, 196608, 0, -327678, 0, 0, -262142, 0, 1, -196606, 0, 0, -131070, 196608, 0, -524285, 65536, 0, -458749, 0, 0, -393213, 0, 0, -327677, 0, 0, -262141, 65536, 0, -196605, 0, 0, -131069, 0, 0, -524284, 65536, 0, -458748, 65536, 0, -393212, 0, 1, -327676, 65536, 0, -262140, 65536, 0, -196604, 65536, 0, -131068, 0, 1, -524283, 65536, 0, -458747, 0, 0, -393211, 0, 0, -327675, 0, 0, -262139, 65536, 0, -196603, 0, 0, -131067, 0, 0, -524282, 65536, 0, -458746, 0, 0, -393210, 196608, 0, -327674, 0, 0, -262138, 0, 1, -196602, 0, 0, -131066, 196608, 0, -524281, 65536, 0, -458745, 0, 0, -393209, 0, 0, -327673, 0, 0, -262137, 65536, 0, -196601, 0, 0, -131065, 0, 0, -524280, 65536, 0, -458744, 65536, 0, -393208, 65536, 0, -327672, 65536, 0, -262136, 65536, 0, -196600, 65536, 0, -131064, 65536, 0, -458760, 65536, 0, -393224, 65536, 0, -327688, 65536, 0, -262152, 65536, 0, -196616, 65536, 0, -131080, 65536, 0, -65544, 65536, 0, -8, 65536, 0, 65528, 65536, 0, 131064, 65536, 0, 196600, 65536, 0, 262136, 65536, 0, 327672, 65536, 0, 393208, 65536, 0, 458744, 65536, 0, 524280, 65536, 0, 589816, 65536, 0, -458759, 65536, 0, -393223, 0, 0, -327687, 0, 0, -262151, 0, 0, -196615, 65536, 0, -131079, 0, 0, -65543, 0, 0, -7, 0, 0, 65529, 65536, 0, 131065, 0, 0, 196601, 0, 0, 262137, 0, 0, 327673, 65536, 0, 393209, 0, 0, 458745, 0, 0, 524281, 0, 0, 589817, 65536, 0, -458758, 65536, 0, -393222, 0, 0, -327686, 196608, 0, -262150, 0, 0, -196614, 0, 1, -131078, 0, 0, -65542, 196608, 0, -6, 0, 0, 65530, 0, 1, 131066, 0, 0, 196602, 196608, 0, 262138, 0, 0, 327674, 0, 1, 393210, 0, 0, 458746, 196608, 0, 524282, 0, 0, 589818, 65536, 0, -458757, 65536, 0, -393221, 327680, 0, -327685, 0, 0, -262149, 327680, 0, -196613, 65536, 0, -131077, 0, 0, -65541, 0, 0, -5, 0, 0, 65531, 65536, 0, 131067, 0, 0, 196603, 0, 0, 262139, 0, 0, 327675, 65536, 0, 393211, 0, 0, 458747, 0, 0, 524283, 0, 0, 589819, 65536, 0, -458756, 65536, 0, -393220, 65536, 0, -327684, 0, 1, -262148, 65536, 0, -196612, 65536, 0, -131076, 65536, 0, -65540, 0, 1, -4, 65536, 0, 65532, 65536, 0, 131068, 65536, 0, 196604, 0, 1, 262140, 65536, 0, 327676, 65536, 0, 393212, 65536, 0, 458748, 0, 1, 524284, 65536, 0, 589820, 65536, 0, -458755, 65536, 0, -393219, 0, 0, -327683, 0, 0, -262147, 0, 0, -196611, 65536, 0, -131075, 0, 0, -65539, 0, 0, -3, 0, 0, 65533, 65536, 0, 131069, 0, 0, 196605, 0, 0, 262141, 0, 0, 327677, 65536, 0, 393213, 0, 0, 458749, 0, 0, 524285, 0, 0, 589821, 65536, 0, -458754, 65536, 0, -393218, 0, 0, -327682, 196608, 0, -262146, 0, 0, -196610, 0, 1, -131074, 0, 0, -65538, 196608, 0, -2, 0, 0, 65534, 0, 1, 131070, 0, 0, 196606, 196608, 0, 262142, 0, 0, 327678, 0, 1, 393214, 0, 0, 458750, 196608, 0, 524286, 0, 0, 589822, 65536, 0)
+
+[node name="Player" parent="." instance=ExtResource("2_0nxxe")]
+position = Vector2(-112, -96)
+goal = 16
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 5
+visible = false
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1155.0
+offset_bottom = 96.0
+script = ExtResource("3_ducg6")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 1163.0
+offset_bottom = 100.0
+color = Color(0, 0, 0, 0.490196)
+
+[node name="times" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = -27.5
+offset_right = 61.0
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "0:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="scoretext" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.612987
+anchor_top = 0.46875
+anchor_right = 0.612987
+anchor_bottom = 0.46875
+offset_left = 133.0
+offset_top = -29.0
+offset_right = 351.0
+offset_bottom = 26.0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Score: 00"
+metadata/_edit_use_anchors_ = true
+
+[node name="Success" type="Label" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.5
+offset_top = 248.5
+offset_right = 107.5
+offset_bottom = 303.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Rescued"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="CanvasLayer/Control"]
+
+[node name="lifes" type="Node" parent="CanvasLayer/Control"]
+script = ExtResource("4_dnqjw")
+
+[node name="life1" parent="CanvasLayer/Control/lifes" instance=ExtResource("5_wftj5")]
+visible = false
+position = Vector2(348, 47)
+
+[node name="life2" parent="CanvasLayer/Control/lifes" instance=ExtResource("5_wftj5")]
+visible = false
+position = Vector2(417, 47)
+
+[node name="life3" parent="CanvasLayer/Control/lifes" instance=ExtResource("5_wftj5")]
+visible = false
+position = Vector2(486, 47)
+
+[node name="Axe" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(132, 45)
+texture = ExtResource("6_kjx6d")
+
+[node name="AxeNum" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -409.5
+offset_top = -27.5
+offset_right = -386.5
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Help" type="TextureButton" parent="CanvasLayer"]
+offset_left = 1070.0
+offset_top = 10.0
+offset_right = 1390.0
+offset_bottom = 330.0
+scale = Vector2(0.23, 0.23)
+size_flags_horizontal = 0
+texture_normal = ExtResource("7_c0d42")
+texture_pressed = ExtResource("8_dekss")
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="TextureButton" parent="CanvasLayer"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 330.0
+offset_bottom = 330.0
+scale = Vector2(0.23, 0.23)
+size_flags_horizontal = 0
+texture_normal = ExtResource("9_ewwp6")
+texture_pressed = ExtResource("10_hywcg")
+metadata/_edit_use_anchors_ = true
+
+[node name="tutorial_ui" parent="CanvasLayer" instance=ExtResource("11_tsdj8")]
+process_mode = 2
+position = Vector2(576, 324)
+
+[node name="okay" type="Button" parent="CanvasLayer/tutorial_ui"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.5
+offset_top = 201.5
+offset_right = 34.5
+offset_bottom = 237.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Okay !"
+
+[node name="Interactibles" type="Label" parent="CanvasLayer/tutorial_ui"]
+anchors_preset = -1
+anchor_left = 0.28125
+anchor_top = 0.549383
+anchor_right = 0.429688
+anchor_bottom = 0.699074
+offset_left = -296.0
+offset_top = -4.0
+offset_right = 93.0
+offset_bottom = 148.0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Halangan
+
+tahan dan geser reruntuhan ke samping
+layar untuk membebaskan korban yang
+terjebak."
+metadata/_edit_use_anchors_ = true
+
+[node name="Game Goal" type="Label" parent="CanvasLayer/tutorial_ui"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -338.5
+offset_top = -245.5
+offset_right = 338.5
+offset_bottom = -124.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Minigame Reruntuhan
+
+Bantulah korban yang terjebak dibawah reruntuhan ini untuk keluar.
+Singkirkan semua objek yang menutupi jalan keluar korban dari layar."
+horizontal_alignment = 1
+
+[node name="RubblePole" type="Sprite2D" parent="CanvasLayer/tutorial_ui"]
+position = Vector2(-328, 76)
+texture = ExtResource("12_n1mvi")
+
+[node name="RubbleWall" type="Sprite2D" parent="CanvasLayer/tutorial_ui"]
+position = Vector2(-424, 116)
+texture = ExtResource("13_qytkc")
+
+[node name="RubbleWood" type="Sprite2D" parent="CanvasLayer/tutorial_ui"]
+position = Vector2(-368, 76)
+texture = ExtResource("14_hi10a")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(8, -2)
+scale = Vector2(0.5, 0.5)
+zoom = Vector2(2.2, 2.2)
+script = ExtResource("15_e4xmb")
+
+[connection signal="timeout" from="CanvasLayer/Control/Timer" to="CanvasLayer/Control" method="_on_timer_timeout"]
