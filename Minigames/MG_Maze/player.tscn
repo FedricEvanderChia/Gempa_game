@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://blxwvvgrsd5pg"]
+[gd_scene load_steps=17 format=3 uid="uid://d0sctmq2ogo6p"]
 
 [ext_resource type="Script" path="res://Minigames/MG_Maze/player.gd" id="1_6pn5c"]
 [ext_resource type="Texture2D" uid="uid://c8nv6mtnlspav" path="res://asset/Character/MiniRizki_Sheet.png" id="2_l82xe"]
