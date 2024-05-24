@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://c6wcmw21uwsn5"]
+[gd_scene load_steps=22 format=3 uid="uid://c6wcmw21uwsn5"]
 
 [ext_resource type="Texture2D" uid="uid://8cad4ltqkcfp" path="res://asset/Simple_tile.png" id="1_jx6pm"]
+[ext_resource type="Script" path="res://Minigames/MG_Maze/mg_maze.gd" id="1_klkf0"]
 [ext_resource type="PackedScene" uid="uid://blxwvvgrsd5pg" path="res://Minigames/MG_Maze/player.tscn" id="2_fa1bd"]
 [ext_resource type="Script" path="res://Minigames/MG_Maze/static_fire.gd" id="3_jhpgt"]
 [ext_resource type="Script" path="res://Minigames/Control.gd" id="3_kpxtk"]
@@ -11,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cbamxnbsoaivk" path="res://asset/MenuButton/Help_pressed.png" id="8_bync1"]
 [ext_resource type="Texture2D" uid="uid://cwsi81nu6qhne" path="res://asset/MenuButton/Back B.png" id="9_3uc7b"]
 [ext_resource type="Texture2D" uid="uid://d3j1ap1c1m6ew" path="res://asset/MenuButton/Back A.png" id="10_1cvdn"]
+[ext_resource type="Script" path="res://Minigames/MG_Maze/ItemCount.gd" id="10_6vmea"]
 [ext_resource type="PackedScene" uid="uid://div6tgqs38lwg" path="res://Minigames/tutorial_ui.tscn" id="11_3ol3j"]
 [ext_resource type="Texture2D" uid="uid://b4ff4qomp8kn5" path="res://asset/rubble/Rubble_Pole.png" id="12_he8k7"]
 [ext_resource type="Texture2D" uid="uid://b4qeob0jnpcii" path="res://asset/rubble/Rubble_Wall.png" id="13_hrq5w"]
@@ -93,6 +95,7 @@ custom_data_layer_2/type = 1
 sources/0 = SubResource("TileSetAtlasSource_hedgq")
 
 [node name="mg_maze16" type="Node2D"]
+script = ExtResource("1_klkf0")
 
 [node name="TileMap1" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_0hx5b")
@@ -112,7 +115,7 @@ script = ExtResource("3_jhpgt")
 
 [node name="Player" parent="." instance=ExtResource("2_fa1bd")]
 position = Vector2(-128, 0)
-goal = 3
+goal = 5
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 5
@@ -127,12 +130,14 @@ script = ExtResource("3_kpxtk")
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+visible = false
 layout_mode = 0
 offset_right = 1163.0
 offset_bottom = 100.0
 color = Color(0, 0, 0, 0.490196)
 
 [node name="times" type="Label" parent="CanvasLayer/Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -155,6 +160,7 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="scoretext" type="Label" parent="CanvasLayer/Control"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.612987
@@ -198,6 +204,7 @@ text = "Rescued"
 horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="CanvasLayer/Control"]
+process_mode = 4
 
 [node name="lifes" type="Node" parent="CanvasLayer/Control"]
 script = ExtResource("4_kdm7n")
@@ -240,8 +247,10 @@ theme_override_font_sizes/font_size = 40
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("10_6vmea")
 
 [node name="Help" type="TextureButton" parent="CanvasLayer"]
+visible = false
 offset_left = 1070.0
 offset_top = 10.0
 offset_right = 1390.0
@@ -265,6 +274,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="tutorial_ui" parent="CanvasLayer" instance=ExtResource("11_3ol3j")]
 process_mode = 2
+visible = false
 position = Vector2(576, 324)
 
 [node name="okay" type="Button" parent="CanvasLayer/tutorial_ui"]
@@ -349,3 +359,4 @@ zoom = Vector2(2.2, 2.2)
 script = ExtResource("16_uyauy")
 
 [connection signal="timeout" from="CanvasLayer/Control/Timer" to="CanvasLayer/Control" method="_on_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_back_pressed"]
