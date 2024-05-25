@@ -99,7 +99,8 @@ position = Vector2(-16, 32)
 goal = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3.5, 3.5)
+position = Vector2(-32, -8)
+zoom = Vector2(4, 4)
 script = ExtResource("16_4edb5")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("19_o3i4t")]

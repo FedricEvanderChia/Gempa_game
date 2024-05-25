@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bxw0g5fi0175t"]
+[gd_scene load_steps=10 format=3 uid="uid://bxw0g5fi0175t"]
 
 [ext_resource type="Texture2D" uid="uid://8cad4ltqkcfp" path="res://asset/Simple_tile.png" id="1_cfh0i"]
 [ext_resource type="PackedScene" uid="uid://blxwvvgrsd5pg" path="res://Minigames/MG_Maze/player.tscn" id="2_6cdlq"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Minigames/MG_Maze/patrol.gd" id="3_ofexf"]
 [ext_resource type="Script" path="res://Minigames/MG_Maze/static_fire.gd" id="4_6esck"]
 [ext_resource type="PackedScene" uid="uid://bd6dm2obp4315" path="res://Minigames/MG_Maze/canvas_layer.tscn" id="6_ik50m"]
+[ext_resource type="Script" path="res://Minigames/ShakeCam.gd" id="7_41t82"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hedgq"]
 texture = ExtResource("1_cfh0i")
@@ -161,3 +162,8 @@ position = Vector2(-16, 32)
 goal = 4
 
 [node name="CanvasLayer" parent="." instance=ExtResource("6_ik50m")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-8, -1)
+zoom = Vector2(2.2, 2.2)
+script = ExtResource("7_41t82")
