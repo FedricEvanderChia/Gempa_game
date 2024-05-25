@@ -105,7 +105,7 @@ func move(direction: Vector2):
 			tile_map.set_cell(0,nextTile,0,Vector2i(0,0))
 			apar +=1
 		elif "exit" in tileName and goal == 0:
-			get_tree().change_scene_to_file("res://world.tscn")
+			complete()
 		
 	
 	is_moving = true
@@ -167,10 +167,12 @@ func _on_body_entered(body):
 			body.queue_free()
 		else:
 			is_hurt = true
+	
 
 func _on_body_exited(body):
 	if "fire" in body.name:
 		is_hurt = false
+	
 
 func hurt():
 	if !invincible:
@@ -192,4 +194,9 @@ func invincibility():
 	await get_tree().create_timer(2).timeout
 	invincible = false
 
-
+func complete():
+	$"../CanvasLayer/Control/Timer".stop()
+	$"../CanvasLayer/Control/Success".show()
+	global.minigame_score += global.difficulty*150
+	await get_tree().create_timer(1).timeout
+	get_tree().change_scene_to_file("res://world.tscn")

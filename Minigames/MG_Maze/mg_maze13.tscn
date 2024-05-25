@@ -1,23 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://615cf4kddvhs"]
+[gd_scene load_steps=9 format=3 uid="uid://615cf4kddvhs"]
 
 [ext_resource type="Texture2D" uid="uid://8cad4ltqkcfp" path="res://asset/Simple_tile.png" id="1_0i0fc"]
 [ext_resource type="PackedScene" uid="uid://blxwvvgrsd5pg" path="res://Minigames/MG_Maze/player.tscn" id="2_eygno"]
-[ext_resource type="Script" path="res://Minigames/Control.gd" id="3_jvrf3"]
-[ext_resource type="Script" path="res://Minigames/lifes.gd" id="4_tlsxd"]
-[ext_resource type="PackedScene" path="res://player/life.tscn" id="5_nfxa0"]
-[ext_resource type="Texture2D" uid="uid://lvxf4foerjx6" path="res://asset/Axe.png" id="6_gkr21"]
-[ext_resource type="Texture2D" uid="uid://cic1cd7yvd8ks" path="res://asset/MenuButton/Help_idle.png" id="7_lkl8d"]
-[ext_resource type="Texture2D" uid="uid://cbamxnbsoaivk" path="res://asset/MenuButton/Help_pressed.png" id="8_hoyxa"]
-[ext_resource type="Texture2D" uid="uid://cwsi81nu6qhne" path="res://asset/MenuButton/Back B.png" id="9_40vrv"]
-[ext_resource type="Texture2D" uid="uid://d3j1ap1c1m6ew" path="res://asset/MenuButton/Back A.png" id="10_mcn15"]
-[ext_resource type="PackedScene" uid="uid://div6tgqs38lwg" path="res://Minigames/tutorial_ui.tscn" id="11_rlcfp"]
-[ext_resource type="Texture2D" uid="uid://b4ff4qomp8kn5" path="res://asset/rubble/Rubble_Pole.png" id="12_pnyxh"]
-[ext_resource type="Texture2D" uid="uid://b4qeob0jnpcii" path="res://asset/rubble/Rubble_Wall.png" id="13_jcbqe"]
-[ext_resource type="Texture2D" uid="uid://chqyq160dt8jq" path="res://asset/rubble/Rubble_wood.png" id="14_21gbc"]
-[ext_resource type="PackedScene" uid="uid://bxiv3fqouop45" path="res://Minigames/MG_Maze/box.tscn" id="15_e2lc8"]
 [ext_resource type="Script" path="res://Minigames/ShakeCam.gd" id="16_4edb5"]
 [ext_resource type="PackedScene" uid="uid://bdsv6jbwlqgvw" path="res://Minigames/MG_Maze/fire.tscn" id="17_boqr3"]
 [ext_resource type="Script" path="res://Minigames/MG_Maze/patrol.gd" id="18_k27dk"]
+[ext_resource type="PackedScene" uid="uid://bd6dm2obp4315" path="res://Minigames/MG_Maze/canvas_layer.tscn" id="19_o3i4t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hedgq"]
 texture = ExtResource("1_0i0fc")
@@ -74,277 +62,44 @@ rendering_quadrant_size = 32
 format = 2
 layer_0/tile_data = PackedInt32Array(-131070, 0, 0, -196606, 65536, 0, -262142, 65536, 0, -327678, 196608, 1, -393214, 196608, 1, -458750, 196608, 1, -458751, 196608, 1, -458752, 196608, 1, -393217, 196608, 1, -393218, 196608, 1, -393219, 196608, 1, -393220, 196608, 1, -393221, 196608, 1, -393222, 196608, 1, -327686, 196608, 1, -262150, 196608, 1, -196614, 65536, 0, -131078, 0, 0, -65542, 0, 0, -6, 0, 0, 65530, 0, 0, 131066, 0, 0, 196602, 0, 0, 262138, 65536, 0, 327674, 196608, 1, 393210, 196608, 1, 458746, 196608, 1, 458747, 196608, 1, 393211, 196608, 1, 327675, 196608, 1, 65531, 0, 0, -5, 0, 0, -65541, 0, 0, -131077, 0, 0, -196613, 65536, 0, -262149, 196608, 1, -327685, 196608, 1, -327684, 196608, 1, -262148, 196608, 1, -196612, 65536, 0, -131076, 0, 0, 65532, 65536, 0, 327676, 196608, 1, 393212, 196608, 1, 458748, 196608, 1, 458749, 196608, 1, 393213, 196608, 1, 327677, 196608, 1, 262141, 65536, 0, 196605, 0, 0, -196611, 65536, 0, -262147, 196608, 1, -327683, 196608, 1, -327682, 196608, 1, -262146, 196608, 1, -196610, 65536, 0, 196606, 0, 0, 262142, 65536, 0, 327678, 196608, 1, 393214, 196608, 1, 458750, 196608, 1, 458751, 196608, 1, 393215, 196608, 1, 327679, 196608, 1, 262143, 131072, 1610612736, 196607, 0, 0, -196609, 65536, 0, -262145, 196608, 1, -327681, 196608, 1, -393216, 196608, 1, -327680, 196608, 1, -262144, 65536, 0, 131072, 0, 0, 196608, 65536, 0, 262144, 196608, 1, 327680, 196608, 1, 393216, 196608, 1, 393217, 196608, 1, 327681, 196608, 1, 262145, 196608, 1, 196609, 65536, 0, -196607, 0, 0, -262143, 65536, 0, -327679, 196608, 1, -393215, 196608, 1, 196610, 65536, 0, 262146, 196608, 1, 327682, 196608, 1, 393218, 196608, 1, 393219, 196608, 1, 327683, 196608, 1, 262147, 196608, 1, 196611, 65536, 0, -196605, 65536, 0, -262141, 196608, 1, -327677, 196608, 1, -393213, 196608, 1, -458749, 196608, 1, -458748, 196608, 1, -393212, 196608, 1, -327676, 196608, 1, -262140, 196608, 1, -196604, 196608, 1, -131068, 65536, 0, -65532, 65536, 0, 4, 65536, 0, 65540, 65536, 0, 131076, 65536, 0, 196612, 65536, 0, 262148, 196608, 1, 327684, 196608, 1, 393220, 196608, 1, 393221, 196608, 1, 327685, 196608, 1, 262149, 196608, 1, 196613, 196608, 1, 131077, 196608, 1, 65541, 196608, 1, 5, 196608, 1, -65531, 196608, 1, -131067, 196608, 1, -196603, 196608, 1, -262139, 196608, 1, -327675, 196608, 1, -393211, 196608, 1, -458747, 196608, 1, -458746, 196608, 1, -393210, 196608, 1, -327674, 196608, 1, -262138, 196608, 1, -196602, 196608, 1, -131066, 196608, 1, -65530, 196608, 1, 6, 196608, 1, 65542, 196608, 1, 131078, 196608, 1, 196614, 196608, 1, 262150, 196608, 1, 327686, 196608, 1, 393222, 196608, 1, 393223, 196608, 1, 327687, 196608, 1, 262151, 196608, 1, 196615, 196608, 1, 131079, 196608, 1, 65543, 196608, 1, 7, 196608, 1, -65529, 196608, 1, -131065, 196608, 1, -196601, 196608, 1, -262137, 196608, 1, -327673, 196608, 1, -393209, 196608, 1, -458745, 196608, 1, -458744, 196608, 1, -393208, 196608, 1, -327672, 196608, 1, -262136, 196608, 1, -196600, 196608, 1, -131064, 196608, 1, -65528, 196608, 1, 8, 196608, 1, 65544, 196608, 1, 131080, 196608, 1, 196616, 196608, 1, 262152, 196608, 1, 327688, 196608, 1, 393224, 196608, 1, 393225, 196608, 1, 327689, 196608, 1, 262153, 196608, 1, 196617, 196608, 1, 131081, 196608, 1, 65545, 196608, 1, 9, 196608, 1, -65527, 196608, 1, -131063, 196608, 1, -196599, 196608, 1, -262135, 196608, 1, -327671, 196608, 1, -393207, 196608, 1, -458743, 196608, 1, -458742, 196608, 1, -393206, 196608, 1, -327670, 196608, 1, -262134, 196608, 1, -196598, 196608, 1, -131062, 196608, 1, -65526, 196608, 1, 10, 196608, 1, 65546, 196608, 1, 131082, 196608, 1, 196618, 196608, 1, 262154, 196608, 1, 327690, 196608, 1, 393226, 196608, 1, 393227, 196608, 1, 327691, 196608, 1, 262155, 196608, 1, 196619, 196608, 1, 131083, 196608, 1, 65547, 196608, 1, 11, 196608, 1, -65525, 196608, 1, -131061, 196608, 1, -196597, 196608, 1, -262133, 196608, 1, -327669, 196608, 1, -393205, 196608, 1, -458741, 196608, 1, -458740, 196608, 1, -393204, 196608, 1, -327668, 196608, 1, -262132, 196608, 1, -196596, 196608, 1, -131060, 196608, 1, -65524, 196608, 1, 12, 196608, 1, 65548, 196608, 1, 131084, 196608, 1, 196620, 196608, 1, 262156, 196608, 1, 327692, 196608, 1, 393228, 196608, 1, 393229, 196608, 1, 327693, 196608, 1, 262157, 196608, 1, 196621, 196608, 1, 131085, 196608, 1, 65549, 196608, 1, 13, 196608, 1, -65523, 196608, 1, -131059, 196608, 1, -196595, 196608, 1, -262131, 196608, 1, -327667, 196608, 1, -393203, 196608, 1, -458739, 196608, 1, -458738, 196608, 1, -393202, 196608, 1, -327666, 196608, 1, -262130, 196608, 1, -196594, 196608, 1, -131058, 196608, 1, -65522, 196608, 1, 14, 196608, 1, 65550, 196608, 1, 131086, 196608, 1, 196622, 196608, 1, 262158, 196608, 1, 327694, 196608, 1, 393230, 196608, 1, 131074, 0, 0, 131075, 0, 0, -393230, 196608, 1, -327694, 196608, 1, -262158, 196608, 1, -196622, 196608, 1, -131086, 196608, 1, -65550, 196608, 1, -14, 196608, 1, 65522, 196608, 1, 131058, 196608, 1, 196594, 196608, 1, 262130, 196608, 1, 327666, 196608, 1, 393202, 196608, 1, 458738, 196608, 1, 262135, 196608, 1, 196599, 65536, 0, 131063, 65536, 0, 65527, 65536, 0, -9, 65536, 0, -65545, 196608, 1, -131081, 196608, 1, -196617, 196608, 1, -262153, 196608, 1, -327689, 196608, 1, -393225, 196608, 1, -393226, 196608, 1, -393227, 196608, 1, -393228, 196608, 1, -393229, 196608, 1, -327693, 196608, 1, -262157, 196608, 1, -196621, 196608, 1, -131085, 196608, 1, -65549, 196608, 1, -13, 196608, 1, 65523, 196608, 1, 131059, 196608, 1, 196595, 196608, 1, 262131, 196608, 1, 327667, 196608, 1, 393203, 196608, 1, 458739, 196608, 1, 458740, 196608, 1, 393204, 196608, 1, 327668, 196608, 1, 262132, 196608, 1, 196596, 196608, 1, 131060, 196608, 1, 65524, 196608, 1, -12, 196608, 1, -65548, 196608, 1, -131084, 196608, 1, -196620, 196608, 1, -262156, 196608, 1, -327692, 196608, 1, -327691, 196608, 1, -262155, 196608, 1, -196619, 196608, 1, -131083, 196608, 1, -65547, 196608, 1, -11, 196608, 1, 65525, 196608, 1, 131061, 196608, 1, 196597, 196608, 1, 262133, 196608, 1, 327669, 196608, 1, 393205, 196608, 1, 458741, 196608, 1, 458742, 196608, 1, 393206, 196608, 1, 327670, 196608, 1, 262134, 196608, 1, 196598, 196608, 1, 131062, 196608, 1, 65526, 196608, 1, -10, 196608, 1, -65546, 196608, 1, -131082, 196608, 1, -196618, 196608, 1, -262154, 196608, 1, -327690, 196608, 1, 327671, 196608, 1, 393207, 196608, 1, 458743, 196608, 1, 458744, 196608, 1, 393208, 196608, 1, 327672, 196608, 1, 262136, 65536, 0, 196600, 65536, 0, 131064, 327680, 0, 65528, 0, 0, -8, 65536, 0, -65544, 65536, 0, -131080, 65536, 0, -196616, 65536, 0, -262152, 196608, 1, -327688, 196608, 1, -393224, 196608, 1, -393223, 196608, 1, -327687, 196608, 1, -262151, 196608, 1, -196615, 65536, 0, -131079, 196608, 0, -65543, 0, 0, -7, 0, 0, 65529, 0, 0, 131065, 0, 0, 196601, 0, 0, 262137, 65536, 0, 327673, 196608, 1, 393209, 196608, 1, 458745, 196608, 1, -131075, 0, 0, 65533, 65536, 0, 131069, 65536, 0, -131074, 0, 0, 65534, 0, 0, 131070, 0, 0, -131073, 196608, 0, 65535, 0, 0, -196608, 0, 0, 0, 0, 0, 65536, 0, 0, 131071, 0, 0, 65539, 0, 0, 65538, 0, 0, -65534, 262144, 2, 2, 0, 0, -65533, 0, 0, -131069, 65536, 0, 3, 0, 0, 131073, 0, 0, 65537, 0, 0, 1, 0, 0, -65540, 65536, 0, -65539, 65536, 0, -65538, 65536, 0, -65537, 262144, 0, -131072, 65536, 0, -131071, 0, 0, -3, 0, 0, -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 65536, 0, -4, 0, 0, 131067, 0, 0, 196603, 0, 0, 262139, 65536, 0, 131068, 65536, 0, 196604, 0, 0, 262140, 65536, 0)
 
+[node name="path1" type="Node2D" parent="TileMap1"]
+
+[node name="fire" parent="TileMap1/path1" instance=ExtResource("17_boqr3")]
+position = Vector2(-104, 39)
+speed = 16
+
+[node name="patrol" type="Node2D" parent="TileMap1/path1/fire"]
+position = Vector2(0, 1)
+script = ExtResource("18_k27dk")
+
+[node name="Marker2D" type="Marker2D" parent="TileMap1/path1" groups=["path1"]]
+position = Vector2(-103, 40)
+
+[node name="Marker2D2" type="Marker2D" parent="TileMap1/path1" groups=["path1"]]
+position = Vector2(-40, 41)
+
+[node name="path2" type="Node2D" parent="TileMap1"]
+
+[node name="fire" parent="TileMap1/path2" instance=ExtResource("17_boqr3")]
+position = Vector2(-105, -8)
+speed = 16
+
+[node name="patrol" type="Node2D" parent="TileMap1/path2/fire"]
+position = Vector2(-1, 1)
+script = ExtResource("18_k27dk")
+
+[node name="Marker2D" type="Marker2D" parent="TileMap1/path2" groups=["path2"]]
+position = Vector2(-104, -8)
+
+[node name="Marker2D2" type="Marker2D" parent="TileMap1/path2" groups=["path2"]]
+position = Vector2(8, -7)
+
 [node name="Player" parent="." instance=ExtResource("2_eygno")]
 position = Vector2(-16, 32)
 goal = 2
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 5
-visible = false
-
-[node name="Control" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1155.0
-offset_bottom = 96.0
-script = ExtResource("3_jvrf3")
-metadata/_edit_use_anchors_ = true
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_right = 1163.0
-offset_bottom = 100.0
-color = Color(0, 0, 0, 0.490196)
-
-[node name="times" type="Label" parent="CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -61.0
-offset_top = -27.5
-offset_right = 61.0
-offset_bottom = 27.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "0:00"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="scoretext" type="Label" parent="CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.612987
-anchor_top = 0.46875
-anchor_right = 0.612987
-anchor_bottom = 0.46875
-offset_left = 133.0
-offset_top = -29.0
-offset_right = 351.0
-offset_bottom = 26.0
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "Score: 00"
-metadata/_edit_use_anchors_ = true
-
-[node name="Success" type="Label" parent="CanvasLayer/Control"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -110.5
-offset_top = 248.5
-offset_right = 107.5
-offset_bottom = 303.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(1, 1, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "Rescued"
-horizontal_alignment = 1
-
-[node name="Timer" type="Timer" parent="CanvasLayer/Control"]
-
-[node name="lifes" type="Node" parent="CanvasLayer/Control"]
-script = ExtResource("4_tlsxd")
-
-[node name="life1" parent="CanvasLayer/Control/lifes" instance=ExtResource("5_nfxa0")]
-visible = false
-position = Vector2(348, 47)
-
-[node name="life2" parent="CanvasLayer/Control/lifes" instance=ExtResource("5_nfxa0")]
-visible = false
-position = Vector2(417, 47)
-
-[node name="life3" parent="CanvasLayer/Control/lifes" instance=ExtResource("5_nfxa0")]
-visible = false
-position = Vector2(486, 47)
-
-[node name="Axe" type="Sprite2D" parent="CanvasLayer/Control"]
-position = Vector2(132, 45)
-texture = ExtResource("6_gkr21")
-
-[node name="AxeNum" type="Label" parent="CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -409.5
-offset_top = -27.5
-offset_right = -386.5
-offset_bottom = 27.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Help" type="TextureButton" parent="CanvasLayer"]
-offset_left = 1070.0
-offset_top = 10.0
-offset_right = 1390.0
-offset_bottom = 330.0
-scale = Vector2(0.23, 0.23)
-size_flags_horizontal = 0
-texture_normal = ExtResource("7_lkl8d")
-texture_pressed = ExtResource("8_hoyxa")
-metadata/_edit_use_anchors_ = true
-
-[node name="Back" type="TextureButton" parent="CanvasLayer"]
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 330.0
-offset_bottom = 330.0
-scale = Vector2(0.23, 0.23)
-size_flags_horizontal = 0
-texture_normal = ExtResource("9_40vrv")
-texture_pressed = ExtResource("10_mcn15")
-metadata/_edit_use_anchors_ = true
-
-[node name="tutorial_ui" parent="CanvasLayer" instance=ExtResource("11_rlcfp")]
-process_mode = 2
-visible = false
-position = Vector2(576, 324)
-
-[node name="okay" type="Button" parent="CanvasLayer/tutorial_ui"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -34.5
-offset_top = 201.5
-offset_right = 34.5
-offset_bottom = 237.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 20
-text = "Okay !"
-
-[node name="Interactibles" type="Label" parent="CanvasLayer/tutorial_ui"]
-anchors_preset = -1
-anchor_left = 0.28125
-anchor_top = 0.549383
-anchor_right = 0.429688
-anchor_bottom = 0.699074
-offset_left = -296.0
-offset_top = -4.0
-offset_right = 93.0
-offset_bottom = 148.0
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-text = "Halangan
-
-tahan dan geser reruntuhan ke samping
-layar untuk membebaskan korban yang
-terjebak."
-metadata/_edit_use_anchors_ = true
-
-[node name="Game Goal" type="Label" parent="CanvasLayer/tutorial_ui"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -338.5
-offset_top = -245.5
-offset_right = 338.5
-offset_bottom = -124.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-text = "Minigame Reruntuhan
-
-Bantulah korban yang terjebak dibawah reruntuhan ini untuk keluar.
-Singkirkan semua objek yang menutupi jalan keluar korban dari layar."
-horizontal_alignment = 1
-
-[node name="RubblePole" type="Sprite2D" parent="CanvasLayer/tutorial_ui"]
-position = Vector2(-328, 76)
-texture = ExtResource("12_pnyxh")
-
-[node name="RubbleWall" type="Sprite2D" parent="CanvasLayer/tutorial_ui"]
-position = Vector2(-424, 116)
-texture = ExtResource("13_jcbqe")
-
-[node name="RubbleWood" type="Sprite2D" parent="CanvasLayer/tutorial_ui"]
-position = Vector2(-368, 76)
-texture = ExtResource("14_21gbc")
-
-[node name="Box" parent="." instance=ExtResource("15_e2lc8")]
-visible = false
-position = Vector2(120, 8)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3.5, 3.5)
 script = ExtResource("16_4edb5")
 
-[node name="path1" type="Node2D" parent="."]
-
-[node name="fire" parent="path1" instance=ExtResource("17_boqr3")]
-position = Vector2(-104, 39)
-speed = 16
-
-[node name="patrol" type="Node2D" parent="path1/fire"]
-position = Vector2(0, 1)
-script = ExtResource("18_k27dk")
-
-[node name="Marker2D" type="Marker2D" parent="path1" groups=["path1"]]
-position = Vector2(-103, 40)
-
-[node name="Marker2D2" type="Marker2D" parent="path1" groups=["path1"]]
-position = Vector2(-40, 41)
-
-[node name="path2" type="Node2D" parent="."]
-
-[node name="fire" parent="path2" instance=ExtResource("17_boqr3")]
-position = Vector2(-105, -8)
-speed = 16
-
-[node name="patrol" type="Node2D" parent="path2/fire"]
-position = Vector2(-1, 1)
-script = ExtResource("18_k27dk")
-
-[node name="Marker2D" type="Marker2D" parent="path2" groups=["path2"]]
-position = Vector2(-104, -8)
-
-[node name="Marker2D2" type="Marker2D" parent="path2" groups=["path2"]]
-position = Vector2(8, -7)
-
-[connection signal="timeout" from="CanvasLayer/Control/Timer" to="CanvasLayer/Control" method="_on_timer_timeout"]
+[node name="CanvasLayer" parent="." instance=ExtResource("19_o3i4t")]

@@ -1,9 +1,9 @@
-[gd_scene load_steps=29 format=3 uid="uid://lii1beb2wlkt"]
+[gd_scene load_steps=28 format=3 uid="uid://lii1beb2wlkt"]
 
 [ext_resource type="Script" path="res://Minigames/MG_Build_EmTent/MG_BuildEmTent.gd" id="1_n8qo3"]
 [ext_resource type="Script" path="res://Minigames/Control.gd" id="2_rbapa"]
 [ext_resource type="Script" path="res://Minigames/lifes.gd" id="3_ldmwb"]
-[ext_resource type="PackedScene" path="res://player/life.tscn" id="4_kuqpq"]
+[ext_resource type="PackedScene" uid="uid://bbcp8hmccldcb" path="res://player/life.tscn" id="4_kuqpq"]
 [ext_resource type="Texture2D" uid="uid://8kbxhcnxgloa" path="res://asset/Tenda_emergency/action_bar_bg.png" id="5_jdair"]
 [ext_resource type="Texture2D" uid="uid://ds6a43ru1oeei" path="res://asset/Tenda_emergency/Tenda_state_0.png" id="6_yxlgr"]
 [ext_resource type="Texture2D" uid="uid://d2ykcjrbd0y3u" path="res://asset/Tenda_emergency/moving_platform.png" id="7_51ftb"]
@@ -60,20 +60,6 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eur33"]
 size = Vector2(18, 82)
-
-[sub_resource type="GDScript" id="GDScript_3wx3o"]
-script/source = "extends Timer
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4s52"]
 size = Vector2(100, 40)
@@ -172,10 +158,6 @@ libraries = {
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_eur33")
 
-[node name="Timer" type="Timer" parent="."]
-autostart = true
-script = SubResource("GDScript_3wx3o")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 5
 
@@ -253,19 +235,17 @@ horizontal_alignment = 1
 [node name="Timer" type="Timer" parent="CanvasLayer/Control"]
 autostart = true
 
-[node name="lifes" type="Node" parent="CanvasLayer/Control"]
+[node name="lifes" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 0
 script = ExtResource("3_ldmwb")
 
 [node name="life1" parent="CanvasLayer/Control/lifes" instance=ExtResource("4_kuqpq")]
-visible = false
 position = Vector2(39, 114)
 
 [node name="life2" parent="CanvasLayer/Control/lifes" instance=ExtResource("4_kuqpq")]
-visible = false
 position = Vector2(108, 114)
 
 [node name="life3" parent="CanvasLayer/Control/lifes" instance=ExtResource("4_kuqpq")]
-visible = false
 position = Vector2(177, 114)
 
 [node name="Help" type="TextureButton" parent="CanvasLayer"]
@@ -435,7 +415,6 @@ autoplay = "default"
 [connection signal="pressed" from="press_button" to="Actionable_platform" method="_on_press_button_pressed"]
 [connection signal="area_entered" from="Actionable_platform/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Actionable_platform/Area2D" to="." method="_on_area_2d_area_exited"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="CanvasLayer/Control/Timer" to="CanvasLayer/Control" method="_on_timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/Help" to="." method="_on_help_pressed"]
 [connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_back_pressed"]

@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" path="res://Object/beras.tscn" id="5_8uu74"]
 [ext_resource type="PackedScene" path="res://Object/tenda.tscn" id="5_41m3d"]
 [ext_resource type="Script" path="res://Minigames/Control.gd" id="8_7gbdg"]
-[ext_resource type="PackedScene" path="res://player/life.tscn" id="9_ks6qj"]
+[ext_resource type="PackedScene" uid="uid://bbcp8hmccldcb" path="res://player/life.tscn" id="9_ks6qj"]
 [ext_resource type="Script" path="res://Minigames/lifes.gd" id="9_m0t61"]
 [ext_resource type="Texture2D" uid="uid://cic1cd7yvd8ks" path="res://asset/MenuButton/Help_idle.png" id="11_bitky"]
 [ext_resource type="Texture2D" uid="uid://cbamxnbsoaivk" path="res://asset/MenuButton/Help_pressed.png" id="12_le51r"]
@@ -261,15 +261,12 @@ autostart = true
 script = ExtResource("9_m0t61")
 
 [node name="life1" parent="CanvasLayer/Control/lifes" instance=ExtResource("9_ks6qj")]
-visible = false
 position = Vector2(39, 114)
 
 [node name="life2" parent="CanvasLayer/Control/lifes" instance=ExtResource("9_ks6qj")]
-visible = false
 position = Vector2(108, 114)
 
 [node name="life3" parent="CanvasLayer/Control/lifes" instance=ExtResource("9_ks6qj")]
-visible = false
 position = Vector2(177, 114)
 
 [node name="Help" type="TextureButton" parent="CanvasLayer"]
