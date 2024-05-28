@@ -230,9 +230,9 @@ color = Color(0, 0, 0, 0.490196)
 [node name="scoretext" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.612987
+anchor_left = 0.585281
 anchor_top = 0.46875
-anchor_right = 0.612987
+anchor_right = 0.585281
 anchor_bottom = 0.46875
 offset_left = 133.0
 offset_top = -29.0

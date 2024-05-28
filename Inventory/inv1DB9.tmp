@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://be67m4algo8y1"]
+[gd_scene load_steps=4 format=3 uid="uid://be67m4algo8y1"]
 
 [ext_resource type="Script" path="res://Inventory/inventory_ui_slot.gd" id="1_eijt7"]
 [ext_resource type="Texture2D" uid="uid://c0ru03umw4qdr" path="res://asset/InventorySlot.png" id="1_ob67q"]
+[ext_resource type="Script" path="res://Inventory/SaverLoader.gd" id="3_ovv1s"]
 
 [node name="Inventory_ui_slot" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
@@ -52,3 +53,4 @@ horizontal_alignment = 2
 [node name="Utilities" type="Node" parent="."]
 
 [node name="SaverLoader" type="Node" parent="Utilities"]
+script = ExtResource("3_ovv1s")

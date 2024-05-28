@@ -3,9 +3,11 @@ var sec = 0
 var min = 0
 var Dsec = 15
 var Dmin = 0
-var right_Dpad = true
+@export var right_Dpad = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if global.life <= 0:
+		global.life = 3
 	if right_Dpad:
 		$Control2.position = Vector2(950,620)
 	else:
@@ -22,6 +24,7 @@ func _process(delta):
 	if global.life==0:
 		await get_tree().create_timer(1).timeout
 		get_tree().change_scene_to_file("res://world.tscn")
+	$Control/scoretext.text = "Score: %d" % global.minigame_score
 	$Control/Axe/Num.text = "%d" % $"../Player".axe
 	$Control/Apar/Num.text = "%d" % $"../Player".apar
 	if $"../Player".goal == 0:
