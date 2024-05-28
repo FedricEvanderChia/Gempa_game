@@ -15,13 +15,12 @@ func _on_setting_pressed():
 	uigempa.pause()
 	get_tree().change_scene_to_file("res://menus/options.tscn")
 
-
 func _on_quit_pressed():
 	uigempa.pause()
 	get_tree().quit()
 
 
 func _on_load_pressed():
-	util.loadGame()
+	global.loadGame()
 func _on_save_pressed():
-	util.saveGame()
+	global.saveGame()

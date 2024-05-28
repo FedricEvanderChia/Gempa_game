@@ -4,13 +4,13 @@
 [ext_resource type="Script" path="res://Minigames/Sembako.gd" id="1_b8rlw"]
 [ext_resource type="Texture2D" uid="uid://dgkw4xgdmnbxl" path="res://asset/Table.png" id="3_p8kfq"]
 [ext_resource type="Texture2D" uid="uid://ccvmjavne58xc" path="res://asset/useable.png" id="3_vbsfe"]
-[ext_resource type="PackedScene" uid="uid://612ag1ooeqvq" path="res://Object/air.tscn" id="4_fbxqs"]
+[ext_resource type="PackedScene" path="res://Object/air.tscn" id="4_fbxqs"]
 [ext_resource type="Texture2D" uid="uid://bjjanpau63g57" path="res://asset/Prlx2World.png" id="4_ty81d"]
-[ext_resource type="PackedScene" uid="uid://r8vr32om1gra" path="res://Object/object.tscn" id="5_3g3gy"]
-[ext_resource type="PackedScene" uid="uid://c3cyb7ty5a1q4" path="res://Object/beras.tscn" id="5_8uu74"]
-[ext_resource type="PackedScene" uid="uid://bsvaddg2smlxc" path="res://Object/tenda.tscn" id="5_41m3d"]
+[ext_resource type="PackedScene" path="res://Object/object.tscn" id="5_3g3gy"]
+[ext_resource type="PackedScene" path="res://Object/beras.tscn" id="5_8uu74"]
+[ext_resource type="PackedScene" path="res://Object/tenda.tscn" id="5_41m3d"]
 [ext_resource type="Script" path="res://Minigames/Control.gd" id="8_7gbdg"]
-[ext_resource type="PackedScene" uid="uid://d2te5qwpgjmua" path="res://player/life.tscn" id="9_ks6qj"]
+[ext_resource type="PackedScene" uid="uid://bbcp8hmccldcb" path="res://player/life.tscn" id="9_ks6qj"]
 [ext_resource type="Script" path="res://Minigames/lifes.gd" id="9_m0t61"]
 [ext_resource type="Texture2D" uid="uid://cic1cd7yvd8ks" path="res://asset/MenuButton/Help_idle.png" id="11_bitky"]
 [ext_resource type="Texture2D" uid="uid://cbamxnbsoaivk" path="res://asset/MenuButton/Help_pressed.png" id="12_le51r"]
@@ -261,15 +261,12 @@ autostart = true
 script = ExtResource("9_m0t61")
 
 [node name="life1" parent="CanvasLayer/Control/lifes" instance=ExtResource("9_ks6qj")]
-visible = false
 position = Vector2(39, 114)
 
 [node name="life2" parent="CanvasLayer/Control/lifes" instance=ExtResource("9_ks6qj")]
-visible = false
 position = Vector2(108, 114)
 
 [node name="life3" parent="CanvasLayer/Control/lifes" instance=ExtResource("9_ks6qj")]
-visible = false
 position = Vector2(177, 114)
 
 [node name="Help" type="TextureButton" parent="CanvasLayer"]

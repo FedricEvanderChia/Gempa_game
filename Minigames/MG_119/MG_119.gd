@@ -14,8 +14,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if global.life == 0:
-		await get_node("CanvasLayer/Control/lifes/life1/AnimationPlayer").animation_finished
+	pass
 	
 func generateOrder():
 	var obj

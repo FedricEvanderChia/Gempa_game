@@ -41,5 +41,5 @@ func generateOrder():
 			get_node(item_display).frame = 3
 	
 func generateTexture():
-	var num = rng.randi_range(0, 3)
+	var num = rng.randi_range(0, 5)
 	get_node("NpcTexture").frame = num

@@ -1,5 +1,5 @@
 extends Control
-@onready var inv: inventory_game = global.invt
+@onready var inv: inventory_game = preload("res://Inventory/player_inv.tres")
 @onready var slots: Array = $NinePatchRect/GridContainer.get_children()
 var buka_inventory = false
 
@@ -12,7 +12,8 @@ func _ready():
 func update_slots():
 	for i in range(min(inv.slots.size(), slots.size())):
 		slots[i].update(inv.slots[i])
-
+		
+		
 func _process(delta):
 	if Input.is_action_just_pressed("buka_inventorykey"):
 		print("i")

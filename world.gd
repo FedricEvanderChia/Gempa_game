@@ -3,6 +3,7 @@ extends Node2D
 @export var Spos = Vector2(400,557)
 @export var Epos = Vector2(4000,557)
 var item_tscn= preload("res://Inventory/items/items_collectibles.tscn")
+var rng = RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
 var item_col
 
@@ -65,16 +66,25 @@ func _on_phone_pressed():
 func _on_rescue_pressed():
 	get_tree().change_scene_to_file("res://Minigames/MG_Rescue/MG_Rescue.tscn")
 func _on_mg_exit_pressed():
-	get_tree().change_scene_to_file("res://Minigames/MG_Maze/mg_maze.tscn")
+	var lvl
+	if global.difficulty <= 20:
+		lvl = String.num(global.difficulty)
+	else:
+		lvl = String.num(rng.randi_range(1,20))
+	get_tree().change_scene_to_file("res://Minigames/MG_Maze/mg_maze"+lvl+".tscn")
 func _on_work_pressed():
 	global.workMode = true
 	global.nextMG()
 	
 	
 func _on_rescue_body_entered(body):
-	get_node("Rescue/Rescue").show()
+	get_node("Rescue/VBoxContainer/Rescue").show()
+	if global.Dialogue > 3:
+		get_node("Rescue/VBoxContainer/MG_Exit").show()
 func _on_rescue_body_exited(body):
-	get_node("Rescue/Rescue").hide()
+	get_node("Rescue/VBoxContainer/Rescue").hide()
+	if global.Dialogue > 3:
+		get_node("Rescue/VBoxContainer/MG_Exit").hide()
 func _on_work_mode_body_entered(body):
 	get_node("WorkMode/Work").show()
 func _on_work_mode_body_exited(body):

@@ -19,8 +19,6 @@ func _ready():
 	
 func _process(delta):
 	$CanvasLayer/Control/antrian.text = "Antrian\n%d" % goal
-	if global.life == 0:
-		await get_node("CanvasLayer/Control/lifes/life1/AnimationPlayer").animation_finished
 	if customer == null:
 		if goal != 0:
 			await generateOrder()

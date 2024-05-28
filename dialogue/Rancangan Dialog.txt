@@ -1,0 +1,184 @@
+~ Entry
+do StartDialog()
+do talking("Maria")
+Maria: Uuh.. badanku pegal semua, perjalanan ke desa ini buruk sekali.
+do talking("Rizki")
+Rizki: Mau bagaimana lagi, jalan utama keluar masuk desa ini terhalang akibat kerusakan gempa, kita harus menyusuri lewat jalan kecil tadi.
+do talking("Maria")
+Maria: Atau sebaiknya lain kali kamu yang menghindari lubang di jalan, kamu pikir lubang itu jalan datar ya? main terobos saja tanpa rem. 
+Rizki: Bagaimana kalau lain kali yang mulia nona Maria saja yang menyetir? Hamba yang masih pemula ini belum dapat memenuhi ekspektasi yang mulia.
+Maria: Yang benar saja? justru karena saya yang mulia makanya kamu yang harusnya jadi supir.
+Rizki: (*Menghela nafas*) Haaaah... (Benar juga ya, sepertinya aku salah bicara)
+Maria: Hmph...
+Maria: Yah, setidaknya kita sudah sampai dan untungnya perlengkapan kita tidak ada yang rusak karena guncangan di mobil tadi.  
+do talking("Rizki")
+Rizki: (mengamati sekeliling dengan ekspresi prihatin)
+Rizki: Sungguh mengerikan melihat kerusakan...
+do talking("Maria")
+Maria: Kamu benar, ini lebih buruk dari yang saya bayangkan.
+Maria: tapi, kita ditugaskan di desa Bumi Rahayu untuk membantu sebisa mungkin.
+do talking("Rizki")
+Rizki: Benar, ini bukan waktunya kita bercanda. Kita harus segera memulai operasi penyelamatan. Prioritas kita sekarang adalah mencari korban yang terperangkap.
+Maria: Saya perlu mengatur tim  untuk mempersiapkan perlengkapan medis untuk memberikan perawatan di titik kumpul
+do talking("-")
+(Seorang warga desa mendekati mereka dengan ekspresi cemas.)
+do talking("Mob")
+Warga: Tolong, tolong! Anak saya terjebak di bawah reruntuhan rumah kami!
+do talking("Maria")
+Maria: Kami akan segera mencari anak bapak! Tolong beri tahu kami sebanyak mungkin informasi tentang lokasi anak Bapak.
+do talking("-")
+(Maria dan Rizki bersama-sama memimpin tim penyelamat ke lokasi yang dilaporkan. Mereka mengatur strategi untuk membebaskan korban.)
+Maria: (mengarahkan tim) Baik, mari kita bagi tim menjadi dua kelompok. Satu kelompok mencari jalur masuk alternatif, sementara yang lainnya mempersiapkan peralatan penyelamatan.
+do talking("Rizki")
+Rizki: (mengangguk setuju) Aku akan memimpin kelompok yang mencari jalur masuk alternatif. Mari kita segera bergerak.
+do talking("end")
+do EndDialog()
+=> END
+
+~ LostFather
+do StartDialog()
+do talking("Rizki")
+Rizki: Maria, aku jadi sangat khawatir tentang ayahku. Dia juga tinggal di desa ini, tapi aku belum mendengar kabar darinya semejak gempa terjadi.
+do talking("Maria")
+Maria: Bukannya kamu asalnya dari Sumatra?
+Rizki: Benar, ibu dan kakakku tinggal disana. Tapi ayahku adalah seorang seismolog yang tugaskan ke daerah sini. Dia telah melakukan penelitian selama 10 tentang aktivitas seismik di desa ini.
+do talking("Maria")
+Maria: Benarkah? Jadi, ayahmu sangat mengenal desa ini?
+do talking("Rizki")
+Rizki: Iya, dia mengenal desa ini bagaikan telapak tangannya sendiri. Dulu dia sering cerita tentang betapa pentingnya memahami gempa bumi untuk melindungi masyarakat. Dan sekarang, ketika desa ini terkena dampak gempa, aku yakin dia pasti akan berada di pusat kejadian ini.
+Maria: Berarti jika kita menemukan ayahmu, mungkin kita bisa mendapatkan beberapa petunjuk yang dapat membantu kita dalam penyelamatan desa ini.
+Riski: itu benar tapi mengetahui seberapa nekadnya dia, aku jadi khawatir.
+Maria: Saya paham Riz, tapi kamu perlu fokus dengan apa yang ada didepanmu saat ini terlebih dahulu.
+do talking("Rizki")
+Rizki: Tapi bagaimana kalau misalnya dia terjebak dan sedang menungguku saat ini? aku harus mencarinya segera.
+do talking("Maria")
+Maria: Jangan bertindak gegabah! Sebagai PMI kamu punya tugas penting saat ini. 
+Maria: Saya bisa membayangkan betapa sulitnya situasi ini bagimu. Tapi menggali lebih dalam saat ini hanya akan membahayakan semua orang yang berada disini. Struktur bangunan disini bisa runtuh kapan saja. 
+Maria: Untuk sekarang yang bisa kita lakukan adalah mengumpulkan informasi. Coba kita tanya penduduk setempat tentang keberadaan ayahmu. Mungkin ada yang tahu sesuatu.
+do talking("Rizki")
+Rizki: Maafkan aku, Maria. Kamu benar, bertindak panik hanya akan memperburuk keadaan. Sebagai tim penyelamat aku seharunya bisa berpikir lebih rasional dan menyelamatkan sebisa mungkin tanpa membahayakan diri sendiri dan orang lain.
+do talking("Maria")
+Maria: Tidak apa-apa, khawatir itu adalah hal yang wajar dalam situasi ini. Tapi jangan biarkan emosi mengendalikanmu.
+do talking("Rizki")
+Rizki: Terima kasih sudah menenangkanku.
+do talking("Maria")
+Maria: Hehe.. Sudah menjadi tugas seniormu untuk membimbingmu disaat seperti ini
+do talking("end")
+do EndDialog()
+=> END
+
+~ FoundPhoto
+do StartDialog()
+do talking("Mob")
+Warga: Terima kasih kak, kalau bukan karena kakak, saya tidak tahu apa yang akan terjadi pada keluarga saya.
+do talking("Rizki")
+Rizki: Sama-sama dek, ini memang tugas kakak sebagai anggota PMI, jadi tidak perlu berterima kasih.
+do talking("-")
+(Rizki melihat ada benda yang tidak asing diantara reruntuhan tempat ia menolong warga tadi)
+do talking("Rizki")
+*Kamu mendapatkan Foto Ayah*
+Rizki: Maria, aku menemukan sesuatu!
+do talking("Maria")
+Maria: Apa itu?
+do talking("Rizki")
+Rizki: Ini fotoku bersama ayah. Saat aku kecil, dia selalu membawa foto ini didalam dompetnya. Mungkin saja foto ini petunjuk kalau ayahku sempat berada disekitar sini.
+
+Maria: Itu berita bagus, mungkin kita bisa bertanya pada orang sekitar jika mereka melihat ayahmu. 
+
+Rizki: Iya, kamu benar. Kita harus tetap optimis dan terus mencari jejaknya di sini."
+do talking("-")
+do talking("end")
+do EndDialog()
+=> END
+
+~Search1
+Rizki: "Eh, maaf mengganggu. Apakah kamu pernah melihat pria ini sebelumnya?" (Rizki menunjukkan foto ayahnya pada pemuda itu.)
+
+Pemuda: (memperhatikan foto dengan serius) "Hmm, sepertinya pernah. Dia sering keluar masuk desa ini beberapa waktu lalu. Apa dia kenalanmu?"
+
+Rizki: "Ya, dia ayahku. Dia adalah seorang seismolog, sering melakukan penelitian di sekitar desa ini. Tapi saya belum mendengar kabar darinya setelah gempa."
+
+Pemuda: (mengangguk paham) "Oh, saya mengerti. Semoga dia baik-baik saja. Saya akan memberitahu kamu jika saya melihatnya lagi."
+
+Rizki: (mengucapkan terima kasih) "Terima kasih banyak. Saya sangat menghargainya. Tolong kabari saya jika kamu melihatnya."
+
+(Dengan harapan yang tumbuh, Rizki melanjutkan pencariannya, semoga bisa menemukan jejak ayahnya.)
+~Search2
+Rizki: "Hai, maaf mengganggu. Saya ingin bertanya, apakah kamu pernah melihat ayahku di sekitar desa ini?"
+
+Gadis: "Ayahmu? Maaf, saya tidak yakin. Desa ini agak besar, jadi sulit untuk mengenali semua orang di sini."
+
+Rizki: "Oh, begitu. Terima kasih, maaf telah merepotkanmu."
+
+Gadis: "Tidak apa-apa. Semoga kamu bisa menemukannya. Kalau aku melihatnya, akan kuberitahu kamu."
+
+Rizki: "Terima kasih, aku akan terus mencari."
+~Search3
+Rizki: Hai, maaf mengganggu Dik. Apa kamu pernah melihat pria di foto ini?
+
+Anak Perempuan: (menggeleng) Tidak, kak. Saya tidak kenal.
+
+Rizki: Makasih ya dik. Kalau kamu melihatnya, tolong kasih tahu kakak ya?
+
+Anak Perempuan: (mengangguk) Baik, kak. Aku akan mencarinya!
+
+
+~FoundInfo
+Rizki: "Maaf mengganggu dek, ada yang tahu tentang keberadaan ayah saya? Dia seorang seismolog, biasa bekerja di sini."
+
+Maria: "Kami mencari tahu apa yang terjadi padanya setelah gempa."
+
+Anak SD: (mengamati foto dengan seksama) "Eh, aku kenal bapak ini! Dia sering datang ke desa ini dengan peta dan peralatan aneh-aneh. Aku ingat dia sering berbicara tentang mengamati pola pergerakan tanah.
+
+Rizki: (bersemangat) "Itu pasti ayahku! Di mana kamu terakhir kali melihatnya?"
+
+Anak SD: "Dia pernah bilang kalau dia akan pergi ke gunung dibelakang sekolah untuk riset. Dia bilang ada sesuatu yang ingin dia teliti di sana."
+
+Maria: "Terima kasih ya, dik. Kamu sudah memberikan petunjuk yang sangat berharga."
+
+Rizki: (memandang Maria dengan harapan) "Kita harus segera pergi ke gunung. Ayahku mungkin masih berada di sana!"
+
+(Mereka berdua kemudian bersiap-siap untuk perjalanan ke Gunung Merapi, penuh dengan harapan untuk menemukan ayah Rizki.)
+
+
+~Sawah1(WorkInProgress)
+
+
+Rizki: ...huff...huff berjalan kaki dari desa menuju gunung sangat melelahkan. Apakah kamu ada Air minum Maria?
+
+Maria: Masa begitu saja sudah capek, saya saja masih segar-segar saja kok. 
+
+Rizki: Tolong jangan samakan stamina manusia biasa dengan makhluk sepertimu..
+
+Maria: Diam, kamu saja yang lemah kayak tauge kekurangan sinar matahari.
+
+Rizki : Hey!! tauge itu kecil-kecil tapi bernutrisi tahu. Minta maaf kepada tauge-tauge di dunia!! Kamu saja yang maniak otot!!
+
+Maria: HooHooHoo... sepertinya seniormu ini kurang keras dalam melatihmu yaa!! sepulang dari sini akan saya suruh kamu lari keliling desa  10 putaran. Akan saya buat kamu babak BE...BEEEEEEK!!!
+
+Rizki: Bebek??
+Bebek: Kwek!!
+Maria: (sembunyi di belakang riski) JAUHKAN! JAUHKAN! JAUHKAN BEBEK ITU DARI SINI!!!!
+Rizki: eeh?... eehhh?? Kamu? takut bebek? 
+Maria: DIAM!! Kamu ga pernah kan pas SD celananya ditarik dan dipatok bebek!! Cepat SINGKIRKAN!!!
+
+~ MariaEvent1
+Maria: "Waktu saya masih kecil, desa tempatku tinggal mengalami musibah tsunami. Banyak orang terluka, banyak yang kehilangan rumah dan keluarga. Bencana itulah momen yang mengubah hidupku."
+
+(Maria berjalan ke depan, tatapannya tetap teguh.)
+
+Maria: "Saat itu, saya bersumpah. Sumpah untuk belajar, untuk memperoleh keterampilan medis yang diperlukan, agar bisa berdiri di garis depan, siap membantu setiap kali bencana melanda."
+
+(Dia menggenggam tangannya dengan erat.)
+
+Maria: "Saya tidak pernah menjadi tipe gadis yang menunggu di belakang. Saya tahu apa yang saya inginkan, dan saya akan berjuang untuk itu. Bergabung dengan PMI adalah pilihan yang jelas bagi saya. Ini adalah tempat di mana saya bisa menerapkan keterampilan saya, di mana saya bisa menjalani panggilan saya untuk membantu orang lain."
+
+(Tatapannya melintas ke sekeliling ruangan, memastikan pesannya diserap dengan kuat.)
+
+Maria: "Saya tidak takut dengan tantangan. Saya siap berdiri di garis depan, siap menghadapi setiap situasi darurat dengan kepala dingin dan tindakan tegas. Ini bukan hanya tentang pekerjaan. Ini adalah tentang hidup saya, tentang panggilan saya. Dan saya tidak akan pernah mundur dari panggilan itu."
+
+
+
+
+
+

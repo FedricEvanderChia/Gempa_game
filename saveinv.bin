@@ -1,0 +1,4 @@
+[Inventory]
+
+slot=Object(Resource,"resource_local_to_scene":false,"resource_name":"","script":Resource("res://Inventory/Inventory_slot.gd"),"item":null,"amount":0)
+

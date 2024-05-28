@@ -63,6 +63,8 @@ func showAll():
 	create_tween().tween_property($Control2,"visible",true,0)
 	create_tween().tween_property($PauseBtn,"visible",true,0)
 	create_tween().tween_property($Bag,"visible",true,0)
+	#if global.Dialogue == 3:
+		#unlock()
 
 
 func _on_items_collectibles_obtain(item : inventory_item):
@@ -73,3 +75,11 @@ func _on_items_collectibles_obtain(item : inventory_item):
 	await get_tree().create_timer(2).timeout
 	$obtain.hide()
 	$item.hide()
+
+func unlock():
+	$unlock.play("unlock").show()
+	$unlock/Minigame.show()
+	await get_tree().create_timer(1)
+	$unlock/Minigame.hide()
+	$unlock.hide()
+	

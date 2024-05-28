@@ -1,6 +1,5 @@
-[gd_scene load_steps=22 format=3 uid="uid://d2te5qwpgjmua"]
+[gd_scene load_steps=17 format=3 uid="uid://bbcp8hmccldcb"]
 
-[ext_resource type="Script" path="res://player/life.gd" id="1_6wdhc"]
 [ext_resource type="Texture2D" uid="uid://brdmsekb83hva" path="res://asset/life_sheet.png" id="1_rh01n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tknab"]
@@ -78,10 +77,10 @@ animations = [{
 }],
 "loop": false,
 "name": &"Break",
-"speed": 15.0
+"speed": 8.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 30.0,
 "texture": SubResource("AtlasTexture_rve76")
 }, {
 "duration": 1.0,
@@ -110,99 +109,13 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="Animation" id="Animation_h22eg"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Life1:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-
-[sub_resource type="Animation" id="Animation_on6vg"]
-resource_name = "break"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Life1:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"Break"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Life1:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [1, 1, 2, 3, 4]
-}
-
-[sub_resource type="Animation" id="Animation_uli48"]
-resource_name = "idle"
-length = 5.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Life1:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"Idle"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Life1:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_s82rc"]
-_data = {
-"RESET": SubResource("Animation_h22eg"),
-"break": SubResource("Animation_on6vg"),
-"idle": SubResource("Animation_uli48")
-}
-
 [node name="life" type="Area2D"]
-script = ExtResource("1_6wdhc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_tknab")
 
-[node name="Life1" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_lm1pf")
-animation = &"Idle"
-frame = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_s82rc")
-}
-autoplay = "idle"
+animation = &"Break"
+autoplay = "Idle"

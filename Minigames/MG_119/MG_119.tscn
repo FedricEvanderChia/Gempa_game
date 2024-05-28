@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bxmen6xh0wv47" path="res://asset/dial_button/tile028.png" id="4_fw07w"]
 [ext_resource type="Script" path="res://Minigames/Control.gd" id="5_fjprp"]
 [ext_resource type="Script" path="res://Minigames/lifes.gd" id="6_r5l05"]
-[ext_resource type="PackedScene" path="res://player/life.tscn" id="7_hqlyl"]
+[ext_resource type="PackedScene" uid="uid://bbcp8hmccldcb" path="res://player/life.tscn" id="7_hqlyl"]
 [ext_resource type="Texture2D" uid="uid://cic1cd7yvd8ks" path="res://asset/MenuButton/Help_idle.png" id="8_hwru4"]
 [ext_resource type="Texture2D" uid="uid://cbamxnbsoaivk" path="res://asset/MenuButton/Help_pressed.png" id="9_r3hlf"]
 [ext_resource type="Texture2D" uid="uid://cwsi81nu6qhne" path="res://asset/MenuButton/Back B.png" id="10_dirbw"]
@@ -472,19 +472,17 @@ horizontal_alignment = 1
 [node name="Timer" type="Timer" parent="CanvasLayer/Control"]
 autostart = true
 
-[node name="lifes" type="Node" parent="CanvasLayer/Control"]
+[node name="lifes" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 0
 script = ExtResource("6_r5l05")
 
 [node name="life1" parent="CanvasLayer/Control/lifes" instance=ExtResource("7_hqlyl")]
-visible = false
 position = Vector2(39, 114)
 
 [node name="life2" parent="CanvasLayer/Control/lifes" instance=ExtResource("7_hqlyl")]
-visible = false
 position = Vector2(108, 114)
 
 [node name="life3" parent="CanvasLayer/Control/lifes" instance=ExtResource("7_hqlyl")]
-visible = false
 position = Vector2(177, 114)
 
 [node name="Tips" type="Label" parent="CanvasLayer/Control"]
