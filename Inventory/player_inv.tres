@@ -1,19 +1,15 @@
-[gd_resource type="Resource" script_class="inventory_game" load_steps=17 format=3 uid="uid://beipyy45wogox"]
+[gd_resource type="Resource" script_class="inventory_game" load_steps=15 format=3 uid="uid://beipyy45wogox"]
 
 [ext_resource type="Script" path="res://Inventory/Inventory_slot.gd" id="2_g87pi"]
-[ext_resource type="Resource" uid="uid://rnocqhc5552c" path="res://Inventory/items/water.tres" id="2_i4xb5"]
 [ext_resource type="Script" path="res://Inventory/inventory_game.gd" id="2_tta0a"]
-[ext_resource type="Resource" uid="uid://cpdg1mf1llw3n" path="res://Inventory/items/photo.tres" id="4_v4jfs"]
 
-[sub_resource type="Resource" id="Resource_3xkob"]
+[sub_resource type="Resource" id="Resource_2dvtc"]
 script = ExtResource("2_g87pi")
-item = ExtResource("2_i4xb5")
-amount = 2
+amount = 0
 
 [sub_resource type="Resource" id="Resource_62sg7"]
 script = ExtResource("2_g87pi")
-item = ExtResource("4_v4jfs")
-amount = 2
+amount = 0
 
 [sub_resource type="Resource" id="Resource_8mdbm"]
 script = ExtResource("2_g87pi")
@@ -57,4 +53,4 @@ amount = 0
 
 [resource]
 script = ExtResource("2_tta0a")
-slots = Array[ExtResource("2_g87pi")]([SubResource("Resource_3xkob"), SubResource("Resource_62sg7"), SubResource("Resource_8mdbm"), SubResource("Resource_3gksl"), SubResource("Resource_6ov7b"), SubResource("Resource_rnngr"), SubResource("Resource_3neff"), SubResource("Resource_03dti"), SubResource("Resource_eeia7"), SubResource("Resource_u6kte"), SubResource("Resource_kwbv6"), SubResource("Resource_uowwt")])
+slots = Array[ExtResource("2_g87pi")]([SubResource("Resource_2dvtc"), SubResource("Resource_62sg7"), SubResource("Resource_8mdbm"), SubResource("Resource_3gksl"), SubResource("Resource_6ov7b"), SubResource("Resource_rnngr"), SubResource("Resource_3neff"), SubResource("Resource_03dti"), SubResource("Resource_eeia7"), SubResource("Resource_u6kte"), SubResource("Resource_kwbv6"), SubResource("Resource_uowwt")])
