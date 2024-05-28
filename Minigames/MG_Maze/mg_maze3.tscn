@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Minigames/Control.gd" id="6_ys1c3"]
 [ext_resource type="Script" path="res://Minigames/lifes.gd" id="7_rpws7"]
 [ext_resource type="Texture2D" uid="uid://lvxf4foerjx6" path="res://asset/Axe.png" id="8_kweqv"]
-[ext_resource type="PackedScene" path="res://player/life.tscn" id="8_qqd0o"]
+[ext_resource type="PackedScene" uid="uid://d2te5qwpgjmua" path="res://player/life.tscn" id="8_qqd0o"]
 [ext_resource type="Texture2D" uid="uid://cic1cd7yvd8ks" path="res://asset/MenuButton/Help_idle.png" id="9_7kptk"]
 [ext_resource type="Texture2D" uid="uid://cbamxnbsoaivk" path="res://asset/MenuButton/Help_pressed.png" id="10_axevg"]
 [ext_resource type="Texture2D" uid="uid://cwsi81nu6qhne" path="res://asset/MenuButton/Back B.png" id="11_tt5nv"]

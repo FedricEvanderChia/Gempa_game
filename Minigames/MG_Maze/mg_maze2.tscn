@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://blxwvvgrsd5pg" path="res://Minigames/MG_Maze/player.tscn" id="4_w20y6"]
 [ext_resource type="Script" path="res://Minigames/Control.gd" id="6_7ektp"]
 [ext_resource type="Script" path="res://Minigames/lifes.gd" id="7_pa1a7"]
-[ext_resource type="PackedScene" path="res://player/life.tscn" id="8_nac2d"]
+[ext_resource type="PackedScene" uid="uid://d2te5qwpgjmua" path="res://player/life.tscn" id="8_nac2d"]
 [ext_resource type="Texture2D" uid="uid://cic1cd7yvd8ks" path="res://asset/MenuButton/Help_idle.png" id="9_117q5"]
 [ext_resource type="Texture2D" uid="uid://cbamxnbsoaivk" path="res://asset/MenuButton/Help_pressed.png" id="10_b5vmd"]
 [ext_resource type="Texture2D" uid="uid://cwsi81nu6qhne" path="res://asset/MenuButton/Back B.png" id="11_mfk4j"]

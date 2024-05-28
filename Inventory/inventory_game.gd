@@ -10,7 +10,9 @@ signal updateinv
 func insertitem(item: inventory_item):
 	var itemslots = slots.filter(func(slots):return slots.item == item)
 	if !itemslots.is_empty():
+		itemslots[0].item = item
 		itemslots[0].amount +=1
+		
 	else:
 			var emptyslots = slots.filter(func(slots): return slots.item == null)
 			if !emptyslots.is_empty():

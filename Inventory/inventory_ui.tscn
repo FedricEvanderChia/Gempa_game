@@ -72,3 +72,30 @@ layout_mode = 2
 
 [node name="Inventory_ui_slot12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_68uht")]
 layout_mode = 2
+
+[node name="ItemDescription" type="Node2D" parent="."]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ItemDescription"]
+offset_left = 553.0
+offset_right = 785.0
+offset_bottom = 388.0
+texture = ExtResource("2_07hu8")
+patch_margin_left = 30
+patch_margin_top = 30
+patch_margin_right = 30
+patch_margin_bottom = 30
+
+[node name="Title" type="Label" parent="ItemDescription"]
+offset_left = 560.0
+offset_top = 8.0
+offset_right = 600.0
+offset_bottom = 31.0
+text = "Item Description:"
+metadata/_edit_use_anchors_ = true
+
+[node name="Description" type="Label" parent="ItemDescription"]
+offset_left = 564.0
+offset_top = 42.0
+offset_right = 697.0
+offset_bottom = 65.0
+metadata/_edit_use_anchors_ = true

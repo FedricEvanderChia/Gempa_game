@@ -1,8 +1,9 @@
 extends Node2D
 
 var target_platpre = preload("res://Minigames/MG_Build_EmTent/target_platform.tscn")
-var goal = 4
+var goal = 8
 var is_state =0
+var difficulty = 3
 var is_collided = false
 signal is_pressed
 # Called when the node enters the scene tree for the first time.

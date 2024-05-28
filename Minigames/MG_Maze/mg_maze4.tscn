@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://blxwvvgrsd5pg" path="res://Minigames/MG_Maze/player.tscn" id="4_b04xa"]
 [ext_resource type="Script" path="res://Minigames/Control.gd" id="5_wiboi"]
 [ext_resource type="Script" path="res://Minigames/lifes.gd" id="6_1gdoj"]
-[ext_resource type="PackedScene" path="res://player/life.tscn" id="7_crp76"]
+[ext_resource type="PackedScene" uid="uid://d2te5qwpgjmua" path="res://player/life.tscn" id="7_crp76"]
 [ext_resource type="Texture2D" uid="uid://lvxf4foerjx6" path="res://asset/Axe.png" id="8_8yhhw"]
 [ext_resource type="Texture2D" uid="uid://cic1cd7yvd8ks" path="res://asset/MenuButton/Help_idle.png" id="9_6p0sf"]
 [ext_resource type="Texture2D" uid="uid://cbamxnbsoaivk" path="res://asset/MenuButton/Help_pressed.png" id="10_616bk"]
@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://b4qeob0jnpcii" path="res://asset/rubble/Rubble_Wall.png" id="15_3eryy"]
 [ext_resource type="Texture2D" uid="uid://chqyq160dt8jq" path="res://asset/rubble/Rubble_wood.png" id="16_cqr4l"]
 [ext_resource type="Script" path="res://Minigames/ShakeCam.gd" id="17_8ct0d"]
-[ext_resource type="PackedScene" uid="uid://bxiv3fqouop45" path="res://Minigames/MG_Maze/box.tscn" id="18_7v2gl"]
+[ext_resource type="PackedScene" path="res://Minigames/MG_Maze/box.tscn" id="18_7v2gl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hedgq"]
 texture = ExtResource("1_v7n8h")

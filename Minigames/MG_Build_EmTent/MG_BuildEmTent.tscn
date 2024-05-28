@@ -1,9 +1,10 @@
-[gd_scene load_steps=29 format=3 uid="uid://lii1beb2wlkt"]
+[gd_scene load_steps=32 format=3 uid="uid://lii1beb2wlkt"]
 
 [ext_resource type="Script" path="res://Minigames/MG_Build_EmTent/MG_BuildEmTent.gd" id="1_n8qo3"]
+[ext_resource type="Shader" path="res://Minigames/MG_Build_EmTent/MG_BuildEmTent_bgshader.gdshader" id="2_784es"]
 [ext_resource type="Script" path="res://Minigames/Control.gd" id="2_rbapa"]
 [ext_resource type="Script" path="res://Minigames/lifes.gd" id="3_ldmwb"]
-[ext_resource type="PackedScene" path="res://player/life.tscn" id="4_kuqpq"]
+[ext_resource type="PackedScene" uid="uid://d2te5qwpgjmua" path="res://player/life.tscn" id="4_kuqpq"]
 [ext_resource type="Texture2D" uid="uid://8kbxhcnxgloa" path="res://asset/Tenda_emergency/action_bar_bg.png" id="5_jdair"]
 [ext_resource type="Texture2D" uid="uid://ds6a43ru1oeei" path="res://asset/Tenda_emergency/Tenda_state_0.png" id="6_yxlgr"]
 [ext_resource type="Texture2D" uid="uid://d2ykcjrbd0y3u" path="res://asset/Tenda_emergency/moving_platform.png" id="7_51ftb"]
@@ -19,6 +20,13 @@
 [ext_resource type="Script" path="res://Minigames/MG_Build_EmTent/tutorial_coll.gd" id="17_6ucf2"]
 [ext_resource type="Texture2D" uid="uid://diar7mfkgxceu" path="res://asset/Tenda_emergency/Tenda_state_1.png" id="18_dnm4o"]
 [ext_resource type="Texture2D" uid="uid://bh1b8hqhic7qh" path="res://asset/Tenda_emergency/Tenda_state_2.png" id="19_u7lnf"]
+[ext_resource type="Texture2D" uid="uid://bhrev8bbvvxfn" path="res://asset/Tenda_emergency/background_minigame_buildtent.png" id="20_3naex"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qcw2u"]
+shader = ExtResource("2_784es")
+shader_parameter/blur_amount = Vector2(0.01, 0.01)
+shader_parameter/focus_point = Vector2(0.5, 0.5)
+shader_parameter/focus_radius = 0.1
 
 [sub_resource type="Animation" id="Animation_cpvf8"]
 length = 0.001
@@ -129,6 +137,15 @@ animations = [{
 [node name="MgBuildEmTent" type="Node2D"]
 script = ExtResource("1_n8qo3")
 
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.1, 0.1)
+
+[node name="Useable" type="Sprite2D" parent="ParallaxLayer"]
+material = SubResource("ShaderMaterial_qcw2u")
+position = Vector2(623, 196)
+scale = Vector2(1.02208, 0.75875)
+texture = ExtResource("20_3naex")
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_ta8pe")
 autoplay = true
@@ -139,14 +156,14 @@ scale = Vector2(5.36735, 4.31818)
 texture = ExtResource("5_jdair")
 
 [node name="press_button" type="Button" parent="."]
-offset_left = 372.0
-offset_top = 392.0
-offset_right = 722.0
-offset_bottom = 471.0
+offset_left = 387.0
+offset_top = 430.0
+offset_right = 737.0
+offset_bottom = 509.0
 text = "Press at the right time to complete the build"
 
 [node name="Sprite_tent" type="Sprite2D" parent="."]
-position = Vector2(571, 238)
+position = Vector2(571, 297)
 scale = Vector2(4.015, 3.745)
 texture = ExtResource("6_yxlgr")
 

@@ -1,8 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://c71to8edu42an"]
+[gd_scene load_steps=17 format=3 uid="uid://c71to8edu42an"]
 
 [ext_resource type="Texture2D" uid="uid://cxfepbc8vw1es" path="res://asset/Player.png" id="1_465jb"]
 [ext_resource type="Script" path="res://player/Player.gd" id="1_gmp74"]
-[ext_resource type="Resource" uid="uid://bt0v2qu3il8h5" path="res://Inventory/player_inv.tres" id="2_rtto4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ihup"]
 atlas = ExtResource("1_465jb")
@@ -161,7 +160,6 @@ _data = {
 [node name="player" type="CharacterBody2D"]
 scale = Vector2(0.7, 0.7)
 script = ExtResource("1_gmp74")
-player_inv = ExtResource("2_rtto4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(3, -16)

@@ -22,6 +22,7 @@ func _process(delta):
 			open()
 
 
+	
 func open():
 	visible= true
 	buka_inventory= true

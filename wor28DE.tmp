@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://brmclis07bvsb"]
+[gd_scene load_steps=27 format=3 uid="uid://brmclis07bvsb"]
 
 [ext_resource type="PackedScene" uid="uid://c71to8edu42an" path="res://player/Player.tscn" id="1_a88ce"]
 [ext_resource type="Script" path="res://world.gd" id="1_rnkil"]
@@ -18,7 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://co8jflhap3xns" path="res://asset/Character/NPC_Girl1.1.png" id="15_baabl"]
 [ext_resource type="Texture2D" uid="uid://btrhxxx4waxpr" path="res://asset/Character/NPC_Boy2.3.png" id="16_7x8su"]
 [ext_resource type="AudioStream" uid="uid://6vh8rugjgj07" path="res://asset/Soundtrack/Gameplay.mp3" id="17_6v1qh"]
-[ext_resource type="Resource" uid="uid://beipyy45wogox" path="res://Inventory/player_inv.tres" id="18_moiid"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3knir"]
 size = Vector2(624.5, 375.5)
@@ -254,7 +253,6 @@ text = "talk"
 [node name="player" parent="." instance=ExtResource("1_a88ce")]
 position = Vector2(400, 557)
 scale = Vector2(0.213187, 0.220962)
-invent = ExtResource("18_moiid")
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 zoom = Vector2(0.9, 0.9)

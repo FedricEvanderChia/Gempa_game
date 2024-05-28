@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c6wcmw21uwsn5"]
+[gd_scene load_steps=22 format=3 uid="uid://rmcjnhkruje3"]
 
 [ext_resource type="Script" path="res://Minigames/MG_Maze/mg_maze.gd" id="1_e5jmy"]
 [ext_resource type="Texture2D" uid="uid://8cad4ltqkcfp" path="res://asset/Simple_tile.png" id="2_dxw6m"]
@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://blxwvvgrsd5pg" path="res://Minigames/MG_Maze/player.tscn" id="5_ewnxy"]
 [ext_resource type="Script" path="res://Minigames/Control.gd" id="6_dpmbp"]
 [ext_resource type="Script" path="res://Minigames/lifes.gd" id="7_a6vok"]
-[ext_resource type="PackedScene" path="res://player/life.tscn" id="8_q1pfp"]
+[ext_resource type="PackedScene" uid="uid://d2te5qwpgjmua" path="res://player/life.tscn" id="8_q1pfp"]
 [ext_resource type="Texture2D" uid="uid://lvxf4foerjx6" path="res://asset/Axe.png" id="9_vo2vx"]
 [ext_resource type="Script" path="res://Minigames/MG_Maze/ItemCount.gd" id="10_js7on"]
 [ext_resource type="Texture2D" uid="uid://cic1cd7yvd8ks" path="res://asset/MenuButton/Help_idle.png" id="11_72e1j"]
@@ -262,10 +262,10 @@ texture_pressed = ExtResource("12_hfn68")
 metadata/_edit_use_anchors_ = true
 
 [node name="Back" type="TextureButton" parent="CanvasLayer"]
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 330.0
-offset_bottom = 330.0
+offset_left = -345.0
+offset_top = -167.0
+offset_right = -25.0
+offset_bottom = 153.0
 scale = Vector2(0.23, 0.23)
 size_flags_horizontal = 0
 texture_normal = ExtResource("13_pwm37")

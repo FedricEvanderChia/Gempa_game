@@ -1,15 +1,19 @@
-[gd_resource type="Resource" script_class="inventory_game" load_steps=15 format=3 uid="uid://bt0v2qu3il8h5"]
+[gd_resource type="Resource" script_class="inventory_game" load_steps=17 format=3 uid="uid://beipyy45wogox"]
 
 [ext_resource type="Script" path="res://Inventory/Inventory_slot.gd" id="2_g87pi"]
+[ext_resource type="Resource" uid="uid://rnocqhc5552c" path="res://Inventory/items/water.tres" id="2_i4xb5"]
 [ext_resource type="Script" path="res://Inventory/inventory_game.gd" id="2_tta0a"]
+[ext_resource type="Resource" uid="uid://cpdg1mf1llw3n" path="res://Inventory/items/photo.tres" id="4_v4jfs"]
 
 [sub_resource type="Resource" id="Resource_3xkob"]
 script = ExtResource("2_g87pi")
-amount = 0
+item = ExtResource("2_i4xb5")
+amount = 2
 
 [sub_resource type="Resource" id="Resource_62sg7"]
 script = ExtResource("2_g87pi")
-amount = 0
+item = ExtResource("4_v4jfs")
+amount = 2
 
 [sub_resource type="Resource" id="Resource_8mdbm"]
 script = ExtResource("2_g87pi")

@@ -7,7 +7,8 @@ const SPEED = 500.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var anim = get_node("AnimationPlayer")
 
-@export  var player_inv:inventory_game
+
+@export var invent = global.invt
 	
 func _physics_process(delta):
 	# Add the gravity.
@@ -40,4 +41,5 @@ func _physics_process(delta):
 	
 
 func collectitem(item):
-	player_inv.insertitem(item)
+	invent.insertitem(item)
+
