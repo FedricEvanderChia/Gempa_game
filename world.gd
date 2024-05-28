@@ -52,6 +52,21 @@ func generateItem():
 	item_col.scale = Vector2(0.3,0.3)
 	
 func _on_player_detection_body_entered(body):
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	if body.name == "player":
 		get_node("GUI/Control2/tc_button_left").modulate = Color(1, 1, 1, 0.5)
 		get_node("GUI/Control2/tc_button_right").modulate = Color(1, 1, 1, 0.5)

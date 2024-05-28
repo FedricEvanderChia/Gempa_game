@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 const SPEED = 500.0
-
+const item_tres = preload("res://Inventory/items/Air.tres")
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var anim = get_node("AnimationPlayer")
@@ -41,3 +41,8 @@ func _physics_process(delta):
 
 func collectitem(item):
 	player_inv.insertitem(item)
+
+
+func _on_button_pressed():
+	player_inv.insertitem(item_tres.instantiate())
+	

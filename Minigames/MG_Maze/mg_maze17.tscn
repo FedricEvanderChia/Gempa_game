@@ -1,14 +1,14 @@
 [gd_scene load_steps=9 format=3 uid="uid://d28eq0ubhisuq"]
 
-[ext_resource type="Texture2D" uid="uid://8cad4ltqkcfp" path="res://asset/Simple_tile.png" id="1_jisrq"]
-[ext_resource type="PackedScene" uid="uid://blxwvvgrsd5pg" path="res://Minigames/MG_Maze/player.tscn" id="2_12dsx"]
-[ext_resource type="PackedScene" uid="uid://bd6dm2obp4315" path="res://Minigames/MG_Maze/canvas_layer.tscn" id="6_2s1ll"]
-[ext_resource type="Script" path="res://Minigames/ShakeCam.gd" id="16_tmqtq"]
-[ext_resource type="PackedScene" uid="uid://bdsv6jbwlqgvw" path="res://Minigames/MG_Maze/fire.tscn" id="17_5fj1h"]
-[ext_resource type="Script" path="res://Minigames/MG_Maze/patrol.gd" id="18_ro4ev"]
+[ext_resource type="Texture2D" uid="uid://8cad4ltqkcfp" path="res://asset/Simple_tile.png" id="1_1swk7"]
+[ext_resource type="PackedScene" uid="uid://bdsv6jbwlqgvw" path="res://Minigames/MG_Maze/fire.tscn" id="2_jgcdm"]
+[ext_resource type="Script" path="res://Minigames/MG_Maze/patrol.gd" id="3_juy3k"]
+[ext_resource type="PackedScene" uid="uid://blxwvvgrsd5pg" path="res://Minigames/MG_Maze/player.tscn" id="4_6kgo1"]
+[ext_resource type="Script" path="res://Minigames/ShakeCam.gd" id="5_ner33"]
+[ext_resource type="PackedScene" uid="uid://bd6dm2obp4315" path="res://Minigames/MG_Maze/canvas_layer.tscn" id="6_qkb4i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hedgq"]
-texture = ExtResource("1_jisrq")
+texture = ExtResource("1_1swk7")
 0:0/0 = 0
 0:0/0/custom_data_0 = true
 0:0/0/custom_data_1 = "path"
@@ -64,13 +64,13 @@ layer_0/tile_data = PackedInt32Array(-131070, 0, 0, -196606, 65536, 0, -262142, 
 
 [node name="path1" type="Node2D" parent="TileMap1"]
 
-[node name="fire" parent="TileMap1/path1" instance=ExtResource("17_5fj1h")]
+[node name="fire" parent="TileMap1/path1" instance=ExtResource("2_jgcdm")]
 position = Vector2(-136, 23)
 speed = 16
 
 [node name="patrol" type="Node2D" parent="TileMap1/path1/fire"]
 position = Vector2(0, 1)
-script = ExtResource("18_ro4ev")
+script = ExtResource("3_juy3k")
 
 [node name="Marker2D" type="Marker2D" parent="TileMap1/path1" groups=["path1"]]
 position = Vector2(-134, 23)
@@ -80,26 +80,26 @@ position = Vector2(-136, -72)
 
 [node name="path2" type="Node2D" parent="TileMap1"]
 
-[node name="fire" parent="TileMap1/path2" instance=ExtResource("17_5fj1h")]
+[node name="fire" parent="TileMap1/path2" instance=ExtResource("2_jgcdm")]
 position = Vector2(-40, -57)
 speed = 16
 
 [node name="patrol" type="Node2D" parent="TileMap1/path2/fire"]
 position = Vector2(-1, 1)
-script = ExtResource("18_ro4ev")
+script = ExtResource("3_juy3k")
 
 [node name="Marker2D" type="Marker2D" parent="TileMap1/path2" groups=["path2"]]
 position = Vector2(-39, -55)
 
 [node name="path3" type="Node2D" parent="TileMap1"]
 
-[node name="fire" parent="TileMap1/path3" instance=ExtResource("17_5fj1h")]
+[node name="fire" parent="TileMap1/path3" instance=ExtResource("2_jgcdm")]
 position = Vector2(-88, 23)
 speed = 16
 
 [node name="patrol" type="Node2D" parent="TileMap1/path3/fire"]
 position = Vector2(0, 1)
-script = ExtResource("18_ro4ev")
+script = ExtResource("3_juy3k")
 
 [node name="Marker2D" type="Marker2D" parent="TileMap1/path3" groups=["path3"]]
 position = Vector2(-86, 24)
@@ -109,13 +109,13 @@ position = Vector2(-88, -23)
 
 [node name="path4" type="Node2D" parent="TileMap1"]
 
-[node name="fire" parent="TileMap1/path4" instance=ExtResource("17_5fj1h")]
+[node name="fire" parent="TileMap1/path4" instance=ExtResource("2_jgcdm")]
 position = Vector2(135, 87)
 speed = 16
 
 [node name="patrol" type="Node2D" parent="TileMap1/path4/fire"]
 position = Vector2(0, 1)
-script = ExtResource("18_ro4ev")
+script = ExtResource("3_juy3k")
 
 [node name="Marker2D" type="Marker2D" parent="TileMap1/path4" groups=["path4"]]
 position = Vector2(136, 87)
@@ -123,12 +123,12 @@ position = Vector2(136, 87)
 [node name="Marker2D2" type="Marker2D" parent="TileMap1/path4" groups=["path4"]]
 position = Vector2(-137, 88)
 
-[node name="Player" parent="." instance=ExtResource("2_12dsx")]
+[node name="Player" parent="." instance=ExtResource("4_6kgo1")]
 position = Vector2(-16, 81)
 goal = 4
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.6, 2.6)
-script = ExtResource("16_tmqtq")
+script = ExtResource("5_ner33")
 
-[node name="CanvasLayer" parent="." instance=ExtResource("6_2s1ll")]
+[node name="CanvasLayer" parent="." instance=ExtResource("6_qkb4i")]

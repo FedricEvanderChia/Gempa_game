@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bjjanpau63g57" path="res://asset/Prlx2World.png" id="3_tknwh"]
 [ext_resource type="Texture2D" uid="uid://ccvmjavne58xc" path="res://asset/useable.png" id="3_wp8gq"]
 [ext_resource type="PackedScene" uid="uid://dtsrtigd5cgnv" path="res://uigempa.tscn" id="6_7koq2"]
-[ext_resource type="Resource" uid="uid://rnocqhc5552c" path="res://Inventory/items/water.tres" id="7_0a0qt"]
+[ext_resource type="Resource" uid="uid://rnocqhc5552c" path="res://Inventory/items/Air.tres" id="7_0a0qt"]
 [ext_resource type="PackedScene" uid="uid://1s0q53ouuvjp" path="res://Inventory/items/items_collectibles.tscn" id="8_467eh"]
 [ext_resource type="Texture2D" uid="uid://csq0py4qvfl74" path="res://asset/HomeA.png" id="11_a4qjb"]
 [ext_resource type="Script" path="res://NPC/TalkNpc.gd" id="12_b2gaq"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://tci1sg5nnd4u"]
+[gd_scene load_steps=16 format=3 uid="uid://tci1sg5nnd4u"]
 
 [ext_resource type="Script" path="res://NPC/NPC.gd" id="1_csuv5"]
 [ext_resource type="Texture2D" uid="uid://0pb35ag16hme" path="res://asset/Order_Bubble.png" id="2_1m18q"]
@@ -9,7 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://co8jflhap3xns" path="res://asset/Character/NPC_Girl1.1.png" id="4_s4cgm"]
 [ext_resource type="Texture2D" uid="uid://ed3817p3ijrt" path="res://asset/Tenda-teduh.png" id="4_ukhb0"]
 [ext_resource type="Texture2D" uid="uid://x8fq7bam18uf" path="res://asset/Character/NPC_woman.png" id="6_pb1j5"]
+[ext_resource type="Texture2D" uid="uid://ceopawoelloo8" path="res://asset/Character/NPC_OldMan.png" id="6_s5mpi"]
 [ext_resource type="Texture2D" uid="uid://bman1lcsp1bt0" path="res://asset/Blank.png" id="7_3htb6"]
+[ext_resource type="Texture2D" uid="uid://cfm4wqqk7b7it" path="res://asset/Character/NPC_OldWoman.png" id="7_yq0o2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ahyqg"]
 animations = [{
@@ -25,6 +27,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("6_pb1j5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_s5mpi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_yq0o2")
 }],
 "loop": true,
 "name": &"default",
