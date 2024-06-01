@@ -13,9 +13,6 @@ var gold = 0
 var workMode = false
 var Spos = true
 
-var maze_size = 9
-signal fringe_changed
-
 signal Sdialogue
 signal Edialogue
 func talking(name):

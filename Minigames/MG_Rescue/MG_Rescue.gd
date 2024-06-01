@@ -7,23 +7,20 @@ var count = rng.randi_range(0, 5)
 var newscore = global.minigame_score+100 
 # Called when the node enters the scene tree for the first time.
 var num = global.difficulty+3
-var is_ready = false
 func _ready():
 	if global.life<=0:
 		global.life = 3
 	$CanvasLayer/Control/Success.hide()
-	generateRubble(num)
-	is_ready = true
+	await generateRubble(num)
 	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if is_ready:
-		if GlbRescue.rubble == 0:
-			get_tree().paused = true
-			complete()
-			return
+	await get_tree().create_timer(0.3).timeout
+	if GlbRescue.rubble == 0:
+		get_tree().paused = true
+		complete()
 	else:
 		pass
 

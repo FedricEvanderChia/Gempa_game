@@ -39,6 +39,8 @@ func generateOrder():
 			get_node(item_display).frame = 2
 		elif needs[idx] == "Tenda":
 			get_node(item_display).frame = 3
+		elif needs[idx] == "P3K":
+			get_node(item_display).frame = 4
 	
 func generateTexture():
 	var num = rng.randi_range(0, 5)

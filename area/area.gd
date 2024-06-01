@@ -29,12 +29,14 @@ func _process(delta):
 func _on_go_to_world_body_entered(body):
 	global.Spos = false
 	if name == "Area2":
-		get_tree().change_scene_to_file("res://world.tscn")
+		get_tree().change_scene_to_file("res://area/area_1.tscn")
 	if name == "Area3":
 		get_tree().change_scene_to_file("res://area/area_2.tscn")
 func _on_go_to_world_2_body_entered(body):
 	global.Spos = true
+	if name == "Area1":
+		get_tree().change_scene_to_file("res://area/area_2.tscn")
 	if name == "Area2":
 		get_tree().change_scene_to_file("res://area/area_3.tscn")
 	if name == "Area3":
-		get_tree().change_scene_to_file("res://world.tscn")
+		get_tree().change_scene_to_file("res://area/area_1.tscn")

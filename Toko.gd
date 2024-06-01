@@ -12,12 +12,14 @@ func  _physics_process(delta):
 
 
 func _on_body_entered(body):
-	get_node("AnimatedSprite2D").play("left")
-	get_node("Button").show()
+	if body.name == "player":
+		get_node("AnimatedSprite2D").play("left")
+		get_node("Button").show()
 	
 func _on_body_exited(body):
-	get_node("AnimatedSprite2D").play("right")
-	get_node("Button").hide()
+	if body.name == "player":
+		get_node("AnimatedSprite2D").play("right")
+		get_node("Button").hide()
 	
 func _on_sembako_b_pressed():
 	get_tree().change_scene_to_file("res://Minigames/Sembako.tscn")

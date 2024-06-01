@@ -1,0 +1,172 @@
+[gd_scene load_steps=22 format=3 uid="uid://bpvsy5ccb6i60"]
+
+[ext_resource type="Texture2D" uid="uid://bqulvs5jhoy4c" path="res://asset/padLock_sheet.png" id="1_eb7sc"]
+[ext_resource type="Script" path="res://lock.gd" id="1_f1keh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5lqm"]
+atlas = ExtResource("1_eb7sc")
+region = Rect2(8704, 0, 544, 544)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbm4y"]
+atlas = ExtResource("1_eb7sc")
+region = Rect2(0, 0, 544, 544)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mo78e"]
+atlas = ExtResource("1_eb7sc")
+region = Rect2(544, 0, 544, 544)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8e8j5"]
+atlas = ExtResource("1_eb7sc")
+region = Rect2(1088, 0, 544, 544)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lq184"]
+atlas = ExtResource("1_eb7sc")
+region = Rect2(1632, 0, 544, 544)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omol5"]
+atlas = ExtResource("1_eb7sc")
+region = Rect2(2176, 0, 544, 544)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_078r1"]
+atlas = ExtResource("1_eb7sc")
+region = Rect2(2720, 0, 544, 544)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6knr"]
+atlas = ExtResource("1_eb7sc")
+region = Rect2(3264, 0, 544, 544)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wd1yp"]
+atlas = ExtResource("1_eb7sc")
+region = Rect2(3808, 0, 544, 544)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o23dc"]
+atlas = ExtResource("1_eb7sc")
+region = Rect2(4352, 0, 544, 544)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aahvv"]
+atlas = ExtResource("1_eb7sc")
+region = Rect2(4896, 0, 544, 544)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrdkr"]
+atlas = ExtResource("1_eb7sc")
+region = Rect2(5440, 0, 544, 544)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4u2hy"]
+atlas = ExtResource("1_eb7sc")
+region = Rect2(5984, 0, 544, 544)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_syaxh"]
+atlas = ExtResource("1_eb7sc")
+region = Rect2(6528, 0, 544, 544)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8g6ko"]
+atlas = ExtResource("1_eb7sc")
+region = Rect2(7072, 0, 544, 544)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gn11s"]
+atlas = ExtResource("1_eb7sc")
+region = Rect2(7616, 0, 544, 544)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfapl"]
+atlas = ExtResource("1_eb7sc")
+region = Rect2(8160, 0, 544, 544)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_se613"]
+atlas = ExtResource("1_eb7sc")
+region = Rect2(8704, 0, 544, 544)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_phmq6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5lqm")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbm4y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mo78e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8e8j5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lq184")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omol5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_078r1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6knr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wd1yp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o23dc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aahvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yrdkr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4u2hy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_syaxh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8g6ko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gn11s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfapl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_se613")
+}],
+"loop": false,
+"name": &"unlock",
+"speed": 10.0
+}]
+
+[node name="lock" type="Node2D"]
+visible = false
+script = ExtResource("1_f1keh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_phmq6")
+animation = &"unlock"
+autoplay = "empty"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -161.4
+offset_top = -122.6
+offset_right = 147.6
+offset_bottom = -41.6
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "Kamu telah membuka
+ minigame Maze"
+horizontal_alignment = 1
+vertical_alignment = 1

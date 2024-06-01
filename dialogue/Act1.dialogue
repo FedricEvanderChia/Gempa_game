@@ -1,4 +1,3 @@
-@ -1,194 +1,221 @@
 ~ Entry
 do StartDialog()
 do talking("Maria")
@@ -117,7 +116,7 @@ do talking("end")
 do EndDialog()
 => END!
 
-~ Search1
+~ Search_Man
 do StartDialog()
 do talking("Rizki")
 Rizki: "Eh, maaf mengganggu. Apakah kamu pernah melihat pria ini sebelumnya?" (Rizki menunjukkan foto ayahnya pada pemuda itu.)
@@ -135,7 +134,7 @@ do talking("end")
 do EndDialog()
 => END!
 
-~ Search2
+~ Search_Woman
 do StartDialog()
 do talking("Rizki")
 Rizki: Hai, maaf mengganggu. Saya ingin bertanya, apakah kamu pernah melihat ayahku di sekitar desa ini?
@@ -152,7 +151,7 @@ do talking("end")
 do EndDialog()
 => END!
 
-~ Search3
+~ Search_Girl
 do StartDialog()
 do talking("Rizki")
 Rizki: Hai, maaf mengganggu Dik. Apa kamu pernah melihat pria di foto ini?
@@ -167,7 +166,7 @@ do talking("end")
 do EndDialog()
 => END!
 
-~ FoundInfo
+~ Search_Boy
 do StartDialog()
 do talking("Rizki")
 Rizki: "Maaf mengganggu dek, ada yang tahu tentang keberadaan ayah saya? Dia seorang seismolog, biasa bekerja di sini."
@@ -196,6 +195,35 @@ do talking("Rizki")
 Rizki: ...huff...huff berjalan kaki dari desa menuju gunung sangat melelahkan. Apakah kamu ada Air minum Maria?
 do talking("Maria")
 Maria: Masa begitu saja sudah capek, saya saja masih segar-segar saja kok. 
+do talking("Rizki")
+Rizki: Tolong jangan samakan stamina manusia biasa dengan makhluk sepertimu..
+do talking("Maria")
+Maria: Diam, kamu saja yang lemah kayak tauge kekurangan sinar matahari.
+do talking("Rizki")
+Rizki : Hey!! tauge itu kecil-kecil tapi bernutrisi tahu. Minta maaf kepada tauge-tauge di dunia!! Kamu saja yang maniak otot!!
+do talking("Bebek")
+do talking("Maria_hide")
+Maria: HooHooHoo... sepertinya seniormu ini kurang keras dalam melatihmu yaa!! sepulang dari sini akan saya suruh kamu lari keliling desa  10 putaran. Akan saya buat kamu babak BE...BEEEEEEK!!!
+do talking("Rizki")
+Rizki: Bebek??
+do talking("Bebek_anim")
+Bebek: Kwek!!
+do talking("Rizki")
+Maria: (sembunyi di belakang riski) JAUHKAN! JAUHKAN! JAUHKAN BEBEK ITU DARI SINI!!!!
+do talking("Rizki")
+Rizki: eeh?... eehhh?? Kamu? takut bebek?
+do talking("Maria")
+Maria: DIAM!! Kamu ga pernah kan pas SD celananya ditarik dan dipatok bebek!! Cepat SINGKIRKAN!!!
+do talking("end")
+do EndDialog()
+=> END!
+
+~ Bridge1
+do StartDialog()
+do talking("Rizki")
+Rizki: Jembatan ini sepertinya rusak akibat gempa, kita tidak bisa melanjukan perjalanan sebelum jembatan ini diperbaiki.
+do talking("Maria")
+Maria: Mungkin kita perlu mengumpulkan beberapa kayu untuk memperbaiki jembatan ini terlebih dahulu. 
 do talking("Rizki")
 Rizki: Tolong jangan samakan stamina manusia biasa dengan makhluk sepertimu..
 do talking("Maria")

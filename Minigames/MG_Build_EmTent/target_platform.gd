@@ -6,7 +6,7 @@ var is_collided = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	button.is_pressed.connect(removePlat)
-	self.scale.x = 1 - (5-button.goal)*0.2
+	self.scale.x = 1 - (8-button.goal)*0.125
 	
 func removePlat():
 	create_tween().tween_callback(queue_free)

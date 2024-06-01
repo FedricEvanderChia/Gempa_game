@@ -117,5 +117,5 @@ shape = SubResource("RectangleShape2D_tknab")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_lm1pf")
-animation = &"Break"
+animation = &"Idle"
 autoplay = "Idle"

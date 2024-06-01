@@ -15,7 +15,7 @@ func _ready():
 	await get_tree().create_timer(3).timeout
 	get_tree().change_scene_to_file("res://world.tscn")
 func vibr():
-	await get_tree().create_timer(2.5).timeout
+	await get_tree().create_timer(2).timeout
 	var tween = create_tween()
 	tween.tween_property($Car,"position", $Car.position - Vector2(0,-10),0.1)
 	tween.tween_property($Car,"position", $Car.position - Vector2(0,0),0.1)

@@ -26,12 +26,12 @@ func _ready():
 		$DarkScreen.modulate = Color(1, 1, 1, 1)
 		create_tween().tween_property($DarkScreen,"modulate",Color(1, 1, 1, 0),1)
 		DialogueManager.show_dialogue_balloon(load("res://dialogue/Act1.dialogue"), "Entry")	
-		global.Dialogue +=1
 		await get_tree().create_timer(1).timeout
 		$DarkScreen.queue_free()
+		global.Dialogue +=1
 	elif global.minigame_score >= 500 && global.Dialogue == 1:
 		DialogueManager.show_dialogue_balloon(load("res://dialogue/Act1.dialogue"), "LostFather")
-		global.Dialogue +=1	
+		global.Dialogue +=1
 	elif global.minigame_score >= 1000 && global.Dialogue == 2:
 		DialogueManager.show_dialogue_balloon(load("res://dialogue/Act1.dialogue"), "FoundPhoto")
 		global.Dialogue +=1
@@ -51,6 +51,7 @@ func generateItem():
 	item_col.item = load("res://Inventory/items/photo.tres")
 	item_col.position = Vector2(-825,64)
 	item_col.scale = Vector2(0.3,0.3)
+	item_col.add_child(preload("res://Inventory/items/star.tscn").instantiate())
 	
 func _on_player_detection_body_entered(body):
 	if body.name == "player":
@@ -72,25 +73,49 @@ func _on_mg_exit_pressed():
 	else:
 		lvl = String.num(rng.randi_range(1,20))
 	get_tree().change_scene_to_file("res://Minigames/MG_Maze/mg_maze"+lvl+".tscn")
+func _on_mg_tenda_pressed():
+	get_tree().change_scene_to_file("res://Minigames/MG_Build_EmTent/MG_BuildEmTent.tscn")
 func _on_work_pressed():
 	global.workMode = true
 	global.nextMG()
 	
 	
-func _on_rescue_body_entered(body):
-	get_node("Rescue/VBoxContainer/Rescue").show()
-	if global.Dialogue > 3:
-		get_node("Rescue/VBoxContainer/MG_Exit").show()
-func _on_rescue_body_exited(body):
-	get_node("Rescue/VBoxContainer/Rescue").hide()
-	if global.Dialogue > 3:
-		get_node("Rescue/VBoxContainer/MG_Exit").hide()
-func _on_work_mode_body_entered(body):
-	get_node("WorkMode/Work").show()
-func _on_work_mode_body_exited(body):
-	get_node("WorkMode/Work").hide()
+
+
 
 
 func _on_go_to_sawah_body_entered(body):
 	global.Spos = true
 	get_tree().change_scene_to_file("res://area/area_2.tscn")
+
+func _on_rescue_body_entered(body):
+	if body.name == "player":
+		get_node("Rescue/VBoxContainer/Rescue").show()
+		if global.Dialogue > 3:
+			get_node("Rescue/VBoxContainer/MG_Exit").show()
+func _on_rescue_body_exited(body):
+	if body.name == "player":
+		get_node("Rescue/VBoxContainer/Rescue").hide()
+		if global.Dialogue > 3:
+			get_node("Rescue/VBoxContainer/MG_Exit").hide()
+
+func _on_home_1_body_entered(body):
+	if body.name == "player":
+		get_node("Home1/Phone").show()
+func _on_home_1_body_exited(body):
+	if body.name == "player":
+		get_node("Home1/Phone").hide()
+		
+func _on_camp_body_entered(body):
+	if body.name == "player":
+		get_node("Camp/mg_tenda").show()
+func _on_camp_body_exited(body):
+	if body.name == "player":
+		get_node("Camp/mg_tenda").hide()
+
+func _on_hq_body_entered(body):
+	if body.name == "player":
+		get_node("HQ/Work").show()
+func _on_hq_body_exited(body):
+	if body.name == "player":
+		get_node("HQ/Work").hide()
