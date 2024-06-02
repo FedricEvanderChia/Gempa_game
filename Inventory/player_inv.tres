@@ -3,54 +3,54 @@
 [ext_resource type="Script" path="res://Inventory/Inventory_slot.gd" id="2_g87pi"]
 [ext_resource type="Script" path="res://Inventory/inventory_game.gd" id="2_tta0a"]
 
-[sub_resource type="Resource" id="Resource_2dvtc"]
+[sub_resource type="Resource" id="Resource_3nkdu"]
 script = ExtResource("2_g87pi")
 amount = 0
 
-[sub_resource type="Resource" id="Resource_62sg7"]
+[sub_resource type="Resource" id="Resource_px0am"]
 script = ExtResource("2_g87pi")
 amount = 0
 
-[sub_resource type="Resource" id="Resource_8mdbm"]
+[sub_resource type="Resource" id="Resource_r00cf"]
 script = ExtResource("2_g87pi")
 amount = 0
 
-[sub_resource type="Resource" id="Resource_3gksl"]
+[sub_resource type="Resource" id="Resource_4sd1h"]
 script = ExtResource("2_g87pi")
 amount = 0
 
-[sub_resource type="Resource" id="Resource_6ov7b"]
+[sub_resource type="Resource" id="Resource_u8q7w"]
 script = ExtResource("2_g87pi")
 amount = 0
 
-[sub_resource type="Resource" id="Resource_rnngr"]
+[sub_resource type="Resource" id="Resource_x7xxv"]
 script = ExtResource("2_g87pi")
 amount = 0
 
-[sub_resource type="Resource" id="Resource_3neff"]
+[sub_resource type="Resource" id="Resource_e77l1"]
 script = ExtResource("2_g87pi")
 amount = 0
 
-[sub_resource type="Resource" id="Resource_03dti"]
+[sub_resource type="Resource" id="Resource_wahh4"]
 script = ExtResource("2_g87pi")
 amount = 0
 
-[sub_resource type="Resource" id="Resource_eeia7"]
+[sub_resource type="Resource" id="Resource_fnc5g"]
 script = ExtResource("2_g87pi")
 amount = 0
 
-[sub_resource type="Resource" id="Resource_u6kte"]
+[sub_resource type="Resource" id="Resource_2qq76"]
 script = ExtResource("2_g87pi")
 amount = 0
 
-[sub_resource type="Resource" id="Resource_kwbv6"]
+[sub_resource type="Resource" id="Resource_eyep3"]
 script = ExtResource("2_g87pi")
 amount = 0
 
-[sub_resource type="Resource" id="Resource_uowwt"]
+[sub_resource type="Resource" id="Resource_mh4ta"]
 script = ExtResource("2_g87pi")
 amount = 0
 
 [resource]
 script = ExtResource("2_tta0a")
-slots = Array[ExtResource("2_g87pi")]([SubResource("Resource_2dvtc"), SubResource("Resource_62sg7"), SubResource("Resource_8mdbm"), SubResource("Resource_3gksl"), SubResource("Resource_6ov7b"), SubResource("Resource_rnngr"), SubResource("Resource_3neff"), SubResource("Resource_03dti"), SubResource("Resource_eeia7"), SubResource("Resource_u6kte"), SubResource("Resource_kwbv6"), SubResource("Resource_uowwt")])
+slots = Array[ExtResource("2_g87pi")]([SubResource("Resource_3nkdu"), SubResource("Resource_px0am"), SubResource("Resource_r00cf"), SubResource("Resource_4sd1h"), SubResource("Resource_u8q7w"), SubResource("Resource_x7xxv"), SubResource("Resource_e77l1"), SubResource("Resource_wahh4"), SubResource("Resource_fnc5g"), SubResource("Resource_2qq76"), SubResource("Resource_eyep3"), SubResource("Resource_mh4ta")])

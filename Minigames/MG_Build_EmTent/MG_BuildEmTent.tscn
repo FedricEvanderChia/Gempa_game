@@ -4,7 +4,7 @@
 [ext_resource type="Shader" path="res://Minigames/MG_Build_EmTent/MG_BuildEmTent_bgshader.gdshader" id="2_784es"]
 [ext_resource type="Script" path="res://Minigames/Control.gd" id="2_rbapa"]
 [ext_resource type="Script" path="res://Minigames/lifes.gd" id="3_ldmwb"]
-[ext_resource type="PackedScene" uid="uid://d2te5qwpgjmua" path="res://player/life.tscn" id="4_kuqpq"]
+[ext_resource type="PackedScene" uid="uid://bbcp8hmccldcb" path="res://player/life.tscn" id="4_kuqpq"]
 [ext_resource type="Texture2D" uid="uid://8kbxhcnxgloa" path="res://asset/Tenda_emergency/action_bar_bg.png" id="5_jdair"]
 [ext_resource type="Texture2D" uid="uid://ds6a43ru1oeei" path="res://asset/Tenda_emergency/Tenda_state_0.png" id="6_yxlgr"]
 [ext_resource type="Texture2D" uid="uid://d2ykcjrbd0y3u" path="res://asset/Tenda_emergency/moving_platform.png" id="7_51ftb"]

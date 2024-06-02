@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cxj3qf7thkbck" path="res://asset/pixil-frame-0.png" id="3_assqh"]
 [ext_resource type="Texture2D" uid="uid://csq0py4qvfl74" path="res://asset/HomeA.png" id="4_gslqe"]
 [ext_resource type="Texture2D" uid="uid://cld21g0jpiw4i" path="res://asset/RuinedHouse.png" id="5_3t2kx"]
-[ext_resource type="PackedScene" uid="uid://c3veaw3iicq5n" path="res://Toko.tscn" id="5_7sghl"]
+[ext_resource type="PackedScene" uid="uid://cp6opajiyfdq" path="res://Toko.tscn" id="5_7sghl"]
 [ext_resource type="PackedScene" uid="uid://dtsrtigd5cgnv" path="res://uigempa.tscn" id="6_nah4l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_brseg"]

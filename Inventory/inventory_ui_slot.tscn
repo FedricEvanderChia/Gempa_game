@@ -48,7 +48,3 @@ offset_bottom = 42.5
 text = "99
 "
 horizontal_alignment = 2
-
-[node name="Utilities" type="Node" parent="."]
-
-[node name="SaverLoader" type="Node" parent="Utilities"]

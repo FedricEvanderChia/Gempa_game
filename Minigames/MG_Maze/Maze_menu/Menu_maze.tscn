@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://j5t16tif117w"]
+
+[ext_resource type="Script" path="res://Minigames/MG_Maze/Maze_menu/Menu_maze.gd" id="1_cldbl"]
+[ext_resource type="PackedScene" uid="uid://cx4op1ti7fmwo" path="res://Minigames/MG_Maze/Maze_menu/button_maze.tscn" id="2_7gdu3"]
+
+[node name="MenuMaze" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_cldbl")
+
+[node name="ButtonMaze" parent="." instance=ExtResource("2_7gdu3")]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 150.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ButtonMaze2" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_7gdu3")]
+custom_minimum_size = Vector2(100, 32)
+layout_mode = 2
+
+[node name="ButtonMaze" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_7gdu3")]
+layout_mode = 2
+
+[node name="ButtonMaze3" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_7gdu3")]
+layout_mode = 2

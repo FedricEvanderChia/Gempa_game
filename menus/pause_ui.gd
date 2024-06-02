@@ -21,6 +21,6 @@ func _on_quit_pressed():
 
 
 func _on_load_pressed():
-	global.loadGame()
+	util.loadGame()
 func _on_save_pressed():
-	global.saveGame()
+	util.saveGame()
