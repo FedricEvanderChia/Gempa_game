@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://1s0q53ouuvjp"]
 
 [ext_resource type="Script" path="res://items_collectibles.gd" id="1_b0cby"]
-[ext_resource type="Resource" uid="uid://cpdg1mf1llw3n" path="res://Inventory/items/photo.tres" id="2_4vq53"]
+[ext_resource type="Resource" uid="uid://cpdg1mf1llw3n" path="res://Inventory/items/Photo.tres" id="2_4vq53"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n2spn"]
 radius = 105.475

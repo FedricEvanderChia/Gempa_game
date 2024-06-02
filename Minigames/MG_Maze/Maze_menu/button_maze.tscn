@@ -1,37 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://cx4op1ti7fmwo"]
+[gd_scene load_steps=3 format=3 uid="uid://cx4op1ti7fmwo"]
 
+[ext_resource type="Script" path="res://Minigames/MG_Maze/Maze_menu/button_maze.gd" id="1_f67nw"]
 [ext_resource type="Texture2D" uid="uid://c8osrol4alxsw" path="res://asset/Inventory background.png" id="1_ifr6w"]
 
-[node name="ButtonMaze" type="Control"]
+[node name="ButtonMaze" type="Button"]
 custom_minimum_size = Vector2(100, 60)
-layout_mode = 3
-anchors_preset = 0
 offset_right = 107.0
 offset_bottom = 71.0
+script = ExtResource("1_f67nw")
 
-[node name="Panel" type="Panel" parent="."]
-custom_minimum_size = Vector2(100, 60)
-layout_mode = 0
-offset_right = 100.0
-offset_bottom = 60.0
-
-[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(53.25, 34.75)
 scale = Vector2(1.64844, 1.07031)
 texture = ExtResource("1_ifr6w")
-
-[node name="Button" type="Button" parent="Panel"]
-custom_minimum_size = Vector2(100, 60)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -30.0
-offset_right = 56.0
-offset_bottom = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Maze 1"

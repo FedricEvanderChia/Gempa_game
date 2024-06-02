@@ -200,4 +200,4 @@ func complete():
 	global.minigame_score += global.difficulty*150
 	global.difficulty +=1
 	await get_tree().create_timer(1).timeout
-	get_tree().change_scene_to_file("res://world.tscn")
+	get_tree().change_scene_to_file("res://Minigames/MG_Maze/Maze_menu/Menu_maze.tscn")
