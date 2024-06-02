@@ -44,13 +44,15 @@ func generateOrder():
 	else:
 		num = rng.randi_range(1, 3)
 	for number in range(num):
-		var obj = rng.randi_range(0, 2)
+		var obj = rng.randi_range(0, 3)
 		if obj == 0:
 			needs.insert (number,"Beras")
 		elif obj == 1:
 			needs.insert (number,"Air")
 		elif obj == 2:
 			needs.insert (number,"Tenda")
+		elif obj == 3:
+			needs.insert (number,"P3K")
 	for number in range(0,needs.size()):
 		print(needs[number])
 	#emit_signal("need",needs)

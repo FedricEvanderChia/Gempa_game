@@ -4,7 +4,7 @@ var speed = 300
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	util.loadGame()
-
+	
 
 # Called when the node enters the scene tree for the first time.
 func _process(delta):

@@ -3,10 +3,10 @@ var local = 3
 
 
 func _process(delta):
-	if global.life == 0:
+	if global.life <= 0:
 		global.difficulty = 1
 		global.level = 1
-	if global.life < local:
+	elif global.life < local:
 		var life = "life"+String.num(local)
 		local-=1
 		get_node(life+"/AnimatedSprite2D").play("Break")

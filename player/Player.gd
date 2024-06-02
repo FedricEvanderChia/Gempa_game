@@ -8,7 +8,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var anim = get_node("AnimationPlayer")
 
 
-@export var invent = global.invt
+var invent = preload("res://Inventory/Inventorysave.tres")
 	
 func _physics_process(delta):
 	# Add the gravity.
@@ -42,4 +42,3 @@ func _physics_process(delta):
 
 func collectitem(item):
 	invent.insertitem(item)
-

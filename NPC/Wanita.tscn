@@ -1,10 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://b2r5xjkr6i4lj"]
 
 [ext_resource type="Script" path="res://player/DialogSprite.gd" id="1_kngfu"]
-[ext_resource type="Texture2D" uid="uid://x8fq7bam18uf" path="res://asset/Character/NPC_woman.png" id="2_7bobn"]
+[ext_resource type="Texture2D" uid="uid://dxi8rq2pusmkg" path="res://asset/Character/PMI_Blue.png" id="2_5ur8u"]
 
 [node name="Wanita" type="Node2D"]
 script = ExtResource("1_kngfu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_7bobn")
+texture = ExtResource("2_5ur8u")
+flip_h = true

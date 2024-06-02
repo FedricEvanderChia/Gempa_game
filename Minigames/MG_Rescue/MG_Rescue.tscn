@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b523wsvxd0168" path="res://asset/BG_Rescue.png" id="2_3pjth"]
 [ext_resource type="Script" path="res://Minigames/Control.gd" id="3_nldgc"]
 [ext_resource type="Script" path="res://Minigames/lifes.gd" id="4_i7710"]
-[ext_resource type="PackedScene" path="res://player/life.tscn" id="5_5cquq"]
+[ext_resource type="PackedScene" uid="uid://bbcp8hmccldcb" path="res://player/life.tscn" id="5_5cquq"]
 [ext_resource type="Texture2D" uid="uid://cic1cd7yvd8ks" path="res://asset/MenuButton/Help_idle.png" id="6_23kdi"]
 [ext_resource type="Texture2D" uid="uid://cbamxnbsoaivk" path="res://asset/MenuButton/Help_pressed.png" id="7_datqn"]
 [ext_resource type="Texture2D" uid="uid://cwsi81nu6qhne" path="res://asset/MenuButton/Back B.png" id="8_vb0gn"]

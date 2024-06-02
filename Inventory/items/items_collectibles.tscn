@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://1s0q53ouuvjp"]
 
 [ext_resource type="Script" path="res://items_collectibles.gd" id="1_b0cby"]
-[ext_resource type="Resource" uid="uid://cpdg1mf1llw3n" path="res://Inventory/items/Photo.tres" id="2_03dov"]
+[ext_resource type="Resource" uid="uid://cpdg1mf1llw3n" path="res://Inventory/items/photo.tres" id="2_4vq53"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n2spn"]
 radius = 105.475
 
 [node name="items_collectibles" type="StaticBody2D"]
 script = ExtResource("1_b0cby")
-item = ExtResource("2_03dov")
+item = ExtResource("2_4vq53")
 
 [node name="interact_Area2D" type="Area2D" parent="."]
 

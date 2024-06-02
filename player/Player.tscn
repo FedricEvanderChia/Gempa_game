@@ -175,14 +175,3 @@ shape = SubResource("CapsuleShape2D_bdbc4")
 libraries = {
 "": SubResource("AnimationLibrary_pt4sk")
 }
-
-[node name="Button" type="Button" parent="."]
-visible = false
-offset_left = -178.571
-offset_top = -638.571
-offset_right = 175.429
-offset_bottom = -407.571
-theme_override_font_sizes/font_size = 40
-text = "INVENTORY"
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -143,7 +143,6 @@ Rizki: (memandang Maria dengan harapan) "Kita harus segera pergi ke gunung. Ayah
 
 ~Sawah1(WorkInProgress)
 
-
 Rizki: ...huff...huff berjalan kaki dari desa menuju gunung sangat melelahkan. Apakah kamu ada Air minum Maria?
 
 Maria: Masa begitu saja sudah capek, saya saja masih segar-segar saja kok. 
@@ -162,7 +161,12 @@ Maria: (sembunyi di belakang riski) JAUHKAN! JAUHKAN! JAUHKAN BEBEK ITU DARI SIN
 Rizki: eeh?... eehhh?? Kamu? takut bebek? 
 Maria: DIAM!! Kamu ga pernah kan pas SD celananya ditarik dan dipatok bebek!! Cepat SINGKIRKAN!!!
 
-~ MariaEvent1
+
+
+
+
+~ MariaEvent1(Not Implemented yet)
+
 Maria: "Waktu saya masih kecil, desa tempatku tinggal mengalami musibah tsunami. Banyak orang terluka, banyak yang kehilangan rumah dan keluarga. Bencana itulah momen yang mengubah hidupku."
 
 (Maria berjalan ke depan, tatapannya tetap teguh.)
