@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwtraqqmw06a"]
+
+[ext_resource type="Script" path="res://player/DialogSprite.gd" id="1_qirm7"]
+[ext_resource type="Texture2D" uid="uid://dxi8rq2pusmkg" path="res://asset/Character/PMI_Blue.png" id="2_msf67"]
+
+[node name="Rani" type="Node2D"]
+script = ExtResource("1_qirm7")
+
+[node name="PmiBlue" type="Sprite2D" parent="."]
+texture = ExtResource("2_msf67")
+flip_h = true

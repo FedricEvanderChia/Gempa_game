@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://brmclis07bvsb"]
+[gd_scene load_steps=38 format=3 uid="uid://brmclis07bvsb"]
 
 [ext_resource type="PackedScene" uid="uid://c71to8edu42an" path="res://player/Player.tscn" id="1_a88ce"]
 [ext_resource type="Script" path="res://world.gd" id="1_rnkil"]
@@ -81,6 +81,9 @@ size = Vector2(4125, 74.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7n651"]
 size = Vector2(88, 689)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jni83"]
+size = Vector2(21, 500.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aa0ay"]
 size = Vector2(228, 106)
@@ -244,15 +247,19 @@ theme_override_font_sizes/font_size = 20
 text = "Minigame
 Tenda"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Walls" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
 position = Vector2(2059, 686)
 shape = SubResource("RectangleShape2D_eefau")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
 position = Vector2(-45, 312.5)
 shape = SubResource("RectangleShape2D_7n651")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+position = Vector2(3957, 412)
+shape = SubResource("RectangleShape2D_jni83")
 
 [node name="GUI" parent="." instance=ExtResource("6_7koq2")]
 
@@ -266,13 +273,14 @@ shape = SubResource("RectangleShape2D_aa0ay")
 position = Vector2(2274, 456)
 
 [node name="items_collectibles" parent="collectible_Layer" instance=ExtResource("8_467eh")]
-position = Vector2(-1357, 79)
+position = Vector2(1075, 98)
+scale = Vector2(0.3, 0.3)
 item = ExtResource("7_0a0qt")
 
 [node name="Go to Sawah" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Go to Sawah"]
-position = Vector2(4071, 535)
+position = Vector2(4083, 534)
 shape = SubResource("RectangleShape2D_nbndq")
 
 [node name="NPCTalk" type="Node2D" parent="."]

@@ -98,10 +98,13 @@ do talking("Mob")
 Warga: Terima kasih kak, kalau bukan karena kakak, saya tidak tahu apa yang akan terjadi pada keluarga saya.
 do talking("Rizki")
 Rizki: Sama-sama dek, ini memang tugas kakak sebagai anggota PMI, jadi tidak perlu berterima kasih.
-do talking("-")
+do talking("end")
 (Rizki melihat ada benda yang tidak asing diantara reruntuhan tempat ia menolong warga tadi)
-do talking("Rizki")
+do move_right()
+=> END!
+~ FoundPhoto2
 *Kamu mendapatkan Foto Ayah*
+do talking("Rizki")
 Rizki: Maria, aku menemukan sesuatu!
 do talking("Maria")
 Maria: Apa itu?
@@ -161,6 +164,26 @@ do talking("Rizki")
 Rizki: Makasih ya dik. Kalau kamu melihatnya, tolong kasih tahu kakak ya?
 do talking("Perempuan")
 Anak Perempuan: (mengangguk) Baik, kak. Aku akan mencarinya!
+do talking("-")
+do talking("end")
+do EndDialog()
+=> END!
+
+~ Search_Rani
+do StartDialog()
+do talking("Rizki")
+Rizki: Hai, Rani. Selama disini kamu pernah berpapasan dengan pria di foto ini tidak?
+do talking("Rani")
+Rani: Hmm... diantara pasien disini sih sepertinya ga ada yah riz. Memangnya itu foto siapa riz?
+do talking("Rizki")
+Rizki: Ini foto keluarga yang biasanya disimpan di dompet ayahku. Sepertinya terjatuh di sekitar reruntuhan itu.
+do talking("Rani")
+Rani: Oh oke, kalau begitu boleh minta namanya? untuk kumasukkan kedalam daftar orang hilang?
+do talking("Rizki")
+Rizki: Suhendri, kira-kira prosesnya bagaimana yah?
+do talking("Rani")
+Rani: Kita bisa menggunakan aplikasi "Google Person Finder" untuk melaporkan orang hilang dan bertukar informasi dengan pengguna lain jika mereka menemukan sesuatu. Aplikasi seperti ini sangat bergantung pada informasi yang diberikan pengguna lain. Tanpa informasi yang dibagikan, sulit menemukan orang yang hilang melalui aplikasi ini. 
+Rani: Atau bisa juga pakai "Facebook Crisis Response". Ini adalah fitur Facebook yang berfungsi menghubungkan korban bencana dan komunitas.
 do talking("-")
 do talking("end")
 do EndDialog()

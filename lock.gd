@@ -2,7 +2,7 @@ extends Node2D
 var locked = true
 
 func _process(delta):
-	if global.Dialogue == 2 and locked:
+	if global.Dialogue == 5 and locked:
 		unlock()
 		locked = !locked
 func unlock():

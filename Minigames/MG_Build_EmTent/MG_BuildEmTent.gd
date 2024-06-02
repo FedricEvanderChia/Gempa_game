@@ -24,7 +24,7 @@ func _on_area_2d_area_exited(area):
 	is_collided = false
 func _on_press_button_pressed():
 	if is_collided:
-		global.minigame_score += 100
+		add_score(100)
 		goal -=1
 		is_pressed.emit()
 		var creat_plat = target_platpre.instantiate()
@@ -38,8 +38,25 @@ func _on_press_button_pressed():
 			$Sprite_tent.texture = ResourceLoader.load("res://asset/Tenda_emergency/Tenda_state_2.png")
 	else:
 		global.life -=1
+		
+func add_time(val):
+	$AddTime.text = "+%d" % val
+	$CanvasLayer/Control.sec += val
+	$AddTime.show()
+	$AddTime.position = Vector2(575,20)
+	$AddTime.modulate = Color(1, 1, 1, 1)
+	create_tween().tween_property($AddTime,"position",Vector2(575,0),1)
+	create_tween().tween_property($AddTime,"modulate", Color(1, 1, 1, 0),1)
 
-
+func add_score(val):
+	$AddScore.text = "+%d" % val
+	global.minigame_score += val
+	$AddScore.show()
+	$AddScore.position = Vector2(330,20)
+	$AddScore.modulate = Color(1, 1, 1, 1)
+	create_tween().tween_property($AddScore,"position",Vector2(330,0),1)
+	create_tween().tween_property($AddScore,"modulate", Color(1, 1, 1, 0),1)
+	
 func _on_help_pressed():
 	pause()
 

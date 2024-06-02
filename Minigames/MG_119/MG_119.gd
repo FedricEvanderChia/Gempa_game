@@ -4,59 +4,54 @@ var condition = null
 var openBook = false
 var Req
 var paused = false
+var reset = global.difficulty
+var goal = 5 + reset * 5
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	if global.workMode:
+		$CanvasLayer/Control/antrian.hide()
 	if global.life<=0:
 		global.life = 3
-	$CanvasLayer/Control/Success.hide()
 	generateOrder()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
-	
+	$CanvasLayer/Control/antrian.text = "Panggilan\n%d" % goal
+
 func generateOrder():
 	var obj
-	if global.difficulty >= 5:
+	if global.difficulty >= 10:
 		obj = rng.randi_range(0, 7)
 		if obj == 7:
-			$CanvasLayer/Control.Dsec = 10
+			add_time(10)
 	else:
 		obj = rng.randi_range(0, 6)
 	if obj == 0:
 		condition = "118" # Ambulans
-		$Situation.text = "Telepon Ambulans (118)"
 		Req = "Telepon Ambulans (118)"
 	elif obj == 1:
 		condition = "113" # Kebakaran
-		$Situation.text = "Telepon Kebakaran (113)"
 		Req = "Telepon Kebakaran (113)"
 	elif obj == 2:
 		condition = "110" # Kepolisian
-		$Situation.text = "Telepon Kepolisian (110)"
 		Req = "Telepon Kepolisian (110)"
 	elif obj == 3:
 		condition = "115" # Basarnas
-		$Situation.text = "Telepon Basarnas (115)"
 		Req = "Telepon Basarnas (115)"
 	elif obj == 4:
 		condition = "129" # Posko bencana
-		$Situation.text = "Telepon Posko bencana (129)"
 		Req = "Telepon Posko bencana (129)"
 	elif obj == 5:
 		condition = "122" # Posko Kewaspadaan Nasional
-		$Situation.text = "Telepon Posko Kewaspadaan Nasional (122)"
 		Req = "Telepon Posko Kewaspadaan Nasional (122)"
 	elif obj == 6:
 		condition = "123" # Gangguan Kelistrikan
-		$Situation.text = "Telepon Gangguan Kelistrikan (123)"
 		Req = "Telepon Gangguan Kelistrikan (123)"
 	elif obj == 7:
 		condition = "0217992325" # untuk Palang Merah Indonesia (PMI)
-		$Situation.text = "Telepon Palang Merah Indonesia (021-7992325)"
 
-		Req = "Telepon Palang Merah Indonesia (021-7992325)"
+		Req = "BONUS ROUND:\nTelepon Palang Merah Indonesia (021-7992325)"
 	if global.difficulty >= 5:
 		Req = Req.left(Req.find("("))
 	
@@ -66,6 +61,8 @@ func generateOrder():
 func _on_call_button_down():
 	var num = get_node("Phone/Number")
 	if num.text == condition:
+		if condition == "0217992325": add_score(1000)
+		else: add_score(100) 
 		$Situation.modulate = Color(0,255,0)
 		get_node("Phone").num= ""
 		complete()
@@ -76,7 +73,8 @@ func _on_call_button_down():
 		global.minigame_score -= 50 
 		global.life -= 1
 		wrong()
-		
+	
+	
 func wrong():
 	shake(get_node("Phone"),"position")
 	$Situation.modulate = Color(255,0,0)
@@ -106,13 +104,23 @@ func _on_button_pressed():
 	get_tree().change_scene_to_file("res://world.tscn")
 	global.workMode = false
 func complete():
-	global.minigame_score += 100 
-	$CanvasLayer/Control/Success.show()
-	await get_tree().create_timer(1).timeout
 	if global.workMode:
+		$CanvasLayer/Control/Success.show()
+		await get_tree().create_timer(1).timeout
 		global.nextMG()
 	else:
-		get_tree().change_scene_to_file("res://world.tscn")
+		if goal <= 1:
+			$CanvasLayer/Control/Success.show()
+			await get_tree().create_timer(1).timeout
+			global.difficulty = reset
+			get_tree().change_scene_to_file("res://world.tscn")
+		else:
+			goal -= 1
+			global.difficulty +=1
+			$Situation.modulate = Color(0,255,0)
+			await get_tree().create_timer(0.2).timeout
+			add_time(2)
+			generateOrder()
 
 func _on_phone_book_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -129,6 +137,27 @@ func _on_phone_book_input_event(viewport, event, shape_idx):
 			get_node("PhoneBook/list").show()
 			$Phone.position = Vector2(800,420)
 			openBook = true
+
+
+func add_time(val):
+	$AddTime.text = "+%d" % val
+	$CanvasLayer/Control.sec += val
+	$AddTime.show()
+	$AddTime.position = Vector2(575,20)
+	$AddTime.modulate = Color(1, 1, 1, 1)
+	create_tween().tween_property($AddTime,"position",Vector2(575,0),1)
+	create_tween().tween_property($AddTime,"modulate", Color(1, 1, 1, 0),1)
+
+func add_score(val):
+	$AddScore.text = "+%d" % val
+	global.minigame_score += val
+	$AddScore.show()
+	$AddScore.position = Vector2(330,20)
+	$AddScore.modulate = Color(1, 1, 1, 1)
+	create_tween().tween_property($AddScore,"position",Vector2(330,0),1)
+	create_tween().tween_property($AddScore,"modulate", Color(1, 1, 1, 0),1)
+
+
 
 
 func _on_help_pressed():

@@ -59,11 +59,26 @@ func validate():
 	if global.needs.is_empty():
 		global.goal = true
 		sembako.goal -= 1
-		global.minigame_score += 100 
-		$"../CanvasLayer/Control".sec +=2
-		$"../AddTime".show()
-		$"../AddTime".position = Vector2(575,20)
-		$"../AddTime".modulate = Color(1, 1, 1, 1)
-		create_tween().tween_property($"../AddTime","position",Vector2(575,0),0.5)
-		create_tween().tween_property($"../AddTime","modulate", Color(1, 1, 1, 0), 0.5)
+		add_score(100)
+		if global.quest_status == "Sembako" and global.quest_count != 0:
+			global.quest_count -=1
+			print(global.quest_count)
+		add_time(2)
 		
+func add_time(val):
+	$"../AddTime".text = "+%d" % val
+	$"../CanvasLayer/Control".sec +=val
+	$"../AddTime".show()
+	$"../AddTime".position = Vector2(575,20)
+	$"../AddTime".modulate = Color(1, 1, 1, 1)
+	create_tween().tween_property($"../AddTime","position",Vector2(575,0),0.5)
+	create_tween().tween_property($"../AddTime","modulate", Color(1, 1, 1, 0), 0.5)
+
+func add_score(val):
+	$"../AddScore".text = "+%d" % val
+	global.minigame_score += val
+	$"../AddScore".show()
+	$"../AddScore".position = Vector2(330,20)
+	$"../AddScore".modulate = Color(1, 1, 1, 1)
+	create_tween().tween_property($"../AddScore","position",Vector2(330,0),1)
+	create_tween().tween_property($"../AddScore","modulate", Color(1, 1, 1, 0),1)
