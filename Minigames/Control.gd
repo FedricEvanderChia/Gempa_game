@@ -36,7 +36,11 @@ func _on_timer_timeout():
 				if global.workMode:
 					global.nextMG()
 				else:
-					get_tree().change_scene_to_file("res://world.tscn")
+					#if MG.name == "MG_Rescue":
+					#	global.minigame_score -= 50
+					#	MG.get_tree().reload_current_scene()
+					#else:
+						get_tree().change_scene_to_file("res://world.tscn")
 		if min>0:
 			min -=1
 			sec = 60

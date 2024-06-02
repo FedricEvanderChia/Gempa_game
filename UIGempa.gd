@@ -65,6 +65,7 @@ func showAll():
 	create_tween().tween_property($Bag,"visible",true,0)
 	
 
+
 func _on_items_collectibles_obtain(item : inventory_item):
 	$obtain.text = "Kamu mendapatkan sebuah\n" + item.name 
 	$item.texture = item.texture

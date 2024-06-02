@@ -5,9 +5,12 @@ var wood_tscn= preload("res://Minigames/MG_Rescue/wood.tscn")
 var pole_tscn= preload("res://Minigames/MG_Rescue/pole.tscn")
 var count = rng.randi_range(0, 5)
 var newscore = global.minigame_score+100 
+var once = true
 # Called when the node enters the scene tree for the first time.
 var num = global.difficulty+3
 func _ready():
+	if global.workMode:
+		$CanvasLayer/Control/antrian.hide()
 	if global.life<=0:
 		global.life = 3
 	$CanvasLayer/Control/Success.hide()
@@ -17,9 +20,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	$CanvasLayer/Control/antrian.text = "Korban\n%d" % global.Recuee
 	await get_tree().create_timer(0.3).timeout
-	if GlbRescue.rubble == 0:
-		get_tree().paused = true
+	if GlbRescue.rubble == 0 and once:
+		once = false
 		complete()
 	else:
 		pass
@@ -45,15 +49,29 @@ func generateRubble(num):
 			get_node("ClearArea").add_child(rub)
 
 func complete():
-	global.minigame_score = newscore
+	add_score(100)
 	$CanvasLayer/Control/Success.show()
 	await get_tree().create_timer(1).timeout
 	get_tree().paused = false
 	if global.workMode:
 		global.nextMG()
 	else:
-		get_tree().change_scene_to_file("res://world.tscn")
-		
+		if global.Recuee <= 1:
+			global.Recuee = global.difficulty * 3
+			get_tree().change_scene_to_file("res://world.tscn")
+		else:
+			global.Recuee -= 1
+			get_tree().reload_current_scene()
+
+func add_score(val):
+	$AddScore.text = "+%d" % val
+	global.minigame_score += val
+	$AddScore.show()
+	$AddScore.position = Vector2(330,20)
+	$AddScore.modulate = Color(1, 1, 1, 1)
+	create_tween().tween_property($AddScore,"position",Vector2(330,0),1)
+	create_tween().tween_property($AddScore,"modulate", Color(1, 1, 1, 0),1)
+
 func _on_help_pressed():
 	pause()
 

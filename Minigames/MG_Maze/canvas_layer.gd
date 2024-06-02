@@ -4,6 +4,7 @@ var min = 0
 var Dsec = 15
 var Dmin = 0
 @export var right_Dpad = false
+var expand = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if global.life <= 0:
@@ -36,8 +37,6 @@ func _process(delta):
 		$Control/times.show()
 	else:
 		$Control/Rescue/Num.text = "%d" % $"../Player".goal
-func _on_back_pressed():
-	get_tree().reload_current_scene()
 
 func _on_timer_timeout():
 	if $Control/times.modulate == Color(255,0,0):
@@ -76,6 +75,29 @@ func pause():
 	var new_pause_state = not get_tree().paused
 	get_tree().paused = new_pause_state
 	$tutorial_ui.visible = new_pause_state
-	
+
+func add_score(val):
+	$Control/AddScore.text = "+%d" % val
+	global.minigame_score += val
+	$Control/AddScore.show()
+	$Control/AddScore.position = Vector2(940,20)
+	$Control/AddScore.modulate = Color(1, 1, 1, 1)
+	create_tween().tween_property($Control/AddScore,"position",Vector2(940,0),1)
+	create_tween().tween_property($Control/AddScore,"modulate", Color(1, 1, 1, 0),1)
+
 func _on_okay_pressed():
 	pause()
+
+
+func _on_texture_button_pressed():
+	if !expand:
+		create_tween().tween_property($Retry,"position",Vector2(10,85),0.25)
+		create_tween().tween_property($Back,"position",Vector2(10,160),0.25)
+	else:
+		create_tween().tween_property($Retry,"position",Vector2(10,10),0.25)
+		create_tween().tween_property($Back,"position",Vector2(10,10),0.25)
+	expand = !expand
+func _on_retry_pressed():
+	get_tree().reload_current_scene()
+func _on_back_pressed():
+	get_tree().change_scene_to_file("res://world.tscn")

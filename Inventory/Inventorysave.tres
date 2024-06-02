@@ -1,23 +1,25 @@
-[gd_resource type="Resource" script_class="inventory_game" load_steps=17 format=3 uid="uid://dlngmpwhlnw4r"]
+[gd_resource type="Resource" script_class="inventory_game" load_steps=18 format=3]
 
 [ext_resource type="Script" path="res://Inventory/inventory_game.gd" id="1_g58k3"]
-[ext_resource type="Resource" uid="uid://rnocqhc5552c" path="res://Inventory/items/water.tres" id="2_ljbem"]
+[ext_resource type="Resource" path="res://Inventory/items/water.tres" id="2_ljbem"]
 [ext_resource type="Script" path="res://Inventory/Inventory_slot.gd" id="3_kwpc4"]
 [ext_resource type="Resource" path="res://Inventory/items/wood.tres" id="4_gvpb8"]
+[ext_resource type="Resource" path="res://Inventory/items/photo.tres" id="5_30lxn"]
 
 [sub_resource type="Resource" id="Resource_2dvtc"]
 script = ExtResource("3_kwpc4")
 item = ExtResource("2_ljbem")
-amount = 3
+amount = 5
 
 [sub_resource type="Resource" id="Resource_62sg7"]
 script = ExtResource("3_kwpc4")
 item = ExtResource("4_gvpb8")
-amount = 1
+amount = 2
 
 [sub_resource type="Resource" id="Resource_8mdbm"]
 script = ExtResource("3_kwpc4")
-amount = 0
+item = ExtResource("5_30lxn")
+amount = 2
 
 [sub_resource type="Resource" id="Resource_3gksl"]
 script = ExtResource("3_kwpc4")

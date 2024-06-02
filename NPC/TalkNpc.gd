@@ -18,7 +18,10 @@ func _on_body_exited(body):
 	if body.name == "player":
 		$Talk.hide()
 func _on_talk_pressed():
-	if global.minigame_score >= 1500 && global.Dialogue == 3:
-		DialogueManager.show_dialogue_balloon(load("res://dialogue/Act1.dialogue"), "Search"+self.name)
+	if global.minigame_score >= 1000 && global.Dialogue == 3:
+		print("Search_"+self.name)
+		DialogueManager.show_dialogue_balloon(load("res://dialogue/Act1.dialogue"), "Search_"+self.name)
 		if self.name == "Boy":
 			global.Dialogue = 4
+	else:
+		DialogueManager.show_dialogue_balloon(load("res://dialogue/Quest.dialogue"), self.name)

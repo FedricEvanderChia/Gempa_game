@@ -16,7 +16,6 @@ func _on_interact_area_2d_body_entered(body):
 		self.queue_free()
 		
 func playercollect():
-	print("collect")
 	player.collectitem(item)
 	Obtain.emit(item)
 	

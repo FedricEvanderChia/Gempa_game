@@ -15,7 +15,9 @@ func saveGame():
 	var data: Dictionary = {
 		"Dialogue" = global.Dialogue,
 		"life" = global.life,
-		"minigame_score" = global.minigame_score
+		"minigame_score" = global.minigame_score,
+		"Quest" = global.quest_status,
+		"Progress" = global.quest_count
 	}
 	
 	ResourceSaver.save(inventory, save_file_path)
@@ -34,6 +36,7 @@ func loadGame():
 				global.Dialogue = curr_line["Dialogue"]
 				global.life = curr_line["life"]
 				global.minigame_score = curr_line["minigame_score"]
-			
+				global.quest_status = curr_line["Quest"]
+				global.quest_count = curr_line["Progress"]
 func loading():
 	pass

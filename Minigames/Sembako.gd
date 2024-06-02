@@ -7,8 +7,8 @@ var rng = RandomNumberGenerator.new()
 var customer = null
 var selected = false
 var needs = []
-var goal = 10
-var newscore = global.minigame_score+100 
+var goal = 5 + global.difficulty*5
+var newscore = global.minigame_score+100
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if global.workMode:
@@ -65,6 +65,7 @@ func complete():
 		global.nextMG()
 	else:
 		get_tree().change_scene_to_file("res://world.tscn")
+
 
 func _on_back_pressed():
 	get_tree().change_scene_to_file("res://world.tscn")

@@ -3,20 +3,37 @@ extends Node2D
 var Dialogue = 0
 var goal = false
 var needs = []
+
+
 var life = 3
-var minigame_score = 0
+var minigame_score = 1000
 var difficulty = 1
 var level = 1
 var talker = ""
+var quest_status : String = ""
+var quest_count : int
+
+var Recuee = difficulty * 3
+
 var invt = ResourceLoader.load("res://Inventory/player_inv.tres")
 var gold = 0
 var workMode = false
 var Spos = true
-
+var go_right = false
 signal Sdialogue
 signal Edialogue
+signal Receive(Path)
+signal Give(Path)
+
 func talking(name):
+	print(quest_status + " " + String.num(quest_count))
 	talker = name
+func reward(item):
+	Receive.emit(item)
+func submit(item):
+	Give.emit(item)
+func move_right():
+	go_right = true
 func StartDialog():
 	Sdialogue.emit()
 func EndDialog():

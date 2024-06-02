@@ -17,10 +17,10 @@ func _ready():
 		$player.position = Epos
 	global.Sdialogue.connect(Scam)
 	global.Edialogue.connect(Ecam)
-	if global.Dialogue < 3:
-		$NPCTalk.hide()
-	else:
-		$NPCTalk.show()
+#	if global.Dialogue < 3:
+#		$NPCTalk.hide()
+#	else:
+#		$NPCTalk.show()
 	if global.Dialogue == 0:
 		$DarkScreen.show()
 		$DarkScreen.modulate = Color(1, 1, 1, 1)
@@ -51,7 +51,7 @@ func generateItem():
 	item_col.item = load("res://Inventory/items/photo.tres")
 	item_col.position = Vector2(-825,64)
 	item_col.scale = Vector2(0.3,0.3)
-	item_col.add_child(preload("res://Inventory/items/star.tscn").instantiate())
+	$player.target = item_col.global_position.x
 	
 func _on_player_detection_body_entered(body):
 	if body.name == "player":
@@ -77,12 +77,8 @@ func _on_mg_tenda_pressed():
 	get_tree().change_scene_to_file("res://Minigames/MG_Build_EmTent/MG_BuildEmTent.tscn")
 func _on_work_pressed():
 	global.workMode = true
+	global.difficulty = 1
 	global.nextMG()
-	
-	
-
-
-
 
 func _on_go_to_sawah_body_entered(body):
 	global.Spos = true

@@ -396,6 +396,48 @@ size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 40
 horizontal_alignment = 1
 
+[node name="AddTime" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 575.0
+offset_top = 20.0
+offset_right = 697.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "+3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AddScore" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 330.0
+offset_top = 20.0
+offset_right = 452.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "+100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 5
 
@@ -449,6 +491,7 @@ text = "Score: 00"
 metadata/_edit_use_anchors_ = true
 
 [node name="Success" type="Label" parent="CanvasLayer/Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -472,6 +515,21 @@ horizontal_alignment = 1
 [node name="Timer" type="Timer" parent="CanvasLayer/Control"]
 autostart = true
 
+[node name="antrian" type="Label" parent="CanvasLayer/Control"]
+offset_left = 952.0
+offset_top = 91.0
+offset_right = 1139.0
+offset_bottom = 204.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Panggilan
+00"
+horizontal_alignment = 2
+
 [node name="lifes" type="Panel" parent="CanvasLayer/Control"]
 layout_mode = 0
 script = ExtResource("6_r5l05")
@@ -484,28 +542,6 @@ position = Vector2(108, 114)
 
 [node name="life3" parent="CanvasLayer/Control/lifes" instance=ExtResource("7_hqlyl")]
 position = Vector2(177, 114)
-
-[node name="Tips" type="Label" parent="CanvasLayer/Control"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -109.5
-offset_top = 52.0
-offset_right = 108.5
-offset_bottom = 107.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "Masukan "
-horizontal_alignment = 1
 
 [node name="Help" type="TextureButton" parent="CanvasLayer"]
 offset_left = 1070.0
