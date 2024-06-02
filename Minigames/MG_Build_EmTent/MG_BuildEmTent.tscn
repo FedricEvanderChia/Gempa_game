@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://lii1beb2wlkt"]
+[gd_scene load_steps=33 format=3 uid="uid://lii1beb2wlkt"]
 
 [ext_resource type="Script" path="res://Minigames/MG_Build_EmTent/MG_BuildEmTent.gd" id="1_n8qo3"]
 [ext_resource type="Shader" path="res://Minigames/MG_Build_EmTent/MG_BuildEmTent_bgshader.gdshader" id="2_784es"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://diar7mfkgxceu" path="res://asset/Tenda_emergency/Tenda_state_1.png" id="18_dnm4o"]
 [ext_resource type="Texture2D" uid="uid://bh1b8hqhic7qh" path="res://asset/Tenda_emergency/Tenda_state_2.png" id="19_u7lnf"]
 [ext_resource type="Texture2D" uid="uid://bhrev8bbvvxfn" path="res://asset/Tenda_emergency/background_minigame_buildtent.png" id="20_3naex"]
+[ext_resource type="AudioStream" uid="uid://lu44q6qacyis" path="res://asset/sfx/Button sounds.mp3" id="22_v2bmf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qcw2u"]
 shader = ExtResource("2_784es")
@@ -487,6 +488,10 @@ position = Vector2(-397, 114)
 scale = Vector2(2.06, 2.06)
 sprite_frames = SubResource("SpriteFrames_snkea")
 autoplay = "default"
+
+[node name="button_sounds" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_v2bmf")
+volume_db = 1.874
 
 [connection signal="pressed" from="press_button" to="." method="_on_press_button_pressed"]
 [connection signal="pressed" from="press_button" to="Actionable_platform" method="_on_press_button_pressed"]

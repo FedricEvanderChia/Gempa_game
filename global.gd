@@ -6,13 +6,13 @@ var needs = []
 
 
 var life = 3
-var minigame_score = 1000
+var minigame_score = 0
 var difficulty = 1
 var level = 1
 var talker = ""
 var quest_status : String = ""
 var quest_count : int
-
+var chapter_game= 1
 var Recuee = difficulty * 3
 
 var invt = ResourceLoader.load("res://Inventory/player_inv.tres")

@@ -417,6 +417,7 @@ limit_bottom = 660
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="player"]
 scale = Vector2(4.69072, 4.52566)
 stream = ExtResource("17_6v1qh")
+volume_db = -10.895
 autoplay = true
 max_distance = 3800.0
 
