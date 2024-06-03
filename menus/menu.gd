@@ -1,33 +1,29 @@
 extends Control
 var speed = 300
-@onready var sounds_b = $button_sounds
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	util.loadGame()
-	
 
-# Called when the node enters the scene tree for the first time.
 func _process(delta):
 	$BG.scroll_offset.x -= speed * delta
 
 func _on_start_b_pressed():
-	sounds_b.play()
-	await get_tree().create_timer(0.5).timeout
+	util.loadGame()
 	if global.Dialogue == 0:
 		get_tree().change_scene_to_file("res://Intro/Intro1.tscn")
 	else:
 		get_tree().change_scene_to_file("res://world.tscn")
 		
 func _on_option_b_pressed():
-	sounds_b.play()
-	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://menus/options.tscn")
 
 func _on_quit_b_pressed():
-	sounds_b.play()
-	await get_tree().create_timer(0.5).timeout
 	get_tree().quit()
 
+func _on_new_game_b_pressed():
+	util.emptyInv()
+	util.saveGame()
+	if global.Dialogue == 0:
+		get_tree().change_scene_to_file("res://Intro/Intro1.tscn")
+		
+		
 func _on_start_b_mouse_entered():
 	get_node("VBoxContainer/StartB").scale = Vector2 (1.05,1.05)
 func _on_start_b_mouse_exited():
@@ -40,3 +36,7 @@ func _on_quit_b_mouse_entered():
 	get_node("VBoxContainer/QuitB").scale = Vector2 (1.05,1.05)
 func _on_quit_b_mouse_exited():
 	get_node("VBoxContainer/QuitB").scale = Vector2 (1,1)
+func _on_new_game_b_mouse_entered():
+	get_node("VBoxContainer/NewGameB").scale = Vector2 (1.05,1.05)
+func _on_new_game_b_mouse_exited():
+	get_node("VBoxContainer/NewGameB").scale = Vector2 (1,1)
