@@ -19,10 +19,11 @@ func _on_quit_b_pressed():
 
 func _on_new_game_b_pressed():
 	util.emptyInv()
+	util.saveGame()
 	if global.Dialogue == 0:
 		get_tree().change_scene_to_file("res://Intro/Intro1.tscn")
-	else:
-		get_tree().change_scene_to_file("res://world.tscn")
+		
+		
 func _on_start_b_mouse_entered():
 	get_node("VBoxContainer/StartB").scale = Vector2 (1.05,1.05)
 func _on_start_b_mouse_exited():
