@@ -100,4 +100,4 @@ func _on_texture_button_pressed():
 func _on_retry_pressed():
 	get_tree().reload_current_scene()
 func _on_back_pressed():
-	get_tree().change_scene_to_file("res://world.tscn")
+	get_tree().change_scene_to_file("res://Minigames/MG_Maze/Maze_menu/Menu_maze.tscn")

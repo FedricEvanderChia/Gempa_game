@@ -42,9 +42,9 @@ corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uy0d5"]
 bg_color = Color(0, 0, 0, 1)
-border_width_left = 3
+border_width_left = 10
 border_width_top = 3
-border_width_right = 3
+border_width_right = 10
 border_width_bottom = 3
 corner_radius_top_left = 5
 corner_radius_top_right = 5
@@ -85,7 +85,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 21.0
-offset_top = -183.0
+offset_top = -204.0
 offset_right = -19.0
 offset_bottom = -19.0
 grow_horizontal = 2
@@ -126,10 +126,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -147.0
-offset_top = -558.0
-offset_right = 494.0
-offset_bottom = -154.0
+offset_left = -63.0
+offset_top = -573.0
+offset_right = 578.0
+offset_bottom = -169.0
 grow_horizontal = 2
 grow_vertical = 0
 

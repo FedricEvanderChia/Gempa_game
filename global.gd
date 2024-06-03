@@ -3,7 +3,7 @@ extends Node2D
 var Dialogue = 0
 var goal = false
 var needs = []
-
+var Lastpos : Vector2
 
 var life = 3
 var minigame_score = 0

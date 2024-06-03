@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://ccvmjavne58xc" path="res://asset/useable.png" id="4_letef"]
 [ext_resource type="Texture2D" uid="uid://dlnvpx1iw58pf" path="res://asset/Prlx3World.png" id="5_ovwag"]
 [ext_resource type="Texture2D" uid="uid://bjjanpau63g57" path="res://asset/Prlx2World.png" id="6_f7q60"]
-[ext_resource type="Texture2D" uid="uid://cbwnmjxrj2nkg" path="res://asset/BtnIdleL.png" id="7_756tx"]
-[ext_resource type="Texture2D" uid="uid://lob30j6425w3" path="res://asset/BtnMoveL.png" id="8_pb4ww"]
+[ext_resource type="Texture2D" uid="uid://cwsi81nu6qhne" path="res://asset/MenuButton/Back B.png" id="7_l0ole"]
+[ext_resource type="Texture2D" uid="uid://d3j1ap1c1m6ew" path="res://asset/MenuButton/Back A.png" id="8_4cic2"]
 [ext_resource type="AudioStream" uid="uid://lu44q6qacyis" path="res://asset/sfx/Button sounds.mp3" id="9_2g7pl"]
 
 [node name="MenuMaze" type="Control"]
@@ -507,9 +507,9 @@ offset_left = -575.0
 offset_top = -336.0
 offset_right = -445.0
 offset_bottom = -206.0
-scale = Vector2(0.8, 0.8)
-texture_normal = ExtResource("7_756tx")
-texture_pressed = ExtResource("8_pb4ww")
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("7_l0ole")
+texture_pressed = ExtResource("8_4cic2")
 
 [node name="button_sounds" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_2g7pl")

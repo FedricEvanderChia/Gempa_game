@@ -4,6 +4,7 @@ do talking("Rani")
 Rani: Halo Riz, apa kabar?
 - Volunteer => Sembako
 - Persedian terbatas => Air
+- Tips => Trivia1
 - Ga jadi
 	do talking("end")
 	do EndDialog()
@@ -70,7 +71,9 @@ do EndDialog()
 
 ~ OtherQuest
 do talking("-")
-*Saat ini kamu sedang mengerjakan hal lain (global.quest_status global.quest_count)*
+*Saat ini kamu sedang mengerjakan hal lain*
+global.quest_status
+global.quest_count = 5
 do talking("end")
 do EndDialog()
 => END!
