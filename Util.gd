@@ -2,7 +2,7 @@ extends Node
 
 const SAVE_PATH = "res://savegame.bin"
 const save_file_path = "res://Inventory/Inventorysave.tres"
-var inventory: inventory_game = preload(save_file_path)
+var inventory: inventory_game
 
 func _ready():
 	#verify_inven_save(save_file_path)
@@ -38,5 +38,6 @@ func loadGame():
 				global.minigame_score = curr_line["minigame_score"]
 				global.quest_status = curr_line["Quest"]
 				global.quest_count = curr_line["Progress"]
-func loading():
-	pass
+func emptyInv():
+	inventory = ResourceLoader.load("res://Inventory/New_Save.tres").duplicate(true)
+	ResourceSaver.save(inventory, save_file_path)

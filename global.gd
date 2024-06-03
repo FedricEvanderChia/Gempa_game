@@ -6,7 +6,7 @@ var needs = []
 var Lastpos : Vector2
 
 var life = 3
-var minigame_score = 1000
+var minigame_score = 0
 var difficulty = 1
 var level = 1
 var talker = ""

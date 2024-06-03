@@ -78,10 +78,25 @@ do talking("end")
 do EndDialog()
 => END!
 
+~ Man
+do StartDialog()
+do talking("Rizki")
+do talking("Pria")
+Pemuda: Ada apa mas? ada yang bisa saya bantu?
+- Halo
+	Rizki: 
+- Tips
+- Ga jadi
+	do talking("end")
+	do EndDialog()
+=> END!
+
+
+
 ~ Trivia1
 do StartDialog()
 do talking("Rani")
-Rani: Kita bisa menggunakan aplikasi "Google Person Finder" untuk melaporkan orang hilang dan bertukar informasi dengan pengguna lain jika mereka menemukan sesuatu. Aplikasi seperti ini sangat bergantung pada informasi yang diberikan pengguna lain. Tanpa informasi yang dibagikan, sulit menemukan orang yang hilang melalui aplikasi ini. 
+Rani: Jika ingin melaporkan orang hilang, kita bisa menggunakan aplikasi "Google Person Finder" untuk bertukar informasi dengan pengguna lain saat mereka menemukan sesuatu. Aplikasi ini sangat bergantung pada informasi yang diberikan pengguna lain. Maka dari itu, dalam komunitas ini kita perlu saling membantu. 
 Rani: Atau bisa juga pakai "Facebook Crisis Response". Ini adalah fitur Facebook yang berfungsi menghubungkan korban bencana dan komunitas.
 do talking("-")
 do talking("end")

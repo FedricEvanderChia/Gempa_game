@@ -35,6 +35,13 @@ offset_right = 92.0
 grow_horizontal = 2
 grow_vertical = 0
 
+[node name="NewGameB" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture_normal = ExtResource("2_titvd")
+texture_pressed = ExtResource("3_ahgl2")
+
 [node name="StartB" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -95,6 +102,8 @@ texture = ExtResource("12_kai3s")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="BG"]
 
+[connection signal="mouse_entered" from="VBoxContainer/NewGameB" to="." method="_on_new_game_b_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/NewGameB" to="." method="_on_new_game_b_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/StartB" to="." method="_on_start_b_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/StartB" to="." method="_on_start_b_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/StartB" to="." method="_on_start_b_pressed"]
