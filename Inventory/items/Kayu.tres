@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="inventory_item" load_steps=3 format=3 uid="uid://b20t57vnkmufq"]
+
+[ext_resource type="Script" path="res://Inventory/inventory_item.gd" id="1_c04qf"]
+[ext_resource type="Texture2D" uid="uid://ohian1dtn1cy" path="res://asset/Item_Wood.png" id="2_jora3"]
+
+[resource]
+script = ExtResource("1_c04qf")
+name = "Kayu"
+texture = ExtResource("2_jora3")

@@ -17,7 +17,7 @@ func _ready():
 
 func _process(delta):
 	if goal == 0:
-		get_tree().change_scene_to_file("res://world.tscn")
+		complete()
 	
 func _on_area_2d_area_entered(area):
 	is_collided = true
@@ -48,6 +48,11 @@ func add_time(val):
 	$AddTime.modulate = Color(1, 1, 1, 1)
 	create_tween().tween_property($AddTime,"position",Vector2(575,0),1)
 	create_tween().tween_property($AddTime,"modulate", Color(1, 1, 1, 0),1)
+
+func complete():
+	$CanvasLayer/Control/Success.show()
+	await get_tree().create_timer(1).timeout
+	get_tree().change_scene_to_file("res://world.tscn")
 
 func add_score(val):
 	$AddScore.text = "+%d" % val
