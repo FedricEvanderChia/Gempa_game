@@ -100,7 +100,7 @@ do talking("Rizki")
 Rizki: Sama-sama dek, ini memang tugas kakak sebagai anggota PMI, jadi tidak perlu berterima kasih.
 do talking("end")
 (Rizki melihat ada benda yang tidak asing diantara reruntuhan tempat ia menolong warga tadi)
-do move_right()
+set global.go_right = true
 => END!
 ~ FoundPhoto2
 *Kamu mendapatkan Foto Ayah*

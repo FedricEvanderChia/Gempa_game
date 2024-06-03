@@ -1,7 +1,7 @@
 extends Control
 
 @onready var uigempa = $"../"
-@onready var sounds_b = $button_sounds
+@onready var sounds_b = $"../button_sounds"
 func _on_resume_pressed():
 	sounds_b.play()
 	await get_tree().create_timer(0.5).timeout

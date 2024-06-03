@@ -9,6 +9,8 @@ var is_collided = false
 signal is_pressed
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if global.life<=0:
+		global.life = 3
 	$Actionable_platform/AnimationPlayer.play("move_right_left")
 	var creat_plat = target_platpre.instantiate()
 	creat_plat.position = Vector2(randf_range(349,771), 594 )
