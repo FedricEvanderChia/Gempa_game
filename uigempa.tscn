@@ -270,11 +270,10 @@ volume_db = 0.937
 
 [node name="backpack_sounds" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_sorol")
-volume_db = 3.748
 
 [node name="backpack_sounds_close" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_ktpyl")
-volume_db = 3.748
+pitch_scale = 1.03
 
 [connection signal="pressed" from="Control2/tc_button_right" to="." method="_on_tc_button_right_pressed"]
 [connection signal="released" from="Control2/tc_button_right" to="." method="_on_tc_button_right_released"]

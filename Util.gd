@@ -44,5 +44,6 @@ func loadGame():
 				global.quest_count = curr_line["Progress"]
 				global.Lastpos.x = curr_line["Last_checkpoint_x"]
 				global.Lastpos.y = curr_line["Last_checkpoint_y"]
-func loading():
-	pass
+func emptyInv():
+	inventory = ResourceLoader.load("res://Inventory/New_Save.tres").duplicate(true)
+	ResourceSaver.save(inventory, save_file_path)
