@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgc878c7r31yf"]
+[gd_scene load_steps=2 format=3 uid="uid://bgc878c7r31yf"]
 
 [ext_resource type="Script" path="res://menus/pause_ui.gd" id="1_35v1f"]
-[ext_resource type="AudioStream" uid="uid://lu44q6qacyis" path="res://asset/sfx/Button sounds.mp3" id="2_od4sn"]
 
 [node name="pause_ui" type="Control"]
 layout_mode = 3
@@ -46,10 +45,6 @@ text = "Back to Menu"
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
-
-[node name="button_sounds" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_od4sn")
-volume_db = 1.874
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Save" to="." method="_on_save_pressed"]

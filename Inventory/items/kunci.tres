@@ -1,3 +1,9 @@
-[gd_resource type="Resource" format=3 uid="uid://bn4ioym24rvoe"]
+[gd_resource type="Resource" script_class="inventory_item" load_steps=3 format=3 uid="uid://bg6m8bgqsh8hd"]
+
+[ext_resource type="Script" path="res://Inventory/inventory_item.gd" id="1_bny25"]
+[ext_resource type="Texture2D" uid="uid://b0ysk7yoadcvx" path="res://asset/key.png" id="2_h7sv6"]
 
 [resource]
+script = ExtResource("1_bny25")
+name = "Kunci"
+texture = ExtResource("2_h7sv6")

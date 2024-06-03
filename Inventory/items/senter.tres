@@ -1,3 +1,9 @@
-[gd_resource type="Resource" format=3 uid="uid://mff2pw8qiunm"]
+[gd_resource type="Resource" script_class="inventory_item" load_steps=3 format=3 uid="uid://mff2pw8qiunm"]
+
+[ext_resource type="Script" path="res://Inventory/inventory_item.gd" id="1_0atpv"]
+[ext_resource type="Texture2D" uid="uid://breptr1b82ppw" path="res://asset/flashlight.png" id="2_tkasj"]
 
 [resource]
+script = ExtResource("1_0atpv")
+name = "Senter"
+texture = ExtResource("2_tkasj")

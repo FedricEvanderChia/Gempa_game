@@ -14,7 +14,7 @@ Rani: Halo Riz, apa kabar?
 if global.quest_status == "Sembako" and global.quest_count == 0:
 	do talking("Rani")
 	Rani: Waah terima kasih yaah, ini untuk mu.
-	do reward("res://Inventory/items/water.tres")
+	do reward("res://Inventory/items/Air.tres")
 	set global.quest_status = ""
 	set global.quest_count = null
 elif global.quest_status == "":
@@ -40,11 +40,11 @@ do EndDialog()
 => END!
 
 ~ Air
-do submit("res://Inventory/items/water.tres")
+do submit("res://Inventory/items/Air.tres")
 if global.quest_status == "Air" and global.quest_count == 0:
 	do talking("Rani")
 	Rani: Terima kasih riz, ini akan membantu banyak orang.
-	do reward("res://Inventory/items/wood.tres")
+	do reward("res://Inventory/items/Kayu.tres")
 	set global.quest_status = ""
 	set global.quest_count = null
 elif global.quest_status == "":
