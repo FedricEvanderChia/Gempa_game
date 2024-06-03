@@ -16,7 +16,6 @@ texture = ExtResource("1_04h5n")
 1:0/0/custom_data_1 = "wall"
 2:0/0 = 0
 2:0/0/custom_data_0 = true
-2:0/0/custom_data_1 = "exit"
 3:0/0 = 0
 3:0/0/custom_data_0 = true
 3:0/0/custom_data_1 = "rescue"

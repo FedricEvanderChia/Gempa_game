@@ -1,10 +1,11 @@
 extends Node2D
 
 var target_platpre = preload("res://Minigames/MG_Build_EmTent/target_platform.tscn")
-var goal = 8
+var goal = 4
 var is_state =0
-var difficulty = 3
+var difficulty = 1
 var is_collided = false
+@onready var sounds_b = $button_sounds
 signal is_pressed
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -58,6 +59,8 @@ func add_score(val):
 	create_tween().tween_property($AddScore,"modulate", Color(1, 1, 1, 0),1)
 	
 func _on_help_pressed():
+	sounds_b.play()
+	await get_tree().create_timer(0.5).timeout
 	pause()
 
 func pause():
@@ -66,7 +69,11 @@ func pause():
 	$CanvasLayer/tutorial_ui.visible = new_pause_state
 	
 func _on_okay_pressed():
+	sounds_b.play()
+	await get_tree().create_timer(0.5).timeout
 	pause()
 
 func _on_back_pressed():
+	sounds_b.play()
+	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://world.tscn")
