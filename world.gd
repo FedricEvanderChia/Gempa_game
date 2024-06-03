@@ -50,7 +50,7 @@ func generateItem():
 	new_drop.Obtain.connect($GUI._on_items_collectibles_obtain)
 	get_node("collectible_Layer").add_child(new_drop)
 	item_col = new_drop
-	item_col.item = load("res://Inventory/items/photo.tres")
+	item_col.item = load("res://Inventory/items/Foto.tres")
 	item_col.position = Vector2(-825,64)
 	item_col.scale = Vector2(0.3,0.3)
 	$player.target = item_col.global_position.x

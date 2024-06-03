@@ -27,12 +27,6 @@ func _on_quit_pressed():
 	uigempa.pause()
 	get_tree().quit()
 
-
-func _on_load_pressed():
-	
-	sounds_b.play()
-	await get_tree().create_timer(0.5).timeout
-	util.loadGame()
 func _on_save_pressed():
 	
 	sounds_b.play()
