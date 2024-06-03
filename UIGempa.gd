@@ -43,10 +43,10 @@ func pause():
 
 
 func _on_tc_button_right_pressed():
-	sounds_b.play()
+	
 	$Control2/tc_button_right.scale = Vector2 (0.9,0.9)
 func _on_tc_button_left_pressed():
-	sounds_b.play()
+
 	$Control2/tc_button_left.scale = Vector2 (0.9,0.9)
 func _on_tc_button_right_released():
 

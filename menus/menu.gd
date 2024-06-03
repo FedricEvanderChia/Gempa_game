@@ -1,6 +1,6 @@
 extends Control
 var speed = 300
-
+@onready var sounds_b = $button_sounds
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	util.loadGame()
@@ -11,15 +11,21 @@ func _process(delta):
 	$BG.scroll_offset.x -= speed * delta
 
 func _on_start_b_pressed():
+	sounds_b.play()
+	await get_tree().create_timer(0.5).timeout
 	if global.Dialogue == 0:
 		get_tree().change_scene_to_file("res://Intro/Intro1.tscn")
 	else:
 		get_tree().change_scene_to_file("res://world.tscn")
 		
 func _on_option_b_pressed():
+	sounds_b.play()
+	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://menus/options.tscn")
 
 func _on_quit_b_pressed():
+	sounds_b.play()
+	await get_tree().create_timer(0.5).timeout
 	get_tree().quit()
 
 func _on_start_b_mouse_entered():

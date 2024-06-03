@@ -264,15 +264,15 @@ vertical_alignment = 1
 [node name="lock" parent="." instance=ExtResource("2_ubps1")]
 position = Vector2(591, 323)
 
-[node name="button_sounds" type="AudioStreamPlayer2D" parent="."]
+[node name="button_sounds" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_2m7o7")
 volume_db = 0.937
 
-[node name="backpack_sounds" type="AudioStreamPlayer2D" parent="."]
+[node name="backpack_sounds" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_sorol")
 volume_db = 3.748
 
-[node name="backpack_sounds_close" type="AudioStreamPlayer2D" parent="."]
+[node name="backpack_sounds_close" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_ktpyl")
 volume_db = 3.748
 
