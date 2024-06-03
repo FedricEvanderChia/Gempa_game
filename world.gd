@@ -11,14 +11,16 @@ func _ready():
 	global.workMode = false
 	if global.Dialogue != 0:
 		$DarkScreen.queue_free()
-	if global.Spos == true:
+	if  global.Lastpos.x <= 4000 and global.Lastpos.x >= 400:
+		$player.position = global.Lastpos
+	elif global.Spos == true:
 		$player.position = Spos
 	else:
 		$player.position = Epos
 	global.Sdialogue.connect(Scam)
 	global.Edialogue.connect(Ecam)
-#	if global.Dialogue < 3:
-#		$NPCTalk.hide()
+	if global.Dialogue > 3:
+		$Walls/CollisionShape2D3.queue_free()
 #	else:
 #		$NPCTalk.show()
 	if global.Dialogue == 0:
@@ -67,12 +69,7 @@ func _on_phone_pressed():
 func _on_rescue_pressed():
 	get_tree().change_scene_to_file("res://Minigames/MG_Rescue/MG_Rescue.tscn")
 func _on_mg_exit_pressed():
-	var lvl
-	if global.difficulty <= 20:
-		lvl = String.num(global.difficulty)
-	else:
-		lvl = String.num(rng.randi_range(1,20))
-	get_tree().change_scene_to_file("res://Minigames/MG_Maze/mg_maze"+lvl+".tscn")
+	get_tree().change_scene_to_file("res://Minigames/MG_Maze/Maze_menu/Menu_maze.tscn")
 func _on_mg_tenda_pressed():
 	get_tree().change_scene_to_file("res://Minigames/MG_Build_EmTent/MG_BuildEmTent.tscn")
 func _on_work_pressed():
@@ -115,3 +112,7 @@ func _on_hq_body_entered(body):
 func _on_hq_body_exited(body):
 	if body.name == "player":
 		get_node("HQ/Work").hide()
+
+
+func _on_tree_exited():
+	global.Lastpos = $player.global_position
