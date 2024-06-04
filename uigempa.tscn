@@ -1,29 +1,29 @@
 [gd_scene load_steps=37 format=3 uid="uid://dtsrtigd5cgnv"]
 
-[ext_resource type="Script" path="res://UIGempa.gd" id="1_ngrhg"]
-[ext_resource type="Texture2D" uid="uid://bcnkef8p4ap3y" path="res://asset/BtnIdle.png" id="2_rerfp"]
-[ext_resource type="PackedScene" uid="uid://bpvsy5ccb6i60" path="res://lock.tscn" id="2_ubps1"]
-[ext_resource type="Texture2D" uid="uid://bgx38m1hnoq5b" path="res://asset/MenuButton/Pause.png" id="3_bdcwb"]
-[ext_resource type="Texture2D" uid="uid://b7g4q04cqaee6" path="res://asset/BtnMove.png" id="3_lr740"]
-[ext_resource type="PackedScene" uid="uid://c7dmtxqirlb2x" path="res://Inventory/inventory_ui.tscn" id="3_lx3uu"]
-[ext_resource type="Texture2D" uid="uid://db80lf0ng5euy" path="res://asset/Bag_Sheet.png" id="4_mm5uw"]
-[ext_resource type="Texture2D" uid="uid://cbwnmjxrj2nkg" path="res://asset/BtnIdleL.png" id="4_qcjv3"]
-[ext_resource type="Texture2D" uid="uid://boosvlaqfye44" path="res://asset/MenuButton/Pause2.png" id="4_tur6m"]
-[ext_resource type="Texture2D" uid="uid://lob30j6425w3" path="res://asset/BtnMoveL.png" id="5_cfhy1"]
-[ext_resource type="PackedScene" uid="uid://bx5x8ucmaow03" path="res://player/maria.tscn" id="6_goltb"]
-[ext_resource type="PackedScene" uid="uid://dyod4m2tlj2vl" path="res://player/mob.tscn" id="7_24ixx"]
-[ext_resource type="PackedScene" uid="uid://bgc878c7r31yf" path="res://menus/pause_ui.tscn" id="10_i5j0k"]
-[ext_resource type="PackedScene" uid="uid://b08udris5vnr5" path="res://player/rizki.tscn" id="10_jyxn3"]
-[ext_resource type="PackedScene" uid="uid://b2r5xjkr6i4lj" path="res://NPC/Wanita.tscn" id="14_j3l4h"]
-[ext_resource type="PackedScene" uid="uid://cwtraqqmw06a" path="res://NPC/Rani.tscn" id="14_p2vuq"]
-[ext_resource type="PackedScene" uid="uid://bl54w3ixo6aud" path="res://NPC/bebek.tscn" id="15_5hm6a"]
-[ext_resource type="PackedScene" uid="uid://dmefmyby3odr6" path="res://NPC/Pria.tscn" id="15_mojfx"]
-[ext_resource type="PackedScene" uid="uid://wjnkust00dy6" path="res://NPC/perempuan.tscn" id="16_g5mvo"]
-[ext_resource type="PackedScene" uid="uid://dibfk3he48mbw" path="res://NPC/Laki_laki.tscn" id="17_whml6"]
-[ext_resource type="FontFile" uid="uid://pdrka83wc2a3" path="res://asset/dial_button/pixelsix00.ttf" id="19_7kk2g"]
-[ext_resource type="AudioStream" uid="uid://lu44q6qacyis" path="res://asset/sfx/Button sounds.mp3" id="21_2m7o7"]
-[ext_resource type="AudioStream" uid="uid://d1bcx0pny6y18" path="res://asset/sfx/backpack_sounds.mp3" id="22_sorol"]
-[ext_resource type="AudioStream" uid="uid://dceks71e7fi1m" path="res://asset/sfx/backpack_sounds_close.mp3" id="23_ktpyl"]
+[ext_resource type="Script" path="res://UIGempa.gd" id="1_m0aje"]
+[ext_resource type="Texture2D" uid="uid://bcnkef8p4ap3y" path="res://asset/BtnIdle.png" id="2_elene"]
+[ext_resource type="Texture2D" uid="uid://b7g4q04cqaee6" path="res://asset/BtnMove.png" id="3_3h78t"]
+[ext_resource type="Texture2D" uid="uid://cbwnmjxrj2nkg" path="res://asset/BtnIdleL.png" id="4_hnxdq"]
+[ext_resource type="Texture2D" uid="uid://lob30j6425w3" path="res://asset/BtnMoveL.png" id="5_6ufif"]
+[ext_resource type="PackedScene" uid="uid://c7dmtxqirlb2x" path="res://Inventory/inventory_ui.tscn" id="6_lkp5a"]
+[ext_resource type="Texture2D" uid="uid://db80lf0ng5euy" path="res://asset/Bag_Sheet.png" id="7_88hht"]
+[ext_resource type="PackedScene" uid="uid://dyod4m2tlj2vl" path="res://player/mob.tscn" id="8_jdlb1"]
+[ext_resource type="PackedScene" uid="uid://bx5x8ucmaow03" path="res://player/maria.tscn" id="9_d3r3g"]
+[ext_resource type="PackedScene" uid="uid://b2r5xjkr6i4lj" path="res://NPC/Wanita.tscn" id="10_la5kp"]
+[ext_resource type="PackedScene" uid="uid://dmefmyby3odr6" path="res://NPC/Pria.tscn" id="11_pxrrf"]
+[ext_resource type="PackedScene" uid="uid://dibfk3he48mbw" path="res://NPC/Laki_laki.tscn" id="12_4tqn8"]
+[ext_resource type="PackedScene" uid="uid://wjnkust00dy6" path="res://NPC/perempuan.tscn" id="13_ipn50"]
+[ext_resource type="PackedScene" uid="uid://bl54w3ixo6aud" path="res://NPC/bebek.tscn" id="14_eaemy"]
+[ext_resource type="PackedScene" uid="uid://b08udris5vnr5" path="res://player/rizki.tscn" id="15_e7jqp"]
+[ext_resource type="PackedScene" uid="uid://cwtraqqmw06a" path="res://NPC/Rani.tscn" id="16_3l1lp"]
+[ext_resource type="PackedScene" uid="uid://bgc878c7r31yf" path="res://menus/pause_ui.tscn" id="17_21ymn"]
+[ext_resource type="Texture2D" uid="uid://bgx38m1hnoq5b" path="res://asset/MenuButton/Pause.png" id="18_tvknr"]
+[ext_resource type="Texture2D" uid="uid://boosvlaqfye44" path="res://asset/MenuButton/Pause2.png" id="19_45o3k"]
+[ext_resource type="FontFile" uid="uid://pdrka83wc2a3" path="res://asset/dial_button/pixelsix00.ttf" id="20_oitoj"]
+[ext_resource type="PackedScene" uid="uid://bpvsy5ccb6i60" path="res://lock.tscn" id="21_net36"]
+[ext_resource type="AudioStream" uid="uid://lu44q6qacyis" path="res://asset/sfx/Button sounds.mp3" id="22_8e3x6"]
+[ext_resource type="AudioStream" uid="uid://d1bcx0pny6y18" path="res://asset/sfx/backpack_sounds.mp3" id="23_l5vqs"]
+[ext_resource type="AudioStream" uid="uid://dceks71e7fi1m" path="res://asset/sfx/backpack_sounds_close.mp3" id="24_1a2yp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yypih"]
 size = Vector2(150, 150)
@@ -35,35 +35,35 @@ size = Vector2(150, 150)
 size = Vector2(120, 136)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_587v0"]
-atlas = ExtResource("4_mm5uw")
+atlas = ExtResource("7_88hht")
 region = Rect2(450, 0, 150, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8opt2"]
-atlas = ExtResource("4_mm5uw")
+atlas = ExtResource("7_88hht")
 region = Rect2(300, 0, 150, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jtj71"]
-atlas = ExtResource("4_mm5uw")
+atlas = ExtResource("7_88hht")
 region = Rect2(150, 0, 150, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j4333"]
-atlas = ExtResource("4_mm5uw")
+atlas = ExtResource("7_88hht")
 region = Rect2(0, 0, 150, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8r1oq"]
-atlas = ExtResource("4_mm5uw")
+atlas = ExtResource("7_88hht")
 region = Rect2(0, 0, 150, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_270h2"]
-atlas = ExtResource("4_mm5uw")
+atlas = ExtResource("7_88hht")
 region = Rect2(150, 0, 150, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vls2c"]
-atlas = ExtResource("4_mm5uw")
+atlas = ExtResource("7_88hht")
 region = Rect2(300, 0, 150, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_japrh"]
-atlas = ExtResource("4_mm5uw")
+atlas = ExtResource("7_88hht")
 region = Rect2(450, 0, 150, 150)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v2pkr"]
@@ -104,7 +104,7 @@ animations = [{
 }]
 
 [node name="GUI" type="CanvasLayer"]
-script = ExtResource("1_ngrhg")
+script = ExtResource("1_m0aje")
 
 [node name="Control2" type="Control" parent="."]
 layout_mode = 3
@@ -118,19 +118,19 @@ size_flags_vertical = 4
 
 [node name="tc_button_right" type="TouchScreenButton" parent="Control2"]
 position = Vector2(200, -150)
-texture_normal = ExtResource("2_rerfp")
-texture_pressed = ExtResource("3_lr740")
+texture_normal = ExtResource("2_elene")
+texture_pressed = ExtResource("3_3h78t")
 shape = SubResource("RectangleShape2D_yypih")
 action = "ui_right"
 
 [node name="tc_button_left" type="TouchScreenButton" parent="Control2"]
 position = Vector2(20, -150)
-texture_normal = ExtResource("4_qcjv3")
-texture_pressed = ExtResource("5_cfhy1")
+texture_normal = ExtResource("4_hnxdq")
+texture_pressed = ExtResource("5_6ufif")
 shape = SubResource("RectangleShape2D_piwp7")
 action = "ui_left"
 
-[node name="inventory_ui" parent="." instance=ExtResource("3_lx3uu")]
+[node name="inventory_ui" parent="." instance=ExtResource("6_lkp5a")]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -169,41 +169,41 @@ shape = SubResource("RectangleShape2D_7wcg0")
 sprite_frames = SubResource("SpriteFrames_v2pkr")
 animation = &"Open"
 
-[node name="Mob" parent="." instance=ExtResource("7_24ixx")]
+[node name="Mob" parent="." instance=ExtResource("8_jdlb1")]
 visible = false
 position = Vector2(798, 396)
 
-[node name="Maria" parent="." instance=ExtResource("6_goltb")]
+[node name="Maria" parent="." instance=ExtResource("9_d3r3g")]
 visible = false
 position = Vector2(975, 375)
 
-[node name="Wanita" parent="." instance=ExtResource("14_j3l4h")]
+[node name="Wanita" parent="." instance=ExtResource("10_la5kp")]
 visible = false
 position = Vector2(975, 475)
 
-[node name="Pria" parent="." instance=ExtResource("15_mojfx")]
+[node name="Pria" parent="." instance=ExtResource("11_pxrrf")]
 visible = false
 position = Vector2(975, 475)
 
-[node name="Laki_laki" parent="." instance=ExtResource("17_whml6")]
+[node name="Laki_laki" parent="." instance=ExtResource("12_4tqn8")]
 visible = false
 position = Vector2(975, 475)
 
-[node name="Perempuan" parent="." instance=ExtResource("16_g5mvo")]
+[node name="Perempuan" parent="." instance=ExtResource("13_ipn50")]
 visible = false
 position = Vector2(975, 475)
 
-[node name="Bebek" parent="." instance=ExtResource("15_5hm6a")]
+[node name="Bebek" parent="." instance=ExtResource("14_eaemy")]
 visible = false
 position = Vector2(954, 353)
 scale = Vector2(0.8, 0.8)
 
-[node name="Rizki" parent="." instance=ExtResource("10_jyxn3")]
+[node name="Rizki" parent="." instance=ExtResource("15_e7jqp")]
 visible = false
 position = Vector2(200, 375)
 randStr = 10.0
 
-[node name="Rani" parent="." instance=ExtResource("14_p2vuq")]
+[node name="Rani" parent="." instance=ExtResource("16_3l1lp")]
 visible = false
 position = Vector2(975, 479)
 scale = Vector2(0.9, 0.9)
@@ -219,7 +219,7 @@ offset_right = 1170.0
 offset_bottom = 827.0
 color = Color(0, 0, 0, 1)
 
-[node name="pause_ui" parent="." instance=ExtResource("10_i5j0k")]
+[node name="pause_ui" parent="." instance=ExtResource("17_21ymn")]
 process_mode = 2
 visible = false
 
@@ -233,8 +233,8 @@ scale = Vector2(0.6, 0.6)
 [node name="Pause" type="TextureButton" parent="PauseBtn"]
 layout_mode = 2
 size_flags_horizontal = 0
-texture_normal = ExtResource("3_bdcwb")
-texture_pressed = ExtResource("4_tur6m")
+texture_normal = ExtResource("18_tvknr")
+texture_pressed = ExtResource("19_45o3k")
 
 [node name="item" type="Sprite2D" parent="."]
 visible = false
@@ -256,25 +256,25 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0.866667, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("19_7kk2g")
+theme_override_fonts/font = ExtResource("20_oitoj")
 theme_override_font_sizes/font_size = 24
 text = "Kamu mendapatkan sebuah
 Item"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="lock" parent="." instance=ExtResource("2_ubps1")]
+[node name="lock" parent="." instance=ExtResource("21_net36")]
 position = Vector2(591, 323)
 
 [node name="button_sounds" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("21_2m7o7")
+stream = ExtResource("22_8e3x6")
 volume_db = 0.937
 
 [node name="backpack_sounds" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("22_sorol")
+stream = ExtResource("23_l5vqs")
 
 [node name="backpack_sounds_close" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("23_ktpyl")
+stream = ExtResource("24_1a2yp")
 pitch_scale = 1.03
 
 [connection signal="pressed" from="Control2/tc_button_right" to="." method="_on_tc_button_right_pressed"]

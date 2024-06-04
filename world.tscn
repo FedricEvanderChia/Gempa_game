@@ -1,7 +1,7 @@
 [gd_scene load_steps=38 format=3 uid="uid://brmclis07bvsb"]
 
+[ext_resource type="Script" path="res://world.gd" id="1_7m0ju"]
 [ext_resource type="PackedScene" uid="uid://c71to8edu42an" path="res://player/Player.tscn" id="1_a88ce"]
-[ext_resource type="Script" path="res://world.gd" id="1_rnkil"]
 [ext_resource type="Texture2D" uid="uid://cxj3qf7thkbck" path="res://asset/pixil-frame-0.png" id="2_w20qp"]
 [ext_resource type="Texture2D" uid="uid://dlnvpx1iw58pf" path="res://asset/Prlx3World.png" id="3_kc0bs"]
 [ext_resource type="PackedScene" uid="uid://cp6opajiyfdq" path="res://Toko.tscn" id="3_rwtwv"]
@@ -98,7 +98,7 @@ size = Vector2(215.5, 651)
 size = Vector2(215.5, 400)
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_rnkil")
+script = ExtResource("1_7m0ju")
 Epos = Vector2(3900, 557)
 
 [node name="BG" type="ParallaxBackground" parent="."]

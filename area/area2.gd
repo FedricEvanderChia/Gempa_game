@@ -34,7 +34,7 @@ func _on_go_to_world_body_entered(body):
 	if name == "Area2":
 		get_tree().change_scene_to_file("res://world.tscn")
 	if name == "Area3":
-		get_tree().change_scene_to_file("res://area/area_2.tscn")
+		get_tree().change_scene_to_file("res://area/area2.tscn")
 func _on_go_to_world_2_body_entered(body):
 	global.Spos = true
 	if name == "Area2":
