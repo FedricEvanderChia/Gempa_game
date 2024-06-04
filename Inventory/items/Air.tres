@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="inventory_item" load_steps=3 format=3 uid="uid://rnocqhc5552c"]
 
-[ext_resource type="Script" path="res://Inventory/inventory_item.gd" id="1_kj0mh"]
-[ext_resource type="Texture2D" uid="uid://bimwqwdopcug5" path="res://asset/H5O.png" id="2_s78so"]
+[ext_resource type="Script" path="res://Inventory/inventory_item.gd" id="1_x6v1b"]
+[ext_resource type="Texture2D" uid="uid://bimwqwdopcug5" path="res://asset/H5O.png" id="2_vx556"]
 
 [resource]
-script = ExtResource("1_kj0mh")
+script = ExtResource("1_x6v1b")
 name = "Air"
-texture = ExtResource("2_s78so")
+texture = ExtResource("2_vx556")

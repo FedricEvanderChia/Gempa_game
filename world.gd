@@ -37,7 +37,7 @@ func _ready():
 	elif global.minigame_score >= 1000 && global.Dialogue == 2:
 		DialogueManager.show_dialogue_balloon(load("res://dialogue/Act1.dialogue"), "FoundPhoto")
 		global.Dialogue +=1
-		generateItem()
+		generateItem("res://Inventory/items/Foto.tres",-825)
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func Scam():
@@ -45,17 +45,15 @@ func Scam():
 func Ecam():
 	create_tween().tween_property($player/Camera2D,"limit_bottom",660,1)
 
-func generateItem():
+func generateItem(ItemA, posX):
 	var new_drop = item_tscn.instantiate()
-	new_drop.item = preload("res://Inventory/items/Foto.tres")
+	new_drop.item = load(ItemA)
 	new_drop.Obtain.connect($GUI._on_items_collectibles_obtain)
 	get_node("collectible_Layer").add_child(new_drop)
 	item_col = new_drop
-	item_col.position = Vector2(-825,64)
+	item_col.position = Vector2(posX,64)
 	item_col.scale = Vector2(0.3,0.3)
 	$player.target = item_col.global_position.x
-	
-	
 	
 func _on_player_detection_body_entered(body):
 	if body.name == "player":

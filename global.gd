@@ -26,14 +26,12 @@ signal Receive(Path)
 signal Give(Path)
 
 func talking(name):
-	print(quest_status + " " + String.num(quest_count))
 	talker = name
 func reward(item):
 	Receive.emit(item)
 func submit(item):
 	Give.emit(item)
-func move_right():
-	go_right = true
+
 func StartDialog():
 	Sdialogue.emit()
 func EndDialog():

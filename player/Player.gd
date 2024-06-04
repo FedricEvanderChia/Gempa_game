@@ -7,7 +7,7 @@ var stop = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var anim = get_node("AnimationPlayer")
 var target = 1450
-
+signal Obtain(item)
 var invent = preload("res://Inventory/Inventorysave.tres")
 
 func _ready():
@@ -49,6 +49,7 @@ func collectitem(item):
 
 func reward(gift: String):
 	invent.insertitem(load(gift))
+	Obtain.emit(load(gift))
 
 func give(thing: String):
 	return invent.takeout(load(thing))
