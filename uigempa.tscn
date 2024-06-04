@@ -1,8 +1,8 @@
-[gd_scene load_steps=37 format=3 uid="uid://dtsrtigd5cgnv"]
+[gd_scene load_steps=36 format=3 uid="uid://dtsrtigd5cgnv"]
 
 [ext_resource type="Script" path="res://UIGempa.gd" id="1_ngrhg"]
 [ext_resource type="Texture2D" uid="uid://bcnkef8p4ap3y" path="res://asset/BtnIdle.png" id="2_rerfp"]
-[ext_resource type="PackedScene" uid="uid://bpvsy5ccb6i60" path="res://lock.tscn" id="2_ubps1"]
+[ext_resource type="PackedScene" path="res://lock.tscn" id="2_ubps1"]
 [ext_resource type="Texture2D" uid="uid://bgx38m1hnoq5b" path="res://asset/MenuButton/Pause.png" id="3_bdcwb"]
 [ext_resource type="Texture2D" uid="uid://b7g4q04cqaee6" path="res://asset/BtnMove.png" id="3_lr740"]
 [ext_resource type="PackedScene" uid="uid://c7dmtxqirlb2x" path="res://Inventory/inventory_ui.tscn" id="3_lx3uu"]
@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://bgc878c7r31yf" path="res://menus/pause_ui.tscn" id="10_i5j0k"]
 [ext_resource type="PackedScene" uid="uid://b08udris5vnr5" path="res://player/rizki.tscn" id="10_jyxn3"]
 [ext_resource type="PackedScene" uid="uid://b2r5xjkr6i4lj" path="res://NPC/Wanita.tscn" id="14_j3l4h"]
-[ext_resource type="PackedScene" uid="uid://cwtraqqmw06a" path="res://NPC/Rani.tscn" id="14_p2vuq"]
 [ext_resource type="PackedScene" uid="uid://bl54w3ixo6aud" path="res://NPC/bebek.tscn" id="15_5hm6a"]
 [ext_resource type="PackedScene" uid="uid://dmefmyby3odr6" path="res://NPC/Pria.tscn" id="15_mojfx"]
 [ext_resource type="PackedScene" uid="uid://wjnkust00dy6" path="res://NPC/perempuan.tscn" id="16_g5mvo"]
@@ -203,10 +202,9 @@ visible = false
 position = Vector2(200, 375)
 randStr = 10.0
 
-[node name="Rani" parent="." instance=ExtResource("14_p2vuq")]
+[node name="Rani" parent="." instance=ExtResource("14_j3l4h")]
 visible = false
-position = Vector2(975, 479)
-scale = Vector2(0.9, 0.9)
+position = Vector2(975, 475)
 
 [node name="Cinematic" type="ColorRect" parent="."]
 offset_top = -180.0

@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cp6opajiyfdq" path="res://Toko.tscn" id="5_7sghl"]
 [ext_resource type="PackedScene" uid="uid://c71to8edu42an" path="res://player/Player.tscn" id="7_ui7no"]
 [ext_resource type="PackedScene" uid="uid://1s0q53ouuvjp" path="res://Inventory/items/items_collectibles.tscn" id="8_t7oot"]
-[ext_resource type="Resource" uid="uid://rnocqhc5552c" path="res://Inventory/items/Air.tres" id="9_psrah"]
+[ext_resource type="Resource" uid="uid://dl0rm5nsl3saa" path="res://Inventory/items/water.tres" id="9_psrah"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_brseg"]
 size = Vector2(4146.5, 74.5)

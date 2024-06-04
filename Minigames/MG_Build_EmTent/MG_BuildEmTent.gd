@@ -14,7 +14,9 @@ func _ready():
 	creat_plat.position = Vector2(randf_range(349,771), 594 )
 	get_node("platform_target_container").add_child(creat_plat)
 	$Actionable_platform/AnimationPlayer.speed_scale += float(global.difficulty*0.2)
-
+	if global.life<=0:
+		global.life = 3
+	
 func _process(delta):
 	if goal == 0:
 		complete()

@@ -47,13 +47,15 @@ func Ecam():
 
 func generateItem():
 	var new_drop = item_tscn.instantiate()
+	new_drop.item = preload("res://Inventory/items/Foto.tres")
 	new_drop.Obtain.connect($GUI._on_items_collectibles_obtain)
 	get_node("collectible_Layer").add_child(new_drop)
 	item_col = new_drop
-	item_col.item = load("res://Inventory/items/Foto.tres")
 	item_col.position = Vector2(-825,64)
 	item_col.scale = Vector2(0.3,0.3)
 	$player.target = item_col.global_position.x
+	
+	
 	
 func _on_player_detection_body_entered(body):
 	if body.name == "player":
