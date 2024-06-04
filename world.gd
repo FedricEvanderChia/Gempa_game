@@ -8,6 +8,7 @@ var rng = RandomNumberGenerator.new()
 var item_col
 
 func _ready():	
+	giveReward()
 	global.workMode = false
 	if global.Dialogue != 0:
 		$DarkScreen.queue_free()
@@ -48,7 +49,6 @@ func Ecam():
 func generateItem(ItemA, posX):
 	var new_drop = item_tscn.instantiate()
 	new_drop.item = load(ItemA)
-	new_drop.Obtain.connect($GUI._on_items_collectibles_obtain)
 	get_node("collectible_Layer").add_child(new_drop)
 	item_col = new_drop
 	item_col.position = Vector2(posX,64)
@@ -113,6 +113,24 @@ func _on_hq_body_exited(body):
 	if body.name == "player":
 		get_node("HQ/Work").hide()
 
-
 func _on_tree_exited():
 	global.Lastpos = $player.global_position
+
+
+func giveReward():
+	var itempath
+	if global.lastgame == "Sembako":
+		var x = rng.randi_range(0,1)
+		if x == 0: itempath = "res://Inventory/items/Air.tres"
+		elif x == 1: itempath = "res://Inventory/items/Beras.tres"
+	elif global.lastgame == "Phone":
+		itempath = "res://Inventory/items/P3K.tres"
+	elif global.lastgame == "Tenda":
+		itempath = "res://Inventory/items/Tenda.tres"
+	elif global.lastgame == "Rescue":
+		itempath = "res://Inventory/items/Kayu.tres"
+	elif global.lastgame == "Maze":
+		itempath = "res://Inventory/items/Sekop.tres"
+	else: return
+	global.lastgame = ""
+	global.reward(itempath)

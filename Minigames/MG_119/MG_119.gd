@@ -174,3 +174,8 @@ func _on_okay_pressed():
 func _on_back_pressed():
 	get_tree().change_scene_to_file("res://world.tscn")
 
+func _on_tree_exited():
+	if !global.workMode:
+		global.lastgame = "Phone"
+	else:
+		global.lastgame = ""

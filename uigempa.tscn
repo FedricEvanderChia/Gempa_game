@@ -185,11 +185,11 @@ position = Vector2(975, 475)
 visible = false
 position = Vector2(975, 475)
 
-[node name="Perempuan" parent="." instance=ExtResource("16_g5mvo")]
+[node name="Laki_laki" parent="." instance=ExtResource("17_whml6")]
 visible = false
 position = Vector2(975, 475)
 
-[node name="Laki_laki" parent="." instance=ExtResource("17_whml6")]
+[node name="Perempuan" parent="." instance=ExtResource("16_g5mvo")]
 visible = false
 position = Vector2(975, 475)
 

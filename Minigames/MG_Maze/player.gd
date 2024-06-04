@@ -197,7 +197,6 @@ func invincibility():
 func complete():
 	$"../CanvasLayer/Control/Timer".stop()
 	$"../CanvasLayer/Control/Success".show()
-	$"../CanvasLayer".add_score(global.difficulty*150)
-	global.difficulty +=1
+	$"../CanvasLayer".add_score(150)
 	await get_tree().create_timer(1).timeout
-	get_tree().change_scene_to_file("res://world.tscn")
+	get_tree().change_scene_to_file("res://Minigames/MG_Maze/Maze_menu/Menu_maze.tscn")

@@ -1,13 +1,11 @@
-[gd_resource type="Resource" script_class="inventory_game" load_steps=16 format=3 uid="uid://ccgd34wwwmh44"]
+[gd_resource type="Resource" script_class="inventory_game" load_steps=15 format=3 uid="uid://ccgd34wwwmh44"]
 
 [ext_resource type="Script" path="res://Inventory/inventory_game.gd" id="1_81amw"]
-[ext_resource type="Resource" uid="uid://rnocqhc5552c" path="res://Inventory/items/Air.tres" id="2_anq3x"]
 [ext_resource type="Script" path="res://Inventory/Inventory_slot.gd" id="2_ipgva"]
 
 [sub_resource type="Resource" id="Resource_2dvtc"]
 script = ExtResource("2_ipgva")
-item = ExtResource("2_anq3x")
-amount = 1
+amount = 0
 
 [sub_resource type="Resource" id="Resource_62sg7"]
 script = ExtResource("2_ipgva")

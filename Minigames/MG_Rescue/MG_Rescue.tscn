@@ -127,6 +127,7 @@ text = "Rescued"
 horizontal_alignment = 1
 
 [node name="antrian" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
 offset_left = 856.0
 offset_top = 91.0
 offset_right = 1130.0
@@ -258,6 +259,7 @@ texture = ExtResource("12_8a8c8")
 position = Vector2(-368, 76)
 texture = ExtResource("13_2pryq")
 
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="timeout" from="CanvasLayer/Control/Timer" to="CanvasLayer/Control" method="_on_timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/Help" to="." method="_on_help_pressed"]
 [connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_back_pressed"]

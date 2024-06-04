@@ -443,7 +443,6 @@ color = Color(0, 0, 0, 1)
 [connection signal="pressed" from="Camp/mg_tenda" to="." method="_on_mg_tenda_pressed"]
 [connection signal="body_entered" from="Player Detection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="Player Detection" to="." method="_on_player_detection_body_exited"]
-[connection signal="Obtain" from="collectible_Layer/items_collectibles" to="GUI" method="_on_items_collectibles_obtain"]
 [connection signal="body_entered" from="Go to Sawah" to="." method="_on_go_to_sawah_body_entered"]
 [connection signal="body_entered" from="NPCTalk/Man" to="NPCTalk/Man" method="_on_body_entered"]
 [connection signal="body_exited" from="NPCTalk/Man" to="NPCTalk/Man" method="_on_body_exited"]
@@ -460,4 +459,5 @@ color = Color(0, 0, 0, 1)
 [connection signal="body_entered" from="NPCTalk/Rani" to="NPCTalk/Rani" method="_on_body_entered"]
 [connection signal="body_exited" from="NPCTalk/Rani" to="NPCTalk/Rani" method="_on_body_exited"]
 [connection signal="pressed" from="NPCTalk/Rani/Talk" to="NPCTalk/Rani" method="_on_talk_pressed"]
+[connection signal="Obtain" from="player" to="GUI" method="_on_player_obtain"]
 [connection signal="input_event" from="player" to="." method="_on_player_input_event"]

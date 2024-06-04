@@ -85,3 +85,4 @@ item = ExtResource("9_uavqe")
 
 [connection signal="body_entered" from="Go to World" to="." method="_on_go_to_world_body_entered"]
 [connection signal="body_entered" from="Go to World2" to="." method="_on_go_to_world_2_body_entered"]
+[connection signal="Obtain" from="player" to="GUI" method="_on_player_obtain"]

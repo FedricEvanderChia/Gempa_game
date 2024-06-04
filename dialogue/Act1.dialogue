@@ -7,7 +7,7 @@ Rizki: Mau bagaimana lagi, jalan utama keluar masuk desa ini terhalang akibat ke
 do talking("Maria")
 Maria: Atau sebaiknya lain kali kamu yang menghindari lubang di jalan, kamu pikir lubang itu jalan datar ya? main terobos saja tanpa rem. 
 do talking("Rizki")
-Rizki: (Apa yang sebaiknya aku katakan?)
+Rizki: 
 - Kamu saja yang nyetir!
 	Rizki: Bagaimana kalau lain kali yang mulia nona Maria saja yang menyetir? Hamba yang masih pemula ini belum dapat memenuhi ekspektasi yang mulia.
 	do talking("Maria")
@@ -33,7 +33,7 @@ Maria: Hmph...
 Maria: Yah, setidaknya kita sudah sampai dan untungnya perlengkapan kita tidak ada yang rusak karena guncangan di mobil tadi.  
 do talking("Rizki")
 Rizki: (mengamati sekeliling dengan ekspresi prihatin)
-Rizki: Sungguh mengerikan melihat kerusakan...
+Rizki: Sungguh mengerikan melihat semua kerusakan ini.
 do talking("Maria")
 Maria: Kamu benar, ini lebih buruk dari yang saya bayangkan.
 Maria: tapi, kita ditugaskan di desa Bumi Rahayu untuk membantu sebisa mungkin.

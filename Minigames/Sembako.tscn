@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://puopwh00es0a" path="res://Object/beras.tscn" id="5_8uu74"]
 [ext_resource type="PackedScene" uid="uid://oym1kka86pfk" path="res://Object/tenda.tscn" id="5_41m3d"]
 [ext_resource type="Script" path="res://Minigames/Control.gd" id="8_7gbdg"]
-[ext_resource type="PackedScene" path="res://Object/p3k.tscn" id="9_0krb0"]
+[ext_resource type="PackedScene" uid="uid://deqlqbwpk4i2c" path="res://Object/p3k.tscn" id="9_0krb0"]
 [ext_resource type="PackedScene" uid="uid://bbcp8hmccldcb" path="res://player/life.tscn" id="9_ks6qj"]
 [ext_resource type="Script" path="res://Minigames/lifes.gd" id="9_m0t61"]
 [ext_resource type="Texture2D" uid="uid://cic1cd7yvd8ks" path="res://asset/MenuButton/Help_idle.png" id="11_bitky"]
@@ -144,7 +144,7 @@ position = Vector2(109, 530)
 position = Vector2(1032, 559)
 
 [node name="P3K" parent="." instance=ExtResource("9_0krb0")]
-position = Vector2(440, 520)
+position = Vector2(778, 529)
 
 [node name="AddTime" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -441,6 +441,7 @@ limit_left = 0
 limit_top = 0
 script = ExtResource("29_wn5il")
 
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="timeout" from="CanvasLayer/Control/Timer" to="CanvasLayer/Control" method="_on_timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/Help" to="." method="_on_help_pressed"]
 [connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_back_pressed"]

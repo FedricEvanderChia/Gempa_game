@@ -138,12 +138,10 @@ animations = [{
 [node name="MgBuildEmTent" type="Node2D"]
 script = ExtResource("1_n8qo3")
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(0.1, 0.1)
 
-[node name="Useable" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Useable" type="Sprite2D" parent="ParallaxLayer"]
 material = SubResource("ShaderMaterial_qcw2u")
 position = Vector2(623, 196)
 scale = Vector2(1.02208, 0.75875)
@@ -310,7 +308,7 @@ theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
-text = "Complete"
+text = "Rescued"
 horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="CanvasLayer/Control"]
@@ -495,6 +493,7 @@ autoplay = "default"
 stream = ExtResource("22_v2bmf")
 volume_db = 1.874
 
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="pressed" from="press_button" to="." method="_on_press_button_pressed"]
 [connection signal="pressed" from="press_button" to="Actionable_platform" method="_on_press_button_pressed"]
 [connection signal="area_entered" from="Actionable_platform/Area2D" to="." method="_on_area_2d_area_entered"]

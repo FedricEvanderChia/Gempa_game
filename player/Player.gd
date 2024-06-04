@@ -41,6 +41,7 @@ func _physics_process(delta):
 	
 
 func collectitem(item):
+	Obtain.emit(item)
 	invent.insertitem(item)
 	if item.name == "Foto":
 		global.go_right = false
@@ -48,8 +49,9 @@ func collectitem(item):
 		
 
 func reward(gift: String):
-	invent.insertitem(load(gift))
-	Obtain.emit(load(gift))
+	var item : inventory_item = load(gift)
+	Obtain.emit(item)
+	invent.insertitem(item)
 
 func give(thing: String):
 	return invent.takeout(load(thing))

@@ -101,3 +101,10 @@ func _on_retry_pressed():
 	get_tree().reload_current_scene()
 func _on_back_pressed():
 	get_tree().change_scene_to_file("res://Minigames/MG_Maze/Maze_menu/Menu_maze.tscn")
+
+
+func _on_tree_exited():
+	if !global.workMode:
+		global.lastgame = "Maze"
+	else:
+		global.lastgame = ""
