@@ -104,7 +104,7 @@ func _on_back_pressed():
 
 
 func _on_tree_exited():
-	if !global.workMode:
+	if !global.workMode and $Control.sec > 0:
 		global.lastgame = "Maze"
 	else:
 		global.lastgame = ""

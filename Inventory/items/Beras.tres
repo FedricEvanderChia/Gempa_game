@@ -1,3 +1,9 @@
-[gd_resource type="Resource" format=3 uid="uid://52la8l4cvscy"]
+[gd_resource type="Resource" script_class="inventory_item" load_steps=3 format=3 uid="uid://52la8l4cvscy"]
+
+[ext_resource type="Script" path="res://Inventory/inventory_item.gd" id="1_3r3kv"]
+[ext_resource type="Texture2D" uid="uid://ct1ni7aqjltoa" path="res://asset/Beras-duo.png" id="2_aesik"]
 
 [resource]
+script = ExtResource("1_3r3kv")
+name = "Beras"
+texture = ExtResource("2_aesik")

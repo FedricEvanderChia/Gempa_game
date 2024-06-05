@@ -1,3 +1,9 @@
-[gd_resource type="Resource" format=3 uid="uid://bbpflbwsuc0my"]
+[gd_resource type="Resource" script_class="inventory_item" load_steps=3 format=3 uid="uid://bbpflbwsuc0my"]
+
+[ext_resource type="Script" path="res://Inventory/inventory_item.gd" id="1_f7ox2"]
+[ext_resource type="Texture2D" uid="uid://ed3817p3ijrt" path="res://asset/Tenda-teduh.png" id="2_bngmv"]
 
 [resource]
+script = ExtResource("1_f7ox2")
+name = "Tenda"
+texture = ExtResource("2_bngmv")

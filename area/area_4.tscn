@@ -1,5 +1,85 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvlysyvgdt6g1"]
+[gd_scene load_steps=12 format=3 uid="uid://bvlysyvgdt6g1"]
 
-[ext_resource type="PackedScene" uid="uid://c2d55xql3iv5v" path="res://area/area.tscn" id="1_edurx"]
+[ext_resource type="Script" path="res://area/area_4.gd" id="1_dm2ug"]
+[ext_resource type="Texture2D" uid="uid://htcuh5payq1s" path="res://asset/CaveBG.png" id="1_ve024"]
+[ext_resource type="Texture2D" uid="uid://cdcgnk67orybm" path="res://asset/Cave_path.png" id="2_kmql5"]
+[ext_resource type="PackedScene" uid="uid://c71to8edu42an" path="res://player/Player.tscn" id="3_sc5bi"]
+[ext_resource type="PackedScene" uid="uid://1s0q53ouuvjp" path="res://Inventory/items/items_collectibles.tscn" id="4_h4esy"]
+[ext_resource type="Texture2D" uid="uid://cwfuety7jxeio" path="res://asset/CaveFront.png" id="4_j3d33"]
+[ext_resource type="Resource" uid="uid://b20t57vnkmufq" path="res://Inventory/items/Kayu.tres" id="5_nmwd4"]
+[ext_resource type="PackedScene" uid="uid://dtsrtigd5cgnv" path="res://uigempa.tscn" id="6_hx0ks"]
 
-[node name="Area" instance=ExtResource("1_edurx")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iop4l"]
+size = Vector2(2673.5, 74.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gh8ne"]
+size = Vector2(92, 714)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggip7"]
+size = Vector2(135.375, 661.625)
+
+[node name="Area4" type="Node2D"]
+script = ExtResource("1_dm2ug")
+Spos = Vector2(35, 575)
+Epos = Vector2(0, 0)
+
+[node name="BG2" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="BG2"]
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="CaveBack" type="Sprite2D" parent="BG2/ParallaxLayer"]
+position = Vector2(1258, 341)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("1_ve024")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="BG2"]
+
+[node name="Cave_path" type="Sprite2D" parent="BG2/ParallaxLayer2"]
+position = Vector2(1257, 339)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_kmql5")
+
+[node name="player" parent="." instance=ExtResource("3_sc5bi")]
+position = Vector2(35, 575)
+scale = Vector2(0.213, 0.213)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(-37.5587, 0)
+zoom = Vector2(0.9, 0.9)
+limit_left = 0
+limit_right = 2508
+limit_bottom = 717
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(1216, 696)
+shape = SubResource("RectangleShape2D_iop4l")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(2506, 317)
+shape = SubResource("RectangleShape2D_gh8ne")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Go to World" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Go to World"]
+position = Vector2(-88, 317.188)
+shape = SubResource("RectangleShape2D_ggip7")
+
+[node name="collectible_Layer" type="Node2D" parent="."]
+position = Vector2(2274, 456)
+
+[node name="items_collectibles" parent="collectible_Layer" instance=ExtResource("4_h4esy")]
+position = Vector2(-1703, 89)
+item = ExtResource("5_nmwd4")
+
+[node name="GUI" parent="." instance=ExtResource("6_hx0ks")]
+
+[node name="Cave_path" type="Sprite2D" parent="."]
+position = Vector2(1257, 339)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("4_j3d33")
+
+[connection signal="body_entered" from="Go to World" to="." method="_on_go_to_world_body_entered"]

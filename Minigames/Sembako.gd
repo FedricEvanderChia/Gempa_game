@@ -82,7 +82,7 @@ func _on_okay_pressed():
 	pause()
 
 func _on_tree_exited():
-	if !global.workMode:
+	if !global.workMode and $CanvasLayer/Control.sec > 0:
 		global.lastgame = "Sembako"
 	else:
 		global.lastgame = ""

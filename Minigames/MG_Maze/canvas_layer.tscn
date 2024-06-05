@@ -526,7 +526,6 @@ sprite_frames = SubResource("SpriteFrames_prmnn")
 autoplay = "default"
 
 [node name="list" type="MarginContainer" parent="tutorial_ui"]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

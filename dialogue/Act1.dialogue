@@ -243,10 +243,38 @@ do EndDialog()
 
 ~ Bridge1
 do StartDialog()
+do submit("res://Inventory/items/Kayu.tres")
+if global.quest_status == "Kayu" and global.quest_count == 0:
+	do talking("Rani")
+	Rizki: oke Sepertinya sekarang kita bisa mulai bangun jembatan ini.
+	do reward("Jembatan")
+	set global.quest_status = ""
+	set global.quest_count = null
+elif global.quest_status == "":
+	do talking("Rizki")
+	Rizki: Jembatan ini sepertinya rusak akibat gempa, kita tidak bisa melanjukan perjalanan sebelum jembatan ini diperbaiki.
+	do talking("Maria")
+	Maria: Mungkin kita perlu mengumpulkan beberapa kayu untuk memperbaiki jembatan ini terlebih dahulu. 
+	do talking("Rizki")
+	Rizki: *Sepertinya kita akan memerlukan 7 kayu*
+	set global.quest_status = "Kayu"
+	set global.quest_count = 7
+elif global.quest_status == "Kayu":
+	do talking("Rizki")
+	Rizki: *Sepertinya kita akan memerlukan 7 kayu*
+else:
+	*Selesaikan terlebih dahulu tugas yang anda terima di Desa*
+do talking("-")
+do talking("end")
+do EndDialog()
+=> END!
+
+~ Bridge2
+do StartDialog()
 do talking("Rizki")
-Rizki: Jembatan ini sepertinya rusak akibat gempa, kita tidak bisa melanjukan perjalanan sebelum jembatan ini diperbaiki.
+Rizki: ...huff...huff berjalan kaki dari desa menuju gunung sangat melelahkan. Apakah kamu ada Air minum Maria?
 do talking("Maria")
-Maria: Mungkin kita perlu mengumpulkan beberapa kayu untuk memperbaiki jembatan ini terlebih dahulu. 
+Maria: Masa begitu saja sudah capek, saya saja masih segar-segar saja kok. 
 do talking("Rizki")
 Rizki: Tolong jangan samakan stamina manusia biasa dengan makhluk sepertimu..
 do talking("Maria")

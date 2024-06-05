@@ -175,7 +175,7 @@ func _on_back_pressed():
 	get_tree().change_scene_to_file("res://world.tscn")
 
 func _on_tree_exited():
-	if !global.workMode:
+	if !global.workMode and $CanvasLayer/Control.sec > 0:
 		global.lastgame = "Phone"
 	else:
 		global.lastgame = ""

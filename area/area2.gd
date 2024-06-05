@@ -8,12 +8,26 @@ func _ready():
 		$player.position = Spos
 	else:
 		$player.position = Epos
-	# if global.EntryDialogue == 0:
+	if global.Bridge == "Done":
+		$BG2/ParallaxLayer2/Prlx1Sawah.frame = 1
+		$StaticBody2D2/Bridge.queue_free()
+		$Bridge.show()
+		$BridgeFix.hide()
+	if global.Bridge == "Selesai":
+		$BG2/ParallaxLayer2/Prlx1Sawah.frame = 1
+		$StaticBody2D2/Bridge.queue_free()
+		$Bridge.show()
+		$BridgeFix.hide()
+	elif global.Bridge == "Perbaikan":
+		$BG2/ParallaxLayer2/Prlx1Sawah.frame = 0
+		$Bridge.hide()
+		$BridgeFix.show()
+	else: 
+		$BG2/ParallaxLayer2/Prlx1Sawah.frame = 0
+		$Bridge.hide()
+		$BridgeFix.hide()
 	# 	DialogueManager.show_dialogue_balloon(load("res://dialogue/EntryDialogue.dialogue"), "Entry")
 	# 	global.EntryDialogue +=1
-	if global.Dialogue == 4:
-		DialogueManager.show_dialogue_balloon(load("res://dialogue/Act1.dialogue"), "Sawah1")
-		global.Dialogue +=1
 	# if global.minigame_score >= 500 && global.EntryDialogue == 1:
 	# 	DialogueManager.show_dialogue_balloon(load("res://dialogue/EntryDialogue.dialogue"), "LostFather")
 	# 	global.EntryDialogue +=1	
@@ -41,3 +55,12 @@ func _on_go_to_world_2_body_entered(body):
 		get_tree().change_scene_to_file("res://area/area_3.tscn")
 	if name == "Area3":
 		get_tree().change_scene_to_file("res://world.tscn")
+
+
+func _on_bridge_fix_pressed():
+	get_tree().change_scene_to_file("res://Minigames/MG_Build_EmTent/MG_Bridge.tscn")
+
+
+func _on_duck_body_entered(body):
+	DialogueManager.show_dialogue_balloon(load("res://dialogue/Act1.dialogue"), "Sawah1")
+	global.Dialogue +=1

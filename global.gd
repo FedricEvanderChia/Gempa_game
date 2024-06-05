@@ -5,6 +5,7 @@ var goal = false
 var needs = []
 var Lastpos : Vector2
 var lastgame : String= ""
+var Bridge = "Rusak"
 
 var life = 3
 var minigame_score = 0
@@ -29,7 +30,11 @@ signal Give(Path)
 func talking(name):
 	talker = name
 func reward(item):
-	Receive.emit(item)
+	if item == "Jembatan":
+		Bridge = "Perbaikan"
+	else:
+		Receive.emit(item)
+		
 func submit(item):
 	Give.emit(item)
 

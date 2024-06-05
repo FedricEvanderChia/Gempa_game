@@ -1,7 +1,7 @@
 extends Node2D
 
 var target_platpre = preload("res://Minigames/MG_Build_EmTent/target_platform.tscn")
-var goal = 4
+var goal = 8
 var is_state =0
 var difficulty = 1
 var is_collided = false
@@ -14,31 +14,28 @@ func _ready():
 	$Actionable_platform/AnimationPlayer.play("move_right_left")
 	var creat_plat = target_platpre.instantiate()
 	creat_plat.position = Vector2(randf_range(349,771), 594 )
-	creat_plat.scale.x = 1 - (4-goal)*0.25
+	creat_plat.scale.x = 1 - (8-goal)*0.125
 	get_node("platform_target_container").add_child(creat_plat)
 	$Actionable_platform/AnimationPlayer.speed_scale += float(global.difficulty*0.2)
 
 func _process(delta):
 	if goal == 0:
-		get_tree().change_scene_to_file("res://world.tscn")
-	
+		global.Bridge = "Selesai"
+		get_tree().change_scene_to_file("res://area/area_2.tscn")
+		
 func _on_area_2d_area_entered(area):
 	is_collided = true
 func _on_area_2d_area_exited(area):
 	is_collided = false
 func _on_press_button_pressed():
 	if is_collided:
-		add_score(100)
-		goal -=1
 		is_pressed.emit()
+		if $Sprite_tent.frame != 8: $Sprite_tent.frame += 1
+		goal -=1
 		var creat_plat = target_platpre.instantiate()
 		creat_plat.position = Vector2(randf_range(349,771), 594 )
-		creat_plat.scale.x = 1 - (4-goal)*0.25
+		creat_plat.scale.x = 1 - (8-goal)*0.125
 		get_node("platform_target_container").add_child(creat_plat)
-		if goal == 3:
-			$Sprite_tent.frame += 1
-		elif goal == 2:
-			$Sprite_tent.frame += 1
 	else:
 		global.life -=1
 		
@@ -80,8 +77,4 @@ func _on_back_pressed():
 	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://world.tscn")
 
-func _on_tree_exited():
-	if !global.workMode and $CanvasLayer/Control.sec > 0:
-		global.lastgame = "Tenda"
-	else:
-		global.lastgame = ""
+
