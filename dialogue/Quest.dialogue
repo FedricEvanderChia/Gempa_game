@@ -2,6 +2,8 @@
 do StartDialog()
 do talking("Rani")
 Rani: Halo Riz, apa kabar?
+do talking("Rizki")
+Rizki: 
 - Volunteer => Sembako
 - Persedian terbatas => Air
 - Tips => Trivia1
@@ -21,6 +23,7 @@ elif global.quest_status == "":
 	do talking("Rani")
 	Rani: Kita sedang kekurangan tenaga untuk bantu membagikan sembako, kira-kira kamu sibuk gak?
 	do talking("Rizki")
+	Rizki: 
 	- Oke
 		do talking("Rani")
 		set global.quest_status = "Sembako"
@@ -51,6 +54,7 @@ elif global.quest_status == "":
 	do talking("Rani")
 	Rani: Riz kita lagi kekurangan persediaan nih, bisa bantu carikan tidak?
 	do talking("Rizki")
+	Rizki: 
 	- Boleh, butuh apa?
 		do talking("Rani")
 		set global.quest_status = "Air"
@@ -69,29 +73,135 @@ do talking("end")
 do EndDialog()
 => END!
 
-~ OtherQuest
-do talking("-")
-*Saat ini kamu sedang mengerjakan hal lain*
-global.quest_status
-global.quest_count = 5
-do talking("end")
-do EndDialog()
-=> END!
-
 ~ Man
 do StartDialog()
 do talking("Rizki")
 do talking("Pria")
-Pemuda: Ada apa mas? ada yang bisa saya bantu?
-- Halo
-	Rizki: 
-- Tips
-- Ga jadi
+Pemuda: Permisi mas, saya boleh minta tolong tidak?
+do talking("Rizki")
+Rizki: 
+- Tenda sobek => Tenda
+- Maaf mas, saya sedang ada urusan lain
+	do talking("Pria")
+	Pemuda: Oh baiklah, kalau begitu.
+	(´･ω･`)
 	do talking("end")
 	do EndDialog()
 => END!
 
+~ Tenda
+do submit("res://Inventory/items/Tenda.tres")
+if global.quest_status == "Tenda" and global.quest_count == 0:
+	do talking("Pria")
+	Pemuda: Waah terima kasih banyak mas!! akhirnya malam ini keluarga saya punya atap untuk tidur!
+	＼（Ｔ∇Ｔ ）／
+	Pemuda: Ini mungkin tidak seberepa, tapi mohon diterima ya mas.
+	do reward("res://Inventory/items/Senter.tres")
+	set global.quest_status = ""
+	set global.quest_count = null
+elif global.quest_status == "":
+	do talking("Pria")
+	Pemuda: Karena gempa ini, rumah keluarga saya hancur, jadi saat ini kami tinggal di tenda pengungsian. Akan tetapi karena ulah adik saya, ada bagian tenda yang jadinya sobek.
+	Pemuda: Saya ingin meminta tenda yang baru di pusat pembagian sembako, tapi kebetulan saat ini sedang habis.
+	Pemuda: Kira-kira mas ada tenda cadangan tidak? 
+	do talking("Rizki")
+	Rizki: 
+	- Oh, saya bantu carikan dulu yaa!
+		do talking("Pria")
+		set global.quest_status = "Tenda"
+		set global.quest_count = 1
+		Pemuda: Tolong bantu carikan 1 tenda ya mas.
+	- Wah, maaf mas saat ini kita memang sedang kekurangan tenda.
+		do talking("Pria")
+		Pemuda: Oh, baiklah mas. Kalau begitu terpaksa malam ini keluarga saya tidur kehujanan.
+		（◞‸◟ ）  
+elif global.quest_status == "Tenda":
+	do talking("Pria")
+	Pemuda: Tolong bantu carikan 1 tenda ya mas.
+else:
+	=> OtherQuest
+do talking("-")
+do talking("end")
+do EndDialog()
+=> END!
 
+~ Woman
+do StartDialog()
+do talking("Rizki")
+do talking("Wanita")
+Gadis: Selamat siang, ada yang bisa saya bantu?
+do talking("Rizki")
+Rizki: 
+- Gelapnya malam => Senter
+- Oh, tidak apa-apa
+	do talking("Wanita")
+	Gadis: Okay
+	do talking("end")
+	do EndDialog()
+=> END!
+
+~ Senter
+do submit("res://Inventory/items/Senter.tres")
+if global.quest_status == "Senter" and global.quest_count == 0:
+	do talking("Wanita")
+	Gadis: Terima kasih banyak ya pak. Ini sebagai tanda terima kasih.
+	do reward("res://Inventory/items/Sekop.tres")
+	set global.quest_status = ""
+	set global.quest_count = null
+elif global.quest_status == "":
+	do talking("Wanita")
+	Gadis: Karena gempa ini, saluran listrik ke desa masih terputus. Kabarnya beberapa kabel dan tiang listrik tumbang akbibat tertimpa pohon dan reruntuhan.
+	Gadis: Akibatnya rumahku jadi sangat gelap.
+	do talking("Rizki")
+	Rizki: 
+	- Aku bisa bantu carikan senter
+		do talking("Wanita")
+		set global.quest_status = "Senter"
+		set global.quest_count = 3
+		Gadis: Itu akan sangat membantu, teroma kasih banyak ya pak. Tolong carikan 3 untuk keluarga saya.
+	- Tau ah, Gelap
+		do talking("Wanita")
+		Gadis: Kelingking kakiku sakit karena menendang kaki meja terus.
+elif global.quest_status == "Senter":
+	do talking("Wanita")
+	Gadis: Tolong bantu carikan 3 senter ya mas.
+else:G
+	=> OtherQuest
+do talking("-")
+do talking("end")
+do EndDialog()
+=> END!
+
+~ Girl
+do StartDialog()
+do talking("Rizki")
+Rizki: Halo, dek. Kamu lagi ngapain?
+do talking("Perempuan")
+Anak Perempuan: Ini lagi masak buat ayak, hari ini aku masak tahu bulat kesukaan ayah
+do talking("Rizki")
+*Terlihat, anak itu sedang mengepalkan bola plastisin untuk *
+do talking("Laki_laki_scoot")
+Anak SD: Ptoey... Tahu bulat ini rasanya kayak lilin.
+ do talking("Perempuan")
+Anak Perempuan: Kalau ayah sudah selesai makan waktunya pergi kerja yaa. Cepat naik pangkat jadi direktur perusahaan.
+do talking("Laki_laki_scoot")
+Anak SD: Kerja dimana? sekolah saja libur gara-gara gempa!
+do talking("Rizki")
+Rizki: *Sebaiknya aku biarkan saja mereka bermain, aku tidak ingin terjerat dalam rumah tangga yang rumit*
+do talking("end")
+do EndDialog()
+=> END!
+~ Boy
+do StartDialog()
+do talking("Rizki")
+*Adik ini tampaknya cemberut*
+do talking("Laki_laki")
+Anak SD: Padahal aku sudah janji main Motor Lejeng dan PrePayer sama temen yang lain.
+do talking("Rizki")
+Rizki: Habisin dulu itu tahu bulatnya. nanti mama marah lho!
+do talking("end")
+do EndDialog()
+=> END!
 
 ~ Trivia1
 do StartDialog()
@@ -138,6 +248,13 @@ do talking("Rani")
 Rani: Kita bisa menggunakan aplikasi "Google Person Finder" untuk melaporkan orang hilang dan bertukar informasi dengan pengguna lain jika mereka menemukan sesuatu. Aplikasi seperti ini sangat bergantung pada informasi yang diberikan pengguna lain. Tanpa informasi yang dibagikan, sulit menemukan orang yang hilang melalui aplikasi ini. 
 Rani: Atau bisa juga pakai "Facebook Crisis Response". Ini adalah fitur Facebook yang berfungsi menghubungkan korban bencana dan komunitas.
 do talking("-")
+do talking("end")
+do EndDialog()
+=> END!
+
+~ OtherQuest
+do talking("-")
+*Saat ini kamu sedang mengerjakan hal lain*
 do talking("end")
 do EndDialog()
 => END!

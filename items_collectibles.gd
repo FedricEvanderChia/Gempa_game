@@ -3,7 +3,6 @@ class_name items_collectibles
 
 @export var item: inventory_item
 var player = null
-signal Obtain(item)
 
 func _ready():
 	$Sprite2D.texture = item.texture
@@ -17,7 +16,6 @@ func _on_interact_area_2d_body_entered(body):
 		
 func playercollect():
 	player.collectitem(item)
-	Obtain.emit(item)
 	
 
 	

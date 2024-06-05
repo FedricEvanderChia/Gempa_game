@@ -10,6 +10,7 @@ extends CanvasLayer
 @onready var character_label: RichTextLabel = %CharacterLabel
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
+@onready var talking_sound = $TalkingSound
 
 ## The dialogue resource
 var resource: DialogueResource
@@ -151,3 +152,9 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 
 
 #endregion
+
+
+func _on_dialogue_label_spoke(letter, letter_index, speed):
+	if not letter in ["."," "]:
+		talking_sound.pitch_scale = randf_range(1.2,1.4)
+		talking_sound.play()

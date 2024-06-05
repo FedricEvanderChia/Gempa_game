@@ -615,6 +615,7 @@ pijakan jika didorong
 kedalam lubang. "
 vertical_alignment = 1
 
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="timeout" from="Control/Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="Help" to="." method="_on_help_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

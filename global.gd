@@ -4,6 +4,7 @@ var Dialogue = 0
 var goal = false
 var needs = []
 var Lastpos : Vector2
+var lastgame : String= ""
 
 var life = 3
 var minigame_score = 0

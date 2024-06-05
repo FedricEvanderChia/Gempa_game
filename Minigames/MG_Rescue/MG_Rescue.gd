@@ -7,7 +7,7 @@ var count = rng.randi_range(0, 5)
 var newscore = global.minigame_score+100 
 var once = true
 # Called when the node enters the scene tree for the first time.
-var num = global.difficulty+3
+var num = 5 + global.difficulty*5
 func _ready():
 	if global.workMode:
 		$CanvasLayer/Control/antrian.hide()
@@ -85,3 +85,9 @@ func _on_okay_pressed():
 
 func _on_back_pressed():
 	get_tree().change_scene_to_file("res://world.tscn")
+
+func _on_tree_exited():
+	if !global.workMode:
+		global.lastgame = "Rescue"
+	else:
+		global.lastgame = ""

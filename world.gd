@@ -8,6 +8,7 @@ var rng = RandomNumberGenerator.new()
 var item_col
 
 func _ready():	
+	giveReward()
 	global.workMode = false
 	if global.Dialogue != 0:
 		$DarkScreen.queue_free()
@@ -113,6 +114,24 @@ func _on_hq_body_exited(body):
 	if body.name == "player":
 		get_node("HQ/Work").hide()
 
-
 func _on_tree_exited():
 	global.Lastpos = $player.global_position
+
+
+func giveReward():
+	var itempath
+	if global.lastgame == "Sembako":
+		var x = rng.randi_range(0,1)
+		if x == 0: itempath = "res://Inventory/items/Air.tres"
+		elif x == 1: itempath = "res://Inventory/items/Beras.tres"
+	elif global.lastgame == "Phone":
+		itempath = "res://Inventory/items/P3K.tres"
+	elif global.lastgame == "Tenda":
+		itempath = "res://Inventory/items/Tenda.tres"
+	elif global.lastgame == "Rescue":
+		itempath = "res://Inventory/items/Kayu.tres"
+	elif global.lastgame == "Maze":
+		itempath = "res://Inventory/items/Sekop.tres"
+	else: return
+	global.lastgame = ""
+	global.reward(itempath)

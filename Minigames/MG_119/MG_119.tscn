@@ -516,6 +516,7 @@ horizontal_alignment = 1
 autostart = true
 
 [node name="antrian" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
 offset_left = 952.0
 offset_top = 91.0
 offset_right = 1139.0
@@ -780,6 +781,7 @@ metadata/_edit_use_anchors_ = true
 stream = ExtResource("17_o08ne")
 autoplay = true
 
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="input_event" from="PhoneBook" to="." method="_on_phone_book_input_event"]
 [connection signal="button_down" from="Phone/Call" to="." method="_on_call_button_down"]
 [connection signal="timeout" from="CanvasLayer/Control/Timer" to="CanvasLayer/Control" method="_on_timer_timeout"]
