@@ -1,5 +1,12 @@
 extends Control
 var speed = 300
+const save_file_path = "res://savegame.bin"
+
+func _ready():
+	if FileAccess.file_exists(save_file_path) == true: 
+		$VBoxContainer/StartB.show()
+	else:
+		$VBoxContainer/StartB.hide()
 
 func _process(delta):
 	$BG.scroll_offset.x -= speed * delta

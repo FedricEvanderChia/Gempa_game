@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cwtraqqmw06a"]
+[gd_scene load_steps=3 format=3 uid="uid://dq36f77km2e5s"]
 
 [ext_resource type="Script" path="res://player/DialogSprite.gd" id="1_qirm7"]
 [ext_resource type="Texture2D" uid="uid://dxi8rq2pusmkg" path="res://asset/Character/PMI_Blue.png" id="2_msf67"]

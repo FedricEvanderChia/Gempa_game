@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpuw7lv4fkgdt"
-path="res://.godot/imported/forest_floor.png-75e3222c28f4375f2fad3e7fc2a890dd.ctex"
+uid="uid://c0k0qudia0ldo"
+path="res://.godot/imported/continue_pressed.png-6d707fefceda3d70dd4834e5472e4f5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/forest_floor.png"
-dest_files=["res://.godot/imported/forest_floor.png-75e3222c28f4375f2fad3e7fc2a890dd.ctex"]
+source_file="res://asset/MenuButton/continue_pressed.png"
+dest_files=["res://.godot/imported/continue_pressed.png-6d707fefceda3d70dd4834e5472e4f5a.ctex"]
 
 [params]
 

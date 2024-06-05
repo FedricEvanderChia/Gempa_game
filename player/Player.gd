@@ -43,6 +43,8 @@ func _physics_process(delta):
 func collectitem(item):
 	Obtain.emit(item)
 	invent.insertitem(item)
+	global.chapter_game +=1
+
 	if item.name == "Foto":
 		global.go_right = false
 		DialogueManager.show_dialogue_balloon(load("res://dialogue/Act1.dialogue"), "FoundPhoto2")	

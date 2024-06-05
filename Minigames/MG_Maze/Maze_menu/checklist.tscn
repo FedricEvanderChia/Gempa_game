@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bam6fc7ud6bsx"]
+
+[ext_resource type="Script" path="res://Minigames/MG_Maze/Maze_menu/unlockable_level.gd" id="1_xj1qt"]
+[ext_resource type="Texture2D" uid="uid://biks4bu8r7h28" path="res://asset/checklist.png" id="2_7h7je"]
+
+[node name="UnlockableLevel" type="Control"]
+custom_minimum_size = Vector2(120, 100)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 119.0
+offset_bottom = 105.0
+script = ExtResource("1_xj1qt")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(120, 100)
+layout_mode = 0
+offset_right = 118.0
+offset_bottom = 103.0
+color = Color(0, 0, 0, 0.427451)
+
+[node name="AnimatedSprite2d" type="Sprite2D" parent="."]
+position = Vector2(63, 48)
+scale = Vector2(3.25, 3.15625)
+texture = ExtResource("2_7h7je")

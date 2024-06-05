@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://drnqyiwnpts7k"]
+[gd_scene load_steps=14 format=3 uid="uid://drnqyiwnpts7k"]
 
 [ext_resource type="Script" path="res://menus/menu.gd" id="1_08rkx"]
+[ext_resource type="Texture2D" uid="uid://dhhdbvu3jtmoe" path="res://asset/MenuButton/continue.png" id="2_b32hq"]
 [ext_resource type="Texture2D" uid="uid://dfq4b8kmu3pv0" path="res://asset/MenuButton/tile000.png" id="2_titvd"]
 [ext_resource type="Texture2D" uid="uid://bow3j1ixesbik" path="res://asset/MenuButton/tile001.png" id="3_ahgl2"]
 [ext_resource type="Texture2D" uid="uid://cvk5el35fmoe8" path="res://asset/MenuButton/tile002.png" id="4_l8y11"]
@@ -39,6 +40,13 @@ grow_vertical = 0
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
+texture_normal = ExtResource("2_b32hq")
+texture_pressed = ExtResource("3_ahgl2")
+
+[node name="NewGameB" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 texture_normal = ExtResource("2_titvd")
 texture_pressed = ExtResource("3_ahgl2")
 
@@ -55,13 +63,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 texture_normal = ExtResource("6_863w1")
 texture_pressed = ExtResource("7_j7dsg")
-
-[node name="NewGameB" type="TextureButton" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-texture_normal = ExtResource("2_titvd")
-texture_pressed = ExtResource("3_ahgl2")
 
 [node name="GameTitle" type="Sprite2D" parent="."]
 position = Vector2(586, 101)
@@ -105,11 +106,11 @@ texture = ExtResource("12_kai3s")
 [connection signal="mouse_entered" from="VBoxContainer/StartB" to="." method="_on_start_b_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/StartB" to="." method="_on_start_b_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/StartB" to="." method="_on_start_b_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/NewGameB" to="." method="_on_new_game_b_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/NewGameB" to="." method="_on_new_game_b_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/OptionB" to="." method="_on_option_b_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/OptionB" to="." method="_on_option_b_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/OptionB" to="." method="_on_option_b_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/QuitB" to="." method="_on_quit_b_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/QuitB" to="." method="_on_quit_b_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/QuitB" to="." method="_on_quit_b_pressed"]
-[connection signal="mouse_entered" from="VBoxContainer/NewGameB" to="." method="_on_new_game_b_mouse_entered"]
-[connection signal="pressed" from="VBoxContainer/NewGameB" to="." method="_on_new_game_b_pressed"]

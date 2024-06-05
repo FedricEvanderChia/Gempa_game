@@ -199,4 +199,5 @@ func complete():
 	$"../CanvasLayer/Control/Success".show()
 	$"../CanvasLayer".add_score(150)
 	await get_tree().create_timer(1).timeout
-	get_tree().change_scene_to_file("res://Minigames/MG_Maze/Maze_menu/Menu_maze.tscn")
+	get_tree().change_scene_to_file("res://world.tscn")
+	$"../CanvasLayer".check()

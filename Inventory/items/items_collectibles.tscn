@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://1s0q53ouuvjp"]
 
 [ext_resource type="Script" path="res://items_collectibles.gd" id="1_b0cby"]
-[ext_resource type="PackedScene" uid="uid://dwnsnoa5iju07" path="res://Inventory/items/star.tscn" id="3_13r6n"]
+[ext_resource type="PackedScene" uid="uid://buuketybao1pg" path="res://Inventory/items/star.tscn" id="2_4d3vp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n2spn"]
 radius = 105.475
@@ -17,7 +17,7 @@ shape = SubResource("CircleShape2D_n2spn")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 
-[node name="star" parent="." instance=ExtResource("3_13r6n")]
+[node name="star" parent="." instance=ExtResource("2_4d3vp")]
 
 [connection signal="body_entered" from="interact_Area2D" to="." method="_on_interact_area_2d_body_entered"]
 [connection signal="body_exited" from="interact_Area2D" to="." method="_on_interact_area_2d_body_exited"]

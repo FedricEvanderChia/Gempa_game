@@ -6,15 +6,25 @@ var paused = false
 @onready var sounds_b = $button_sounds
 @onready var sounds_backpack = $backpack_sounds
 @onready var sounds_backpack_c = $backpack_sounds_close
+
+
 @export var item_collect : items_collectibles
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	global.Sdialogue.connect(cinema)
 	global.Edialogue.connect(Uncinema)
+	#$scoretext.text = "Score: %d" % global.minigame_score
+	# chapter label properties
+
+
+
+
 	
 # untuk pergerakan player, hanya tinggal memanggil action ui_left
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+
+
 
 func _on_bag_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -84,3 +94,6 @@ func _on_player_obtain(item : inventory_item):
 	await get_tree().create_timer(2).timeout
 	$obtain.hide()
 	$item.hide()
+
+
+
