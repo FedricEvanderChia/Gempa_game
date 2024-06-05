@@ -22,7 +22,10 @@ func saveGame():
 		"Quest" = global.quest_status,
 		"Progress" = global.quest_count,
 		"Last_checkpoint_x" = global.Lastpos.x,
-		"Last_checkpoint_y" = global.Lastpos.y
+		"Last_checkpoint_y" = global.Lastpos.y,
+		"Check_unlockmaze_chapter2" = global.check_unlockmaze_chapter2,
+		"Check_unlockmaze_chapter3" = global.check_unlockmaze_chapter3
+		
 	}
 	ResourceSaver.save(inventory, save_file_path)
 	var jstr = JSON.stringify(data)
@@ -44,6 +47,8 @@ func loadGame():
 				global.quest_count = curr_line["Progress"]
 				global.Lastpos.x = curr_line["Last_checkpoint_x"]
 				global.Lastpos.y = curr_line["Last_checkpoint_y"]
+				global.check_unlockmaze_chapter2 = curr_line["Check_unlockmaze_chapter2"]
+				global.check_unlockmaze_chapter3 = curr_line["Check_unlockmaze_chapter3"]
 func emptyInv():
 	inventory = ResourceLoader.load("res://Inventory/New_Save.tres").duplicate(true)
 	ResourceSaver.save(inventory, save_file_path)

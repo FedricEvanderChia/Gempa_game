@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cno11yoc8jb5" path="res://asset/Sawah_front.png" id="4_o06ch"]
 [ext_resource type="PackedScene" uid="uid://dtsrtigd5cgnv" path="res://uigempa.tscn" id="8_2rrum"]
 [ext_resource type="PackedScene" uid="uid://1s0q53ouuvjp" path="res://Inventory/items/items_collectibles.tscn" id="8_u5uou"]
-[ext_resource type="Resource" path="res://Inventory/items/Kayu.tres" id="9_uavqe"]
+[ext_resource type="Resource" uid="uid://b20t57vnkmufq" path="res://Inventory/items/Kayu.tres" id="9_uavqe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_55vd8"]
 size = Vector2(4259, 74.5)

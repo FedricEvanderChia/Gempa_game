@@ -12,9 +12,13 @@ var level = 1
 var talker = ""
 var quest_status : String = ""
 var quest_count : int
-var chapter_game= 1
+
 var Recuee = difficulty * 3
 
+var check_unlockmaze_chapter2= false
+var check_unlockmaze_chapter3= false 
+
+var chapter_game= 1
 
 var invt = ResourceLoader.load("res://Inventory/player_inv.tres")
 var gold = 0

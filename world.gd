@@ -84,8 +84,8 @@ func _on_go_to_sawah_body_entered(body):
 func _on_rescue_body_entered(body):
 	if body.name == "player":
 		get_node("Rescue/VBoxContainer/Rescue").show()
-		if global.Dialogue > 3:
-			get_node("Rescue/VBoxContainer/MG_Exit").show()
+	#	if global.Dialogue > 3:
+		get_node("Rescue/VBoxContainer/MG_Exit").show()
 func _on_rescue_body_exited(body):
 	if body.name == "player":
 		get_node("Rescue/VBoxContainer/Rescue").hide()
