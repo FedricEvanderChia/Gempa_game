@@ -10,6 +10,7 @@ var item_col
 func _ready():	
 	giveReward()
 	global.workMode = false
+	global.life = 3
 	if global.Dialogue != 0:
 		$DarkScreen.queue_free()
 	if  global.Lastpos.x <= 4000 and global.Lastpos.x >= 400:

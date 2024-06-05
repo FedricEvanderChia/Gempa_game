@@ -5,6 +5,7 @@ var Dsec = 15
 var Dmin = 0
 @export var right_Dpad = false
 var expand = false
+signal checklist
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if global.life <= 0:
@@ -102,6 +103,8 @@ func _on_retry_pressed():
 func _on_back_pressed():
 	get_tree().change_scene_to_file("res://Minigames/MG_Maze/Maze_menu/Menu_maze.tscn")
 
+func check():
+	checklist.emit()
 
 func _on_tree_exited():
 	if !global.workMode:

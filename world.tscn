@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://btsev7607v0ds" path="res://asset/camp_fire.png" id="9_lnauk"]
 [ext_resource type="Texture2D" uid="uid://csq0py4qvfl74" path="res://asset/HomeA.png" id="11_a4qjb"]
 [ext_resource type="Script" path="res://NPC/TalkNpc.gd" id="12_b2gaq"]
-[ext_resource type="Resource" uid="uid://dl0rm5nsl3saa" path="res://Inventory/items/water.tres" id="12_d3mg6"]
+[ext_resource type="Resource" path="res://Inventory/items/Air.tres" id="12_pdetw"]
 [ext_resource type="Texture2D" uid="uid://cld21g0jpiw4i" path="res://asset/RuinedHouse.png" id="12_s0exl"]
 [ext_resource type="Texture2D" uid="uid://cosfjgbhy75wm" path="res://asset/Character/NPC_Man.png" id="13_t6it0"]
 [ext_resource type="Texture2D" uid="uid://x8fq7bam18uf" path="res://asset/Character/NPC_woman.png" id="14_fcmkq"]
@@ -275,7 +275,7 @@ position = Vector2(2274, 456)
 [node name="items_collectibles" parent="collectible_Layer" instance=ExtResource("8_467eh")]
 position = Vector2(1075, 98)
 scale = Vector2(0.3, 0.3)
-item = ExtResource("12_d3mg6")
+item = ExtResource("12_pdetw")
 
 [node name="Go to Sawah" type="Area2D" parent="."]
 

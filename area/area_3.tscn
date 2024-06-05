@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://c6da523ly6b7t" path="res://asset/Prlx2_Road-Jungle.png" id="1_ie6w7"]
 [ext_resource type="Script" path="res://area/area.gd" id="1_o57k3"]
 [ext_resource type="PackedScene" uid="uid://c71to8edu42an" path="res://player/Player.tscn" id="2_i5sog"]
-[ext_resource type="Texture2D" uid="uid://dbcbbka1n6ud1" path="res://asset/forest_floor.png" id="3_jlxes"]
-[ext_resource type="Texture2D" uid="uid://b562dnskhwiq3" path="res://asset/cave_entre.png" id="5_skihf"]
+[ext_resource type="Texture2D" uid="uid://bbhg0wl8r4hrk" path="res://asset/forest_floor.png" id="3_jlxes"]
+[ext_resource type="Texture2D" uid="uid://cp8cmr0hdaut8" path="res://asset/cave_entre.png" id="5_skihf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_viakg"]
 size = Vector2(5292, 74.5)

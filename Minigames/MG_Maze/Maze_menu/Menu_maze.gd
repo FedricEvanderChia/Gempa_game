@@ -6,6 +6,7 @@ var unlockable_num = "UnlockableLevel"
  
 var anim_num = "AnimatedSprite2d"
 var Color_rect = "ColorRect"
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if global.chapter_game == 2 && global.check_unlockmaze_chapter2 == true:

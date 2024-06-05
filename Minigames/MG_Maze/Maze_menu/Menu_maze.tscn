@@ -535,21 +535,18 @@ columns = 4
 layout_mode = 2
 
 [node name="ColorRect" parent="MarginContainer_unlock/grid_con_unlock/UnlockableLevel" index="0"]
-layout_mode = 0
 offset_right = 120.0
 
 [node name="UnlockableLevel1" parent="MarginContainer_unlock/grid_con_unlock" instance=ExtResource("10_bbrm5")]
 layout_mode = 2
 
 [node name="ColorRect" parent="MarginContainer_unlock/grid_con_unlock/UnlockableLevel1" index="0"]
-layout_mode = 0
 offset_right = 120.0
 
 [node name="UnlockableLevel2" parent="MarginContainer_unlock/grid_con_unlock" instance=ExtResource("10_bbrm5")]
 layout_mode = 2
 
 [node name="ColorRect" parent="MarginContainer_unlock/grid_con_unlock/UnlockableLevel2" index="0"]
-layout_mode = 0
 offset_right = 120.0
 
 [node name="UnlockableLevel3" parent="MarginContainer_unlock/grid_con_unlock" instance=ExtResource("10_bbrm5")]
@@ -568,7 +565,6 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="ColorRect" parent="MarginContainer_unlock/grid_con_unlock/UnlockableLevel7" index="0"]
-layout_mode = 0
 offset_right = 120.0
 
 [node name="MarginContainer_unlock2" type="MarginContainer" parent="."]
@@ -607,6 +603,22 @@ layout_mode = 2
 
 [node name="UnlockableLevel7" parent="MarginContainer_unlock2/grid_con_unlock" instance=ExtResource("10_bbrm5")]
 layout_mode = 2
+
+[node name="MarginContainer_lock_check" type="MarginContainer" parent="."]
+visible = false
+custom_minimum_size = Vector2(498, 418)
+layout_direction = 1
+layout_mode = 0
+offset_left = -242.0
+offset_top = -246.0
+offset_right = 256.0
+offset_bottom = 264.0
+
+[node name="grid_con_lock_check" type="GridContainer" parent="MarginContainer_lock_check"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+columns = 4
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ButtonMaze1" to="." method="_on_button_maze_1_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ButtonMaze2" to="." method="_on_button_maze_2_pressed"]
