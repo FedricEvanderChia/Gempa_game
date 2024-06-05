@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dtsrtigd5cgnv"]
+[gd_scene load_steps=38 format=3 uid="uid://dtsrtigd5cgnv"]
 
 [ext_resource type="Script" path="res://UIGempa.gd" id="1_ngrhg"]
 [ext_resource type="Texture2D" uid="uid://bcnkef8p4ap3y" path="res://asset/BtnIdle.png" id="2_rerfp"]
@@ -23,6 +23,8 @@
 [ext_resource type="AudioStream" uid="uid://lu44q6qacyis" path="res://asset/sfx/Button sounds.mp3" id="21_2m7o7"]
 [ext_resource type="AudioStream" uid="uid://d1bcx0pny6y18" path="res://asset/sfx/backpack_sounds.mp3" id="22_sorol"]
 [ext_resource type="AudioStream" uid="uid://dceks71e7fi1m" path="res://asset/sfx/backpack_sounds_close.mp3" id="23_ktpyl"]
+[ext_resource type="FontFile" uid="uid://b2nh2smgavidr" path="res://asset/Fonts/karmatic-arcade.regular.ttf" id="24_hrwlh"]
+[ext_resource type="Script" path="res://chapterlabel_control.gd" id="24_wbcbq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yypih"]
 size = Vector2(150, 150)
@@ -274,6 +276,34 @@ stream = ExtResource("22_sorol")
 [node name="backpack_sounds_close" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_ktpyl")
 pitch_scale = 1.03
+
+[node name="chapter_control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("24_wbcbq")
+
+[node name="ColorRect" type="ColorRect" parent="chapter_control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 400.0
+offset_top = 145.0
+offset_right = 715.0
+offset_bottom = 243.0
+color = Color(0.141176, 0.141176, 0.141176, 1)
+
+[node name="chapterlabel" type="Label" parent="chapter_control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 428.0
+offset_top = 170.0
+offset_right = 758.0
+offset_bottom = 243.0
+theme_override_fonts/font = ExtResource("24_hrwlh")
+theme_override_font_sizes/font_size = 35
+text = "Chapter:
+"
 
 [connection signal="pressed" from="Control2/tc_button_right" to="." method="_on_tc_button_right_pressed"]
 [connection signal="released" from="Control2/tc_button_right" to="." method="_on_tc_button_right_released"]

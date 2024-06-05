@@ -22,7 +22,7 @@ script = ExtResource("1_o57k3")
 motion_scale = Vector2(0.1, 0.1)
 
 [node name="Prlx2Road-jungle" type="Sprite2D" parent="BG2/ParallaxLayer"]
-position = Vector2(1978, 284)
+position = Vector2(1974, 292)
 texture = ExtResource("1_ie6w7")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="BG2"]

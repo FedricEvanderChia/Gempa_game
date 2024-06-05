@@ -15,6 +15,7 @@ var quest_count : int
 var chapter_game= 1
 var Recuee = difficulty * 3
 
+
 var invt = ResourceLoader.load("res://Inventory/player_inv.tres")
 var gold = 0
 var workMode = false

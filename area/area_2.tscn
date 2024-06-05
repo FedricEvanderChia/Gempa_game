@@ -1,87 +1,88 @@
-[gd_scene load_steps=11 format=3 uid="uid://3hchn5utlicl"]
+[gd_scene load_steps=11 format=3 uid="uid://byk5hbnmogo5c"]
 
-[ext_resource type="PackedScene" uid="uid://c2d55xql3iv5v" path="res://area/area.tscn" id="1_yujf3"]
-[ext_resource type="Script" path="res://area/area_2.gd" id="2_iwe2q"]
+[ext_resource type="Script" path="res://area/area2.gd" id="2_iwe2q"]
 [ext_resource type="Texture2D" uid="uid://b6o6ml4pkal8f" path="res://asset/Prlx1_Sawah.png" id="3_21ydt"]
 [ext_resource type="Texture2D" uid="uid://pogensiylwqc" path="res://asset/Sawah_back.png" id="3_jmtsw"]
 [ext_resource type="PackedScene" uid="uid://c71to8edu42an" path="res://player/Player.tscn" id="4_37cct"]
 [ext_resource type="Texture2D" uid="uid://cno11yoc8jb5" path="res://asset/Sawah_front.png" id="4_o06ch"]
+[ext_resource type="PackedScene" uid="uid://dtsrtigd5cgnv" path="res://uigempa.tscn" id="8_2rrum"]
 [ext_resource type="PackedScene" uid="uid://1s0q53ouuvjp" path="res://Inventory/items/items_collectibles.tscn" id="8_u5uou"]
-[ext_resource type="Resource" uid="uid://b20t57vnkmufq" path="res://Inventory/items/Kayu.tres" id="9_uavqe"]
+[ext_resource type="Resource" path="res://Inventory/items/Kayu.tres" id="9_uavqe"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3yfjv"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55vd8"]
 size = Vector2(4259, 74.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_80hof"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3161r"]
 size = Vector2(135.375, 589.25)
 
-[node name="Area2" instance=ExtResource("1_yujf3")]
+[node name="Area2" type="Node2D"]
 script = ExtResource("2_iwe2q")
-Spos = Vector2(30, 498)
-Epos = Vector2(4000, 498)
 
-[node name="BG2" type="ParallaxBackground" parent="." index="0"]
+[node name="BG2" type="ParallaxBackground" parent="."]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="BG2" index="0"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="BG2"]
 motion_scale = Vector2(0.2, 0.2)
 
-[node name="SawahBack" type="Sprite2D" parent="BG2/ParallaxLayer" index="0"]
+[node name="SawahBack" type="Sprite2D" parent="BG2/ParallaxLayer"]
 position = Vector2(930, 286)
 scale = Vector2(1.11, 1.11)
 texture = ExtResource("3_jmtsw")
 flip_h = true
 
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="BG2" index="1"]
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="BG2"]
 motion_scale = Vector2(0.38, 0.38)
 
-[node name="SawahFront" type="Sprite2D" parent="BG2/ParallaxLayer3" index="0"]
+[node name="SawahFront" type="Sprite2D" parent="BG2/ParallaxLayer3"]
 position = Vector2(1162, 274)
 scale = Vector2(1.11, 1.11)
 texture = ExtResource("4_o06ch")
 flip_h = true
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="BG2" index="2"]
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="BG2"]
 
-[node name="Prlx1Sawah" type="Sprite2D" parent="BG2/ParallaxLayer2" index="0"]
+[node name="Prlx1Sawah" type="Sprite2D" parent="BG2/ParallaxLayer2"]
 position = Vector2(2002, 532)
 texture = ExtResource("3_21ydt")
 flip_h = true
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(2006.5, 622)
-shape = SubResource("RectangleShape2D_3yfjv")
+shape = SubResource("RectangleShape2D_55vd8")
 
-[node name="Go to World" type="Area2D" parent="." index="2"]
+[node name="Go to World" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Go to World" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Go to World"]
 position = Vector2(-88, 281)
-shape = SubResource("RectangleShape2D_80hof")
+shape = SubResource("RectangleShape2D_3161r")
 
-[node name="Go to World2" type="Area2D" parent="." index="3"]
+[node name="Go to World2" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Go to World2" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Go to World2"]
 position = Vector2(4117, 281)
-shape = SubResource("RectangleShape2D_80hof")
+shape = SubResource("RectangleShape2D_3161r")
 
-[node name="player" parent="." index="4" instance=ExtResource("4_37cct")]
+[node name="player" parent="." instance=ExtResource("4_37cct")]
 position = Vector2(30, 498)
 scale = Vector2(0.213, 0.213)
 
-[node name="Camera2D" type="Camera2D" parent="player" index="3"]
+[node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(-37.5587, 0)
 zoom = Vector2(0.9, 0.9)
 limit_left = 0
 limit_right = 4000
 limit_bottom = 732
 
-[node name="collectible_Layer" type="Node2D" parent="." index="5"]
+[node name="collectible_Layer" type="Node2D" parent="."]
 position = Vector2(2274, 456)
 
-[node name="items_collectibles" parent="collectible_Layer" index="0" instance=ExtResource("8_u5uou")]
+[node name="items_collectibles" parent="collectible_Layer" instance=ExtResource("8_u5uou")]
 position = Vector2(-1703, 89)
 item = ExtResource("9_uavqe")
 
+[node name="GUI" parent="." instance=ExtResource("8_2rrum")]
+
 [connection signal="body_entered" from="Go to World" to="." method="_on_go_to_world_body_entered"]
 [connection signal="body_entered" from="Go to World2" to="." method="_on_go_to_world_2_body_entered"]
+[connection signal="Obtain" from="player" to="GUI" method="_on_player_obtain"]
