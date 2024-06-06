@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://drnqyiwnpts7k"]
+[gd_scene load_steps=15 format=3 uid="uid://drnqyiwnpts7k"]
 
 [ext_resource type="Script" path="res://menus/menu.gd" id="1_08rkx"]
 [ext_resource type="Texture2D" uid="uid://dhhdbvu3jtmoe" path="res://asset/MenuButton/continue.png" id="2_b32hq"]
 [ext_resource type="Texture2D" uid="uid://dfq4b8kmu3pv0" path="res://asset/MenuButton/tile000.png" id="2_titvd"]
+[ext_resource type="Texture2D" uid="uid://c0k0qudia0ldo" path="res://asset/MenuButton/continue_pressed.png" id="3_3tn3p"]
 [ext_resource type="Texture2D" uid="uid://bow3j1ixesbik" path="res://asset/MenuButton/tile001.png" id="3_ahgl2"]
 [ext_resource type="Texture2D" uid="uid://cvk5el35fmoe8" path="res://asset/MenuButton/tile002.png" id="4_l8y11"]
 [ext_resource type="Texture2D" uid="uid://b2te3uumgi6f1" path="res://asset/MenuButton/tile003.png" id="5_rhmx4"]
@@ -41,7 +42,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 texture_normal = ExtResource("2_b32hq")
-texture_pressed = ExtResource("3_ahgl2")
+texture_pressed = ExtResource("3_3tn3p")
 
 [node name="NewGameB" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2

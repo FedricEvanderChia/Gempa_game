@@ -7,8 +7,25 @@ var unlockable_num = "UnlockableLevel"
 var anim_num = "AnimatedSprite2d"
 var Color_rect = "ColorRect"
 
+var checklist_pos
+var checklist_preload = preload("res://Minigames/MG_Maze/Maze_menu/checklist.tscn")
+
+var coordinates_checklist_x = [360,485,610,735, 360,485,610,735,  360,485,610,735, 357,483,608,732, 357,483,608,732]
+var coordinates_checklist_y = [120,120,120,120, 220,220,220,220,  320,320,320,320, 425,425,425,425, 524,524,524,524]
+
+	
+#$"../..".dropItem("res://Inventory/items/Dokumen.tres",$".".global_position )
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#mengecek kondisi true/false disetiap node array dari maze 1 sampai maze 20 jika true maka membuat node checklist
+	#checklist_create(coordinates_checklist_x[4],coordinates_checklist_y[4])
+	for n in range(0,19):
+		if global.check_maze_level_condition[n] == true:
+			checklist_create(coordinates_checklist_x[n],coordinates_checklist_y[n])
+		
+	
+		
 	if global.chapter_game == 2 && global.check_unlockmaze_chapter2 == true:
 		get_node("MarginContainer_unlock").queue_free()
 	elif global.chapter_game == 3 && global.check_unlockmaze_chapter3 == true:
@@ -56,7 +73,12 @@ func _ready():
 		
 		#global.check_unlock_level += 1
 	
-
+func checklist_create(pos_x, pos_y):
+	var new_checklist = checklist_preload.instantiate()
+	$checklist_container.add_child(new_checklist)
+	checklist_pos = new_checklist
+	checklist_pos.global_position = Vector2(pos_x,pos_y)
+	checklist_pos.scale = Vector2(0.9,0.75)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass

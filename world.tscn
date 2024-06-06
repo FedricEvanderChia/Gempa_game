@@ -273,7 +273,7 @@ shape = SubResource("RectangleShape2D_aa0ay")
 position = Vector2(2274, 456)
 
 [node name="items_collectibles" parent="collectible_Layer" instance=ExtResource("8_467eh")]
-position = Vector2(1075, 98)
+position = Vector2(1076, 98)
 scale = Vector2(0.3, 0.3)
 item = ExtResource("12_pdetw")
 

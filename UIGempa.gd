@@ -13,8 +13,8 @@ var paused = false
 func _ready():
 	global.Sdialogue.connect(cinema)
 	global.Edialogue.connect(Uncinema)
-	#$scoretext.text = "Score: %d" % global.minigame_score
-	# chapter label properties
+	
+
 
 
 

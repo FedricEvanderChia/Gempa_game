@@ -21,6 +21,11 @@ func _process(delta):
 		self.show()
 		self.modulate = Color(1, 1, 1)
 		self.top_level = true
+	elif global.talker == name+"_shakeupdown":
+		self.show()
+		self.modulate = Color(1, 1, 1)
+		self.top_level = true
+		await create_tween().tween_property(self,"position",FrontRizki,1)
 	elif global.talker == name+"_left":
 		self.show()
 		self.modulate = Color(1, 1, 1)

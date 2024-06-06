@@ -1,0 +1,95 @@
+~ Bridge1
+do StartDialog()
+if global.quest_status != "":
+	if global.quest_status != "Kayu":
+		*Selesaikan terlebih dahulu tugas yang anda terima di Desa*
+		{{currQuest()}}
+		do talking("-")
+		do talking("end")
+		do EndDialog()
+		=> END!
+
+if global.quest_status == "Kayu"
+	do submit("res://Inventory/items/Kayu.tres")
+	if global.quest_count == 0:
+		do talking("Rizki")
+		Rizki: Sepertinya kayu kita cukup, sekarang kita bisa mulai bangun jembatan ini.
+		do reward("Jembatan")
+		set global.quest_status = ""
+		set global.quest_count = null	
+elif global.quest_status == "":
+	do talking("Rizki")
+	Rizki: Jembatan ini sepertinya rusak akibat gempa, kita tidak bisa melanjukan perjalanan sebelum jembatan ini diperbaiki.
+	do talking("Maria")
+	Maria: Mungkin kita perlu mengumpulkan beberapa kayu untuk memperbaiki jembatan ini terlebih dahulu. 
+	do talking("Rizki")
+	Rizki: *Sepertinya kita akan memerlukan 5 kayu*
+	set global.quest_status = "Kayu"
+	set global.quest_count = 5
+	{{currQuest()}}
+	=> Bridge1
+elif global.quest_status == "Kayu" and global.quest_count != 0:
+	set global.quest_status = ""
+	set global.quest_count = null
+do talking("-")
+do talking("end")
+do EndDialog()
+=> END!
+
+~ Bridge2
+do StartDialog()
+do talking("Rizki")
+Rizki: Akhirnya jembatan ini selesai juga, tidak buruk juga untuk amatiran seperti diriku hehe.
+do talking("Maria")
+Maria: Tunggu dulu kamu yakin ini aman? ga bakal roboh lagi jembatan seperti ini?
+do talking("Rizki")
+Rizki: Jangan anggap sepele dong! Hasil karyaku ini sudah kuanggap seperti anakku sendiri. Meskipun aku bukan ahlinya dalam mengolah dan memproses kayu, aku itu begini-begini pernah juara lomba tali-temali Pramuka tahu. 
+do talking("Maria")
+Maria: Bukan ahlinya mengolah kayu!? INI KAYUNYA SAMA SEKALI GA DIOLAH!! 
+Maria: Kalau orang lain itu yaaa, setidaknya di bikin papan dulu, atau tidak seminimal mungkin kayunya dibelah dua terus sisi datarnya dijadikan pijakan.
+Maria: Ini kamu malah langsung pakai kayu gelondongan diikat gitu aja.
+do talking("Rizki")
+Rizki: Tenang boss...selain ikat pakai tali, aku juga lem pakai nasi kok. 
+do talking("Maria")
+Maria: Sudahlah riz, capek aku pakai akal sehat bicara samamu.
+do talking("Rizki")
+Rizki: liat nih ya aku buktikan kekuatan jembatanku samamu. Aku saja bisa lewat.
+set global.go_right = true
+do talking("Maria")
+Maria: Lho Riz, ini kok goyang-goyang ini Riz jembatannya!!
+do talking("Rizki")
+Rizki: Untuk jembatan gantung itu normal kok. Sini deh biar aku bantu.
+do talking("end")
+do EndDialog()
+=> END!
+
+~ Sawah1
+do StartDialog()
+do talking("Rizki")
+Rizki: ...huff...huff berjalan kaki dari desa menuju gunung sangat melelahkan. Apakah kamu ada Air minum Maria?
+do talking("Maria")
+Maria: Masa begitu saja sudah capek, saya saja masih segar-segar saja kok. 
+do talking("Rizki")
+Rizki: Tolong jangan samakan stamina manusia biasa dengan makhluk sepertimu..
+do talking("Maria")
+Maria: Diam, kamu saja yang lemah kayak tauge kekurangan sinar matahari.
+do talking("Rizki")
+Rizki : Hey!! tauge itu kecil-kecil tapi bernutrisi tahu. Minta maaf kepada tauge-tauge di dunia!! Kamu saja yang maniak otot!!
+do talking("Bebek")
+do talking("Maria_hide")
+Maria: HooHooHoo... sepertinya seniormu ini kurang keras dalam melatihmu yaa!! sepulang dari sini akan saya suruh kamu lari keliling desa  10 putaran. Akan saya buat kamu babak BE...BEEEEEEK!!!
+do talking("Rizki")
+Rizki: Bebek??
+do talking("Bebek_anim")
+Bebek: Kwek!!
+do talking("Rizki")
+Maria: JAUHKAN! JAUHKAN! JAUHKAN BEBEK ITU DARI SINI!!!!
+do talking("Rizki")
+Rizki: eeh?... eehhh?? Kamu? takut bebek?
+do talking("Maria")
+Maria: DIAM!! Kamu ga pernah kan pas SD celananya ditarik dan dipatok bebek!! Cepat SINGKIRKAN!!!
+do talking("end")
+do EndDialog()
+=> END!
+
+~ MariaEvent1

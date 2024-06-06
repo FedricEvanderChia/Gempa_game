@@ -24,8 +24,8 @@ func saveGame():
 		"Last_checkpoint_x" = global.Lastpos.x,
 		"Last_checkpoint_y" = global.Lastpos.y,
 		"Check_unlockmaze_chapter2" = global.check_unlockmaze_chapter2,
-		"Check_unlockmaze_chapter3" = global.check_unlockmaze_chapter3
-		
+		"Check_unlockmaze_chapter3" = global.check_unlockmaze_chapter3,
+		"Chapter_game" = global.chaptergame
 	}
 	ResourceSaver.save(inventory, save_file_path)
 	var jstr = JSON.stringify(data)

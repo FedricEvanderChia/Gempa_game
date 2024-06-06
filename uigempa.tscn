@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dtsrtigd5cgnv"]
+[gd_scene load_steps=41 format=3 uid="uid://dtsrtigd5cgnv"]
 
 [ext_resource type="Script" path="res://UIGempa.gd" id="1_ngrhg"]
 [ext_resource type="Texture2D" uid="uid://bcnkef8p4ap3y" path="res://asset/BtnIdle.png" id="2_rerfp"]
@@ -19,7 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://dmefmyby3odr6" path="res://NPC/Pria.tscn" id="15_mojfx"]
 [ext_resource type="PackedScene" uid="uid://dq36f77km2e5s" path="res://NPC/Rani.tscn" id="16_5h8c0"]
 [ext_resource type="PackedScene" uid="uid://wjnkust00dy6" path="res://NPC/perempuan.tscn" id="16_g5mvo"]
+[ext_resource type="PackedScene" path="res://NPC/Kakek.tscn" id="17_eggb6"]
 [ext_resource type="PackedScene" uid="uid://dibfk3he48mbw" path="res://NPC/Laki_laki.tscn" id="17_whml6"]
+[ext_resource type="PackedScene" path="res://NPC/Nenek.tscn" id="18_uh7m4"]
 [ext_resource type="FontFile" uid="uid://pdrka83wc2a3" path="res://asset/dial_button/pixelsix00.ttf" id="19_7kk2g"]
 [ext_resource type="AudioStream" uid="uid://lu44q6qacyis" path="res://asset/sfx/Button sounds.mp3" id="21_2m7o7"]
 [ext_resource type="AudioStream" uid="uid://d1bcx0pny6y18" path="res://asset/sfx/backpack_sounds.mp3" id="22_sorol"]
@@ -208,6 +210,14 @@ randStr = 10.0
 [node name="Rani" parent="." instance=ExtResource("16_5h8c0")]
 visible = false
 position = Vector2(998, 497)
+
+[node name="Kakek" parent="." instance=ExtResource("17_eggb6")]
+visible = false
+position = Vector2(975, 475)
+
+[node name="Nenek" parent="." instance=ExtResource("18_uh7m4")]
+visible = false
+position = Vector2(975, 475)
 
 [node name="Cinematic" type="ColorRect" parent="."]
 offset_top = -180.0

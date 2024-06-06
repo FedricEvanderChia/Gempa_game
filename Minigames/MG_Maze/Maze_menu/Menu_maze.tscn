@@ -620,6 +620,9 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 columns = 4
 
+[node name="checklist_container" type="Node2D" parent="."]
+position = Vector2(-342, -89)
+
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ButtonMaze1" to="." method="_on_button_maze_1_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ButtonMaze2" to="." method="_on_button_maze_2_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ButtonMaze3" to="." method="_on_button_maze_3_pressed"]

@@ -50,7 +50,7 @@ func Ecam():
 func generateItem(ItemA, posX):
 	var new_drop = item_tscn.instantiate()
 	new_drop.item = load(ItemA)
-	new_drop.Obtain.connect($GUI._on_items_collectibles_obtain)
+
 	get_node("collectible_Layer").add_child(new_drop)
 	item_col = new_drop
 	item_col.position = Vector2(posX,64)

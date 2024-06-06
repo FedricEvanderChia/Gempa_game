@@ -12,6 +12,9 @@ var apar = 0
 var cam
 var rotate: int
 
+
+
+
 func _ready():
 	if $"../Camera2D" == null:
 		cam = $Icon/Camera2D
@@ -195,9 +198,17 @@ func invincibility():
 	invincible = false
 
 func complete():
+
 	$"../CanvasLayer/Control/Timer".stop()
 	$"../CanvasLayer/Control/Success".show()
 	$"../CanvasLayer".add_score(150)
+			#	if slots.item.resource_path == 	"res://Inventory/items/Dokumen.tres":
+	var dirpath = get_tree().current_scene.name
+	var dir_idx = int(dirpath.right(2))
+	global.check_maze_level_condition[dir_idx-1] = true
+	
+		
+			
 	await get_tree().create_timer(1).timeout
-	get_tree().change_scene_to_file("res://world.tscn")
+	get_tree().change_scene_to_file("res://Minigames/MG_Maze/Maze_menu/Menu_maze.tscn")
 	$"../CanvasLayer".check()

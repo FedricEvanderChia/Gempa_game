@@ -69,7 +69,7 @@ custom_data_layer_1/name = "TileName"
 custom_data_layer_1/type = 4
 sources/0 = SubResource("TileSetAtlasSource_hedgq")
 
-[node name="mg_maze5" type="Node2D"]
+[node name="mg_maze4" type="Node2D"]
 
 [node name="TileMap1" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_0hx5b")

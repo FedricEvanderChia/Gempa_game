@@ -1,10 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://1yo5olfmic1q"]
+[gd_scene load_steps=15 format=3 uid="uid://1yo5olfmic1q"]
 
 [ext_resource type="Texture2D" uid="uid://c6da523ly6b7t" path="res://asset/Prlx2_Road-Jungle.png" id="1_ie6w7"]
-[ext_resource type="Script" path="res://area/area.gd" id="1_o57k3"]
+[ext_resource type="Script" path="res://area/area_3.gd" id="1_wp81p"]
 [ext_resource type="PackedScene" uid="uid://c71to8edu42an" path="res://player/Player.tscn" id="2_i5sog"]
 [ext_resource type="Texture2D" uid="uid://bbhg0wl8r4hrk" path="res://asset/forest_floor.png" id="3_jlxes"]
+[ext_resource type="PackedScene" uid="uid://dtsrtigd5cgnv" path="res://uigempa.tscn" id="5_glf2a"]
 [ext_resource type="Texture2D" uid="uid://cp8cmr0hdaut8" path="res://asset/cave_entre.png" id="5_skihf"]
+[ext_resource type="PackedScene" uid="uid://buuketybao1pg" path="res://Inventory/items/star.tscn" id="6_ewp2l"]
+[ext_resource type="Script" path="res://area/grass_mystery.gd" id="6_g4j5t"]
+[ext_resource type="Texture2D" uid="uid://bo7rws84qffay" path="res://asset/grass.png" id="6_t142e"]
+[ext_resource type="Texture2D" uid="uid://ceopawoelloo8" path="res://asset/Character/NPC_OldMan.png" id="10_gsf6m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_viakg"]
 size = Vector2(5292, 74.5)
@@ -12,10 +17,14 @@ size = Vector2(5292, 74.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ewrrl"]
 size = Vector2(176.688, 589.25)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7gd5o"]
+size = Vector2(87.5002, 78)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5k6gm"]
+size = Vector2(215.5, 500)
+
 [node name="Area3" type="Node2D"]
-script = ExtResource("1_o57k3")
-Spos = Vector2(75, 505)
-Epos = Vector2(3750, 505)
+script = ExtResource("1_wp81p")
 
 [node name="BG2" type="ParallaxBackground" parent="."]
 
@@ -38,6 +47,8 @@ texture = ExtResource("3_jlxes")
 position = Vector2(3848, 392)
 texture = ExtResource("5_skihf")
 
+[node name="GUI" parent="." instance=ExtResource("5_glf2a")]
+
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
@@ -50,6 +61,141 @@ shape = SubResource("RectangleShape2D_viakg")
 position = Vector2(-88, 281)
 shape = SubResource("RectangleShape2D_ewrrl")
 
+[node name="grass_node_back" type="Node2D" parent="."]
+
+[node name="grass" type="Sprite2D" parent="grass_node_back"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(213, 540)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass2" type="Sprite2D" parent="grass_node_back"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(437, 540)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass3" type="Sprite2D" parent="grass_node_back"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(399, 537)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass4" type="Sprite2D" parent="grass_node_back"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(306, 543)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass5" type="Sprite2D" parent="grass_node_back"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(918.5, 543)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass6" type="Sprite2D" parent="grass_node_back"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(1142.5, 543)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass7" type="Sprite2D" parent="grass_node_back"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(1104.5, 540)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass8" type="Sprite2D" parent="grass_node_back"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(1011.5, 546)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass9" type="Sprite2D" parent="grass_node_back"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(1734.5, 546)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass10" type="Sprite2D" parent="grass_node_back"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(1958.5, 546)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass11" type="Sprite2D" parent="grass_node_back"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(1920.5, 543)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass12" type="Sprite2D" parent="grass_node_back"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(1827.5, 549)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass_mystery" type="Sprite2D" parent="grass_node_back"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(2608.5, 543)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+script = ExtResource("6_g4j5t")
+
+[node name="Area2D" type="Area2D" parent="grass_node_back/grass_mystery"]
+position = Vector2(-16052.3, -3429.47)
+scale = Vector2(6.15385, 6.31579)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass_node_back/grass_mystery/Area2D"]
+position = Vector2(2591, 532)
+shape = SubResource("RectangleShape2D_7gd5o")
+
+[node name="star" parent="grass_node_back/grass_mystery" instance=ExtResource("6_ewp2l")]
+position = Vector2(10.3071, -42.2103)
+scale = Vector2(2.53966, 1.93997)
+
+[node name="grass14" type="Sprite2D" parent="grass_node_back"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(2832.5, 543)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass15" type="Sprite2D" parent="grass_node_back"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(2794.5, 540)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass16" type="Sprite2D" parent="grass_node_back"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(2701.5, 546)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass17" type="Sprite2D" parent="grass_node_back"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(3283.5, 543)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass18" type="Sprite2D" parent="grass_node_back"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(3507.5, 543)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass19" type="Sprite2D" parent="grass_node_back"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(3469.5, 540)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass20" type="Sprite2D" parent="grass_node_back"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(3379, 543)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
 [node name="player" parent="." instance=ExtResource("2_i5sog")]
 position = Vector2(75, 505)
 scale = Vector2(0.213, 0.213)
@@ -61,11 +207,147 @@ limit_left = 0
 limit_right = 4000
 limit_bottom = 732
 
+[node name="collectible_Layer" type="Node2D" parent="."]
+position = Vector2(2274, 456)
+
 [node name="Go to World2" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Go to World2"]
 position = Vector2(3896.34, 288)
 shape = SubResource("RectangleShape2D_ewrrl")
 
+[node name="grass_node_front" type="Node2D" parent="."]
+
+[node name="grass" type="Sprite2D" parent="grass_node_front"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(566.5, 613)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass2" type="Sprite2D" parent="grass_node_front"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(790.5, 613)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass3" type="Sprite2D" parent="grass_node_front"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(752.5, 610)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass4" type="Sprite2D" parent="grass_node_front"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(659.5, 616)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass5" type="Sprite2D" parent="grass_node_front"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(1361.5, 610)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass6" type="Sprite2D" parent="grass_node_front"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(1585.5, 610)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass7" type="Sprite2D" parent="grass_node_front"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(1547.5, 607)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass8" type="Sprite2D" parent="grass_node_front"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(1454.5, 613)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass9" type="Sprite2D" parent="grass_node_front"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(2169.5, 615)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass10" type="Sprite2D" parent="grass_node_front"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(2393.5, 615)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass11" type="Sprite2D" parent="grass_node_front"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(2355.5, 612)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass12" type="Sprite2D" parent="grass_node_front"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(2262.5, 618)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass13" type="Sprite2D" parent="grass_node_front"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(2958.5, 609)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass14" type="Sprite2D" parent="grass_node_front"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(3182.5, 609)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass15" type="Sprite2D" parent="grass_node_front"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(3144.5, 606)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="grass16" type="Sprite2D" parent="grass_node_front"]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(3051.5, 612)
+scale = Vector2(0.1625, 0.158333)
+texture = ExtResource("6_t142e")
+
+[node name="NPC_container" type="Node2D" parent="."]
+
+[node name="Kakek" type="Area2D" parent="NPC_container"]
+position = Vector2(1228, 510)
+scale = Vector2(0.6, 0.6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC_container/Kakek"]
+scale = Vector2(0.6, 0.6)
+shape = SubResource("RectangleShape2D_5k6gm")
+
+[node name="NpcMan" type="Sprite2D" parent="NPC_container/Kakek"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("10_gsf6m")
+
+[node name="Talk" type="Button" parent="NPC_container/Kakek"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0001
+offset_top = -278.333
+offset_right = -25.0001
+offset_bottom = -242.333
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+theme_override_font_sizes/font_size = 20
+text = "talk"
+
 [connection signal="body_entered" from="Go to World" to="." method="_on_go_to_world_body_entered"]
+[connection signal="input_event" from="grass_node_back/grass_mystery/Area2D" to="grass_node_back/grass_mystery" method="_on_area_2d_input_event"]
 [connection signal="body_entered" from="Go to World2" to="." method="_on_go_to_world_2_body_entered"]
+[connection signal="body_entered" from="NPC_container/Kakek" to="." method="_on_kakek_body_entered"]
+[connection signal="body_exited" from="NPC_container/Kakek" to="." method="_on_kakek_body_exited"]
+[connection signal="pressed" from="NPC_container/Kakek/Talk" to="." method="_on_talk_pressed"]
