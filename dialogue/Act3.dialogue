@@ -1,0 +1,124 @@
+~ StartChapter3
+
+~ Kakek
+do StartDialog()
+do talking("Rizki")
+Rizki: Akhirnya kita sampai di hutan
+do talking("Maria")
+Maria: Hutan disini cukup menyeramkan ya, jadi takut...
+do talking("Kakek")
+Kakek: Halo,anak-anak
+do talking("Maria_shakeupdown")
+Maria: Wahhhhhhhhh
+do talking("Rizki")
+Rizki : Tenang Maria, kamu sedang berhadapan dengan seorang manusia bukan setan
+do talking("Maria_hide")
+Maria: Fiuhh...Jangan bikin kaget, kek, kakek
+do talking("Kakek")
+Kakek: Hehe...kalian ke hutan ini ada rencana apa?
+do talking("Rizki")
+Rizki: Kami ke sini sedang mencari ayahku kek
+do talking("Kakek")
+Kakek: Ayah kamu kenapa nak?
+do talking("Rizki")
+Rizki: Ayahku hilang tidak bisa dikontak sejak bencana gempa melanda desa ini kek
+do talking("Kakek")
+Kakek: Weleh-Weleh malangnya nasibmu nak, andai saja kakek masih punya tenaga seperti dulu, kakek bisa membantu kamu nak, tapi sekarang tubuh sudah tidak sekuat dulu
+do talking("Kakek")
+Kakek: Oiya, apakah kamu sudah mencari Ayahmu di sekitaran desa?
+do talking("Rizki")
+Rizki: Sudah kek, kami berdua sudah mencari ke semua area sekitar.
+do talking("Kakek")
+Kakek: Ohh, kalau begitu ada satu area dimana kamu dan temanmu ini belum lihat, yaitu gua yang ada belakang kakek ini
+do talking("Rizki")
+Rizki: Gua?
+do talking("Kakek")
+Kakek: ya benar, gua. Gua ini sudah ada sejak lama bahkan sebelum kakek lahir. tapi...
+do talking("Rizki")
+Rizki: tapi?
+do talking("Kakek")
+Kakek: tapi demi keamanan warga sekitar dipagari dan dikunci agar tidak dapat disalahgunakan. Kamu bisa membuka pagar tersebut dengan kunci. Namun, kunci tersebut...
+do talking("Rizki")
+Rizki: kunci tersebut?
+do talking("Kakek")
+Kakek: hilang bersama dokumen penting yang kakek bawa
+do talking("Rizki")
+Rizki: waduh hilang dimana kek?
+do talking("Kakek")
+Kakek: hilang disekitar area ini nak
+do talking("Rizki")
+Rizki: 
+- Tidak ketemu [if global.quest_status in ["Dokumen"] and global.quest_count != 0]
+	do talking("Rizki")
+	set global.quest_status = ""
+	set global.quest_count = null
+	Rizki: Maaf Kek, saya tidak menemukannya. Nanti saya coba cari lagi ya?
+	do talking("Kakek")
+	Kakek: Oh, ya sudah tidak apa-apa.
+- Oke, aku akan bantu mencari dokumen itu kek
+	do talking("Rizki")
+	Rizki: Kalau boleh tahu dokumennya berwarna apa ya kek?
+	do talking("Kakek")
+	Kakek: Berwarna merah muda
+	do talking("Rizki")
+	Rizki: Oke baik kek
+	set global.Dialogue+=1
+	set global.quest_status = "Dokumen"
+	set global.quest_count = 1
+- Di lain waktu saja kek aku masih ada tugas
+	do talking("Kakek")
+	Kakek: baik, nak
+do talking("end")
+do EndDialog()
+=> END!
+
+
+
+~ Mengasih_dokumen
+do StartDialog()
+if global.quest_status != "":
+	if global.quest_status != "Dokumen":
+		*Selesaikan terlebih dahulu tugas yang anda terima di Desa*
+		{{currQuest()}}
+		do talking("-")
+		do talking("end")
+		do EndDialog()
+		=> END!
+if global.quest_status == "Dokumen"
+	do submit("res://Inventory/items/Dokumen.tres")
+	if global.quest_count == 0:
+		do talking("Rizki")
+		Kakek: Dokumen-nya yang ini bukan kek?
+		do talking("Kakek")
+		Kakek: Wah! kamu ketemu dimana? Terima kasih banyak ya nak. Ini kuncinya boleh dipakai untuk membuka pagar gua tersebut. nanti dikembalikan lagi kalau sudah dipinjam
+		do talking("Rizki")
+		Rizki: Sama-sama kek. nanti akan kami kembalikan
+		do reward("res://Inventory/items/Kunci.tres")
+		set global.chapter_game = 3
+		set global.Dialogue += 1
+		set global.quest_status = ""
+		set global.quest_count = null
+	else:
+		*Kakek itu tadi bilang dokumennya terjatuh di area sekitar sini*
+		*Sebaiknya aku coba mengelilingi daerah sini*
+elif global.quest_status == "":
+	do talking("Kakek")
+	Kakek: Tolong bantu kakek mencari dokumen kakek yang terjatuh di sekitar sini yaa.
+	set global.quest_status = "Dokumen"
+	set global.quest_count = 1
+	- Oke, aku akan bantu mencari dokumen itu kek
+		do talking("Rizki")
+		Rizki: Kalau boleh tahu dokumennya berwarna apa ya kek?
+		do talking("Kakek")
+		Kakek: Berwarna merah muda
+		do talking("Rizki")
+		Rizki: Oke baik kek
+		set global.quest_status = "Dokumen"
+		set global.quest_count = 1
+	- Di lain waktu saja kek aku masih ada tugas
+		do talking("Kakek")
+		Kakek: baik, nak
+do talking("-")
+do talking("end")
+do EndDialog()
+=> END!

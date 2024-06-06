@@ -23,7 +23,6 @@ func _process(delta):
 		await get_tree().create_timer(1).timeout
 		get_tree().change_scene_to_file("res://world.tscn")
 	if goal == 0:
-		global.Dialogue+=1
 		global.Bridge = "Selesai"
 		get_tree().change_scene_to_file("res://area/area_2.tscn")
 		

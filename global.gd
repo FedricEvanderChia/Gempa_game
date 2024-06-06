@@ -7,6 +7,7 @@ var needs = []
 var Lastpos : Vector2
 var lastgame : String= ""
 var Bridge = "Rusak"
+var check_grass= false
 
 var life = 3
 var minigame_score = 0
@@ -32,6 +33,7 @@ signal Edialogue
 signal Receive(Path)
 signal Give(Path)
 signal Build
+signal flee(chase)
 
 func talking(name):
 	talker = name

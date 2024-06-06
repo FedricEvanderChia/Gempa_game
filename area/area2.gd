@@ -4,7 +4,12 @@ extends Node2D
 @export var Epos = Vector2(4000,498)
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if global.Dialogue >= 8:
+		$NPC_Layer/Duck.queue_free()
+	$player.target = $Sensor_end.position.x
+	print($player.target)
 	global.Build.connect(Fixing)
+	global.flee.connect(Kabur)
 	if global.Spos == true:
 		$player.position = Spos
 	else:
@@ -38,6 +43,21 @@ func Fixing():
 		$BG2/ParallaxLayer2/Prlx1Sawah.frame = 0
 		$Bridge.hide()
 		$BridgeFix.hide()
+func Kabur(kejar):
+	if kejar:
+		create_tween().tween_property($NPC_Layer/Duck/AnimatedSprite2D,"position", Vector2(-1500,0),3)
+		await get_tree().create_timer(3).timeout
+		$NPC_Layer/Duck/AnimatedSprite2D.flip_h = true
+		create_tween().tween_property($NPC_Layer/Duck/AnimatedSprite2D,"position", Vector2(0,0),3)
+		await get_tree().create_timer(3).timeout
+		$NPC_Layer/Duck/AnimatedSprite2D.flip_h = false
+	else:
+		create_tween().tween_property($NPC_Layer/Duck/AnimatedSprite2D,"position", Vector2(-1000,0),3)
+		await get_tree().create_timer(3).timeout
+		create_tween().tween_property($NPC_Layer/Duck/AnimatedSprite2D,"modulate", Color(1,1,1,0),1)
+		await get_tree().create_timer(1).timeout
+		$NPC_Layer/Duck.queue_free()
+	
 
 
 func _on_go_to_world_body_entered(body):
@@ -59,10 +79,8 @@ func _on_bridge_fix_pressed():
 
 
 func _on_duck_body_entered(body):
-	if body.name == "player":
+	if body.name == "player" and global.Dialogue == 6:
 		DialogueManager.show_dialogue_balloon(load("res://dialogue/Act2.dialogue"), "Sawah1")
-		global.Dialogue +=1
-	
 
 
 func _on_bridge_sensor_body_entered(body):
@@ -71,9 +89,14 @@ func _on_bridge_sensor_body_entered(body):
 		DialogueManager.show_dialogue_balloon(load("res://dialogue/Act2.dialogue"), "Bridge1")
 	elif body.name == "player" and global.Dialogue == 5:
 		DialogueManager.show_dialogue_balloon(load("res://dialogue/Act2.dialogue"), "Bridge2")
-		global.Dialogue +=1
 	else:
 		$Bridge_sensor.queue_free()
 		
 func _on_sensor_end_body_entered(body):
 	global.go_right = false
+	if global.quest_status == "Beras":
+		global.quest_status = ""
+		
+func _on_dekat_body_entered(body):
+	if body.name == "player" and global.Dialogue == 7:
+		DialogueManager.show_dialogue_balloon(load("res://dialogue/Act2.dialogue"), "Sawah2")

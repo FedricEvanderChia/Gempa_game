@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://byk5hbnmogo5c"]
+[gd_scene load_steps=22 format=3 uid="uid://byk5hbnmogo5c"]
 
 [ext_resource type="Script" path="res://area/area2.gd" id="2_iwe2q"]
 [ext_resource type="Texture2D" uid="uid://b6o6ml4pkal8f" path="res://asset/Prlx1_Sawah.png" id="3_21ydt"]
@@ -63,6 +63,12 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dewi"]
+size = Vector2(28, 228)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f4orq"]
+radius = 114.3
 
 [node name="Area2" type="Node2D"]
 script = ExtResource("2_iwe2q")
@@ -155,10 +161,9 @@ position = Vector2(457.844, 449.313)
 shape = SubResource("RectangleShape2D_nrpgl")
 
 [node name="Sensor_end" type="Area2D" parent="."]
-position = Vector2(386, 0)
+position = Vector2(1200, 450)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sensor_end"]
-position = Vector2(813, 454)
 shape = SubResource("RectangleShape2D_e21pk")
 
 [node name="NPC_Layer" type="Node2D" parent="."]
@@ -185,6 +190,19 @@ sprite_frames = SubResource("SpriteFrames_3wttp")
 autoplay = "default"
 frame_progress = 0.155403
 
+[node name="StaticBody2D" type="StaticBody2D" parent="NPC_Layer/Duck"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC_Layer/Duck/StaticBody2D"]
+position = Vector2(-71, -49)
+shape = SubResource("RectangleShape2D_3dewi")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="dekat" type="Area2D" parent="NPC_Layer/Duck"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC_Layer/Duck/dekat"]
+shape = SubResource("CircleShape2D_f4orq")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
 [connection signal="body_entered" from="Go to World" to="." method="_on_go_to_world_body_entered"]
 [connection signal="body_entered" from="Go to World2" to="." method="_on_go_to_world_2_body_entered"]
 [connection signal="Obtain" from="player" to="GUI" method="_on_player_obtain"]
@@ -193,3 +211,4 @@ frame_progress = 0.155403
 [connection signal="body_entered" from="Sensor_end" to="." method="_on_sensor_end_body_entered"]
 [connection signal="body_entered" from="NPC_Layer/Duck" to="." method="_on_duck_body_entered"]
 [connection signal="pressed" from="NPC_Layer/Duck/Talk" to="NPC_Layer/Duck" method="_on_talk_pressed"]
+[connection signal="body_entered" from="NPC_Layer/Duck/dekat" to="." method="_on_dekat_body_entered"]
