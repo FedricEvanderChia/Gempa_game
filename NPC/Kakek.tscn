@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8ve1ihhw4d1r"]
+
+[ext_resource type="Script" path="res://player/DialogSprite.gd" id="1_g8ruu"]
+[ext_resource type="Texture2D" uid="uid://ceopawoelloo8" path="res://asset/Character/NPC_OldMan.png" id="2_wek8p"]
+
+[node name="Kakek" type="Node2D"]
+script = ExtResource("1_g8ruu")
+
+[node name="NpcOldMan" type="Sprite2D" parent="."]
+texture = ExtResource("2_wek8p")

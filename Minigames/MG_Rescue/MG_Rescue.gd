@@ -62,6 +62,7 @@ func complete():
 	else:
 		if global.Recuee <= 1:
 			global.Recuee = global.difficulty * 3
+			global.lastgame = "Rescue"
 			get_tree().change_scene_to_file("res://world.tscn")
 		else:
 			global.Recuee -= 1
@@ -89,9 +90,3 @@ func _on_okay_pressed():
 
 func _on_back_pressed():
 	get_tree().change_scene_to_file("res://world.tscn")
-
-func _on_tree_exited():
-	if !global.workMode and $CanvasLayer/Control.sec > 0:
-		global.lastgame = "Rescue"
-	else:
-		global.lastgame = ""

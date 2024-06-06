@@ -16,10 +16,14 @@ func _ready():
 	creat_plat.position = Vector2(randf_range(349,771), 594 )
 	creat_plat.scale.x = 1 - (8-goal)*0.125
 	get_node("platform_target_container").add_child(creat_plat)
-	$Actionable_platform/AnimationPlayer.speed_scale += float(global.difficulty*0.2)
+	$Actionable_platform/AnimationPlayer.speed_scale = 1
 
 func _process(delta):
+	if global.life==0:
+		await get_tree().create_timer(1).timeout
+		get_tree().change_scene_to_file("res://world.tscn")
 	if goal == 0:
+		global.Dialogue+=1
 		global.Bridge = "Selesai"
 		get_tree().change_scene_to_file("res://area/area_2.tscn")
 		
@@ -76,5 +80,4 @@ func _on_back_pressed():
 	sounds_b.play()
 	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://world.tscn")
-
-
+	

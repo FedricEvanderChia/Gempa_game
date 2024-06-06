@@ -113,6 +113,7 @@ func complete():
 			$CanvasLayer/Control/Success.show()
 			await get_tree().create_timer(1).timeout
 			global.difficulty = reset
+			global.lastgame = "Phone"
 			get_tree().change_scene_to_file("res://world.tscn")
 		else:
 			goal -= 1
@@ -174,8 +175,4 @@ func _on_okay_pressed():
 func _on_back_pressed():
 	get_tree().change_scene_to_file("res://world.tscn")
 
-func _on_tree_exited():
-	if !global.workMode and $CanvasLayer/Control.sec > 0:
-		global.lastgame = "Phone"
-	else:
-		global.lastgame = ""
+

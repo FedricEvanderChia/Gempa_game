@@ -1,4 +1,5 @@
 extends Node2D
+var rng = RandomNumberGenerator.new()
 
 var Dialogue = 0
 var goal = false
@@ -14,13 +15,12 @@ var level = 1
 var talker = ""
 var quest_status : String = ""
 var quest_count : int
-
+var chapter_game= 1
 var Recuee = difficulty * 3
-
+var unlockmaze= false
 var check_unlockmaze_chapter2= false
 var check_unlockmaze_chapter3= false 
-
-var chapter_game= 1
+var tip = 1
 
 var invt = ResourceLoader.load("res://Inventory/player_inv.tres")
 var gold = 0
@@ -31,25 +31,38 @@ signal Sdialogue
 signal Edialogue
 signal Receive(Path)
 signal Give(Path)
+signal Build
 
 func talking(name):
 	talker = name
 func reward(item):
 	if item == "Jembatan":
 		Bridge = "Perbaikan"
+		Build.emit()
 	else:
 		Receive.emit(item)
-		
 func submit(item):
 	Give.emit(item)
-
+func tips():
+	tip = rng.randi_range(1,5)
+	DialogueManager.show_dialogue_balloon(load("res://dialogue/Quest.dialogue"), "Trivia"+ String.num(tip))	
+func currQuest():
+	if quest_status in ["Sembako"]:
+		return "Bagikan "+String.num(quest_count)+" "+quest_status+" lagi."
+	elif quest_status in ["Dirikan"]:
+		return quest_status+" "+String.num(quest_count)+" Tenda lagi."
+	elif quest_status in ["Telepon"]:
+		return quest_status+" "+String.num(quest_count)+" Nomor Darurat lagi."
+	elif quest_status in ["Selamatkan"]:
+		return quest_status+" "+String.num(quest_count)+" Orang yang tertimbun reruntuhan lagi."
+	else:
+		return "Kumpulkan "+String.num(quest_count)+" "+quest_status+" lagi"
 func StartDialog():
 	Sdialogue.emit()
 func EndDialog():
 	Edialogue.emit()
 	
 func nextMG():
-	var rng = RandomNumberGenerator.new()
 	level +=1
 	print(level," ",difficulty)
 	if (level-1)%4 == 0:

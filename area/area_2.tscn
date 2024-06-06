@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://byk5hbnmogo5c"]
+[gd_scene load_steps=20 format=3 uid="uid://byk5hbnmogo5c"]
 
 [ext_resource type="Script" path="res://area/area2.gd" id="2_iwe2q"]
 [ext_resource type="Texture2D" uid="uid://b6o6ml4pkal8f" path="res://asset/Prlx1_Sawah.png" id="3_21ydt"]
@@ -33,8 +33,14 @@ size = Vector2(89, 405)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3161r"]
 size = Vector2(135.375, 589.25)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nrpgl"]
+size = Vector2(323.688, 214.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e21pk"]
+size = Vector2(114.844, 214.625)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_caeg3"]
-radius = 1024.0
+radius = 700.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l0dmu"]
 atlas = ExtResource("9_qf3ri")
@@ -142,10 +148,23 @@ offset_bottom = 337.0
 theme_override_font_sizes/font_size = 25
 text = "Perbaiki Jembatan"
 
+[node name="Bridge_sensor" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge_sensor"]
+position = Vector2(457.844, 449.313)
+shape = SubResource("RectangleShape2D_nrpgl")
+
+[node name="Sensor_end" type="Area2D" parent="."]
+position = Vector2(386, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sensor_end"]
+position = Vector2(813, 454)
+shape = SubResource("RectangleShape2D_e21pk")
+
 [node name="NPC_Layer" type="Node2D" parent="."]
 
 [node name="Duck" type="Area2D" parent="NPC_Layer"]
-position = Vector2(3500, 450)
+position = Vector2(3500, 506)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC_Layer/Duck"]
 shape = SubResource("CircleShape2D_caeg3")
@@ -158,17 +177,19 @@ offset_right = -38.0
 offset_bottom = -350.0
 scale = Vector2(3, 3)
 theme_override_font_sizes/font_size = 30
-text = "talk"
+text = "Usir "
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NPC_Layer/Duck"]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_3wttp")
 autoplay = "default"
-frame_progress = 0.224404
+frame_progress = 0.155403
 
 [connection signal="body_entered" from="Go to World" to="." method="_on_go_to_world_body_entered"]
 [connection signal="body_entered" from="Go to World2" to="." method="_on_go_to_world_2_body_entered"]
 [connection signal="Obtain" from="player" to="GUI" method="_on_player_obtain"]
 [connection signal="pressed" from="BridgeFix" to="." method="_on_bridge_fix_pressed"]
+[connection signal="body_entered" from="Bridge_sensor" to="." method="_on_bridge_sensor_body_entered"]
+[connection signal="body_entered" from="Sensor_end" to="." method="_on_sensor_end_body_entered"]
 [connection signal="body_entered" from="NPC_Layer/Duck" to="." method="_on_duck_body_entered"]
 [connection signal="pressed" from="NPC_Layer/Duck/Talk" to="NPC_Layer/Duck" method="_on_talk_pressed"]

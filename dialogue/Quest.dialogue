@@ -3,20 +3,27 @@ do StartDialog()
 do talking("Rani")
 Rani: Halo Riz, apa kabar?
 do talking("Rizki")
-Rizki: 
+- Batalkan tugas [if global.quest_status in ["Sembako","P3K"] and global.quest_count != 0]
+	do talking("Rizki")
+	set global.quest_status = ""
+	set global.quest_count = null
+	Rizki: Maaf Ran, aku ada urusan lain yang perlu dikerjakan.
+	do talking("Rani")
+	Rani: Oh, ya sudah tidak apa-apa.
 - Volunteer => Sembako
-- Persedian terbatas => Air
-- Tips => Trivia1
+- Persedian terbatas => P3K
+- Tips
+	do tips()
 - Ga jadi
-	do talking("end")
-	do EndDialog()
+do talking("end")
+do EndDialog()
 => END!
 
 ~ Sembako
 if global.quest_status == "Sembako" and global.quest_count == 0:
 	do talking("Rani")
 	Rani: Waah terima kasih yaah, ini untuk mu.
-	do reward("res://Inventory/items/Air.tres")
+	do reward("res://Inventory/items/Kayu.tres")
 	set global.quest_status = ""
 	set global.quest_count = null
 elif global.quest_status == "":
@@ -42,14 +49,19 @@ do talking("end")
 do EndDialog()
 => END!
 
-~ Air
-do submit("res://Inventory/items/Air.tres")
-if global.quest_status == "Air" and global.quest_count == 0:
-	do talking("Rani")
-	Rani: Terima kasih riz, ini akan membantu banyak orang.
-	do reward("res://Inventory/items/Kayu.tres")
-	set global.quest_status = ""
-	set global.quest_count = null
+~ P3K
+if global.quest_status == "P3K" 
+	do submit("res://Inventory/items/P3K.tres")
+	if global.quest_count == 0:
+		do talking("Rani")
+		Rani: Terima kasih riz, ini akan membantu banyak orang.
+		do reward("res://Inventory/items/Kayu.tres")
+		do reward("res://Inventory/items/Kayu.tres")
+		set global.quest_status = ""
+		set global.quest_count = null
+	else:
+		do talking("Rani")
+		Rani: Kita sedang membutuhkan 5 kotak P3K. tolong dikumpulkan ya?.
 elif global.quest_status == "":
 	do talking("Rani")
 	Rani: Riz kita lagi kekurangan persediaan nih, bisa bantu carikan tidak?
@@ -57,15 +69,12 @@ elif global.quest_status == "":
 	Rizki: 
 	- Boleh, butuh apa?
 		do talking("Rani")
-		set global.quest_status = "Air"
+		set global.quest_status = "P3K"
 		set global.quest_count = 5
-		Rani: Kita sedang membutuhkan 5 botol air mineral. tolong dikumpulkan ya?.
+		=> P3K
 	- Maaf, aku sedang ada urusan lain
 		do talking("Rani")
 		Rani: Oke kalau ada waktu tolong bantu ya.
-elif global.quest_status == "Air":
-	do talking("Rani")
-	Rani: ini masih belum cukup Ris. Tolong kumpulkan 5 air mineral.
 else:
 	=> OtherQuest
 do talking("-")
@@ -79,26 +88,34 @@ do talking("Rizki")
 do talking("Pria")
 Pemuda: Permisi mas, saya boleh minta tolong tidak?
 do talking("Rizki")
-Rizki: 
+- Batalkan tugas [if global.quest_status == "Tenda" and global.quest_count != 0]
+	do talking("Rizki")
+	set global.quest_status = ""
+	set global.quest_count = null
+	Rizki: Maaf Mas, aku ada urusan lain yang perlu dikerjakan.
+	do talking("Peia")
+	Pemuda: Oh, ya sudah tidak apa-apa.
 - Tenda sobek => Tenda
 - Maaf mas, saya sedang ada urusan lain
 	do talking("Pria")
-	Pemuda: Oh baiklah, kalau begitu.
-	(´･ω･`)
-	do talking("end")
-	do EndDialog()
+	Pemuda: Oh baiklah, kalau begitu.(´･ω･`)
+do talking("end")
+do EndDialog()
 => END!
 
 ~ Tenda
-do submit("res://Inventory/items/Tenda.tres")
-if global.quest_status == "Tenda" and global.quest_count == 0:
-	do talking("Pria")
-	Pemuda: Waah terima kasih banyak mas!! akhirnya malam ini keluarga saya punya atap untuk tidur!
-	＼（Ｔ∇Ｔ ）／
-	Pemuda: Ini mungkin tidak seberepa, tapi mohon diterima ya mas.
-	do reward("res://Inventory/items/Senter.tres")
-	set global.quest_status = ""
-	set global.quest_count = null
+if global.quest_status == "Tenda"
+	do submit("res://Inventory/items/Tenda.tres")
+	if global.quest_count == 0:
+		do talking("Pria")
+		Pemuda: Waah terima kasih banyak mas!! akhirnya malam ini keluarga saya punya atap untuk tidur! ＼（Ｔ∇Ｔ ）／
+		Pemuda: Ini mungkin tidak seberepa, tapi mohon diterima ya mas.
+		do reward("res://Inventory/items/Senter.tres")
+		set global.quest_status = ""
+		set global.quest_count = null
+	else:
+		do talking("Pria")
+		Pemuda: Tolong bantu carikan 1 tenda ya mas.
 elif global.quest_status == "":
 	do talking("Pria")
 	Pemuda: Karena gempa ini, rumah keluarga saya hancur, jadi saat ini kami tinggal di tenda pengungsian. Akan tetapi karena ulah adik saya, ada bagian tenda yang jadinya sobek.
@@ -110,14 +127,10 @@ elif global.quest_status == "":
 		do talking("Pria")
 		set global.quest_status = "Tenda"
 		set global.quest_count = 1
-		Pemuda: Tolong bantu carikan 1 tenda ya mas.
+		=> Tenda
 	- Wah, maaf mas saat ini kita memang sedang kekurangan tenda.
 		do talking("Pria")
-		Pemuda: Oh, baiklah mas. Kalau begitu terpaksa malam ini keluarga saya tidur kehujanan.
-		（◞‸◟ ）  
-elif global.quest_status == "Tenda":
-	do talking("Pria")
-	Pemuda: Tolong bantu carikan 1 tenda ya mas.
+		Pemuda: Oh, baiklah mas. Kalau begitu terpaksa malam ini keluarga saya tidur kehujanan. （◞‸◟ ）  
 else:
 	=> OtherQuest
 do talking("-")
@@ -131,23 +144,33 @@ do talking("Rizki")
 do talking("Wanita")
 Gadis: Selamat siang, ada yang bisa saya bantu?
 do talking("Rizki")
-Rizki: 
+- Batalkan tugas [if global.quest_status == "Senter" and global.quest_count != 0]
+	do talking("Rizki")
+	set global.quest_status = ""
+	set global.quest_count = null
+	Rizki: Maaf, tapi saya tidak bisa menemukan senter-nya.
+	do talking("Wanita")
+	Gadis: Oh, ya sudah tidak apa-apa. maaf yah pak sudah ngerepotin.
 - Gelapnya malam => Senter
 - Oh, tidak apa-apa
 	do talking("Wanita")
 	Gadis: Okay
-	do talking("end")
-	do EndDialog()
+do talking("end")
+do EndDialog()
 => END!
 
 ~ Senter
-do submit("res://Inventory/items/Senter.tres")
-if global.quest_status == "Senter" and global.quest_count == 0:
-	do talking("Wanita")
-	Gadis: Terima kasih banyak ya pak. Ini sebagai tanda terima kasih.
-	do reward("res://Inventory/items/Sekop.tres")
-	set global.quest_status = ""
-	set global.quest_count = null
+if global.quest_status == "Senter" 
+	do submit("res://Inventory/items/Senter.tres")
+	if global.quest_count == 0:
+		do talking("Wanita")
+		Gadis: Terima kasih banyak ya pak. Ini sebagai tanda terima kasih.
+		do reward("res://Inventory/items/Sekop.tres")
+		set global.quest_status = ""
+		set global.quest_count = null
+	else:
+		do talking("Wanita")
+		Gadis: Tolong bantu carikan 3 senter untuk keluarga saya ya mas.
 elif global.quest_status == "":
 	do talking("Wanita")
 	Gadis: Karena gempa ini, saluran listrik ke desa masih terputus. Kabarnya beberapa kabel dan tiang listrik tumbang akbibat tertimpa pohon dan reruntuhan.
@@ -158,14 +181,11 @@ elif global.quest_status == "":
 		do talking("Wanita")
 		set global.quest_status = "Senter"
 		set global.quest_count = 3
-		Gadis: Itu akan sangat membantu, teroma kasih banyak ya pak. Tolong carikan 3 untuk keluarga saya.
+		=> Senter
 	- Tau ah, Gelap
 		do talking("Wanita")
 		Gadis: Kelingking kakiku sakit karena menendang kaki meja terus.
-elif global.quest_status == "Senter":
-	do talking("Wanita")
-	Gadis: Tolong bantu carikan 3 senter ya mas.
-else:G
+else:
 	=> OtherQuest
 do talking("-")
 do talking("end")
@@ -179,7 +199,7 @@ Rizki: Halo, dek. Kamu lagi ngapain?
 do talking("Perempuan")
 Anak Perempuan: Ini lagi masak buat ayak, hari ini aku masak tahu bulat kesukaan ayah
 do talking("Rizki")
-*Terlihat, anak itu sedang mengepalkan bola plastisin untuk *
+*Terlihat, anak itu sedang mengepalkan bola plastisin untuk teman-nya*
 do talking("Laki_laki_scoot")
 Anak SD: Ptoey... Tahu bulat ini rasanya kayak lilin.
  do talking("Perempuan")
@@ -225,8 +245,12 @@ do EndDialog()
 ~ Trivia3
 do StartDialog()
 do talking("Rani")
-Rani: Kita bisa menggunakan aplikasi "Google Person Finder" untuk melaporkan orang hilang dan bertukar informasi dengan pengguna lain jika mereka menemukan sesuatu. Aplikasi seperti ini sangat bergantung pada informasi yang diberikan pengguna lain. Tanpa informasi yang dibagikan, sulit menemukan orang yang hilang melalui aplikasi ini. 
-Rani: Atau bisa juga pakai "Facebook Crisis Response". Ini adalah fitur Facebook yang berfungsi menghubungkan korban bencana dan komunitas.
+Rani: Kamu bisa melakukan 5 kegiatan untuk membantu Desa ini.
+Rani: Kamu bisa Membagikan Sembako untuk mendapatkan Air atau Beras.
+Rani: Menelepon nomor darurat menghadiahkanmu kotak P3K
+Rani: Membantu korban membangun tenda akan memberikanmu tenda baru
+Rani: Kamu juga bisa mendapatkan material kayu saat Menolong orang yang terperangkap dibawah reruntuhan
+Rani: Membantu korban yang terperangkap di gedung(Maze) akan menghadiahkanmu Senter. 
 do talking("-")
 do talking("end")
 do EndDialog()
@@ -235,8 +259,7 @@ do EndDialog()
 ~ Trivia4
 do StartDialog()
 do talking("Rani")
-Rani: Kita bisa menggunakan aplikasi "Google Person Finder" untuk melaporkan orang hilang dan bertukar informasi dengan pengguna lain jika mereka menemukan sesuatu. Aplikasi seperti ini sangat bergantung pada informasi yang diberikan pengguna lain. Tanpa informasi yang dibagikan, sulit menemukan orang yang hilang melalui aplikasi ini. 
-Rani: Atau bisa juga pakai "Facebook Crisis Response". Ini adalah fitur Facebook yang berfungsi menghubungkan korban bencana dan komunitas.
+Rani: Kamu bisa datang kepadaku jika membutuhkan Kayu, tetapi tentunya tidak gratis. Kamu perlu melakukan sesuatu untukku terlebih dahulu.
 do talking("-")
 do talking("end")
 do EndDialog()
@@ -245,8 +268,7 @@ do EndDialog()
 ~ Trivia5
 do StartDialog()
 do talking("Rani")
-Rani: Kita bisa menggunakan aplikasi "Google Person Finder" untuk melaporkan orang hilang dan bertukar informasi dengan pengguna lain jika mereka menemukan sesuatu. Aplikasi seperti ini sangat bergantung pada informasi yang diberikan pengguna lain. Tanpa informasi yang dibagikan, sulit menemukan orang yang hilang melalui aplikasi ini. 
-Rani: Atau bisa juga pakai "Facebook Crisis Response". Ini adalah fitur Facebook yang berfungsi menghubungkan korban bencana dan komunitas.
+Rani: Untuk mengakses level maze yang lebih sulit, kamu perlu menyelesaikan Chapter cerita terlebih dahulu. 
 do talking("-")
 do talking("end")
 do EndDialog()
@@ -255,6 +277,7 @@ do EndDialog()
 ~ OtherQuest
 do talking("-")
 *Saat ini kamu sedang mengerjakan hal lain*
+{{currQuest()}}
 do talking("end")
 do EndDialog()
 => END!

@@ -17,12 +17,14 @@ func _ready():
 	creat_plat.scale.x = 1 - (4-goal)*0.25
 	get_node("platform_target_container").add_child(creat_plat)
 	$Actionable_platform/AnimationPlayer.speed_scale += float(global.difficulty*0.2)
-	if global.life<=0:
-		global.life = 3
-	
+
 func _process(delta):
 	if goal == 0:
-		get_tree().change_scene_to_file("res://world.tscn")
+		if global.workMode:
+			global.nextMG()
+		else:	
+			global.lastgame = "Tenda"
+			get_tree().change_scene_to_file("res://world.tscn")
 	
 func _on_area_2d_area_entered(area):
 	is_collided = true
@@ -81,9 +83,3 @@ func _on_back_pressed():
 	sounds_b.play()
 	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://world.tscn")
-
-func _on_tree_exited():
-	if !global.workMode and $CanvasLayer/Control.sec > 0:
-		global.lastgame = "Tenda"
-	else:
-		global.lastgame = ""

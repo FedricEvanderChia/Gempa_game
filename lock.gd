@@ -1,10 +1,8 @@
 extends Node2D
-var locked = true
 
 func _process(delta):
-	if global.Dialogue == 5 and locked:
+	if global.Dialogue == 5 and global.unlockmaze:
 		unlock()
-		locked = !locked
 func unlock():
 	self.show()
 	$AnimatedSprite2D.play("unlock")

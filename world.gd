@@ -50,7 +50,6 @@ func Ecam():
 func generateItem(ItemA, posX):
 	var new_drop = item_tscn.instantiate()
 	new_drop.item = load(ItemA)
-	new_drop.Obtain.connect($GUI._on_items_collectibles_obtain)
 	get_node("collectible_Layer").add_child(new_drop)
 	item_col = new_drop
 	item_col.position = Vector2(posX,64)
@@ -86,12 +85,12 @@ func _on_go_to_sawah_body_entered(body):
 func _on_rescue_body_entered(body):
 	if body.name == "player":
 		get_node("Rescue/VBoxContainer/Rescue").show()
-		#if global.Dialogue > 3:
-		get_node("Rescue/VBoxContainer/MG_Exit").show()
+		if global.Dialogue > 4:
+			get_node("Rescue/VBoxContainer/MG_Exit").show()
 func _on_rescue_body_exited(body):
 	if body.name == "player":
 		get_node("Rescue/VBoxContainer/Rescue").hide()
-		if global.Dialogue > 3:
+		if global.Dialogue > 4:
 			get_node("Rescue/VBoxContainer/MG_Exit").hide()
 
 func _on_home_1_body_entered(body):

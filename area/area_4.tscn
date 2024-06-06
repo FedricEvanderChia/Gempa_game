@@ -1,12 +1,12 @@
 [gd_scene load_steps=12 format=3 uid="uid://bvlysyvgdt6g1"]
 
 [ext_resource type="Script" path="res://area/area_4.gd" id="1_dm2ug"]
-[ext_resource type="Texture2D" uid="uid://b7oni7aexhatq" path="res://asset/Cave_BG.png" id="1_ve024"]
+[ext_resource type="Texture2D" uid="uid://b7oni7aexhatq" path="res://asset/cave_bg.png" id="1_ve024"]
 [ext_resource type="Texture2D" uid="uid://cbvu8n4cx1pl" path="res://asset/cave_path.png" id="2_kmql5"]
 [ext_resource type="PackedScene" uid="uid://c71to8edu42an" path="res://player/Player.tscn" id="3_sc5bi"]
 [ext_resource type="PackedScene" uid="uid://1s0q53ouuvjp" path="res://Inventory/items/items_collectibles.tscn" id="4_h4esy"]
-[ext_resource type="Texture2D" uid="uid://degqj4xkob0wu" path="res://asset/Cave_Front.png" id="4_j3d33"]
-[ext_resource type="Resource" path="res://Inventory/items/Kayu.tres" id="5_nmwd4"]
+[ext_resource type="Texture2D" uid="uid://cwfuety7jxeio" path="res://asset/CaveFront.png" id="4_j3d33"]
+[ext_resource type="Resource" uid="uid://b20t57vnkmufq" path="res://Inventory/items/Kayu.tres" id="5_nmwd4"]
 [ext_resource type="PackedScene" uid="uid://dtsrtigd5cgnv" path="res://uigempa.tscn" id="6_hx0ks"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iop4l"]

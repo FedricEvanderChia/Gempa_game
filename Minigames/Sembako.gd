@@ -64,6 +64,7 @@ func complete():
 	if global.workMode:
 		global.nextMG()
 	else:
+		global.lastgame = "Sembako"
 		get_tree().change_scene_to_file("res://world.tscn")
 
 
@@ -80,10 +81,3 @@ func pause():
 
 func _on_okay_pressed():
 	pause()
-
-func _on_tree_exited():
-	if !global.workMode and $CanvasLayer/Control.sec > 0:
-		global.lastgame = "Sembako"
-	else:
-		global.lastgame = ""
-		
