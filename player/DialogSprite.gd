@@ -6,14 +6,23 @@ class_name DialogSprite
 
 var rng = RandomNumberGenerator.new()
 var shake_str: float = 0.0
-var FrontRizki = Vector2(375,475)
-var BackRizki = Vector2(100,475)
+var FrontRizki = Vector2(375,375)
+var BackRizki = Vector2(100,375)
 var TalkerPos = Vector2(975,475)
 var FrontTalker = Vector2(870,475)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	if name in ["Rizki","Maria"]:
+		FrontRizki = Vector2(375,375)
+		BackRizki = Vector2(100,375)
+		TalkerPos = Vector2(975,375)
+		FrontTalker = Vector2(870,375)
+	else :
+		FrontRizki = Vector2(375,475)
+		BackRizki = Vector2(100,475)
+		TalkerPos = Vector2(975,475)
+		FrontTalker = Vector2(870,475)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

@@ -28,7 +28,8 @@ func _on_timer_timeout():
 	if sec==0:
 		if min == 0:
 			$times.modulate = Color(255,0,0)
-			global.life-=1
+			if global.workMode: global.life -=1
+			else: global.life = 0
 			await get_tree().create_timer(1).timeout
 			if global.life==0:
 				get_tree().change_scene_to_file("res://world.tscn")

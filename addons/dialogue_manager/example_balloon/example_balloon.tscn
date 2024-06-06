@@ -149,7 +149,7 @@ text = "Response example"
 
 [node name="TalkingSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_0wcxx")
-volume_db = -10.0
+volume_db = -15.929
 pitch_scale = 1.32
 mix_target = 2
 

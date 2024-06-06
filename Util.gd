@@ -21,6 +21,7 @@ func saveGame():
 		"minigame_score" = global.minigame_score,
 		"Quest" = global.quest_status,
 		"Progress" = global.quest_count,
+		"Bridge" = global.Bridge,
 		"Last_checkpoint_x" = global.Lastpos.x,
 		"Last_checkpoint_y" = global.Lastpos.y,
 		"Check_unlockmaze_chapter2" = global.check_unlockmaze_chapter2,
@@ -45,10 +46,31 @@ func loadGame():
 				global.minigame_score = curr_line["minigame_score"]
 				global.quest_status = curr_line["Quest"]
 				global.quest_count = curr_line["Progress"]
+				global.Bridge = curr_line["Bridge"]
 				global.Lastpos.x = curr_line["Last_checkpoint_x"]
 				global.Lastpos.y = curr_line["Last_checkpoint_y"]
 				global.check_unlockmaze_chapter2 = curr_line["Check_unlockmaze_chapter2"]
 				global.check_unlockmaze_chapter3 = curr_line["Check_unlockmaze_chapter3"]
+				global.chapter_game = curr_line["Chapter_game"]
 func emptyInv():
 	inventory = ResourceLoader.load("res://Inventory/New_Save.tres").duplicate(true)
 	ResourceSaver.save(inventory, save_file_path)
+	
+func ResetGame():
+	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	var data: Dictionary = {
+		"Dialogue" = 0,
+		"life" = 3,
+		"minigame_score" = 0,
+		"Quest" = "",
+		"Progress" = 0,
+		"Bridge" = "Rusak",
+		"Last_checkpoint_x" = 0,
+		"Last_checkpoint_y" = 0,
+		"Check_unlockmaze_chapter2" = false,
+		"Check_unlockmaze_chapter3" = false,
+		"Chapter_game" = 1
+	}
+	emptyInv()
+	var jstr = JSON.stringify(data)
+	file.store_line(jstr)

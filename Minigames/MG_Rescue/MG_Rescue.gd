@@ -8,7 +8,9 @@ var newscore = global.minigame_score+100
 var once = true
 # Called when the node enters the scene tree for the first time.
 var num = 5 + global.difficulty*5
+var reset
 func _ready():
+	reset = global.difficulty
 	if global.workMode:
 		$CanvasLayer/Control/antrian.hide()
 	if global.life<=0:
@@ -22,7 +24,9 @@ func _ready():
 func _process(delta):
 	$CanvasLayer/Control/antrian.text = "Korban\n%d" % global.Recuee
 	await get_tree().create_timer(0.3).timeout
-	if GlbRescue.rubble == 0 and once:
+	print(GlbRescue.rubble)
+	
+	if GlbRescue.rubble == 0 and once and $CanvasLayer/Control.sec > 0 :
 		once = false
 		complete()
 	else:
@@ -58,6 +62,7 @@ func complete():
 	else:
 		if global.Recuee <= 1:
 			global.Recuee = global.difficulty * 3
+			global.lastgame = "Rescue"
 			get_tree().change_scene_to_file("res://world.tscn")
 		else:
 			global.Recuee -= 1
@@ -85,9 +90,3 @@ func _on_okay_pressed():
 
 func _on_back_pressed():
 	get_tree().change_scene_to_file("res://world.tscn")
-
-func _on_tree_exited():
-	if !global.workMode:
-		global.lastgame = "Rescue"
-	else:
-		global.lastgame = ""

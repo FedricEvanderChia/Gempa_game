@@ -31,7 +31,9 @@ texture = ExtResource("1_tko60")
 3:1/0 = 0
 3:1/0/custom_data_1 = "void"
 4:0/0 = 0
+4:0/0/custom_data_1 = "wood"
 5:0/0 = 0
+5:0/0/custom_data_1 = "axe"
 
 [sub_resource type="TileSet" id="TileSet_0hx5b"]
 custom_data_layer_0/name = "walkable"

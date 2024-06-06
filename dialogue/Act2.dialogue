@@ -15,6 +15,7 @@ if global.quest_status == "Kayu"
 		do talking("Rizki")
 		Rizki: Sepertinya kayu kita cukup, sekarang kita bisa mulai bangun jembatan ini.
 		do reward("Jembatan")
+		set global.Dialogue +=1
 		set global.quest_status = ""
 		set global.quest_count = null	
 elif global.quest_status == "":
@@ -26,7 +27,6 @@ elif global.quest_status == "":
 	Rizki: *Sepertinya kita akan memerlukan 5 kayu*
 	set global.quest_status = "Kayu"
 	set global.quest_count = 5
-	{{currQuest()}}
 	=> Bridge1
 elif global.quest_status == "Kayu" and global.quest_count != 0:
 	set global.quest_status = ""
@@ -59,8 +59,11 @@ do talking("Maria")
 Maria: Lho Riz, ini kok goyang-goyang ini Riz jembatannya!!
 do talking("Rizki")
 Rizki: Untuk jembatan gantung itu normal kok. Sini deh biar aku bantu.
+do talking("Maria")
+Maria: Yah setidaknya untuk jembatan sementara ini sudah mencukupi. Ayo kita teruskan perjalanan kita.
 do talking("end")
 do EndDialog()
+set global.Dialogue +=1
 => END!
 
 ~ Sawah1
@@ -76,8 +79,10 @@ Maria: Diam, kamu saja yang lemah kayak tauge kekurangan sinar matahari.
 do talking("Rizki")
 Rizki : Hey!! tauge itu kecil-kecil tapi bernutrisi tahu. Minta maaf kepada tauge-tauge di dunia!! Kamu saja yang maniak otot!!
 do talking("Bebek")
-do talking("Maria_hide")
+do talking("Maria")
 Maria: HooHooHoo... sepertinya seniormu ini kurang keras dalam melatihmu yaa!! sepulang dari sini akan saya suruh kamu lari keliling desa  10 putaran. Akan saya buat kamu babak BE...BEEEEEEK!!!
+do talking("Maria_hide")
+Maria: Kyaaaa!!!
 do talking("Rizki")
 Rizki: Bebek??
 do talking("Bebek_anim")
@@ -90,6 +95,56 @@ do talking("Maria")
 Maria: DIAM!! Kamu ga pernah kan pas SD celananya ditarik dan dipatok bebek!! Cepat SINGKIRKAN!!!
 do talking("end")
 do EndDialog()
+set global.Dialogue +=1
+set global.quest_status = "Beras"
+set global.quest_count = 1
 => END!
 
-~ MariaEvent1
+~ Sawah2
+do StartDialog()
+if global.quest_status != "":
+	if global.quest_status != "Beras":
+		*Selesaikan terlebih dahulu tugas yang anda terima di Desa*
+		{{currQuest()}}
+		do talking("-")
+		do talking("end")
+		do EndDialog()
+		=> END!
+if global.quest_status == "Beras"
+	do submit("res://Inventory/items/Beras.tres")
+	if global.quest_count == 0:
+		do talking("Rizki")
+		Rizki: Kurrr kurrr, bebek ini aku ada bawakan beras untukmu. Main ke tempat lain dulu ya.
+		do talking("Bebek")
+		Bebek: Wek Wek Wek...
+		do emit("flee",false)
+		set global.Dialogue +=1 
+		set global.quest_status = ""
+		set global.quest_count = null	
+	else:
+		do talking("Bebek_anim")
+		Bebek: KWEEEK!! 
+		do talking("Rizki")
+		Rizki: Aduh aduh jangan patok!!
+		do talking("-")
+		do talking("end")
+		set global.go_right = true
+		do emit("flee",true)
+		Rizki: *Mungkin aku bisa memancing bebek itu dengan makanan*
+		set global.quest_status = ""
+		set global.quest_count = null
+elif global.quest_status == "":
+	do talking("Rizki")
+	Rizki: Kamu yakin kita ga mau terobos aja?
+	do talking("Maria")
+	Maria: Kamu yakin mau rambutmu dijambak sampai botak saat kita melewati bebek itu?
+	do talking("Rizki")
+	Rizki: Hmmm... alasan yang bagus. Aku akan memilih jalan yang lebih aman.
+	set global.quest_status = "Beras"
+	set global.quest_count = 1
+	=> Sawah2
+do talking("-")
+do talking("end")
+do EndDialog()
+=> END!
+

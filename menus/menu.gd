@@ -1,12 +1,5 @@
 extends Control
 var speed = 300
-const save_file_path = "res://savegame.bin"
-
-func _ready():
-	if FileAccess.file_exists(save_file_path) == true: 
-		$VBoxContainer/StartB.show()
-	else:
-		$VBoxContainer/StartB.hide()
 
 func _process(delta):
 	$BG.scroll_offset.x -= speed * delta
@@ -25,10 +18,9 @@ func _on_quit_b_pressed():
 	get_tree().quit()
 
 func _on_new_game_b_pressed():
-	util.emptyInv()
-	util.saveGame()
-	if global.Dialogue == 0:
-		get_tree().change_scene_to_file("res://Intro/Intro1.tscn")
+	util.ResetGame()
+	util.loadGame()
+	get_tree().change_scene_to_file("res://Intro/Intro1.tscn")
 		
 		
 func _on_start_b_mouse_entered():

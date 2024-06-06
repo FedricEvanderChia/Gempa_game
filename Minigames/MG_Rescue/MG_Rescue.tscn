@@ -30,28 +30,6 @@ texture = ExtResource("2_3pjth")
 position = Vector2(586, 348)
 shape = SubResource("CircleShape2D_wgxs6")
 
-[node name="AddScore" type="Label" parent="."]
-process_mode = 3
-modulate = Color(1, 1, 1, 0)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 330.0
-offset_top = 20.0
-offset_right = 452.0
-offset_bottom = 75.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "+100"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 5
 
@@ -258,6 +236,28 @@ texture = ExtResource("12_8a8c8")
 [node name="RubbleWood" type="Sprite2D" parent="CanvasLayer/tutorial_ui"]
 position = Vector2(-368, 76)
 texture = ExtResource("13_2pryq")
+
+[node name="AddScore" type="Label" parent="."]
+process_mode = 3
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 330.0
+offset_top = 20.0
+offset_right = 452.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "+100"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="timeout" from="CanvasLayer/Control/Timer" to="CanvasLayer/Control" method="_on_timer_timeout"]
