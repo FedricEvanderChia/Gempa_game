@@ -32,8 +32,9 @@ func _on_timer_timeout():
 			else: global.life = 0
 			await get_tree().create_timer(1).timeout
 			if global.life==0:
-				get_tree().change_scene_to_file("res://world.tscn")
 				global.difficulty = $"../..".reset
+				get_tree().change_scene_to_file("res://world.tscn")
+				
 			else:	
 				if global.workMode:
 					global.nextMG()

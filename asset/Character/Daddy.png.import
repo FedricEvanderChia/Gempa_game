@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbvu8n4cx1pl"
-path="res://.godot/imported/cave_path.png-147fe3db3ae5fca81659b1a356c673ff.ctex"
+uid="uid://c3oy3k6lvwjrh"
+path="res://.godot/imported/Daddy.png-e4a285a3ed757a5ba13d76321abb0d5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/cave_path.png"
-dest_files=["res://.godot/imported/cave_path.png-147fe3db3ae5fca81659b1a356c673ff.ctex"]
+source_file="res://asset/Character/Daddy.png"
+dest_files=["res://.godot/imported/Daddy.png-e4a285a3ed757a5ba13d76321abb0d5a.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbvu8n4cx1pl"
-path="res://.godot/imported/cave_path.png-147fe3db3ae5fca81659b1a356c673ff.ctex"
+uid="uid://bxcmr418vh30a"
+path="res://.godot/imported/Electronics.png-76f9a4ff78f027a7eb41221b993f1d40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/cave_path.png"
-dest_files=["res://.godot/imported/cave_path.png-147fe3db3ae5fca81659b1a356c673ff.ctex"]
+source_file="res://asset/Electronics.png"
+dest_files=["res://.godot/imported/Electronics.png-76f9a4ff78f027a7eb41221b993f1d40.ctex"]
 
 [params]
 

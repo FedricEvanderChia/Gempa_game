@@ -10,13 +10,17 @@ do talking("Rizki")
 	Rizki: Maaf Ran, aku ada urusan lain yang perlu dikerjakan.
 	do talking("Rani")
 	Rani: Oh, ya sudah tidak apa-apa.
+	do talking("-")
+	do talking("end")
+	do EndDialog()
 - Volunteer => Sembako
 - Persedian terbatas => P3K
 - Tips
 	do tips()
 - Ga jadi
-do talking("end")
-do EndDialog()
+	do talking("-")
+	do talking("end")
+	do EndDialog()
 => END!
 
 ~ Sembako
@@ -61,7 +65,7 @@ if global.quest_status == "P3K"
 		set global.quest_count = null
 	else:
 		do talking("Rani")
-		Rani: Kita sedang membutuhkan 5 kotak P3K. tolong dikumpulkan ya?.
+		Rani: Kita sedang membutuhkan 3 kotak P3K. tolong dikumpulkan ya?.
 elif global.quest_status == "":
 	do talking("Rani")
 	Rani: Riz kita lagi kekurangan persediaan nih, bisa bantu carikan tidak?
@@ -70,7 +74,7 @@ elif global.quest_status == "":
 	- Boleh, butuh apa?
 		do talking("Rani")
 		set global.quest_status = "P3K"
-		set global.quest_count = 5
+		set global.quest_count = 3
 		=> P3K
 	- Maaf, aku sedang ada urusan lain
 		do talking("Rani")
@@ -259,7 +263,9 @@ do EndDialog()
 ~ Trivia4
 do StartDialog()
 do talking("Rani")
-Rani: Kamu bisa datang kepadaku jika membutuhkan Kayu, tetapi tentunya tidak gratis. Kamu perlu melakukan sesuatu untukku terlebih dahulu.
+Rani: Jika  ada gempa yang terjadi. Langkah pertama yang harus kamu lakukan adalah melindungi kepala dengan bantal, helm, atau jika perlu dengan lenganmu sendiri, kemudian segera mencari tempat berlindung yang kokoh. 
+Rani: Jika kamu berada dalam ruangan kamu bisa berlindung dibawah kolong meja, di dekat pondasi rumah, atau dalam kamar mandi. Kamar mandi biasanya tidak mudah runtuh,
+Rani: Akan tetapi kamu perlu menjauhi cermin dan kaca. Jika kamu berada di luar ruangan evakuasilah ke lapangan luas yang jauh dari gedung tinggi.
 do talking("-")
 do talking("end")
 do EndDialog()

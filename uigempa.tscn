@@ -1,8 +1,8 @@
-[gd_scene load_steps=41 format=3 uid="uid://dtsrtigd5cgnv"]
+[gd_scene load_steps=42 format=3 uid="uid://dtsrtigd5cgnv"]
 
 [ext_resource type="Script" path="res://UIGempa.gd" id="1_ngrhg"]
 [ext_resource type="Texture2D" uid="uid://bcnkef8p4ap3y" path="res://asset/BtnIdle.png" id="2_rerfp"]
-[ext_resource type="PackedScene" path="res://lock.tscn" id="2_ubps1"]
+[ext_resource type="PackedScene" uid="uid://bpvsy5ccb6i60" path="res://lock.tscn" id="2_ubps1"]
 [ext_resource type="Texture2D" uid="uid://bgx38m1hnoq5b" path="res://asset/MenuButton/Pause.png" id="3_bdcwb"]
 [ext_resource type="Texture2D" uid="uid://b7g4q04cqaee6" path="res://asset/BtnMove.png" id="3_lr740"]
 [ext_resource type="PackedScene" uid="uid://c7dmtxqirlb2x" path="res://Inventory/inventory_ui.tscn" id="3_lx3uu"]
@@ -17,11 +17,12 @@
 [ext_resource type="PackedScene" uid="uid://b2r5xjkr6i4lj" path="res://NPC/Wanita.tscn" id="14_j3l4h"]
 [ext_resource type="PackedScene" uid="uid://bl54w3ixo6aud" path="res://NPC/bebek.tscn" id="15_5hm6a"]
 [ext_resource type="PackedScene" uid="uid://dmefmyby3odr6" path="res://NPC/Pria.tscn" id="15_mojfx"]
-[ext_resource type="PackedScene" uid="uid://dq36f77km2e5s" path="res://NPC/Rani.tscn" id="16_5h8c0"]
+[ext_resource type="PackedScene" uid="uid://cwtraqqmw06a" path="res://NPC/Rani.tscn" id="16_5h8c0"]
 [ext_resource type="PackedScene" uid="uid://wjnkust00dy6" path="res://NPC/perempuan.tscn" id="16_g5mvo"]
-[ext_resource type="PackedScene" path="res://NPC/Kakek.tscn" id="17_eggb6"]
+[ext_resource type="PackedScene" uid="uid://b8ve1ihhw4d1r" path="res://NPC/Kakek.tscn" id="17_eggb6"]
 [ext_resource type="PackedScene" uid="uid://dibfk3he48mbw" path="res://NPC/Laki_laki.tscn" id="17_whml6"]
-[ext_resource type="PackedScene" path="res://NPC/Nenek.tscn" id="18_uh7m4"]
+[ext_resource type="PackedScene" uid="uid://cvgqr8wgsgehf" path="res://NPC/Nenek.tscn" id="18_uh7m4"]
+[ext_resource type="PackedScene" uid="uid://b7sd43spk84e0" path="res://NPC/ayah.tscn" id="19_7k0og"]
 [ext_resource type="FontFile" uid="uid://pdrka83wc2a3" path="res://asset/dial_button/pixelsix00.ttf" id="19_7kk2g"]
 [ext_resource type="AudioStream" uid="uid://lu44q6qacyis" path="res://asset/sfx/Button sounds.mp3" id="21_2m7o7"]
 [ext_resource type="AudioStream" uid="uid://d1bcx0pny6y18" path="res://asset/sfx/backpack_sounds.mp3" id="22_sorol"]
@@ -219,6 +220,10 @@ position = Vector2(975, 475)
 visible = false
 position = Vector2(975, 475)
 
+[node name="Ayah" parent="." instance=ExtResource("19_7k0og")]
+visible = false
+position = Vector2(975, 475)
+
 [node name="Cinematic" type="ColorRect" parent="."]
 offset_top = -180.0
 offset_right = 1176.0
@@ -322,3 +327,5 @@ text = "Chapter:
 [connection signal="released" from="Control2/tc_button_left" to="." method="_on_tc_button_left_released"]
 [connection signal="input_event" from="Bag" to="." method="_on_bag_input_event"]
 [connection signal="pressed" from="PauseBtn/Pause" to="." method="_on_pause_pressed"]
+
+[editable path="pause_ui"]

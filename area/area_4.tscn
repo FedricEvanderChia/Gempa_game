@@ -1,13 +1,148 @@
-[gd_scene load_steps=12 format=3 uid="uid://bvlysyvgdt6g1"]
+[gd_scene load_steps=37 format=3 uid="uid://bvlysyvgdt6g1"]
 
 [ext_resource type="Script" path="res://area/area_4.gd" id="1_dm2ug"]
 [ext_resource type="Texture2D" uid="uid://b7oni7aexhatq" path="res://asset/cave_bg.png" id="1_ve024"]
 [ext_resource type="Texture2D" uid="uid://cbvu8n4cx1pl" path="res://asset/cave_path.png" id="2_kmql5"]
 [ext_resource type="PackedScene" uid="uid://c71to8edu42an" path="res://player/Player.tscn" id="3_sc5bi"]
+[ext_resource type="Texture2D" uid="uid://c15uslka06al3" path="res://asset/Seismograf.png" id="4_375nh"]
 [ext_resource type="PackedScene" uid="uid://1s0q53ouuvjp" path="res://Inventory/items/items_collectibles.tscn" id="4_h4esy"]
-[ext_resource type="Texture2D" uid="uid://cwfuety7jxeio" path="res://asset/CaveFront.png" id="4_j3d33"]
-[ext_resource type="Resource" uid="uid://b20t57vnkmufq" path="res://Inventory/items/Kayu.tres" id="5_nmwd4"]
+[ext_resource type="Texture2D" uid="uid://det3r60g2rhhi" path="res://asset/CaveFront.png" id="4_j3d33"]
+[ext_resource type="Texture2D" uid="uid://bxcmr418vh30a" path="res://asset/Electronics.png" id="5_6p474"]
+[ext_resource type="Resource" uid="uid://cyv8x12xguj4y" path="res://Inventory/items/Kayu.tres" id="5_nmwd4"]
 [ext_resource type="PackedScene" uid="uid://dtsrtigd5cgnv" path="res://uigempa.tscn" id="6_hx0ks"]
+[ext_resource type="Texture2D" uid="uid://bi2hkgrndcpoh" path="res://asset/Seismometer.png" id="6_o5hyc"]
+[ext_resource type="Texture2D" uid="uid://dtj2qyg5b0sto" path="res://asset/OfficeChair.png" id="7_g4f64"]
+[ext_resource type="Texture2D" uid="uid://c3oy3k6lvwjrh" path="res://asset/Character/Daddy.png" id="13_0c0ch"]
+[ext_resource type="Texture2D" uid="uid://doe3ri0xre6jj" path="res://asset/lamps.png" id="14_dojoy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olanr"]
+atlas = ExtResource("4_375nh")
+region = Rect2(0, 0, 508, 252)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pi7xx"]
+atlas = ExtResource("4_375nh")
+region = Rect2(508, 0, 508, 252)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q03gh"]
+atlas = ExtResource("4_375nh")
+region = Rect2(1016, 0, 508, 252)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xaxn"]
+atlas = ExtResource("4_375nh")
+region = Rect2(1524, 0, 508, 252)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m35lv"]
+atlas = ExtResource("4_375nh")
+region = Rect2(2032, 0, 508, 252)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgd4e"]
+atlas = ExtResource("4_375nh")
+region = Rect2(2540, 0, 508, 252)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k04de"]
+atlas = ExtResource("4_375nh")
+region = Rect2(3048, 0, 508, 252)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hj6ve"]
+atlas = ExtResource("4_375nh")
+region = Rect2(3556, 0, 508, 252)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drr3i"]
+atlas = ExtResource("4_375nh")
+region = Rect2(4064, 0, 508, 252)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7vcm"]
+atlas = ExtResource("4_375nh")
+region = Rect2(4572, 0, 508, 252)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2bb7"]
+atlas = ExtResource("4_375nh")
+region = Rect2(5080, 0, 508, 252)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fiocl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olanr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pi7xx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q03gh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xaxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m35lv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgd4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k04de")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hj6ve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drr3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7vcm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2bb7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.5
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4aykv"]
+atlas = ExtResource("6_o5hyc")
+region = Rect2(0, 0, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0dxy"]
+atlas = ExtResource("6_o5hyc")
+region = Rect2(256, 0, 256, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_liwwu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4aykv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0dxy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjvjj"]
+atlas = ExtResource("6_o5hyc")
+region = Rect2(0, 128, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2m7ca"]
+atlas = ExtResource("6_o5hyc")
+region = Rect2(256, 128, 256, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k0ffa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjvjj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2m7ca")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iop4l"]
 size = Vector2(2673.5, 74.5)
@@ -17,6 +152,9 @@ size = Vector2(92, 714)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ggip7"]
 size = Vector2(135.375, 661.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbw12"]
+size = Vector2(440, 1013.33)
 
 [node name="Area4" type="Node2D"]
 script = ExtResource("1_dm2ug")
@@ -40,9 +178,39 @@ position = Vector2(1257, 339)
 scale = Vector2(1.25, 1.25)
 texture = ExtResource("2_kmql5")
 
+[node name="Seismograph" type="AnimatedSprite2D" parent="BG2/ParallaxLayer2"]
+position = Vector2(2087, 310)
+scale = Vector2(1.25, 1.25)
+sprite_frames = SubResource("SpriteFrames_fiocl")
+autoplay = "default"
+frame_progress = 0.814817
+
+[node name="Electronics" type="Sprite2D" parent="BG2/ParallaxLayer2"]
+position = Vector2(1257, 339)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("5_6p474")
+
+[node name="Horimeter" type="AnimatedSprite2D" parent="BG2/ParallaxLayer2"]
+position = Vector2(2012, 455)
+sprite_frames = SubResource("SpriteFrames_liwwu")
+autoplay = "default"
+frame_progress = 0.13814
+
+[node name="Vertimeter" type="AnimatedSprite2D" parent="BG2/ParallaxLayer2"]
+position = Vector2(2317, 439)
+scale = Vector2(1.25, 1.25)
+sprite_frames = SubResource("SpriteFrames_k0ffa")
+autoplay = "default"
+frame_progress = 0.642957
+
+[node name="OfficeChair" type="Sprite2D" parent="BG2/ParallaxLayer2"]
+position = Vector2(1840, 565)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("7_g4f64")
+
 [node name="player" parent="." instance=ExtResource("3_sc5bi")]
-position = Vector2(35, 575)
-scale = Vector2(0.213, 0.213)
+position = Vector2(40, 550)
+scale = Vector2(0.3, 0.3)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(-37.5587, 0)
@@ -54,7 +222,7 @@ limit_bottom = 717
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(1216, 696)
+position = Vector2(1216, 710)
 shape = SubResource("RectangleShape2D_iop4l")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
@@ -75,11 +243,49 @@ position = Vector2(2274, 456)
 position = Vector2(-1703, 89)
 item = ExtResource("5_nmwd4")
 
-[node name="GUI" parent="." instance=ExtResource("6_hx0ks")]
+[node name="NPC_container" type="Node2D" parent="."]
 
-[node name="Cave_path" type="Sprite2D" parent="."]
+[node name="Ayah" type="Area2D" parent="NPC_container"]
+position = Vector2(1791, 510)
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC_container/Ayah"]
+position = Vector2(-11, 2)
+scale = Vector2(0.6, 0.6)
+shape = SubResource("RectangleShape2D_lbw12")
+
+[node name="NpcMan" type="Sprite2D" parent="NPC_container/Ayah"]
+texture = ExtResource("13_0c0ch")
+
+[node name="Talk" type="Button" parent="NPC_container/Ayah"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0001
+offset_top = -412.0
+offset_right = -33.0001
+offset_bottom = -376.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+theme_override_font_sizes/font_size = 20
+text = "talk"
+
+[node name="pilar" type="Sprite2D" parent="."]
 position = Vector2(1257, 339)
 scale = Vector2(1.25, 1.25)
 texture = ExtResource("4_j3d33")
 
+[node name="lamps" type="Sprite2D" parent="."]
+position = Vector2(1257, 339)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("14_dojoy")
+
+[node name="GUI" parent="." instance=ExtResource("6_hx0ks")]
+
+[connection signal="Obtain" from="player" to="GUI" method="_on_player_obtain"]
 [connection signal="body_entered" from="Go to World" to="." method="_on_go_to_world_body_entered"]
+[connection signal="body_entered" from="NPC_container/Ayah" to="." method="_on_ayah_body_entered"]
+[connection signal="body_exited" from="NPC_container/Ayah" to="." method="_on_ayah_body_exited"]

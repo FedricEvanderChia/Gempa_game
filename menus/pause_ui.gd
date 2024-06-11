@@ -28,7 +28,7 @@ func _on_quit_pressed():
 	get_tree().quit()
 
 func _on_save_pressed():
-	
+	global.lastmap = int($"../../".name.right(1))
 	sounds_b.play()
 	await get_tree().create_timer(0.5).timeout
 	util.saveGame()

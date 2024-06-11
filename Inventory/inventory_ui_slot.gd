@@ -17,6 +17,7 @@ func update(slots: inventory_slot):
 			
 			item_visual.visible = true
 			item_visual.texture = slots.item.texture
+			$CenterContainer/Panel.tooltip_text = slots.item.name
 			if slots.amount > 0 :
 				amount_text.visible = true
 				amount_text.text = str(slots.amount)

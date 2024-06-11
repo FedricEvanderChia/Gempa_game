@@ -1,15 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://1yo5olfmic1q"]
+[gd_scene load_steps=16 format=3 uid="uid://1yo5olfmic1q"]
 
 [ext_resource type="Texture2D" uid="uid://c6da523ly6b7t" path="res://asset/Prlx2_Road-Jungle.png" id="1_ie6w7"]
 [ext_resource type="Script" path="res://area/area_3.gd" id="1_wp81p"]
 [ext_resource type="PackedScene" uid="uid://c71to8edu42an" path="res://player/Player.tscn" id="2_i5sog"]
-[ext_resource type="Texture2D" uid="uid://bbhg0wl8r4hrk" path="res://asset/forest_floor.png" id="3_jlxes"]
+[ext_resource type="Texture2D" uid="uid://bpuw7lv4fkgdt" path="res://asset/forest_floor.png" id="3_jlxes"]
 [ext_resource type="PackedScene" uid="uid://dtsrtigd5cgnv" path="res://uigempa.tscn" id="5_glf2a"]
-[ext_resource type="Texture2D" uid="uid://cp8cmr0hdaut8" path="res://asset/cave_entre.png" id="5_skihf"]
-[ext_resource type="PackedScene" uid="uid://buuketybao1pg" path="res://Inventory/items/star.tscn" id="6_ewp2l"]
+[ext_resource type="Texture2D" uid="uid://dd60n745e7ok" path="res://asset/cave_entre.png" id="5_skihf"]
+[ext_resource type="PackedScene" uid="uid://dwnsnoa5iju07" path="res://Inventory/items/star.tscn" id="6_ewp2l"]
 [ext_resource type="Script" path="res://area/grass_mystery.gd" id="6_g4j5t"]
-[ext_resource type="Texture2D" uid="uid://bo7rws84qffay" path="res://asset/grass.png" id="6_t142e"]
+[ext_resource type="Texture2D" uid="uid://ch8lxnq8pq8pl" path="res://asset/grass.png" id="6_t142e"]
 [ext_resource type="Texture2D" uid="uid://ceopawoelloo8" path="res://asset/Character/NPC_OldMan.png" id="10_gsf6m"]
+[ext_resource type="Script" path="res://Minigames/ShakeCam.gd" id="10_v4hyp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_viakg"]
 size = Vector2(5292, 74.5)
@@ -197,7 +198,7 @@ scale = Vector2(0.1625, 0.158333)
 texture = ExtResource("6_t142e")
 
 [node name="player" parent="." instance=ExtResource("2_i5sog")]
-position = Vector2(75, 505)
+position = Vector2(3760, 512)
 scale = Vector2(0.213, 0.213)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
@@ -206,6 +207,7 @@ zoom = Vector2(0.9, 0.9)
 limit_left = 0
 limit_right = 4000
 limit_bottom = 732
+script = ExtResource("10_v4hyp")
 
 [node name="collectible_Layer" type="Node2D" parent="."]
 position = Vector2(2274, 456)

@@ -1,72 +1,9 @@
-~ Bridge1
-do StartDialog()
-if global.quest_status != "":
-	if global.quest_status != "Kayu":
-		*Selesaikan terlebih dahulu tugas yang anda terima di Desa*
-		{{currQuest()}}
-		do talking("-")
-		do talking("end")
-		do EndDialog()
-		=> END!
-
-if global.quest_status == "Kayu"
-	do submit("res://Inventory/items/Kayu.tres")
-	if global.quest_count == 0:
-		do talking("Rizki")
-		Rizki: Sepertinya kayu kita cukup, sekarang kita bisa mulai bangun jembatan ini.
-		set global.Bridge = "Perbaikan"
-		do emit("Build")
-		set global.Dialogue +=1
-		set global.quest_status = ""
-		set global.quest_count = null
-	else:
-		do talking("Rizki")
-		Rizki: *Sepertinya kita akan memerlukan 5 kayu*
-		set global.quest_status = ""
-		set global.quest_count = null
-elif global.quest_status == "":
-	do talking("Rizki")
-	Rizki: Jembatan ini sepertinya rusak akibat gempa, kita tidak bisa melanjukan perjalanan sebelum jembatan ini diperbaiki.
-	do talking("Maria")
-	Maria: Mungkin kita perlu mengumpulkan beberapa kayu untuk memperbaiki jembatan ini terlebih dahulu. 
-	set global.quest_status = "Kayu"
-	set global.quest_count = 5
-	=> Bridge1
-do talking("-")
-do talking("end")
-do EndDialog()
-=> END!
-
-~ Bridge2
+~ Cave1
 do StartDialog()
 do talking("Rizki")
-Rizki: Akhirnya jembatan ini selesai juga, tidak buruk juga untuk amatiran seperti diriku hehe.
+Rizki: Sebentar Maria, aku merasa belum siap bertemu ayahku.
 do talking("Maria")
-Maria: Tunggu dulu kamu yakin ini aman? ga bakal roboh lagi jembatan seperti ini?
-do talking("Rizki")
-Rizki: Jangan anggap sepele dong! Hasil karyaku ini sudah kuanggap seperti anakku sendiri. Meskipun aku bukan ahlinya dalam mengolah dan memproses kayu, aku itu begini-begini pernah juara lomba tali-temali Pramuka tahu. 
-do talking("Maria")
-Maria: Bukan ahlinya mengolah kayu!? INI KAYUNYA SAMA SEKALI GA DIOLAH!! 
-Maria: Kalau orang lain itu yaaa, setidaknya di bikin papan dulu, atau tidak seminimal mungkin kayunya dibelah dua terus sisi datarnya dijadikan pijakan.
-Maria: Ini kamu malah langsung pakai kayu gelondongan diikat gitu aja.
-do talking("Rizki")
-Rizki: Tenang boss...selain ikat pakai tali, aku juga lem pakai nasi kok. 
-do talking("Maria")
-Maria: Sudahlah riz, capek aku pakai akal sehat bicara samamu.
-do talking("Rizki")
-Rizki: liat nih ya aku buktikan kekuatan jembatanku samamu. Aku saja bisa lewat.
-set global.go_right = true
-do talking("Maria")
-Maria: Lho Riz, ini kok goyang-goyang ini Riz jembatannya!!
-do talking("Rizki")
-Rizki: Untuk jembatan gantung itu normal kok. Sini deh biar aku bantu.
-do talking("Maria")
-Maria: Yah setidaknya untuk jembatan sementara ini sudah mencukupi. Ayo kita teruskan perjalanan kita.
-do talking("end")
-do EndDialog()
-set global.Dialogue +=1
-=> END!
-
+Maria: Eh? memangnya kenapa? kita kan sudah datang jauh-jauh hanya untuk mencari ayamu? 
 ~ Sawah1
 do StartDialog()
 do talking("Rizki")
@@ -149,3 +86,50 @@ do talking("end")
 do EndDialog()
 => END!
 
+~ quiz1
+do StartDialog()
+do talking("Ayah")
+Ayah: Apa hal yang pertama harus kamu lakukan saat gempa?
+do talking("Rizki")
+- Mengevakuasi gedung
+- Melindungi kepala 
+- Mencari tempat berlindung yang kokoh
+do talking("-")
+do talking("end")
+do EndDialog()
+=> END!
+
+~ quiz2
+do StartDialog()
+do talking("Ayah")
+Ayah: Yang manakah yang bukan termasuk tempat berlindung saat gempa?
+do talking("Rizki")
+- Lapangan luas, jauh dari gedung dan perumahan
+- Kolong meja/ dibawah meja 
+- Kamar mandi
+- Pondasi rumah
+- Dibawah jendela
+do talking("-")
+do talking("end")
+do EndDialog()
+=> END!
+
+~ quiz3
+do StartDialog()
+do talking("Ayah")
+Ayah: Peralatan mana yang tidak perlu dipersiapkan dalam tas siaga bencana?
+do talking("Rizki")
+- Masker, Sarung tangan, dan Pelindung kepala
+- Kotak P3K
+- Perbekalan makanan dan minuman
+- Peluit
+- Kartu identitas
+- Senter/Lampu emergency
+- Radio/Ponsel
+- Uang
+- Pakaian ganti
+- 
+do talking("-")
+do talking("end")
+do EndDialog()
+=> END!

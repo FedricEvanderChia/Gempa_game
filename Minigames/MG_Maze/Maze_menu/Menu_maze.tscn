@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cwsi81nu6qhne" path="res://asset/MenuButton/Back B.png" id="7_l0ole"]
 [ext_resource type="Texture2D" uid="uid://d3j1ap1c1m6ew" path="res://asset/MenuButton/Back A.png" id="8_4cic2"]
 [ext_resource type="AudioStream" uid="uid://lu44q6qacyis" path="res://asset/sfx/Button sounds.mp3" id="9_2g7pl"]
-[ext_resource type="PackedScene" uid="uid://bwcuu1ns3qiam" path="res://Minigames/MG_Maze/Maze_menu/unlockable_level.tscn" id="10_bbrm5"]
+[ext_resource type="PackedScene" path="res://Minigames/MG_Maze/Maze_menu/unlockable_level.tscn" id="10_bbrm5"]
 
 [node name="MenuMaze" type="Control"]
 layout_mode = 3

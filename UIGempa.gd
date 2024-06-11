@@ -53,16 +53,12 @@ func pause():
 
 
 func _on_tc_button_right_pressed():
-	
 	$Control2/tc_button_right.scale = Vector2 (0.9,0.9)
 func _on_tc_button_left_pressed():
-
 	$Control2/tc_button_left.scale = Vector2 (0.9,0.9)
 func _on_tc_button_right_released():
-
 	$Control2/tc_button_right.scale = Vector2 (1,1)
 func _on_tc_button_left_released():
-
 	$Control2/tc_button_left.scale = Vector2 (1,1)
 
 func cinema():

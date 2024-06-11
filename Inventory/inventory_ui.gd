@@ -13,14 +13,6 @@ func update_slots():
 	for i in range(min(inv.slots.size(), slots.size())):
 		slots[i].update(inv.slots[i])
 		
-func load_slots():
-	pass
-	if FileAccess.file_exists("res://Inventory/Inventorysave.tres") == true:
-		inv = ResourceLoader.load("res://Inventory/Inventorysave.tres").duplicate(true)
-
-
-		
-		
 func _process(delta):
 	update_slots()
 	if Input.is_action_just_pressed("buka_inventorykey"):

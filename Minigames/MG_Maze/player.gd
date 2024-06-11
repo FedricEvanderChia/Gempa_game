@@ -21,6 +21,7 @@ func _ready():
 	else:
 		$Icon/Camera2D.queue_free()
 		cam = $"../Camera2D"
+		
 func _physics_process(delta):
 	if !is_moving:
 		$Icon.animation = dir
@@ -207,9 +208,6 @@ func complete():
 	var dir_idx = int(dirpath.right(2))
 	global.check_maze_level_condition[dir_idx-1] = true
 	
-		
-			
 	await get_tree().create_timer(1).timeout
 	global.lastgame = "Maze"
 	get_tree().change_scene_to_file("res://Minigames/MG_Maze/Maze_menu/Menu_maze.tscn")
-	$"../CanvasLayer".check()

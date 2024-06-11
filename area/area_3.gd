@@ -1,7 +1,7 @@
 extends Node2D
 
-@export var Spos = Vector2(400,494)
-@export var Epos = Vector2(1540,494)
+@export var Spos = Vector2(400,500)
+@export var Epos = Vector2(3760,500)
 # Called when the node enters the scene tree for the first time.
 var item_pos
 var item_collectible_dokumen = preload("res://Inventory/items/items_collectibles.tscn")
@@ -10,7 +10,11 @@ var item_collectible_dokumen = preload("res://Inventory/items/items_collectibles
 
 
 func _ready():
-	if global.Spos == true:
+	if global.chapter_game==2 and global.Dialogue > 7:
+		global.chapter_game=3
+	if  global.Lastpos.x <= Epos.x and global.Lastpos.x >= Spos.x:
+		$player.position = global.Lastpos
+	elif global.Spos == true:
 		$player.position = Spos
 	else:
 		$player.position = Epos
@@ -66,9 +70,9 @@ func _on_kakek_body_exited(body):
 
 func _on_talk_pressed():
 	print("Search"+$NPC_container/Kakek.name)
-	if(global.Dialogue == 3):
+	if(global.Dialogue == 8):
 		DialogueManager.show_dialogue_balloon(load("res://dialogue/Act3.dialogue"), "Kakek")
-	elif(global.Dialogue == 4):
+	elif(global.Dialogue == 9):
 		DialogueManager.show_dialogue_balloon(load("res://dialogue/Act3.dialogue"), "Mengasih_dokumen")
 	#else:
 	#	DialogueManager.show_dialogue_balloon(load("res://dialogue/Quest.dialogue"), self.name)

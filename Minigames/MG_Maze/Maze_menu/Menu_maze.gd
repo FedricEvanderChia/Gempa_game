@@ -20,7 +20,7 @@ var coordinates_checklist_y = [120,120,120,120, 220,220,220,220,  320,320,320,32
 func _ready():
 	#mengecek kondisi true/false disetiap node array dari maze 1 sampai maze 20 jika true maka membuat node checklist
 	#checklist_create(coordinates_checklist_x[4],coordinates_checklist_y[4])
-	for n in range(0,19):
+	for n in range(0,20):
 		if global.check_maze_level_condition[n] == true:
 			checklist_create(coordinates_checklist_x[n],coordinates_checklist_y[n])
 		
@@ -82,7 +82,6 @@ func checklist_create(pos_x, pos_y):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
 
 func _on_back_pressed():
 	sounds_b.play()

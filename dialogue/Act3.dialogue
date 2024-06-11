@@ -27,25 +27,58 @@ Kakek: Weleh-Weleh malangnya nasibmu nak, andai saja kakek masih punya tenaga se
 do talking("Kakek")
 Kakek: Oiya, apakah kamu sudah mencari Ayahmu di sekitaran desa?
 do talking("Rizki")
-Rizki: Sudah kek, kami berdua sudah mencari ke semua area sekitar.
+Rizki: Saya dengar kabar dari anak di desa katanya mereka ada sempat lihat ayah saya naik ke gunung, itulah kenapa saat ini kami disini.
 do talking("Kakek")
-Kakek: Ohh, kalau begitu ada satu area dimana kamu dan temanmu ini belum lihat, yaitu gua yang ada belakang kakek ini
+Kakek: Memangnya nama ayamu siapa nak? Kalau soal nama penduduk di desa hampir semuanya kakek kenal.
 do talking("Rizki")
-Rizki: Gua?
+Rizki: Namanya Suhendri. 
 do talking("Kakek")
-Kakek: ya benar, gua. Gua ini sudah ada sejak lama bahkan sebelum kakek lahir. tapi...
+Kakek: Kang Suhendri yang sering keliling jualan ketoprak di desa?
 do talking("Rizki")
-Rizki: tapi?
+Rizki: Bukan kek, ayah saya seorang Seismologis yang baru pindah ke desa ini 3 tahun lalu. Kakek kenal tidak? 
 do talking("Kakek")
-Kakek: tapi demi keamanan warga sekitar dipagari dan dikunci agar tidak dapat disalahgunakan. Kamu bisa membuka pagar tersebut dengan kunci. Namun, kunci tersebut...
+Kakek: Sesmo.. apa? Saya ga paham bahasa Inggris nak. 
 do talking("Rizki")
-Rizki: kunci tersebut?
+Rizki: Seismologis itu ilmuan yang mempelajari tentang getaran dan pergerakan lempeng bumi untuk mengukur dan mendeteksi gempa yang sudah terjadi.
 do talking("Kakek")
-Kakek: hilang bersama dokumen penting yang kakek bawa
+Kakek: *Tampak kakek itu terlihat kebingungan*
+do talking("Maria")
+Maria: Aduh Riz kamu ini makin mempersulit saja deh.. 
+Maria: Dia pria yang ada di foto ini Kek, kakek kenal? 
+do talking("Kakek")
+Kakek: Hooooohh, kamu anaknya Pak Hendri? Iya kakek kenal dekat sama Pak Hendri, saya itu tukang bersih-bersih kantor-nya.  
 do talking("Rizki")
-Rizki: waduh hilang dimana kek?
+Rizki: Kakek tau dimana keberadaan ayah saya!? Kira-kira keadaanya saat ini bagaimana? Kenapa teleponnya tidak bisa dihubungi? 
 do talking("Kakek")
-Kakek: hilang disekitar area ini nak
+Kakek: Pelan-pelan dulu nak, satu per-satu pertanyaannya. hmmm...
+Kakek: Kalau ayah kamu naik ke gunung, berarti kemungkinan dia sedang berada di dalam gua di belakang kakek ini.
+do talking("Rizki")
+Rizki: Ini kabar bagus Maria!! Akhirnya kita bisa menemukan ayahku
+do talking("Kakek")
+Kakek: Tapi, soal keadaannya kakek juga belum tau, kakek juga belum dapat kabar dari dia semejak gempa ini. Selain itu, kakek juga tidak bisa membiarkan kamu masuk kedalam gua tersebut.
+do talking("Rizki")
+Rizki: !!! *firasatku tidak enak* 
+Rizki: me..memangnya kenapa tidak boleh kek?
+do talking("Kakek")
+Kakek: Itu karena...
+do talking("Rizki")
+Rizki: Karena...?
+do talking("Kakek")
+Kakek: Karena kakek...
+do talking("Rizki")
+Rizki: Karena Kakek...?
+do talking("Kakek")
+Kakek: Karena kakek kehilangan kuncinya Hehehehe.
+do talking("Rizki")
+Rizki: Aduh kakek jangan bikin cemas dong.
+do talking("Kakek")
+Kakek: Demi keamanan warga sekitar, gua tersebut dipagari dan dikunci agar tidak sembarang orang memasuki gua tersebut. Kamu bisa membuka pagar tersebut dengan kunci kakek.
+do talking("Kakek")
+Kakek: Tadinya kakek ingin bersih-bersih di kantor ayahmu. Supaya tidak hilang, kuncinya kakek simpan bersama dengan dokumen penting kakek. Cuma sepertinya kakek lupa meletak dokumennya dimana. 
+do talking("Rizki")
+Rizki: Kakek ingat terakhir meletaknya dimana?
+do talking("Kakek")
+Kakek: Kakek ingat saat sampai disini kakek masih punya dokumennya, cuma setelah menggaruk daun kering disekitar sini kakek baru sadar dokumen kakek hilang. didalamnya berisi KTP, Kartu Keluarga, dan Akte Kelahiran kakek.
 do talking("Rizki")
 Rizki: 
 - Tidak ketemu [if global.quest_status in ["Dokumen"] and global.quest_count != 0]
@@ -90,9 +123,9 @@ if global.quest_status == "Dokumen"
 		do talking("Rizki")
 		Kakek: Dokumen-nya yang ini bukan kek?
 		do talking("Kakek")
-		Kakek: Wah! kamu ketemu dimana? Terima kasih banyak ya nak. Ini kuncinya boleh dipakai untuk membuka pagar gua tersebut. nanti dikembalikan lagi kalau sudah dipinjam
+		Kakek: Wah! kamu ketemu dimana? Terima kasih banyak ya nak. Ini kuncinya boleh dipakai untuk membuka pagar gua tersebut. nanti dikembalikan lagi kalau sudah dipinjam, kakek masih perlu membersihkan halaman ini.
 		do talking("Rizki")
-		Rizki: Sama-sama kek. nanti akan kami kembalikan
+		Rizki: Sama-sama kek. Nanti kuncinya kami kembalikan
 		do reward("res://Inventory/items/Kunci.tres")
 		set global.chapter_game = 3
 		set global.Dialogue += 1

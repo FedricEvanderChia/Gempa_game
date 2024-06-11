@@ -5,8 +5,10 @@ var Dialogue = 0
 var goal = false
 var needs = []
 var Lastpos : Vector2
+var lastmap : int = 1
 var lastgame : String= ""
 var Bridge = "Rusak"
+var cinema = false
 
 var life = 3
 var minigame_score = 0
@@ -15,15 +17,20 @@ var level = 1
 var talker = ""
 var quest_status : String = ""
 var quest_count : int
-var chapter_game= 1
+var chapter_game= 3
 var Recuee = difficulty * 3
-var unlockmaze= false
-var check_unlockmaze_chapter2= false
-var check_unlockmaze_chapter3= false 
+var unlockmaze= true
+var check_unlockmaze_chapter2= true
+var check_unlockmaze_chapter3= true 
 var check_grass= false
 
 #maze1#maze2#maze3 #maze4 #maze5   #maze6 #maze7 #maze8  #maze9  #maze10  #maze11 #maze12  #maze13 #maze14 #maze15 #maze16 #maze17 #maze18 #maze19  #maze20       
-var check_maze_level_condition = [false, false, false,  false,  false,  false, false, false,  false,  false,  false, false,  false, false, false, false, false, false,  false,  false,   false]
+var check_maze_level_condition = [
+false,false,false,false,false,
+false,false,false,false,false,
+false,false,false,false,false, 
+false,false,false,false,false,false]
+
 var tip = 1
 var invt = ResourceLoader.load("res://Inventory/player_inv.tres")
 var gold = 0
@@ -46,6 +53,7 @@ func submit(item):
 func tips():
 	tip = rng.randi_range(1,5)
 	DialogueManager.show_dialogue_balloon(load("res://dialogue/Quest.dialogue"), "Trivia"+ String.num(tip))	
+	
 func currQuest():
 	if quest_status in ["Sembako"]:
 		return "Bagikan "+String.num(quest_count)+" "+quest_status+" lagi."
@@ -58,8 +66,10 @@ func currQuest():
 	else:
 		return "Kumpulkan "+String.num(quest_count)+" "+quest_status+" lagi"
 func StartDialog():
+	cinema = true
 	Sdialogue.emit()
 func EndDialog():
+	cinema = false
 	Edialogue.emit()
 	
 func nextMG():

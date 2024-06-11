@@ -14,7 +14,10 @@ func _ready():
 	global.Receive.connect(reward)
 	global.Give.connect(give)
 func _physics_process(delta):
-	# Add the gravity.
+	global.Lastpos = self.global_position
+	if global.cinema and !global.go_right:
+		anim.play("Idle")
+		return
 	if not is_on_floor():
 		velocity.y += gravity * delta
 

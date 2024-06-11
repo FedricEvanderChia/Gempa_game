@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbvu8n4cx1pl"
-path="res://.godot/imported/cave_path.png-147fe3db3ae5fca81659b1a356c673ff.ctex"
+uid="uid://bi2hkgrndcpoh"
+path="res://.godot/imported/Seismometer.png-f57186e34499027e2cf4891c2056dea7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/cave_path.png"
-dest_files=["res://.godot/imported/cave_path.png-147fe3db3ae5fca81659b1a356c673ff.ctex"]
+source_file="res://asset/Seismometer.png"
+dest_files=["res://.godot/imported/Seismometer.png-f57186e34499027e2cf4891c2056dea7.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://brmclis07bvsb"]
+[gd_scene load_steps=39 format=3 uid="uid://brmclis07bvsb"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_7m0ju"]
 [ext_resource type="PackedScene" uid="uid://c71to8edu42an" path="res://player/Player.tscn" id="1_a88ce"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://btsev7607v0ds" path="res://asset/camp_fire.png" id="9_lnauk"]
 [ext_resource type="Texture2D" uid="uid://csq0py4qvfl74" path="res://asset/HomeA.png" id="11_a4qjb"]
 [ext_resource type="Script" path="res://NPC/TalkNpc.gd" id="12_b2gaq"]
-[ext_resource type="Resource" uid="uid://rnocqhc5552c" path="res://Inventory/items/Air.tres" id="12_d3mg6"]
+[ext_resource type="Resource" uid="uid://blowaxe2wnpva" path="res://Inventory/items/Air.tres" id="12_d3mg6"]
 [ext_resource type="Texture2D" uid="uid://cld21g0jpiw4i" path="res://asset/RuinedHouse.png" id="12_s0exl"]
 [ext_resource type="Texture2D" uid="uid://cosfjgbhy75wm" path="res://asset/Character/NPC_Man.png" id="13_t6it0"]
 [ext_resource type="Texture2D" uid="uid://x8fq7bam18uf" path="res://asset/Character/NPC_woman.png" id="14_fcmkq"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://btrhxxx4waxpr" path="res://asset/Character/NPC_Boy2.3.png" id="16_7x8su"]
 [ext_resource type="AudioStream" uid="uid://6vh8rugjgj07" path="res://asset/Soundtrack/Gameplay.mp3" id="17_6v1qh"]
 [ext_resource type="Texture2D" uid="uid://dxi8rq2pusmkg" path="res://asset/Character/PMI_Blue.png" id="18_hwj15"]
+[ext_resource type="Script" path="res://Minigames/ShakeCam.gd" id="21_exsid"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3knir"]
 size = Vector2(624.5, 375.5)
@@ -97,7 +98,7 @@ size = Vector2(215.5, 651)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ohypt"]
 size = Vector2(215.5, 400)
 
-[node name="Node2D" type="Node2D"]
+[node name="Area1" type="Node2D"]
 script = ExtResource("1_7m0ju")
 Epos = Vector2(3900, 557)
 
@@ -418,6 +419,7 @@ zoom = Vector2(0.9, 0.9)
 limit_left = 0
 limit_right = 4000
 limit_bottom = 660
+script = ExtResource("21_exsid")
 
 [node name="DarkScreen" type="ColorRect" parent="."]
 visible = false
@@ -461,3 +463,6 @@ color = Color(0, 0, 0, 1)
 [connection signal="pressed" from="NPCTalk/Rani/Talk" to="NPCTalk/Rani" method="_on_talk_pressed"]
 [connection signal="Obtain" from="player" to="GUI" method="_on_player_obtain"]
 [connection signal="input_event" from="player" to="." method="_on_player_input_event"]
+
+[editable path="GUI"]
+[editable path="GUI/pause_ui"]

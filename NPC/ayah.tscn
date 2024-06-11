@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7sd43spk84e0"]
+
+[ext_resource type="Script" path="res://player/DialogSprite.gd" id="1_ymxih"]
+[ext_resource type="Texture2D" uid="uid://c3oy3k6lvwjrh" path="res://asset/Character/Daddy.png" id="2_gdy30"]
+
+[node name="Ayah" type="Node2D"]
+script = ExtResource("1_ymxih")
+
+[node name="Daddy" type="Sprite2D" parent="."]
+texture = ExtResource("2_gdy30")

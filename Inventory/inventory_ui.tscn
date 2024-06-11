@@ -99,3 +99,5 @@ offset_top = 42.0
 offset_right = 697.0
 offset_bottom = 65.0
 metadata/_edit_use_anchors_ = true
+
+[editable path="NinePatchRect/GridContainer/Inventory_ui_slot"]

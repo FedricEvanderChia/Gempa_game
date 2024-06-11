@@ -1,17 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://drnqyiwnpts7k"]
+[gd_scene load_steps=11 format=3 uid="uid://drnqyiwnpts7k"]
 
 [ext_resource type="Script" path="res://menus/menu.gd" id="1_08rkx"]
-[ext_resource type="Texture2D" uid="uid://dhhdbvu3jtmoe" path="res://asset/MenuButton/continue.png" id="2_b32hq"]
-[ext_resource type="Texture2D" uid="uid://dfq4b8kmu3pv0" path="res://asset/MenuButton/tile000.png" id="2_titvd"]
-[ext_resource type="Texture2D" uid="uid://bow3j1ixesbik" path="res://asset/MenuButton/tile001.png" id="3_ahgl2"]
-[ext_resource type="Texture2D" uid="uid://c0k0qudia0ldo" path="res://asset/MenuButton/continue_pressed.png" id="3_cvx6i"]
-[ext_resource type="Texture2D" uid="uid://cvk5el35fmoe8" path="res://asset/MenuButton/tile002.png" id="4_l8y11"]
-[ext_resource type="Texture2D" uid="uid://b2te3uumgi6f1" path="res://asset/MenuButton/tile003.png" id="5_rhmx4"]
-[ext_resource type="Texture2D" uid="uid://dkpcy11lmk328" path="res://asset/MenuButton/tile004.png" id="6_863w1"]
-[ext_resource type="Texture2D" uid="uid://buy23701oag5t" path="res://asset/MenuButton/tile005.png" id="7_j7dsg"]
+[ext_resource type="Texture2D" uid="uid://bf4mwy66ty1vs" path="res://asset/MenuButton/MenuButtonA.png" id="2_fy2w6"]
+[ext_resource type="Texture2D" uid="uid://cavuyuis4nf6n" path="res://asset/MenuButton/MenuButtonB.png" id="3_2ool8"]
+[ext_resource type="FontFile" uid="uid://pdrka83wc2a3" path="res://asset/dial_button/pixelsix00.ttf" id="4_eglkk"]
 [ext_resource type="Texture2D" uid="uid://cbxdfu4pfjx44" path="res://asset/Game Title.png" id="8_xno7n"]
 [ext_resource type="AudioStream" uid="uid://c4u46fh70x517" path="res://asset/Soundtrack/MainMenu.mp3" id="9_j7v64"]
 [ext_resource type="Texture2D" uid="uid://ccvmjavne58xc" path="res://asset/useable.png" id="10_8k3l8"]
+[ext_resource type="PackedScene" uid="uid://div6tgqs38lwg" path="res://Minigames/tutorial_ui.tscn" id="10_35118"]
 [ext_resource type="Texture2D" uid="uid://dlnvpx1iw58pf" path="res://asset/Prlx3World.png" id="11_8tysm"]
 [ext_resource type="Texture2D" uid="uid://bjjanpau63g57" path="res://asset/Prlx2World.png" id="12_kai3s"]
 
@@ -37,33 +33,101 @@ offset_right = 92.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="StartB" type="TextureButton" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-texture_normal = ExtResource("2_b32hq")
-texture_pressed = ExtResource("3_cvx6i")
-
 [node name="NewGameB" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-texture_normal = ExtResource("2_titvd")
-texture_pressed = ExtResource("3_ahgl2")
+texture_normal = ExtResource("2_fy2w6")
+texture_pressed = ExtResource("3_2ool8")
+
+[node name="Label" type="Label" parent="VBoxContainer/NewGameB"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_eglkk")
+theme_override_font_sizes/font_size = 25
+text = "Game Baru"
+
+[node name="StartB" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture_normal = ExtResource("2_fy2w6")
+texture_pressed = ExtResource("3_2ool8")
+
+[node name="Label" type="Label" parent="VBoxContainer/StartB"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -14.5
+offset_right = 60.0
+offset_bottom = 14.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_eglkk")
+theme_override_font_sizes/font_size = 25
+text = "Lanjutkan"
 
 [node name="OptionB" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("4_l8y11")
-texture_pressed = ExtResource("5_rhmx4")
+texture_normal = ExtResource("2_fy2w6")
+texture_pressed = ExtResource("3_2ool8")
+
+[node name="Label" type="Label" parent="VBoxContainer/OptionB"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -14.5
+offset_right = 73.0
+offset_bottom = 14.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_eglkk")
+theme_override_font_sizes/font_size = 25
+text = "Pengaturan"
 
 [node name="QuitB" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-texture_normal = ExtResource("6_863w1")
-texture_pressed = ExtResource("7_j7dsg")
+texture_normal = ExtResource("2_fy2w6")
+texture_pressed = ExtResource("3_2ool8")
+
+[node name="Label" type="Label" parent="VBoxContainer/QuitB"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.5
+offset_top = -14.5
+offset_right = 39.5
+offset_bottom = 14.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_eglkk")
+theme_override_font_sizes/font_size = 25
+text = "Keluar"
 
 [node name="GameTitle" type="Sprite2D" parent="."]
 position = Vector2(586, 101)
@@ -104,15 +168,67 @@ texture = ExtResource("12_kai3s")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="BG"]
 
-[connection signal="mouse_entered" from="VBoxContainer/StartB" to="." method="_on_start_b_mouse_entered"]
-[connection signal="mouse_exited" from="VBoxContainer/StartB" to="." method="_on_start_b_mouse_exited"]
-[connection signal="pressed" from="VBoxContainer/StartB" to="." method="_on_start_b_pressed"]
+[node name="konfirmasi" parent="." instance=ExtResource("10_35118")]
+visible = false
+position = Vector2(584, 356)
+scale = Vector2(0.5, 0.5)
+
+[node name="Label" type="Label" parent="konfirmasi"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -608.0
+offset_top = -252.0
+offset_right = 607.0
+offset_bottom = 93.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Peringatan:
+
+Memainkan permainan baru akan 
+menghapus permainan anda sebelumnya. 
+
+Apakah kamu yakin?"
+horizontal_alignment = 1
+
+[node name="yes" type="Button" parent="konfirmasi"]
+offset_left = -280.0
+offset_top = 150.0
+offset_right = -222.0
+offset_bottom = 213.0
+theme_override_font_sizes/font_size = 40
+text = "YA"
+
+[node name="no" type="Button" parent="konfirmasi"]
+offset_left = 200.0
+offset_top = 150.0
+offset_right = 324.0
+offset_bottom = 213.0
+theme_override_font_sizes/font_size = 40
+text = "TIDAK"
+
+[connection signal="button_down" from="VBoxContainer/NewGameB" to="." method="_on_new_game_b_button_down"]
+[connection signal="button_up" from="VBoxContainer/NewGameB" to="." method="_on_new_game_b_button_up"]
 [connection signal="mouse_entered" from="VBoxContainer/NewGameB" to="." method="_on_new_game_b_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/NewGameB" to="." method="_on_new_game_b_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/NewGameB" to="." method="_on_new_game_b_pressed"]
+[connection signal="button_down" from="VBoxContainer/StartB" to="." method="_on_start_b_button_down"]
+[connection signal="button_up" from="VBoxContainer/StartB" to="." method="_on_start_b_button_up"]
+[connection signal="mouse_entered" from="VBoxContainer/StartB" to="." method="_on_start_b_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/StartB" to="." method="_on_start_b_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/StartB" to="." method="_on_start_b_pressed"]
+[connection signal="button_down" from="VBoxContainer/OptionB" to="." method="_on_option_b_button_down"]
+[connection signal="button_up" from="VBoxContainer/OptionB" to="." method="_on_option_b_button_up"]
 [connection signal="mouse_entered" from="VBoxContainer/OptionB" to="." method="_on_option_b_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/OptionB" to="." method="_on_option_b_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/OptionB" to="." method="_on_option_b_pressed"]
+[connection signal="button_down" from="VBoxContainer/QuitB" to="." method="_on_quit_b_button_down"]
+[connection signal="button_up" from="VBoxContainer/QuitB" to="." method="_on_quit_b_button_up"]
 [connection signal="mouse_entered" from="VBoxContainer/QuitB" to="." method="_on_quit_b_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/QuitB" to="." method="_on_quit_b_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/QuitB" to="." method="_on_quit_b_pressed"]
+[connection signal="pressed" from="konfirmasi/yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="konfirmasi/no" to="." method="_on_no_pressed"]

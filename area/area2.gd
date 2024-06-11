@@ -4,13 +4,16 @@ extends Node2D
 @export var Epos = Vector2(4000,498)
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if global.chapter_game==1 and global.Dialogue > 3:
+		global.chapter_game=2
 	if global.Dialogue >= 8:
 		$NPC_Layer/Duck.queue_free()
 	$player.target = $Sensor_end.position.x
-	print($player.target)
 	global.Build.connect(Fixing)
 	global.flee.connect(Kabur)
-	if global.Spos == true:
+	if  global.Lastpos.x <= Epos.x and global.Lastpos.x >= Spos.x:
+		$player.position = global.Lastpos
+	elif global.Spos == true:
 		$player.position = Spos
 	else:
 		$player.position = Epos

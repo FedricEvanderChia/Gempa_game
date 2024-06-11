@@ -7,7 +7,7 @@ var count = rng.randi_range(0, 5)
 var newscore = global.minigame_score+100 
 var once = true
 # Called when the node enters the scene tree for the first time.
-var num = 5 + global.difficulty*5
+var num = 5 + global.difficulty*2
 var reset
 func _ready():
 	reset = global.difficulty
@@ -61,7 +61,7 @@ func complete():
 		global.nextMG()
 	else:
 		if global.Recuee <= 1:
-			global.Recuee = global.difficulty * 3
+			global.Recuee = global.difficulty * 5
 			global.lastgame = "Rescue"
 			get_tree().change_scene_to_file("res://world.tscn")
 		else:

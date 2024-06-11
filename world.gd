@@ -8,12 +8,14 @@ var rng = RandomNumberGenerator.new()
 var item_col
 
 func _ready():	
+	if global.chapter_game<1:
+		global.chapter_game=1
 	global.life = 3
 	giveReward()
 	global.workMode = false
 	if global.Dialogue != 0:
 		$DarkScreen.queue_free()
-	if  global.Lastpos.x <= 4000 and global.Lastpos.x >= 400:
+	if  global.Lastpos.x <= Epos.x and global.Lastpos.x >= Spos.x:
 		$player.position = global.Lastpos
 	elif global.Spos == true:
 		$player.position = Spos
@@ -85,12 +87,12 @@ func _on_go_to_sawah_body_entered(body):
 func _on_rescue_body_entered(body):
 	if body.name == "player":
 		get_node("Rescue/VBoxContainer/Rescue").show()
-		if global.Dialogue > 4:
+		if global.unlockmaze:
 			get_node("Rescue/VBoxContainer/MG_Exit").show()
 func _on_rescue_body_exited(body):
 	if body.name == "player":
 		get_node("Rescue/VBoxContainer/Rescue").hide()
-		if global.Dialogue > 4:
+		if global.unlockmaze:
 			get_node("Rescue/VBoxContainer/MG_Exit").hide()
 
 func _on_home_1_body_entered(body):
@@ -113,10 +115,6 @@ func _on_hq_body_entered(body):
 func _on_hq_body_exited(body):
 	if body.name == "player":
 		get_node("HQ/Work").hide()
-
-func _on_tree_exited():
-	global.Lastpos = $player.global_position
-
 
 func giveReward():
 	var itempath
