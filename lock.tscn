@@ -178,5 +178,3 @@ vertical_alignment = 1
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_jyu1a")
 mix_target = 1
-
-[node name="Camera2D" type="Camera2D" parent="."]

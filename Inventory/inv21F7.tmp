@@ -1,0 +1,118 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7dmtxqirlb2x"]
+
+[ext_resource type="Script" path="res://Inventory/inventory_ui.gd" id="1_yb6pb"]
+[ext_resource type="Texture2D" uid="uid://c8osrol4alxsw" path="res://asset/Inventory background.png" id="2_07hu8"]
+[ext_resource type="PackedScene" uid="uid://be67m4algo8y1" path="res://Inventory/inventory_ui_slot.tscn" id="3_68uht"]
+
+[node name="inventory_ui" type="Control"]
+custom_minimum_size = Vector2(505, 371)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 522.0
+offset_bottom = 371.0
+script = ExtResource("1_yb6pb")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+offset_right = 549.0
+offset_bottom = 388.0
+texture = ExtResource("2_07hu8")
+patch_margin_left = 30
+patch_margin_top = 30
+patch_margin_right = 30
+patch_margin_bottom = 30
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -166.0
+offset_right = 240.0
+offset_bottom = 166.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 4
+
+[node name="Inventory_ui_slot1" parent="NinePatchRect/GridContainer" instance=ExtResource("3_68uht")]
+layout_mode = 2
+
+[node name="Inventory_ui_slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_68uht")]
+layout_mode = 2
+
+[node name="Inventory_ui_slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_68uht")]
+layout_mode = 2
+
+[node name="Inventory_ui_slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_68uht")]
+layout_mode = 2
+
+[node name="Inventory_ui_slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_68uht")]
+layout_mode = 2
+
+[node name="Inventory_ui_slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_68uht")]
+layout_mode = 2
+
+[node name="Inventory_ui_slot7" parent="NinePatchRect/GridContainer" instance=ExtResource("3_68uht")]
+layout_mode = 2
+
+[node name="Inventory_ui_slot8" parent="NinePatchRect/GridContainer" instance=ExtResource("3_68uht")]
+layout_mode = 2
+
+[node name="Inventory_ui_slot9" parent="NinePatchRect/GridContainer" instance=ExtResource("3_68uht")]
+layout_mode = 2
+
+[node name="Inventory_ui_slot10" parent="NinePatchRect/GridContainer" instance=ExtResource("3_68uht")]
+layout_mode = 2
+
+[node name="Inventory_ui_slot11" parent="NinePatchRect/GridContainer" instance=ExtResource("3_68uht")]
+layout_mode = 2
+
+[node name="Inventory_ui_slot12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_68uht")]
+layout_mode = 2
+
+[node name="ItemDescription" type="Node2D" parent="."]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ItemDescription"]
+offset_left = 553.0
+offset_right = 785.0
+offset_bottom = 388.0
+texture = ExtResource("2_07hu8")
+patch_margin_left = 30
+patch_margin_top = 30
+patch_margin_right = 30
+patch_margin_bottom = 30
+
+[node name="Title" type="Label" parent="ItemDescription"]
+offset_left = 560.0
+offset_top = 8.0
+offset_right = 600.0
+offset_bottom = 31.0
+text = "Item Description:"
+metadata/_edit_use_anchors_ = true
+
+[node name="Description" type="Label" parent="ItemDescription"]
+offset_left = 564.0
+offset_top = 42.0
+offset_right = 697.0
+offset_bottom = 65.0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="input_event" from="NinePatchRect/GridContainer/Inventory_ui_slot1/CenterContainer/Panel/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="input_event" from="NinePatchRect/GridContainer/Inventory_ui_slot2/CenterContainer/Panel/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="input_event" from="NinePatchRect/GridContainer/Inventory_ui_slot3/CenterContainer/Panel/Area2D" to="." method="_on_area_2d_input_event"]
+
+[editable path="NinePatchRect/GridContainer/Inventory_ui_slot1"]
+[editable path="NinePatchRect/GridContainer/Inventory_ui_slot2"]
+[editable path="NinePatchRect/GridContainer/Inventory_ui_slot3"]
+[editable path="NinePatchRect/GridContainer/Inventory_ui_slot4"]
+[editable path="NinePatchRect/GridContainer/Inventory_ui_slot5"]
+[editable path="NinePatchRect/GridContainer/Inventory_ui_slot6"]
+[editable path="NinePatchRect/GridContainer/Inventory_ui_slot7"]
+[editable path="NinePatchRect/GridContainer/Inventory_ui_slot8"]
+[editable path="NinePatchRect/GridContainer/Inventory_ui_slot9"]
+[editable path="NinePatchRect/GridContainer/Inventory_ui_slot10"]
+[editable path="NinePatchRect/GridContainer/Inventory_ui_slot11"]
+[editable path="NinePatchRect/GridContainer/Inventory_ui_slot12"]

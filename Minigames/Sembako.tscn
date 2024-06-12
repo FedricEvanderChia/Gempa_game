@@ -435,7 +435,6 @@ texture = ExtResource("27_7hctx")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasLayer"]
 stream = ExtResource("28_qy7rl")
 autoplay = true
-stream_paused = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0

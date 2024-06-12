@@ -618,7 +618,6 @@ vertical_alignment = 1
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_axj6u")
 autoplay = true
-stream_paused = true
 
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="timeout" from="Control/Timer" to="." method="_on_timer_timeout"]

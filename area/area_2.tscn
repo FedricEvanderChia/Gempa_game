@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c71to8edu42an" path="res://player/Player.tscn" id="4_37cct"]
 [ext_resource type="Texture2D" uid="uid://cno11yoc8jb5" path="res://asset/Sawah_front.png" id="4_o06ch"]
 [ext_resource type="Texture2D" uid="uid://bano4l0pdmhd5" path="res://asset/Bad_bridge.png" id="4_xxgbn"]
-[ext_resource type="Script" path="res://Minigames/ShakeCam.gd" id="7_wqnkx"]
+[ext_resource type="Script" path="res://Minigames/ShakeCam.gd" id="7_nnkw8"]
 [ext_resource type="PackedScene" uid="uid://dtsrtigd5cgnv" path="res://uigempa.tscn" id="8_2rrum"]
 [ext_resource type="Texture2D" uid="uid://cno8htkqc6vrv" path="res://asset/bridge.png" id="8_xd84g"]
 [ext_resource type="Texture2D" uid="uid://cqo453aljo01w" path="res://asset/Character/Duck_anim.png" id="9_qf3ri"]
@@ -130,12 +130,11 @@ position = Vector2(30, 480)
 scale = Vector2(0.213, 0.213)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2(-37.5587, 0)
 zoom = Vector2(0.9, 0.9)
 limit_left = 0
 limit_right = 4000
-limit_bottom = 732
-script = ExtResource("7_wqnkx")
+limit_bottom = 660
+script = ExtResource("7_nnkw8")
 
 [node name="collectible_Layer" type="Node2D" parent="."]
 position = Vector2(2274, 456)
@@ -210,7 +209,6 @@ debug_color = Color(0, 0.6, 0.701961, 0.419608)
 stream = ExtResource("11_dj3o6")
 volume_db = -10.895
 autoplay = true
-stream_paused = true
 
 [connection signal="body_entered" from="Go to World" to="." method="_on_go_to_world_body_entered"]
 [connection signal="body_entered" from="Go to World2" to="." method="_on_go_to_world_2_body_entered"]

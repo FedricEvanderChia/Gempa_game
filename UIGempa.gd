@@ -88,3 +88,7 @@ func _on_player_obtain(item : inventory_item):
 
 
 
+
+
+func _on_player_dark_obtain(item):
+	pass # Replace with function body.

@@ -21,4 +21,4 @@ func update(slots: inventory_slot):
 			if slots.amount > 0 :
 				amount_text.visible = true
 				amount_text.text = str(slots.amount)
-		
+

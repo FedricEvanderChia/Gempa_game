@@ -157,6 +157,7 @@ size = Vector2(135.375, 661.625)
 size = Vector2(440, 1013.33)
 
 [node name="Area4" type="Node2D"]
+position = Vector2(-7, 0)
 script = ExtResource("1_dm2ug")
 Spos = Vector2(35, 575)
 Epos = Vector2(0, 0)
@@ -164,6 +165,7 @@ Epos = Vector2(0, 0)
 [node name="BG2" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="BG2"]
+position = Vector2(-7, 0)
 motion_scale = Vector2(0.5, 0.5)
 
 [node name="CaveBack" type="Sprite2D" parent="BG2/ParallaxLayer"]
@@ -172,6 +174,7 @@ scale = Vector2(1.25, 1.25)
 texture = ExtResource("1_ve024")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="BG2"]
+position = Vector2(-7, 0)
 
 [node name="Cave_path" type="Sprite2D" parent="BG2/ParallaxLayer2"]
 position = Vector2(1257, 339)
@@ -207,17 +210,6 @@ frame_progress = 0.642957
 position = Vector2(1840, 565)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("7_g4f64")
-
-[node name="player" parent="." instance=ExtResource("3_sc5bi")]
-position = Vector2(40, 550)
-scale = Vector2(0.3, 0.3)
-
-[node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2(-37.5587, 0)
-zoom = Vector2(0.9, 0.9)
-limit_left = 0
-limit_right = 2508
-limit_bottom = 717
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
@@ -272,6 +264,18 @@ grow_vertical = 2
 scale = Vector2(3, 3)
 theme_override_font_sizes/font_size = 20
 text = "talk"
+metadata/_edit_use_anchors_ = true
+
+[node name="player" parent="." instance=ExtResource("3_sc5bi")]
+position = Vector2(40, 550)
+scale = Vector2(0.3, 0.3)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(-37.5587, 0)
+zoom = Vector2(0.9, 0.9)
+limit_left = 0
+limit_right = 2508
+limit_bottom = 717
 
 [node name="pilar" type="Sprite2D" parent="."]
 position = Vector2(1257, 339)
@@ -285,7 +289,7 @@ texture = ExtResource("14_dojoy")
 
 [node name="GUI" parent="." instance=ExtResource("6_hx0ks")]
 
-[connection signal="Obtain" from="player" to="GUI" method="_on_player_obtain"]
 [connection signal="body_entered" from="Go to World" to="." method="_on_go_to_world_body_entered"]
 [connection signal="body_entered" from="NPC_container/Ayah" to="." method="_on_ayah_body_entered"]
 [connection signal="body_exited" from="NPC_container/Ayah" to="." method="_on_ayah_body_exited"]
+[connection signal="Obtain" from="player" to="GUI" method="_on_player_obtain"]

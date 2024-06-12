@@ -1,13 +1,10 @@
 extends Node2D
 
-@export var Spos = Vector2(400,500)
+@export var Spos = Vector2(40,500)
 @export var Epos = Vector2(3760,500)
 # Called when the node enters the scene tree for the first time.
 var item_pos
 var item_collectible_dokumen = preload("res://Inventory/items/items_collectibles.tscn")
-
-
-
 
 func _ready():
 	if global.chapter_game==2 and global.Dialogue > 7:

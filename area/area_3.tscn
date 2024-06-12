@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://1yo5olfmic1q"]
+[gd_scene load_steps=16 format=3 uid="uid://1yo5olfmic1q"]
 
 [ext_resource type="Texture2D" uid="uid://c6da523ly6b7t" path="res://asset/Prlx2_Road-Jungle.png" id="1_ie6w7"]
 [ext_resource type="Script" path="res://area/area_3.gd" id="1_wp81p"]
@@ -10,7 +10,6 @@
 [ext_resource type="Script" path="res://area/grass_mystery.gd" id="6_g4j5t"]
 [ext_resource type="Texture2D" uid="uid://ch8lxnq8pq8pl" path="res://asset/grass.png" id="6_t142e"]
 [ext_resource type="Texture2D" uid="uid://ceopawoelloo8" path="res://asset/Character/NPC_OldMan.png" id="10_gsf6m"]
-[ext_resource type="Script" path="res://Minigames/ShakeCam.gd" id="10_v4hyp"]
 [ext_resource type="AudioStream" uid="uid://hax2vld3cwbf" path="res://asset/BGM/letx27s-get-this-done-154533.mp3" id="12_d6spc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_viakg"]
@@ -198,18 +197,6 @@ position = Vector2(3379, 543)
 scale = Vector2(0.1625, 0.158333)
 texture = ExtResource("6_t142e")
 
-[node name="player" parent="." instance=ExtResource("2_i5sog")]
-position = Vector2(3760, 512)
-scale = Vector2(0.213, 0.213)
-
-[node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2(-37.5587, 0)
-zoom = Vector2(0.9, 0.9)
-limit_left = 0
-limit_right = 4000
-limit_bottom = 732
-script = ExtResource("10_v4hyp")
-
 [node name="collectible_Layer" type="Node2D" parent="."]
 position = Vector2(2274, 456)
 
@@ -218,6 +205,16 @@ position = Vector2(2274, 456)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Go to World2"]
 position = Vector2(3896.34, 288)
 shape = SubResource("RectangleShape2D_ewrrl")
+
+[node name="player" parent="." instance=ExtResource("2_i5sog")]
+position = Vector2(46, 512)
+scale = Vector2(0.213, 0.213)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+zoom = Vector2(0.9, 0.9)
+limit_left = 0
+limit_right = 2508
+limit_bottom = 717
 
 [node name="grass_node_front" type="Node2D" parent="."]
 
@@ -352,11 +349,11 @@ text = "talk"
 stream = ExtResource("12_d6spc")
 volume_db = -10.895
 autoplay = true
-stream_paused = true
 
 [connection signal="body_entered" from="Go to World" to="." method="_on_go_to_world_body_entered"]
 [connection signal="input_event" from="grass_node_back/grass_mystery/Area2D" to="grass_node_back/grass_mystery" method="_on_area_2d_input_event"]
 [connection signal="body_entered" from="Go to World2" to="." method="_on_go_to_world_2_body_entered"]
+[connection signal="Obtain" from="player" to="GUI" method="_on_player_obtain"]
 [connection signal="body_entered" from="NPC_container/Kakek" to="." method="_on_kakek_body_entered"]
 [connection signal="body_exited" from="NPC_container/Kakek" to="." method="_on_kakek_body_exited"]
 [connection signal="pressed" from="NPC_container/Kakek/Talk" to="." method="_on_talk_pressed"]

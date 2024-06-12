@@ -1,13 +1,15 @@
 ~ Cave1
 do StartDialog()
 do talking("Rizki")
-Rizki: Sebentar Maria, aku merasa belum siap bertemu ayahku.
+Rizki: Sebentar Maria, Aku merasa tidak siap untuk menemui ayahku..
 do talking("Maria")
 Maria: Eh? memangnya kenapa? kita kan sudah datang jauh-jauh hanya untuk mencari ayahmu?
 do talking("Rizki")
-Rizki: A..aku hanya merasa gugup dan khawatir.. Bagaimana jika kita sudah terlambat?
+Rizki: A..aku hanya merasa gugup dan khawatir. Bagaimana jika kita sudah terlambat..?
 do talking("Maria")
-Maria: 
+Maria: Hei. tenangkan dirimu terlebih dulu. Berdasarkan informasi kakek itu tadi, kita tahu kalau kantor ayahmu terletak di dalam gua ini.
+Maria: Untuk kantor seismologis yang terletak didalam gua tentunya ayahmu sudah melakukan upaya mitigasi gempa saat tempat ini dibangun.
+ 
 	
 ~ quiz1
 do StartDialog()
