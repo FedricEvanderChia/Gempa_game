@@ -27,7 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://bimwqwdopcug5" path="res://asset/H5O.png" id="25_e5cri"]
 [ext_resource type="Texture2D" uid="uid://ct1ni7aqjltoa" path="res://asset/Beras-duo.png" id="26_d7jp2"]
 [ext_resource type="Texture2D" uid="uid://ed3817p3ijrt" path="res://asset/Tenda-teduh.png" id="27_7hctx"]
-[ext_resource type="AudioStream" uid="uid://uk5y6ht22gvu" path="res://asset/Soundtrack/Minigame_1.mp3" id="28_1ytch"]
+[ext_resource type="AudioStream" uid="uid://blh4r1f357ouu" path="res://asset/BGM/fun-amp-quirky-upbeat-retro-163382.mp3" id="28_qy7rl"]
 [ext_resource type="Script" path="res://Minigames/ShakeCam.gd" id="29_wn5il"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ag3l"]
@@ -433,8 +433,9 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("27_7hctx")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasLayer"]
-stream = ExtResource("28_1ytch")
+stream = ExtResource("28_qy7rl")
 autoplay = true
+stream_paused = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0

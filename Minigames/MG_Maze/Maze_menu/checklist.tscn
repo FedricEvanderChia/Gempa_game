@@ -19,6 +19,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 custom_minimum_size = Vector2(120, 100)
 layout_mode = 0
 offset_left = -14.0
@@ -27,6 +28,6 @@ offset_bottom = 104.0
 color = Color(0, 0, 0, 0.427451)
 
 [node name="AnimatedSprite2d" type="Sprite2D" parent="."]
-position = Vector2(63, 48)
-scale = Vector2(3.25, 3.15625)
+position = Vector2(92.5, 76.649)
+scale = Vector2(1.40625, 1.36569)
 texture = ExtResource("2_7h7je")

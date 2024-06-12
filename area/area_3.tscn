@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://1yo5olfmic1q"]
+[gd_scene load_steps=17 format=3 uid="uid://1yo5olfmic1q"]
 
 [ext_resource type="Texture2D" uid="uid://c6da523ly6b7t" path="res://asset/Prlx2_Road-Jungle.png" id="1_ie6w7"]
 [ext_resource type="Script" path="res://area/area_3.gd" id="1_wp81p"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ch8lxnq8pq8pl" path="res://asset/grass.png" id="6_t142e"]
 [ext_resource type="Texture2D" uid="uid://ceopawoelloo8" path="res://asset/Character/NPC_OldMan.png" id="10_gsf6m"]
 [ext_resource type="Script" path="res://Minigames/ShakeCam.gd" id="10_v4hyp"]
+[ext_resource type="AudioStream" uid="uid://hax2vld3cwbf" path="res://asset/BGM/letx27s-get-this-done-154533.mp3" id="12_d6spc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_viakg"]
 size = Vector2(5292, 74.5)
@@ -346,6 +347,12 @@ grow_vertical = 2
 scale = Vector2(3, 3)
 theme_override_font_sizes/font_size = 20
 text = "talk"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_d6spc")
+volume_db = -10.895
+autoplay = true
+stream_paused = true
 
 [connection signal="body_entered" from="Go to World" to="." method="_on_go_to_world_body_entered"]
 [connection signal="input_event" from="grass_node_back/grass_mystery/Area2D" to="grass_node_back/grass_mystery" method="_on_area_2d_input_event"]

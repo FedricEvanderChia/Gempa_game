@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dcnaufn2rx6tp"]
+[gd_scene load_steps=16 format=3 uid="uid://dcnaufn2rx6tp"]
 
 [ext_resource type="Script" path="res://Minigames/MG_Rescue/MG_Rescue.gd" id="1_e3udw"]
 [ext_resource type="Texture2D" uid="uid://b523wsvxd0168" path="res://asset/BG_Rescue.png" id="2_3pjth"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://b4ff4qomp8kn5" path="res://asset/rubble/Rubble_Pole.png" id="11_ruxrp"]
 [ext_resource type="Texture2D" uid="uid://b4qeob0jnpcii" path="res://asset/rubble/Rubble_Wall.png" id="12_8a8c8"]
 [ext_resource type="Texture2D" uid="uid://chqyq160dt8jq" path="res://asset/rubble/Rubble_wood.png" id="13_2pryq"]
+[ext_resource type="AudioStream" uid="uid://b8o5c0w0ju0kn" path="res://asset/BGM/chasing-victory-main-9448.mp3" id="14_nnpdp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wgxs6"]
 radius = 250.0
@@ -258,6 +259,11 @@ theme_override_font_sizes/font_size = 40
 text = "+100"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_nnpdp")
+volume_db = -10.895
+autoplay = true
 
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="timeout" from="CanvasLayer/Control/Timer" to="CanvasLayer/Control" method="_on_timer_timeout"]

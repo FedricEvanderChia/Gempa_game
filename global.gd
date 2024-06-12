@@ -12,16 +12,17 @@ var cinema = false
 
 var life = 3
 var minigame_score = 0
+var Reputasi : float = 0.00
 var difficulty = 1
 var level = 1
 var talker = ""
 var quest_status : String = ""
 var quest_count : int
-var chapter_game= 3
+var chapter_game= 1
 var Recuee = difficulty * 3
-var unlockmaze= true
-var check_unlockmaze_chapter2= true
-var check_unlockmaze_chapter3= true 
+var unlockmaze= false
+var check_unlockmaze_chapter2= false
+var check_unlockmaze_chapter3= false 
 var check_grass= false
 
 #maze1#maze2#maze3 #maze4 #maze5   #maze6 #maze7 #maze8  #maze9  #maze10  #maze11 #maze12  #maze13 #maze14 #maze15 #maze16 #maze17 #maze18 #maze19  #maze20       
@@ -43,6 +44,7 @@ signal Receive(Path)
 signal Give(Path)
 signal Build
 signal flee(chase)
+signal addRep(val)
 
 func talking(name):
 	talker = name

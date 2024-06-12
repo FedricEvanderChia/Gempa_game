@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://dtsrtigd5cgnv"]
+[gd_scene load_steps=44 format=3 uid="uid://dtsrtigd5cgnv"]
 
 [ext_resource type="Script" path="res://UIGempa.gd" id="1_ngrhg"]
 [ext_resource type="Texture2D" uid="uid://bcnkef8p4ap3y" path="res://asset/BtnIdle.png" id="2_rerfp"]
@@ -29,6 +29,8 @@
 [ext_resource type="AudioStream" uid="uid://dceks71e7fi1m" path="res://asset/sfx/backpack_sounds_close.mp3" id="23_ktpyl"]
 [ext_resource type="FontFile" uid="uid://b2nh2smgavidr" path="res://asset/Fonts/karmatic-arcade.regular.ttf" id="24_hrwlh"]
 [ext_resource type="Script" path="res://chapterlabel_control.gd" id="24_wbcbq"]
+[ext_resource type="Texture2D" uid="uid://bh4uypucdvu1o" path="res://asset/Reputasi.png" id="30_iyd03"]
+[ext_resource type="Script" path="res://misc/RepNum.gd" id="31_lk75i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yypih"]
 size = Vector2(150, 150)
@@ -110,6 +112,47 @@ animations = [{
 
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource("1_ngrhg")
+
+[node name="Reputation" type="Node2D" parent="."]
+
+[node name="Reputasi" type="Sprite2D" parent="Reputation"]
+position = Vector2(158, 52)
+texture = ExtResource("30_iyd03")
+
+[node name="Rep" type="Label" parent="Reputation/Reputasi"]
+modulate = Color(0.309804, 0.670588, 1, 1)
+offset_left = -40.0
+offset_top = 24.0
+offset_right = 128.0
+offset_bottom = 79.0
+theme_override_font_sizes/font_size = 20
+text = "Reputasi"
+
+[node name="RepNum" type="Label" parent="Reputation"]
+offset_left = 205.0
+offset_top = 28.0
+offset_right = 249.0
+offset_bottom = 89.0
+theme_override_colors/font_color = Color(0.309804, 0.670588, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = ": 0.0
+"
+script = ExtResource("31_lk75i")
+
+[node name="PlusRep" type="Label" parent="Reputation/RepNum"]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 109.0
+offset_bottom = 67.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "+0.00"
 
 [node name="Control2" type="Control" parent="."]
 layout_mode = 3

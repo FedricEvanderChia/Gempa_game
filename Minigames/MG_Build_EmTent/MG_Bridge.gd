@@ -21,7 +21,7 @@ func _ready():
 func _process(delta):
 	if global.life==0:
 		await get_tree().create_timer(1).timeout
-		get_tree().change_scene_to_file("res://world.tscn")
+		get_tree().change_scene_to_file("res://area/area_2.tscn")
 	if goal == 0:
 		global.Bridge = "Selesai"
 		get_tree().change_scene_to_file("res://area/area_2.tscn")
@@ -78,5 +78,5 @@ func _on_okay_pressed():
 func _on_back_pressed():
 	sounds_b.play()
 	await get_tree().create_timer(0.5).timeout
-	get_tree().change_scene_to_file("res://world.tscn")
+	get_tree().change_scene_to_file("res://area/area_2.tscn")
 	

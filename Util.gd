@@ -18,7 +18,7 @@ func saveGame():
 	var data: Dictionary = {
 		"Dialogue" = global.Dialogue,
 		"life" = global.life,
-		"minigame_score" = global.minigame_score,
+		"Reputasi" = global.Reputasi,
 		"Quest" = global.quest_status,
 		"Progress" = global.quest_count,
 		"Bridge" = global.Bridge,
@@ -44,7 +44,7 @@ func loadGame():
 			if curr_line:
 				global.Dialogue = curr_line["Dialogue"]
 				global.life = curr_line["life"]
-				global.minigame_score = curr_line["minigame_score"]
+				global.Reputasi = curr_line["Reputasi"]
 				global.quest_status = curr_line["Quest"]
 				global.quest_count = curr_line["Progress"]
 				global.Bridge = curr_line["Bridge"]
@@ -64,7 +64,7 @@ func ResetGame():
 	var data: Dictionary = {
 		"Dialogue" = 0,
 		"life" = 3,
-		"minigame_score" = 0,
+		"Reputasi" = 0.00,
 		"Quest" = "",
 		"Progress" = 0,
 		"Bridge" = "Rusak",

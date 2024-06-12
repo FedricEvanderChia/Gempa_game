@@ -65,6 +65,7 @@ Maria: Yah setidaknya untuk jembatan sementara ini sudah mencukupi. Ayo kita ter
 do talking("end")
 do EndDialog()
 set global.Dialogue +=1
+do emit("addRep",10.00)
 => END!
 
 ~ Sawah1

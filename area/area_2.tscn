@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://byk5hbnmogo5c"]
+[gd_scene load_steps=24 format=3 uid="uid://byk5hbnmogo5c"]
 
 [ext_resource type="Script" path="res://area/area2.gd" id="2_iwe2q"]
 [ext_resource type="Texture2D" uid="uid://b6o6ml4pkal8f" path="res://asset/Prlx1_Sawah.png" id="3_21ydt"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dtsrtigd5cgnv" path="res://uigempa.tscn" id="8_2rrum"]
 [ext_resource type="Texture2D" uid="uid://cno8htkqc6vrv" path="res://asset/bridge.png" id="8_xd84g"]
 [ext_resource type="Texture2D" uid="uid://cqo453aljo01w" path="res://asset/Character/Duck_anim.png" id="9_qf3ri"]
+[ext_resource type="AudioStream" uid="uid://ctd7owbett5a4" path="res://asset/BGM/Easy Lemon.mp3" id="11_dj3o6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cngay"]
 animations = [{
@@ -204,6 +205,12 @@ debug_color = Color(0, 0.6, 0.701961, 0.419608)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC_Layer/Duck/dekat"]
 shape = SubResource("CircleShape2D_f4orq")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_dj3o6")
+volume_db = -10.895
+autoplay = true
+stream_paused = true
 
 [connection signal="body_entered" from="Go to World" to="." method="_on_go_to_world_body_entered"]
 [connection signal="body_entered" from="Go to World2" to="." method="_on_go_to_world_2_body_entered"]

@@ -202,7 +202,7 @@ func complete():
 
 	$"../CanvasLayer/Control/Timer".stop()
 	$"../CanvasLayer/Control/Success".show()
-	$"../CanvasLayer".add_score(150)
+	$"../CanvasLayer".add_score(250)
 			#	if slots.item.resource_path == 	"res://Inventory/items/Dokumen.tres":
 	var dirpath = get_tree().current_scene.name
 	var dir_idx = int(dirpath.right(2))

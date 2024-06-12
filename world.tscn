@@ -23,16 +23,16 @@
 [ext_resource type="Script" path="res://Minigames/ShakeCam.gd" id="21_exsid"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3knir"]
-size = Vector2(624.5, 375.5)
+size = Vector2(424, 375.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76igw"]
-size = Vector2(590.25, 197.75)
+size = Vector2(584, 197.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wel7k"]
-size = Vector2(397, 269)
+size = Vector2(280, 269)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7e60h"]
-size = Vector2(319, 245)
+size = Vector2(168, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pgygu"]
 atlas = ExtResource("9_lnauk")
@@ -145,6 +145,7 @@ position = Vector2(781, 415)
 position = Vector2(2299, 379)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Home1"]
+position = Vector2(-39, 0)
 shape = SubResource("RectangleShape2D_3knir")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
@@ -166,25 +167,24 @@ Telepon Darurat"
 position = Vector2(2299, 379)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HQ"]
-position = Vector2(713.875, 77.875)
+position = Vector2(713, 77.875)
 shape = SubResource("RectangleShape2D_76igw")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="Work" type="Button" parent="HQ"]
-visible = false
 offset_left = 644.0
 offset_top = 10.0
 offset_right = 757.0
 offset_bottom = 54.0
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 20
-text = "Go To Work"
+text = "Pergi Bekerja"
 
 [node name="Rescue" type="Area2D" parent="."]
 position = Vector2(1655, 422)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rescue"]
-position = Vector2(27.5, 3.5)
+position = Vector2(69, 3.5)
 shape = SubResource("RectangleShape2D_wel7k")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
@@ -224,6 +224,7 @@ Maze"
 position = Vector2(1200, 500)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camp"]
+position = Vector2(4, -4)
 shape = SubResource("RectangleShape2D_7e60h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Camp"]
@@ -274,7 +275,7 @@ shape = SubResource("RectangleShape2D_aa0ay")
 position = Vector2(2274, 456)
 
 [node name="items_collectibles" parent="collectible_Layer" instance=ExtResource("8_467eh")]
-position = Vector2(1076, 98)
+position = Vector2(-2218, 136)
 scale = Vector2(0.3, 0.3)
 item = ExtResource("12_d3mg6")
 
@@ -306,15 +307,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
+offset_left = -150.0
 offset_top = -525.0
-offset_right = -38.0
+offset_right = -52.0
 offset_bottom = -475.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
 theme_override_font_sizes/font_size = 30
-text = "talk"
+text = "Bicara"
 
 [node name="Woman" type="Area2D" parent="NPCTalk"]
 position = Vector2(-6500, -390)
@@ -329,13 +330,13 @@ texture = ExtResource("14_fcmkq")
 
 [node name="Talk" type="Button" parent="NPCTalk/Woman"]
 visible = false
-offset_left = -100.0
+offset_left = -150.0
 offset_top = -525.0
-offset_right = -38.0
+offset_right = -52.0
 offset_bottom = -475.0
 scale = Vector2(3, 3)
 theme_override_font_sizes/font_size = 30
-text = "talk"
+text = "Bicara"
 
 [node name="Girl" type="Area2D" parent="NPCTalk"]
 position = Vector2(2028, -126)
@@ -350,13 +351,13 @@ flip_h = true
 
 [node name="Talk" type="Button" parent="NPCTalk/Girl"]
 visible = false
-offset_left = -100.0
+offset_left = -150.0
 offset_top = -400.0
-offset_right = -38.0
+offset_right = -88.0
 offset_bottom = -350.0
 scale = Vector2(3, 3)
 theme_override_font_sizes/font_size = 30
-text = "talk"
+text = "Bicara"
 
 [node name="Boy" type="Area2D" parent="NPCTalk"]
 position = Vector2(2500, -126)
@@ -370,13 +371,17 @@ texture = ExtResource("16_7x8su")
 
 [node name="Talk" type="Button" parent="NPCTalk/Boy"]
 visible = false
-offset_left = -100.0
-offset_top = -400.0
-offset_right = -38.0
-offset_bottom = -350.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = -380.0
+offset_right = -52.0
+offset_bottom = -330.0
+grow_horizontal = 2
 scale = Vector2(3, 3)
 theme_override_font_sizes/font_size = 30
-text = "talk"
+text = "Bicara"
 
 [node name="Rani" type="Area2D" parent="NPCTalk"]
 position = Vector2(432, -292)
@@ -395,15 +400,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
+offset_left = -150.0
 offset_top = -525.0
-offset_right = -38.0
+offset_right = -52.0
 offset_bottom = -475.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
 theme_override_font_sizes/font_size = 30
-text = "talk"
+text = "Bicara"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_6v1qh")

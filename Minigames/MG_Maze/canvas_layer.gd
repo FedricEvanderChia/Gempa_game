@@ -29,6 +29,7 @@ func _process(delta):
 	$Control/Axe/Num.text = "%d" % $"../Player".axe
 	$Control/Apar/Num.text = "%d" % $"../Player".apar
 	if $"../Player".goal == 0:
+		$AudioStreamPlayer.stream = load("res://asset/BGM/chasing-victory-main-9448.mp3")
 		$Control/Rescue/Num.position = Vector2(-130,0)
 		$Control/Rescue/Num.text = "Korban berhasil diselamatkan\nsegera tinggalkan gedung"
 		$Control/Rescue/Num.scale = Vector2(0.75,0.75)

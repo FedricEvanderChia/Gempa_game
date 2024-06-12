@@ -62,7 +62,7 @@ func _on_call_button_down():
 	var num = get_node("Phone/Number")
 	if num.text == condition:
 		if condition == "0217992325": add_score(1000)
-		else: add_score(100) 
+		else: add_score(125) 
 		$Situation.modulate = Color(0,255,0)
 		get_node("Phone").num= ""
 		complete()

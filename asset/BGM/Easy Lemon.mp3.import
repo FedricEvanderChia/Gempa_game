@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ctd7owbett5a4"
+path="res://.godot/imported/Easy Lemon.mp3-5c9e5ebd013150c6cb220269c45ffbd8.mp3str"
+
+[deps]
+
+source_file="res://asset/BGM/Easy Lemon.mp3"
+dest_files=["res://.godot/imported/Easy Lemon.mp3-5c9e5ebd013150c6cb220269c45ffbd8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

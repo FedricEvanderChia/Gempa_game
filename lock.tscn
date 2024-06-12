@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://bpvsy5ccb6i60"]
+[gd_scene load_steps=23 format=3 uid="uid://bpvsy5ccb6i60"]
 
 [ext_resource type="Texture2D" uid="uid://bqulvs5jhoy4c" path="res://asset/padLock_sheet.png" id="1_eb7sc"]
 [ext_resource type="Script" path="res://lock.gd" id="1_f1keh"]
+[ext_resource type="AudioStream" uid="uid://d3cpffytjrx5o" path="res://asset/sfx/sfx_unlock.mp3" id="3_jyu1a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m5lqm"]
 atlas = ExtResource("1_eb7sc")
@@ -158,15 +159,24 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -161.4
-offset_top = -122.6
-offset_right = 147.6
-offset_bottom = -41.6
+offset_left = -271.5
+offset_top = -199.5
+offset_right = 271.5
+offset_bottom = -58.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 0, 1)
-theme_override_font_sizes/font_size = 28
-text = "Kamu telah membuka
- minigame Maze"
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/font_size = 50
+text = "Kamu Telah Membuka
+ Minigame Baru"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jyu1a")
+mix_target = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]

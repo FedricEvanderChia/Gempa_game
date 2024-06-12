@@ -3,89 +3,12 @@ do StartDialog()
 do talking("Rizki")
 Rizki: Sebentar Maria, aku merasa belum siap bertemu ayahku.
 do talking("Maria")
-Maria: Eh? memangnya kenapa? kita kan sudah datang jauh-jauh hanya untuk mencari ayamu? 
-~ Sawah1
-do StartDialog()
+Maria: Eh? memangnya kenapa? kita kan sudah datang jauh-jauh hanya untuk mencari ayahmu?
 do talking("Rizki")
-Rizki: ...huff...huff berjalan kaki dari desa menuju gunung sangat melelahkan. Apakah kamu ada Air minum Maria?
+Rizki: A..aku hanya merasa gugup dan khawatir.. Bagaimana jika kita sudah terlambat?
 do talking("Maria")
-Maria: Masa begitu saja sudah capek, saya saja masih segar-segar saja kok. 
-do talking("Rizki")
-Rizki: Tolong jangan samakan stamina manusia biasa dengan makhluk sepertimu..
-do talking("Maria")
-Maria: Diam, kamu saja yang lemah kayak tauge kekurangan sinar matahari.
-do talking("Rizki")
-Rizki : Hey!! tauge itu kecil-kecil tapi bernutrisi tahu. Minta maaf kepada tauge-tauge di dunia!! Kamu saja yang maniak otot!!
-do talking("Bebek")
-do talking("Maria")
-Maria: HooHooHoo... sepertinya seniormu ini kurang keras dalam melatihmu yaa!! sepulang dari sini akan saya suruh kamu lari keliling desa  10 putaran. Akan saya buat kamu babak BE...BEEEEEEK!!!
-do talking("Maria_hide")
-Maria: Kyaaaa!!!
-do talking("Rizki")
-Rizki: Bebek??
-do talking("Bebek_anim")
-Bebek: Kwek!!
-do talking("Rizki")
-Maria: JAUHKAN! JAUHKAN! JAUHKAN BEBEK ITU DARI SINI!!!!
-do talking("Rizki")
-Rizki: eeh?... eehhh?? Kamu? takut bebek?
-do talking("Maria")
-Maria: DIAM!! Kamu ga pernah kan pas SD celananya ditarik dan dipatok bebek!! Cepat SINGKIRKAN!!!
-do talking("end")
-do EndDialog()
-set global.Dialogue +=1
-set global.quest_status = "Beras"
-set global.quest_count = 1
-=> END!
-
-~ Sawah2
-do StartDialog()
-if global.quest_status != "":
-	if global.quest_status != "Beras":
-		*Selesaikan terlebih dahulu tugas yang anda terima di Desa*
-		{{currQuest()}}
-		do talking("-")
-		do talking("end")
-		do EndDialog()
-		=> END!
-if global.quest_status == "Beras"
-	do submit("res://Inventory/items/Beras.tres")
-	if global.quest_count == 0:
-		do talking("Rizki")
-		Rizki: Kurrr kurrr, bebek ini aku ada bawakan beras untukmu. Main ke tempat lain dulu ya.
-		do talking("Bebek")
-		Bebek: Wek Wek Wek...
-		do emit("flee",false)
-		set global.Dialogue +=1 
-		set global.quest_status = ""
-		set global.quest_count = null	
-	else:
-		do talking("Bebek_anim")
-		Bebek: KWEEEK!! 
-		do talking("Rizki")
-		Rizki: Aduh aduh jangan patok!!
-		do talking("-")
-		do talking("end")
-		set global.go_right = true
-		do emit("flee",true)
-		Rizki: *Mungkin aku bisa memancing bebek itu dengan makanan*
-		set global.quest_status = ""
-		set global.quest_count = null
-elif global.quest_status == "":
-	do talking("Rizki")
-	Rizki: Kamu yakin kita ga mau terobos aja?
-	do talking("Maria")
-	Maria: Kamu yakin mau rambutmu kujambak sampai botak saat kita melewati bebek itu?
-	do talking("Rizki")
-	Rizki: Hmmm... alasan yang bagus. Aku akan memilih jalan yang lebih aman.
-	set global.quest_status = "Beras"
-	set global.quest_count = 1
-	=> Sawah2
-do talking("-")
-do talking("end")
-do EndDialog()
-=> END!
-
+Maria: 
+	
 ~ quiz1
 do StartDialog()
 do talking("Ayah")

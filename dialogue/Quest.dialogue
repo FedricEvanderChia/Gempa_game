@@ -30,6 +30,7 @@ if global.quest_status == "Sembako" and global.quest_count == 0:
 	do reward("res://Inventory/items/Kayu.tres")
 	set global.quest_status = ""
 	set global.quest_count = null
+	do emit("addRep",2.50)  
 elif global.quest_status == "":
 	do talking("Rani")
 	Rani: Kita sedang kekurangan tenaga untuk bantu membagikan sembako, kira-kira kamu sibuk gak?
@@ -63,6 +64,7 @@ if global.quest_status == "P3K"
 		do reward("res://Inventory/items/Kayu.tres")
 		set global.quest_status = ""
 		set global.quest_count = null
+		do emit("addRep",3.00) 
 	else:
 		do talking("Rani")
 		Rani: Kita sedang membutuhkan 3 kotak P3K. tolong dikumpulkan ya?.
@@ -117,6 +119,7 @@ if global.quest_status == "Tenda"
 		do reward("res://Inventory/items/Senter.tres")
 		set global.quest_status = ""
 		set global.quest_count = null
+		do emit("addRep",0.50)  
 	else:
 		do talking("Pria")
 		Pemuda: Tolong bantu carikan 1 tenda ya mas.
@@ -172,6 +175,7 @@ if global.quest_status == "Senter"
 		do reward("res://Inventory/items/Sekop.tres")
 		set global.quest_status = ""
 		set global.quest_count = null
+		do emit("addRep",5.00)
 	else:
 		do talking("Wanita")
 		Gadis: Tolong bantu carikan 3 senter untuk keluarga saya ya mas.
@@ -206,7 +210,7 @@ do talking("Rizki")
 *Terlihat, anak itu sedang mengepalkan bola plastisin untuk teman-nya*
 do talking("Laki_laki_scoot")
 Anak SD: Ptoey... Tahu bulat ini rasanya kayak lilin.
- do talking("Perempuan")
+do talking("Perempuan")
 Anak Perempuan: Kalau ayah sudah selesai makan waktunya pergi kerja yaa. Cepat naik pangkat jadi direktur perusahaan.
 do talking("Laki_laki_scoot")
 Anak SD: Kerja dimana? sekolah saja libur gara-gara gempa!
@@ -215,14 +219,68 @@ Rizki: *Sebaiknya aku biarkan saja mereka bermain, aku tidak ingin terjerat dala
 do talking("end")
 do EndDialog()
 => END!
+
 ~ Boy
 do StartDialog()
 do talking("Rizki")
 *Adik ini tampaknya cemberut*
+- Batalkan tugas [if global.quest_status == "Air" and global.quest_count != 0]
+	do talking("Rizki")
+	set global.quest_status = ""
+	set global.quest_count = null
+	Rizki: Maaf, ya dek sepertinya desa kita lagi kekurangan air minum.
+	do talking("Laki_laki")
+	Anak SD: Yaaahh....
+	do talking("end")
+	do EndDialog()
+	=> END!
+- Haus => Haus
+- Ajak bicara
 do talking("Laki_laki")
 Anak SD: Padahal aku sudah janji main Motor Lejeng dan PrePayer sama temen yang lain.
 do talking("Rizki")
 Rizki: Habisin dulu itu tahu bulatnya. nanti mama marah lho!
+do talking("end")
+do EndDialog()
+=> END!
+
+~ Haus
+if global.quest_status == "Air"
+	do submit("res://Inventory/items/Air.tres")
+	if global.quest_count == 0:
+		do talking("Rizki")
+		Rizki: Ini dek! Kakak punya 2 botol di dalam tas kakak.
+		do talking("Laki_laki_scoot")
+		Anak SD: Yeeeyyy makasih banyak ya kakak PMI.
+		do talking("Perempuan")
+		Anak Perempuan: Iya makasih banyak ya Kak! Nanti aku kasih tau ke mama kalau tadi kita dibantuin kakak PMI yang baik.
+		do talking("Rizki")
+		Rizki: Sama-sama dek! 
+		set global.quest_status = ""
+		set global.quest_count = null
+		do emit("addRep",0.50)
+	else:
+		do talking("Laki_laki_scoot")
+		Anak SD: Tolong carikan 2 botol air ya Kak!
+elif global.quest_status == "":
+	do talking("Laki_laki_scoot")
+	Anak SD: Haduh haus banget nih, kamu ga kehausan ya Dira?
+	do talking("Perempuan")
+	Anak Perempuan: Lumayan sih, tapi di rumah ku juga lagi ga ada air Fiq.
+	do talking("Rizki")
+	Rizki: *anak-anak ini sepertinya sangat kehausan*
+	- Oh kalian haus yah? kakak mungkin bisa bantu kalian!
+		do talking("Laki_laki_scoot")
+		Anak SD: Wah! beneran nih Kak? Makasih banyak ya Kak, lagi haus banget nih.
+		set global.quest_status = "Air"
+		set global.quest_count = 2
+		=> Haus
+	- *Pura-pura tidak dengar*
+		do talking("Laki_laki_scoot")
+		Anak SD: Haus banget nih.
+else:
+	=> OtherQuest
+do talking("-")
 do talking("end")
 do EndDialog()
 => END!

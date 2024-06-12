@@ -210,4 +210,5 @@ do talking("-")
 (Mereka berdua kemudian bersiap-siap untuk perjalanan ke Gunung Merapi, penuh dengan harapan untuk menemukan ayah Rizki.)
 do talking("end")
 do EndDialog()
+set global.unlockmaze = true
 => END!

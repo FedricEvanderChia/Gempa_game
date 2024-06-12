@@ -6,6 +6,7 @@ var paused = false
 @onready var sounds_b = $button_sounds
 @onready var sounds_backpack = $backpack_sounds
 @onready var sounds_backpack_c = $backpack_sounds_close
+@onready var rep_num = $RepNum
 
 
 @export var item_collect : items_collectibles
@@ -13,18 +14,10 @@ var paused = false
 func _ready():
 	global.Sdialogue.connect(cinema)
 	global.Edialogue.connect(Uncinema)
-	
-
-
-
-
 
 	
 # untuk pergerakan player, hanya tinggal memanggil action ui_left
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-
-
 
 func _on_bag_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -76,11 +69,13 @@ func hideAll():
 	create_tween().tween_property($Control2,"visible",false,0)
 	create_tween().tween_property($PauseBtn,"visible",false,0)
 	create_tween().tween_property($Bag,"visible",false,0)
+	create_tween().tween_property($Reputation,"visible",false,0)
+	
 func showAll():
 	create_tween().tween_property($Control2,"visible",true,0)
 	create_tween().tween_property($PauseBtn,"visible",true,0)
 	create_tween().tween_property($Bag,"visible",true,0)
-
+	create_tween().tween_property($Reputation,"visible",true,0)
 
 func _on_player_obtain(item : inventory_item):
 	$obtain.text = "Kamu mendapatkan sebuah\n" + item.name 
