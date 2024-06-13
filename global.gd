@@ -1,7 +1,7 @@
 extends Node2D
 var rng = RandomNumberGenerator.new()
 
-var Dialogue = 0
+var Dialogue = 12
 var goal = false
 var needs = []
 var Lastpos : Vector2

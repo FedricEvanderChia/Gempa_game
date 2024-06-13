@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="inventory_game" load_steps=18 format=3]
+[gd_resource type="Resource" script_class="inventory_game" load_steps=19 format=3 uid="uid://d4lys8o2tvavm"]
 
 [ext_resource type="Script" path="res://Inventory/inventory_game.gd" id="1_81amw"]
-[ext_resource type="Resource" path="res://Inventory/items/Air.tres" id="2_i2clx"]
+[ext_resource type="Resource" uid="uid://blowaxe2wnpva" path="res://Inventory/items/Air.tres" id="2_i2clx"]
 [ext_resource type="Script" path="res://Inventory/Inventory_slot.gd" id="2_ipgva"]
-[ext_resource type="Resource" path="res://Inventory/items/Tenda.tres" id="4_j8776"]
-[ext_resource type="Resource" path="res://Inventory/items/Foto.tres" id="5_6bd0x"]
+[ext_resource type="Resource" uid="uid://c0l046cppfq7h" path="res://Inventory/items/Tenda.tres" id="4_j8776"]
+[ext_resource type="Resource" uid="uid://cpdg1mf1llw3n" path="res://Inventory/items/Foto.tres" id="5_6bd0x"]
+[ext_resource type="Resource" uid="uid://bg6m8bgqsh8hd" path="res://Inventory/items/Kunci.tres" id="6_uxbju"]
 
 [sub_resource type="Resource" id="Resource_2dvtc"]
 script = ExtResource("2_ipgva")
@@ -23,7 +24,8 @@ amount = 1
 
 [sub_resource type="Resource" id="Resource_3gksl"]
 script = ExtResource("2_ipgva")
-amount = 0
+item = ExtResource("6_uxbju")
+amount = 1
 
 [sub_resource type="Resource" id="Resource_6ov7b"]
 script = ExtResource("2_ipgva")

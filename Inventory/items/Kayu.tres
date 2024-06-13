@@ -7,3 +7,4 @@
 script = ExtResource("1_c04qf")
 name = "Kayu"
 texture = ExtResource("2_jora3")
+desc = "Berguna sebagai bahan bakar api, dan membuat jembatan?"

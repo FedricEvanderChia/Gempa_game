@@ -7,3 +7,4 @@
 script = ExtResource("1_8djvw")
 name = "P3K"
 texture = ExtResource("2_rwddo")
+desc = "Pertolongan Pertama Pada Kecelakaan dan obat-obatan pribadi. Barang-barang ini untuk antisipasi kondisi kesehatan yang menurun selama terjadi bencana."

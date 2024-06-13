@@ -7,3 +7,4 @@
 script = ExtResource("1_bny25")
 name = "Kunci"
 texture = ExtResource("2_h7sv6")
+desc = "Ini merupakan kunci membuka pagar yang menutupi gua"

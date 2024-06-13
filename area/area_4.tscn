@@ -1,14 +1,12 @@
-[gd_scene load_steps=37 format=3 uid="uid://bvlysyvgdt6g1"]
+[gd_scene load_steps=36 format=3 uid="uid://bvlysyvgdt6g1"]
 
 [ext_resource type="Script" path="res://area/area_4.gd" id="1_dm2ug"]
 [ext_resource type="Texture2D" uid="uid://b7oni7aexhatq" path="res://asset/cave_bg.png" id="1_ve024"]
 [ext_resource type="Texture2D" uid="uid://cbvu8n4cx1pl" path="res://asset/cave_path.png" id="2_kmql5"]
 [ext_resource type="PackedScene" uid="uid://c71to8edu42an" path="res://player/Player.tscn" id="3_sc5bi"]
 [ext_resource type="Texture2D" uid="uid://c15uslka06al3" path="res://asset/Seismograf.png" id="4_375nh"]
-[ext_resource type="PackedScene" uid="uid://1s0q53ouuvjp" path="res://Inventory/items/items_collectibles.tscn" id="4_h4esy"]
 [ext_resource type="Texture2D" uid="uid://det3r60g2rhhi" path="res://asset/CaveFront.png" id="4_j3d33"]
 [ext_resource type="Texture2D" uid="uid://bxcmr418vh30a" path="res://asset/Electronics.png" id="5_6p474"]
-[ext_resource type="Resource" uid="uid://cyv8x12xguj4y" path="res://Inventory/items/Kayu.tres" id="5_nmwd4"]
 [ext_resource type="PackedScene" uid="uid://dtsrtigd5cgnv" path="res://uigempa.tscn" id="6_hx0ks"]
 [ext_resource type="Texture2D" uid="uid://bi2hkgrndcpoh" path="res://asset/Seismometer.png" id="6_o5hyc"]
 [ext_resource type="Texture2D" uid="uid://dtj2qyg5b0sto" path="res://asset/OfficeChair.png" id="7_g4f64"]
@@ -156,6 +154,9 @@ size = Vector2(135.375, 661.625)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbw12"]
 size = Vector2(440, 1013.33)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uynje"]
+size = Vector2(56.0001, 232)
+
 [node name="Area4" type="Node2D"]
 position = Vector2(-7, 0)
 script = ExtResource("1_dm2ug")
@@ -231,10 +232,6 @@ shape = SubResource("RectangleShape2D_ggip7")
 [node name="collectible_Layer" type="Node2D" parent="."]
 position = Vector2(2274, 456)
 
-[node name="items_collectibles" parent="collectible_Layer" instance=ExtResource("4_h4esy")]
-position = Vector2(-1703, 89)
-item = ExtResource("5_nmwd4")
-
 [node name="NPC_container" type="Node2D" parent="."]
 
 [node name="Ayah" type="Area2D" parent="NPC_container"]
@@ -271,7 +268,6 @@ position = Vector2(40, 550)
 scale = Vector2(0.3, 0.3)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2(-37.5587, 0)
 zoom = Vector2(0.9, 0.9)
 limit_left = 0
 limit_right = 2508
@@ -289,7 +285,15 @@ texture = ExtResource("14_dojoy")
 
 [node name="GUI" parent="." instance=ExtResource("6_hx0ks")]
 
+[node name="Sensor_end" type="Area2D" parent="."]
+position = Vector2(1300, 450)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sensor_end"]
+position = Vector2(39, 82)
+shape = SubResource("RectangleShape2D_uynje")
+
 [connection signal="body_entered" from="Go to World" to="." method="_on_go_to_world_body_entered"]
 [connection signal="body_entered" from="NPC_container/Ayah" to="." method="_on_ayah_body_entered"]
 [connection signal="body_exited" from="NPC_container/Ayah" to="." method="_on_ayah_body_exited"]
 [connection signal="Obtain" from="player" to="GUI" method="_on_player_obtain"]
+[connection signal="body_entered" from="Sensor_end" to="." method="_on_sensor_end_body_entered"]

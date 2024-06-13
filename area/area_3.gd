@@ -7,6 +7,7 @@ var item_pos
 var item_collectible_dokumen = preload("res://Inventory/items/items_collectibles.tscn")
 
 func _ready():
+	global.Build.connect(unlock)
 	if global.chapter_game==2 and global.Dialogue > 7:
 		global.chapter_game=3
 	if  global.Lastpos.x <= Epos.x and global.Lastpos.x >= Spos.x:
@@ -15,7 +16,11 @@ func _ready():
 		$player.position = Spos
 	else:
 		$player.position = Epos
-	
+	if global.Dialogue > 10:
+		$Pagar_sensor/PagarFront.frame = 1
+		$StaticBody2D2/Wall.queue_free()
+	else:
+		$Pagar_sensor/PagarFront.frame = 0
 	# if global.EntryDialogue == 0:
 	# 	DialogueManager.show_dialogue_balloon(load("res://dialogue/EntryDialogue.dialogue"), "Entry")
 	# 	global.EntryDialogue +=1
@@ -25,8 +30,13 @@ func _ready():
 	#if global.minigame_score >= 3000 && global.EntryDialogue == 2:
 	#	DialogueManager.show_dialogue_balloon(load("res://dialogue/EntryDialogue.dialogue"), "FoundPhoto")
 	#	global.EntryDialogue +=1
-	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+func unlock():
+	if global.Dialogue > 10:
+		$Pagar_sensor/PagarFront.frame = 1
+		$StaticBody2D2/Wall.queue_free()
+	else:
+		$Pagar_sensor/PagarFront.frame = 0
 func _process(delta):
 	pass
 
@@ -74,3 +84,10 @@ func _on_talk_pressed():
 	#else:
 	#	DialogueManager.show_dialogue_balloon(load("res://dialogue/Quest.dialogue"), self.name)
 
+
+
+func _on_pagar_sensor_body_entered(body):
+	print ("Dialog: ",global.Dialogue)
+	if body.name == "player" and global.Dialogue == 10:
+		DialogueManager.show_dialogue_balloon(load("res://dialogue/Act3.dialogue"), "Pagar")
+		

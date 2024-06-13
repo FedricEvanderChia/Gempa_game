@@ -13,6 +13,8 @@ do talking("Rizki")
 	do talking("-")
 	do talking("end")
 	do EndDialog()
+	do emit("addRep",-5)  
+	=> END!
 - Volunteer => Sembako
 - Persedian terbatas => P3K
 - Tips
@@ -101,6 +103,10 @@ do talking("Rizki")
 	Rizki: Maaf Mas, aku ada urusan lain yang perlu dikerjakan.
 	do talking("Peia")
 	Pemuda: Oh, ya sudah tidak apa-apa.
+	do talking("end")
+	do EndDialog()
+	do emit("addRep",-5)  
+	=> END!
 - Tenda sobek => Tenda
 - Maaf mas, saya sedang ada urusan lain
 	do talking("Pria")
@@ -158,6 +164,10 @@ do talking("Rizki")
 	Rizki: Maaf, tapi saya tidak bisa menemukan senter-nya.
 	do talking("Wanita")
 	Gadis: Oh, ya sudah tidak apa-apa. maaf yah pak sudah ngerepotin.
+	do talking("end")
+	do EndDialog()
+	do emit("addRep",-5)
+	=> END!
 - Gelapnya malam => Senter
 - Oh, tidak apa-apa
 	do talking("Wanita")
@@ -233,6 +243,7 @@ do talking("Rizki")
 	Anak SD: Yaaahh....
 	do talking("end")
 	do EndDialog()
+	do emit("addRep",-5)
 	=> END!
 - Haus => Haus
 - Ajak bicara

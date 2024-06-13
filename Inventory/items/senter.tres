@@ -7,3 +7,4 @@
 script = ExtResource("1_0atpv")
 name = "Senter"
 texture = ExtResource("2_tkasj")
+desc = "alat bantu penerangan yang berguna disaat tidak ada listrik. penting dalam bencana seperti gempa bumi "

@@ -12,11 +12,16 @@ func _process(delta):
 	$".".text = ": %.1f" % global.Reputasi
 
 func add_score(val):
-	$PlusRep.text = "+%.1f" % val
-	global.Reputasi += val
+	if val > 0:
+		$PlusRep.text = "+%.1f" % val
+		create_tween().tween_property($PlusRep,"theme_override_colors/font_color",Color(0, 1, 0),0) 
+	else:
+		$PlusRep.text = "%.1f" % val
+		create_tween().tween_property($PlusRep,"theme_override_colors/font_color",Color(1, 0, 0),0) 
 	$PlusRep.show()
 	$PlusRep.position = currPos
 	$PlusRep.modulate = Color(1, 1, 1, 1)
+	global.Reputasi += val
 	var tween = create_tween()
 	var tween2 = create_tween()
 	tween2.tween_property($PlusRep,"modulate", Color(1, 1, 1, 1),2)

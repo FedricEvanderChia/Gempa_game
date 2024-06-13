@@ -1,0 +1,99 @@
+[gd_scene load_steps=11 format=3 uid="uid://bybw6nqew8egp"]
+
+[ext_resource type="Script" path="res://Intro/road_bg_end.gd" id="1_1v2dc"]
+[ext_resource type="Texture2D" uid="uid://c6da523ly6b7t" path="res://asset/Prlx2_Road-Jungle.png" id="2_jnjk0"]
+[ext_resource type="Texture2D" uid="uid://deyqvuiiiuwr0" path="res://asset/Road_background.png" id="3_0u1wu"]
+[ext_resource type="Texture2D" uid="uid://ffihxbren3b0" path="res://asset/PMI_Mobile.png" id="4_8xej8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cr7r3"]
+atlas = ExtResource("4_8xej8")
+region = Rect2(0, 0, 400, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63ffd"]
+atlas = ExtResource("4_8xej8")
+region = Rect2(400, 0, 400, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k60lp"]
+atlas = ExtResource("4_8xej8")
+region = Rect2(800, 0, 400, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t104g"]
+atlas = ExtResource("4_8xej8")
+region = Rect2(1200, 0, 400, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xlwly"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cr7r3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63ffd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k60lp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t104g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmic3"]
+size = Vector2(4259, 97.25)
+
+[node name="RoadBG" type="ParallaxBackground"]
+script = ExtResource("1_1v2dc")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+position = Vector2(0, -45)
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(3200, 0)
+
+[node name="Prlx2Road-jungle" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(1600, 254)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_jnjk0")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+position = Vector2(0, -45)
+motion_mirroring = Vector2(4000, 0)
+
+[node name="Prlx1Sawah" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(2069.5, 330.5)
+scale = Vector2(1.04725, 1.13715)
+texture = ExtResource("3_0u1wu")
+
+[node name="Car" type="AnimatedSprite2D" parent="."]
+position = Vector2(620, 390)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_xlwly")
+autoplay = "default"
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(0, -45)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(2006.5, 610.625)
+shape = SubResource("RectangleShape2D_lmic3")
+
+[node name="Cinematic" type="ColorRect" parent="."]
+offset_top = -180.0
+offset_right = 1176.0
+color = Color(0, 0, 0, 1)
+
+[node name="Cinematic2" type="ColorRect" parent="."]
+offset_top = 647.0
+offset_right = 1170.0
+offset_bottom = 827.0
+color = Color(0, 0, 0, 1)
+
+[node name="DarkScreen" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -24.0
+offset_top = -116.0
+offset_right = 1579.0
+offset_bottom = 812.0
+color = Color(0, 0, 0, 1)

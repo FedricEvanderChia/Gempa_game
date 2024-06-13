@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://1yo5olfmic1q"]
+[gd_scene load_steps=23 format=3 uid="uid://1yo5olfmic1q"]
 
 [ext_resource type="Texture2D" uid="uid://c6da523ly6b7t" path="res://asset/Prlx2_Road-Jungle.png" id="1_ie6w7"]
 [ext_resource type="Script" path="res://area/area_3.gd" id="1_wp81p"]
 [ext_resource type="PackedScene" uid="uid://c71to8edu42an" path="res://player/Player.tscn" id="2_i5sog"]
 [ext_resource type="Texture2D" uid="uid://bpuw7lv4fkgdt" path="res://asset/forest_floor.png" id="3_jlxes"]
+[ext_resource type="Texture2D" uid="uid://cjfi7hjrq70ub" path="res://asset/pagar_back.png" id="4_vw07u"]
 [ext_resource type="PackedScene" uid="uid://dtsrtigd5cgnv" path="res://uigempa.tscn" id="5_glf2a"]
 [ext_resource type="Texture2D" uid="uid://dd60n745e7ok" path="res://asset/cave_entre.png" id="5_skihf"]
 [ext_resource type="PackedScene" uid="uid://dwnsnoa5iju07" path="res://Inventory/items/star.tscn" id="6_ewp2l"]
@@ -11,9 +12,15 @@
 [ext_resource type="Texture2D" uid="uid://ch8lxnq8pq8pl" path="res://asset/grass.png" id="6_t142e"]
 [ext_resource type="Texture2D" uid="uid://ceopawoelloo8" path="res://asset/Character/NPC_OldMan.png" id="10_gsf6m"]
 [ext_resource type="AudioStream" uid="uid://hax2vld3cwbf" path="res://asset/BGM/letx27s-get-this-done-154533.mp3" id="12_d6spc"]
+[ext_resource type="Texture2D" uid="uid://0krd0l3m3jj3" path="res://asset/pagar_front.png" id="13_6efau"]
+[ext_resource type="Texture2D" uid="uid://bm4f2rc5kn7lk" path="res://asset/pagar.png" id="13_ihogn"]
+[ext_resource type="Texture2D" uid="uid://t1lg8dl711um" path="res://asset/pagar__front_open.png" id="14_teugs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_viakg"]
 size = Vector2(5292, 74.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_noxeh"]
+size = Vector2(61, 308)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ewrrl"]
 size = Vector2(176.688, 589.25)
@@ -23,6 +30,23 @@ size = Vector2(87.5002, 78)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5k6gm"]
 size = Vector2(215.5, 500)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvhiu"]
+size = Vector2(14.3959, 65.8098)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qs315"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_6efau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_teugs")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Area3" type="Node2D"]
 script = ExtResource("1_wp81p")
@@ -44,6 +68,11 @@ position = Vector2(2000, 574)
 scale = Vector2(4, 4)
 texture = ExtResource("3_jlxes")
 
+[node name="PagarBack" type="Sprite2D" parent="."]
+position = Vector2(3704, 478)
+scale = Vector2(3.89, 3.89)
+texture = ExtResource("4_vw07u")
+
 [node name="CaveEntre" type="Sprite2D" parent="."]
 position = Vector2(3848, 392)
 texture = ExtResource("5_skihf")
@@ -55,6 +84,10 @@ texture = ExtResource("5_skihf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(2523, 633)
 shape = SubResource("RectangleShape2D_viakg")
+
+[node name="Wall" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(3681.5, 434)
+shape = SubResource("RectangleShape2D_noxeh")
 
 [node name="Go to World" type="Area2D" parent="."]
 
@@ -151,9 +184,9 @@ scale = Vector2(6.15385, 6.31579)
 position = Vector2(2591, 532)
 shape = SubResource("RectangleShape2D_7gd5o")
 
-[node name="star" parent="grass_node_back/grass_mystery" instance=ExtResource("6_ewp2l")]
-position = Vector2(10.3071, -42.2103)
-scale = Vector2(2.53966, 1.93997)
+[node name="star" parent="grass_node_back" instance=ExtResource("6_ewp2l")]
+position = Vector2(2610.17, 536.317)
+scale = Vector2(0.412695, 0.307161)
 
 [node name="grass14" type="Sprite2D" parent="grass_node_back"]
 modulate = Color(0.43134, 0.43134, 0.43134, 1)
@@ -207,13 +240,13 @@ position = Vector2(3896.34, 288)
 shape = SubResource("RectangleShape2D_ewrrl")
 
 [node name="player" parent="." instance=ExtResource("2_i5sog")]
-position = Vector2(46, 512)
+position = Vector2(40, 512)
 scale = Vector2(0.213, 0.213)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 zoom = Vector2(0.9, 0.9)
 limit_left = 0
-limit_right = 2508
+limit_right = 4000
 limit_bottom = 717
 
 [node name="grass_node_front" type="Node2D" parent="."]
@@ -350,6 +383,22 @@ stream = ExtResource("12_d6spc")
 volume_db = -10.895
 autoplay = true
 
+[node name="Pagar" type="Sprite2D" parent="."]
+position = Vector2(3936, 560)
+scale = Vector2(3.89, 3.89)
+texture = ExtResource("13_ihogn")
+
+[node name="Pagar_sensor" type="Area2D" parent="."]
+position = Vector2(3714, 465)
+scale = Vector2(3.89, 3.89)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pagar_sensor"]
+position = Vector2(-26.2211, -2.31365)
+shape = SubResource("RectangleShape2D_cvhiu")
+
+[node name="PagarFront" type="AnimatedSprite2D" parent="Pagar_sensor"]
+sprite_frames = SubResource("SpriteFrames_qs315")
+
 [connection signal="body_entered" from="Go to World" to="." method="_on_go_to_world_body_entered"]
 [connection signal="input_event" from="grass_node_back/grass_mystery/Area2D" to="grass_node_back/grass_mystery" method="_on_area_2d_input_event"]
 [connection signal="body_entered" from="Go to World2" to="." method="_on_go_to_world_2_body_entered"]
@@ -357,3 +406,4 @@ autoplay = true
 [connection signal="body_entered" from="NPC_container/Kakek" to="." method="_on_kakek_body_entered"]
 [connection signal="body_exited" from="NPC_container/Kakek" to="." method="_on_kakek_body_exited"]
 [connection signal="pressed" from="NPC_container/Kakek/Talk" to="." method="_on_talk_pressed"]
+[connection signal="body_entered" from="Pagar_sensor" to="." method="_on_pagar_sensor_body_entered"]

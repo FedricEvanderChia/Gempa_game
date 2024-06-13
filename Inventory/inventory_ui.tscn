@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://c7dmtxqirlb2x"]
+[gd_scene load_steps=9 format=3 uid="uid://c7dmtxqirlb2x"]
 
 [ext_resource type="Script" path="res://Inventory/inventory_ui.gd" id="1_yb6pb"]
 [ext_resource type="Texture2D" uid="uid://c8osrol4alxsw" path="res://asset/Inventory background.png" id="2_07hu8"]
 [ext_resource type="PackedScene" uid="uid://be67m4algo8y1" path="res://Inventory/inventory_ui_slot.tscn" id="3_68uht"]
 [ext_resource type="Texture2D" uid="uid://ccf50ttkylhsg" path="res://asset/MenuButton/SelectA.png" id="4_5qq7m"]
 [ext_resource type="Script" path="res://Inventory/ItemSelect.gd" id="4_qhu7n"]
-[ext_resource type="Texture2D" uid="uid://qybjqftnxo78" path="res://asset/MenuButton/SelectB.png" id="5_jg8h7"]
+[ext_resource type="Texture2D" uid="uid://r5okskyelia2" path="res://asset/MenuButton/SelectC.png" id="4_uqbh0"]
 [ext_resource type="Texture2D" uid="uid://c0ru03umw4qdr" path="res://asset/InventorySlot.png" id="7_f8yjd"]
+[ext_resource type="FontFile" uid="uid://b2nh2smgavidr" path="res://asset/Fonts/karmatic-arcade.regular.ttf" id="8_j6167"]
 
 [node name="inventory_ui" type="Control"]
 custom_minimum_size = Vector2(505, 371)
@@ -45,175 +46,283 @@ columns = 4
 layout_mode = 2
 
 [node name="Selection" type="TextureButton" parent="NinePatchRect/GridContainer/Inventory_ui_slot1"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 5.0
-offset_right = 110.0
-offset_bottom = 105.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.5
+offset_top = -53.0
+offset_right = 58.5
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.98, 0.98)
 toggle_mode = true
 texture_normal = ExtResource("4_5qq7m")
-texture_pressed = ExtResource("5_jg8h7")
+texture_pressed = ExtResource("4_uqbh0")
+stretch_mode = 3
 script = ExtResource("4_qhu7n")
 
 [node name="Inventory_ui_slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_68uht")]
 layout_mode = 2
 
 [node name="Selection" type="TextureButton" parent="NinePatchRect/GridContainer/Inventory_ui_slot2"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 5.0
-offset_right = 110.0
-offset_bottom = 105.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.5
+offset_top = -55.0
+offset_right = 58.5
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.98, 0.98)
 toggle_mode = true
 texture_normal = ExtResource("4_5qq7m")
-texture_pressed = ExtResource("5_jg8h7")
+texture_pressed = ExtResource("4_uqbh0")
+stretch_mode = 3
 script = ExtResource("4_qhu7n")
 
 [node name="Inventory_ui_slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_68uht")]
 layout_mode = 2
 
 [node name="Selection" type="TextureButton" parent="NinePatchRect/GridContainer/Inventory_ui_slot3"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 5.0
-offset_right = 110.0
-offset_bottom = 105.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.5
+offset_top = -55.0
+offset_right = 58.5
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.98, 0.98)
 toggle_mode = true
 texture_normal = ExtResource("4_5qq7m")
-texture_pressed = ExtResource("5_jg8h7")
+texture_pressed = ExtResource("4_uqbh0")
+stretch_mode = 3
 script = ExtResource("4_qhu7n")
 
 [node name="Inventory_ui_slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_68uht")]
 layout_mode = 2
 
 [node name="Selection" type="TextureButton" parent="NinePatchRect/GridContainer/Inventory_ui_slot4"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 5.0
-offset_right = 110.0
-offset_bottom = 105.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.5
+offset_top = -55.0
+offset_right = 58.5
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.98, 0.98)
 toggle_mode = true
 texture_normal = ExtResource("4_5qq7m")
-texture_pressed = ExtResource("5_jg8h7")
+texture_pressed = ExtResource("4_uqbh0")
+stretch_mode = 3
 script = ExtResource("4_qhu7n")
 
 [node name="Inventory_ui_slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_68uht")]
 layout_mode = 2
 
 [node name="Selection" type="TextureButton" parent="NinePatchRect/GridContainer/Inventory_ui_slot5"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 5.0
-offset_right = 110.0
-offset_bottom = 105.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.5
+offset_top = -55.0
+offset_right = 58.5
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.98, 0.98)
 toggle_mode = true
 texture_normal = ExtResource("4_5qq7m")
-texture_pressed = ExtResource("5_jg8h7")
+texture_pressed = ExtResource("4_uqbh0")
+stretch_mode = 3
 script = ExtResource("4_qhu7n")
 
 [node name="Inventory_ui_slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_68uht")]
 layout_mode = 2
 
 [node name="Selection" type="TextureButton" parent="NinePatchRect/GridContainer/Inventory_ui_slot6"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 5.0
-offset_right = 110.0
-offset_bottom = 105.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.5
+offset_top = -55.0
+offset_right = 58.5
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.98, 0.98)
 toggle_mode = true
 texture_normal = ExtResource("4_5qq7m")
-texture_pressed = ExtResource("5_jg8h7")
+texture_pressed = ExtResource("4_uqbh0")
+stretch_mode = 3
 script = ExtResource("4_qhu7n")
 
 [node name="Inventory_ui_slot7" parent="NinePatchRect/GridContainer" instance=ExtResource("3_68uht")]
 layout_mode = 2
 
 [node name="Selection" type="TextureButton" parent="NinePatchRect/GridContainer/Inventory_ui_slot7"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 5.0
-offset_right = 110.0
-offset_bottom = 105.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.5
+offset_top = -55.0
+offset_right = 58.5
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.98, 0.98)
 toggle_mode = true
 texture_normal = ExtResource("4_5qq7m")
-texture_pressed = ExtResource("5_jg8h7")
+texture_pressed = ExtResource("4_uqbh0")
+stretch_mode = 3
 script = ExtResource("4_qhu7n")
 
 [node name="Inventory_ui_slot8" parent="NinePatchRect/GridContainer" instance=ExtResource("3_68uht")]
 layout_mode = 2
 
 [node name="Selection" type="TextureButton" parent="NinePatchRect/GridContainer/Inventory_ui_slot8"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 5.0
-offset_right = 110.0
-offset_bottom = 105.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.5
+offset_top = -55.0
+offset_right = 58.5
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.98, 0.98)
 toggle_mode = true
 texture_normal = ExtResource("4_5qq7m")
-texture_pressed = ExtResource("5_jg8h7")
+texture_pressed = ExtResource("4_uqbh0")
+stretch_mode = 3
 script = ExtResource("4_qhu7n")
 
 [node name="Inventory_ui_slot9" parent="NinePatchRect/GridContainer" instance=ExtResource("3_68uht")]
 layout_mode = 2
 
 [node name="Selection" type="TextureButton" parent="NinePatchRect/GridContainer/Inventory_ui_slot9"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 5.0
-offset_right = 110.0
-offset_bottom = 105.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.5
+offset_top = -55.0
+offset_right = 58.5
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.98, 0.98)
 toggle_mode = true
 texture_normal = ExtResource("4_5qq7m")
-texture_pressed = ExtResource("5_jg8h7")
+texture_pressed = ExtResource("4_uqbh0")
+stretch_mode = 3
 script = ExtResource("4_qhu7n")
 
 [node name="Inventory_ui_slot10" parent="NinePatchRect/GridContainer" instance=ExtResource("3_68uht")]
 layout_mode = 2
 
 [node name="Selection" type="TextureButton" parent="NinePatchRect/GridContainer/Inventory_ui_slot10"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 5.0
-offset_right = 110.0
-offset_bottom = 105.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.5
+offset_top = -55.0
+offset_right = 58.5
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.98, 0.98)
 toggle_mode = true
 texture_normal = ExtResource("4_5qq7m")
-texture_pressed = ExtResource("5_jg8h7")
+texture_pressed = ExtResource("4_uqbh0")
+stretch_mode = 3
 script = ExtResource("4_qhu7n")
 
 [node name="Inventory_ui_slot11" parent="NinePatchRect/GridContainer" instance=ExtResource("3_68uht")]
 layout_mode = 2
 
 [node name="Selection" type="TextureButton" parent="NinePatchRect/GridContainer/Inventory_ui_slot11"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 5.0
-offset_right = 110.0
-offset_bottom = 105.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.5
+offset_top = -55.0
+offset_right = 58.5
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.98, 0.98)
 toggle_mode = true
 texture_normal = ExtResource("4_5qq7m")
-texture_pressed = ExtResource("5_jg8h7")
+texture_pressed = ExtResource("4_uqbh0")
+stretch_mode = 3
 script = ExtResource("4_qhu7n")
 
 [node name="Inventory_ui_slot12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_68uht")]
 layout_mode = 2
 
 [node name="Selection" type="TextureButton" parent="NinePatchRect/GridContainer/Inventory_ui_slot12"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 5.0
-offset_right = 110.0
-offset_bottom = 105.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.5
+offset_top = -55.0
+offset_right = 58.5
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.98, 0.98)
 toggle_mode = true
 texture_normal = ExtResource("4_5qq7m")
-texture_pressed = ExtResource("5_jg8h7")
+texture_pressed = ExtResource("4_uqbh0")
+stretch_mode = 3
 script = ExtResource("4_qhu7n")
 
 [node name="ItemDescription" type="Node2D" parent="."]
 
 [node name="NinePatchRect" type="NinePatchRect" parent="ItemDescription"]
 offset_left = 553.0
-offset_right = 785.0
+offset_right = 813.0
 offset_bottom = 388.0
 texture = ExtResource("2_07hu8")
 patch_margin_left = 30
@@ -264,14 +373,17 @@ scale = Vector2(0.3, 0.3)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ItemDescription/NinePatchRect"]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 12.0
-offset_top = -25.0
-offset_right = 226.0
-offset_bottom = 182.0
-grow_vertical = 2
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -104.0
+offset_top = -238.0
+offset_right = 104.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 5
 
 [node name="Name" type="Label" parent="ItemDescription/NinePatchRect/VBoxContainer"]
 layout_mode = 2
@@ -279,15 +391,24 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Desc" type="Label" parent="ItemDescription/NinePatchRect/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 15
+autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
-[node name="Title" type="Label" parent="ItemDescription"]
-offset_left = 560.0
+[node name="Title" type="Label" parent="ItemDescription/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -81.5
 offset_top = 8.0
-offset_right = 600.0
+offset_right = 81.5
 offset_bottom = 31.0
-text = "Item Description:"
-metadata/_edit_use_anchors_ = true
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -3
+theme_override_fonts/font = ExtResource("8_j6167")
+text = "Detail Barang"
 
 [connection signal="toggled" from="NinePatchRect/GridContainer/Inventory_ui_slot1/Selection" to="NinePatchRect/GridContainer/Inventory_ui_slot1/Selection" method="_on_toggled"]
 [connection signal="toggled" from="NinePatchRect/GridContainer/Inventory_ui_slot2/Selection" to="NinePatchRect/GridContainer/Inventory_ui_slot2/Selection" method="_on_toggled"]

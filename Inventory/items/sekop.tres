@@ -7,3 +7,4 @@
 script = ExtResource("1_fuc81")
 name = "Sekop"
 texture = ExtResource("2_akfct")
+desc = ""

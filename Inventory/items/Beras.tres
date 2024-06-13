@@ -7,3 +7,4 @@
 script = ExtResource("1_3r3kv")
 name = "Beras"
 texture = ExtResource("2_aesik")
+desc = "Makanan pokok orang Asia. Salah satu makanan tahan lama dan biasa dipakai saat bencana"

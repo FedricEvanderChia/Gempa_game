@@ -42,7 +42,10 @@ func _ready():
 		DialogueManager.show_dialogue_balloon(load("res://dialogue/Act1.dialogue"), "FoundPhoto")
 		global.Dialogue +=1
 		generateItem("res://Inventory/items/Foto.tres",-825)
-		
+	elif global.Dialogue == 12:
+		get_tree().change_scene_to_file("res://Intro/road_bg_end.tscn")
+		global.Dialogue +=1
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func Scam():
 	create_tween().tween_property($player/Camera2D,"limit_bottom",760,1)

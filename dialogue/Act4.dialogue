@@ -1,0 +1,172 @@
+~ Cave1
+do StartDialog()
+do talking("Rizki")
+Rizki: Sebentar Maria, Aku merasa tidak siap untuk menemui ayahku..
+do talking("Maria")
+Maria: Eh? memangnya kenapa? kita kan sudah datang jauh-jauh hanya untuk mencari ayahmu?
+do talking("Rizki")
+Rizki: Sebenarnya... sudah hampir 4 tahun aku tidak berhubungan dengan ayahku.
+do talking("Maria")
+Maria: 4 Tahun! Apa yang kamu pikirkan!? Bagaimana bisa salah satu dari kalian tidak menghubungi satu sama lain selama itu?
+do talking("Rizki")
+Rizki: ...
+do talking("Maria")
+Maria: Yaah aku rasa aku bisa paham kalau kamu tidak mau menceritakannya. Setiap keluarga punya permasalahannya masing-masing.
+do talking("Rizki")
+Rizki: Dulu.. Ibu itu yang selalu jadi lem di keluarga kami. Dari kecil aku dan ayah memang sering berdebat, tapi waktu itu selalu ada ibu yang mendamaikan kami.
+Rizki: Tapi semuanya berubah semejak gempa yang terjadi 6 tahun yang lalu di kota kelahiranku.
+Rizki: Waktu itu aku dan ibuku sedang bersantai di ruang tamu, ibu menyetrika dan aku sedang nonton TV. Tidak ada yang menyangka hari itu bumi akan berguncang sehebat itu. Ibuku menyuruhku untuk segera berlindung. 
+Rizki: Tapi, diriku yang bodoh ini, langsung berlari keluar rumah. Karena suasana yang terombang-ambing itu aku kehilangan keseimbangan dan terjatuh di depan lemari kaca yang perlahan-lahan mulai jatuh menimpaku. 
+Rizki: Disaat itu ibu langsung keluar dari bawah meja dan melindungiku dengan Tubuhnya. 
+Rizki: Setelah kami berhasil keluar dari rumah, ibu telah kehilanagn banyak darah. Aku yang disaat itu masih tidak tau cara memberikan pertolongan hanya dapat meminta tolong kepada semua orang. 
+Rizki: Semua layanan kesehatan, polisi, dan kebakaran sedang sibuk saat itu. Akhirnya ibu meninggal tepat dihadapanku. 
+Rizki: Aku... kelalaianku lah yang telah mencelakai ibuku sendiri...
+Rizki: Semejak saat itu, ayah juga jarang pulang kerumah seakan menghindariku. Kami juga jarang bicara dirumah.
+Rizki: Aku bisa memahaminya, jika aku diposisinya aku juga pasti akan menyalahkanku yang tidak dapat berbuat apa-apa saat dibutuhkan. 
+Rizki: Kemudian setelah tinggal dirumah yang sunyi itu selama 2 tahun aku memutuskan untuk merantau dan karena itu juga alasan kenapa aku masuk ke PMI. Aku tidak ingin tidak dapat berbuat apa-apa disaat pertolonganku dibutuhkan.
+Rizki: Ayahku juga lebih mendalami profesinya di bidang seismologi berkat kejadian ini.
+do talking("Maria")
+Maria: Waaah.. aku tidak menyangka latar belakang hidupmu sedramatis itu untuk orang yang kerjaannya bercanda terus.
+Rizki: Haha.. aku bercanda juga untuk mengurangi beban pikiranku sendiri. Aku rasa, aku hanya merasa gugup dan khawatir. Bagaimana kalau ayahku terluka atau terjebak di sini? Bagaimana jika aku sudah terlambat untuk meminta maaf?
+do talking("Maria")
+Maria: Hei! tenangkan dirimu terlebih dulu. Berdasarkan informasi kakek itu tadi, kita tahu kalau kantor atau laboraterium ayahmu terletak di dalam gua ini.
+Maria: Untuk laboraterium seismologis yang terletak didalam gua tentunya ayahmu sudah melakukan upaya mitigasi gempa saat tempat ini dibangun.
+do talking("Rizki")
+Rizki: *Menarik nafas dalam* Kamu benar, sebaiknya aku berpikir positif dulu.
+do talking("Maria")
+Maria: Baiklah kalau gitu mari kita segera cari ayahmu. Setiap detik itu sangat berharga.
+do talking("Rizki")
+Rizki: Baiklah.
+set global.go_right = true
+do talking("end")
+=> END!
+~ Cave2
+do talking("Rizki")
+Rizki: Ayah!!
+set global.go_right = true
+do talking("end")
+=> END!
+~ Cave3
+do talking("Ayah")
+Ayah: Rizki?! Kenapa kamu bisa disini?
+do talking("Rizki")
+Rizki: Saat aku mendengar kabar gempa bumi dari desa Bumi Rahayu, aku langsung mencoba menelpon ayah! Tapi nomor ayah katanya sedang tidak aktif.
+Rizki: Jadi saat aku mendengar tim PMI akan dikerahkan ke desa ini, aku memohon kepada Ketua untuk membiarkanku ikut serta menjadi relawan yang membantu korban gempa di desa ini.
+Rizki: Karena ayah juga tidak dapat ditemui di desa aku mendaftarkan ayah kedalam daftar orang hilang.
+do talking("Ayah")
+Ayah: Maafkan ayah Nak, Telepon ayah jatuh dan rusak karena gempa. Setelah gempa itu, ayah bergegas ke laboratorium untuk mengecek peralatan dan data agar tidak rusak.
+Ayah: Selain itu gempa ini juga memberikan data baru untuk ayah teliti.
+Ayah: Tapi... ayah tidak menyangka kalau kamu akan sekhawatir ini. Ayah pikir kamu membenci ayah.
+do talking("Rizki")
+Rizki: Aku hanya tidak ingin kehilangan satu-satunya anggota keluargaku yang tersisa
+do talking("Ayah")
+Ayah: ... Kamu benar. Maafkan ayah ya nak, ini semua salah ayah. Kalau saja ayah mendengarkan kata ibumu, mungkin saat ini dia masih bersama kita?
+do talking("Rizki")
+Rizki: Ayah ini bicara apa? Ibu meninggal karena kelalaianku. Kalau saja aku mendengar perkataan ibu untuk berlindung daripada berlari keluar saat gempa terjadi. Dan kalau saja aku tau cara memberikan pertolongan ibu tidak akan... 
+do talking("Ayah")
+Ayah: Kamu ini bicara apa? Ibu kamu sudah sering menyuruh ayah untuk memperkuat dan mengebor lemari di rumah untuk mengantisipasi kejadian seperti ini! Ayah tidak pernah menyalahkanmu! kamu itu masih muda wajar membuat kesalahan.  
+do talking("Rizki")
+Rizki: Tapi kesalahan seperti itu mengorbankan nyawa!! Karena itu juga kan ayah selalu menghindariku kalau dirumah?
+do talking("Ayah")
+Ayah: Rizki! Dengar ya, Ayah tidak pernah menyalahkanmu. Ayah menghindarimu karena ayah selalu merasa bersalah karena tidak menyediakan tumah yang aman untuk keluarga kita. Ayah tidak membencimu nak, ayah hanya tidak memiliki muka untuk menghadapimu.
+Ayah: Sebagai seorang seismologis seharusnya ayah yang paling tahu tentang bahaya gempa. Tapi ayah malah menganggap sepele dan membahayakan nyawa kamu nak!
+do talking("Rizki")
+Rizki: Maafkan aku juga ayah! 
+do talking("Ayah")
+Ayah: Maafkan ayah nak!
+do talking("Maria_left")
+Maria: Syukurlah, Pak Suhendri. Kami sangat khawatir. Yang terpenting kita semua selamat. Perkenalkan nama saya Maria, saya rekan kerja Rizki di PMI.
+do talking("Ayah")
+Ayah: Oh dimana sopan santun saya, terima kasih ya nak Maria sudah membantu anak saya selama ini.
+do talking("Maria_left")
+Maria: Tidak apa-apa, selain itu kami juga ada urusan lain menemui bapak saat ini. Kami ingin meminta pendapat bapak tentang bencana gempa ini dan langkah berikutnya yang dapat kita ambil.
+do talking("Ayah")
+Ayah: Ah iya benar, seperti yang kita tau gempa itu tidak dapat di prediksi, upaya terbaik yang dapat kita lakukan dengan teknologi saat ini hanyalah mendeteksi gempa yang telah terjadi.
+Ayah: akan tetapi jika kita melihat statistik dari frekuensi terjadinya gempa di area ini selama 25 tahun kebelakang bla bla bla....
+do talking("-")
+*15 menit kemudian*
+do talking("Rizki")
+Rizki: Zzzzzzzzz..
+do talking("Ayah")
+Ayah: jadi kesimpulannya ada 63% kemungkinan gempa susulan akan terjadi dan sebaiknya kita evakuasi penduduk ke tempat yang lebih aman.
+do talking("Maria_left")
+Maria: Rizki! Bangun!!
+do talking("Ayah")
+Ayah: Haha! kamu ini dari dulu kalau sudah membahas angka pasti langsung molor.
+do talking("Rizki")
+Rizki: ZZzzz.. GAAH! Demi kulit kerang ajaib!
+do talking("Maria_left")
+Maria: Ayo sekarang kita kembali ke desa dan melakukan proses evakuasi warga.
+do talking("Ayah")
+Ayah: Ayah akan tinggal disini dulu untuk mengemas barang-barang penting. 
+do talking("Rizki")
+Rizki: Oh oke! sampai ketemu di Desa yah!
+set global.Dialogue +=1
+do talking("-")
+do talking("end")
+do EndDialog()
+=> END!
+	
+~ quiz1
+do StartDialog()
+do talking("Ayah")
+Ayah: Apa hal yang pertama harus kamu lakukan saat gempa?
+do talking("Rizki")
+- Mengevakuasi gedung
+- Melindungi kepala 
+- Mencari tempat berlindung yang kokoh
+do talking("-")
+do talking("end")
+do EndDialog()
+=> END!
+
+~ quiz2
+do StartDialog()
+do talking("Ayah")
+Ayah: Yang manakah yang bukan termasuk tempat berlindung saat gempa?
+do talking("Rizki")
+- Lapangan luas, jauh dari gedung dan perumahan
+- Kolong meja/ dibawah meja 
+- Kamar mandi
+- Pondasi rumah
+- Dibawah jendela
+do talking("-")
+do talking("end")
+do EndDialog()
+=> END!
+
+~ quiz3
+do StartDialog()
+do talking("Ayah")
+Ayah: Peralatan mana yang tidak perlu dipersiapkan dalam tas siaga bencana?
+do talking("Rizki")
+- Masker, Sarung tangan, dan Pelindung kepala
+- Kotak P3K
+- Perbekalan makanan dan minuman
+- Peluit
+- Kartu identitas
+- Senter/Lampu emergency
+- Radio/Ponsel
+- Uang
+- Pakaian ganti
+do talking("-")
+do talking("end")
+do EndDialog()
+=> END!
+
+
+~ Outro
+Mendengar informasi adanya kemungkinan gempa susulan dari Suhendri, Rizki dan Maria segera meninggalkan gua dengan tergesa-gesa. Kekhawatiran memenuhi pikiran mereka, membayangkan dampak yang lebih parah jika gempa susulan benar-benar terjadi. Mereka berlari melewati jalan setapak yang curam dan berbatu, berusaha secepat mungkin kembali ke Desa Bumi Rahayu.
+Sesampainya di desa, suasana tegang mulai terasa. Penduduk desa berkumpul dengan cemas di sekitar posko darurat. Rizki dan Maria langsung berkoordinasi dengan Tim PMI yang telah siaga. Dengan cepat, mereka mulai menyusun rencana evakuasi.
+Rizki mengambil pengeras suara dan dengan suara lantang menginstruksikan warga untuk tetap tenang namun waspada. "Bapak, Ibu, dan semua warga Desa Bumi Rahayu, kami mohon perhatian. Berdasarkan informasi terbaru, ada kemungkinan gempa susulan akan terjadi. Demi keselamatan kita semua, kami mengimbau untuk segera mengungsi ke tempat yang lebih aman sementara waktu."
+Maria, dengan sikap tegas namun penuh perhatian, memimpin kelompok PMI untuk membantu evakuasi warga. Mereka membantu mengarahkan warga, memastikan tidak ada yang tertinggal, terutama anak-anak dan lansia. "Ayo, ikuti kami! Jangan panik, kami akan membantu kalian semua," seru Maria sambil mengulurkan tangan membantu seorang nenek yang kesulitan berjalan.
+Warga desa, meskipun diliputi kekhawatiran, mengikuti arahan dengan disiplin. Mereka membawa barang-barang penting dan bergerak menuju tempat pengungsian yang telah disiapkan di dataran tinggi yang lebih aman. Tim PMI bekerja tanpa henti, memandu dan menenangkan warga.
+Ketegangan meningkat seiring berjalannya waktu, namun berkat koordinasi dan dedikasi Rizki, Maria, dan seluruh Tim PMI, evakuasi berlangsung dengan tertib. Perlahan namun pasti, desa mulai kosong dari penghuninya, meninggalkan suasana hening yang kontras dengan kekhawatiran yang meliputi hati semua orang.
+Di tempat pengungsian, Rizki dan Maria terus memastikan semua warga mendapatkan tempat yang aman dan nyaman. Mereka berkeliling, memberikan kata-kata penghiburan dan memastikan kebutuhan dasar seperti makanan dan air tercukupi.
+Rizki memandang ke arah desa yang mulai gelap, rasa lega bercampur cemas masih menggelayuti hatinya. "Semoga gempa susulan itu tidak terjadi," bisiknya dalam hati. Namun, dia tahu bahwa mereka telah melakukan yang terbaik untuk menjaga keselamatan semua orang.
+Dengan semangat dan dedikasi yang kuat, Rizki dan Maria terus berusaha memberikan yang terbaik bagi warga Desa Bumi Rahayu, menunjukkan bahwa di tengah bencana, solidaritas dan keberanian dapat menjadi cahaya di tengah kegelapan.
+-- TAMAT --
+Terimakasih sudah memainkan game ini.
+anda akan kembali ke desa setelah game ini selesai.
+do emit("Build")
+=> END!

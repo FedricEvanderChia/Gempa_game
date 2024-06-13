@@ -7,3 +7,4 @@
 script = ExtResource("1_f7ox2")
 name = "Tenda"
 texture = ExtResource("2_bngmv")
+desc = "Tenda yang sering digunakan dalam keadaan darurat kemanusiaan, seperti perang, gempa bumi, kebakaran, dll"

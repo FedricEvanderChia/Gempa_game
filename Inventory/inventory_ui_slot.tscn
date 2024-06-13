@@ -13,7 +13,7 @@ size_flags_vertical = 4
 script = ExtResource("1_eijt7")
 
 [node name="ui_slot_image" type="Sprite2D" parent="."]
-scale = Vector2(1.82813, 1.70313)
+scale = Vector2(1.828, 1.828)
 texture = ExtResource("1_ob67q")
 centered = false
 

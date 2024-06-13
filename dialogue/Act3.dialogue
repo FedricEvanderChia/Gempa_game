@@ -155,3 +155,36 @@ do talking("-")
 do talking("end")
 do EndDialog()
 => END!
+
+~ Pagar
+do StartDialog()
+if global.quest_status != "":
+	if global.quest_status != "Kunci":
+		*Selesaikan terlebih dahulu tugas yang anda terima*
+		{{currQuest()}}
+		do talking("-")
+		do talking("end")
+		do EndDialog()
+		=> END!
+if global.quest_status == "Kunci"
+	do submit("res://Inventory/items/Kunci.tres")
+	if global.quest_count == 0:
+		do talking("Rizki")
+		Rizki: *Kunci ini berhasil membuka pintu pagar*
+		set global.Dialogue +=1
+		set global.quest_status = ""
+		set global.quest_count = null
+		do emit("Build")
+	else:
+		do talking("Rizki")
+		Rizki: *Pintu ini dikunci, sebaiknya aku cari dulu dokumen kakek yang hilang bersama dengan kunci tersebut.*
+		set global.quest_status = ""
+		set global.quest_count = null
+elif global.quest_status == "":
+	set global.quest_status = "Kunci"
+	set global.quest_count = 1
+	=> Pagar
+do talking("-")
+do talking("end")
+do EndDialog()
+=> END!

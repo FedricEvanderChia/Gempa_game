@@ -78,6 +78,10 @@ func showAll():
 	create_tween().tween_property($Reputation,"visible",true,0)
 
 func _on_player_obtain(item : inventory_item):
+	if item.name == "Dokumen":
+		$item.scale = Vector2(0.2,0.2)
+	else:
+		$item.scale = Vector2(0.7,0.7)
 	$obtain.text = "Kamu mendapatkan sebuah\n" + item.name 
 	$item.texture = item.texture
 	$obtain.show()
@@ -85,10 +89,3 @@ func _on_player_obtain(item : inventory_item):
 	await get_tree().create_timer(2).timeout
 	$obtain.hide()
 	$item.hide()
-
-
-
-
-
-func _on_player_dark_obtain(item):
-	pass # Replace with function body.
