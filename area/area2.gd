@@ -4,7 +4,7 @@ extends Node2D
 @export var Epos = Vector2(4000,498)
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if global.chapter_game==1 and global.Dialogue > 3:
+	if global.chapter_game==1 and global.Dialogue >= 3:
 		global.chapter_game=2
 	if global.Dialogue >= 8:
 		$NPC_Layer/Duck.queue_free()
@@ -65,16 +65,17 @@ func Kabur(kejar):
 
 func _on_go_to_world_body_entered(body):
 	global.Spos = false
-	if name == "Area2":
+	if global.Dialogue == 12:
+		global.Dialogue +=1
+		get_tree().change_scene_to_file("res://Intro/road_bg_end.tscn")
+	elif name == "Area2":
 		get_tree().change_scene_to_file("res://world.tscn")
-	if name == "Area3":
-		get_tree().change_scene_to_file("res://area/area2.tscn")
+	
 func _on_go_to_world_2_body_entered(body):
 	global.Spos = true
 	if name == "Area2":
 		get_tree().change_scene_to_file("res://area/area_3.tscn")
-	if name == "Area3":
-		get_tree().change_scene_to_file("res://world.tscn")
+
 
 
 func _on_bridge_fix_pressed():

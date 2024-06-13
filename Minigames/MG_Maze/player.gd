@@ -32,7 +32,7 @@ func _physics_process(delta):
 	if global_position == $Icon.global_position:
 		is_moving = false
 		return
-	$Icon.global_position = $Icon.global_position.move_toward(global_position, 1+global.difficulty)
+	$Icon.global_position = $Icon.global_position.move_toward(global_position, 2)
 func _process(delta):
 	if is_hurt:
 		hurt()

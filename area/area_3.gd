@@ -32,7 +32,7 @@ func _ready():
 	#	global.EntryDialogue +=1
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func unlock():
-	if global.Dialogue > 10:
+	if global.Dialogue >= 10:
 		$Pagar_sensor/PagarFront.frame = 1
 		$StaticBody2D2/Wall.queue_free()
 	else:

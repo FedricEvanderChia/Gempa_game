@@ -130,10 +130,11 @@ position = Vector2(30, 480)
 scale = Vector2(0.213, 0.213)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(37, 0)
 zoom = Vector2(0.9, 0.9)
 limit_left = 0
 limit_right = 4000
-limit_bottom = 660
+limit_bottom = 732
 script = ExtResource("7_nnkw8")
 
 [node name="collectible_Layer" type="Node2D" parent="."]

@@ -63,7 +63,7 @@ Rizki: Maria, aku jadi sangat khawatir tentang ayahku. Dia juga tinggal di desa 
 do talking("Maria")
 Maria: Bukannya kamu asalnya dari Sumatra?
 do talking("Rizki")
-Rizki: Benar, ibu dan kakakku tinggal disana. Tapi ayahku adalah seorang seismolog yang tugaskan ke daerah sini. Dia telah melakukan penelitian selama 10 tentang aktivitas seismik di desa ini.
+Rizki: Benar, keluargaku dulunya tinggal disana. Tapi ayahku adalah seorang seismolog yang tugaskan ke daerah sini. Dia telah melakukan penelitian selama 10 tentang aktivitas seismik di desa ini.
 do talking("Maria")
 Maria: Benarkah? Jadi, ayahmu sangat mengenal desa ini?
 do talking("Rizki")
@@ -205,9 +205,7 @@ do talking("Maria")
 Maria: "Terima kasih ya, dik. Kamu sudah memberikan petunjuk yang sangat berharga."
 do talking("Rizki")
 Rizki: (memandang Maria dengan harapan) "Kita harus segera pergi ke gunung. Ayahku mungkin masih berada di sana!"
-
 do talking("-")
-(Mereka berdua kemudian bersiap-siap untuk perjalanan ke Gunung Merapi, penuh dengan harapan untuk menemukan ayah Rizki.)
 do talking("end")
 do EndDialog()
 set global.unlockmaze = true
