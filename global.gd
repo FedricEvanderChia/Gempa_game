@@ -1,7 +1,7 @@
 extends Node2D
 var rng = RandomNumberGenerator.new()
 
-var Dialogue = 12
+var Dialogue = 0
 var goal = false
 var needs = []
 var Lastpos : Vector2
@@ -20,9 +20,9 @@ var quest_status : String = ""
 var quest_count : int
 var chapter_game= 3
 var Recuee = difficulty * 3
-var unlockmaze= true
-var check_unlockmaze_chapter2= true
-var check_unlockmaze_chapter3= true 
+var unlockmaze= false
+var check_unlockmaze_chapter2= false
+var check_unlockmaze_chapter3= false 
 var check_grass= false
 
 #maze1#maze2#maze3 #maze4 #maze5   #maze6 #maze7 #maze8  #maze9  #maze10  #maze11 #maze12  #maze13 #maze14 #maze15 #maze16 #maze17 #maze18 #maze19  #maze20       
