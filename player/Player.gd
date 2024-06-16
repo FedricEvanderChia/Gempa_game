@@ -6,13 +6,18 @@ var stop = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var anim = get_node("AnimationPlayer")
+@onready var footstep = $footstep
 var target = 1450
 signal Obtain(item)
 var invent = preload("res://Inventory/Inventorysave.tres")
+var once = true
+
 
 func _ready():
 	global.Receive.connect(reward)
 	global.Give.connect(give)
+
+
 func _physics_process(delta):
 	global.Lastpos = self.global_position
 	if global.cinema and !global.go_right:
@@ -39,6 +44,7 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		if velocity.x == 0:
 			anim.play("Idle")
+			footstep.stop()
 
 	move_and_slide()
 	

@@ -372,3 +372,4 @@ pitch_scale = 1.03
 [connection signal="pressed" from="PauseBtn/Pause" to="." method="_on_pause_pressed"]
 
 [editable path="pause_ui"]
+[editable path="pause_ui/MarginContainer/Settings"]

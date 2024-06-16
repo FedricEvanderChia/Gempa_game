@@ -1,19 +1,15 @@
-[gd_resource type="Resource" script_class="inventory_game" load_steps=17 format=3]
+[gd_resource type="Resource" script_class="inventory_game" load_steps=15 format=3 uid="uid://cgtuilooh43o8"]
 
 [ext_resource type="Script" path="res://Inventory/inventory_game.gd" id="1_81amw"]
-[ext_resource type="Resource" path="res://Inventory/items/Sekop.tres" id="2_0na5a"]
 [ext_resource type="Script" path="res://Inventory/Inventory_slot.gd" id="2_ipgva"]
-[ext_resource type="Resource" path="res://Inventory/items/P3K.tres" id="4_yy22k"]
 
 [sub_resource type="Resource" id="Resource_2dvtc"]
 script = ExtResource("2_ipgva")
-item = ExtResource("2_0na5a")
-amount = 1
+amount = 0
 
 [sub_resource type="Resource" id="Resource_62sg7"]
 script = ExtResource("2_ipgva")
-item = ExtResource("4_yy22k")
-amount = 1
+amount = 0
 
 [sub_resource type="Resource" id="Resource_8mdbm"]
 script = ExtResource("2_ipgva")

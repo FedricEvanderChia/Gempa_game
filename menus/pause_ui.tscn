@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgc878c7r31yf"]
+[gd_scene load_steps=3 format=3 uid="uid://bgc878c7r31yf"]
 
 [ext_resource type="Script" path="res://menus/pause_ui.gd" id="1_35v1f"]
+[ext_resource type="PackedScene" uid="uid://gfx60wb32r42" path="res://menus/Settings.tscn" id="2_tkovu"]
 
 [node name="pause_ui" type="Control"]
 layout_mode = 3
@@ -27,27 +28,35 @@ size_flags_vertical = 4
 
 [node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Resume"
+text = "Lanjut"
 
 [node name="Save" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Save"
+text = "Simpan"
 
 [node name="Setting" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Settings"
+text = "Pengaturan"
 
 [node name="MainMenu" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Back to Menu"
+text = "Kembali ke Menu"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Quit"
+text = "Keluar"
+
+[node name="Settings" parent="MarginContainer" instance=ExtResource("2_tkovu")]
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Setting" to="." method="_on_setting_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/Settings/MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
+
+[editable path="MarginContainer/Settings"]

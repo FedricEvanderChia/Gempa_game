@@ -780,6 +780,7 @@ metadata/_edit_use_anchors_ = true
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasLayer"]
 stream = ExtResource("17_o08ne")
 autoplay = true
+bus = &"Music"
 
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="input_event" from="PhoneBook" to="." method="_on_phone_book_input_event"]

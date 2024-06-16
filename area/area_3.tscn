@@ -380,7 +380,7 @@ text = "talk"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_d6spc")
-volume_db = -10.895
+volume_db = 1.0
 autoplay = true
 
 [node name="Pagar" type="Sprite2D" parent="."]

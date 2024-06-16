@@ -2,6 +2,7 @@ extends Control
 var speed = 300
 
 func _ready():
+	loadSound()
 	if FileAccess.file_exists("res://savegame.bin") == false:
 		$VBoxContainer/StartB.hide()
 		
@@ -19,7 +20,7 @@ func _on_start_b_pressed():
 		elif global.lastmap == 4: get_tree().change_scene_to_file("res://area/area_4.tscn")
 		
 func _on_option_b_pressed():
-	get_tree().change_scene_to_file("res://menus/options.tscn")
+	$Settings.show()
 
 func _on_quit_b_pressed():
 	get_tree().quit()
@@ -75,3 +76,25 @@ func _on_option_b_button_up():
 	$VBoxContainer/OptionB/Label.modulate = Color(1,1,1)
 func _on_quit_b_button_up():
 	$VBoxContainer/QuitB/Label.modulate = Color(1,1,1)
+
+
+func _on_back_pressed():
+	$Settings.hide()
+	var file = FileAccess.open("res://menus/SoundSys.bin", FileAccess.WRITE)
+	var data: Dictionary = {
+		"Master" = $Settings/MarginContainer/VBoxContainer/HSlider.value,
+		"Music" = $Settings/MarginContainer/VBoxContainer/HSlider2.value,
+		"SFX" = $Settings/MarginContainer/VBoxContainer/HSlider3.value
+	}
+	var jstr = JSON.stringify(data)
+	file.store_line(jstr)
+
+func loadSound():
+	var file = FileAccess.open("res://menus/SoundSys.bin", FileAccess.READ)
+	if FileAccess.file_exists("res://menus/SoundSys.bin") == true:
+		if not file.eof_reached():
+			var curr_line = JSON.parse_string(file.get_line())
+			if curr_line:
+				$Settings/MarginContainer/VBoxContainer/HSlider.value = curr_line["Master"]
+				$Settings/MarginContainer/VBoxContainer/HSlider2.value = curr_line["Music"]
+				$Settings/MarginContainer/VBoxContainer/HSlider3.value = curr_line["SFX"]

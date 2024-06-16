@@ -1,8 +1,9 @@
-[gd_scene load_steps=29 format=3 uid="uid://c71to8edu42an"]
+[gd_scene load_steps=30 format=3 uid="uid://c71to8edu42an"]
 
 [ext_resource type="Texture2D" uid="uid://cxfepbc8vw1es" path="res://asset/Player.png" id="1_465jb"]
 [ext_resource type="Script" path="res://player/Player.gd" id="1_gmp74"]
 [ext_resource type="Texture2D" uid="uid://cmdib7a5b7tmh" path="res://asset/Player_Dark.png" id="2_yqp1h"]
+[ext_resource type="AudioStream" uid="uid://b7sd84ih4kflt" path="res://asset/sfx/walk.mp3" id="4_x6tby"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_waki4"]
 atlas = ExtResource("1_465jb")
@@ -338,3 +339,9 @@ shape = SubResource("CapsuleShape2D_bdbc4")
 libraries = {
 "": SubResource("AnimationLibrary_pt4sk")
 }
+
+[node name="footstep" type="AudioStreamPlayer2D" parent="."]
+scale = Vector2(1.42857, 1.42857)
+stream = ExtResource("4_x6tby")
+volume_db = 24.0
+bus = &"SFX"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://drnqyiwnpts7k"]
+[gd_scene load_steps=12 format=3 uid="uid://drnqyiwnpts7k"]
 
 [ext_resource type="Script" path="res://menus/menu.gd" id="1_08rkx"]
 [ext_resource type="Texture2D" uid="uid://bf4mwy66ty1vs" path="res://asset/MenuButton/MenuButtonA.png" id="2_fy2w6"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ccvmjavne58xc" path="res://asset/useable.png" id="10_8k3l8"]
 [ext_resource type="PackedScene" uid="uid://div6tgqs38lwg" path="res://Minigames/tutorial_ui.tscn" id="10_35118"]
 [ext_resource type="Texture2D" uid="uid://dlnvpx1iw58pf" path="res://asset/Prlx3World.png" id="11_8tysm"]
+[ext_resource type="PackedScene" uid="uid://gfx60wb32r42" path="res://menus/Settings.tscn" id="11_itnti"]
 [ext_resource type="Texture2D" uid="uid://bjjanpau63g57" path="res://asset/Prlx2World.png" id="12_kai3s"]
 
 [node name="Menu" type="Control"]
@@ -136,6 +137,7 @@ texture = ExtResource("8_xno7n")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_j7v64")
 autoplay = true
+bus = &"Music"
 
 [node name="BG" type="ParallaxBackground" parent="."]
 offset = Vector2(0, 52)
@@ -210,6 +212,13 @@ offset_bottom = 213.0
 theme_override_font_sizes/font_size = 40
 text = "TIDAK"
 
+[node name="Settings" parent="." instance=ExtResource("11_itnti")]
+visible = false
+offset_left = 576.0
+offset_top = 472.0
+offset_right = 576.0
+offset_bottom = 472.0
+
 [connection signal="button_down" from="VBoxContainer/NewGameB" to="." method="_on_new_game_b_button_down"]
 [connection signal="button_up" from="VBoxContainer/NewGameB" to="." method="_on_new_game_b_button_up"]
 [connection signal="mouse_entered" from="VBoxContainer/NewGameB" to="." method="_on_new_game_b_mouse_entered"]
@@ -232,3 +241,6 @@ text = "TIDAK"
 [connection signal="pressed" from="VBoxContainer/QuitB" to="." method="_on_quit_b_pressed"]
 [connection signal="pressed" from="konfirmasi/yes" to="." method="_on_yes_pressed"]
 [connection signal="pressed" from="konfirmasi/no" to="." method="_on_no_pressed"]
+[connection signal="pressed" from="Settings/MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
+
+[editable path="Settings"]

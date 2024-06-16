@@ -208,7 +208,6 @@ debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_dj3o6")
-volume_db = -10.895
 autoplay = true
 
 [connection signal="body_entered" from="Go to World" to="." method="_on_go_to_world_body_entered"]

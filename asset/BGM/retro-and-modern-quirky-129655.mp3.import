@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/retro-and-modern-quirky-129655.mp3-5272083a88
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

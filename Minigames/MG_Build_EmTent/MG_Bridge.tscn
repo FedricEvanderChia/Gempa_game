@@ -225,7 +225,9 @@ motion_scale = Vector2(0.1, 0.1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_udc0n")
+volume_db = -8.0
 autoplay = true
+bus = &"Music"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(563, 591)

@@ -151,6 +151,7 @@ text = "Response example"
 stream = ExtResource("4_0wcxx")
 pitch_scale = 1.32
 mix_target = 2
+bus = &"SFX"
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="spoke" from="Balloon/Panel/Dialogue/VBoxContainer/DialogueLabel" to="." method="_on_dialogue_label_spoke"]
