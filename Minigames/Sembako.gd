@@ -9,8 +9,10 @@ var selected = false
 var needs = []
 var goal = 5 + global.difficulty*5
 var newscore = global.minigame_score+100
+var reset
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	reset = global.difficulty
 	if global.workMode:
 		goal = global.difficulty
 	if global.life<=0:

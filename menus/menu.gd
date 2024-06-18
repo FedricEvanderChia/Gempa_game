@@ -4,7 +4,7 @@ var speed = 300
 func _ready():
 	loadSound()
 	if FileAccess.file_exists("res://savegame.bin") == false:
-		$VBoxContainer/StartB.hide()
+		$MarginContainer/VBoxContainer/StartB.hide()
 		
 func _process(delta):
 	$BG.scroll_offset.x -= speed * delta
@@ -40,43 +40,21 @@ func _on_no_pressed():
 	$konfirmasi.hide()
 	
 func _on_start_b_mouse_entered():
-	get_node("VBoxContainer/StartB").scale = Vector2 (1.05,1.05)
+	get_node("MarginContainer/VBoxContainer/StartB").scale = Vector2 (1.05,1.05)
 func _on_start_b_mouse_exited():
-	get_node("VBoxContainer/StartB").scale = Vector2 (1,1)
+	get_node("MarginContainer/VBoxContainer/StartB").scale = Vector2 (1,1)
 func _on_option_b_mouse_entered():
-	get_node("VBoxContainer/OptionB").scale = Vector2 (1.05,1.05)
+	get_node("MarginContainer/VBoxContainer2/OptionB").scale = Vector2 (1.05,1.05)
 func _on_option_b_mouse_exited():
-	get_node("VBoxContainer/OptionB").scale = Vector2 (1,1)
+	get_node("MarginContainer/VBoxContainer2/OptionB").scale = Vector2 (1,1)
 func _on_quit_b_mouse_entered():
-	get_node("VBoxContainer/QuitB").scale = Vector2 (1.05,1.05)
+	get_node("MarginContainer/VBoxContainer2/QuitB").scale = Vector2 (1.05,1.05)
 func _on_quit_b_mouse_exited():
-	get_node("VBoxContainer/QuitB").scale = Vector2 (1,1)
+	get_node("MarginContainer/VBoxContainer2/QuitB").scale = Vector2 (1,1)
 func _on_new_game_b_mouse_entered():
-	get_node("VBoxContainer/NewGameB").scale = Vector2 (1.05,1.05)
+	get_node("MarginContainer/VBoxContainer/NewGameB").scale = Vector2 (1.05,1.05)
 func _on_new_game_b_mouse_exited():
-	get_node("VBoxContainer/NewGameB").scale = Vector2 (1,1)
-
-
-
-func _on_new_game_b_button_down():
-	$VBoxContainer/NewGameB/Label.modulate = Color(0.667, 0.667, 0.667)
-func _on_start_b_button_down():
-	$VBoxContainer/StartB/Label.modulate = Color(0.667, 0.667, 0.667)
-func _on_option_b_button_down():
-	$VBoxContainer/OptionB/Label.modulate = Color(0.667, 0.667, 0.667)
-func _on_quit_b_button_down():
-	$VBoxContainer/QuitB/Label.modulate = Color(0.667, 0.667, 0.667)
-
-
-func _on_new_game_b_button_up():
-	$VBoxContainer/NewGameB/Label.modulate = Color(1,1,1)
-func _on_start_b_button_up():
-	$VBoxContainer/StartB/Label.modulate = Color(1,1,1)
-func _on_option_b_button_up():
-	$VBoxContainer/OptionB/Label.modulate = Color(1,1,1)
-func _on_quit_b_button_up():
-	$VBoxContainer/QuitB/Label.modulate = Color(1,1,1)
-
+	get_node("MarginContainer/VBoxContainer/NewGameB").scale = Vector2 (1,1)
 
 func _on_back_pressed():
 	$Settings.hide()

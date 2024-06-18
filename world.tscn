@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://x8fq7bam18uf" path="res://asset/Character/NPC_woman.png" id="14_fcmkq"]
 [ext_resource type="Texture2D" uid="uid://co8jflhap3xns" path="res://asset/Character/NPC_Girl1.1.png" id="15_baabl"]
 [ext_resource type="Texture2D" uid="uid://btrhxxx4waxpr" path="res://asset/Character/NPC_Boy2.3.png" id="16_7x8su"]
-[ext_resource type="AudioStream" uid="uid://6vh8rugjgj07" path="res://asset/Soundtrack/Gameplay.mp3" id="17_6v1qh"]
+[ext_resource type="AudioStream" uid="uid://6vh8rugjgj07" path="res://asset/Soundtrack/Area1.mp3" id="17_6v1qh"]
 [ext_resource type="Texture2D" uid="uid://dxi8rq2pusmkg" path="res://asset/Character/PMI_Blue.png" id="18_hwj15"]
 [ext_resource type="Script" path="res://Minigames/ShakeCam.gd" id="21_exsid"]
 
@@ -411,6 +411,7 @@ theme_override_font_sizes/font_size = 30
 text = "Bicara"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("17_6v1qh")
 autoplay = true
 bus = &"Music"

@@ -4,6 +4,7 @@ extends Sprite2D
 func _ready():
 	if global.check_grass == true:
 		$".".queue_free()
+		$"../star".queue_free()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,5 +20,6 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 		#var dokumen = item_collectible_dokumen.
 		$"../..".dropItem("res://Inventory/items/Dokumen.tres",$".".global_position )
 		$".".queue_free()
+		$"../star".queue_free()
 		global.check_grass = true
 		

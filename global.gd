@@ -7,7 +7,7 @@ var needs = []
 var Lastpos : Vector2
 var lastmap : int = 1
 var lastgame : String= ""
-var Bridge = "Selesai"
+var Bridge = "Rusak"
 var cinema = false
 
 var life = 3
@@ -18,7 +18,7 @@ var level = 1
 var talker = ""
 var quest_status : String = ""
 var quest_count : int
-var chapter_game= 3
+var chapter_game= 1
 var Recuee = difficulty * 3
 var unlockmaze= false
 var check_unlockmaze_chapter2= false

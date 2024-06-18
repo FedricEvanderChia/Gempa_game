@@ -21,27 +21,36 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_08rkx")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -92.0
-offset_top = -281.0
-offset_right = 92.0
+anchor_bottom = 0.5
+offset_left = -329.5
+offset_top = -91.0
+offset_right = 111.5
+offset_bottom = 91.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
 
-[node name="NewGameB" type="TextureButton" parent="VBoxContainer"]
+[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 30
+
+[node name="NewGameB" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(178, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 texture_normal = ExtResource("2_fy2w6")
 texture_pressed = ExtResource("3_2ool8")
 
-[node name="Label" type="Label" parent="VBoxContainer/NewGameB"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/NewGameB"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -58,14 +67,14 @@ theme_override_fonts/font = ExtResource("4_eglkk")
 theme_override_font_sizes/font_size = 25
 text = "Game Baru"
 
-[node name="StartB" type="TextureButton" parent="VBoxContainer"]
+[node name="StartB" type="TextureButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 texture_normal = ExtResource("2_fy2w6")
 texture_pressed = ExtResource("3_2ool8")
 
-[node name="Label" type="Label" parent="VBoxContainer/StartB"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/StartB"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -82,14 +91,20 @@ theme_override_fonts/font = ExtResource("4_eglkk")
 theme_override_font_sizes/font_size = 25
 text = "Lanjutkan"
 
-[node name="OptionB" type="TextureButton" parent="VBoxContainer"]
+[node name="VBoxContainer2" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 30
+
+[node name="OptionB" type="TextureButton" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
 texture_normal = ExtResource("2_fy2w6")
 texture_pressed = ExtResource("3_2ool8")
 
-[node name="Label" type="Label" parent="VBoxContainer/OptionB"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer2/OptionB"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -106,14 +121,14 @@ theme_override_fonts/font = ExtResource("4_eglkk")
 theme_override_font_sizes/font_size = 25
 text = "Pengaturan"
 
-[node name="QuitB" type="TextureButton" parent="VBoxContainer"]
+[node name="QuitB" type="TextureButton" parent="MarginContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 texture_normal = ExtResource("2_fy2w6")
 texture_pressed = ExtResource("3_2ool8")
 
-[node name="Label" type="Label" parent="VBoxContainer/QuitB"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer2/QuitB"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -134,8 +149,10 @@ text = "Keluar"
 position = Vector2(586, 101)
 texture = ExtResource("8_xno7n")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("9_j7v64")
+volume_db = 5.0
 autoplay = true
 bus = &"Music"
 
@@ -197,48 +214,44 @@ Apakah kamu yakin?"
 horizontal_alignment = 1
 
 [node name="yes" type="Button" parent="konfirmasi"]
-offset_left = -280.0
+offset_left = -325.0
 offset_top = 150.0
-offset_right = -222.0
-offset_bottom = 213.0
+offset_right = -75.0
+offset_bottom = 250.0
 theme_override_font_sizes/font_size = 40
 text = "YA"
 
 [node name="no" type="Button" parent="konfirmasi"]
-offset_left = 200.0
+offset_left = 100.0
 offset_top = 150.0
-offset_right = 324.0
-offset_bottom = 213.0
+offset_right = 350.0
+offset_bottom = 250.0
 theme_override_font_sizes/font_size = 40
 text = "TIDAK"
 
 [node name="Settings" parent="." instance=ExtResource("11_itnti")]
 visible = false
-offset_left = 576.0
-offset_top = 472.0
-offset_right = 576.0
-offset_bottom = 472.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 
-[connection signal="button_down" from="VBoxContainer/NewGameB" to="." method="_on_new_game_b_button_down"]
-[connection signal="button_up" from="VBoxContainer/NewGameB" to="." method="_on_new_game_b_button_up"]
-[connection signal="mouse_entered" from="VBoxContainer/NewGameB" to="." method="_on_new_game_b_mouse_entered"]
-[connection signal="mouse_exited" from="VBoxContainer/NewGameB" to="." method="_on_new_game_b_mouse_exited"]
-[connection signal="pressed" from="VBoxContainer/NewGameB" to="." method="_on_new_game_b_pressed"]
-[connection signal="button_down" from="VBoxContainer/StartB" to="." method="_on_start_b_button_down"]
-[connection signal="button_up" from="VBoxContainer/StartB" to="." method="_on_start_b_button_up"]
-[connection signal="mouse_entered" from="VBoxContainer/StartB" to="." method="_on_start_b_mouse_entered"]
-[connection signal="mouse_exited" from="VBoxContainer/StartB" to="." method="_on_start_b_mouse_exited"]
-[connection signal="pressed" from="VBoxContainer/StartB" to="." method="_on_start_b_pressed"]
-[connection signal="button_down" from="VBoxContainer/OptionB" to="." method="_on_option_b_button_down"]
-[connection signal="button_up" from="VBoxContainer/OptionB" to="." method="_on_option_b_button_up"]
-[connection signal="mouse_entered" from="VBoxContainer/OptionB" to="." method="_on_option_b_mouse_entered"]
-[connection signal="mouse_exited" from="VBoxContainer/OptionB" to="." method="_on_option_b_mouse_exited"]
-[connection signal="pressed" from="VBoxContainer/OptionB" to="." method="_on_option_b_pressed"]
-[connection signal="button_down" from="VBoxContainer/QuitB" to="." method="_on_quit_b_button_down"]
-[connection signal="button_up" from="VBoxContainer/QuitB" to="." method="_on_quit_b_button_up"]
-[connection signal="mouse_entered" from="VBoxContainer/QuitB" to="." method="_on_quit_b_mouse_entered"]
-[connection signal="mouse_exited" from="VBoxContainer/QuitB" to="." method="_on_quit_b_mouse_exited"]
-[connection signal="pressed" from="VBoxContainer/QuitB" to="." method="_on_quit_b_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/NewGameB" to="." method="_on_new_game_b_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/NewGameB" to="." method="_on_new_game_b_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/NewGameB" to="." method="_on_new_game_b_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/StartB" to="." method="_on_start_b_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/StartB" to="." method="_on_start_b_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/StartB" to="." method="_on_start_b_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer2/OptionB" to="." method="_on_option_b_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer2/OptionB" to="." method="_on_option_b_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/OptionB" to="." method="_on_option_b_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer2/QuitB" to="." method="_on_quit_b_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer2/QuitB" to="." method="_on_quit_b_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/QuitB" to="." method="_on_quit_b_pressed"]
 [connection signal="pressed" from="konfirmasi/yes" to="." method="_on_yes_pressed"]
 [connection signal="pressed" from="konfirmasi/no" to="." method="_on_no_pressed"]
 [connection signal="pressed" from="Settings/MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]

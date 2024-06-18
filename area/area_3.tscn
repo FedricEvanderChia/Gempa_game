@@ -11,7 +11,7 @@
 [ext_resource type="Script" path="res://area/grass_mystery.gd" id="6_g4j5t"]
 [ext_resource type="Texture2D" uid="uid://ch8lxnq8pq8pl" path="res://asset/grass.png" id="6_t142e"]
 [ext_resource type="Texture2D" uid="uid://ceopawoelloo8" path="res://asset/Character/NPC_OldMan.png" id="10_gsf6m"]
-[ext_resource type="AudioStream" uid="uid://hax2vld3cwbf" path="res://asset/BGM/letx27s-get-this-done-154533.mp3" id="12_d6spc"]
+[ext_resource type="AudioStream" uid="uid://c77d36atj80dm" path="res://asset/Soundtrack/Area3.mp3" id="12_0ql2y"]
 [ext_resource type="Texture2D" uid="uid://0krd0l3m3jj3" path="res://asset/pagar_front.png" id="13_6efau"]
 [ext_resource type="Texture2D" uid="uid://bm4f2rc5kn7lk" path="res://asset/pagar.png" id="13_ihogn"]
 [ext_resource type="Texture2D" uid="uid://t1lg8dl711um" path="res://asset/pagar__front_open.png" id="14_teugs"]
@@ -92,7 +92,7 @@ shape = SubResource("RectangleShape2D_noxeh")
 [node name="Go to World" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Go to World"]
-position = Vector2(-88, 281)
+position = Vector2(-111, 283)
 shape = SubResource("RectangleShape2D_ewrrl")
 
 [node name="grass_node_back" type="Node2D" parent="."]
@@ -376,12 +376,14 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
 theme_override_font_sizes/font_size = 20
-text = "talk"
+text = "Bicara"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_d6spc")
-volume_db = 1.0
+process_mode = 3
+stream = ExtResource("12_0ql2y")
+volume_db = 5.0
 autoplay = true
+bus = &"Music"
 
 [node name="Pagar" type="Sprite2D" parent="."]
 position = Vector2(3936, 560)

@@ -5,6 +5,7 @@
 [node name="Settings" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+scale = Vector2(1.5, 1.5)
 size_flags_horizontal = 4
 size_flags_vertical = 0
 
@@ -97,3 +98,5 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Kembali
 "
+icon_alignment = 1
+vertical_icon_alignment = 0

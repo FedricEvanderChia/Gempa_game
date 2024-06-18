@@ -5,10 +5,12 @@ var goal = 4
 var is_state =0
 var difficulty = 1
 var is_collided = false
+var reset
 @onready var sounds_b = $button_sounds
 signal is_pressed
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	reset = global.difficulty
 	if global.life<=0:
 		global.life = 3
 	$Actionable_platform/AnimationPlayer.play("move_right_left")

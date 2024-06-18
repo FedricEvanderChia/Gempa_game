@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Minigames/MG_Build_EmTent/MG_Bridge.gd" id="1_kjlty"]
 [ext_resource type="Texture2D" uid="uid://b1dq0fq7j8ubi" path="res://asset/Bridge_MG.png" id="2_l5m0m"]
-[ext_resource type="AudioStream" uid="uid://uk5y6ht22gvu" path="res://asset/Soundtrack/Minigame_1.mp3" id="4_udc0n"]
+[ext_resource type="AudioStream" uid="uid://qtyune2unelb" path="res://asset/Soundtrack/Minigame_4.mp3" id="3_3do2u"]
 [ext_resource type="Texture2D" uid="uid://8kbxhcnxgloa" path="res://asset/Tenda_emergency/action_bar_bg.png" id="5_ara0s"]
 [ext_resource type="Script" path="res://Minigames/MG_Build_EmTent/Actionable_platform.gd" id="7_12bsp"]
 [ext_resource type="Texture2D" uid="uid://d2ykcjrbd0y3u" path="res://asset/Tenda_emergency/moving_platform.png" id="8_8ttjn"]
@@ -222,12 +222,6 @@ sprite_frames = SubResource("SpriteFrames_qo2tk")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(0.1, 0.1)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_udc0n")
-volume_db = -8.0
-autoplay = true
-bus = &"Music"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(563, 591)
@@ -471,6 +465,12 @@ position = Vector2(-392, 124)
 scale = Vector2(0.215833, 0.215833)
 sprite_frames = SubResource("SpriteFrames_3l0c2")
 autoplay = "default"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer"]
+stream = ExtResource("3_3do2u")
+volume_db = -8.0
+autoplay = true
+bus = &"Music"
 
 [node name="button_sounds" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("22_cl102")

@@ -2,7 +2,7 @@ extends Node2D
 
 @export var goal: int
 @export var size: int
-@onready var tile_map = $"../TileMap1"
+@onready var tile_map = $"../TileMap"
 var is_moving = false
 var dir = "down"
 var invincible = false
@@ -16,11 +16,7 @@ var rotate: int
 
 
 func _ready():
-	if $"../Camera2D" == null:
-		cam = $Icon/Camera2D
-	else:
-		$Icon/Camera2D.queue_free()
-		cam = $"../Camera2D"
+	cam = $"../Camera2D"
 		
 func _physics_process(delta):
 	if !is_moving:

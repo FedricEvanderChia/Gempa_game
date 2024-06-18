@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://b4ff4qomp8kn5" path="res://asset/rubble/Rubble_Pole.png" id="11_ruxrp"]
 [ext_resource type="Texture2D" uid="uid://b4qeob0jnpcii" path="res://asset/rubble/Rubble_Wall.png" id="12_8a8c8"]
 [ext_resource type="Texture2D" uid="uid://chqyq160dt8jq" path="res://asset/rubble/Rubble_wood.png" id="13_2pryq"]
-[ext_resource type="AudioStream" uid="uid://b8o5c0w0ju0kn" path="res://asset/BGM/chasing-victory-main-9448.mp3" id="14_nnpdp"]
+[ext_resource type="AudioStream" uid="uid://b8333fal8ois8" path="res://asset/Soundtrack/Minigame_3.mp3" id="14_8vi0q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wgxs6"]
 radius = 250.0
@@ -262,7 +262,7 @@ vertical_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 process_mode = 3
-stream = ExtResource("14_nnpdp")
+stream = ExtResource("14_8vi0q")
 autoplay = true
 bus = &"Music"
 

@@ -93,11 +93,22 @@ func _on_texture_button_pressed():
 	if !expand:
 		create_tween().tween_property($Retry,"position",Vector2(10,85),0.25)
 		create_tween().tween_property($Back,"position",Vector2(10,160),0.25)
+		create_tween().tween_property($Dpad_Right,"position",Vector2(10,235),0.25)
 	else:
 		create_tween().tween_property($Retry,"position",Vector2(10,10),0.25)
 		create_tween().tween_property($Back,"position",Vector2(10,10),0.25)
+		create_tween().tween_property($Dpad_Right,"position",Vector2(10,10),0.25)
 	expand = !expand
 func _on_retry_pressed():
 	get_tree().reload_current_scene()
 func _on_back_pressed():
 	get_tree().change_scene_to_file("res://Minigames/MG_Maze/Maze_menu/Menu_maze.tscn")
+
+
+func _on_check_button_toggled(toggled_on):
+	right_Dpad = !right_Dpad
+	if right_Dpad:
+		$Control2.position = Vector2(810,620)
+	else:
+		$Control2.position = Vector2(-20,620)
+

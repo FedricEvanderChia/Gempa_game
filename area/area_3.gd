@@ -10,7 +10,7 @@ func _ready():
 	global.Build.connect(unlock)
 	if global.chapter_game==2 and global.Dialogue > 7:
 		global.chapter_game=3
-	if  global.Lastpos.x <= Epos.x and global.Lastpos.x >= Spos.x:
+	if  global.Lastpos.x < Epos.x and global.Lastpos.x > Spos.x:
 		$player.position = global.Lastpos
 	elif global.Spos == true:
 		$player.position = Spos
@@ -57,12 +57,10 @@ func dropItem(ItemA, pos):
 
 func _on_go_to_world_body_entered(body):
 	global.Spos = false
-	if name == "Area3":
-		get_tree().change_scene_to_file("res://area/area_2.tscn")
+	get_tree().change_scene_to_file("res://area/area_2.tscn")
 func _on_go_to_world_2_body_entered(body):
 	global.Spos = true
-	if name == "Area3":
-		get_tree().change_scene_to_file("res://area/area_4.tscn")
+	get_tree().change_scene_to_file("res://area/area_4.tscn")
 
 
 func _on_kakek_body_entered(body):

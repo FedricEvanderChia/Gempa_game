@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dtsrtigd5cgnv" path="res://uigempa.tscn" id="8_2rrum"]
 [ext_resource type="Texture2D" uid="uid://cno8htkqc6vrv" path="res://asset/bridge.png" id="8_xd84g"]
 [ext_resource type="Texture2D" uid="uid://cqo453aljo01w" path="res://asset/Character/Duck_anim.png" id="9_qf3ri"]
-[ext_resource type="AudioStream" uid="uid://ctd7owbett5a4" path="res://asset/BGM/Easy Lemon.mp3" id="11_dj3o6"]
+[ext_resource type="AudioStream" uid="uid://ctd7owbett5a4" path="res://asset/Soundtrack/Area2.mp3" id="11_37xgb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cngay"]
 animations = [{
@@ -74,7 +74,6 @@ radius = 114.3
 
 [node name="Area2" type="Node2D"]
 script = ExtResource("2_iwe2q")
-Spos = Vector2(30, 480)
 
 [node name="BG2" type="ParallaxBackground" parent="."]
 
@@ -126,7 +125,7 @@ position = Vector2(4117, 271)
 shape = SubResource("RectangleShape2D_3161r")
 
 [node name="player" parent="." instance=ExtResource("4_37cct")]
-position = Vector2(30, 480)
+position = Vector2(40, 480)
 scale = Vector2(0.213, 0.213)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
@@ -207,8 +206,11 @@ shape = SubResource("CircleShape2D_f4orq")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_dj3o6")
+process_mode = 3
+stream = ExtResource("11_37xgb")
+volume_db = 5.0
 autoplay = true
+bus = &"Music"
 
 [connection signal="body_entered" from="Go to World" to="." method="_on_go_to_world_body_entered"]
 [connection signal="body_entered" from="Go to World2" to="." method="_on_go_to_world_2_body_entered"]

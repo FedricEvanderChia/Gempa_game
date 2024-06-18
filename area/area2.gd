@@ -11,11 +11,11 @@ func _ready():
 	$player.target = $Sensor_end.position.x
 	global.Build.connect(Fixing)
 	global.flee.connect(Kabur)
-	if  global.Lastpos.x <= Epos.x and global.Lastpos.x >= Spos.x:
+	if  global.Lastpos.x < Epos.x and global.Lastpos.x > Spos.x:
 		$player.position = global.Lastpos
-	elif global.Spos == true:
+	elif global.Spos:
 		$player.position = Spos
-	else:
+	elif !global.Spos:
 		$player.position = Epos
 	Fixing()
 	# 	DialogueManager.show_dialogue_balloon(load("res://dialogue/EntryDialogue.dialogue"), "Entry")
@@ -68,13 +68,12 @@ func _on_go_to_world_body_entered(body):
 	if global.Dialogue == 12:
 		global.Dialogue +=1
 		get_tree().change_scene_to_file("res://Intro/road_bg_end.tscn")
-	elif name == "Area2":
+	else:
 		get_tree().change_scene_to_file("res://world.tscn")
 	
 func _on_go_to_world_2_body_entered(body):
 	global.Spos = true
-	if name == "Area2":
-		get_tree().change_scene_to_file("res://area/area_3.tscn")
+	get_tree().change_scene_to_file("res://area/area_3.tscn")
 
 
 

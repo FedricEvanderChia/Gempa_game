@@ -25,27 +25,32 @@ offset_bottom = 650.0
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = 46
 
 [node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Lanjut"
+vertical_icon_alignment = 0
 
 [node name="Save" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
 text = "Simpan"
+vertical_icon_alignment = 0
 
 [node name="Setting" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Pengaturan"
+vertical_icon_alignment = 0
 
 [node name="MainMenu" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Kembali ke Menu"
+vertical_icon_alignment = 0
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Keluar"
+vertical_icon_alignment = 0
 
 [node name="Settings" parent="MarginContainer" instance=ExtResource("2_tkovu")]
 visible = false

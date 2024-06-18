@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://1ldnmtqmvq4f"]
+
+[ext_resource type="Texture2D" uid="uid://8cad4ltqkcfp" path="res://asset/Simple_tile.png" id="1_7b0yb"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y2mfl"]
+texture = ExtResource("1_7b0yb")
+0:0/0 = 0
+0:0/0/custom_data_0 = true
+0:0/0/custom_data_1 = "path"
+1:0/0 = 0
+1:0/0/custom_data_1 = "wall"
+2:0/0 = 0
+2:0/0/custom_data_0 = true
+2:0/0/custom_data_1 = "exit"
+3:0/0 = 0
+3:0/0/custom_data_0 = true
+3:0/0/custom_data_1 = "rescue"
+4:0/0 = 0
+4:0/0/custom_data_1 = "wood"
+5:0/0 = 0
+5:0/0/custom_data_0 = true
+5:0/0/custom_data_1 = "axe"
+0:1/0 = 0
+0:1/0/custom_data_0 = true
+0:1/0/custom_data_1 = "break"
+1:1/0 = 0
+1:1/0/custom_data_1 = "void"
+2:1/0 = 0
+2:1/0/custom_data_1 = "void"
+3:1/0 = 0
+3:1/0/custom_data_1 = "void"
+4:1/0 = 0
+4:1/0/custom_data_1 = "break_wood"
+5:1/0 = 0
+5:1/0/custom_data_0 = true
+5:1/0/custom_data_1 = "apar"
+0:2/0 = 0
+0:2/0/custom_data_1 = "box_out"
+1:2/0 = 0
+1:2/0/custom_data_1 = "box_in"
+2:2/0 = 0
+2:2/0/custom_data_1 = "box_out"
+3:2/0 = 0
+3:2/0/custom_data_1 = "box_in"
+4:2/0 = 0
+4:2/0/custom_data_1 = "box_in"
+5:2/0 = 0
+5:2/0/custom_data_1 = "box2"
+0:3/0 = 0
+0:3/0/custom_data_1 = "box_out"
+1:3/0 = 0
+1:3/0/custom_data_1 = "box_in"
+2:3/0 = 0
+2:3/0/custom_data_1 = "box_out"
+3:3/0 = 0
+3:3/0/custom_data_1 = "box_in"
+4:3/0 = 0
+4:3/0/custom_data_0 = true
+4:3/0/custom_data_1 = "platform"
+1:4/0 = 0
+1:4/0/custom_data_1 = "box2"
+2:4/0 = 0
+2:4/0/custom_data_1 = "box2"
+3:4/0 = 0
+3:4/0/custom_data_1 = "box2"
+
+[sub_resource type="TileSet" id="TileSet_dkjs5"]
+custom_data_layer_0/name = "walkable"
+custom_data_layer_0/type = 1
+custom_data_layer_1/name = "TileName"
+custom_data_layer_1/type = 4
+sources/0 = SubResource("TileSetAtlasSource_y2mfl")
+
+[node name="TileMap" type="TileMap"]
+tile_set = SubResource("TileSet_dkjs5")
+format = 2

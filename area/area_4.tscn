@@ -247,6 +247,7 @@ shape = SubResource("RectangleShape2D_lbw12")
 texture = ExtResource("13_0c0ch")
 
 [node name="Talk" type="Button" parent="NPC_container/Ayah"]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -260,7 +261,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
 theme_override_font_sizes/font_size = 20
-text = "talk"
+text = "Bicara"
 metadata/_edit_use_anchors_ = true
 
 [node name="player" parent="." instance=ExtResource("3_sc5bi")]

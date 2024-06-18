@@ -1,8 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://blxwvvgrsd5pg"]
+[gd_scene load_steps=17 format=3 uid="uid://blxwvvgrsd5pg"]
 
 [ext_resource type="Script" path="res://Minigames/MG_Maze/player.gd" id="1_6pn5c"]
 [ext_resource type="Texture2D" uid="uid://c8nv6mtnlspav" path="res://asset/Character/MiniRizki_Sheet.png" id="2_l82xe"]
-[ext_resource type="Script" path="res://Minigames/ShakeCam.gd" id="3_vvjdg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_07g5d"]
 atlas = ExtResource("2_l82xe")
@@ -143,10 +142,6 @@ scale = Vector2(0.666667, 0.666667)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Icon/Area2D"]
 scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_5oxxp")
-
-[node name="Camera2D" type="Camera2D" parent="Icon"]
-zoom = Vector2(2.5, 2.5)
-script = ExtResource("3_vvjdg")
 
 [connection signal="body_entered" from="Icon/Area2D" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="Icon/Area2D" to="." method="_on_body_exited"]

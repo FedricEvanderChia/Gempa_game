@@ -12,6 +12,7 @@ config_version=5
 
 config/name="Project Skripsi Godot"
 run/main_scene="res://menus/menu.tscn"
+config/quit_on_go_back=false
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
@@ -30,6 +31,7 @@ general/states=["global", "GUI"]
 [display]
 
 window/stretch/mode="viewport"
+window/vsync/vsync_mode=2
 
 [editor_plugins]
 
@@ -51,7 +53,7 @@ Click={
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
-pointing/android/enable_long_press_as_right_click=true
+pointing/quit_on_go_back=true
 
 [internationalization]
 
@@ -61,3 +63,4 @@ locale/translations_pot_files=PackedStringArray("res://dialogue/Act1.dialogue", 
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

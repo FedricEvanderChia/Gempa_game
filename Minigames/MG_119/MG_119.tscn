@@ -777,8 +777,10 @@ menghubungi nomor darurat sesuai
 dengan kondisi yang diminta."
 metadata/_edit_use_anchors_ = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasLayer"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer"]
+process_mode = 3
 stream = ExtResource("17_o08ne")
+volume_db = 5.0
 autoplay = true
 bus = &"Music"
 

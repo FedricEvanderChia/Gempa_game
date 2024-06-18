@@ -311,6 +311,7 @@ process_mode = 2
 visible = false
 
 [node name="PauseBtn" type="VBoxContainer" parent="."]
+process_mode = 3
 offset_left = 15.0
 offset_top = 15.0
 offset_right = 143.0

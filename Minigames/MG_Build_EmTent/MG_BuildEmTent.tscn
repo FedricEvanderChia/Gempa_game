@@ -4,12 +4,12 @@
 [ext_resource type="Shader" path="res://Minigames/MG_Build_EmTent/MG_BuildEmTent_bgshader.gdshader" id="2_784es"]
 [ext_resource type="Script" path="res://Minigames/Control.gd" id="2_rbapa"]
 [ext_resource type="Script" path="res://Minigames/lifes.gd" id="3_ldmwb"]
+[ext_resource type="AudioStream" uid="uid://qtyune2unelb" path="res://asset/Soundtrack/Minigame_4.mp3" id="4_kduun"]
 [ext_resource type="PackedScene" uid="uid://bbcp8hmccldcb" path="res://player/life.tscn" id="4_kuqpq"]
 [ext_resource type="Texture2D" uid="uid://8kbxhcnxgloa" path="res://asset/Tenda_emergency/action_bar_bg.png" id="5_jdair"]
 [ext_resource type="Texture2D" uid="uid://ds6a43ru1oeei" path="res://asset/Tenda_emergency/Tenda_state_0.png" id="6_yxlgr"]
 [ext_resource type="Texture2D" uid="uid://d2ykcjrbd0y3u" path="res://asset/Tenda_emergency/moving_platform.png" id="7_51ftb"]
 [ext_resource type="Script" path="res://Minigames/MG_Build_EmTent/Actionable_platform.gd" id="7_smt2h"]
-[ext_resource type="AudioStream" uid="uid://uk5y6ht22gvu" path="res://asset/Soundtrack/Minigame_1.mp3" id="9_ta8pe"]
 [ext_resource type="Texture2D" uid="uid://cic1cd7yvd8ks" path="res://asset/MenuButton/Help_idle.png" id="10_rdwg1"]
 [ext_resource type="Texture2D" uid="uid://cbamxnbsoaivk" path="res://asset/MenuButton/Help_pressed.png" id="11_4oakr"]
 [ext_resource type="Texture2D" uid="uid://cwsi81nu6qhne" path="res://asset/MenuButton/Back B.png" id="12_nl56d"]
@@ -151,7 +151,7 @@ scale = Vector2(1.02208, 0.75875)
 texture = ExtResource("20_3naex")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_ta8pe")
+stream = ExtResource("4_kduun")
 volume_db = -8.0
 autoplay = true
 bus = &"Music"

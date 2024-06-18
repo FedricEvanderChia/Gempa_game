@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://bgx38m1hnoq5b" path="res://asset/MenuButton/Pause.png" id="17_84o3c"]
 [ext_resource type="Texture2D" uid="uid://nqhfn73n2vre" path="res://asset/fire_sprite.png" id="17_ujdcy"]
 [ext_resource type="Texture2D" uid="uid://boosvlaqfye44" path="res://asset/MenuButton/Pause2.png" id="18_vgvvl"]
-[ext_resource type="AudioStream" uid="uid://b7kcs5s0bs8fa" path="res://asset/BGM/life-of-a-wandering-wizard-15549.mp3" id="22_axj6u"]
+[ext_resource type="AudioStream" uid="uid://brthpv8i5gxyx" path="res://asset/Soundtrack/Minigame_5.mp3" id="22_njbpc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nasy0"]
 size = Vector2(125, 125)
@@ -173,10 +173,12 @@ layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
+offset_left = -20.0
 offset_top = -28.0
+offset_right = -20.0
 offset_bottom = -28.0
 grow_vertical = 0
-scale = Vector2(0.67, 0.67)
+scale = Vector2(1.2, 1.2)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
@@ -443,6 +445,42 @@ texture_normal = ExtResource("5_c5l0v")
 texture_pressed = ExtResource("6_mq8u8")
 metadata/_edit_use_anchors_ = true
 
+[node name="Dpad_Right" type="ColorRect" parent="."]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 85.0
+offset_bottom = 85.0
+color = Color(0, 0, 0, 1)
+
+[node name="Inline" type="ColorRect" parent="Dpad_Right"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 73.0
+offset_bottom = 73.0
+color = Color(0.870588, 0.619608, 0.254902, 1)
+
+[node name="CheckButton" type="CheckButton" parent="Dpad_Right"]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+scale = Vector2(1.5, 1.5)
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="Dpad_Right/CheckButton"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -25.0
+offset_top = -0.666672
+offset_right = 25.0
+offset_bottom = 48.3333
+grow_horizontal = 2
+text = "D-Pad
+Kanan"
+horizontal_alignment = 1
+
 [node name="Back" type="TextureButton" parent="."]
 offset_left = 10.0
 offset_top = 10.0
@@ -616,13 +654,14 @@ kedalam lubang. "
 vertical_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("22_axj6u")
+stream = ExtResource("22_njbpc")
 autoplay = true
 bus = &"Music"
 
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="timeout" from="Control/Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="Help" to="." method="_on_help_pressed"]
+[connection signal="toggled" from="Dpad_Right/CheckButton" to="." method="_on_check_button_toggled"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
