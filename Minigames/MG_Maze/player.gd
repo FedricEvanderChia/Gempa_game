@@ -12,9 +12,6 @@ var apar = 0
 var cam
 var rotate: int
 
-
-
-
 func _ready():
 	cam = $"../Camera2D"
 		

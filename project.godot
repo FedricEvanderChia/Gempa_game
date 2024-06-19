@@ -53,6 +53,7 @@ Click={
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
+pointing/android/enable_pan_and_scale_gestures=true
 pointing/quit_on_go_back=true
 
 [internationalization]

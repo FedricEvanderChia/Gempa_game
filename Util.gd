@@ -1,8 +1,8 @@
 extends Node
 
-const SAVE_PATH = "res://savegame.bin"
-const save_file_path = "res://Inventory/Inventorysave.tres"
-var inventory: inventory_game = preload(save_file_path)
+const SAVE_PATH = "user://savegame.bin"
+const save_file_path = "user://Inventorysave.tres"
+var inventory: inventory_game = load("res://Inventory/Inventorysave.tres")
 
 
 func _ready():

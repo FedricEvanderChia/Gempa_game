@@ -3,8 +3,9 @@ var speed = 300
 
 func _ready():
 	loadSound()
-	if FileAccess.file_exists("res://savegame.bin") == false:
+	if FileAccess.file_exists("user://savegame.bin") == false:
 		$MarginContainer/VBoxContainer/StartB.hide()
+		util.emptyInv()
 		
 func _process(delta):
 	$BG.scroll_offset.x -= speed * delta
@@ -26,7 +27,7 @@ func _on_quit_b_pressed():
 	get_tree().quit()
 
 func _on_new_game_b_pressed():
-	if FileAccess.file_exists("res://savegame.bin") == true:
+	if FileAccess.file_exists("user://savegame.bin") == true:
 		$konfirmasi.show()
 	else:
 		util.ResetGame()
@@ -58,7 +59,7 @@ func _on_new_game_b_mouse_exited():
 
 func _on_back_pressed():
 	$Settings.hide()
-	var file = FileAccess.open("res://menus/SoundSys.bin", FileAccess.WRITE)
+	var file = FileAccess.open("user://SoundSys.bin", FileAccess.WRITE)
 	var data: Dictionary = {
 		"Master" = $Settings/MarginContainer/VBoxContainer/HSlider.value,
 		"Music" = $Settings/MarginContainer/VBoxContainer/HSlider2.value,
@@ -68,8 +69,8 @@ func _on_back_pressed():
 	file.store_line(jstr)
 
 func loadSound():
-	var file = FileAccess.open("res://menus/SoundSys.bin", FileAccess.READ)
-	if FileAccess.file_exists("res://menus/SoundSys.bin") == true:
+	var file = FileAccess.open("user://SoundSys.bin", FileAccess.READ)
+	if FileAccess.file_exists("user://SoundSys.bin") == true:
 		if not file.eof_reached():
 			var curr_line = JSON.parse_string(file.get_line())
 			if curr_line:
