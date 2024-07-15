@@ -208,5 +208,4 @@ Rizki: (memandang Maria dengan harapan) "Kita harus segera pergi ke gunung. Ayah
 do talking("-")
 do talking("end")
 do EndDialog()
-set global.unlockmaze = true
 => END!

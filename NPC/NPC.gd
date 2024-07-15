@@ -14,6 +14,7 @@ func _ready():
 	await tween.finished
 	while !global.goal:
 		await get_tree().create_timer(0.1).timeout
+		if $"../../CanvasLayer/Control/times".text == "00:00": break
 	var tween1 = create_tween()
 	var tween2 = create_tween()
 	tween1.tween_property(self,"position", position - Vector2(-150,25),0.2)

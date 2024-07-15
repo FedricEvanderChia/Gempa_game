@@ -3,16 +3,18 @@ var sec = 0
 var min = 0
 var Dsec = 15
 var Dmin = 0
-@export var right_Dpad = false
 var expand = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if global.life <= 0:
 		global.life = 3
-	if right_Dpad:
-		$Control2.position = Vector2(950,620)
+	$Dpad_Right/CheckButton.button_pressed = global.right_Dpad
+	if $Dpad_Right/CheckButton.button_pressed:
+		global.right_Dpad = true
+		$Control2.position = Vector2(810,620)
 	else:
-		$Control2.position = Vector2(0,620)
+		global.right_Dpad = false
+		$Control2.position = Vector2(-20,620)
 	reset_timer()
 	var time = str(min)+":"+str(sec)
 	if sec < 10:
@@ -106,9 +108,10 @@ func _on_back_pressed():
 
 
 func _on_check_button_toggled(toggled_on):
-	right_Dpad = !right_Dpad
-	if right_Dpad:
+	if $Dpad_Right/CheckButton.button_pressed:
 		$Control2.position = Vector2(810,620)
+		global.right_Dpad = true
 	else:
 		$Control2.position = Vector2(-20,620)
+		global.right_Dpad = false
 

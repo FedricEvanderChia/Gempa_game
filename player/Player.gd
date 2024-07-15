@@ -9,7 +9,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var footstep = $footstep
 var target = 1450
 signal Obtain(item)
-var invent = preload("res://Inventory/Inventorysave.tres")
+var invent = util.inventory
 var once = true
 
 

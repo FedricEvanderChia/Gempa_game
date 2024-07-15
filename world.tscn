@@ -172,6 +172,7 @@ shape = SubResource("RectangleShape2D_76igw")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="Work" type="Button" parent="HQ"]
+visible = false
 offset_left = 644.0
 offset_top = 10.0
 offset_right = 757.0

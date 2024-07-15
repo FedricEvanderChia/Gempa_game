@@ -2,7 +2,7 @@ extends Node2D
 
 func _ready():
 	await get_tree().create_timer(1).timeout
-	if global.Reputasi == 10 and !global.unlockmaze:
+	if global.Reputasi >= 25 and !global.unlockmaze:
 		unlock()
 		global.unlockmaze = true
 func unlock():

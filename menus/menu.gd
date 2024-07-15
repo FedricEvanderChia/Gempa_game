@@ -3,7 +3,7 @@ var speed = 300
 
 func _ready():
 	loadSound()
-	if FileAccess.file_exists("user://savegame.bin") == false:
+	if FileAccess.file_exists(util.SAVE_PATH) == false:
 		$MarginContainer/VBoxContainer/StartB.hide()
 		util.emptyInv()
 		
@@ -19,7 +19,7 @@ func _on_start_b_pressed():
 		elif global.lastmap == 2: get_tree().change_scene_to_file("res://area/area_2.tscn")
 		elif global.lastmap == 3: get_tree().change_scene_to_file("res://area/area_3.tscn")
 		elif global.lastmap == 4: get_tree().change_scene_to_file("res://area/area_4.tscn")
-		
+
 func _on_option_b_pressed():
 	$Settings.show()
 
@@ -27,7 +27,7 @@ func _on_quit_b_pressed():
 	get_tree().quit()
 
 func _on_new_game_b_pressed():
-	if FileAccess.file_exists("user://savegame.bin") == true:
+	if FileAccess.file_exists(util.SAVE_PATH) == true:
 		$konfirmasi.show()
 	else:
 		util.ResetGame()

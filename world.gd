@@ -35,10 +35,10 @@ func _ready():
 		await get_tree().create_timer(1).timeout
 		$DarkScreen.queue_free()
 		global.Dialogue +=1
-	elif global.Reputasi >= 5 && global.Dialogue == 1:
+	elif global.Reputasi >= 10 && global.Dialogue == 1:
 		DialogueManager.show_dialogue_balloon(load("res://dialogue/Act1.dialogue"), "LostFather")
 		global.Dialogue +=1
-	elif global.Reputasi >= 10 && global.Dialogue == 2:
+	elif global.Reputasi >= 20 && global.Dialogue == 2:
 		DialogueManager.show_dialogue_balloon(load("res://dialogue/Act1.dialogue"), "FoundPhoto")
 		global.Dialogue +=1
 		generateItem("res://Inventory/items/Foto.tres",-825)

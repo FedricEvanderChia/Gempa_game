@@ -103,6 +103,7 @@ sprite_frames = SubResource("SpriteFrames_cngay")
 flip_h = true
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(2006.5, 609)
@@ -157,12 +158,14 @@ theme_override_font_sizes/font_size = 25
 text = "Perbaiki Jembatan"
 
 [node name="Bridge_sensor" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge_sensor"]
 position = Vector2(457.844, 449.313)
 shape = SubResource("RectangleShape2D_nrpgl")
 
 [node name="Sensor_end" type="Area2D" parent="."]
+visible = false
 position = Vector2(1200, 450)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sensor_end"]

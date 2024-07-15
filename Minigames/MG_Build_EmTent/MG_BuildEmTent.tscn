@@ -146,7 +146,7 @@ motion_scale = Vector2(0.1, 0.1)
 
 [node name="Useable" type="Sprite2D" parent="ParallaxLayer"]
 material = SubResource("ShaderMaterial_qcw2u")
-position = Vector2(623, 196)
+position = Vector2(596, 196)
 scale = Vector2(1.02208, 0.75875)
 texture = ExtResource("20_3naex")
 

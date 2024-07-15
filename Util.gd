@@ -2,13 +2,7 @@ extends Node
 
 const SAVE_PATH = "user://savegame.bin"
 const save_file_path = "user://Inventorysave.tres"
-var inventory: inventory_game = load("res://Inventory/Inventorysave.tres")
-
-
-func _ready():
-	pass
-	
-	#verify_inven_save(save_file_path)
+var inventory: inventory_game = load(save_file_path)
 	
 func verify_inven_save(path: String):
 	DirAccess.make_dir_absolute(path)
@@ -25,8 +19,10 @@ func saveGame():
 		"Last_checkpoint_x" = global.Lastpos.x,
 		"Last_checkpoint_y" = global.Lastpos.y,
 		"Last_map" = global.lastmap,
+		"Unlock_maze" = global.unlockmaze,
 		"Check_unlockmaze_chapter2" = global.check_unlockmaze_chapter2,
 		"Check_unlockmaze_chapter3" = global.check_unlockmaze_chapter3,
+		"Check_maze_level_condition" = global.check_maze_level_condition,
 		"Chapter_game" = global.chapter_game
 	}
 	ResourceSaver.save(inventory, save_file_path)
@@ -36,7 +32,6 @@ func saveGame():
 func loadGame():
 	if FileAccess.file_exists(save_file_path) == true:
 		print("file exist")
-		#inventory = ResourceLoader.load(save_file_path).duplicate(true)
 	var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
 	if FileAccess.file_exists(SAVE_PATH) == true:
 		if not file.eof_reached():
@@ -51,8 +46,10 @@ func loadGame():
 				global.Lastpos.x = curr_line["Last_checkpoint_x"]
 				global.Lastpos.y = curr_line["Last_checkpoint_y"]
 				global.lastmap = curr_line["Last_map"]
+				global.unlockmaze = curr_line["Unlock_maze"]
 				global.check_unlockmaze_chapter2 = curr_line["Check_unlockmaze_chapter2"]
 				global.check_unlockmaze_chapter3 = curr_line["Check_unlockmaze_chapter3"]
+				global.check_maze_level_condition = curr_line["Check_maze_level_condition"]
 				global.chapter_game = curr_line["Chapter_game"]
 func emptyInv():
 	inventory = ResourceLoader.load("res://Inventory/New_Save.tres").duplicate(true)
@@ -71,9 +68,12 @@ func ResetGame():
 		"Last_checkpoint_x" = 0,
 		"Last_checkpoint_y" = 0,
 		"Last_map" = 1,
+		"Unlock_maze" = false,
 		"Check_unlockmaze_chapter2" = false,
 		"Check_unlockmaze_chapter3" = false,
+		"Check_maze_level_condition" = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],
 		"Chapter_game" = 1
+		
 	}
 	var jstr = JSON.stringify(data)
 	file.store_line(jstr)

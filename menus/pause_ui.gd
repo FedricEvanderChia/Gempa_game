@@ -2,6 +2,8 @@ extends Control
 
 @onready var uigempa = $"../"
 @onready var sounds_b = $"../button_sounds"
+@onready var notif = $notif
+
 func _on_resume_pressed():
 	sounds_b.play()
 	await get_tree().create_timer(0.5).timeout
@@ -30,8 +32,13 @@ func _on_save_pressed():
 	global.lastmap = int($"../../".name.right(1))
 	sounds_b.play()
 	util.saveGame()
-	await get_tree().create_timer(0.5).timeout
-
+	notif.modulate = Color(1,1,1,1)
+	notif.show()
+	var tween = create_tween()
+	tween.tween_property(notif,"modulate",Color(1,1,1,1),1)
+	tween.tween_property(notif,"modulate",Color(1,1,1,0),1)
+	await get_tree().create_timer(2).timeout
+	notif.hide()
 
 func _on_back_pressed():
 	sounds_b.play()

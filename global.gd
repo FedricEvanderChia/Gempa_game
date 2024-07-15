@@ -24,6 +24,7 @@ var unlockmaze= false
 var check_unlockmaze_chapter2= false
 var check_unlockmaze_chapter3= false 
 var check_grass= false
+var right_Dpad = false
 
 #maze1#maze2#maze3 #maze4 #maze5   #maze6 #maze7 #maze8  #maze9  #maze10  #maze11 #maze12  #maze13 #maze14 #maze15 #maze16 #maze17 #maze18 #maze19  #maze20       
 var check_maze_level_condition = [
