@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://gfx60wb32r42"]
+[gd_scene load_steps=3 format=3 uid="uid://gfx60wb32r42"]
 
+[ext_resource type="Script" path="res://menus/Soundsys.gd" id="1_ksj6i"]
 [ext_resource type="Script" path="res://menus/MasterSlider.gd" id="2_e8dbc"]
 
 [node name="Settings" type="Control"]
@@ -8,6 +9,7 @@ anchors_preset = 0
 scale = Vector2(1.5, 1.5)
 size_flags_horizontal = 4
 size_flags_vertical = 0
+script = ExtResource("1_ksj6i")
 
 [node name="Black" type="ColorRect" parent="."]
 layout_mode = 1
@@ -103,3 +105,5 @@ text = "Kembali
 "
 icon_alignment = 1
 vertical_icon_alignment = 0
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]

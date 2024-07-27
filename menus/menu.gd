@@ -57,17 +57,6 @@ func _on_new_game_b_mouse_entered():
 func _on_new_game_b_mouse_exited():
 	get_node("MarginContainer/VBoxContainer/NewGameB").scale = Vector2 (1,1)
 
-func _on_back_pressed():
-	$Settings.hide()
-	var file = FileAccess.open("user://SoundSys.bin", FileAccess.WRITE)
-	var data: Dictionary = {
-		"Master" = $Settings/MarginContainer/VBoxContainer/HSlider.value,
-		"Music" = $Settings/MarginContainer/VBoxContainer/HSlider2.value,
-		"SFX" = $Settings/MarginContainer/VBoxContainer/HSlider3.value
-	}
-	var jstr = JSON.stringify(data)
-	file.store_line(jstr)
-
 func loadSound():
 	var file = FileAccess.open("user://SoundSys.bin", FileAccess.READ)
 	if FileAccess.file_exists("user://SoundSys.bin") == true:

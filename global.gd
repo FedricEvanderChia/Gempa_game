@@ -1,7 +1,7 @@
 extends Node2D
 var rng = RandomNumberGenerator.new()
 
-var Dialogue = 0
+var Dialogue = 11
 var goal = false
 var needs = []
 var Lastpos : Vector2
@@ -54,7 +54,7 @@ func reward(item):
 func submit(item):
 	Give.emit(item)
 func tips():
-	tip = rng.randi_range(1,5)
+	tip = rng.randi_range(1,7)
 	DialogueManager.show_dialogue_balloon(load("res://dialogue/Quest.dialogue"), "Trivia"+ String.num(tip))	
 	
 func currQuest():

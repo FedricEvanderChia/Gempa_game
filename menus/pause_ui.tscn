@@ -58,6 +58,7 @@ layout_mode = 2
 size_flags_vertical = 4
 
 [node name="notif" type="Node2D" parent="."]
+visible = false
 position = Vector2(576, 325)
 
 [node name="Notif saved" type="ColorRect" parent="notif"]

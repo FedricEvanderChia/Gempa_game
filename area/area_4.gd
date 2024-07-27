@@ -34,7 +34,7 @@ func _on_go_to_world_body_entered(body):
 
 func _on_ayah_body_entered(body):
 	if global.Dialogue == 11:
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(0.1).timeout
 		DialogueManager.show_dialogue_balloon(load("res://dialogue/Act4.dialogue"), "Cave3")
 	global.go_right = false
 	$NPC_container/Ayah/Talk.show()

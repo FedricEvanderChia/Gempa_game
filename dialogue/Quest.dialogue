@@ -349,6 +349,90 @@ do talking("end")
 do EndDialog()
 => END!
 
+~ Trivia6
+do StartDialog()
+do talking("Rizki")
+Rizki: Hai, Rani. apakah musibah yang terjadi memakan korban jiwa?
+do talking("Rani")
+Rani: Iya, Rizki. Aku dengar. Untungnya, tidak ada korban jiwa. Tapi banyak bangunan yang rusak.
+do talking("Rizki")
+Rizki: Iya, aku juga dengar begitu. Kamu tahu nggak, gempa yang terjadi di desa ini itu termasuk jenis gempa apa?
+do talking("Rani")
+Rani: Gempa yang terjadi di desa kita tadi itu termasuk jenis gempa tektonik.
+do talking("Rizki")
+Rizki: Oh, gempa tektonik. Itu yang tadi kamu bilang terjadi karena pergerakan lempeng tektonik, kan?
+do talking("Rani")
+Rani: Betul, Rizki. Desa kita berada dekat dengan patahan aktif, jadi wajar kalau sering terjadi gempa tektonik di sini.
+do talking("Rizki")
+Rizki: Apa yang sebenarnya terjadi di dalam bumi saat gempa tektonik itu terjadi?
+do talking("Rani")
+Rani: Jadi begini, Rizki. Di bawah tanah, lempeng tektonik terus bergerak. Kadang mereka bergerak saling menjauh, saling mendekat, atau saling menyusur satu sama lain. Saat mereka saling bergerak, tekanan dan tegangan menumpuk di batuan sepanjang patahan.
+do talking("Rizki")
+Rizki: Lalu, apa yang membuat tanah kita bergetar?
+do talking("Rani")
+Rani: Nah, ketika tekanan itu terlalu besar, batuan di sepanjang patahan akhirnya patah dan melepaskan energi yang terkumpul dalam bentuk gelombang seismik. Gelombang inilah yang kita rasakan sebagai getaran atau gempa bumi.
+do talking("Rizki")
+Rizki: Jadi gempa pagi tadi karena pergerakan lempeng di bawah desa ini?
+do talking("Rani")
+Rani: Iya, tepat sekali. Lebih spesifiknya, desa ini berada di dekat zona subduksi, di mana satu lempeng bergerak masuk di bawah lempeng lainnya. Pergerakan ini yang menyebabkan gempa tektonik tadi pagi.
+do talking("Rizki")
+Rizki: Wah, jadi ada banyak jenis pergerakan lempeng yang bisa menyebabkan gempa, ya?
+do talking("Rani")
+Rani: Iya, ada tiga jenis utama: konvergen di mana lempeng bergerak saling mendekat, divergen di mana lempeng bergerak saling menjauh, dan transform di mana lempeng bergerak menyusur satu sama lain.
+do talking("Rizki")
+Rizki: Menarik sekali, Rani. Jadi apa yang bisa kita lakukan untuk lebih siap menghadapi gempa?
+do talking("Rani")
+Rani: Pertama, pastikan kita tahu lokasi-lokasi aman di sekitar kita dan jalur evakuasi. Kedua, bangun atau renovasi rumah dengan standar bangunan tahan gempa. Dan ketiga, selalu simpan persediaan darurat seperti air, makanan, dan obat-obatan.
+do talking("Rizki")
+Rizki: Terima kasih banyak, Rani. Penjelasanmu sangat membantu. Semoga penjelasanmu bisa membantu orang banyak
+do talking("Rani")
+Rani: Sama-sama, Rizki. Senang bisa membantu. Semoga kita selalu siap dan waspada.
+do talking("-")
+do talking("end")
+do EndDialog()
+=> END!
+
+~ Trivia7
+do StartDialog()
+do talking("Rizki")
+Rizki: Hai, Rani. aku ingin tanya, kalau gempa bumi terjadi lagi, apa saja ya barang-barang yang harus kita siapkan?
+do talking("Rani")
+Rani: Hai, Rizki. Itu pertanyaan yang bagus. Ada beberapa barang penting yang sebaiknya kita siapkan. Pertama, kita butuh air putih. Pastikan punya persediaan air minum setidaknya untuk 3 hari, sekitar 3 liter per orang per hari.
+do talking("Rizki")
+Rizki: Oke, air putih. Apa lagi?
+do talking("Rani")
+Rani: Selanjutnya, senter. Saat gempa, listrik bisa padam, jadi senter dengan baterai cadangan sangat penting untuk penerangan.
+do talking("Rizki")
+Rizki: Benar juga. Senter pastinya penting. Terus, apa lagi?
+do talking("Rani")
+Rani: Dokumen penting juga harus disiapkan. Fotokopi identitas, surat-surat penting, dan simpan di tempat yang mudah dijangkau. Kalau bisa, simpan juga uang tunai karena ATM mungkin tidak berfungsi.
+do talking("Rizki")
+Rizki: Oh, dokumen penting. Apa ada barang lain yang kita perlukan?
+do talking("Rani")
+Rani: Ya, kita juga butuh kotak P3K. Isinya harus ada perban, plester, antiseptik, dan obat-obatan pribadi. Ini sangat penting untuk memberikan pertolongan pertama jika ada yang terluka.
+do talking("Rizki")
+Rizki: P3K, benar. Pasti berguna banget. Ada lagi?
+do talking("Rani")
+Rani: Jangan lupa sekop. Ini berguna untuk membersihkan puing-puing atau menggali jika ada yang terjebak.
+do talking("Rizki")
+Rizki: Sekop? Wah, nggak kepikiran. Apa lagi, Rani?
+do talking("Rani")
+Rani: Kita juga butuh tenda. Kalau rumah kita rusak dan tidak bisa ditempati, tenda bisa menjadi tempat berlindung sementara yang aman.
+do talking("Rizki")
+Rizki: Tenda, bagus juga. Terus, makanan?
+do talking("Rani")
+Rani: Betul sekali, makanan. Kita perlu menyimpan makanan siap saji dan tahan lama seperti makanan kaleng, protein bar, dan makanan kering. Pastikan cukup untuk setidaknya 3 hari.
+do talking("Rizki")
+Rizki: Wah, ternyata banyak juga ya barang-barang yang perlu disiapkan. Makasih banyak, Rani. Penjelasanmu sangat membantu.
+do talking("Rani")
+Rani: Sama-sama, Rizki. Selalu siap siaga itu penting. 
+do talking("Rizki")
+Rizki: Oke, Rani. Sekali lagi, terima kasih!
+do talking("-")
+do talking("end")
+do EndDialog()
+=> END!
+
 ~ OtherQuest
 do talking("-")
 *Saat ini kamu sedang mengerjakan hal lain*

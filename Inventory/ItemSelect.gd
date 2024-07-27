@@ -12,5 +12,7 @@ func _on_toggled(toggled_on):
 		$"../../../../ItemDescription/NinePatchRect/VBoxContainer/Name".text = nama
 		$"../../../../ItemDescription/NinePatchRect/Panel/CenterContainer/Panel/item_display".texture = gambar
 		$"../../../../ItemDescription/NinePatchRect/VBoxContainer/Desc".text = deskripsi
+		if nama == 	"Dokumen":
+			$"../../../../ItemDescription/NinePatchRect/Panel/CenterContainer/Panel/item_display".scale = Vector2(0.1,0.1)
 	else:
 		button_pressed = false
